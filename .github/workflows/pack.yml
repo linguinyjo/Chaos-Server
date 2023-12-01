@@ -3,10 +3,10 @@ name: Build and Publish to NuGet
 on:
   push:
     branches:
-      - stop
+      - release/v*
   pull_request:
     branches:
-      - stop
+      - release/v*
 
 jobs:
   build-and-publish:
