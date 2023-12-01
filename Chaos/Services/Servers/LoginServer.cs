@@ -319,6 +319,8 @@ public sealed class LoginServer : ServerBase<ILoginClient>, ILoginServer<ILoginC
                       Topics.Actions.Validation)
                   .WithProperty(client)
                   .LogInformation("Changed password for aisling {@AislingName}", name);
+
+            localClient.SendLoginMessage(LoginMessageType.Confirm);
         }
     }
     #endregion

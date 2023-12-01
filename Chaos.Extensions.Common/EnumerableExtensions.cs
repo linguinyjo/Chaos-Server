@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 
 namespace Chaos.Extensions.Common;
@@ -85,6 +86,7 @@ public static class EnumerableExtensions
     /// </summary>
     /// <param name="enumerable">The enumerable to iterate</param>
     /// <typeparam name="TReturn"></typeparam>
+    [ExcludeFromCodeCoverage]
     public static IEnumerable<TReturn> SafeCast<TReturn>(this IEnumerable enumerable)
     {
         if (enumerable is IEnumerable<TReturn> casted)
@@ -96,6 +98,7 @@ public static class EnumerableExtensions
     /// <summary>
     ///     Randomizes the order of the elements in a sequence
     /// </summary>
+    [ExcludeFromCodeCoverage(Justification = "Impossible to test randomness without creating an occasionally failing test")]
     public static List<T> Shuffle<T>(this IEnumerable<T> objects)
     {
         var list = objects.ToList();
@@ -109,6 +112,7 @@ public static class EnumerableExtensions
     /// </summary>
     /// <param name="enumerable">The enumerable to cast and convert</param>
     /// <typeparam name="TReturn">The type to cast the IEnumerable to</typeparam>
+    [ExcludeFromCodeCoverage]
     public static List<TReturn> ToListCast<TReturn>(this IEnumerable enumerable)
     {
         if (enumerable is List<TReturn> list)

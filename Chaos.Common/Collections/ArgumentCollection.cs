@@ -97,6 +97,7 @@ public sealed class ArgumentCollection : IEnumerable<string>
     /// </summary>
     /// <param name="argument">A string containing arguments</param>
     /// <param name="delimiter">The delimiter used to split the strings into arguments</param>
+    [ExcludeFromCodeCoverage(Justification = "Nothing to test, just a shorthand")]
     public void Add(string argument, string? delimiter) => Add(new[] { argument }, delimiter);
 
     /// <summary>

@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Linq.Expressions;
 using System.Reflection;
 using Chaos.Extensions.Common;
@@ -63,6 +64,7 @@ public static class DeepClone
     /// <typeparam name="T">The type of the object being cloned</typeparam>
     /// <returns>A deep cloned instance of the object</returns>
     /// <exception cref="InvalidOperationException">Failed to create a deep clone of the object.</exception>
+    [ExcludeFromCodeCoverage(Justification = "Tested by Create<T>(T)")]
     public static T CreateRequired<T>(T fromObj)
     {
         var obj = Create(fromObj);

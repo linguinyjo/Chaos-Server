@@ -493,4 +493,72 @@ public sealed class SpanWriterTests
                   0x34,
                   0x12);
     }
+
+    [Fact]
+    public void WriteValue_ShouldWriteToBuffer()
+    {
+        // Arrange
+        var writer = new SpanWriter(Encoding);
+        const byte BYTE_VALUE = 10;
+        const sbyte SBYTE_VALUE = -10;
+        const ushort USHORT_VALUE = 100;
+        const short SHORT_VALUE = -100;
+        const uint UINT_VALUE = 1000;
+        const int INT_VALUE = -1000;
+        const bool BOOL_VALUE = true;
+        const byte X8 = 10;
+        const byte Y8 = 20;
+        const ushort X16 = 100;
+        const ushort Y16 = 200;
+
+        // Act
+        writer.WriteValue(BYTE_VALUE);
+        writer.WriteValue(SBYTE_VALUE);
+        writer.WriteValue(USHORT_VALUE);
+        writer.WriteValue(SHORT_VALUE);
+        writer.WriteValue(UINT_VALUE);
+        writer.WriteValue(INT_VALUE);
+        writer.WriteValue(BOOL_VALUE);
+        writer.WriteValue((x8: X8, y8: Y8));
+        writer.WriteValue((x16: X16, y16: Y16));
+
+        // Assert
+        var result = writer.ToSpan()
+                           .ToArray();
+
+        var expectedResult = new[]
+            {
+                BYTE_VALUE,
+                unchecked((byte)SBYTE_VALUE)
+            }.Concat(
+                 BitConverter.GetBytes(USHORT_VALUE)
+                             .Reverse())
+             .Concat(
+                 BitConverter.GetBytes(SHORT_VALUE)
+                             .Reverse())
+             .Concat(
+                 BitConverter.GetBytes(UINT_VALUE)
+                             .Reverse())
+             .Concat(
+                 BitConverter.GetBytes(INT_VALUE)
+                             .Reverse())
+             .Concat(
+                 BitConverter.GetBytes(BOOL_VALUE)
+                             .Reverse())
+             .Concat(
+                 new[]
+                 {
+                     X8,
+                     Y8
+                 })
+             .Concat(
+                 BitConverter.GetBytes(X16)
+                             .Reverse())
+             .Concat(
+                 BitConverter.GetBytes(Y16)
+                             .Reverse());
+
+        result.Should()
+              .ContainInOrder(expectedResult);
+    }
 }

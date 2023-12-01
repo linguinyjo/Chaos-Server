@@ -1,4 +1,5 @@
 using Chaos.Common.Definitions;
+using Chaos.Testing.Infrastructure.Definitions;
 using FluentAssertions;
 using Xunit;
 
@@ -6,6 +7,33 @@ namespace Chaos.Extensions.Common.Tests;
 
 public sealed class EnumExtensionsTests
 {
+    [Fact]
+    public void GetFlags_ShouldReturnIndividualFlags()
+    {
+        // Arrange
+        const SampleFlag1 COMBINED_FLAGS = SampleFlag1.Value1 | SampleFlag1.Value3;
+
+        // Act
+        var flags = COMBINED_FLAGS.GetFlags()
+                                  .ToList();
+
+        // Assert
+        flags.Should()
+             .Contain(
+                 new[]
+                 {
+                     SampleFlag1.Value1,
+                     SampleFlag1.Value3
+                 });
+
+        flags.Should()
+             .NotContain(
+                 new[]
+                 {
+                     SampleFlag1.Value2
+                 });
+    }
+
     // ReSharper disable once ArrangeAttributes
     [Theory]
     [InlineData(EquipmentType.NotEquipment, EquipmentSlot.None)]

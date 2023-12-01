@@ -60,18 +60,17 @@ public sealed class MapEntityCollection : IDeltaUpdatable
                 PointLookup[x, y] = new HashSet<MapEntity>(WorldEntity.IdComparer);
 
         //setup Values<T> cases
-        ValuesCases = new TypeSwitchExpression<IEnumerable>()
-                      .Case<Aisling>(() => Aislings)
-                      .Case<Monster>(() => Monsters)
-                      .Case<Merchant>(() => Merchants)
-                      .Case<GroundEntity>(() => GroundEntities)
-                      .Case<ReactorTile>(() => Reactors)
-                      .Case<Door>(() => Doors)
-                      .Case<Creature>(() => Aislings.Concat<Creature>(Monsters).Concat(Merchants))
-                      .Case<NamedEntity>(() => Aislings.Concat<NamedEntity>(Monsters).Concat(Merchants).Concat(GroundEntities))
-                      .Case<VisibleEntity>(
-                          () => Aislings.Concat<VisibleEntity>(Monsters).Concat(Merchants).Concat(GroundEntities).Concat(Doors))
-                      .Default(() => EntityLookup.Values);
+        ValuesCases = new TypeSwitchExpression<IEnumerable>().Case<Aisling>(Aislings)
+                                                             .Case<Monster>(Monsters)
+                                                             .Case<Merchant>(Merchants)
+                                                             .Case<GroundEntity>(GroundEntities)
+                                                             .Case<ReactorTile>(Reactors)
+                                                             .Case<Door>(Doors)
+                                                             .Case<Creature>(() => Aislings.Concat<Creature>(Monsters).Concat(Merchants))
+                                                             .Case<NamedEntity>(() => Aislings.Concat<NamedEntity>(Monsters).Concat(Merchants).Concat(GroundEntities))
+                                                             .Case<VisibleEntity>(
+                                                                 () => Aislings.Concat<VisibleEntity>(Monsters).Concat(Merchants).Concat(GroundEntities).Concat(Doors))
+                                                             .Default(EntityLookup.Values);
     }
 
     /// <inheritdoc />

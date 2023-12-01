@@ -7,6 +7,52 @@ namespace Chaos.Common.Tests;
 public sealed class RandomizerTests
 {
     [Fact]
+    public void PickRandom_ShouldBeAbleToReturnAnyElementFromCollection()
+    {
+        var sampleList = new List<int>
+        {
+            1,
+            2,
+            3,
+            4,
+            5
+        };
+        var pickedItems = new HashSet<int>();
+
+        // Pick random 1000 times
+        for (var i = 0; i < 2000; i++)
+        {
+            var randomItem = sampleList.PickRandom();
+            pickedItems.Add(randomItem);
+        }
+
+        pickedItems.Should()
+                   .BeEquivalentTo(sampleList);
+    }
+
+    [Fact]
+    public void PickRandom_ShouldReturnElementFromCollection()
+    {
+        var sampleList = new List<int>
+        {
+            1,
+            2,
+            3,
+            4,
+            5
+        };
+
+        // Pick random 50 times
+        for (var i = 0; i < 50; i++)
+        {
+            var randomItem = sampleList.PickRandom();
+
+            sampleList.Should()
+                      .Contain(randomItem);
+        }
+    }
+
+    [Fact]
     public void PickRandomWeighted_DecimalWeights_ReturnsElementsInProportionalDistribution()
     {
         // Arrange

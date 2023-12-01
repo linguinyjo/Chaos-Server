@@ -1,5 +1,8 @@
 // ReSharper disable once CheckNamespace
 
+using System.Diagnostics.CodeAnalysis;
+
+// ReSharper disable once CheckNamespace
 namespace Chaos.Extensions.Common;
 
 /// <summary>
@@ -15,6 +18,7 @@ public static class TypeExtensions
     ///     <c>true</c> if the provided type is an enum and has the <see cref="FlagsAttribute" /> attribute, otherwise
     ///     <c>false</c>
     /// </returns>
+    [ExcludeFromCodeCoverage(Justification = "Tested by IsFlagEnum(Type)")]
     public static bool IsFlagEnum<T>() where T: Enum => IsFlagEnum(typeof(T));
 
     /// <summary>

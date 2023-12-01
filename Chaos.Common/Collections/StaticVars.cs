@@ -1,4 +1,5 @@
 using System.Collections.Concurrent;
+using System.Diagnostics.CodeAnalysis;
 using Chaos.Common.Abstractions;
 using Chaos.Common.Converters;
 
@@ -13,6 +14,7 @@ public class StaticVars : IScriptVars
     ///     Gets or sets the value associated with the specified key.
     /// </summary>
     /// <param name="key"></param>
+    [ExcludeFromCodeCoverage(Justification = "Nothing test, just a wrapper")]
     public object this[string key]
     {
         get => Vars[key];

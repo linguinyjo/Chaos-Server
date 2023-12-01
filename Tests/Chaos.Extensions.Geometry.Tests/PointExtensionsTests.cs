@@ -432,32 +432,196 @@ public sealed class PointExtensionsTests
         result.Should().BeEmpty();
     }
 
-    [Theory]
-    [MemberData(nameof(GenerateIntercardinalPointsTestData))]
-    public void GenerateIntercardinalPoints_ShouldGeneratePoints(
-        int startX,
-        int startY,
-        Direction direction,
-        int radius,
-        Point[] expectedPoints
-    )
+    [Fact]
+    public void GenerateIntercardinalPoints_WithDirectionAll_ReturnsExpectedPoints()
     {
-        // Arrange
-        var startPoint = new Point(startX, startY);
+        var start = new Point(0, 0);
 
-        // Act
-        var result = startPoint.GenerateIntercardinalPoints(direction, radius);
+        var result = start.GenerateIntercardinalPoints(Direction.All, 3)
+                          .ToList();
 
-        // Assert
-        result.Should().BeEquivalentTo(expectedPoints);
+        result.Count
+              .Should()
+              .Be(12);
+
+        result.Should()
+              .Contain(new Point(-1, -1));
+
+        result.Should()
+              .Contain(new Point(1, -1));
+
+        result.Should()
+              .Contain(new Point(1, 1));
+
+        result.Should()
+              .Contain(new Point(-1, 1));
+
+        result.Should()
+              .Contain(new Point(-2, -2));
+
+        result.Should()
+              .Contain(new Point(2, -2));
+
+        result.Should()
+              .Contain(new Point(2, 2));
+
+        result.Should()
+              .Contain(new Point(-2, 2));
+
+        result.Should()
+              .Contain(new Point(-3, -3));
+
+        result.Should()
+              .Contain(new Point(3, -3));
+
+        result.Should()
+              .Contain(new Point(3, 3));
+
+        result.Should()
+              .Contain(new Point(-3, 3));
     }
 
-    public static IEnumerable<object[]> GenerateIntercardinalPointsTestData()
+    [Fact]
+    public void GenerateIntercardinalPoints_WithDirectionDown_ReturnsExpectedPoints()
     {
-        yield return new object[]
-            { 0, 0, Direction.All, 1, new[] { new Point(-1, -1), new Point(1, -1), new Point(1, 1), new Point(-1, 1) } };
+        var start = new Point(0, 0);
 
-        yield return new object[] { 2, 2, Direction.Up, 2, new[] { new Point(1, 1), new Point(3, 1), new Point(0, 0), new Point(4, 0) } };
+        var result = start.GenerateIntercardinalPoints(Direction.Down, 5)
+                          .ToList();
+
+        result.Count
+              .Should()
+              .Be(10);
+
+        result.Should()
+              .Contain(new Point(1, 1));
+
+        result.Should()
+              .Contain(new Point(-1, 1));
+
+        result.Should()
+              .Contain(new Point(2, 2));
+
+        result.Should()
+              .Contain(new Point(-2, 2));
+
+        result.Should()
+              .Contain(new Point(3, 3));
+
+        result.Should()
+              .Contain(new Point(-3, 3));
+
+        result.Should()
+              .Contain(new Point(4, 4));
+
+        result.Should()
+              .Contain(new Point(-4, 4));
+
+        result.Should()
+              .Contain(new Point(5, 5));
+
+        result.Should()
+              .Contain(new Point(-5, 5));
+    }
+
+    [Fact]
+    public void GenerateIntercardinalPoints_WithDirectionInvalid_ReturnsNoPoints()
+    {
+        var start = new Point(0, 0);
+
+        var result = start.GenerateIntercardinalPoints(Direction.Invalid)
+                          .ToList();
+
+        result.Count
+              .Should()
+              .Be(0);
+    }
+
+    [Fact]
+    public void GenerateIntercardinalPoints_WithDirectionLeft_ReturnsExpectedPoints()
+    {
+        var start = new Point(0, 0);
+
+        var result = start.GenerateIntercardinalPoints(Direction.Left, 3)
+                          .ToList();
+
+        result.Count
+              .Should()
+              .Be(6);
+
+        result.Should()
+              .Contain(new Point(-1, -1));
+
+        result.Should()
+              .Contain(new Point(-1, 1));
+
+        result.Should()
+              .Contain(new Point(-2, -2));
+
+        result.Should()
+              .Contain(new Point(-2, 2));
+
+        result.Should()
+              .Contain(new Point(-3, -3));
+
+        result.Should()
+              .Contain(new Point(-3, 3));
+    }
+
+    [Fact]
+    public void GenerateIntercardinalPoints_WithDirectionRight_ReturnsExpectedPoints()
+    {
+        var start = new Point(0, 0);
+
+        var result = start.GenerateIntercardinalPoints(Direction.Right, 3)
+                          .ToList();
+
+        result.Count
+              .Should()
+              .Be(6);
+
+        result.Should()
+              .Contain(new Point(1, -1));
+
+        result.Should()
+              .Contain(new Point(1, 1));
+
+        result.Should()
+              .Contain(new Point(2, -2));
+
+        result.Should()
+              .Contain(new Point(2, 2));
+
+        result.Should()
+              .Contain(new Point(3, -3));
+
+        result.Should()
+              .Contain(new Point(3, 3));
+    }
+
+    [Fact]
+    public void GenerateIntercardinalPoints_WithDirectionUp_ReturnsExpectedPoints()
+    {
+        var start = new Point(0, 0);
+
+        var result = start.GenerateIntercardinalPoints(Direction.Up, 2)
+                          .ToList();
+
+        result.Count
+              .Should()
+              .Be(4);
+
+        result.Should()
+              .Contain(new Point(-1, -1));
+
+        result.Should()
+              .Contain(new Point(1, -1));
+
+        result.Should()
+              .Contain(new Point(-2, -2));
+
+        result.Should()
+              .Contain(new Point(2, -2));
     }
 
     [Theory]

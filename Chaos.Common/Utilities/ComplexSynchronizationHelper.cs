@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using Chaos.Common.Abstractions;
 using Chaos.Common.Synchronization;
 
@@ -61,6 +62,7 @@ public static class ComplexSynchronizationHelper
             }, Signature: \"{signature}\")");
     }
 
+    [ExcludeFromCodeCoverage(Justification = "Just a wrapper class")]
     private sealed class CompositePolyDisposable : IPolyDisposable
     {
         private readonly List<IPolyDisposable> Dispoables;
