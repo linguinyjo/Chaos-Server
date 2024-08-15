@@ -1,0 +1,22 @@
+{
+  "buyCost": 100,
+  "category": "misc",
+  "color": "Default",
+  "isModifiable": false,
+  "maxStacks": 1,
+  "sellValue": 500,
+  "weight": 1,
+  "description": "A magical scroll for enchanting weapons of the second circle",
+  "name": "Enchant Weapon Scroll (2nd)",
+  "panelSprite": 3298,
+  "levelCircle": 2,
+  "scriptKeys": [
+    "enchant"
+  ],
+  "scriptVars": {
+    "enchant": {
+      "filter": "selfOnly, aliveOnly"
+    }
+  },
+  "templateKey": "enchantWeaponScroll2nd"
+}

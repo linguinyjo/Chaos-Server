@@ -1,0 +1,27 @@
+{
+    "buyCost": 1000,
+    "category": "1h wep",
+    "color": "Forest",
+    "displaySprite": 5,
+    "equipmentType": "Weapon",
+    "gender": "Unisex",
+    "isModifiable": true,
+    "maxDurability": 1000,
+    "maxStacks": 1,
+    "level": 11,
+    "levelCircle": 2,
+    "modifiers": {
+        "atkSpeedPct": 200,
+        "str": 1
+    },
+    "sellValue": 500,
+    "weight": 1,
+    "description": "A sword",
+    "name": "Broad Sword",
+    "panelSprite": 90,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "broadSword"
+}

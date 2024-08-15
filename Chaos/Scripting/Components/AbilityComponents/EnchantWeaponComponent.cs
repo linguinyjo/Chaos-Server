@@ -1,10 +1,10 @@
+using Chaos.Common.Definitions;
 using Chaos.Extensions;
 using Chaos.Models.Data;
 using Chaos.Models.Panel;
 using Chaos.Scripting.Components.Abstractions;
 using Chaos.Scripting.Components.Execution;
 using Chaos.Scripting.ItemScripts.Enchantments;
-using Chaos.TypeMapper.Abstractions;
 
 namespace Chaos.Scripting.Components.AbilityComponents;
 
@@ -16,11 +16,14 @@ public struct EnchantWeaponComponent : IConditionalComponent
         var options = vars.GetOptions<IEnchantWeaponComponentOptions>();
         var item = context.SourceAisling?.Inventory[1];
         if (item == null) return false;
-        var shouldEnchant = ShouldEnchant(item);
+        if (item.LevelCircle != options.LevelCircle)
+        {
+            context.SourceAisling?.SendOrangeBarMessage($"This scroll can only enchant items of Circle {options.LevelCircle}");
+            return false;
+        }
+        var shouldEnchant = RunEnchantCalculation(item);
         if (shouldEnchant)
         {
-            // item?.RemoveScript<EnchantWeaponScript>();
-            // var script1 = new EnchantWeaponScript(item, item.Modifiers.Enchant);
             item.AddScript<EnchantWeaponScript>();
             context.SourceAisling?.Inventory.Update(1);
             context.SourceAisling?.Client.SendSound(19, false);
@@ -34,26 +37,26 @@ public struct EnchantWeaponComponent : IConditionalComponent
     }
 
     /// Safe enchant up to 3
-    private static bool ShouldEnchant(Item? item)
+    private static bool RunEnchantCalculation(Item item)
     {
-        if (item?.Enchant == null) return true;
-        if (item?.Enchant < 4) return true;
-        Random random = new Random();
-        // Generate a random number between 0 and 99 (inclusive)
-        int randomNumber = random.Next(100);
-
-        // Check if the number is less than 66 (66% chance)
-        if (randomNumber < 66)
+        switch (item.Enchant)
         {
-            return true;  // Probability passed
+            case null:
+            case < 4:
+                return true;
         }
 
-        return false;  // Probability failed
+        var random = new Random();
+        // Generate a random number between 0 and 99 (inclusive)
+        var randomNumber = random.Next(100);
+
+        // Check if the number is less than 66 (66% chance)
+        return randomNumber < 66;
     }
         
         
     public interface IEnchantWeaponComponentOptions
     {
-        string ItemName { get; init; }
+        LevelCircle LevelCircle { get; init; }
     }
 }

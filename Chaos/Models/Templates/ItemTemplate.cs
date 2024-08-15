@@ -19,7 +19,7 @@ public sealed record ItemTemplate : PanelEntityTemplateBase
     public required int MaxStacks { get; init; } = 1;
     public required Attributes? Modifiers { get; init; }
     public required bool NoTrade { get; init; }
-
+    public required LevelCircle LevelCircle { get; init; }
     public override required ushort PanelSprite
     {
         get => ItemSprite.PanelSprite;

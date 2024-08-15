@@ -168,7 +168,8 @@ public sealed class ItemMapperProfile(ISimpleCache simpleCache, IScriptProvider 
             AdvClass = obj.AdvClass,
             Category = obj.Category,
             EquipmentType = obj.EquipmentType,
-            Gender = obj.Gender
+            Gender = obj.Gender,
+            LevelCircle = obj.LevelCircle
         };
 
     public ItemTemplateSchema Map(ItemTemplate obj) => throw new NotImplementedException();

@@ -2,8 +2,8 @@
   "key": "testAreaRats",
   "lootDrops": [
     {
-      "dropChance": 0.05,
-      "itemTemplateKey": "stick"
+      "dropChance": 0.30,
+      "itemTemplateKey": "broadSword"
     },
     {
       "dropChance": 0.02,
@@ -19,7 +19,7 @@
     },
     {
       "dropChance": 0.25,
-      "itemTemplateKey": "enchantWeaponScroll"
+      "itemTemplateKey": "enchantWeaponScroll2nd"
     }
   ]
 }

@@ -24,7 +24,7 @@ public class EnchantScript : ConfigurableItemScriptBase,
         : base(subject)
     {
         SourceScript = this;
-        ItemName = Subject.DisplayName;
+        LevelCircle = Subject.LevelCircle;
         UniqueId = Subject.UniqueId;
     }
 
@@ -127,6 +127,8 @@ public class EnchantScript : ConfigurableItemScriptBase,
     public decimal PctManaReplenish { get; init; }
 
     /// <inheritdoc />
+    public LevelCircle LevelCircle { get; init; }
+
     public string ItemName { get; init; }
 
     /// <inheritdoc />

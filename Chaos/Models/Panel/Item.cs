@@ -38,6 +38,9 @@ public sealed class Item : PanelEntityBase, IScripted<IItemScript>, IDialogSourc
 
     public ItemSprite ItemSprite { get; set; }
     public int Level { get; set; }
+    
+    public LevelCircle LevelCircle { get; set; }
+
     public Attributes Modifiers { get; set; }
 
     public string? Prefix
@@ -84,6 +87,7 @@ public sealed class Item : PanelEntityBase, IScripted<IItemScript>, IDialogSourc
         Modifiers = template.Modifiers is null ? new Attributes() : ShallowCopy<Attributes>.Create(template.Modifiers);
         Weight = template.Weight;
         Level = template.Level;
+        LevelCircle = template.LevelCircle;
         ItemSprite = template.ItemSprite;
 
         if (extraScriptKeys != null)
