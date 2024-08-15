@@ -5,18 +5,19 @@ using Chaos.Models.Panel;
 using Chaos.Models.World.Abstractions;
 using Chaos.Scripting.Components.AbilityComponents;
 using Chaos.Scripting.Components.Execution;
+using Chaos.Scripting.EffectScripts.Abstractions;
 using Chaos.Scripting.SpellScripts.Abstractions;
 using Chaos.Services.Factories.Abstractions;
 
 namespace Chaos.Scripting.SpellScripts;
 
 [SuppressMessage("ReSharper", "AutoPropertyCanBeMadeGetOnly.Global")]
-public class ApplySpellEffectScript : ConfigurableSpellScriptBase,
+public class ApplyEffectScript : ConfigurableSpellScriptBase,
                                  GenericAbilityComponent<Creature>.IAbilityComponentOptions,
                                  ApplyEffectAbilityComponent.IApplyEffectComponentOptions
 {
     /// <inheritdoc />
-    public ApplySpellEffectScript(Spell subject, IEffectFactory effectFactory)
+    public ApplyEffectScript(Spell subject, IEffectFactory effectFactory)
         : base(subject)
         => EffectFactory = effectFactory;
 

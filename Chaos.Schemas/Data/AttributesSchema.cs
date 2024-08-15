@@ -17,4 +17,6 @@ public record AttributesSchema : StatsSchema
     public int MaximumMp { get; set; }
     public int SkillDamagePct { get; set; }
     public int SpellDamagePct { get; set; }
+    public int PhysicalAttack { get; set; }
+    public int MagicAttack { get; set; }
 }

@@ -138,6 +138,12 @@ public record StatSheet : Attributes
         get => _wisMod;
         init => _wisMod = value;
     }
+    
+    public int PhysicalAttackMod
+    {
+        get => _physicalAttackMod;
+        init => _physicalAttackMod = value;
+    }
 
     public sbyte EffectiveAc => (sbyte)Math.Clamp(Ac + AcMod, sbyte.MinValue, sbyte.MaxValue);
 
@@ -210,6 +216,7 @@ public record StatSheet : Attributes
         Interlocked.Add(ref _flatSpellDamageMod, other.FlatSpellDamage);
         Interlocked.Add(ref _skillDamagePctMod, other.SkillDamagePct);
         Interlocked.Add(ref _spellDamagePctMod, other.SpellDamagePct);
+        Interlocked.Add(ref _physicalAttack, other.PhysicalAttack);
     }
 
     public void AddHealthPct(int pct)
@@ -411,5 +418,6 @@ public record StatSheet : Attributes
     protected int _flatSkillDamageMod;
     protected int _spellDamagePctMod;
     protected int _skillDamagePctMod;
+    protected int _physicalAttackMod;
     #endregion
 }

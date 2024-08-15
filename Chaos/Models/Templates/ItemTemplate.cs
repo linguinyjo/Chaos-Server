@@ -30,4 +30,5 @@ public sealed record ItemTemplate : PanelEntityTemplateBase
     public required int SellValue { get; init; }
     public required byte Weight { get; init; } = 1;
     public bool Stackable => MaxStacks > 1;
+    public int? Enchant { get; init; }
 }

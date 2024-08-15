@@ -7,6 +7,7 @@ using Chaos.Definitions;
 using Chaos.Messaging.Abstractions;
 using Chaos.MetaData;
 using Chaos.Networking.Abstractions;
+using Chaos.Scripting.Components.AbilityComponents;
 using Chaos.Scripting.ItemScripts.Enchantments;
 using Chaos.Services.Servers.Options;
 using Chaos.Services.Storage.Options;
@@ -80,6 +81,7 @@ public sealed class OptionsConfigurer(IStagingDirectory stagingDirectory, IChann
                 }));
 
         //add more mutators here
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantWeaponScript.Mutate));
     }
 
     /// <inheritdoc />

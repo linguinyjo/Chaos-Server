@@ -1,7 +1,8 @@
 {
     "buyCost": 1000,
     "category": "m armor",
-    "color": "Default",
+    "color": "Blue",
+    "isDyable": true,
     "displaySprite": 1,
     "equipmentType": "Armor",
     "gender": "Male",

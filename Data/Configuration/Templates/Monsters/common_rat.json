@@ -1,10 +1,10 @@
 {
     "aggroRange": 6,
-    "assailIntervalMs": 1500,
+    "assailIntervalMs": 60000,
     "expReward": 50,
     "maxGoldDrop": 30,
     "minGoldDrop": 10,
-    "moveIntervalMs": 1500,
+    "moveIntervalMs": 60000,
     "name": "Common Rat",
     "lootTableKeys": ["testAreaRats"],
     "scriptKeys": ["default"],
@@ -17,7 +17,7 @@
     "statSheet": {
         "level": 1,
         "ac": 50,
-        "maximumHp": 100,
+        "maximumHp": 500,
         "maximumMp": 100,
         "con": 2,
         "dex": 1,
@@ -27,5 +27,5 @@
     },
     "templateKey": "common_rat",
     "type": "Normal",
-    "wanderIntervalMs": 2000
+    "wanderIntervalMs": 4000
 }

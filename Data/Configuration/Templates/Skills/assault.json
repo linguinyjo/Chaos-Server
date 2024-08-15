@@ -13,9 +13,9 @@
         "prerequisiteSkills": [],
         "prerequisiteSpells": []
     },
-    "description": "A basic attack that deals a small amount of damage to an enemy immediately in front of you.",
+    "description": "A second assail.",
     "level": 1,
-    "name": "Assail",
+    "name": "Assault",
     "class": "peasant",
     "panelSprite": 1,
     "scriptKeys": ["damage"],
@@ -28,9 +28,9 @@
             "shape": "front",
             "excludeSourcePoint": true,
             "damageStatMultiplier": 1,
-            "baseDamage": 3,
+            "baseDamage": 10,
             "filter": "hostileOnly, aliveOnly, othersOnly"
         }
     },
-    "templateKey": "assail"
+    "templateKey": "assault"
 }

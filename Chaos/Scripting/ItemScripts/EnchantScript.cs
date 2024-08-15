@@ -14,23 +14,15 @@ using Chaos.Scripting.ItemScripts.Abstractions;
 
 namespace Chaos.Scripting.ItemScripts;
 
-public class VitalityConsumableScript : ConfigurableItemScriptBase,
+public class EnchantScript : ConfigurableItemScriptBase,
                                         GenericAbilityComponent<Aisling>.IAbilityComponentOptions,
-                                        DamageAbilityComponent.IDamageComponentOptions,
-                                        HealAbilityComponent.IHealComponentOptions,
-                                        ManaDrainAbilityComponent.IManaDrainComponentOptions,
-                                        ManaReplenishAbilityComponent.IManaReplenishComponentOptions,
-                                        ConsumableAbilityComponent.IConsumableComponentOptions
-
+                                        ConsumableAbilityComponent.IConsumableComponentOptions,
+                                        EnchantWeaponComponent.IEnchantWeaponComponentOptions
 {
     /// <inheritdoc />
-    public VitalityConsumableScript(Item subject)
+    public EnchantScript(Item subject)
         : base(subject)
     {
-        ApplyDamageScript = ApplyNonAttackDamageScript.Create();
-        ApplyDamageScript.DamageFormula = DamageFormulae.PureDamage;
-        ApplyHealScript = ApplyNonAlertingHealScript.Create();
-        ApplyHealScript.HealFormula = HealFormulae.Default;
         SourceScript = this;
         ItemName = Subject.DisplayName;
         UniqueId = Subject.UniqueId;
@@ -39,12 +31,10 @@ public class VitalityConsumableScript : ConfigurableItemScriptBase,
     /// <inheritdoc />
     public override void OnUse(Aisling source)
         => new ComponentExecutor(source, source).WithOptions(this)
-                                                .ExecuteAndCheck<GenericAbilityComponent<Aisling>>()
-                                                ?.Execute<DamageAbilityComponent>()
-                                                .Execute<HealAbilityComponent>()
-                                                .Execute<ManaDrainAbilityComponent>()
-                                                .Execute<ManaReplenishAbilityComponent>()
-                                                .Execute<ConsumableAbilityComponent>();
+            .ExecuteAndCheck<GenericAbilityComponent<Aisling>>()
+            ?.ExecuteAndCheck<EnchantWeaponComponent>()
+            ?.Execute<ConsumableAbilityComponent>();
+
 
     #region ScriptVars
     /// <inheritdoc />
@@ -138,7 +128,7 @@ public class VitalityConsumableScript : ConfigurableItemScriptBase,
 
     /// <inheritdoc />
     public string ItemName { get; init; }
-    
+
     /// <inheritdoc />
     public ulong UniqueId { get; init; }
 

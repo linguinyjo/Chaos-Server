@@ -10,7 +10,7 @@ public class EquipmentScript(Item subject) : ConfigurableItemScriptBase(subject)
     public override void OnUse(Aisling source)
     {
         var template = Subject.Template;
-
+        Console.WriteLine(subject);
         if (!source.IsAlive)
         {
             source.SendOrangeBarMessage("You can't do that");

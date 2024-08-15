@@ -51,7 +51,9 @@ public sealed class Item : PanelEntityBase, IScripted<IItemScript>, IDialogSourc
         get => NameComposer.Suffix;
         set => NameComposer.SetSuffix(value);
     }
-
+    
+    public int? Enchant { get; set; }
+    
     public int Weight { get; set; }
     public IItemScript Script { get; }
 
@@ -88,6 +90,7 @@ public sealed class Item : PanelEntityBase, IScripted<IItemScript>, IDialogSourc
             ScriptKeys.AddRange(extraScriptKeys);
 
         Script = scriptProvider.CreateScript<IItemScript, Item>(ScriptKeys, this);
+        Enchant = template.Enchant;
     }
 
     /// <inheritdoc />
