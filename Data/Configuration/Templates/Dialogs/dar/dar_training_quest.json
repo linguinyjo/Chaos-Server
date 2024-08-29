@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "dar_training_quest_a",
+  "scriptKeys": ["darTrainingQuest"],
+  "scriptVars": {},
+  "templateKey": "dar_training_quest",
+  "text": "Ah, what's this? Another fledgling Aisling, fresh from Vorlof's tutelage. How... quaint.",
+  "type": "Normal"
+}

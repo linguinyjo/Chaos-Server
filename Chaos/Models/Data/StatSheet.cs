@@ -144,6 +144,12 @@ public record StatSheet : Attributes
         get => _physicalAttackMod;
         init => _physicalAttackMod = value;
     }
+    
+    public int MagicAttackMod
+    {
+        get => _magicAttackMod;
+        init => _magicAttackMod = value;
+    }
 
     public sbyte EffectiveAc => (sbyte)Math.Clamp(Ac + AcMod, sbyte.MinValue, sbyte.MaxValue);
 
@@ -174,6 +180,10 @@ public record StatSheet : Attributes
     public int EffectiveSpellDamagePct => SpellDamagePct + SpellDamagePctMod;
 
     public byte EffectiveStr => (byte)Math.Clamp(Str + StrMod, byte.MinValue, byte.MaxValue);
+    
+    public byte EffectivePhysicalAttack => (byte)Math.Clamp(PhysicalAttack + PhysicalAttackMod, byte.MinValue, byte.MaxValue);
+
+    public byte EffectiveMagicAttack => (byte)Math.Clamp(MagicAttack + MagicAttackMod, byte.MinValue, byte.MaxValue);
 
     public byte EffectiveWis => (byte)Math.Clamp(Wis + WisMod, byte.MinValue, byte.MaxValue);
 
@@ -216,7 +226,8 @@ public record StatSheet : Attributes
         Interlocked.Add(ref _flatSpellDamageMod, other.FlatSpellDamage);
         Interlocked.Add(ref _skillDamagePctMod, other.SkillDamagePct);
         Interlocked.Add(ref _spellDamagePctMod, other.SpellDamagePct);
-        Interlocked.Add(ref _physicalAttack, other.PhysicalAttack);
+        Interlocked.Add(ref _physicalAttackMod, other.PhysicalAttack);
+        Interlocked.Add(ref _magicAttackMod, other.MagicAttack);
     }
 
     public void AddHealthPct(int pct)
@@ -307,6 +318,8 @@ public record StatSheet : Attributes
         Interlocked.Add(ref _flatSpellDamageMod, -other.FlatSpellDamage);
         Interlocked.Add(ref _skillDamagePctMod, -other.SkillDamagePct);
         Interlocked.Add(ref _spellDamagePctMod, -other.SpellDamagePct);
+        Interlocked.Add(ref _physicalAttackMod, -other.PhysicalAttack);
+        Interlocked.Add(ref _magicAttackMod, -other.MagicAttack);
     }
 
     public void SubtractHealthPct(decimal pct)
@@ -419,5 +432,6 @@ public record StatSheet : Attributes
     protected int _spellDamagePctMod;
     protected int _skillDamagePctMod;
     protected int _physicalAttackMod;
+    protected int _magicAttackMod;
     #endregion
 }

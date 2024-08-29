@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "Close",
+  "scriptKeys": ["rionaTrainingQuest"],
+  "scriptVars": {},
+  "templateKey": "riona_training_quest",
+  "text": "Ah, so you think you might be an Aisling? Well, there's only one way to know for sure. Go and speak to Vorlof. His house is west of here by the river. Just let him know I sent you.",
+  "type": "Normal"
+}

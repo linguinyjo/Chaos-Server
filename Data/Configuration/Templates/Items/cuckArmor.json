@@ -1,5 +1,5 @@
 {
-    "buyCost": 1000,
+    "buyCost": 500,
     "category": "m armor",
     "color": "Blue",
     "isDyable": true,
@@ -9,21 +9,17 @@
     "maxDurability": 1000,
     "maxStacks": 1,
     "modifiers": {
-        "con": 1
+        "ac": -1
     },
     "pantsColor": "Black",
-    "sellValue": 500,
+    "sellValue": 50,
     "weight": 10,
     "description": "Definitely not a stick",
     "name": "Cuck Plate",
     "panelSprite": 96,
-    "scriptKeys": ["Equipment", "setelement"],
+    "scriptKeys": ["Equipment"],
     "scriptVars": {
-        "equipment": {},
-        "setelement": {
-            "defenseElement": "undead",
-            "offenseElement": "undead"
-        }
+        "equipment": {}
     },
     "templateKey": "cuckArmor"
 }

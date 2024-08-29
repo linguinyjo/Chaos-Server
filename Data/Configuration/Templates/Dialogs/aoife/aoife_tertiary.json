@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "aoife_quarterly",
+      "optionText": "Yes, I am sure"
+    },
+    {
+      "dialogKey": "close",
+      "optionText": "On second thought..."
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "aoife_tertiary",
+  "text": "This is the true beginning of a hero's life, a journey with adventure and danger ahead. Are you sure that you want this?",
+  "type": "Menu"
+}

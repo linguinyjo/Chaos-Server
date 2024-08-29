@@ -1,0 +1,19 @@
+{
+    "itemsForSale": [
+       
+    ],
+    "itemsToBuy": ["apple"],
+    "name": "Torrance",
+    "restockIntervalHrs": 1,
+    "restockPCt": 100,
+    "scriptKeys": ["showdialog", "verbalShop", "defaultBehaviors"],
+    "scriptVars": {
+        "showdialog": {
+            "dialogKey": "torrance_initial"
+        }
+    },
+    "skillsToTeach": [],
+    "spellsToTeach": [],
+    "sprite": 30,
+    "templateKey": "torrance"
+}

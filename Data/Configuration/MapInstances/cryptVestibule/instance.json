@@ -1,0 +1,9 @@
+{
+    "flags": "None",
+    "instanceId": "cryptVestibule",
+    "music": 1,
+    "name": "Crypt Vestibule",
+    "scriptKeys": [],
+    "templateKey": "425",
+    "autoDayNightCycle": false
+}

@@ -170,6 +170,7 @@ public sealed class AislingMapperProfile(
             MaximumMp = obj.UserStatSheet.EffectiveMaximumMp,
             MaxWeight = (short)obj.UserStatSheet.MaxWeight,
             OffenseElement = obj.UserStatSheet.OffenseElement,
+            PhysicalAttack = obj.UserStatSheet.PhysicalAttack,
             Str = obj.UserStatSheet.EffectiveStr,
             ToNextAbility = obj.UserStatSheet.ToNextAbility,
             ToNextLevel = obj.UserStatSheet.ToNextLevel,

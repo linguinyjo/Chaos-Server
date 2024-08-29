@@ -1,0 +1,32 @@
+[
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "mileth:(19, 62)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(11, 9)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "mileth:(19, 62)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(11, 8)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethWeaponShop:(12, 1)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(0, 9)"
+    }
+]

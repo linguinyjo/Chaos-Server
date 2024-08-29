@@ -1,0 +1,14 @@
+[
+    {
+        "blackList": [],
+        "extraScriptKeys": [],
+        "intervalSecs": 30,
+        "intervalVariancePct": 50,
+        "extraLootTableKeys": [
+          "crypt1Rats"
+        ],
+        "maxAmount": 20,
+        "maxPerSpawn": 20,
+        "monsterTemplateKey": "crypt1Rat"
+      }
+]

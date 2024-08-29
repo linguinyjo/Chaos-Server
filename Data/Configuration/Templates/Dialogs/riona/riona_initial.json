@@ -1,0 +1,13 @@
+{
+  "options": [
+    {
+      "dialogKey": "aoife_quarterly",
+      "optionText": "Blah blah blah"
+    }
+  ],
+  "scriptKeys": ["riona"],
+  "scriptVars": {},
+  "templateKey": "riona_initial",
+  "text": "Hello, welcome to Mileth Inn. What can I do for you?",
+  "type": "Menu"
+}

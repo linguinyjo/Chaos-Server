@@ -89,7 +89,7 @@ public record Attributes : Stats
         get => _physicalAttack;
         set => _physicalAttack = value;
     }
-
+    
     public int MagicAttack
     {
         get => _magicAttack;

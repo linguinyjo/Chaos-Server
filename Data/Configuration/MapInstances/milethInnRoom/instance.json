@@ -1,0 +1,9 @@
+{
+    "flags": "None",
+    "instanceId": "milethInnRoom",
+    "music": 1,
+    "name": "Mileth Inn Room",
+    "scriptKeys": [],
+    "templateKey": "3000",
+    "autoDayNightCycle": true
+}

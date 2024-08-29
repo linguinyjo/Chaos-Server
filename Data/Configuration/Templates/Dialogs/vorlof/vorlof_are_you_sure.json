@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "vorlof_yes",
+      "optionText": "I am sure"
+    },
+    {
+      "dialogKey": "Close",
+      "optionText": "On second thought..."
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "vorlof_are_you_sure",
+  "text": "Are you sure you want to begin your training?",
+  "type": "Menu"
+}

@@ -7,6 +7,7 @@ using Chaos.Common.Definitions;
 using Chaos.Common.Identity;
 using Chaos.Cryptography;
 using Chaos.Extensions.Common;
+using Chaos.Models.Panel;
 using Chaos.Models.World;
 using Chaos.Networking.Abstractions;
 using Chaos.Networking.Entities;
@@ -17,6 +18,7 @@ using Chaos.Packets;
 using Chaos.Packets.Abstractions;
 using Chaos.Packets.Abstractions.Definitions;
 using Chaos.Security.Abstractions;
+using Chaos.Services.Factories.Abstractions;
 using Chaos.Services.Servers.Options;
 using Chaos.Services.Storage.Abstractions;
 using Chaos.Storage.Abstractions;
@@ -34,6 +36,7 @@ public sealed class LoginServer : ServerBase<IChaosLoginClient>, ILoginServer<IC
     private readonly IStore<MailBox> MailStore;
     private readonly IMetaDataStore MetaDataStore;
     private readonly Notice Notice;
+    private readonly IItemFactory ItemFactory;
     public ConcurrentDictionary<uint, CreateCharInitialArgs> CreateCharRequests { get; }
     private new LoginOptions Options { get; }
 
@@ -49,7 +52,8 @@ public sealed class LoginServer : ServerBase<IChaosLoginClient>, ILoginServer<IC
         IMetaDataStore metaDataStore,
         IAccessManager accessManager,
         IStore<MailBox> mailStore,
-        IFactory<MailBox> mailBoxFactory)
+        IFactory<MailBox> mailBoxFactory,
+        IItemFactory itemFactory)
         : base(
             redirectManager,
             packetSerializer,
@@ -67,6 +71,7 @@ public sealed class LoginServer : ServerBase<IChaosLoginClient>, ILoginServer<IC
         MailBoxFactory = mailBoxFactory;
         Notice = new Notice(options.Value.NoticeMessage);
         CreateCharRequests = new ConcurrentDictionary<uint, CreateCharInitialArgs>();
+        ItemFactory = itemFactory;
 
         IndexHandlers();
     }
@@ -131,14 +136,16 @@ public sealed class LoginServer : ServerBase<IChaosLoginClient>, ILoginServer<IC
             {
                 var mapInstanceCache = CacheProvider.GetCache<MapInstance>();
                 var startingMap = mapInstanceCache.Get(Options.StartingMapInstanceId);
-
+                var inventory = new Inventory(ItemFactory);
+              
                 var aisling = new Aisling(
                     requestArgs.Name,
                     localArgs.Gender,
                     localArgs.HairStyle,
                     localArgs.HairColor,
                     startingMap,
-                    Options.StartingPoint);
+                    Options.StartingPoint,
+                    inventory);
 
                 var mailBox = MailBoxFactory.Create(aisling.Name);
 

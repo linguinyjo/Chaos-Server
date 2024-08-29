@@ -9,11 +9,9 @@
     "maxDurability": 1000,
     "maxStacks": 1,
     "modifiers": {
-        "atkSpeedPct": 100,
-        "str": 1, 
-        "physicalAttack": 3
+        "physicalAttack": 2
     },
-    "sellValue": 500,
+    "sellValue": 5,
     "weight": 1,
     "description": "Definitely not a stick",
     "name": "Stick",

@@ -10,6 +10,16 @@
         "result": "i ate some apples"
     },
     {
+        "title": "Training Quest",
+        "summary": "Speak to Riona in Mileth Inn to start your training",
+        "rewards": "Choosing a Path",
+        "qualifyingClasses": ["Peasant"],
+        "prerequisiteEventId": "",
+        "qualifyingCircles": ["one"],
+        "id": "TrainingQuest",
+        "result": "Training Completed"
+    },
+    {
         "title": "I like oranges",
         "summary": "I like oranges too, go get me some",
         "rewards": "literally nothing still",

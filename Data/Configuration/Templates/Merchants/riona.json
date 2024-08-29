@@ -1,0 +1,18 @@
+{
+  "itemsForSale": [],
+  "itemsToBuy": [],
+  "name": "Riona",
+  "scriptKeys": [
+    "showdialog",
+    "defaultBehaviors"
+  ],
+  "scriptVars": {
+    "showdialog": {
+      "dialogKey": "riona_initial"
+    }
+  },
+  "skillsToTeach": [],
+  "spellsToTeach": [],
+  "sprite": 22,
+  "templateKey": "riona"
+}

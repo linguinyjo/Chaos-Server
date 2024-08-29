@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "generic_learnspell_initial",
+      "optionText": "Learn Spell"
+    },
+    {
+      "dialogKey": "generic_forgetspell_initial",
+      "optionText": "Forget Spell"
+    }
+  ],
+  "scriptKeys": ["dar"],
+  "scriptVars": {},
+  "templateKey": "dar_initial",
+  "text": "What do you want?",
+  "type": "Menu"
+}

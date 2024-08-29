@@ -1,0 +1,13 @@
+{
+  "options": [
+    {
+      "dialogKey": "Close",
+      "optionText": "Nothing"
+    }
+  ],
+  "scriptKeys": ["vorlof"],
+  "scriptVars": {},
+  "templateKey": "vorlof_initial",
+  "text": "I'm Vorlof, what brings you to my training centre for Aislings?",
+  "type": "Menu"
+}

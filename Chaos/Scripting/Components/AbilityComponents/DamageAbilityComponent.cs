@@ -51,12 +51,12 @@ public struct DamageAbilityComponent : IComponent
 
         finalDamage += MathEx.GetPercentOf<int>((int)target.StatSheet.EffectiveMaximumHp, pctHpDamage ?? 0);
         
-        // Apply weapon damage
-        finalDamage += source.StatSheet.PhysicalAttack;
-        
         if (!damageStat.HasValue)
             return finalDamage;
 
+        // Apply weapon damage
+        finalDamage += source.StatSheet.EffectivePhysicalAttack;
+        
         if (!damageStatMultiplier.HasValue)
         {
             finalDamage += source.StatSheet.GetEffectiveStat(damageStat.Value);

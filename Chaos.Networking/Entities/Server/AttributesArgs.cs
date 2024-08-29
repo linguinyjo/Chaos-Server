@@ -123,6 +123,11 @@ public sealed record AttributesArgs : IPacketSerializable
     ///     The offense element of the character
     /// </summary>
     public Element OffenseElement { get; set; }
+    
+    /// <summary>
+    ///     The offense element of the character
+    /// </summary>
+    public int PhysicalAttack { get; set; }
 
     /// <summary>
     ///     The type of stat update to send to the client

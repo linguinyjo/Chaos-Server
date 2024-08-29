@@ -1,0 +1,18 @@
+{
+  "itemsForSale": [],
+  "itemsToBuy": [],
+  "name": "Aoife",
+  "scriptKeys": [
+    "showdialog",
+    "defaultBehaviors"
+  ],
+  "scriptVars": {
+    "showdialog": {
+      "dialogKey": "aoife_initial"
+    }
+  },
+  "skillsToTeach": [],
+  "spellsToTeach": [],
+  "sprite": 61,
+  "templateKey": "aoife"
+}

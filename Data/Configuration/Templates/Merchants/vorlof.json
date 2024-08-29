@@ -1,0 +1,18 @@
+{
+  "itemsForSale": [],
+  "itemsToBuy": [],
+  "name": "Vorlof",
+  "scriptKeys": [
+    "showdialog",
+    "defaultBehaviors"
+  ],
+  "scriptVars": {
+    "showdialog": {
+      "dialogKey": "vorlof_initial"
+    }
+  },
+  "skillsToTeach": [],
+  "spellsToTeach": [],
+  "sprite": 33,
+  "templateKey": "vorlof"
+}

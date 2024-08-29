@@ -1,0 +1,38 @@
+[
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethInn:(1, 9)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(5, 7)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethInn:(1, 9)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(4, 7)"
+    },
+    {
+        "scriptKeys": ["NewAisling"],
+        "scriptVars": {
+           
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(2, 4)"
+    },
+    {
+        "scriptKeys": ["NewAisling"],
+        "scriptVars": {
+            
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(3, 3)"
+    }
+]

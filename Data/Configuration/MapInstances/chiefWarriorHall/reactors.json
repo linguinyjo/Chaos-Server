@@ -1,0 +1,42 @@
+[
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "chiefWarriorHall:(10, 5)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(1, 7)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pathTemple2:(2, 5)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(11, 7)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pathTemple2:(2, 5)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(11, 8)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pathTemple6:(6, 10)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(6, 1)"
+    }
+]

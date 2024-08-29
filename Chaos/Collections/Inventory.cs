@@ -2,6 +2,7 @@ using Chaos.Collections.Abstractions;
 using Chaos.Common.Definitions;
 using Chaos.Extensions.Common;
 using Chaos.Models.Panel;
+using Chaos.Services.Factories.Abstractions;
 using Chaos.TypeMapper.Abstractions;
 
 namespace Chaos.Collections;
@@ -9,7 +10,20 @@ namespace Chaos.Collections;
 public sealed class Inventory : PanelBase<Item>, IInventory
 {
     private readonly ICloningService<Item> ItemCloner;
+    private readonly IItemFactory ItemFactory;
 
+    /// <summary>
+    ///     New Character inventory
+    /// </summary>
+    public Inventory(IItemFactory itemFactory)
+        : base(PanelType.Inventory, 60, [0])
+    {
+        ItemCloner = null!;
+        ItemFactory = itemFactory;
+        var item = ItemFactory.Create("cuckArmor");
+        TryAddToNextSlot(item);
+    }
+    
     /// <summary>
     ///     Used for character creation
     /// </summary>

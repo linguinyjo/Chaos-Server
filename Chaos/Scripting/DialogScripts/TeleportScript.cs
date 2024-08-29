@@ -19,6 +19,13 @@ public class TeleportScript : DialogScriptBase
     /// <inheritdoc />
     public override void OnNext(Aisling source, byte? optionIndex = null)
     {
+        foreach (var kvp in Subject.Template.ScriptVars)
+        {
+            var something = kvp.Value.GetRequired<String>("map");
+            Console.WriteLine(something);
+            Console.WriteLine($"Key: {kvp.Key}, Value: {kvp.Value.GetRequired<String>("map")}");
+        }
+        
         if (!TryFetchArgs<ArgumentCollection>(out var locationArgs))
         {
             Subject.ReplyToUnknownInput(source);

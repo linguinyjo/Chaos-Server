@@ -1,0 +1,42 @@
+[
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pathTemple1:(2, 7)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(11, 5)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pathTemple1:(2, 7)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(11, 6)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pathTemple5:(10, 7)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(1, 5)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pathTemple4:(6, 10)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(6, 2)"
+    }
+]
