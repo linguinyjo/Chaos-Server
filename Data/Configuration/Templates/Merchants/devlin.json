@@ -1,0 +1,17 @@
+{
+    "itemsForSale": [],
+    "itemsToBuy": [],
+    "name": "Devlin",
+    "restockIntervalHours": 6,
+    "restockPercent": 100,
+    "scriptKeys": ["showdialog", "defaultBehaviors"],
+    "scriptVars": {
+        "showdialog": {
+            "dialogKey": "devlin_initial"
+        }
+    },
+    "skillsToTeach": [],
+    "spellsToTeach": [],
+    "sprite": 42,
+    "templateKey": "devlin"
+}

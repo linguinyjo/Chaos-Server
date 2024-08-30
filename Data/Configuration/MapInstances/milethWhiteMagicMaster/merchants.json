@@ -1,0 +1,9 @@
+[
+    {
+        "blackList": [],
+        "direction": "Down",
+        "extraScriptKeys": [],
+        "merchantTemplateKey": "devlin",
+        "spawnPoint": "(5, 2)"
+      }
+]

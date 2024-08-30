@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "devlins_ingredients_quest_b",
+  "scriptKeys": ["devlinsIngredientsQuest"],
+  "scriptVars": {},
+  "templateKey": "devlins_ingredients_quest_a",
+  "text": "Welcome, young Aisling. I am Devlin, guardian of white magic. I have a task for you that will test your resolve and teach you valuable lessons.",
+  "type": "Normal"
+}

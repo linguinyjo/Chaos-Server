@@ -23,16 +23,6 @@
         "scriptKeys": ["warp"],
         "scriptVars": {
             "warp": {
-                "destination": "testTown:(18, 12)"
-            }
-        },
-        "shouldBlockPathfinding": true,
-        "source": "(4, 13)"
-    },
-    {
-        "scriptKeys": ["warp"],
-        "scriptVars": {
-            "warp": {
                 "destination": "milethInn:(5, 10)"
             }
         },
@@ -68,6 +58,26 @@
         },
         "shouldBlockPathfinding": false,
         "source": "(17, 84)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethCombatMaster:(6, 13)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(73, 79)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethWhiteMagicMaster:(13, 8 )"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(80, 73)"
     },
     {
         "scriptKeys": ["warp"],

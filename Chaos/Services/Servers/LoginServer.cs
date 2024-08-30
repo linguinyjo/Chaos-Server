@@ -22,6 +22,7 @@ using Chaos.Services.Factories.Abstractions;
 using Chaos.Services.Servers.Options;
 using Chaos.Services.Storage.Abstractions;
 using Chaos.Storage.Abstractions;
+using Chaos.Utilities;
 using Microsoft.Extensions.Options;
 
 namespace Chaos.Services.Servers;
@@ -37,6 +38,8 @@ public sealed class LoginServer : ServerBase<IChaosLoginClient>, ILoginServer<IC
     private readonly IMetaDataStore MetaDataStore;
     private readonly Notice Notice;
     private readonly IItemFactory ItemFactory;
+    private readonly ISkillFactory SkillFactory;
+
     public ConcurrentDictionary<uint, CreateCharInitialArgs> CreateCharRequests { get; }
     private new LoginOptions Options { get; }
 
@@ -53,7 +56,8 @@ public sealed class LoginServer : ServerBase<IChaosLoginClient>, ILoginServer<IC
         IAccessManager accessManager,
         IStore<MailBox> mailStore,
         IFactory<MailBox> mailBoxFactory,
-        IItemFactory itemFactory)
+        IItemFactory itemFactory,
+        ISkillFactory skillFactory)
         : base(
             redirectManager,
             packetSerializer,
@@ -72,6 +76,7 @@ public sealed class LoginServer : ServerBase<IChaosLoginClient>, ILoginServer<IC
         Notice = new Notice(options.Value.NoticeMessage);
         CreateCharRequests = new ConcurrentDictionary<uint, CreateCharInitialArgs>();
         ItemFactory = itemFactory;
+        SkillFactory = skillFactory;
 
         IndexHandlers();
     }
@@ -146,7 +151,10 @@ public sealed class LoginServer : ServerBase<IChaosLoginClient>, ILoginServer<IC
                     startingMap,
                     Options.StartingPoint,
                     inventory);
-
+                
+                var skillToLearn = SkillFactory.Create("assail");
+                ComplexActionHelper.LearnSkill(aisling, skillToLearn);
+                
                 var mailBox = MailBoxFactory.Create(aisling.Name);
 
                 await AislingStore.SaveAsync(aisling);

@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "blackList": [],
+    "direction": "Down",
+    "extraScriptKeys": [],
+    "merchantTemplateKey": "callough",
+    "spawnPoint": "(6, 7)"
+  }
+]

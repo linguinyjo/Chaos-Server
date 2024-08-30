@@ -20,7 +20,7 @@ public sealed class Inventory : PanelBase<Item>, IInventory
     {
         ItemCloner = null!;
         ItemFactory = itemFactory;
-        var item = ItemFactory.Create("cuckArmor");
+        var item = ItemFactory.Create("shirt");
         TryAddToNextSlot(item);
     }
     

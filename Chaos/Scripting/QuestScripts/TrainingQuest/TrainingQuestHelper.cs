@@ -24,10 +24,10 @@ public static class TrainingQuestHelper
             return;
 
         // Increment to the next stage in the enum
-        TrainingQuestStatus nextStatu = questStatus + 1;
+        TrainingQuestStatus nextStatus = questStatus + 1;
 
         // Update the player's quest status
-        player.Trackers.Enums.Set(nextStatu);
+        player.Trackers.Enums.Set(nextStatus);
     }
 
     public static void StartQuest(Aisling player)

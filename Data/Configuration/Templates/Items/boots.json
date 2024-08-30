@@ -1,25 +1,27 @@
 {
     "buyCost": 500,
-    "category": "m armor",
-    "color": "Blue",
+    "category": "boots",
+    "color": "RoyalBlue",
     "isDyable": true,
     "displaySprite": 1,
-    "equipmentType": "Armor",
-    "gender": "Male",
+    "equipmentType": "Boots",
+    "gender": "Unisex",
     "maxDurability": 1000,
     "maxStacks": 1,
     "modifiers": {
         "ac": -1
     },
+    "level": 1,
+    "levelCircle": 1,
     "pantsColor": "Black",
-    "sellValue": 50,
+    "sellValue": 250,
     "weight": 10,
-    "description": "Definitely not a stick",
-    "name": "Cuck Plate",
-    "panelSprite": 96,
+    "description": "Regular boots",
+    "name": "Boots",
+    "panelSprite": 95,
     "scriptKeys": ["Equipment"],
     "scriptVars": {
         "equipment": {}
     },
-    "templateKey": "cuckArmor"
+    "templateKey": "boots"
 }

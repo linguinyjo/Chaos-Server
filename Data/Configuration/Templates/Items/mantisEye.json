@@ -1,0 +1,15 @@
+{
+  "buyCost": 200,
+  "category": "monster",
+  "color": "Default",
+  "isModifiable": false,
+  "maxStacks": 10,
+  "sellValue": 200,
+  "weight": 1,
+  "description": "The eye of a mantis",
+  "name": "Mantis Eye",
+  "panelSprite": 335,
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "mantisEye"
+}

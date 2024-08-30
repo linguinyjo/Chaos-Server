@@ -1,8 +1,19 @@
 {
     "itemsForSale": [
-       
+        {
+            "itemTemplateKey": "woodenShield",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "leatherTunic",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "boots",
+            "stock": 100
+        }
     ],
-    "itemsToBuy": ["apple"],
+    "itemsToBuy": ["woodenShield", "stick", "boots", "leatherTunic"],
     "name": "Torrance",
     "restockIntervalHrs": 1,
     "restockPCt": 100,

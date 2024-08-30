@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "generic_learnskill_initial",
+      "optionText": "Learn Skill"
+    },
+    {
+      "dialogKey": "generic_forgetskill_initial",
+      "optionText": "Forget Skill"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "keallach_initial",
+  "text": "Need some training?",
+  "type": "Menu"
+}

@@ -25,6 +25,8 @@ using Chaos.Observers;
 using Chaos.Scripting.Abstractions;
 using Chaos.Scripting.AislingScripts;
 using Chaos.Scripting.AislingScripts.Abstractions;
+using Chaos.Scripting.FunctionalScripts.Abstractions;
+using Chaos.Scripting.FunctionalScripts.ExperienceDistribution;
 using Chaos.Services.Factories;
 using Chaos.Services.Factories.Abstractions;
 using Chaos.Services.Servers.Options;
@@ -38,6 +40,7 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
 {
     private readonly IFactory<Exchange> ExchangeFactory;
     private readonly ICloningService<Item> ItemCloner;
+    private readonly IExperienceDistributionScript ExperienceDistributionScript = DefaultExperienceDistributionScript.Create();
     
     public Bank Bank { get; private set; }
     public BodyColor BodyColor { get; set; }
@@ -801,6 +804,11 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
             Inventory.TryAddToNextSlot(item);
 
         return true;
+    }
+
+    public void GiveExperience(long amount)
+    {
+        ExperienceDistributionScript.GiveExp(this, amount);
     }
 
     public bool TryPickupItem(GroundItem groundItem, byte destinationSlot)

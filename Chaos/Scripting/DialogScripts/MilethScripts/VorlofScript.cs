@@ -27,9 +27,12 @@ public class VorlofScript:  DialogScriptBase
         if (questStatus is TrainingQuestStatus.SpokenToRiona)
         {
             Subject.AddOption("Riona sent me", "vorlof_training_quest");
-        } else if (TrainingQuestHelper.GetQuestStatus(source) is TrainingQuestStatus.CompletedDarsRequest)
+        } else if (questStatus is TrainingQuestStatus.CompletedDarsRequest)
         {
             Subject.AddOption("That was easy!", "vorlof_completed_dars_request");
+        } else if (questStatus is TrainingQuestStatus.CompletedTorrencesRequest)
+        { 
+            Subject.AddOption("Training quest", "vorlof_completed_torrances_request");
         }
     }
     

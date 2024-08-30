@@ -1,23 +1,23 @@
 [
     {
-        "pageOverride": 2,
-        "title": "I like apples",
-        "summary": "I like apples, go get me some",
-        "rewards": "literally nothing",
-        "prerequisiteEventId": "",
-        "qualifyingCircles": ["one", "two", "three"],
-        "id": "Apples1",
-        "result": "i ate some apples"
-    },
-    {
         "title": "Training Quest",
         "summary": "Speak to Riona in Mileth Inn to start your training",
         "rewards": "Choosing a Path",
-        "qualifyingClasses": ["Peasant"],
+        "qualifyingClasses": [],
         "prerequisiteEventId": "",
-        "qualifyingCircles": ["one"],
+        "qualifyingCircles": [],
         "id": "TrainingQuest",
         "result": "Training Completed"
+    },
+    {
+        "title": "Devlin's ingredients",
+        "summary": "Speak to Devlin the white magic master in Mileth",
+        "rewards": "Gold and exp",
+        "qualifyingClasses": [],
+        "prerequisiteEventId": "",
+        "qualifyingCircles": ["one"],
+        "id": "devlinsIngredients",
+        "result": "Completed"
     },
     {
         "title": "I like oranges",

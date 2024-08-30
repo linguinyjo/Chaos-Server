@@ -2,7 +2,7 @@
   "key": "crypt1Rats",
   "lootDrops": [
     {
-      "dropChance": 0.30,
+      "dropChance": 0.66,
       "itemTemplateKey": "mold"
     }
   ]

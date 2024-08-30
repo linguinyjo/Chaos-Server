@@ -9,15 +9,15 @@ public class DefaultLevelUpFormula : ILevelUpFormula
     /// <inheritdoc />
     public virtual Attributes CalculateAttributesIncrease(Aisling aisling)
     {
-        var conMod = (double)aisling.StatSheet.Con / aisling.StatSheet.Level + 1;
-        var wisMod = (double)aisling.StatSheet.Wis / aisling.StatSheet.Level + 1;
-
-        var hpGain = Math.Min(Math.Round((conMod * 50.0) / 100.0, 2), 200);
-        var mpGain = Math.Min(Math.Round((wisMod * 25.0) / 100.0, 2), 100);
+        var conMod = (double)aisling.StatSheet.Con / (aisling.StatSheet.Level + 1);
+        var wisMod = (double)aisling.StatSheet.Wis / (aisling.StatSheet.Level + 1);
 
         var random = new Random();
-        var hpRandom = random.Next(1, 41);  
-        var mpRandom = random.Next(1, 21);  
+        var hpRandom = random.Next(21, 41);  
+        var mpRandom = random.Next(11, 21);  
+        
+        var hpGain = Math.Min(Math.Round((conMod * 50.0 + hpRandom), 2), 200);
+        var mpGain = Math.Min(Math.Round((wisMod * 25.0 + mpRandom), 2), 100);
         
         return new Attributes
         {

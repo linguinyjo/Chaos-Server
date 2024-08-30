@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "close",
+  "scriptKeys": ["IncrementDevlinsIngredientsQuestStatus"],
+  "scriptVars": {},
+  "templateKey": "devlins_ingredients_quest_b",
+  "text": "Your first task is to venture into the East Woodland and collect raw wax from the bees that dwell there. This wax holds properties essential for certain white magic rituals. Once you've obtained it, return to me, and we'll discuss your next step.",
+  "type": "Normal"
+}

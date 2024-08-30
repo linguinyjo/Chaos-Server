@@ -1,6 +1,14 @@
 {
   "options": [
     {
+      "dialogKey": "generic_buyShop_initial",
+      "optionText": "Buy"
+    },
+    {
+      "dialogKey": "generic_sellshop_initial",
+      "optionText": "Sell"
+    },
+    {
       "dialogKey": "generic_learnspell_initial",
       "optionText": "Learn Spell"
     },

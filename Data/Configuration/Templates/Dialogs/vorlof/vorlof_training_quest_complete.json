@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "close",
+  "scriptKeys": ["vorlofTrainingQuest"],
+  "scriptVars": {},
+  "templateKey": "vorlof_training_quest_complete",
+  "text": "Congratualtions on completing your novice training. I deem you ready to choose a path. Go and speak to Aoife in the temple of choosing when you are ready.",
+  "type": "Normal"
+}

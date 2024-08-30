@@ -12,7 +12,7 @@ public struct SoundAbilityComponent : IComponent
     {
         var options = vars.GetOptions<ISoundComponentOptions>();
         var points = vars.GetPoints();
-
+        
         if (!options.Sound.HasValue)
             return;
 

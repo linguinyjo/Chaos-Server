@@ -1,8 +1,0 @@
-{
-  "nextDialogKey": "close",
-  "scriptKeys": ["torranceTrainingQuest"],
-  "scriptVars": {},
-  "templateKey": "torrance_training_quest_c",
-  "text": "",
-  "type": "Normal"
-}

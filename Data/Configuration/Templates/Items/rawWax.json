@@ -1,0 +1,15 @@
+{
+  "buyCost": 75,
+  "category": "monster",
+  "color": "Default",
+  "isModifiable": false,
+  "maxStacks": 10,
+  "sellValue": 75,
+  "weight": 1,
+  "description": "Raw wax",
+  "name": "Raw Wax",
+  "panelSprite": 331,
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "rawWax"
+}

@@ -1,5 +1,5 @@
 {
-    "buyCost": 1000,
+    "buyCost": 100,
     "category": "1h wep",
     "color": "Forest",
     "displaySprite": 1,
@@ -11,9 +11,11 @@
     "modifiers": {
         "physicalAttack": 2
     },
-    "sellValue": 5,
+    "level": 1,
+    "levelCircle": 1,
+    "sellValue": 50,
     "weight": 1,
-    "description": "Definitely not a stick",
+    "description": "A stick",
     "name": "Stick",
     "panelSprite": 86,
     "scriptKeys": ["Equipment"],

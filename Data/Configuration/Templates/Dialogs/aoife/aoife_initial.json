@@ -1,8 +1,13 @@
 {
-  "nextDialogKey": "aoife_secondary",
-  "scriptKeys": [],
+  "options": [
+    {
+      "dialogKey": "close",
+      "optionText": "I'll just be going"
+    }
+  ],
+  "scriptKeys": ["aoife"],
   "scriptVars": {},
   "templateKey": "aoife_initial",
-  "text": "Taverns, inns, and shops are filled with the mundane souls. Those who have no light in their eyes or are otherwise unwilling to be touched by light or fight darkness.",
-  "type": "Normal"
+  "text": "Hello young one, what brings you to my temple?",
+  "type": "Menu"
 }

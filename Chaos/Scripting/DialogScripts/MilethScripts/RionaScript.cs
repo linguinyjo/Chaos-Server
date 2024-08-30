@@ -23,13 +23,13 @@ public class RionaScript:  DialogScriptBase
     /// <inheritdoc />
     public override void OnDisplaying(Aisling source)
     {
-        if (!source.HasClass(BaseClass.Peasant))
+        var isPeasant = source.UserStatSheet.BaseClass is BaseClass.Peasant;
+        if (isPeasant)
         {
-            HandleNonPeasantDisplay();
+            HandlePeasantDisplay(source);
             return;
         }
-
-        HandlePeasantDisplay(source);
+        HandleNonPeasantDisplay();
     }
 
     private void HandleNonPeasantDisplay()

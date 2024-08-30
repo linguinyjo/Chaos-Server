@@ -1,0 +1,9 @@
+{
+    "flags": "None",
+    "instanceId": "enchantedGarden",
+    "music": 1,
+    "name": "Enchanted Garden",
+    "scriptKeys": [],
+    "templateKey": "622",
+    "autoDayNightCycle": false
+}

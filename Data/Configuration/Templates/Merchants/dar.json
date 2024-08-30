@@ -1,6 +1,6 @@
 {
   "itemsForSale": [],
-  "itemsToBuy": [],
+  "itemsToBuy": ["mold", "vipersGland"],
   "name": "Dar",
   "scriptKeys": [
     "showdialog",
