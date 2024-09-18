@@ -1,0 +1,42 @@
+[
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "rucesionWeaponShop:(6, 13)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(32, 33)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "rucesionArmorShop:(10, 8)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(37, 28)"
+    },
+    {
+        "scriptKeys": ["showWorldMap"],
+        "scriptVars": {
+            "showWorldMap": {
+                "worldMapKey": "field004"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(28, 44)"
+    },
+    {
+        "scriptKeys": ["showWorldMap"],
+        "scriptVars": {
+            "showWorldMap": {
+                "worldMapKey": "field004"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(27, 44)"
+    }
+]

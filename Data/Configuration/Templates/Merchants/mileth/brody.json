@@ -1,0 +1,26 @@
+{
+    "itemsForSale": [
+        {
+            "itemTemplateKey": "cowl",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "galuchatCoat",
+            "stock": 100
+        }
+    ],
+    "itemsToBuy": ["cowl", "galuchatCoat"],
+    "name": "Brody",
+    "restockIntervalHrs": 1,
+    "restockPCt": 100,
+    "scriptKeys": ["showdialog", "verbalShop", "defaultBehaviors"],
+    "scriptVars": {
+        "showdialog": {
+            "dialogKey": "shop_tester_initial"
+        }
+    },
+    "skillsToTeach": [],
+    "spellsToTeach": [],
+    "sprite": 56,
+    "templateKey": "brody"
+}

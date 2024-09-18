@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "oona_a_journey_to_suomi_quest_accepted",
+      "optionText": "Certainly!"
+    },
+    {
+      "dialogKey": "oona_a_journey_to_suomi_quest_rejected",
+      "optionText": "No thanks"
+    }
+  ],
+  "scriptKeys": ["aJourneyToSuomiQuest"],
+  "scriptVars": {},
+  "templateKey": "oona_a_journey_to_suomi_quest_a",
+  "text": "Oh, dear me! You there, Aisling! I'm in quite a pickle. My fruit shipment from Suomi is long overdue, and I can't leave my restaurant unattended. Would you be a dear and help me out?",
+  "type": "Menu"
+}

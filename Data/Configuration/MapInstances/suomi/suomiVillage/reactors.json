@@ -1,0 +1,42 @@
+[
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "suomiCherryFarmer:(10, 5)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(15, 72)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "suomiVillageWay:(15, 14)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(39, 0)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "suomiVillageWay:(16, 14)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(40, 0)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "suomiVillageWay:(17, 14)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(41, 0)"
+  }
+]

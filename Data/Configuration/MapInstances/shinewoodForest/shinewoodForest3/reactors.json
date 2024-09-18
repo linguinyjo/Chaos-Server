@@ -1,0 +1,32 @@
+[
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest2:(26,1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(42,99)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest2:(27,1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(43,99)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest2:(28,1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(44,99)"
+    }
+]

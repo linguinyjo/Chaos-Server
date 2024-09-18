@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "generic_buyShop_initial",
+      "optionText": "Buy"
+    },
+    {
+      "dialogKey": "generic_sellshop_initial",
+      "optionText": "Sell"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "vidar_initial",
+  "text": "Can I interest you in a weapon?",
+  "type": "Menu"
+}

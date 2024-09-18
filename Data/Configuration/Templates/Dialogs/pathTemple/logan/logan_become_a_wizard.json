@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "logan_class_change",
+      "optionText": "I am prepared"
+    },
+    {
+      "dialogKey": "Close",
+      "optionText": "I need more time"
+    }
+  ],
+  "scriptKeys": ["wizard"],
+  "scriptVars": {},
+  "templateKey": "logan_become_a_wizard",
+  "text": "A momentous choice, aspiring wizard. The road ahead is filled with wonders and dangers beyond imagination, but the potential is limitless. Are you prepared to embrace this arcane journey?",
+  "type": "Menu"
+}

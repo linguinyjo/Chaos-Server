@@ -1,0 +1,25 @@
+{
+    "buyCost": 500,
+    "category": "Boots",
+    "color": "RoyalBlue",
+    "isDyable": true,
+    "displaySprite": 1,
+    "equipmentType": "Boots",
+    "gender": "Unisex",
+    "maxDurability": 1000,
+    "maxStacks": 1,
+    "modifiers": {},
+    "level": 1,
+    "levelCircle": 1,
+    "pantsColor": "Black",
+    "sellValue": 200,
+    "weight": 2,
+    "description": "Regular boots",
+    "name": "Boots",
+    "panelSprite": 95,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "boots"
+}

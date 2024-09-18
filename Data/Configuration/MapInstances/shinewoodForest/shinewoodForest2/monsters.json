@@ -1,0 +1,22 @@
+[
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 90,
+    "intervalVariancePct": 30,
+    "extraLootTableKeys": [],
+    "maxAmount": 75,
+    "maxPerSpawn": 50,
+    "monsterTemplateKey": "sw2Bee"
+  },
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 90,
+    "intervalVariancePct": 30,
+    "extraLootTableKeys": [],
+    "maxAmount": 15,
+    "maxPerSpawn": 10,
+    "monsterTemplateKey": "sw2Mantis"
+  }
+]

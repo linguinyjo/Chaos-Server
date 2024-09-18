@@ -1,0 +1,30 @@
+{
+    "assailIntervalMs": 1500,
+    "aggroRange": 10,
+    "expReward": 62,
+    "moveIntervalMs": 1300,
+    "name": "Mantis",
+    "lootTableKeys": ["sw2Mantis"],
+    "scriptKeys": ["default"],
+    "scriptVars": {},
+    "skillIntervalMs": 1500,
+    "skillTemplateKeys": ["Assail"],
+    "spellIntervalMs": 5000,
+    "spellTemplateKeys": [],
+    "sprite": 87,
+    "statSheet": {
+        "level": 12,
+        "ac": 90,
+        "maximumHp": 750,
+        "maximumMp": 1000,
+        "physicalAttack": 10,
+        "con": 4,
+        "dex": 1,
+        "int": 1,
+        "str": 12,
+        "wis": 1
+    },
+    "templateKey": "sw2Mantis",
+    "type": "Normal",
+    "wanderIntervalMs": 2000
+}

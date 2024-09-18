@@ -2,21 +2,22 @@
     "isAssail": true,
     "learningRequirements": {
         "itemRequirements": [],
-        "requiredGold": 0,
+        "requiredGold": 5000,
         "requiredStats": {
-            "con": 1,
-            "dex": 1,
-            "int": 1,
-            "str": 1,
-            "wis": 1
+            "con": 10,
+            "dex": 3,
+            "int": 3,
+            "str": 14,
+            "wis": 3
         },
         "prerequisiteSkills": [],
         "prerequisiteSpells": []
     },
     "description": "A second assail.",
     "level": 1,
+    "levelsUp": true,
     "name": "Assault",
-    "class": "peasant",
+    "class": "warrior",
     "panelSprite": 1,
     "scriptKeys": ["damage"],
     "scriptVars": {
@@ -27,8 +28,8 @@
             "range": 1,
             "shape": "front",
             "excludeSourcePoint": true,
-            "damageStatMultiplier": 1,
-            "baseDamage": 10,
+            "damageStatMultiplier": 0.50,
+            "baseDamage": 3,
             "filter": "hostileOnly, aliveOnly, othersOnly"
         }
     },

@@ -1,0 +1,17 @@
+{
+  "buyCost": 1,
+  "category": "quest",
+  "color": "Default",
+  "isModifiable": false,
+  "accountBound": true,
+  "noTrade": true,
+  "maxStacks": 1,
+  "sellValue": 1,
+  "weight": 1,
+  "description": "A big basket of fruit. I should get this to Oona at once.",
+  "name": "Shipment of fruit",
+  "panelSprite": 725,
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "shipmentOfFruit"
+}

@@ -1,0 +1,83 @@
+[
+    {
+        "scriptKeys": ["showWorldMap"],
+        "scriptVars": {
+            "showWorldMap": {
+                "worldMapKey": "field002"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(15, 0)"
+    },
+    {
+        "scriptKeys": ["showWorldMap"],
+        "scriptVars": {
+            "showWorldMap": {
+                "worldMapKey": "field002"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(16, 0)"
+    },
+
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pietVillage:(1, 8)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(23, 8)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pietVillage:(1, 9)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(23, 9)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pietVillage:(1, 10)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(23, 10)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pietVillage:(1, 11)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(23, 11)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pietVillage:(1, 12)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(23, 12)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pietVillage:(1, 13)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(23, 13)"
+    }
+]

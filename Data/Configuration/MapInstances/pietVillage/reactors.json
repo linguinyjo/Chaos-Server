@@ -1,0 +1,62 @@
+[
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pietVillageWay:(22, 8)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(0, 8)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pietVillageWay:(22, 9)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(0, 9)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pietVillageWay:(22, 10)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(0, 10)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pietVillageWay:(22, 11)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(0, 11)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pietVillageWay:(22, 12)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(0, 12)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pietVillageWay:(22, 13)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(0, 13)"
+    }
+]

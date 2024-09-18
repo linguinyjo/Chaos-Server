@@ -12,4 +12,5 @@ public sealed record SpellTemplate : PanelEntityTemplateBase
     public required byte MaxLevel { get; init; }
     public required string? Prompt { get; set; }
     public required SpellType SpellType { get; init; }
+    public required SpellCategory SpellCategory { get; init; }
 }

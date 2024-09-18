@@ -35,7 +35,7 @@ public class DefaultExperienceFormula : IExperienceFormula
         => group.Count switch
         {
             1 => 0,
-            2 => 0,
+            2 => 0.10m,
             3 => 0.20m,
             4 => 0.30m,
             5 => 0.40m,
@@ -50,9 +50,13 @@ public class DefaultExperienceFormula : IExperienceFormula
         var monsterLevel = monster.StatSheet.Level;
         var levelDifference = highestPlayerLevel - monsterLevel;
 
+        if (levelDifference <= 0)
+            // If highest level player is a lower level than the moster dont apply any deductions
+            return 0;
+        
         switch (levelDifference)
         {
-            case <= 4:
+            case <= 5:
             {
                 // Use existing logic for level differences of 4 or less
                 var upperBound = LevelRangeFormulae.Default.GetUpperBound(highestPlayerLevel);
@@ -67,11 +71,11 @@ public class DefaultExperienceFormula : IExperienceFormula
 
                 return Math.Min(1, faultSize / stepSize * 0.25m);
             }
-            case 5:
-                // 25% reduction for 5 levels higher
-                return 0.25m;
             case 6:
-                // 50% reduction for 6 levels higher
+                // 25% reduction for 6 levels higher
+                return 0.25m;
+            case 7:
+                // 50% reduction for 7 levels higher
                 return 0.50m;
             default:
                 // For 7 or more levels difference, we'll return a special value

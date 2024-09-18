@@ -1,0 +1,9 @@
+{
+    "flags": "None",
+    "instanceId": "milethVillage",
+    "music": 1,
+    "name": "Mileth Village",
+    "scriptKeys": [],
+    "templateKey": "500",
+    "autoDayNightCycle": true
+}

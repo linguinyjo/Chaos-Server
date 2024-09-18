@@ -1,0 +1,38 @@
+{
+    "itemsForSale": [
+        {
+            "itemTemplateKey": "leatherShield",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "jupe",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "greyBoots",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "leatherGauntlet",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "leatherGreaves",
+            "stock": 100
+        }
+    ],
+    "itemsToBuy": ["shirt","woodenShield", "stick", "boots", "leatherTunic", "leatherGauntlet", "leatherGreaves", "jupe", "greyBoots"],
+    "name": "Steiner",
+    "restockIntervalHrs": 1,
+    "restockPCt": 100,
+    "scriptKeys": ["showdialog", "verbalShop", "defaultBehaviors"],
+    "scriptVars": {
+        "showdialog": {
+            "dialogKey": "steiner_initial"
+        }
+    },
+    "skillsToTeach": [],
+    "spellsToTeach": [],
+    "sprite": 30,
+    "templateKey": "steiner"
+}

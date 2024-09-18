@@ -25,7 +25,9 @@ public struct DamageAbilityComponent : IComponent
                 options.BaseDamage,
                 options.PctHpDamage,
                 options.DamageStat,
-                options.DamageStatMultiplier);
+                options.DamageStatMultiplier,
+                options.UsePAtk,
+                options.UseMatk);
 
             if (damage <= 0)
                 continue;
@@ -45,7 +47,9 @@ public struct DamageAbilityComponent : IComponent
         int? baseDamage = null,
         decimal? pctHpDamage = null,
         Stat? damageStat = null,
-        decimal? damageStatMultiplier = null)
+        decimal? damageStatMultiplier = null,
+        bool? usePAtk = null,
+        bool? useMaAtk = null)
     {
         var finalDamage = baseDamage ?? 0;
 
@@ -55,8 +59,17 @@ public struct DamageAbilityComponent : IComponent
             return finalDamage;
 
         // Apply weapon damage
-        finalDamage += source.StatSheet.EffectivePhysicalAttack;
+        if (usePAtk == true)
+        {
+            finalDamage += source.StatSheet.EffectivePhysicalAttack;
+        }
         
+        // Apply magic damage
+        if (useMaAtk == true)
+        {
+            finalDamage += source.StatSheet.EffectiveMagicAttack;
+        }
+
         if (!damageStatMultiplier.HasValue)
         {
             finalDamage += source.StatSheet.GetEffectiveStat(damageStat.Value);
@@ -78,5 +91,7 @@ public struct DamageAbilityComponent : IComponent
         Element? Element { get; init; }
         decimal? PctHpDamage { get; init; }
         IScript SourceScript { get; init; }
+        bool? UsePAtk { get; init; }
+        bool? UseMatk { get; init; }
     }
 }

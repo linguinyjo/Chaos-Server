@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "donnan_class_change",
+      "optionText": "I am prepared"
+    },
+    {
+      "dialogKey": "Close",
+      "optionText": "I need more time"
+    }
+  ],
+  "scriptKeys": ["monk"],
+  "scriptVars": {},
+  "templateKey": "donnan_become_a_monk",
+  "text": "A wise choice, aspiring monk. The journey ahead is one of constant challenge and growth, but the enlightenment gained is beyond measure. To become a monk is to forge your body into a weapon, your mind into a fortress, and your spirit into a wellspring of power. Are you prepared to undertake this transformation?",
+  "type": "Menu"
+}

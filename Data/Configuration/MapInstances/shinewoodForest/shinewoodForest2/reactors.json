@@ -1,0 +1,93 @@
+[
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest3:(43, 98)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(26,0)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest3:(44, 98)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(27,0)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest3:(45, 99)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(28,0)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForestEntrance:(7, 1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(39, 99)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForestEntrance:(8, 1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(40, 99)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForestEntrance:(9, 1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(41, 99)"
+    },
+
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForestEntrance:(18, 1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(75, 99)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForestEntrance:(19, 1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(76, 99)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForestEntrance:(20, 1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(77, 99)"
+    }
+]

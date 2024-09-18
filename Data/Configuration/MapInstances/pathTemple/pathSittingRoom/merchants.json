@@ -1,0 +1,9 @@
+[
+  {
+    "blackList": [],
+    "direction": "Right",
+    "extraScriptKeys": [],
+    "merchantTemplateKey": "hugo",
+    "spawnPoint": "(3, 7)"
+  }
+]

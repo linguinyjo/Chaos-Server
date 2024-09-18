@@ -1,0 +1,17 @@
+{
+    "itemsForSale": [],
+    "itemsToBuy": [],
+    "name": "Daithi ",
+    "restockIntervalHrs": 1,
+    "restockPCt": 100,
+    "scriptKeys": ["showdialog", "verbalShop", "defaultBehaviors"],
+    "scriptVars": {
+        "showdialog": {
+            "dialogKey": "callough_initial"
+        }
+    },
+    "skillsToTeach": [],
+    "spellsToTeach": [],
+    "sprite": 94,
+    "templateKey": "daithi"
+}

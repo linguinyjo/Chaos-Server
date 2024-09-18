@@ -1,0 +1,15 @@
+{
+  "nextDialogKey": "close",
+  "options": [],
+  "scriptKeys": [
+    "firstClassChange"
+  ],
+  "scriptVars": {
+    "firstClassChange": {
+      "class": 5
+    }
+  },
+  "templateKey": "donnan_class_change",
+  "text": "Destiny has brought you to this moment. Go forth, young monk, and begin your path to enlightenment. When you have attained greater harmony within yourself, return to me, and I may teach you the secret techniques of our order.",
+  "type": "Normal"
+}

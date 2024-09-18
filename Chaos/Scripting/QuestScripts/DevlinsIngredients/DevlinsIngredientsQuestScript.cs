@@ -1,9 +1,11 @@
 using Chaos.Common.Definitions;
+using Chaos.Models.Legend;
 using Chaos.Models.Menu;
 using Chaos.Models.World;
 using Chaos.Scripting.DialogScripts.Abstractions;
 using Chaos.Scripting.QuestScripts.TrainingQuest;
 using Chaos.Services.Factories.Abstractions;
+using Chaos.Time;
 
 namespace Chaos.Scripting.QuestScripts.DevlinsIngredients;
 
@@ -42,23 +44,23 @@ public class DevlinsIngredientsQuestScript:  DialogScriptBase
     private void HandleFetchRawWax(Aisling source)
     {
         // check for raw wax
-        var hasWax = source.Inventory.HasCountByTemplateKey("rawWax", 1);
+        var hasWax = source.Inventory.HasCountByTemplateKey("rawWax", 3);
         if (hasWax)
         {
             var newDialog = CreateDialog(
-                text: "Well done! You've successfully gathered the raw wax. I can sense its latent magical properties. Now, for your next task: return to the East Woodland and collect raw honey from the same bees. Be warned, this will be more challenging as the honey can be quite rare.",
+                text: "Well done! You've successfully gathered the raw wax. I can sense its magical properties. Now, I desperately need a Centipede gland for my research. You should be able to find one from the crypt in town.",
                 nextKey: "Close"
             );
             newDialog.Display(source);
-            source.Inventory.RemoveQuantityByTemplateKey("rawWax", 1);
-            source.TryGiveGold(750);
-            source.GiveExperience(750);
+            source.Inventory.RemoveQuantityByTemplateKey("rawWax", 3);
+            source.TryGiveGold(250);
+            source.GiveExperience(250);
             DevlinsIngredientsQuestHelper.IncrementQuestStage(source);
         }
         else
         {
             var newDialog = CreateDialog(
-                text: "I see you've returned, but without the raw wax. The bees of East Woodland can be challenging, but persistence is key. Return when you've gathered the wax.",
+                text: "I see you've returned, but without the raw wax. Return when you've gathered the wax.",
                 nextKey: "Close"
             );
             newDialog.Display(source);
@@ -67,23 +69,23 @@ public class DevlinsIngredientsQuestScript:  DialogScriptBase
     
     private void HandleFetchRawHoney(Aisling source)
     {
-        var hasWax = source.Inventory.HasCountByTemplateKey("rawHoney", 1);
+        var hasWax = source.Inventory.HasCountByTemplateKey("centipedeGland", 1);
         if (hasWax)
         {
             var newDialog = CreateDialog(
-                text: "Wonderful! You managed to find some honey. I've been needing this for quite some time. Return to me in a short while, for I will have one final task for you.",
+                text: "Wonderful! You managed to find the centipede gland. And one in such excellent condition too. Return to me in a moment, I have one final task for you.",
                 nextKey: "Close"
             );
             newDialog.Display(source);
-            source.Inventory.RemoveQuantityByTemplateKey("rawHoney", 1);
-            source.TryGiveGold(1500);
-            source.GiveExperience(1500);
+            source.Inventory.RemoveQuantityByTemplateKey("centipedeGland", 1);
+            source.TryGiveGold(500);
+            source.GiveExperience(250);
             DevlinsIngredientsQuestHelper.IncrementQuestStage(source);
         }
         else
         {
             var newDialog = CreateDialog(
-                text: "Ah, the honey proves elusive, does it? Do not be discouraged. The rarity of the honey makes it all the more valuable. Return once you have found some.",
+                text: "Ah, the centipede gland proves elusive, does it? Please find me one as soon as possible.",
                 nextKey: "Close"
             );
             newDialog.Display(source);
@@ -101,23 +103,31 @@ public class DevlinsIngredientsQuestScript:  DialogScriptBase
     
     private void HandleToShinewood(Aisling source)
     {
-        var hasWax = source.Inventory.HasCountByTemplateKey("beesWing", 5);
+        var hasWax = source.Inventory.HasCountByTemplateKey("beeWing", 3);
         if (hasWax)
         {
             var newDialog = CreateDialog(
-                text: "Well done!",
+                text: "You did it! I must say I wasn't expecting to see you again Aisling. Here, take this gold for your trouble.",
                 nextKey: "Close"
             );
             newDialog.Display(source);
-            source.Inventory.RemoveQuantityByTemplateKey("rawWax", 1);
-            source.TryGiveGold(750);
-            source.GiveExperience(750);
+            source.Inventory.RemoveQuantityByTemplateKey("beeWing", 3);
+            source.TryGiveGold(2000);
+            source.GiveExperience(250);
             DevlinsIngredientsQuestHelper.IncrementQuestStage(source);
+            var legendMark = new LegendMark(
+                "Brought Devlin her ingredients",
+                "devlinsIngredients", 
+                MarkIcon.Victory,
+                MarkColor.White,
+                1,
+                GameTime.Now);
+            source.Legend.AddOrAccumulate(legendMark);
         }
         else
         {
             var newDialog = CreateDialog(
-                text: "I see you've returned, but without the wings.",
+                text: "I see you've returned, but without the wings. Don't be fearful now Aisling. Bring me 3 wings from the bee's in Shinewood forest.",
                 nextKey: "Close"
             );
             newDialog.Display(source);

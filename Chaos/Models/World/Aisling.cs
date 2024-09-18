@@ -1079,13 +1079,7 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
 
         if (!Equipment.TryGetRemove((byte)slot, out var item))
             return;
-
-        // var patk = item.Modifiers.PhysicalAttack;
-        // var matk = item.Modifiers.MagicAttack;
-        //
-        // StatSheet.PhysicalAttack -= patk;
-        // StatSheet.MagicAttack -= matk;
-        // Client.SendAttributes(StatUpdateType.Primary);
+        
         Inventory.TryAddToNextSlot(item);
         Trackers.LastUnequip = DateTime.UtcNow;
     }
@@ -1217,7 +1211,7 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
         SetLocation(endPoint);
         Trackers.LastWalk = DateTime.UtcNow;
         Trackers.LastPosition = startPosition;
-
+        Client.SendCancelCasting();
         var creaturesToUpdate = MapInstance.GetEntitiesWithinRange<Creature>(startPoint, 16)
                                            .ThatAreWithinRange(
                                                points:

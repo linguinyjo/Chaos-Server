@@ -24,11 +24,11 @@ public class EnchantWeaponScript : ItemScriptBase, IEnchantmentScript
     /// <inheritdoc />
     public static IEnumerable<ItemMetaNode> Mutate(ItemMetaNode node, ItemTemplate template)
     {
-        if (!node.Name.StartsWith("+"))
-            if (template.Modifiers != null)
-                yield return node with
-                {
-                    Name = $"+{template.Enchant} {node.Name}"
-                };
+        if (node.Name.StartsWith("+")) yield break;
+        if (template.Modifiers != null)
+            yield return node with
+            {
+                Name = $"+{template.Enchant} {node.Name}"
+            };
     }
 }

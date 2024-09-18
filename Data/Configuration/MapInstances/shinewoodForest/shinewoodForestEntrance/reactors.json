@@ -1,0 +1,84 @@
+[
+    {
+        "scriptKeys": ["showWorldMap"],
+        "scriptVars": {
+            "showWorldMap": {
+                "worldMapKey": "field003"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(13, 24)"
+    },
+    {
+        "scriptKeys": ["showWorldMap"],
+        "scriptVars": {
+            "showWorldMap": {
+                "worldMapKey": "field003"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(14, 24)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest2:(39, 98)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(7, 0)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest2:(40, 98)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(8, 0)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest2:(41, 98)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(9, 0)"
+    },
+    
+    
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest2:(75, 98)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(18, 0)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest2:(76, 98)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(19, 0)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest2:(77, 98)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(20, 0)"
+    }
+]

@@ -1,0 +1,27 @@
+{
+    "buyCost": 8000,
+    "category": "Earrings",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 230,
+    "equipmentType": "Earrings",
+    "gender": "Unisex",
+    "maxDurability": 1000,
+    "maxStacks": 1,
+    "modifiers": {
+        "str": 1
+    },
+    "level": 1,
+    "levelCircle": 1,
+    "pantsColor": "Black",
+    "sellValue": 2750,
+    "weight": 1,
+    "description": "Silver earrings",
+    "name": "Silver Earrings",
+    "panelSprite": 230,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "silverEarrings"
+}

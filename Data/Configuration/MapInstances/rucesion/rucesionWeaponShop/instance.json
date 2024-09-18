@@ -1,0 +1,9 @@
+{
+    "flags": "None",
+    "instanceId": "rucesionWeaponShop",
+    "music": 1,
+    "name": "Rucesion Weapon Shop",
+    "scriptKeys": [],
+    "templateKey": "420",
+    "autoDayNightCycle": true
+}

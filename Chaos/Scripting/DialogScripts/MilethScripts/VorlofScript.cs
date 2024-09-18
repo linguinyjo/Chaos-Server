@@ -33,6 +33,17 @@ public class VorlofScript:  DialogScriptBase
         } else if (questStatus is TrainingQuestStatus.CompletedTorrencesRequest)
         { 
             Subject.AddOption("Training quest", "vorlof_completed_torrances_request");
+        } else if (questStatus is TrainingQuestStatus.Completed)
+        {
+            var isPeasant = source.UserStatSheet.BaseClass is BaseClass.Peasant;
+            if (isPeasant)
+            {
+                Subject.AddOption("What should I do now?", "vorlof_help_for_peasant");
+            }
+            else
+            {
+                Subject.AddOption("What should I do now?", "vorlof_help_for_first_circle_a");
+            }    
         }
     }
     

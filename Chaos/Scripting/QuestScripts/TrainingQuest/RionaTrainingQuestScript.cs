@@ -9,14 +9,18 @@ namespace Chaos.Scripting.QuestScripts.TrainingQuest;
 public class RionaTrainingQuestScript:  DialogScriptBase
 {
     private readonly IDialogFactory DialogFactory;
-    
+    private readonly Dialog Dialog;
+
     #region ScriptVars
     protected byte Class { get; init; }
     #endregion
     
     /// <inheritdoc />
     public RionaTrainingQuestScript(Dialog subject, IDialogFactory dialogFactory)
-        : base(subject) => DialogFactory = dialogFactory;
+        : base(subject) {
+        DialogFactory = dialogFactory;
+        Dialog = subject;
+    } 
 
     /// <inheritdoc />
     public override void OnDisplaying(Aisling source)
@@ -26,7 +30,7 @@ public class RionaTrainingQuestScript:  DialogScriptBase
         {
             //Completed the quest already 
             var newDialog = new Dialog(
-                source,
+                Dialog.DialogSource,
                 DialogFactory,
                 ChaosDialogType.CloseDialog,
                 "You've already completed your training.")

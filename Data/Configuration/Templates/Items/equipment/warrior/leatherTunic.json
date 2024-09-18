@@ -1,0 +1,28 @@
+{
+    "buyCost": 1500,
+    "category": "Armor",
+    "color": "Blue",
+    "isDyable": true,
+    "displaySprite": 2,
+    "equipmentType": "Armor",
+    "gender": "Unisex",
+    "maxDurability": 1000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -11
+    },
+    "class": "warrior",
+    "pantsColor": "Black",
+    "level": 1,
+    "levelCircle": 1,
+    "sellValue": 750,
+    "weight": 4,
+    "description": "Just a plain old shirt",
+    "name": "Leather Tunic",
+    "panelSprite": 97,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "leatherTunic"
+}

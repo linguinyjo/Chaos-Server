@@ -1,0 +1,29 @@
+{
+    "assailIntervalMs": 1500,
+    "expReward": 48,
+    "moveIntervalMs": 1500,
+    "name": "Bee",
+    "lootTableKeys": ["sw2Bee"],
+    "scriptKeys": ["default"],
+    "scriptVars": {},
+    "skillIntervalMs": 1500,
+    "skillTemplateKeys": ["Assail"],
+    "spellIntervalMs": 2000,
+    "spellTemplateKeys": [],
+    "sprite": 271,
+    "statSheet": {
+        "level": 8,
+        "ac": 90,
+        "maximumHp": 575,
+        "maximumMp": 1000,
+        "physicalAttack": 2,
+        "con": 4,
+        "dex": 1,
+        "int": 1,
+        "str": 6,
+        "wis": 1
+    },
+    "templateKey": "sw2Bee",
+    "type": "Normal",
+    "wanderIntervalMs": 2000
+}

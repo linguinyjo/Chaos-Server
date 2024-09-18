@@ -9,15 +9,19 @@ namespace Chaos.Scripting.DialogScripts.ClassChangeScripts;
 public class WarriorScript :  DialogScriptBase
 {
     private readonly IDialogFactory DialogFactory;
-    
+    private readonly Dialog Dialog;
+
     #region ScriptVars
     protected byte Class { get; init; }
     #endregion
     
     /// <inheritdoc />
     public WarriorScript(Dialog subject, IDialogFactory dialogFactory)
-        : base(subject) => DialogFactory = dialogFactory;
-
+        : base(subject) {
+        DialogFactory = dialogFactory;
+        Dialog = subject;
+    } 
+    
     /// <inheritdoc />
     public override void OnDisplaying(Aisling source)
     {
@@ -31,7 +35,7 @@ public class WarriorScript :  DialogScriptBase
             case true:
             {
                 var newDialog = new Dialog(
-                    source,
+                    Dialog.DialogSource,
                     DialogFactory,
                     ChaosDialogType.Normal,
                     "You are already a warrior, come back when you are stronger")
@@ -47,7 +51,7 @@ public class WarriorScript :  DialogScriptBase
                 {
                     // Some other class 
                     var newDialog = new Dialog(
-                        source,
+                        Dialog.DialogSource,
                         DialogFactory,
                         ChaosDialogType.Normal,
                         $"You already have a class. Becoming a warrior is no longer an option for you. Begone from here {source.UserStatSheet.BaseClass}!")

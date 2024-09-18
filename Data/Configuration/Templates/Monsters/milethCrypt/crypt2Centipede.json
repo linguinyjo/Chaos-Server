@@ -1,0 +1,30 @@
+{
+    "assailIntervalMs": 1500,
+    "expReward": 35,
+    "moveIntervalMs": 1500,
+    "aggroRange": 10,
+    "name": "Centipede",
+    "lootTableKeys": ["crypt2Centipede"],
+    "scriptKeys": ["default"],
+    "scriptVars": {},
+    "skillIntervalMs": 1500,
+    "skillTemplateKeys": ["Assail"],
+    "spellIntervalMs": 10000,
+    "spellTemplateKeys": [],
+    "sprite": 52,
+    "statSheet": {
+        "level": 7,
+        "ac": 93,
+        "maximumHp": 450,
+        "maximumMp": 100,
+        "physicalAttack": 3,
+        "con": 2,
+        "dex": 1,
+        "int": 1,
+        "str": 8,
+        "wis": 1
+    },
+    "templateKey": "crypt2Centipede",
+    "type": "Normal",
+    "wanderIntervalMs": 2000
+}

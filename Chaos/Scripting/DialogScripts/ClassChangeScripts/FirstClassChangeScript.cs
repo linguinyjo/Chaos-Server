@@ -56,8 +56,8 @@ public class FirstClassChangeScript : ConfigurableDialogScriptBase
 
     public override void OnNext(Aisling source, byte? optionIndex = null)
     {
-        var targetMap = SimpleCache.Get<MapInstance>("mileth");
-        var destination = new Location("mileth", 94, 12);
+        var targetMap = SimpleCache.Get<MapInstance>("milethVillage");
+        var destination = new Location("milethVillage", 94, 12);
         source.TraverseMap(targetMap, destination);
     }
 }

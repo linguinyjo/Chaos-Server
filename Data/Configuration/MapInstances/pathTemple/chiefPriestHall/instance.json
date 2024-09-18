@@ -1,0 +1,9 @@
+{
+    "flags": "None",
+    "instanceId": "chiefPriestHall",
+    "music": 1,
+    "name": "Chief Priest Hall",
+    "scriptKeys": [],
+    "templateKey": "345",
+    "autoDayNightCycle": false
+}

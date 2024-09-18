@@ -28,9 +28,10 @@
             "range": 1,
             "shape": "front",
             "excludeSourcePoint": true,
-            "damageStatMultiplier": 0.5,
+            "damageStatMultiplier": 0.50,
             "baseDamage": 3,
-            "filter": "hostileOnly, aliveOnly, othersOnly"
+            "filter": "hostileOnly, aliveOnly, othersOnly",
+            "usePAtk": true
         }
     },
     "templateKey": "assail"

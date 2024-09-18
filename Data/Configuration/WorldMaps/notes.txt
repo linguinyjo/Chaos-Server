@@ -1,0 +1,4 @@
+field002 = central point from loures including north
+field003 = central point from loures including south
+field004 = travel from rucesion (ie mostly ship ports like loures, abel, lynith beach etc)
+field005 = travel from abel port west side

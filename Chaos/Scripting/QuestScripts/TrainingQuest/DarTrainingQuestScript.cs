@@ -9,10 +9,14 @@ namespace Chaos.Scripting.QuestScripts.TrainingQuest;
 public class DarTrainingQuestScript:  DialogScriptBase
 {
     private readonly IDialogFactory DialogFactory;
-    
+    private readonly Dialog Dialog;
+
     /// <inheritdoc />
     public DarTrainingQuestScript(Dialog subject, IDialogFactory dialogFactory)
-        : base(subject) => DialogFactory = dialogFactory;
+        : base(subject) {
+        DialogFactory = dialogFactory;
+        Dialog = subject;
+    } 
 
     /// <inheritdoc />
     public override void OnDisplaying(Aisling source)
@@ -20,11 +24,11 @@ public class DarTrainingQuestScript:  DialogScriptBase
         var trainingQuestStatus = TrainingQuestHelper.GetQuestStatus(source);
         if (trainingQuestStatus is not TrainingQuestStatus.SpokenToDar) return;
         // already on this part of the quest, so check to see if player has mould
-        var hasMould = source.Inventory.HasCount("mold", 5);
+        var hasMould = source.Inventory.HasCount("mold", 3);
         if (hasMould)
         {
             var newDialog = new Dialog(
-                source,
+                Dialog.DialogSource,
                 DialogFactory,
                 ChaosDialogType.Normal,
                 "Well, well... You've actually managed to collect the mold. I must admit, I'm mildly impressed. Perhaps there's a flicker of potential in you after all. Go back and tell Vorlof that you have succeeded in doing as I have asked.")
@@ -32,17 +36,17 @@ public class DarTrainingQuestScript:  DialogScriptBase
                 NextDialogKey = "Close"
             };
             newDialog.Display(source);
-            source.Inventory.RemoveQuantity("mold", 5);
-            source.GiveExperience(500);
+            source.Inventory.RemoveQuantity("mold", 3);
+            source.GiveExperience(100);
             TrainingQuestHelper.IncrementQuestStage(source);
         }
         else
         {
             var newDialog = new Dialog(
-                source,
+                Dialog.DialogSource,
                 DialogFactory,
                 ChaosDialogType.Normal,
-                "Empty-handed, are we? I suppose I shouldn't be surprised. Did the darkness frighten you, little Aisling? Or were the rats too formidable for your meager skills? Return when you've mustered the courage to complete this simple task. Until then, you're wasting my time.")
+                "Where's my mold? Don't tell me the rats are too formidable for your meager skills? Return when you've mustered the courage to complete this simple task. Until then, you're wasting my time.")
             {
                 NextDialogKey = "Close"
             };

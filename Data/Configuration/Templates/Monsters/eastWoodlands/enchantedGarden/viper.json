@@ -1,0 +1,29 @@
+{
+    "assailIntervalMs": 1500,
+    "expReward": 13,
+    "moveIntervalMs": 1500,
+    "name": "Viper",
+    "lootTableKeys": ["vipers"],
+    "scriptKeys": ["default"],
+    "scriptVars": {},
+    "skillIntervalMs": 1500,
+    "skillTemplateKeys": ["Assail"],
+    "spellIntervalMs": 10000,
+    "spellTemplateKeys": [],
+    "sprite": 49,
+    "statSheet": {
+        "level": 2,
+        "ac": 99,
+        "maximumHp": 170,
+        "maximumMp": 100,
+        "physicalAttack": 0,
+        "con": 2,
+        "dex": 1,
+        "int": 1,
+        "str": 1,
+        "wis": 1
+    },
+    "templateKey": "viper",
+    "type": "Normal",
+    "wanderIntervalMs": 2000
+}

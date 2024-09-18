@@ -1,0 +1,9 @@
+{
+    "flags": "None",
+    "instanceId": "suomiRestaurant",
+    "music": 1,
+    "name": "Suomi Restaurant",
+    "scriptKeys": [],
+    "templateKey": "412",
+    "autoDayNightCycle": true
+}

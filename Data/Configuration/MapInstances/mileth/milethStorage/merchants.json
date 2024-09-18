@@ -1,0 +1,9 @@
+[
+    {
+        "blackList": [],
+        "direction": "Right",
+        "extraScriptKeys": [],
+        "merchantTemplateKey": "cassidy",
+        "spawnPoint": "(3, 5)"
+      }
+]

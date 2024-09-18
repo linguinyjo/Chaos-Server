@@ -1,0 +1,43 @@
+{
+  "castLines": 2,
+  "learningRequirements": {
+    "itemRequirements": [],
+    "requiredGold": 1000,
+    "requiredStats": {
+      "con": 3,
+      "dex": 3,
+      "int": 4,
+      "str": 3,
+      "wis": 8
+    },
+    "prerequisiteSkills": [],
+    "prerequisiteSpells": []
+  },
+  "spellType": "Targeted",
+  "spellCategory": "Heal",
+  "class": "Priest",
+  "description": "Applies a small heal effect to your target.",
+  "level": 1,
+  "name": "Beag Ioc",
+  "panelSprite": 28,
+  "scriptKeys": [
+    "heal"
+  ],
+  "scriptVars": {
+    "heal": {
+      "bodyAnimation": "priestCast",
+      "animation": {
+        "targetAnimation": 4,
+        "animationSpeed": 150
+      },
+      "healStatMultiplier": 3,
+      "manaCost": 50,
+      "sound": 8,
+      "baseHeal": 100,
+      "healStat": "wis",
+      "range": 8,
+      "filter": "friendlyOnly, aliveOnly"
+    }
+  },
+  "templateKey": "beag_ioc"
+}

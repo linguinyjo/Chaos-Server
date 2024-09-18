@@ -1,0 +1,22 @@
+[
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethVillage:(26, 16)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(6, 14)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethVillage:(26, 16)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(7, 14)"
+    }
+]

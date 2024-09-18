@@ -1,0 +1,28 @@
+{
+    "buyCost": 40000,
+    "category": "Staff",
+    "color": "Forest",
+    "displaySprite": 24,
+    "equipmentType": "Weapon",
+    "gender": "Unisex",
+    "isModifiable": true,
+    "maxDurability": 7000,
+    "maxStacks": 1,
+    "level": 11,
+    "levelCircle": 2,
+    "class": "priest",
+    "modifiers": {
+        "magicAttack": 40,
+        "maximumMp": 200
+    },
+    "sellValue": 15000,
+    "weight": 6,
+    "description": "A staff for healing",
+    "name": "Holy Kronos",
+    "panelSprite": 183,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "holyKronos"
+}

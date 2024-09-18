@@ -123,6 +123,8 @@ public class VitalityConsumableScript : ConfigurableItemScriptBase,
     public decimal? PctHpHeal { get; init; }
 
     public IScript SourceScript { get; init; }
+    public bool? UsePAtk { get; init; }
+    public bool? UseMatk { get; init; }
 
     /// <inheritdoc />
     public int? ManaDrain { get; init; }

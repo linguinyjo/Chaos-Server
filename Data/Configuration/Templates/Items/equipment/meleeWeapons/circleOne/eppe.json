@@ -1,0 +1,27 @@
+{
+    "buyCost": 3000,
+    "category": "Sword",
+    "color": "Forest",
+    "displaySprite": 2,
+    "equipmentType": "Weapon",
+    "gender": "Unisex",
+    "isModifiable": true,
+    "maxDurability": 3000,
+    "maxStacks": 1,
+    "modifiers": {
+        "physicalAttack": 15,
+        "maximumMp": -100
+    },
+    "level": 1,
+    "levelCircle": 1,
+    "sellValue": 1500,
+    "weight": 5,
+    "description": "Small enough for a child to wield",
+    "name": "Eppe",
+    "panelSprite": 87,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "eppe"
+}

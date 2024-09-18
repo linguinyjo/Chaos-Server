@@ -1,0 +1,222 @@
+[
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethTavern:(13, 4)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(69, 54)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethRestaurant:(8, 13)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(62, 60)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethStorage:(5, 10)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(54, 69)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethGoodsShop:(6, 13)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(42, 58)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethSpecialSkillMaster:(6, 13)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(14, 41)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethBlackMagicMaster:(13, 8)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(19, 22)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethMagicShop:(6, 13)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(26, 15)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethInn:(5, 10)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(27, 43)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethInn:(10, 2)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(32, 37)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethArmorShop:(10, 9)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(18, 62)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethWeaponShop:(6, 13)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(13, 68)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethTrainingRoom:(10, 5)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(17, 84)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethCombatMaster:(6, 13)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(73, 79)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethWhiteMagicMaster:(13, 8 )"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(80, 73)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethPathReception:(10, 5)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(93, 12)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "cryptVestibule:(7, 14)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(91, 54)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethVillageWay:(1, 4)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(99, 26)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethVillageWay:(1, 5)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(99, 27)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethVillageWay:(1, 6)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(99, 28)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethVillageWay:(1, 7)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(99, 29)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethVillageWay:(1, 8)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(99, 30)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethVillageWay:(1, 9)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(99, 31)"
+    }
+]

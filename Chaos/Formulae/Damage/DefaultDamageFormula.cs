@@ -20,11 +20,11 @@ public class DefaultDamageFormula : IDamageFormula
         //mostly lifted from http://da-wizard.com/elements.html
         //                                                  D E F E N S E
         //                         None,  Fire,  Water,  Wind,  Earth, Holy,  Darkness,  Wood,  Metal,  Undead
-        /*      None*/     new[] { 0.58m, 0.37m, 0.37m,  0.37m, 0.37m, 0.37m, 0.37m,     0.37m, 0.37m,  0.37m }.ToImmutableArray(),
-        /* O    Fire*/     new[] { 2.32m, 0.58m, 0.66m,  1.74m, 1.03m, 0.93m, 0.83m,     2.01m, 0.83m,  2.01m }.ToImmutableArray(),
-        /* F    Water*/    new[] { 2.32m, 1.74m, 0.58m,  1.03m, 0.66m, 0.93m, 0.83m,     0.58m, 1.74m,  0.93m }.ToImmutableArray(), 
-        /* F    Wind*/     new[] { 2.32m, 0.66m, 1.03m,  0.58m, 1.74m, 0.93m, 0.83m,     1.03m, 1.74m,  0.83m }.ToImmutableArray(),
-        /* E    Earth*/    new[] { 2.32m, 1.03m, 1.74m,  0.66m, 0.58m, 0.93m, 0.83m,     0.58m, 0.83m,  0.58m }.ToImmutableArray(),
+        /*      None*/     new[] { 1.00m, 0.90m, 0.90m,  0.90m, 0.90m, 1.70m, 1.70m,     0.37m, 0.37m,  0.37m }.ToImmutableArray(),
+        /* O    Fire*/     new[] { 1.10m, 1.00m, 0.75m,  1.25m, 1.00m, 0.93m, 0.83m,     2.01m, 0.83m,  2.01m }.ToImmutableArray(),
+        /* F    Water*/    new[] { 1.10m, 1.25m, 1.00m,  1.00m, 0.75m, 0.93m, 0.83m,     0.58m, 1.74m,  0.93m }.ToImmutableArray(), 
+        /* F    Wind*/     new[] { 1.10m, 0.75m, 1.00m,  1.00m, 1.25m, 0.93m, 0.83m,     1.03m, 1.74m,  0.83m }.ToImmutableArray(),
+        /* E    Earth*/    new[] { 1.10m, 1.00m, 1.25m,  0.75m, 1.00m, 0.93m, 0.83m,     0.58m, 0.83m,  0.58m }.ToImmutableArray(),
         /* N    Holy*/     new[] { 2.32m, 0.76m, 0.76m,  0.76m, 0.76m, 0.58m, 1.48m,     0.58m, 0.76m,  2.01m }.ToImmutableArray(),
         /* S    Darkness*/ new[] { 2.32m, 1.25m, 1.25m,  1.25m, 1.25m, 1.48m, 0.58m,     1.48m, 0.58m,  0.58m }.ToImmutableArray(),
         /* E    Wood*/     new[] { 2.32m, 0.58m, 0.76m,  1.03m, 1.74m, 0.93m, 0.83m,     0.58m, 1.03m,  0.83m }.ToImmutableArray(),

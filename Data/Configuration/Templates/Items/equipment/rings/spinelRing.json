@@ -1,0 +1,28 @@
+{
+    "buyCost": 20000,
+    "category": "Ring",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 210,
+    "equipmentType": "Ring",
+    "gender": "Unisex",
+    "maxDurability": 1000,
+    "maxStacks": 1,
+    "modifiers": {
+        "maximumHp": 200
+    },
+    "class": "peasant",
+    "pantsColor": "Black",
+    "level": 11,
+    "levelCircle": 2,
+    "sellValue": 7500,
+    "weight": 2,
+    "description": "A ring made from ruby",
+    "name": "Spinel Ring",
+    "panelSprite": 210,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "spinelRing"
+}

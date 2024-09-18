@@ -47,19 +47,18 @@ public struct HealAbilityComponent : IComponent
         decimal? healStatMultiplier = null)
     {
         var finalHeal = baseHeal ?? 0;
-
         finalHeal += MathEx.GetPercentOf<int>((int)target.StatSheet.EffectiveMaximumHp, pctHpHeal ?? 0);
 
-        if (!healStat.HasValue)
-            return finalHeal;
-
+        if (!healStat.HasValue) return finalHeal;
+        
         if (!healStatMultiplier.HasValue)
         {
             finalHeal += source.StatSheet.GetEffectiveStat(healStat.Value);
-
+            finalHeal += source.StatSheet.EffectiveMagicAttack;
             return finalHeal;
         }
-
+        
+        finalHeal += Convert.ToInt32(source.StatSheet.EffectiveMagicAttack * healStatMultiplier.Value); ;
         finalHeal += Convert.ToInt32(source.StatSheet.GetEffectiveStat(healStat.Value) * healStatMultiplier.Value);
 
         return finalHeal;

@@ -10,6 +10,7 @@ public class TorranceTrainingQuestScript:  DialogScriptBase
 {
     private readonly IDialogFactory DialogFactory;
     private readonly IItemFactory ItemFactory;
+    private readonly Dialog Dialog;
 
     #region ScriptVars
     protected byte Class { get; init; }
@@ -21,6 +22,7 @@ public class TorranceTrainingQuestScript:  DialogScriptBase
     {
         DialogFactory = dialogFactory;
         ItemFactory = itemFactory;
+        Dialog = subject;
     }
 
     /// <inheritdoc />
@@ -38,7 +40,7 @@ public class TorranceTrainingQuestScript:  DialogScriptBase
                 if (hasGlands)
                 {
                     var newDialog = new Dialog(
-                        source,
+                        Dialog.DialogSource,
                         DialogFactory,
                         ChaosDialogType.Normal,
                         "Well, I'll be... You actually managed to get them. You've done well, I suppose. Here's a bit of coin for your trouble. Now, don't let it go to your head – there's still much for you to learn. Go back and Speak with Vorlof.")
@@ -48,13 +50,12 @@ public class TorranceTrainingQuestScript:  DialogScriptBase
                     newDialog.Display(source);
                     source.Inventory.RemoveQuantityByTemplateKey("vipersGland", 3);
                     source.TryGiveGold(500);
-                    source.GiveExperience(500);
                     TrainingQuestHelper.IncrementQuestStage(source);
                 }
                 else
                 {
                     var newDialog = new Dialog(
-                        source,
+                        Dialog.DialogSource,
                         DialogFactory,
                         ChaosDialogType.Normal,
                         "Back already? And empty-handed, no less. What's the matter, couldn't handle a few little vipers? Stop wasting my time and get back out there. And this time, don't come back until you have something to show for your efforts.")

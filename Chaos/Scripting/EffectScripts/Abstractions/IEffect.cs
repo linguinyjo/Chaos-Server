@@ -6,7 +6,7 @@ using Chaos.Time.Abstractions;
 
 namespace Chaos.Scripting.EffectScripts.Abstractions;
 
-public interface IEffect : IDeltaUpdatable, IScript
+public partial interface IEffect : IDeltaUpdatable, IScript
 {
     EffectColor Color { get; set; }
     TimeSpan Remaining { get; set; }

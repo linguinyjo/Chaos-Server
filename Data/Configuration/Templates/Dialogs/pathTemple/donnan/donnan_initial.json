@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "donnan_become_a_monk",
+      "optionText": "I want to become a monk"
+    },
+    {
+      "dialogKey": "donnan_monk_info",
+      "optionText": "Tell me about the path of the monk"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "donnan_initial",
+  "text": "Welcome, seeker of balance. I am the keeper of inner harmony. What draws you to this path?",
+  "type": "Menu"
+}

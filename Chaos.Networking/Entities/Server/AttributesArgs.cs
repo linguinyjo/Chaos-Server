@@ -125,9 +125,19 @@ public sealed record AttributesArgs : IPacketSerializable
     public Element OffenseElement { get; set; }
     
     /// <summary>
-    ///     The offense element of the character
+    ///     The physical attack of the character
     /// </summary>
     public int PhysicalAttack { get; set; }
+    
+    /// <summary>
+    ///     The magic attack of the character
+    /// </summary>
+    public int MagicAttack { get; set; }
+    
+    /// <summary>
+    ///     The regen of the character
+    /// </summary>
+    public int Regen { get; set; }
 
     /// <summary>
     ///     The type of stat update to send to the client

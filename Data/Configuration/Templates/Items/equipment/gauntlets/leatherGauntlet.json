@@ -1,0 +1,29 @@
+{
+    "buyCost": 2000,
+    "category": "Gauntlet",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 227,
+    "equipmentType": "Gauntlet",
+    "gender": "Unisex",
+    "maxDurability": 1000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -1,
+        "maximumMp": -250
+    },
+    "class": "peasant",
+    "pantsColor": "Black",
+    "level": 11,
+    "levelCircle": 2,
+    "sellValue": 750,
+    "weight": 2,
+    "description": "A single gauntlet made from leather",
+    "name": "Leather Gauntlet",
+    "panelSprite": 227,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "leatherGauntlet"
+}

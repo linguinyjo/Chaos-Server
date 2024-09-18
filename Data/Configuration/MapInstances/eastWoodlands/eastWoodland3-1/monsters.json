@@ -1,0 +1,33 @@
+[
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 120,
+    "intervalVariancePct": 50,
+    "extraLootTableKeys": [
+    ],
+    "maxAmount": 40,
+    "maxPerSpawn": 40,
+    "monsterTemplateKey": "ew3Bee"
+  },
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 120,
+    "intervalVariancePct": 50,
+    "extraLootTableKeys": [],
+    "maxAmount": 30,
+    "maxPerSpawn": 30,
+    "monsterTemplateKey": "ew3Mantis"
+  },
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 120,
+    "intervalVariancePct": 50,
+    "extraLootTableKeys": [],
+    "maxAmount": 15,
+    "maxPerSpawn": 15,
+    "monsterTemplateKey": "ew3Wolf"
+  }
+]

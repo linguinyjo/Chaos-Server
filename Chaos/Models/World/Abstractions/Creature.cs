@@ -231,7 +231,7 @@ public abstract class Creature : NamedEntity, IAffected, IScripted<ICreatureScri
     {
         if (!ShouldRegisterClick(source.Id))
             return;
-
+        source.SendOrangeBarMessage(Name);
         LastClicked[source.Id] = DateTime.UtcNow;
         Script.OnClicked(source);
     }

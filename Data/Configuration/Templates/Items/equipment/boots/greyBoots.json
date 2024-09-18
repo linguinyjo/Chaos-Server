@@ -1,0 +1,27 @@
+{
+    "buyCost": 5000,
+    "category": "Boots",
+    "color": "Gray",
+    "isDyable": true,
+    "displaySprite": 1,
+    "equipmentType": "Boots",
+    "gender": "Unisex",
+    "maxDurability": 1000,
+    "maxStacks": 1,
+    "modifiers": {
+        "dex": 1
+    },
+    "level": 11,
+    "levelCircle": 2,
+    "pantsColor": "Black",
+    "sellValue": 2000,
+    "weight": 2,
+    "description": "Some grey boots",
+    "name": "Grey Boots",
+    "panelSprite": 95,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "greyBoots"
+}

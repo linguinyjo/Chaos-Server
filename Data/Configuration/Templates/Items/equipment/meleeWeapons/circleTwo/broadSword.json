@@ -1,0 +1,28 @@
+{
+    "buyCost": 40000,
+    "category": "Sword",
+    "color": "Forest",
+    "displaySprite": 5,
+    "equipmentType": "Weapon",
+    "gender": "Unisex",
+    "isModifiable": true,
+    "maxDurability": 7000,
+    "maxStacks": 1,
+    "level": 11,
+    "levelCircle": 2,
+    "class": "warrior",
+    "modifiers": {
+        "physicalAttack": 40,
+        "maximumMp": -750
+    },
+    "sellValue": 15000,
+    "weight": 9,
+    "description": "A broad sword",
+    "name": "Broad Sword",
+    "panelSprite": 90,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "broadSword"
+}

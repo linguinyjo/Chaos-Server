@@ -91,5 +91,11 @@ public class DamageScript : ConfigurableSkillScriptBase,
 
     /// <inheritdoc />
     public bool ShouldNotBreakHide { get; init; }
+    
+    /// <inheritdoc />
+    public bool? UsePAtk { get; init; }
+   
+    /// <inheritdoc />
+    public bool? UseMatk { get; init; }
     #endregion
 }

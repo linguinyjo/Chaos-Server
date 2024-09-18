@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "close",
+      "optionText": "I'll just be going"
+    },
+    {
+      "dialogKey": "hugo_what_choice",
+      "optionText": "What choice?"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "hugo_initial",
+  "text": "Beyond lie the guardians of the Path. The true gatekeepers of all that is powerful in Temuair. But you must choose wisely young Aisling, for this is a choice one can not undo.",
+  "type": "Menu"
+}

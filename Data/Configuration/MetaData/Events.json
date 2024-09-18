@@ -3,20 +3,24 @@
         "title": "Training Quest",
         "summary": "Speak to Riona in Mileth Inn to start your training",
         "rewards": "Choosing a Path",
-        "qualifyingClasses": [],
-        "prerequisiteEventId": "",
-        "qualifyingCircles": [],
+        "qualifyingCircles": ["one", "two", "three", "four"],
         "id": "TrainingQuest",
         "result": "Training Completed"
     },
     {
-        "title": "Devlin's ingredients",
+        "title": "Devlin's Ingredients",
         "summary": "Speak to Devlin the white magic master in Mileth",
         "rewards": "Gold and exp",
-        "qualifyingClasses": [],
-        "prerequisiteEventId": "",
-        "qualifyingCircles": ["one"],
+        "qualifyingCircles": ["one", "two", "three", "four"],
         "id": "devlinsIngredients",
+        "result": "Completed"
+    },
+    {
+        "title": "A Journey to Suomi",
+        "summary": "Speak to Oona in Mileth's restaurant. She's in need of some help.",
+        "rewards": "Gold",
+        "qualifyingCircles": ["one", "two", "three", "four"],
+        "id": "aJourneyToSuomi",
         "result": "Completed"
     },
     {

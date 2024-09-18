@@ -1,0 +1,28 @@
+{
+    "buyCost": 25000,
+    "category": "Sword",
+    "color": "Forest",
+    "displaySprite": 4,
+    "equipmentType": "Weapon",
+    "gender": "Unisex",
+    "isModifiable": true,
+    "maxDurability": 5000,
+    "maxStacks": 1,
+    "level": 11,
+    "levelCircle": 2,
+    "modifiers": {
+        "physicalAttack": 32,
+        "maximumMp": -750
+    },
+    "sellValue": 10000,
+    "class": "warrior",
+    "weight": 8,
+    "description": "A sharp looking sword",
+    "name": "claidheamh",
+    "panelSprite": 89,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "Claidheamh"
+}

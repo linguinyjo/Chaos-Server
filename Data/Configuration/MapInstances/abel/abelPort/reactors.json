@@ -1,0 +1,72 @@
+[
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "abelWeaponShop:(6, 13)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(55, 17)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "abelArmorShop:(10, 8)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(60, 12)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "abelPortWay:(9, 20)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(28, 0)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "abelPortWay:(10, 20)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(29, 0)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "abelPortWay:(11, 20)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(30, 0)"
+    },
+    {
+        "scriptKeys": ["showWorldMap"],
+        "scriptVars": {
+            "showWorldMap": {
+                "worldMapKey": "field005"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(14, 67)"
+    },
+    {
+        "scriptKeys": ["showWorldMap"],
+        "scriptVars": {
+            "showWorldMap": {
+                "worldMapKey": "field005"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(15, 67)"
+    }
+]

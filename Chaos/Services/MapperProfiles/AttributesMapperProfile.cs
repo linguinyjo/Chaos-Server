@@ -31,6 +31,7 @@ public sealed class AttributesMapperProfile : IMapperProfile<Attributes, Attribu
             SpellDamagePct = obj.SpellDamagePct,
             PhysicalAttack = obj.PhysicalAttack,
             MagicAttack = obj.MagicAttack,
+            Regen = obj.Regen
         };
 
     public AttributesSchema Map(Attributes obj)
@@ -54,6 +55,7 @@ public sealed class AttributesMapperProfile : IMapperProfile<Attributes, Attribu
             SpellDamagePct = obj.SpellDamagePct,
             PhysicalAttack = obj.PhysicalAttack,
             MagicAttack = obj.MagicAttack,
+            Regen = obj.Regen
         };
 
     /// <inheritdoc />
@@ -103,6 +105,7 @@ public sealed class AttributesMapperProfile : IMapperProfile<Attributes, Attribu
             Level = obj.Level,
             PhysicalAttack = obj.PhysicalAttack,
             MagicAttack = obj.MagicAttack,
+            Regen = obj.Regen
         };
 
     public StatSheetSchema Map(StatSheet obj)
@@ -130,6 +133,7 @@ public sealed class AttributesMapperProfile : IMapperProfile<Attributes, Attribu
             Wis = obj.Wis,
             PhysicalAttack = obj.PhysicalAttack,
             MagicAttack = obj.MagicAttack,
+            Regen = obj.Regen
         };
 
     public UserStatSheet Map(UserStatSheetSchema obj)
@@ -166,6 +170,7 @@ public sealed class AttributesMapperProfile : IMapperProfile<Attributes, Attribu
             MaxWeight = obj.MaxWeight,
             PhysicalAttack = obj.PhysicalAttack,
             MagicAttack = obj.MagicAttack,
+            Regen = obj.Regen
         };
 
     public UserStatSheetSchema Map(UserStatSheet obj)
@@ -202,5 +207,6 @@ public sealed class AttributesMapperProfile : IMapperProfile<Attributes, Attribu
             MaxWeight = obj.MaxWeight,
             PhysicalAttack = obj.PhysicalAttack,
             MagicAttack = obj.MagicAttack,
+            Regen = obj.Regen
         };
 }
