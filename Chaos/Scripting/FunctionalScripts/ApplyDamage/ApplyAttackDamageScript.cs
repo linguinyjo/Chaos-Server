@@ -49,7 +49,6 @@ public class ApplyAttackDamageScript : ScriptBase, IApplyDamageScript
                 monster.StatSheet.SubtractHp(damage);
                 monster.ShowHealth();
                 monster.Script.OnAttacked(source, damage);
-
                 if (!monster.IsAlive)
                     monster.Script.OnDeath();
 

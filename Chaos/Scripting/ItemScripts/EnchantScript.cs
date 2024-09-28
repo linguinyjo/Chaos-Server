@@ -134,5 +134,7 @@ public class EnchantScript : ConfigurableItemScriptBase,
     /// <inheritdoc />
     public ulong UniqueId { get; init; }
 
+    public bool CanResist { get; init; }
+
     #endregion
 }

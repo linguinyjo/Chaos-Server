@@ -1,0 +1,9 @@
+{
+  "key": "moldTable",
+  "lootDrops": [
+    {
+      "dropChance": 0.42,
+      "itemTemplateKey": "mold"
+    }
+  ]
+}

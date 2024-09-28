@@ -26,6 +26,9 @@ namespace Chaos.Models.World.Abstractions;
 
 public abstract class Creature : NamedEntity, IAffected, IScripted<ICreatureScript>
 {
+    public readonly string[] SleepEffects = ["beag pramh", "pramh", "mor pramh", "ard pramh"];
+    public readonly string[] FrozenEffects = ["suain"];
+    
     public Direction Direction { get; set; }
     public IEffectsBar Effects { get; protected set; }
     public int GamePoints { get; set; }
@@ -50,6 +53,24 @@ public abstract class Creature : NamedEntity, IAffected, IScripted<ICreatureScri
     public int EffectiveAssailIntervalMs => StatSheet.CalculateEffectiveAssailInterval(AssailIntervalMs);
     public virtual bool IsAlive => StatSheet.CurrentHp > 0;
     public virtual bool IsBlind => Vision is not VisionType.Normal;
+    
+    public bool IsAsleep(out string? effectName)
+    {
+        foreach (var effect in SleepEffects)
+        {
+            if (!Effects.Contains(effect)) continue;
+            effectName = effect;
+            return true;
+        }
+
+        effectName = null;
+        return false;
+    }
+    
+    public bool IsFrozen()
+    {
+        return FrozenEffects.Any(effect => Effects.Contains(effect));
+    }
 
     protected Creature(
         string name,

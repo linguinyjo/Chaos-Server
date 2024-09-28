@@ -1,0 +1,22 @@
+[
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "crypt3:(30,44)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(5,0)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "crypt5:(14,1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(6,40)"
+    }
+]

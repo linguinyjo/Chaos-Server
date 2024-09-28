@@ -1,22 +1,21 @@
 {
   "learningRequirements": {
-    "itemRequirements": [
-    ],
+    "itemRequirements": [],
     "requiredGold": 5000,
     "requiredStats": {
-      "con": 3,
+      "con": 4,
       "dex": 3,
-      "int": 10,
+      "int": 14,
       "str": 3,
-      "wis": 3
+      "wis": 7
     },
     "prerequisiteSkills": [],
     "prerequisiteSpells": []
   },
   "spellType": "Targeted",
   "class": "Priest",
-  "description": "Applies a minor curse effect to your target that does absolutely nothing.",
-  "level": 1,
+  "description": "Applies a minor curse effect to your target reducing their AC.",
+  "level": 11,
   "name": "Beag Cradh",
   "panelSprite": 5,
   "scriptKeys": [
@@ -24,9 +23,11 @@
   ],
   "scriptVars": {
     "applyEffect": {
+      "manaCost": 100,
       "bodyAnimation": "priestcast",
       "effectKey": "beagcradh",
-      "filter": "aliveOnly"
+      "filter": "aliveOnly",
+      "canResist": true
     }
   },
   "templateKey": "beag_cradh"

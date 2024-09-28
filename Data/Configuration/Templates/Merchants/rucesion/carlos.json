@@ -13,6 +13,10 @@
             "stock": 100
         },
         {
+            "itemTemplateKey": "coralEarrings",
+            "stock": 100
+        },
+        {
             "itemTemplateKey": "windNecklace",
             "stock": 100
         },

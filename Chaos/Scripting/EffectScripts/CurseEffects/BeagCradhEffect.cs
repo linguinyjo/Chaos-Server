@@ -29,7 +29,7 @@ public class BeagCradhEffect : EffectBase,
     public List<string> ConflictingEffectNames { get; init; } =
         [
             "Beag Cradh",
-            "Bad Curse",
+            "Cradh",
             "Curse",
             "Not So Bad Curse"
         ];
@@ -64,8 +64,7 @@ public class BeagCradhEffect : EffectBase,
     /// <inheritdoc />
     public override string Name => "Beag Cradh";
 
-    /// <inheritdoc />
-    public int AcDeduction { get; init; } = 10;
+    private int AcDeduction { get; init; } = 10;
 
     public override void OnTerminated()
     {

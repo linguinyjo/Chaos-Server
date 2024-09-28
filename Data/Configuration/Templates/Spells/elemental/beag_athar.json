@@ -12,7 +12,8 @@
         "prerequisiteSpells": []
     },
     "spellType": "Targeted",
-    "class": "Peasant",
+    "castLines": 4,
+    "class": "Wizard",
     "description": "A weak spell that deals wind damage.",
     "level": 1,
     "name": "Beag Athar",
@@ -22,19 +23,21 @@
         "damage": {
             "animatePoints": true,
             "range": 12,
+            "manaCost": 50,
+            "spellCategory": "Damage",
             "element": "wind",
             "damageStat": "int",
             "sound": 167,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "minSoundIntervalMs": 900,
-            "baseDamage": 15,
-            "cascadeIntervalMs": 300,
+            "baseDamage": 30,
             "damageStatMultiplier": 3,
             "animation": {
                 "targetAnimation": 15,
                 "animationSpeed": 100
             },
-            "useMatk": true
+            "useMatk": true,
+            "canResist": true
         }
     },
     "templateKey": "beag_athar"

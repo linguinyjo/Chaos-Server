@@ -111,6 +111,8 @@ public class TrapScript : ConfigurableReactorTileScriptBase,
     public IScript SourceScript { get; init; }
     public bool? UsePAtk { get; init; }
     public bool? UseMatk { get; init; }
+    /// <inheritdoc />
+    public int? FistBonus { get; init; }
     public Element? Element { get; init; }
     public int? DurationSecs { get; init; }
     public int? MaxTriggers { get; init; }

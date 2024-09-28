@@ -28,5 +28,45 @@
         },
         "shouldBlockPathfinding": true,
         "source": "(44,99)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest4:(56, 98)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(42, 0)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest4:(57, 98)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(43, 0)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest4:(58, 98)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(44, 0)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest4:(59, 98)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(45, 0)"
     }
 ]

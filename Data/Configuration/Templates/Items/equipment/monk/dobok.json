@@ -1,0 +1,28 @@
+{
+    "buyCost": 1500,
+    "category": "Armor",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 3,
+    "equipmentType": "Armor",
+    "gender": "Unisex",
+    "maxDurability": 1000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -7
+    },
+    "class": "monk",
+    "pantsColor": "Default",
+    "level": 1,
+    "levelCircle": 1,
+    "sellValue": 500,
+    "weight": 4,
+    "description": "A monk's starting armor",
+    "name": "Dobok",
+    "panelSprite": 98,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "dobok"
+}

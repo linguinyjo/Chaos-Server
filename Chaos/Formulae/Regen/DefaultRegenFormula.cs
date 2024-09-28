@@ -7,10 +7,12 @@ namespace Chaos.Formulae.Regen;
 
 public sealed class DefaultRegenFormula : IRegenFormula
 {
+    private const decimal BaseMpRegenPercent = 5;
+    private const decimal BaseHpRegenPercent = 10;
+    private const int BaseInterval = 18;
+    private const int MinInterval = 8;
+    private const int MaxRegenStat = 15;
     
-    const decimal baseMpRegenPercent = 5;
-    const decimal baseHpRegenPercent = 10;
-
     /// <inheritdoc />
     public int CalculateHealthRegen(Creature creature)
     {
@@ -19,7 +21,7 @@ public sealed class DefaultRegenFormula : IRegenFormula
 
         var percentToRegenerate = creature switch
         {
-            Aisling aisling => CalculateRegenPercentage(aisling.StatSheet.Con, baseHpRegenPercent),
+            Aisling aisling => CalculateRegenPercentage(aisling.StatSheet.Con, BaseHpRegenPercent),
             Monster  => 3,
             Merchant => 100,
             _        => throw new ArgumentOutOfRangeException(nameof(creature), creature, null)
@@ -31,14 +33,11 @@ public sealed class DefaultRegenFormula : IRegenFormula
     /// <inheritdoc />
     public int CalculateIntervalSecs(Creature creature)
     {
-        const int baseInterval = 20;
-        const int minInterval = 8;
-        const int maxRegenStat = 15;
         // On char creation this gets called before the statsheet is created (I think)
-        if (creature.StatSheet == null) return baseInterval; 
-        if (creature.StatSheet.EffectiveRegen <= 0) return baseInterval;
-        var interval = baseInterval - (creature.StatSheet.EffectiveRegen * (baseInterval - minInterval) / maxRegenStat);
-        return Math.Max(interval, minInterval);
+        if (creature.StatSheet == null) return BaseInterval; 
+        if (creature.StatSheet.EffectiveRegen <= 0) return BaseInterval;
+        var interval = BaseInterval - (creature.StatSheet.EffectiveRegen * (BaseInterval - MinInterval) / MaxRegenStat);
+        return Math.Max(interval, MinInterval);
     }
 
     /// <inheritdoc />
@@ -49,7 +48,7 @@ public sealed class DefaultRegenFormula : IRegenFormula
 
         var percentToRegenerate = creature switch
         {
-            Aisling aisling => CalculateRegenPercentage(aisling.StatSheet.Wis, baseMpRegenPercent),
+            Aisling aisling => CalculateRegenPercentage(aisling.StatSheet.Wis, BaseMpRegenPercent),
             Monster  => 1.5m,
             Merchant => 100,
             _        => throw new ArgumentOutOfRangeException(nameof(creature), creature, null)

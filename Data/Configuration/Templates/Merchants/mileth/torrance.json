@@ -25,11 +25,15 @@
             "stock": 100
         },
         {
-            "itemTemplateKey": "berylEarrings",
+            "itemTemplateKey": "goldEarrings",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "greyBoots",
             "stock": 100
         }
     ],
-    "itemsToBuy": ["shirt","woodenShield", "stick", "boots", "leatherTunic", "leatherGauntlet", "leatherGreaves", "silverEarrings"],
+    "itemsToBuy": ["shirt","woodenShield", "stick", "boots", "leatherTunic", "leatherGauntlet", "leatherGreaves", "silverEarrings", "goldEarrings", "greyBoots"],
     "name": "Torrance",
     "restockIntervalHrs": 1,
     "restockPCt": 100,

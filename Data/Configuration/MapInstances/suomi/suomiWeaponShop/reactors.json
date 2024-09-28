@@ -1,0 +1,32 @@
+[
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "suomiVillage:(11, 55)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(6, 14)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "suomiVillage:(11, 55)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(7, 14)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "suomiArmorShop:(1, 9)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(12, 0)"
+    }
+]

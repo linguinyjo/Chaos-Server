@@ -1,0 +1,31 @@
+{
+    "assailIntervalMs": 1500,
+    "expReward": 123,
+    "moveIntervalMs": 1500,
+    "aggroRange": 10,
+    "name": "Centipede",
+    "lootTableKeys": ["crypt2Centipede"],
+    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptVars": {},
+    "skillIntervalMs": 1500,
+    "skillTemplateKeys": ["Assail"],
+    "spellIntervalMs": 10000,
+    "spellTemplateKeys": ["beag_sal", "beag_athar", "beag_creag", "beag_srad", "beag_cradh"],
+    "sprite": 52,
+    "statSheet": {
+        "level": 17,
+        "ac": 75,
+        "maximumHp": 1100,
+        "maximumMp": 1000,
+        "physicalAttack": 37,
+        "magicAttack": 80,
+        "con": 4,
+        "dex": 1,
+        "int": 20,
+        "str": 16,
+        "wis": 1
+    },
+    "templateKey": "crypt2Centipede",
+    "type": "Normal",
+    "wanderIntervalMs": 2000
+}

@@ -120,11 +120,18 @@ public class VitalityConsumableScript : ConfigurableItemScriptBase,
     public decimal? HealStatMultiplier { get; init; }
 
     /// <inheritdoc />
+    public decimal? MagicAttackMultiplier { get; init; }
+
+    /// <inheritdoc />
     public decimal? PctHpHeal { get; init; }
 
     public IScript SourceScript { get; init; }
+    /// <inheritdoc />
     public bool? UsePAtk { get; init; }
+    /// <inheritdoc />
     public bool? UseMatk { get; init; }
+    /// <inheritdoc />
+    public int? FistBonus { get; init; }
 
     /// <inheritdoc />
     public int? ManaDrain { get; init; }
@@ -143,6 +150,8 @@ public class VitalityConsumableScript : ConfigurableItemScriptBase,
     
     /// <inheritdoc />
     public ulong UniqueId { get; init; }
+
+    public bool CanResist { get; init; }
 
     #endregion
 }

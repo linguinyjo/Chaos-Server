@@ -1,0 +1,39 @@
+{
+    "isAssail": false,
+    "learningRequirements": {
+        "itemRequirements": [],
+        "requiredGold": 1000,
+        "requiredStats": {
+            "con": 3,
+            "dex": 4,
+            "int": 3,
+            "str": 9,
+            "wis": 3
+        },
+        "prerequisiteSkills": [],
+        "prerequisiteSpells": []
+    },
+    "description": "A powerful strike in the direction your facing",
+    "level": 11,
+    "levelsUp": true,
+    "name": "Power Strike 1",
+    "class": "warrior",
+    "panelSprite": 73,
+    "cooldownMs": 15000,
+    "scriptKeys": ["damage"],
+    "scriptVars": {
+        "damage": {
+            "bodyAnimation": 1,
+            "sound": 45,
+            "damageStat": "str",
+            "range": 1,
+            "shape": "front",
+            "excludeSourcePoint": true,
+            "damageStatMultiplier": 1,
+            "baseDamage": 20,
+            "filter": "hostileOnly, aliveOnly, othersOnly",
+            "usePAtk": true
+        }
+    },
+    "templateKey": "powerStrike1"
+}

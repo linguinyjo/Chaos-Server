@@ -1,0 +1,28 @@
+{
+    "buyCost": 100000,
+    "category": "Sword",
+    "color": "Forest",
+    "displaySprite": 10,
+    "equipmentType": "Weapon",
+    "gender": "Unisex",
+    "isModifiable": true,
+    "maxDurability": 7000,
+    "maxStacks": 1,
+    "level": 11,
+    "levelCircle": 2,
+    "class": "warrior",
+    "modifiers": {
+        "physicalAttack": 62,
+        "maximumMp": -750
+    },
+    "sellValue": 50000,
+    "weight": 10,
+    "description": "A sword wielded by the knights of Loures",
+    "name": "Templar",
+    "panelSprite": 169,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "templar"
+}

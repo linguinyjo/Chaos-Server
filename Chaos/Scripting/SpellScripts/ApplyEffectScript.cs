@@ -66,7 +66,7 @@ public class ApplyEffectScript : ConfigurableSpellScriptBase,
 
     /// <inheritdoc />
     public string? EffectKey { get; init; }
-
+    
     /// <inheritdoc />
     public TimeSpan? EffectDurationOverride { get; init; }
 
@@ -78,5 +78,8 @@ public class ApplyEffectScript : ConfigurableSpellScriptBase,
 
     /// <inheritdoc />
     public decimal PctManaCost { get; init; }
+
+    public bool CanResist { get; init; }
+
     #endregion
 }

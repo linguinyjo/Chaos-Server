@@ -1,0 +1,39 @@
+{
+    "isAssail": false,
+    "learningRequirements": {
+        "itemRequirements": [],
+        "requiredGold": 1000,
+        "requiredStats": {
+            "con": 10,
+            "dex": 4,
+            "int": 3,
+            "str": 4,
+            "wis": 3
+        },
+        "prerequisiteSkills": [],
+        "prerequisiteSpells": []
+    },
+    "description": "A powerful strike in the direction your facing",
+    "level": 1,
+    "levelsUp": true,
+    "name": "Kick",
+    "class": "monk",
+    "panelSprite": 2,
+    "cooldownMs": 10000,
+    "scriptKeys": ["damage"],
+    "scriptVars": {
+        "damage": {
+            "bodyAnimation": "Kick",
+            "sound": 53,
+            "damageStat": "con",
+            "range": 1,
+            "shape": "front",
+            "excludeSourcePoint": true,
+            "damageStatMultiplier": 2,
+            "baseDamage": 3,
+            "filter": "hostileOnly, aliveOnly, othersOnly",
+            "usePAtk": true
+        }
+    },
+    "templateKey": "kick"
+}

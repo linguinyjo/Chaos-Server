@@ -132,9 +132,12 @@ public sealed class CascadingDamageTileScript : ConfigurableReactorTileScriptBas
 
     /// <inheritdoc />
     public IScript SourceScript { get; init; }
-
+    /// <inheritdoc />
     public bool? UsePAtk { get; init; }
+    /// <inheritdoc />
     public bool? UseMatk { get; init; }
+    /// <inheritdoc />
+    public int? FistBonus { get; init; }
 
     /// <inheritdoc />
     public byte? Sound { get; init; }

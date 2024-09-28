@@ -1,0 +1,9 @@
+{
+    "flags": "None",
+    "instanceId": "suomiWeaponShop",
+    "music": 1,
+    "name": "Suomi Weapon Shop",
+    "scriptKeys": [],
+    "templateKey": "410",
+    "autoDayNightCycle": true
+}

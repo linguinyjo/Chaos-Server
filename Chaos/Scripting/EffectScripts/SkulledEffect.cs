@@ -31,13 +31,12 @@ public class SkulledEffect(ISimpleCache simpleCache) : ContinuousAnimationEffect
     /// <inheritdoc />
     public override string Name => "Skulled";
 
-    private const byte SOUND = 6;
+    private const byte Sound = 6;
 
     /// <inheritdoc />
     protected override void OnIntervalElapsed()
     {
-        //if the subject was a player, update their vit
-        AislingSubject?.Client.SendSound(SOUND, false); 
+        AislingSubject?.Client.SendSound(Sound, false); 
     }
 
     public override void OnTerminated()

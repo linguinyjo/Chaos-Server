@@ -1,0 +1,30 @@
+{
+    "itemsForSale": [
+        {
+            "itemTemplateKey": "stick",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "dirk",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "eppe",
+            "stock": 100
+        }
+    ],
+    "itemsToBuy": ["woodenShield", "stick", "dirk", "eppe", "louresSabre"],
+    "name": "Torbjorn",
+    "restockIntervalHrs": 1,
+    "restockPCt": 100,
+    "scriptKeys": ["showdialog", "verbalShop", "defaultBehaviors"],
+    "scriptVars": {
+        "showdialog": {
+            "dialogKey": "torbjorn_initial"
+        }
+    },
+    "skillsToTeach": [],
+    "spellsToTeach": [],
+    "sprite": 30,
+    "templateKey": "torbjorn"
+}

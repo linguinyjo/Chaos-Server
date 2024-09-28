@@ -1,0 +1,29 @@
+{
+    "buyCost": 3000,
+    "category": "Bracer",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 227,
+    "equipmentType": "Gauntlet",
+    "gender": "Unisex",
+    "maxDurability": 1000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -1,
+        "con": 1
+    },
+    "class": "monk",
+    "pantsColor": "Black",
+    "level": 11,
+    "levelCircle": 2,
+    "sellValue": 1000,
+    "weight": 2,
+    "description": "A bracer for a monk",
+    "name": "Leather Bracer",
+    "panelSprite": 224,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "leatherBracer"
+}

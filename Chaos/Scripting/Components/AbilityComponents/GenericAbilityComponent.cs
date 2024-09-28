@@ -13,7 +13,8 @@ public struct GenericAbilityComponent<TEntity> : IConditionalComponent where TEn
                                                ?.Execute<BreaksHideAbilityComponent>()
                                                .ExecuteAndCheck<GetTargetsAbilityComponent<TEntity>>()
                                                ?.Execute<BodyAnimationAbilityComponent>()
-                                               .Execute<AnimationAbilityComponent>()
+                                               .ExecuteAndCheck<CheckResistAbilityComponent>()
+                                               ?.Execute<AnimationAbilityComponent>()
                                                .Execute<SoundAbilityComponent>()
            != null;
 
@@ -22,5 +23,6 @@ public struct GenericAbilityComponent<TEntity> : IConditionalComponent where TEn
                                                 BodyAnimationAbilityComponent.IBodyAnimationComponentOptions,
                                                 AnimationAbilityComponent.IAnimationComponentOptions,
                                                 ManaCostAbilityComponent.IManaCostComponentOptions,
-                                                BreaksHideAbilityComponent.IBreaksHideComponentOptions { }
+                                                BreaksHideAbilityComponent.IBreaksHideComponentOptions,
+                                                CheckResistAbilityComponent.ICheckResistComponentOptions { }
 }

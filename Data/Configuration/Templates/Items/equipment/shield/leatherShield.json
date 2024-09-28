@@ -1,6 +1,6 @@
 {
     "buyCost": 10000,
-    "category": "shield",
+    "category": "Shield",
     "color": "Forest",
     "displaySprite": 5,
     "equipmentType": "Shield",
@@ -10,10 +10,10 @@
     "maxStacks": 1,
     "modifiers": {
         "ac": -5,
-        "maximumMp": -1000
+        "maximumMp": -750
     },
-    "level": 1,
-    "levelCircle": 1,
+    "level": 11,
+    "levelCircle": 2,
     "sellValue": 4000,
     "weight": 5,
     "description": "A leather shield",

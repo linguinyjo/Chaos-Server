@@ -1,0 +1,9 @@
+{
+  "key": "wolfSkin",
+  "lootDrops": [
+    {
+      "dropChance": 0.20,
+      "itemTemplateKey": "wolfSkin"
+    }
+  ]
+}

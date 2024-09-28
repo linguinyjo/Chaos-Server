@@ -9,7 +9,8 @@
     "maxDurability": 1000,
     "maxStacks": 1,
     "modifiers": {
-        "maximumHp": 200
+        "maximumHp": 200,
+        "dmg": 1
     },
     "class": "peasant",
     "pantsColor": "Black",

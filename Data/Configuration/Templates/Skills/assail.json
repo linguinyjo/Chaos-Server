@@ -1,18 +1,5 @@
 {
     "isAssail": true,
-    "learningRequirements": {
-        "itemRequirements": [],
-        "requiredGold": 0,
-        "requiredStats": {
-            "con": 1,
-            "dex": 1,
-            "int": 1,
-            "str": 1,
-            "wis": 1
-        },
-        "prerequisiteSkills": [],
-        "prerequisiteSpells": []
-    },
     "description": "A basic attack that deals a small amount of damage to an enemy immediately in front of you.",
     "level": 1,
     "levelsUp": true,

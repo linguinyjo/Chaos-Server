@@ -7,9 +7,13 @@
         {
             "itemTemplateKey": "galuchatCoat",
             "stock": 100
+        },
+        {
+            "itemTemplateKey": "dobok",
+            "stock": 100
         }
     ],
-    "itemsToBuy": ["cowl", "galuchatCoat"],
+    "itemsToBuy": ["cowl", "galuchatCoat", "dobok"],
     "name": "Brody",
     "restockIntervalHrs": 1,
     "restockPCt": 100,

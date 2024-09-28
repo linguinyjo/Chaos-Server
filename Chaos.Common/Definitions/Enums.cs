@@ -1078,6 +1078,18 @@ public enum LevelCircle : byte
 }
 
 /// <summary>
+///     All towns which can be warped to
+/// </summary>
+public enum Town : byte
+{
+    Mileth = 1,
+    Abel = 2,
+    Rucesion = 3,
+    Piet = 4,
+    Suomi = 5
+}
+
+/// <summary>
 ///     A byte switch used when receiving information about an action performed on an exchange window. Used by
 ///     ClientOpCode.Exchange
 /// </summary>

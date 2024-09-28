@@ -8,6 +8,7 @@ using Chaos.NLog.Logging.Definitions;
 using Chaos.NLog.Logging.Extensions;
 using Chaos.Scripting.DialogScripts.Abstractions;
 using Chaos.Scripting.DialogScripts.TrainerScripts;
+using Chaos.Services.Factories.Abstractions;
 using Chaos.Storage.Abstractions;
 using Chaos.Time;
 
@@ -16,6 +17,8 @@ namespace Chaos.Scripting.DialogScripts.ClassChangeScripts;
 public class FirstClassChangeScript : ConfigurableDialogScriptBase
 {
     private readonly ISimpleCache SimpleCache;
+    private readonly ISkillFactory SkillFactory;
+
     
     #region ScriptVars
     protected byte Class { get; init; }
@@ -28,10 +31,14 @@ public class FirstClassChangeScript : ConfigurableDialogScriptBase
         AnimationSpeed = 100,
         TargetAnimation = 50
     };
-    
+
     /// <inheritdoc />
-    public FirstClassChangeScript(Dialog subject, ISimpleCache simpleCache)
-        : base(subject) => SimpleCache = simpleCache;
+    public FirstClassChangeScript(Dialog subject, ISimpleCache simpleCache, ISkillFactory skillFactory)
+        : base(subject)
+    {
+        SimpleCache = simpleCache;
+        SkillFactory = skillFactory; 
+    } 
 
     /// <inheritdoc />
     public override void OnDisplaying(Aisling source)
@@ -41,7 +48,11 @@ public class FirstClassChangeScript : ConfigurableDialogScriptBase
     {
         var baseClass = (BaseClass)Class;
         source.UserStatSheet.SetBaseClass(baseClass);
-        
+        if (baseClass is BaseClass.Monk)
+        {
+            HandleMonkClassChange(source);
+        }
+
         var legendMark = new LegendMark(
             $"Became a {baseClass}",
             baseClass.ToString(),
@@ -52,6 +63,14 @@ public class FirstClassChangeScript : ConfigurableDialogScriptBase
         source.Legend.AddOrAccumulate(legendMark);
         source.Animate(Animation);
         source.Client.SendSound(SOUND, false); 
+    }
+
+    private void HandleMonkClassChange(Aisling source)
+    {
+        var isRemoved = source.SkillBook.TryGetRemove("assail", out var removedAssail);
+        if (!isRemoved) return;
+        var skill = SkillFactory.Create("monkAssail");
+        if (removedAssail != null) source.SkillBook.TryAdd(removedAssail.Slot, skill);
     }
 
     public override void OnNext(Aisling source, byte? optionIndex = null)

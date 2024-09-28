@@ -1,0 +1,36 @@
+{
+  "learningRequirements": {
+    "itemRequirements": [],
+    "requiredGold": 10000,
+    "requiredStats": {
+      "con": 3,
+      "dex": 7,
+      "int": 18,
+      "str": 4,
+      "wis": 13
+    },
+    "prerequisiteSkills": [],
+    "prerequisiteSpells": []
+  },
+  "spellType": "Targeted",
+  "castLines": 3,
+  "class": "Wizard",
+  "description": "",
+  "level": 11,
+  "name": "beag pramh",
+  "panelSprite": 90,
+  "scriptKeys": [
+    "applyEffect"
+  ],
+  "scriptVars": {
+    "applyEffect": {
+      "manaCost": 100,
+      "bodyAnimation": "handsup",
+      "range": 10,
+      "sound": 8,
+      "effectKey": "beagPramh",
+      "filter": "hostileOnly, aliveOnly"
+    }
+  },
+  "templateKey": "beag_pramh"
+}

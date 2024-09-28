@@ -1,0 +1,158 @@
+[
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest4:(76, 1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(86, 99)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest4:(77, 1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(87, 99)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest4:(78, 1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(88, 99)"
+    },
+
+
+
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest4:(62, 1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(67, 99)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest4:(63, 1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(68, 99)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest4:(64, 1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(69, 99)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest4:(65, 1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(70, 99)"
+    },
+
+
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest4:(6, 1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(38, 99)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest4:(7, 1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(39, 99)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest4:(8, 1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(40, 99)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest4:(9, 1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(41, 99)"
+    },
+
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest6:(30, 48)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(42, 0)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest6:(31, 48)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(43, 0)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest6:(32, 48)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(44, 0)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest6:(33, 48)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(45, 0)"
+    }
+]

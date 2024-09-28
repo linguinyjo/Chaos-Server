@@ -9,14 +9,13 @@
             "wis": 3
         },
         "prerequisiteSkills": [],
-        "prerequisiteSpells": [
-           
-        ]
+        "prerequisiteSpells": []
     },
     "spellType": "Targeted",
-    "class": "Peasant",
+    "class": "Wizard",
     "description": "A weak spell that deals fire damage.",
     "level": 1,
+    "castLines": 4,
     "name": "Beag Srad",
     "panelSprite": 39,
     "scriptKeys": ["damage"],
@@ -27,16 +26,18 @@
             "element": "fire",
             "damageStat": "int",
             "sound": 167,
+            "manaCost": 50,
+            "spellCategory": "Damage",
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "minSoundIntervalMs": 900,
-            "baseDamage": 15,
-            "cascadeIntervalMs": 300,
+            "baseDamage": 30,
             "damageStatMultiplier": 3,
             "animation": {
                 "targetAnimation": 12,
                 "animationSpeed": 100
             },
-            "useMatk": true
+            "useMatk": true,
+            "canResist": true
         }
     },
     "templateKey": "beag_srad"

@@ -38,5 +38,25 @@
     },
     "shouldBlockPathfinding": false,
     "source": "(41, 0)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "suomiWeaponShop:(6, 13)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(11, 54)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "suomiArmorShop:(10, 9)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(18, 48)"
   }
 ]

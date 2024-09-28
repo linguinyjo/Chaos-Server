@@ -20,7 +20,7 @@ public sealed class BeginChantConverter : PacketConverterBase<BeginChantArgs>
 
         return new BeginChantArgs
         {
-            CastLineCount = 1
+            CastLineCount = castLineCount
         };
     }
 

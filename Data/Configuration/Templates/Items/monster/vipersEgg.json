@@ -1,0 +1,15 @@
+{
+  "buyCost": 600,
+  "category": "monster",
+  "color": "Default",
+  "isModifiable": false,
+  "maxStacks": 1,
+  "sellValue": 600,
+  "weight": 1,
+  "description": "A viper's egg",
+  "name": "Viper's Egg",
+  "panelSprite": 558,
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "vipersEgg"
+}

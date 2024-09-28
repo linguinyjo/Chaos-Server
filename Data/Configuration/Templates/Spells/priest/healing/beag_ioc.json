@@ -30,11 +30,12 @@
         "targetAnimation": 4,
         "animationSpeed": 150
       },
-      "healStatMultiplier": 3,
+      "healStatMultiplier": 2,
       "manaCost": 50,
       "sound": 8,
       "baseHeal": 100,
       "healStat": "wis",
+      "magicAttackMultiplier": 1,
       "range": 8,
       "filter": "friendlyOnly, aliveOnly"
     }

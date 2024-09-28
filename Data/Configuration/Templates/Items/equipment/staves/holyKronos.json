@@ -1,5 +1,5 @@
 {
-    "buyCost": 40000,
+    "buyCost": 100000,
     "category": "Staff",
     "color": "Forest",
     "displaySprite": 24,
@@ -12,17 +12,21 @@
     "levelCircle": 2,
     "class": "priest",
     "modifiers": {
-        "magicAttack": 40,
+        "magicAttack": 42,
+        "wis": 2,
         "maximumMp": 200
     },
-    "sellValue": 15000,
+    "sellValue": 45000,
     "weight": 6,
-    "description": "A staff for healing",
+    "description": "When equipped healing spells have -1 lines",
     "name": "Holy Kronos",
     "panelSprite": 183,
-    "scriptKeys": ["Equipment"],
+    "scriptKeys": ["Equipment", "EquipStaff"],
     "scriptVars": {
-        "equipment": {}
+        "equipment": {},
+        "equipStaff": {
+            "spellCategory": "Heal"
+        }
     },
     "templateKey": "holyKronos"
 }

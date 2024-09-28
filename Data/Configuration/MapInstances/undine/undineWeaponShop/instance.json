@@ -1,0 +1,9 @@
+{
+    "flags": "None",
+    "instanceId": "undineWeaponShop",
+    "music": 1,
+    "name": "Undine Weapon Shop",
+    "scriptKeys": [],
+    "templateKey": "430",
+    "autoDayNightCycle": true
+}

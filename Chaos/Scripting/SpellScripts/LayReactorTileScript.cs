@@ -70,5 +70,7 @@ public class LayReactorTileScript(Spell subject, IReactorTileFactory reactorTile
 
     /// <inheritdoc />
     public decimal PctManaCost { get; init; }
+    public bool CanResist { get; init; }
+
     #endregion
 }

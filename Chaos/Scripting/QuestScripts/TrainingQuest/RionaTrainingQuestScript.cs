@@ -47,7 +47,7 @@ public class RionaTrainingQuestScript:  DialogScriptBase
         {
             //On the quest already 
             var newDialog = new Dialog(
-                source,
+                Dialog.DialogSource,
                 DialogFactory,
                 ChaosDialogType.Normal,
                 "I've done for you all I can. Go now and speak to Vorlof. He'll know what to do with you.")

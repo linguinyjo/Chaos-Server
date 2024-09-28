@@ -13,7 +13,7 @@
     "spellTemplateKeys": ["beag_sal", "beag_athar", "beag_creag", "beag_srad", "beag_cradh"],
     "sprite": 87,
     "statSheet": {
-        "level": 15,
+        "level": 14,
         "ac": 82,
         "maximumHp": 925,
         "maximumMp": 1000,

@@ -9,7 +9,7 @@
     "maxDurability": 1000,
     "maxStacks": 1,
     "modifiers": {
-        "ac": -17
+        "ac": -13
     },
     "class": "priest",
     "pantsColor": "Black",

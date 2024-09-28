@@ -14,7 +14,7 @@
         "prerequisiteSpells": []
     },
     "description": "A second assail.",
-    "level": 1,
+    "level": 11,
     "levelsUp": true,
     "name": "Assault",
     "class": "warrior",

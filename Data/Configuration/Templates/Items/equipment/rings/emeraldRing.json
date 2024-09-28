@@ -9,7 +9,8 @@
     "maxDurability": 1000,
     "maxStacks": 1,
     "modifiers": {
-        "maximumMp": 200
+        "maximumMp": 200,
+        "regen": 1
     },
     "class": "peasant",
     "pantsColor": "Black",

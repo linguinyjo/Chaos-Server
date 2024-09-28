@@ -11,7 +11,6 @@ public struct BodyAnimationAbilityComponent : IComponent
     public void Execute(ActivationContext context, ComponentVars vars)
     {
         var options = vars.GetOptions<IBodyAnimationComponentOptions>();
-
         context.Source.AnimateBody(options.BodyAnimation, options.AnimationSpeed ?? 25);
     }
 

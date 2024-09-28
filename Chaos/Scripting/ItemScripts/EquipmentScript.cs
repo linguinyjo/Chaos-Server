@@ -25,6 +25,13 @@ public class EquipmentScript(Item subject) : ConfigurableItemScriptBase(subject)
             return;
         }
 
+        if (template.NotMonk && source.HasClass(BaseClass.Monk))
+        {
+            source.SendOrangeBarMessage("Your class is forbidden from wearing such things");
+
+            return;
+        }
+
         //gender check
         if (template.Gender.HasValue && !template.Gender.Value.HasFlag(source.Gender))
         {

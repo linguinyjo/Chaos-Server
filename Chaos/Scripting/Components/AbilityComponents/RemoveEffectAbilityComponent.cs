@@ -17,12 +17,20 @@ public struct RemoveEffectAbilityComponent : IComponent
             return;
 
         var targets = vars.GetTargets<Creature>();
+        var effectKeys = options.EffectKey.Split(',').Select(e => e.Trim()).ToList();
 
         foreach (var target in targets)
         {
-            if (!target.Effects.Contains(options.EffectKey)) continue;
-            var effect = options.EffectFactory.Create(options.EffectKey);
-            target.Effects.Dispel(effect.Name);
+            // if (!target.Effects.Contains(options.EffectKey)) continue;
+            // var effect = options.EffectFactory.Create(options.EffectKey);
+            // target.Effects.Dispel(effect.Name);
+            foreach (var effect in from effectKey in effectKeys 
+                     where target.Effects.Contains(effectKey) 
+                     select options.EffectFactory.Create(effectKey))
+            {
+                target.Effects.Dispel(effect.Name);
+                // break; // Exit the inner loop after removing one effect
+            }
         }
     }
 

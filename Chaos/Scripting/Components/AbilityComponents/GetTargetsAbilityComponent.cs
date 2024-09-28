@@ -19,7 +19,7 @@ public struct GetTargetsAbilityComponent<TEntity> : IConditionalComponent where 
         var options = vars.GetOptions<IGetTargetsComponentOptions>();
         var direction = context.TargetCreature?.Direction ?? context.Target.DirectionalRelationTo(context.Source);
         var map = context.TargetMap;
-
+        
         if (direction == Direction.Invalid)
             direction = context.Source.Direction;
 

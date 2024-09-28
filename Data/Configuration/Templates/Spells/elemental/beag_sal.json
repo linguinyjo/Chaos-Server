@@ -14,9 +14,10 @@
         ]
     },
     "spellType": "Targeted",
-    "class": "Peasant",
+    "class": "Wizard",
     "description": "A weak spell that deals water damage.",
     "level": 1,
+    "castLines": 4,
     "name": "Beag Sal",
     "panelSprite": 39,
     "scriptKeys": ["damage"],
@@ -26,17 +27,19 @@
             "range": 12,
             "element": "water",
             "damageStat": "int",
+            "manaCost": 50,
+            "spellCategory": "Damage",
             "sound": 167,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "minSoundIntervalMs": 900,
-            "baseDamage": 15,
-            "cascadeIntervalMs": 300,
+            "baseDamage": 30,
             "damageStatMultiplier": 3,
             "animation": {
                 "targetAnimation": 10,
                 "animationSpeed": 100
             },
-            "useMatk": true
+            "useMatk": true,
+            "canResist": true
         }
     },
     "templateKey": "beag_sal"

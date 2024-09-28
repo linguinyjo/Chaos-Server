@@ -1,0 +1,9 @@
+[
+    {
+        "blackList": [],
+        "direction": "Right",
+        "extraScriptKeys": [],
+        "merchantTemplateKey": "valdemar",
+        "spawnPoint": "(3, 5)"
+      }
+]

@@ -4,6 +4,16 @@ namespace Chaos.Models.Data;
 
 public sealed record Animation
 {
+    public Animation()
+    {
+    }
+
+    public Animation(ushort targetAnimation, ushort animationSpeed)
+    {
+        TargetAnimation = targetAnimation;
+        AnimationSpeed = animationSpeed;
+    }
+
     public ushort AnimationSpeed { get; set; }
     public ushort SourceAnimation { get; set; }
     public uint? SourceId { get; set; }

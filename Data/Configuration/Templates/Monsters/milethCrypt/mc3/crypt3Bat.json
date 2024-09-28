@@ -1,0 +1,31 @@
+{
+    "assailIntervalMs": 1500,
+    "expReward": 156,
+    "aggroRange": 10,
+    "moveIntervalMs": 1500,
+    "name": "Common Rat",
+    "lootTableKeys": ["crypt1Rats"],
+    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptVars": {},
+    "skillIntervalMs": 1500,
+    "skillTemplateKeys": ["Assail"],
+    "spellIntervalMs": 10000,
+    "spellTemplateKeys": ["beag_sal", "beag_athar", "beag_creag", "beag_srad", "beag_cradh"],
+    "sprite": 47,
+    "statSheet": {
+        "level": 20,
+        "ac": 75,
+        "maximumHp": 1500,
+        "maximumMp": 1000,
+        "physicalAttack": 45,
+        "magicAttack": 100,
+        "con": 4,
+        "dex": 1,
+        "int": 30,
+        "str": 20,
+        "wis": 1
+    },
+    "templateKey": "crypt2Rat",
+    "type": "Normal",
+    "wanderIntervalMs": 2000
+}

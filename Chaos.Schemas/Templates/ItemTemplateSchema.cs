@@ -113,4 +113,9 @@ public sealed record ItemTemplateSchema : PanelEntityTemplateSchema
     ///     The weight of the item in the inventory, or equipped
     /// </summary>
     public LevelCircle LevelCircle { get; set; }
+    
+    /// <summary>
+    ///     Whether this item is usable by monks
+    /// </summary>
+    public bool NotMonk { get; set; }
 }

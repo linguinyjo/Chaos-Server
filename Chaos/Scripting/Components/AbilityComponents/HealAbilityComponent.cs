@@ -25,7 +25,8 @@ public struct HealAbilityComponent : IComponent
                 options.BaseHeal,
                 options.PctHpHeal,
                 options.HealStat,
-                options.HealStatMultiplier);
+                options.HealStatMultiplier,
+                options.MagicAttackMultiplier);
 
             if (heal <= 0)
                 continue;
@@ -38,17 +39,23 @@ public struct HealAbilityComponent : IComponent
         }
     }
 
-    private int CalculateHeal(
-        Creature source,
+    private int CalculateHeal(Creature source,
         Creature target,
         int? baseHeal = null,
         decimal? pctHpHeal = null,
         Stat? healStat = null,
-        decimal? healStatMultiplier = null)
+        decimal? healStatMultiplier = null,
+        decimal? magicAttackMultiplier = null
+        )
     {
         var finalHeal = baseHeal ?? 0;
         finalHeal += MathEx.GetPercentOf<int>((int)target.StatSheet.EffectiveMaximumHp, pctHpHeal ?? 0);
 
+        if (magicAttackMultiplier.HasValue)
+        {
+            finalHeal += Convert.ToInt32(source.StatSheet.EffectiveMagicAttack * magicAttackMultiplier.Value); 
+        }
+        
         if (!healStat.HasValue) return finalHeal;
         
         if (!healStatMultiplier.HasValue)
@@ -58,7 +65,6 @@ public struct HealAbilityComponent : IComponent
             return finalHeal;
         }
         
-        finalHeal += Convert.ToInt32(source.StatSheet.EffectiveMagicAttack * healStatMultiplier.Value); ;
         finalHeal += Convert.ToInt32(source.StatSheet.GetEffectiveStat(healStat.Value) * healStatMultiplier.Value);
 
         return finalHeal;
@@ -70,6 +76,7 @@ public struct HealAbilityComponent : IComponent
         int? BaseHeal { get; init; }
         Stat? HealStat { get; init; }
         decimal? HealStatMultiplier { get; init; }
+        decimal? MagicAttackMultiplier { get; init; }
         decimal? PctHpHeal { get; init; }
         IScript SourceScript { get; init; }
     }

@@ -27,36 +27,44 @@ public struct DamageAbilityComponent : IComponent
                 options.DamageStat,
                 options.DamageStatMultiplier,
                 options.UsePAtk,
-                options.UseMatk);
+                options.UseMatk,
+                options.FistBonus
+                );
 
-            if (damage <= 0)
-                continue;
+            if (damage <= 0) continue;
 
+            var isAsleep = target.IsAsleep(out var sleepEffect);
+            
+            if (isAsleep)
+            {
+                damage *= 2;
+            }
+            
             options.ApplyDamageScript.ApplyDamage(
                 context.Source,
                 target,
                 options.SourceScript,
                 damage,
                 options.Element);
+
+            if (sleepEffect != null) target.Effects.Dispel(sleepEffect);
         }
     }
 
-    private int CalculateDamage(
-        Creature source,
+    private int CalculateDamage(Creature source,
         Creature target,
         int? baseDamage = null,
         decimal? pctHpDamage = null,
         Stat? damageStat = null,
         decimal? damageStatMultiplier = null,
         bool? usePAtk = null,
-        bool? useMaAtk = null)
+        bool? useMAtk = null, 
+        int? fistBonus = null)
     {
         var finalDamage = baseDamage ?? 0;
-
         finalDamage += MathEx.GetPercentOf<int>((int)target.StatSheet.EffectiveMaximumHp, pctHpDamage ?? 0);
         
-        if (!damageStat.HasValue)
-            return finalDamage;
+        if (!damageStat.HasValue) return finalDamage;
 
         // Apply weapon damage
         if (usePAtk == true)
@@ -65,23 +73,31 @@ public struct DamageAbilityComponent : IComponent
         }
         
         // Apply magic damage
-        if (useMaAtk == true)
+        if (useMAtk == true)
         {
             finalDamage += source.StatSheet.EffectiveMagicAttack;
         }
 
+        if (fistBonus != null && source.StatSheet.EffectivePhysicalAttack == 0)
+        {
+            finalDamage += fistBonus.Value;
+        }
+        
         if (!damageStatMultiplier.HasValue)
         {
             finalDamage += source.StatSheet.GetEffectiveStat(damageStat.Value);
-
             return finalDamage;
         }
 
         finalDamage += Convert.ToInt32(source.StatSheet.GetEffectiveStat(damageStat.Value) * damageStatMultiplier.Value);
 
+        if (source.StatSheet.DmgMod == 0) return finalDamage;
+        var dmgMultiplier = 1 + (source.StatSheet.DmgMod / 100.0);
+        finalDamage = Convert.ToInt32(finalDamage * dmgMultiplier);
+
         return finalDamage;
     }
-
+    
     public interface IDamageComponentOptions
     {
         IApplyDamageScript ApplyDamageScript { get; init; }
@@ -93,5 +109,6 @@ public struct DamageAbilityComponent : IComponent
         IScript SourceScript { get; init; }
         bool? UsePAtk { get; init; }
         bool? UseMatk { get; init; }
+        int? FistBonus { get; init; }
     }
 }

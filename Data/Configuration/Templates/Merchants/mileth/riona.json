@@ -1,5 +1,12 @@
 {
-  "itemsForSale": [],
+  "itemsForSale": [
+      {
+        "itemTemplateKey": "milethSong",
+        "stock": 999
+      }
+  ],
+  "restockIntervalHrs": 1,
+  "restockPCt": 100,
   "itemsToBuy": [],
   "name": "Riona",
   "scriptKeys": [
