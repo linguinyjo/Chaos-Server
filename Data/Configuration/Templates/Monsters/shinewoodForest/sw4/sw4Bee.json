@@ -3,7 +3,7 @@
     "expReward": 168,
     "moveIntervalMs": 1500,
     "name": "Bee",
-    "lootTableKeys": ["sw4Bee"],
+    "lootTableKeys": ["rawHoney", "beeWing", "enchantWeaponScroll2nd"],
     "scriptKeys": ["default", "setMonsterElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,

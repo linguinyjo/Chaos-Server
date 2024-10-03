@@ -28,7 +28,7 @@ public class GoranScript:  DialogScriptBase
         var isAvailable = AJourneyToSuomiQuestHelper.IsQuestAvailable(source);
         if (isAvailable)
         {
-            Subject.AddOption("A Journey to Suomi", "goran_a_journey_to_suomi_quest");
+            Subject.AddOption("Oona's shipment", "goran_a_journey_to_suomi_quest");
         }
     }
     

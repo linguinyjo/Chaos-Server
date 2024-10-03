@@ -1,14 +1,14 @@
 {
-  "castLines": 2,
+  "castLines": 1,
   "learningRequirements": {
     "itemRequirements": [],
     "requiredGold": 1000,
     "requiredStats": {
       "con": 3,
       "dex": 3,
-      "int": 7,
+      "int": 5,
       "str": 3,
-      "wis": 13
+      "wis": 7
     },
     "prerequisiteSkills": [],
     "prerequisiteSpells": []
@@ -16,7 +16,7 @@
   "spellType": "NoTarget",
   "class": "Monk",
   "description": "Applies a small heal to self",
-  "level": 11,
+  "level": 1,
   "name": "Gentle Touch",
   "panelSprite": 120,
   "scriptKeys": [
@@ -29,10 +29,10 @@
         "targetAnimation": 4,
         "animationSpeed": 150
       },
-      "healStatMultiplier": 3,
+      "healStatMultiplier": 1,
       "manaCost": 50,
       "sound": 8,
-      "baseHeal": 100,
+      "baseHeal": 200,
       "healStat": "wis",
       "range": 2,
       "filter": "selfOnly, aliveOnly"

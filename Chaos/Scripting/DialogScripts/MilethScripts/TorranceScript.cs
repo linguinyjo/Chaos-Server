@@ -24,13 +24,14 @@ public class TorranceScript:  DialogScriptBase
     public override void OnDisplaying(Aisling source)
     {
         var questStatus = TrainingQuestHelper.GetQuestStatus(source);
-        if (questStatus is TrainingQuestStatus.FromDarToVorlof)
+        switch (questStatus)
         {
-            Subject.AddOption("Training quest", "torrance_training_quest_a");
-        } else if (questStatus is TrainingQuestStatus.SpokenToTorrance)
-        {
-            Subject.AddOption("Training quest", "torrance_training_quest_b");
-         // check if its been completed   
+            case TrainingQuestStatus.FromDarToVorlof:
+                Subject.AddOption("Training quest", "torrance_training_quest_a");
+                break;
+            case TrainingQuestStatus.SpokenToTorrance:
+                Subject.AddOption("Training quest", "torrance_training_quest_b");
+                break;
         }
     }
     

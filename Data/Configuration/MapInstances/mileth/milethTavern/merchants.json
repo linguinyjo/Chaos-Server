@@ -8,7 +8,7 @@
       },
     {
         "blackList": [],
-        "direction": "Down",
+        "direction": "Right",
         "extraScriptKeys": [],
         "merchantTemplateKey": "Teague",
         "spawnPoint": "(12, 10)"

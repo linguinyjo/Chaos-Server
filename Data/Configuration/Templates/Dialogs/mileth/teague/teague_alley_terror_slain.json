@@ -1,0 +1,8 @@
+{
+  "scriptKeys": ["TerrorQuest"],
+  "scriptVars": {},
+  "nextDialogKey": "close",
+  "templateKey": "teague_alley_terror_slain",
+  "text": "The alley... it's quiet now. No more whispers, no more shadows reaching for me. I... I thought I'd feel better, but...",
+  "type": "Normal"
+}

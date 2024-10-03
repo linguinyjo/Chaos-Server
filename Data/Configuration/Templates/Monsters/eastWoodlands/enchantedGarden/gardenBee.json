@@ -3,7 +3,7 @@
     "expReward": 18,
     "moveIntervalMs": 1500,
     "name": "Bee",
-    "lootTableKeys": ["gardenBee"],
+    "lootTableKeys": ["rawWax", "rawHoney"],
     "scriptKeys": ["default"],
     "scriptVars": {},
     "skillIntervalMs": 1500,

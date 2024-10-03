@@ -1,0 +1,32 @@
+{
+    "buyCost": 100000,
+    "category": "Staff",
+    "color": "Forest",
+    "displaySprite": 25,
+    "equipmentType": "Weapon",
+    "gender": "Unisex",
+    "isModifiable": true,
+    "maxDurability": 7000,
+    "maxStacks": 1,
+    "level": 11,
+    "levelCircle": 2,
+    "class": "wizard",
+    "modifiers": {
+        "magicAttack": 42,
+        "wis": 2,
+        "maximumMp": 200
+    },
+    "sellValue": 45000,
+    "weight": 6,
+    "description": "When equipped crowd control spells have -1 lines",
+    "name": "Magus Apollo",
+    "panelSprite": 184,
+    "scriptKeys": ["Equipment", "EquipStaff"],
+    "scriptVars": {
+        "equipment": {},
+        "equipStaff": {
+            "spellCategory": "Cc"
+        }
+    },
+    "templateKey": "magusApollo"
+}

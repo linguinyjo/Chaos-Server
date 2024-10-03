@@ -1,0 +1,8 @@
+{
+  "scriptKeys": ["TerrorQuest"],
+  "scriptVars": {},
+  "nextDialogKey": "teague_alley_terror_secondary",
+  "templateKey": "teague_alley_terror_initial",
+  "text": "I thought I'd be free, but there's more. Always more. The terrors, they're like the bottles. Never just one, always another waiting. There's something else... something in the alley. I hear it scratching, whispering in the night.",
+  "type": "Normal"
+}

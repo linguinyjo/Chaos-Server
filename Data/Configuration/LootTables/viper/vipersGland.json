@@ -2,7 +2,7 @@
   "key": "vipersGland",
   "lootDrops": [
     {
-      "dropChance": 0.40,
+      "dropChance": 0.33,
       "itemTemplateKey": "vipersGland"
     }
   ]

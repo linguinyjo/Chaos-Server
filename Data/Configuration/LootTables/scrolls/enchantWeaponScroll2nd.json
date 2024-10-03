@@ -1,0 +1,9 @@
+{
+  "key": "enchantWeaponScroll2nd",
+  "lootDrops": [
+    {
+      "dropChance": 0.01,
+      "itemTemplateKey": "enchantWeaponScroll2nd"
+    }
+  ]
+}

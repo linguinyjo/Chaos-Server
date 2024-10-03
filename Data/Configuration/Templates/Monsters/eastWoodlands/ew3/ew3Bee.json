@@ -3,7 +3,7 @@
     "expReward": 68,
     "moveIntervalMs": 1500,
     "name": "Bee",
-    "lootTableKeys": ["gardenBee"],
+    "lootTableKeys": ["rawWax", "rawHoney"],
     "scriptKeys": ["default", "setMonsterElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
@@ -14,7 +14,7 @@
     "statSheet": {
         "level": 13,
         "ac": 88,
-        "maximumHp": 800,
+        "maximumHp": 850,
         "maximumMp": 1000,
         "physicalAttack": 20,
         "con": 4,

@@ -4,7 +4,7 @@
     "moveIntervalMs": 1500,
     "aggroRange": 10,
     "name": "Centipede",
-    "lootTableKeys": ["crypt2Centipede"],
+    "lootTableKeys": ["centipedeGland"],
     "scriptKeys": ["default"],
     "scriptVars": {},
     "skillIntervalMs": 1500,

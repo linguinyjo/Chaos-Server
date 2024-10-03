@@ -18,5 +18,16 @@
         },
         "shouldBlockPathfinding": true,
         "source": "(99, 49)"
+    },
+    {
+        "scriptKeys": ["terrorQuestWarp"],
+        "scriptVars": {
+            "terrorQuestWarp": {
+                "destination": "seelieGround:(5, 14)",
+                "requiredStatus": 1
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(63, 91)"
     }
 ]

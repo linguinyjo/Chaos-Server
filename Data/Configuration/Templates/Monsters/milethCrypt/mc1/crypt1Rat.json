@@ -3,7 +3,7 @@
     "expReward": 10,
     "moveIntervalMs": 1500,
     "name": "Common Rat",
-    "lootTableKeys": ["crypt1Rats"],
+    "lootTableKeys": ["mold", "rottenApple"],
     "scriptKeys": ["default"],
     "scriptVars": {},
     "skillIntervalMs": 1500,

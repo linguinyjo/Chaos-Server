@@ -24,13 +24,12 @@
         "result": "Completed"
     },
     {
-        "title": "I like oranges",
-        "summary": "I like oranges too, go get me some",
+        "title": "The Beggar's Terror",
+        "summary": "Speak with the beggar in Mileth's tavern. \nLevel requirement: 11-41",
         "rewards": "literally nothing still",
-        "prerequisiteEventId": "Apples1",
-        "qualifyingCircles": ["three", "four", "five"],
-        "id": "Oranges1",
-        "result": "i ate some apples and oranges"
+        "qualifyingCircles": ["two"],
+        "id": "terrorOfTheBeggar",
+        "result": "Completed"
     },
     {
         "title": "I like carrots",

@@ -5,7 +5,17 @@
     "intervalSecs": 90,
     "intervalVariancePct": 30,
     "extraLootTableKeys": [],
-    "maxAmount": 75,
+    "maxAmount": 30,
+    "maxPerSpawn": 30,
+    "monsterTemplateKey": "sw2Viper"
+  },
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 90,
+    "intervalVariancePct": 30,
+    "extraLootTableKeys": [],
+    "maxAmount": 50,
     "maxPerSpawn": 50,
     "monsterTemplateKey": "sw2Bee"
   },
@@ -15,8 +25,8 @@
     "intervalSecs": 90,
     "intervalVariancePct": 30,
     "extraLootTableKeys": [],
-    "maxAmount": 15,
-    "maxPerSpawn": 10,
+    "maxAmount": 12,
+    "maxPerSpawn": 12,
     "monsterTemplateKey": "sw2Mantis"
   }
 ]

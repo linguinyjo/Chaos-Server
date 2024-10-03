@@ -1,0 +1,13 @@
+{
+  "options": [
+    {
+      "dialogKey": "Close",
+      "optionText": "Close"
+    }
+  ],
+  "scriptKeys": ["teague"],
+  "scriptVars": {},
+  "templateKey": "teague_initial",
+  "text": "Please...wont you spare some coin for a troubled old man?",
+  "type": "Menu"
+}

@@ -68,5 +68,16 @@
         },
         "shouldBlockPathfinding": true,
         "source": "(15, 67)"
+    },
+    {
+        "scriptKeys": ["terrorQuestWarp"],
+        "scriptVars": {
+            "terrorQuestWarp": {
+                "destination": "abelAlley:(1, 10)",
+                "requiredStatus": 4
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(3, 45)"
     }
 ]

@@ -12,10 +12,6 @@ public class VorlofScript:  DialogScriptBase
 {
     private readonly IDialogFactory DialogFactory;
     
-    #region ScriptVars
-    protected byte Class { get; init; }
-    #endregion
-    
     /// <inheritdoc />
     public VorlofScript(Dialog subject, IDialogFactory dialogFactory)
         : base(subject) => DialogFactory = dialogFactory;
@@ -24,26 +20,24 @@ public class VorlofScript:  DialogScriptBase
     public override void OnDisplaying(Aisling source)
     {
         var questStatus = TrainingQuestHelper.GetQuestStatus(source);
-        if (questStatus is TrainingQuestStatus.SpokenToRiona)
+        switch (questStatus)
         {
-            Subject.AddOption("Riona sent me", "vorlof_training_quest");
-        } else if (questStatus is TrainingQuestStatus.CompletedDarsRequest)
-        {
-            Subject.AddOption("That was easy!", "vorlof_completed_dars_request");
-        } else if (questStatus is TrainingQuestStatus.CompletedTorrencesRequest)
-        { 
-            Subject.AddOption("Training quest", "vorlof_completed_torrances_request");
-        } else if (questStatus is TrainingQuestStatus.Completed)
-        {
-            var isPeasant = source.UserStatSheet.BaseClass is BaseClass.Peasant;
-            if (isPeasant)
+            case TrainingQuestStatus.SpokenToRiona:
+                Subject.AddOption("Riona sent me", "vorlof_training_quest");
+                break;
+            case TrainingQuestStatus.CompletedDarsRequest:
+                Subject.AddOption("That was easy!", "vorlof_completed_dars_request");
+                break;
+            case TrainingQuestStatus.CompletedTorrencesRequest:
+                Subject.AddOption("Training quest", "vorlof_completed_torrances_request");
+                break;
+            case TrainingQuestStatus.Completed:
             {
-                Subject.AddOption("What should I do now?", "vorlof_help_for_peasant");
+                var isPeasant = source.UserStatSheet.BaseClass is BaseClass.Peasant;
+                Subject.AddOption("What should I do now?",
+                    isPeasant ? "vorlof_help_for_peasant" : "vorlof_help_for_first_circle_a");
+                break;
             }
-            else
-            {
-                Subject.AddOption("What should I do now?", "vorlof_help_for_first_circle_a");
-            }    
         }
     }
     

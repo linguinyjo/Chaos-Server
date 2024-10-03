@@ -1,9 +1,9 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 98,
+    "expReward": 62,
     "moveIntervalMs": 1500,
     "name": "Spider",
-    "lootTableKeys": ["crypt1Spiders"],
+    "lootTableKeys": ["spidersEye"],
     "scriptKeys": ["default", "setMonsterElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
@@ -12,19 +12,18 @@
     "spellTemplateKeys": ["beag_sal", "beag_athar", "beag_creag", "beag_srad", "beag_cradh"],
     "sprite": 53,
     "statSheet": {
-        "level": 17,
-        "ac": 75,
-        "maximumHp": 1200,
+        "level": 12,
+        "ac": 88,
+        "maximumHp": 800,
         "maximumMp": 1000,
-        "physicalAttack": 32,
-        "magicAttack": 80,
+        "physicalAttack": 13,
         "con": 4,
         "dex": 1,
-        "int": 20,
-        "str": 16,
+        "int": 1,
+        "str": 12,
         "wis": 1
     },
-    "templateKey": "crypt2Spider",
+    "templateKey": "crypt3Spider",
     "type": "Normal",
     "wanderIntervalMs": 2000
 }

@@ -2,7 +2,7 @@
   "options": [
     {
       "dialogKey": "close",
-      "optionText": "I'll just be going"
+      "optionText": "Close"
     }
   ],
   "scriptKeys": ["aoife"],

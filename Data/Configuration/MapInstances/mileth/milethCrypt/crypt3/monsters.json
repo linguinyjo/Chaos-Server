@@ -5,9 +5,9 @@
         "intervalSecs": 90,
         "intervalVariancePct": 30,
         "extraLootTableKeys": [],
-        "maxAmount": 15,
-        "maxPerSpawn": 15,
-        "monsterTemplateKey": "crypt2Rat"
+        "maxAmount": 10,
+        "maxPerSpawn": 10,
+        "monsterTemplateKey": "crypt3Bat"
       },
     {
         "blackList": [],
@@ -17,7 +17,7 @@
         "extraLootTableKeys": [],
         "maxAmount": 15,
         "maxPerSpawn": 15,
-        "monsterTemplateKey": "crypt2Spider"
+        "monsterTemplateKey": "crypt3Spider"
     },
     {
         "blackList": [],
@@ -27,6 +27,6 @@
         "extraLootTableKeys": [],
         "maxAmount": 10,
         "maxPerSpawn": 10,
-        "monsterTemplateKey": "crypt2Centipede"
+        "monsterTemplateKey": "crypt3Centipede"
     }
 ]

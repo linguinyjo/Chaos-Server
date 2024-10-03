@@ -9,7 +9,7 @@
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],
     "spellIntervalMs": 2000,
-    "spellTemplateKeys": ["puinsein"],
+    "spellTemplateKeys": [],
     "sprite": 271,
     "statSheet": {
         "level": 8,

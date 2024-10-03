@@ -1,0 +1,27 @@
+{
+    "buyCost": 50000,
+    "category": "Boots",
+    "color": "Green",
+    "isDyable": true,
+    "displaySprite": 1,
+    "equipmentType": "Boots",
+    "gender": "Unisex",
+    "maxDurability": 1000,
+    "maxStacks": 1,
+    "modifiers": {
+        "dex": 2
+    },
+    "level": 11,
+    "levelCircle": 2,
+    "notMonk": true,
+    "sellValue": 20000,
+    "weight": 2,
+    "description": "Usable by all except monk",
+    "name": "Shagreen Boots",
+    "panelSprite": 95,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "shagreenBoots"
+}

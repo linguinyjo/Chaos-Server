@@ -1,10 +1,10 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 98,
+    "expReward": 88,
     "aggroRange": 10,
     "moveIntervalMs": 1500,
     "name": "Wolf",
-    "lootTableKeys": ["ew3Wolf"],
+    "lootTableKeys": ["wolfSkin", "wolfTeeth", "enchantWeaponScroll2nd"],
     "scriptKeys": ["default", "setMonsterElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
