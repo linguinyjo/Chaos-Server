@@ -11,12 +11,12 @@ using Chaos.Services.Factories.Abstractions;
 namespace Chaos.Scripting.SpellScripts;
 
 [SuppressMessage("ReSharper", "AutoPropertyCanBeMadeGetOnly.Global")]
-public class ApplyEffectScript : ConfigurableSpellScriptBase,
+public class ApplySpellEffectScript : ConfigurableSpellScriptBase,
                                  GenericAbilityComponent<Creature>.IAbilityComponentOptions,
                                  ApplyEffectAbilityComponent.IApplyEffectComponentOptions
 {
     /// <inheritdoc />
-    public ApplyEffectScript(Spell subject, IEffectFactory effectFactory)
+    public ApplySpellEffectScript(Spell subject, IEffectFactory effectFactory)
         : base(subject)
         => EffectFactory = effectFactory;
 
