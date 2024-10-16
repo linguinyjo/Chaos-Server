@@ -1,0 +1,9 @@
+[
+    {
+        "blackList": [],
+        "direction": "Left",
+        "extraScriptKeys": [],
+        "merchantTemplateKey": "riona",
+        "spawnPoint": "(3, 3)"
+      }
+]

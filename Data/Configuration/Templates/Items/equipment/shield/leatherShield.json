@@ -1,0 +1,27 @@
+{
+    "buyCost": 10000,
+    "category": "Shield",
+    "color": "Forest",
+    "displaySprite": 5,
+    "equipmentType": "Shield",
+    "gender": "Unisex",
+    "isModifiable": true,
+    "maxDurability": 5000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -5,
+        "maximumMp": -750
+    },
+    "level": 11,
+    "levelCircle": 2,
+    "sellValue": 4000,
+    "weight": 5,
+    "description": "Class: All\nLevel: 11\nAc -5",
+    "name": "Leather Shield",
+    "panelSprite": 188,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "leatherShield"
+}

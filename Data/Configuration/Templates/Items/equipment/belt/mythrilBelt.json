@@ -1,0 +1,27 @@
+{
+    "buyCost": 45000,
+    "category": "Belt",
+    "color": "Default",
+    "displaySprite": 236,
+    "equipmentType": "Belt",
+    "gender": "Unisex",
+    "isModifiable": false,
+    "maxDurability": 5000,
+    "maxStacks": 1,
+    "modifiers": {
+        "int": 2,
+        "maximumMp": 200
+    },
+    "level": 11,
+    "levelCircle": 2,
+    "sellValue": 17500,
+    "weight": 1,
+    "description": "Class: All\nLevel: 11\nMp 200, Int 2",
+    "name": "Leather Belt",
+    "panelSprite": 236,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {},
+    },
+    "templateKey": "mythrilBelt"
+}

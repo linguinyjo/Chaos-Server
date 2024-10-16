@@ -1,0 +1,26 @@
+{
+    "buyCost": 100,
+    "category": "1h wep",
+    "color": "Forest",
+    "displaySprite": 1,
+    "equipmentType": "Weapon",
+    "gender": "Unisex",
+    "isModifiable": true,
+    "maxDurability": 1000,
+    "maxStacks": 1,
+    "modifiers": {
+        "physicalAttack": 3
+    },
+    "level": 1,
+    "levelCircle": 1,
+    "sellValue": 50,
+    "weight": 1,
+    "description": "Class: All\nLevel: 1\nP.Atk 3",
+    "name": "Stick",
+    "panelSprite": 86,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "stick"
+}

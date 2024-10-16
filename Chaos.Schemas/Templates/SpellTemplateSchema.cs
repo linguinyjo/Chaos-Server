@@ -49,4 +49,9 @@ public sealed record SpellTemplateSchema : PanelEntityTemplateSchema
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.Never)]
     public SpellType SpellType { get; set; }
+    
+    /// <summary>
+    ///     The category the spell belongs to
+    /// </summary>
+    public SpellCategory SpellCategory { get; set; }
 }

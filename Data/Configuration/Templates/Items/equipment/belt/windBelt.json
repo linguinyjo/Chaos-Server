@@ -1,0 +1,27 @@
+{
+    "buyCost": 10000,
+    "category": "Belt",
+    "color": "Forest",
+    "displaySprite": 243,
+    "equipmentType": "Belt",
+    "gender": "Unisex",
+    "isModifiable": false,
+    "maxDurability": 5000,
+    "maxStacks": 1,
+    "modifiers": {},
+    "level": 11,
+    "levelCircle": 2,
+    "sellValue": 3500,
+    "weight": 1,
+    "description": "Class: All\nLevel: 11\nWind defense",
+    "name": "Wind Belt",
+    "panelSprite": 243,
+    "scriptKeys": ["Equipment", "setelement"],
+    "scriptVars": {
+        "equipment": {},
+        "setelement": {
+            "defenseElement": "wind"
+        }
+    },
+    "templateKey": "windBelt"
+}

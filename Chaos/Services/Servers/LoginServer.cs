@@ -7,6 +7,8 @@ using Chaos.Common.Definitions;
 using Chaos.Common.Identity;
 using Chaos.Cryptography;
 using Chaos.Extensions.Common;
+using Chaos.Models.Legend;
+using Chaos.Models.Panel;
 using Chaos.Models.World;
 using Chaos.Networking.Abstractions;
 using Chaos.Networking.Entities;
@@ -17,9 +19,12 @@ using Chaos.Packets;
 using Chaos.Packets.Abstractions;
 using Chaos.Packets.Abstractions.Definitions;
 using Chaos.Security.Abstractions;
+using Chaos.Services.Factories.Abstractions;
 using Chaos.Services.Servers.Options;
 using Chaos.Services.Storage.Abstractions;
 using Chaos.Storage.Abstractions;
+using Chaos.Time;
+using Chaos.Utilities;
 using Microsoft.Extensions.Options;
 
 namespace Chaos.Services.Servers;
@@ -34,6 +39,9 @@ public sealed class LoginServer : ServerBase<IChaosLoginClient>, ILoginServer<IC
     private readonly IStore<MailBox> MailStore;
     private readonly IMetaDataStore MetaDataStore;
     private readonly Notice Notice;
+    private readonly IItemFactory ItemFactory;
+    private readonly ISkillFactory SkillFactory;
+
     public ConcurrentDictionary<uint, CreateCharInitialArgs> CreateCharRequests { get; }
     private new LoginOptions Options { get; }
 
@@ -49,7 +57,9 @@ public sealed class LoginServer : ServerBase<IChaosLoginClient>, ILoginServer<IC
         IMetaDataStore metaDataStore,
         IAccessManager accessManager,
         IStore<MailBox> mailStore,
-        IFactory<MailBox> mailBoxFactory)
+        IFactory<MailBox> mailBoxFactory,
+        IItemFactory itemFactory,
+        ISkillFactory skillFactory)
         : base(
             redirectManager,
             packetSerializer,
@@ -67,6 +77,8 @@ public sealed class LoginServer : ServerBase<IChaosLoginClient>, ILoginServer<IC
         MailBoxFactory = mailBoxFactory;
         Notice = new Notice(options.Value.NoticeMessage);
         CreateCharRequests = new ConcurrentDictionary<uint, CreateCharInitialArgs>();
+        ItemFactory = itemFactory;
+        SkillFactory = skillFactory;
 
         IndexHandlers();
     }
@@ -131,15 +143,28 @@ public sealed class LoginServer : ServerBase<IChaosLoginClient>, ILoginServer<IC
             {
                 var mapInstanceCache = CacheProvider.GetCache<MapInstance>();
                 var startingMap = mapInstanceCache.Get(Options.StartingMapInstanceId);
-
+                var inventory = new Inventory(ItemFactory);
+              
                 var aisling = new Aisling(
                     requestArgs.Name,
                     localArgs.Gender,
                     localArgs.HairStyle,
                     localArgs.HairColor,
                     startingMap,
-                    Options.StartingPoint);
-
+                    Options.StartingPoint,
+                    inventory);
+                
+                var skillToLearn = SkillFactory.Create("assail");
+                ComplexActionHelper.LearnSkill(aisling, skillToLearn);
+                
+                var legendMark = new LegendMark(
+                    "Aisling",
+                    "born",
+                    MarkIcon.Victory,
+                    MarkColor.White,
+                    1,
+                    GameTime.Now);
+                aisling.Legend.AddOrAccumulate(legendMark);
                 var mailBox = MailBoxFactory.Create(aisling.Name);
 
                 await AislingStore.SaveAsync(aisling);

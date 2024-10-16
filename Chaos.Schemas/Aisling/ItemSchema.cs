@@ -54,4 +54,9 @@ public sealed record ItemSchema : PanelEntitySchema
     ///     The weight of this item if it's different than what is specified by it's template
     /// </summary>
     public int? Weight { get; set; }
+    
+    /// <summary>
+    ///     The weight of this item if it's different than what is specified by it's template
+    /// </summary>
+    public int? Enchant { get; set; }
 }

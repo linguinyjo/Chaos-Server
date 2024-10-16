@@ -1,0 +1,27 @@
+{
+    "buyCost": 25000,
+    "category": "Earrings",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 231,
+    "equipmentType": "Earrings",
+    "gender": "Unisex",
+    "maxDurability": 1000,
+    "maxStacks": 1,
+    "modifiers": {
+        "wis": 2
+    },
+    "level": 11,
+    "levelCircle": 2,
+    "pantsColor": "Black",
+    "sellValue": 12000,
+    "weight": 1,
+    "description": "Class: All\nLevel: 11\nWis 2",
+    "name": "Ruby Earrings",
+    "panelSprite": 231,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "rubyEarrings"
+}

@@ -1,0 +1,26 @@
+{
+    "isAssail": true,
+    "description": "A basic attack that deals a small amount of damage to an enemy immediately in front of you.",
+    "level": 1,
+    "levelsUp": true,
+    "name": "Assail",
+    "class": "peasant",
+    "panelSprite": 1,
+    "scriptKeys": ["damage"],
+    "scriptVars": {
+        "damage": {
+            "bodyAnimation": "punch",
+            "sound": 53,
+            "damageStat": "str",
+            "range": 1,
+            "shape": "front",
+            "excludeSourcePoint": true,
+            "damageStatMultiplier": 0.50,
+            "baseDamage": 3,
+            "filter": "hostileOnly, aliveOnly, othersOnly",
+            "usePAtk": true,
+            "fistBonus": 15
+        }
+    },
+    "templateKey": "monkAssail"
+}

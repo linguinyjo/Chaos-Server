@@ -25,6 +25,10 @@ using Chaos.Observers;
 using Chaos.Scripting.Abstractions;
 using Chaos.Scripting.AislingScripts;
 using Chaos.Scripting.AislingScripts.Abstractions;
+using Chaos.Scripting.FunctionalScripts.Abstractions;
+using Chaos.Scripting.FunctionalScripts.ExperienceDistribution;
+using Chaos.Services.Factories;
+using Chaos.Services.Factories.Abstractions;
 using Chaos.Services.Servers.Options;
 using Chaos.Time;
 using Chaos.Time.Abstractions;
@@ -36,6 +40,8 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
 {
     private readonly IFactory<Exchange> ExchangeFactory;
     private readonly ICloningService<Item> ItemCloner;
+    private readonly IExperienceDistributionScript ExperienceDistributionScript = DefaultExperienceDistributionScript.Create();
+    
     public Bank Bank { get; private set; }
     public BodyColor BodyColor { get; set; }
     public BodySprite BodySprite { get; set; }
@@ -165,7 +171,7 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
         };
         Script = scriptProvider.CreateScript<IAislingScript, Aisling>(ScriptKeys, this);
     }
-
+    
     //default user
     public Aisling(
         string name,
@@ -173,8 +179,9 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
         int hairStyle,
         DisplayColor hairColor,
         MapInstance mapInstance,
-        IPoint point)
-        : this(name, mapInstance, point)
+        IPoint point,
+        Inventory inventory)
+        : this(name, mapInstance, point) 
     {
         Name = name;
         Gender = gender;
@@ -182,8 +189,8 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
         BodySprite = Gender == Gender.Male ? BodySprite.Male : BodySprite.Female;
         HairStyle = hairStyle;
         HairColor = hairColor;
+        Inventory = inventory;
         UserStatSheet = UserStatSheet.NewCharacter;
-
         Titles = [string.Empty];
 
         ChannelSettings.AddRange(WorldOptions.Instance.DefaultChannels.Select(x => new ChannelSettings(x.ChannelName)));
@@ -799,6 +806,11 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
         return true;
     }
 
+    public void GiveExperience(long amount)
+    {
+        ExperienceDistributionScript.GiveExp(this, amount);
+    }
+
     public bool TryPickupItem(GroundItem groundItem, byte destinationSlot)
     {
         if (!groundItem.CanPickUp(this))
@@ -1067,7 +1079,7 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
 
         if (!Equipment.TryGetRemove((byte)slot, out var item))
             return;
-
+        
         Inventory.TryAddToNextSlot(item);
         Trackers.LastUnequip = DateTime.UtcNow;
     }
@@ -1199,7 +1211,7 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
         SetLocation(endPoint);
         Trackers.LastWalk = DateTime.UtcNow;
         Trackers.LastPosition = startPosition;
-
+        Client.SendCancelCasting();
         var creaturesToUpdate = MapInstance.GetEntitiesWithinRange<Creature>(startPoint, 16)
                                            .ThatAreWithinRange(
                                                points:

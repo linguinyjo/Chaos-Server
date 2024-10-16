@@ -1,0 +1,62 @@
+[
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pathTemple3:(6, 2)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(6, 11)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pathTemple3:(6, 2)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(7, 11)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pathTemple8:(2, 5)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(11, 6)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pathTemple8:(2, 5)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(11, 7)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "chiefPriestHall:(6, 10)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(6, 1)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "chiefRogueHall:(10, 6)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(1, 6)"
+    }
+]

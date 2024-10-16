@@ -138,6 +138,24 @@ public record StatSheet : Attributes
         get => _wisMod;
         init => _wisMod = value;
     }
+    
+    public int PhysicalAttackMod
+    {
+        get => _physicalAttackMod;
+        init => _physicalAttackMod = value;
+    }
+    
+    public int MagicAttackMod
+    {
+        get => _magicAttackMod;
+        init => _magicAttackMod = value;
+    }
+    
+    public int RegenMod
+    {
+        get => _regenMod;
+        init => _regenMod = value;
+    }
 
     public sbyte EffectiveAc => (sbyte)Math.Clamp(Ac + AcMod, sbyte.MinValue, sbyte.MaxValue);
 
@@ -168,6 +186,12 @@ public record StatSheet : Attributes
     public int EffectiveSpellDamagePct => SpellDamagePct + SpellDamagePctMod;
 
     public byte EffectiveStr => (byte)Math.Clamp(Str + StrMod, byte.MinValue, byte.MaxValue);
+    
+    public byte EffectivePhysicalAttack => (byte)Math.Clamp(PhysicalAttack + PhysicalAttackMod, byte.MinValue, byte.MaxValue);
+
+    public byte EffectiveMagicAttack => (byte)Math.Clamp(MagicAttack + MagicAttackMod, byte.MinValue, byte.MaxValue);
+    
+    public byte EffectiveRegen => (byte)Math.Clamp(Regen + RegenMod, byte.MinValue, byte.MaxValue);
 
     public byte EffectiveWis => (byte)Math.Clamp(Wis + WisMod, byte.MinValue, byte.MaxValue);
 
@@ -210,6 +234,9 @@ public record StatSheet : Attributes
         Interlocked.Add(ref _flatSpellDamageMod, other.FlatSpellDamage);
         Interlocked.Add(ref _skillDamagePctMod, other.SkillDamagePct);
         Interlocked.Add(ref _spellDamagePctMod, other.SpellDamagePct);
+        Interlocked.Add(ref _physicalAttackMod, other.PhysicalAttack);
+        Interlocked.Add(ref _magicAttackMod, other.MagicAttack);
+        Interlocked.Add(ref _regenMod, other.Regen);
     }
 
     public void AddHealthPct(int pct)
@@ -300,6 +327,9 @@ public record StatSheet : Attributes
         Interlocked.Add(ref _flatSpellDamageMod, -other.FlatSpellDamage);
         Interlocked.Add(ref _skillDamagePctMod, -other.SkillDamagePct);
         Interlocked.Add(ref _spellDamagePctMod, -other.SpellDamagePct);
+        Interlocked.Add(ref _physicalAttackMod, -other.PhysicalAttack);
+        Interlocked.Add(ref _magicAttackMod, -other.MagicAttack);
+        Interlocked.Add(ref _regenMod, -other.Regen);
     }
 
     public void SubtractHealthPct(decimal pct)
@@ -383,6 +413,19 @@ public record StatSheet : Attributes
 
         return true;
     }
+    
+    public bool TrySubtractAc(int amount)
+    {
+        if (Interlocked.Add(ref _acMod, -amount) < 0)
+        {
+            Interlocked.Add(ref _acMod, amount);
+
+            return false;
+        }
+
+        return true;
+    }
+
 
     #region SharedAttributes
     // ReSharper disable once FieldCanBeMadeReadOnly.Global
@@ -411,5 +454,8 @@ public record StatSheet : Attributes
     protected int _flatSkillDamageMod;
     protected int _spellDamagePctMod;
     protected int _skillDamagePctMod;
+    protected int _physicalAttackMod;
+    protected int _magicAttackMod;
+    protected int _regenMod;
     #endregion
 }

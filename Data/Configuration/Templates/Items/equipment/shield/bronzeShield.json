@@ -1,0 +1,28 @@
+{
+    "buyCost": 75000,
+    "category": "Shield",
+    "color": "Forest",
+    "displaySprite": 6,
+    "equipmentType": "Shield",
+    "gender": "Unisex",
+    "isModifiable": true,
+    "maxDurability": 15000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -8,
+        "maximumMp": -1250,
+        "magicResistance": 20
+    },
+    "level": 11,
+    "levelCircle": 2,
+    "sellValue": 30000,
+    "weight": 12,
+    "description": "Class: All\nLevel: 11\nAc -8, MR 20%",
+    "name": "Bronze Shield",
+    "panelSprite": 189,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "bronzeShield"
+}

@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "close",
+  "scriptKeys": ["incrementQuestStatus"],
+  "scriptVars": {},
+  "templateKey": "vorlof_completed_dars_request",
+  "text": "So you managed to complete Dar's request? Well I am impressed. But you still have a lot to learn. Go and speak to Mileth's armorer Torrance. He has a task for you to complete.",
+  "type": "Normal"
+}

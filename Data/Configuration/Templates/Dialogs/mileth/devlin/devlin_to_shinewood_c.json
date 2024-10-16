@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "close",
+  "scriptKeys": ["IncrementDevlinsIngredientsQuestStatus"],
+  "scriptVars": {},
+  "templateKey": "devlin_to_shinewood_c",
+  "text": "Oh, I almost forgot to mention. Beware of the mantis that roam there, they have been known to feast on new Aislings such as yourself. Anyway, return once you have done as I ask.",
+  "type": "Normal"
+}

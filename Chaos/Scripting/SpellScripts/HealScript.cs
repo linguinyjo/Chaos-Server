@@ -79,6 +79,9 @@ public class HealScript : ConfigurableSpellScriptBase,
     public decimal? HealStatMultiplier { get; init; }
 
     /// <inheritdoc />
+    public decimal? MagicAttackMultiplier { get; init; }
+
+    /// <inheritdoc />
     public decimal? PctHpHeal { get; init; }
 
     /// <inheritdoc />
@@ -89,5 +92,6 @@ public class HealScript : ConfigurableSpellScriptBase,
 
     /// <inheritdoc />
     public decimal PctManaCost { get; init; }
+    public bool CanResist { get; init; }
     #endregion
 }

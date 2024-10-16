@@ -1,0 +1,28 @@
+{
+    "buyCost": 2500,
+    "category": "Ring",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 213,
+    "equipmentType": "Ring",
+    "gender": "Unisex",
+    "maxDurability": 1000,
+    "maxStacks": 1,
+    "modifiers": {
+        "maximumMp": 100
+    },
+    "class": "peasant",
+    "pantsColor": "Black",
+    "level": 1,
+    "levelCircle": 1,
+    "sellValue": 1000,
+    "weight": 2,
+    "description": "Class: All\nLevel: 1\nMp 100",
+    "name": "Small Emerald Ring",
+    "panelSprite": 213,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "smallEmeraldRing"
+}

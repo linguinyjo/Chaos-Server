@@ -1,0 +1,27 @@
+{
+    "buyCost": 10000,
+    "category": "Necklace",
+    "color": "Forest",
+    "displaySprite": 199,
+    "equipmentType": "Necklace",
+    "gender": "Unisex",
+    "isModifiable": false,
+    "maxDurability": 5000,
+    "maxStacks": 1,
+    "modifiers": {},
+    "level": 11,
+    "levelCircle": 2,
+    "sellValue": 3500,
+    "weight": 1,
+    "description": "Class: All\nLevel: 11\nSea offense",
+    "name": "Sea Necklace",
+    "panelSprite": 199,
+    "scriptKeys": ["Equipment", "setelement"],
+    "scriptVars": {
+        "equipment": {},
+        "setelement": {
+            "offenseElement": "water"
+        }
+    },
+    "templateKey": "seaNecklace"
+}

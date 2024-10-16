@@ -32,4 +32,11 @@ public class ComponentVars : StaticVars
     public virtual void SetStage(int stage) => Set(CASCADE_STAGE_KEY, stage);
 
     public virtual void SetTargets(IReadOnlyCollection<MapEntity> targets) => Set(TARGETS_KEY, targets);
+    
+    public virtual void RemoveTargetsIf<T>(Func<T, bool> condition) where T : MapEntity
+    {
+        var targets = GetRequired<IReadOnlyCollection<MapEntity>>(TARGETS_KEY).ToList();
+        targets.RemoveAll(target => target is T t && condition(t));
+        SetTargets(targets);
+    }
 }

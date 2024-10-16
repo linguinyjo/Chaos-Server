@@ -1,0 +1,104 @@
+[
+    {
+        "scriptKeys": ["showWorldMap"],
+        "scriptVars": {
+            "showWorldMap": {
+                "worldMapKey": "field006"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(9, 35)"
+    },
+    {
+        "scriptKeys": ["showWorldMap"],
+        "scriptVars": {
+            "showWorldMap": {
+                "worldMapKey": "field006"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(9, 36)"
+    },
+    {
+        "scriptKeys": ["showWorldMap"],
+        "scriptVars": {
+            "showWorldMap": {
+                "worldMapKey": "field006"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(9, 37)"
+    },
+
+    {
+        "scriptKeys": ["showWorldMap"],
+        "scriptVars": {
+            "showWorldMap": {
+                "worldMapKey": "field006"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(8, 87)"
+    },
+    {
+        "scriptKeys": ["showWorldMap"],
+        "scriptVars": {
+            "showWorldMap": {
+                "worldMapKey": "field006"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(8, 86)"
+    },
+    
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "undineVillageWay:(1, 19)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(99, 51)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "undineVillageWay:(1, 18)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(99, 50)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "undineVillageWay:(1, 17)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(99, 49)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "undineWeaponShop:(6, 13)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(76, 82)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "undineArmorShop:(10, 9)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(82, 76)"
+    }
+]

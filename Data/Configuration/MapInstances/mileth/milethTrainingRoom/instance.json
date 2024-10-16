@@ -1,0 +1,9 @@
+{
+    "flags": "None",
+    "instanceId": "milethTrainingRoom",
+    "music": 1,
+    "name": "Mileth Training Room",
+    "scriptKeys": [],
+    "templateKey": "717",
+    "autoDayNightCycle": true
+}

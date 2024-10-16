@@ -1,0 +1,30 @@
+{
+    "assailIntervalMs": 1500,
+    "expReward": 121,
+    "moveIntervalMs": 1500,
+    "name": "Spider",
+    "lootTableKeys": ["spiderEye", "enchantWeaponScroll2nd"],
+    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptVars": {},
+    "skillIntervalMs": 1500,
+    "skillTemplateKeys": ["Assail"],
+    "spellIntervalMs": 10000,
+    "spellTemplateKeys": ["beag_sal", "beag_athar", "beag_creag", "beag_srad", "beag_cradh"],
+    "sprite": 53,
+    "statSheet": {
+        "level": 21,
+        "ac": 75,
+        "maximumHp": 1200,
+        "maximumMp": 1000,
+        "physicalAttack": 40,
+        "magicAttack": 50,
+        "con": 4,
+        "dex": 1,
+        "int": 20,
+        "str": 20,
+        "wis": 1
+    },
+    "templateKey": "crypt4Spider",
+    "type": "Normal",
+    "wanderIntervalMs": 2000
+}

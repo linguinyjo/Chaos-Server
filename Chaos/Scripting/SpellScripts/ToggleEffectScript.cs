@@ -77,5 +77,8 @@ public class ToggleEffectScript : ConfigurableSpellScriptBase,
 
     /// <inheritdoc />
     public decimal PctManaCost { get; init; }
+    
+    public bool CanResist { get; init; }
+
     #endregion
 }

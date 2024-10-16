@@ -1,0 +1,9 @@
+{
+    "flags": "None",
+    "instanceId": "milethPathReception",
+    "music": 1,
+    "name": "Path Reception",
+    "scriptKeys": [],
+    "templateKey": "393",
+    "autoDayNightCycle": true
+}

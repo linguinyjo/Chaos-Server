@@ -7,10 +7,10 @@
     "scriptKeys": ["showdialog", "defaultBehaviors"],
     "scriptVars": {
         "showdialog": {
-            "dialogKey": "trainer_tester_initial"
+            "dialogKey": "trainer_  tester_initial"
         }
     },
-    "skillsToTeach": ["assail", "ambush"],
+    "skillsToTeach": ["assail", "ambush", "assault"],
     "spellsToTeach": ["fire_breath", "healies", "regrowth", "needle_trap", "not_so_bad_curse"],
     "sprite": 37,
     "templateKey": "trainer_tester"

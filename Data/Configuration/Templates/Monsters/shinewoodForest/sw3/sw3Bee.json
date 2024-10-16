@@ -1,0 +1,30 @@
+{
+    "assailIntervalMs": 1500,
+    "expReward": 88,
+    "moveIntervalMs": 1500,
+    "name": "Bee",
+    "lootTableKeys": ["rawHoney", "beeWing", "enchantWeaponScroll2nd"],
+    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptVars": {},
+    "skillIntervalMs": 1500,
+    "skillTemplateKeys": ["Assail"],
+    "spellIntervalMs": 10000,
+    "spellTemplateKeys": ["beag_sal", "beag_athar", "beag_creag", "beag_srad", "beag_cradh"],
+    "sprite": 271,
+    "statSheet": {
+        "level": 15,
+        "ac": 82,
+        "maximumHp": 900,
+        "maximumMp": 1000,
+        "physicalAttack": 35,
+        "magicAttack": 60,
+        "con": 4,
+        "dex": 1,
+        "int": 15,
+        "str": 12,
+        "wis": 1
+    },
+    "templateKey": "sw3Bee",
+    "type": "Normal",
+    "wanderIntervalMs": 2000
+}

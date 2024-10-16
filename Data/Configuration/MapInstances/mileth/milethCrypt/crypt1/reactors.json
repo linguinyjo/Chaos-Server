@@ -1,0 +1,82 @@
+[
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "cryptVestibule:(7,8)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(12, 49)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "crypt2:(44,23)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(3,4)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "cryptVestibule:(7,8)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(13, 49)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "cryptVestibule:(7,8)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(14, 49)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "cryptVestibule:(7,8)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(15, 49)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "cryptVestibule:(7,8)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(16, 49)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "cryptVestibule:(7,8)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(17, 49)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "cryptVestibule:(7,8)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(18, 49)"
+    }
+]

@@ -1,0 +1,9 @@
+{
+    "flags": "None",
+    "instanceId": "suomiVillage",
+    "music": 1,
+    "name": "Suomi Village",
+    "scriptKeys": [],
+    "templateKey": "503",
+    "autoDayNightCycle": true
+}

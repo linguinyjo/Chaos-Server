@@ -18,12 +18,16 @@ public class DefaultExperienceFormula : IExperienceFormula
                 var partyLevelDifferenceDeductions = GetPartyLevelDifferenceDeductions(aislings);
                 var monsterLevelDeductions = GetMonsterLevelDifferenceDeductions(aislings, monster);
 
+                if (monsterLevelDeductions == decimal.MaxValue)
+                {
+                    return 1;
+                }
+
                 var groupMultiplier = Math.Max(0, 1 - (groupSizeDeductions + partyLevelDifferenceDeductions));
                 var monsterLevelMultiplier = Math.Max(0, 1 - monsterLevelDeductions);
 
                 return Convert.ToInt64(monster.Experience * groupMultiplier * monsterLevelMultiplier);
         }
-
         return 0;
     }
 
@@ -31,7 +35,7 @@ public class DefaultExperienceFormula : IExperienceFormula
         => group.Count switch
         {
             1 => 0,
-            2 => 0,
+            2 => 0.10m,
             3 => 0.20m,
             4 => 0.30m,
             5 => 0.40m,
@@ -42,20 +46,42 @@ public class DefaultExperienceFormula : IExperienceFormula
     // ReSharper disable once ParameterTypeCanBeEnumerable.Global
     protected virtual decimal GetMonsterLevelDifferenceDeductions(ICollection<Aisling> group, Monster monster)
     {
-        var averageLevel = Convert.ToInt32(group.Average(p => p.StatSheet.Level));
+        var highestPlayerLevel = group.Max(p => p.StatSheet.Level);
         var monsterLevel = monster.StatSheet.Level;
+        var levelDifference = highestPlayerLevel - monsterLevel;
 
-        var upperBound = LevelRangeFormulae.Default.GetUpperBound(averageLevel);
-        var lowerBound = LevelRangeFormulae.Default.GetLowerBound(averageLevel);
-
-        if ((monsterLevel >= lowerBound) && (monsterLevel <= upperBound))
+        if (levelDifference <= 0)
+            // If highest level player is a lower level than the moster dont apply any deductions
             return 0;
+        
+        switch (levelDifference)
+        {
+            case <= 5:
+            {
+                // Use existing logic for level differences of 4 or less
+                var upperBound = LevelRangeFormulae.Default.GetUpperBound(highestPlayerLevel);
+                var lowerBound = LevelRangeFormulae.Default.GetLowerBound(highestPlayerLevel);
 
-        var bounds = monsterLevel < averageLevel ? lowerBound : upperBound;
-        var stepSize = Math.Abs(bounds - averageLevel) / 2.0m;
-        var faultSize = Math.Abs(bounds - monsterLevel);
+                if ((monsterLevel >= lowerBound) && (monsterLevel <= upperBound))
+                    return 0;
 
-        return Math.Min(1, faultSize / stepSize * 0.25m);
+                var bounds = monsterLevel < highestPlayerLevel ? lowerBound : upperBound;
+                var stepSize = Math.Abs(bounds - highestPlayerLevel) / 2.0m;
+                var faultSize = Math.Abs(bounds - monsterLevel);
+
+                return Math.Min(1, faultSize / stepSize * 0.25m);
+            }
+            case 6:
+                // 25% reduction for 6 levels higher
+                return 0.25m;
+            case 7:
+                // 50% reduction for 7 levels higher
+                return 0.50m;
+            default:
+                // For 7 or more levels difference, we'll return a special value
+                // to indicate that the exp should be set to 1
+                return decimal.MaxValue;
+        }
     }
 
     protected virtual decimal GetPartyLevelDifferenceDeductions(ICollection<Aisling> group)

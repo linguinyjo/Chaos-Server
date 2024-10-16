@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "generic_buyShop_initial",
+      "optionText": "Buy"
+    },
+    {
+      "dialogKey": "generic_sellshop_initial",
+      "optionText": "Sell"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "steiner_initial",
+  "text": "Finest armor in the land right here. Why not take a look?",
+  "type": "Menu"
+}

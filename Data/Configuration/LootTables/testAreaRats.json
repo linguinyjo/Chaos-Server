@@ -2,12 +2,24 @@
   "key": "testAreaRats",
   "lootDrops": [
     {
-      "dropChance": 0.25,
-      "itemTemplateKey": "stick"
+      "dropChance": 0.30,
+      "itemTemplateKey": "broadSword"
+    },
+    {
+      "dropChance": 0.02,
+      "itemTemplateKey": "cuckArmor"
     },
     {
       "dropChance": 0.1,
       "itemTemplateKey": "apple"
+    },
+    {
+      "dropChance": 0.20,
+      "itemTemplateKey": "claidheamh"
+    },
+    {
+      "dropChance": 0.25,
+      "itemTemplateKey": "enchantWeaponScroll2nd"
     }
   ]
 }

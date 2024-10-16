@@ -1,0 +1,52 @@
+[
+    {
+        "scriptKeys": ["showWorldMap"],
+        "scriptVars": {
+            "showWorldMap": {
+                "worldMapKey": "field005"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(15, 15)"
+    },
+    {
+        "scriptKeys": ["showWorldMap"],
+        "scriptVars": {
+            "showWorldMap": {
+                "worldMapKey": "field005"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(15, 16)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "undineVillage:(98, 51)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(0, 19)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "undineVillage:(98, 50)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(0, 18)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "undineVillage:(98, 49)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(0, 17)"
+    }
+]

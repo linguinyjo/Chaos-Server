@@ -1,0 +1,9 @@
+{
+  "key": "rottenApple",
+  "lootDrops": [
+    {
+      "dropChance": 0.25,
+      "itemTemplateKey": "rottenApple"
+    }
+  ]
+}

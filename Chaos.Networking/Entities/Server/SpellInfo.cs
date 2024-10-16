@@ -44,4 +44,9 @@ public sealed record SpellInfo
     ///     The sprite of the spell icon
     /// </summary>
     public ushort Sprite { get; set; }
+    
+    /// <summary>
+    ///     The category the spell belongs to
+    /// </summary>
+    public SpellCategory SpellCategory { get; set; }
 }

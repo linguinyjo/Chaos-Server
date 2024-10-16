@@ -1,0 +1,9 @@
+[
+    {
+        "blackList": [],
+        "direction": "Right",
+        "extraScriptKeys": [],
+        "merchantTemplateKey": "alexios",
+        "spawnPoint": "(3, 5)"
+      }
+]

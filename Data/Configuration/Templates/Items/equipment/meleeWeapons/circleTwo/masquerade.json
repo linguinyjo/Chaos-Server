@@ -1,0 +1,28 @@
+{
+    "buyCost": 100000,
+    "category": "Sword",
+    "color": "Forest",
+    "displaySprite": 11,
+    "equipmentType": "Weapon",
+    "gender": "Unisex",
+    "isModifiable": true,
+    "maxDurability": 7000,
+    "maxStacks": 1,
+    "level": 11,
+    "levelCircle": 2,
+    "class": "warrior",
+    "modifiers": {
+        "physicalAttack": 72,
+        "maximumMp": -750
+    },
+    "sellValue": 75000,
+    "weight": 10,
+    "description": "Class: All\nLevel: 1\nP.Atk 72",
+    "name": "Masquerade",
+    "panelSprite": 170,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "masquerade"
+}

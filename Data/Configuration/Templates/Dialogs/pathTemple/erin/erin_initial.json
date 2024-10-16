@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "erin_become_a_priest",
+      "optionText": "I want to become a priest"
+    },
+    {
+      "dialogKey": "erin_priest_info",
+      "optionText": "Tell me about the path of the priest"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "erin_initial",
+  "text": "Greetings, seeker. I am the vessel of the Divine. What brings you to this sacred place?",
+  "type": "Menu"
+}

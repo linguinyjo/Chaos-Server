@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "logan_become_a_wizard",
+      "optionText": "I want to become a wizard"
+    },
+    {
+      "dialogKey": "logan_wizard_info",
+      "optionText": "Tell me about the path of the wizard"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "logan_initial",
+  "text": "Greetings, I am the guardian of the elements. What brings you to the realm of magic?",
+  "type": "Menu"
+}

@@ -38,6 +38,9 @@ public sealed class Item : PanelEntityBase, IScripted<IItemScript>, IDialogSourc
 
     public ItemSprite ItemSprite { get; set; }
     public int Level { get; set; }
+    
+    public LevelCircle LevelCircle { get; set; }
+
     public Attributes Modifiers { get; set; }
 
     public string? Prefix
@@ -51,7 +54,9 @@ public sealed class Item : PanelEntityBase, IScripted<IItemScript>, IDialogSourc
         get => NameComposer.Suffix;
         set => NameComposer.SetSuffix(value);
     }
-
+    
+    public int? Enchant { get; set; }
+    
     public int Weight { get; set; }
     public IItemScript Script { get; }
 
@@ -82,12 +87,14 @@ public sealed class Item : PanelEntityBase, IScripted<IItemScript>, IDialogSourc
         Modifiers = template.Modifiers is null ? new Attributes() : ShallowCopy<Attributes>.Create(template.Modifiers);
         Weight = template.Weight;
         Level = template.Level;
+        LevelCircle = template.LevelCircle;
         ItemSprite = template.ItemSprite;
 
         if (extraScriptKeys != null)
             ScriptKeys.AddRange(extraScriptKeys);
 
         Script = scriptProvider.CreateScript<IItemScript, Item>(ScriptKeys, this);
+        Enchant = template.Enchant;
     }
 
     /// <inheritdoc />

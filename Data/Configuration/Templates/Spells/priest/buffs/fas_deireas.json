@@ -1,0 +1,39 @@
+{
+  "castLines": 2,
+  "learningRequirements": {
+    "itemRequirements": [],
+    "requiredGold": 2500,
+    "requiredStats": {
+      "con": 3,
+      "dex": 3,
+      "int": 6,
+      "str": 8,
+      "wis": 16
+    },
+    "prerequisiteSkills": [],
+    "prerequisiteSpells": []
+  },
+  "spellType": "Targeted",
+  "class": "Priest",
+  "description": "A small increase to physical attack",
+  "level": 11,
+  "name": "Fas Deireas",
+  "panelSprite": 52,
+  "scriptKeys": [
+    "applyEffect"
+  ],
+  "scriptVars": {
+    "applyEffect": {
+      "bodyAnimation": "priestCast",
+      "manaCost": 100,
+      "animation": {
+        "targetAnimation": 123,
+        "animationSpeed": 150
+      },
+      "sound": 30,
+      "effectKey": "fasDeireasBuff",
+      "filter": "aliveOnly"
+    }
+  },
+  "templateKey": "fas_deireas"
+}

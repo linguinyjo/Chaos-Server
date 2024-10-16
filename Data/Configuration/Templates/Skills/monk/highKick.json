@@ -1,0 +1,39 @@
+{
+    "isAssail": false,
+    "learningRequirements": {
+        "itemRequirements": [],
+        "requiredGold": 10000,
+        "requiredStats": {
+            "con": 22,
+            "dex": 8,
+            "int": 3,
+            "str": 13,
+            "wis": 3
+        },
+        "prerequisiteSkills": [],
+        "prerequisiteSpells": []
+    },
+    "description": "A powerful strike in the direction your facing",
+    "level": 21,
+    "levelsUp": true,
+    "name": "High Kick",
+    "class": "monk",
+    "panelSprite": 2,
+    "cooldownMs": 15000,
+    "scriptKeys": ["damage"],
+    "scriptVars": {
+        "damage": {
+            "bodyAnimation": "Kick",
+            "sound": 53,
+            "damageStat": "con",
+            "range": 1,
+            "shape": "front",
+            "excludeSourcePoint": true,
+            "damageStatMultiplier": 2,
+            "baseDamage": 50,
+            "filter": "hostileOnly, aliveOnly, othersOnly",
+            "usePAtk": true
+        }
+    },
+    "templateKey": "highKick"
+}

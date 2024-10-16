@@ -88,10 +88,19 @@ public class DamageScript : ConfigurableSpellScriptBase,
     /// <inheritdoc />
     public IScript SourceScript { get; init; }
 
+    public bool? UsePAtk { get; init; }
+    
+    public bool? UseMatk { get; init; }
+    /// <inheritdoc />
+    public int? FistBonus { get; init; }
+
     /// <inheritdoc />
     public int? ManaCost { get; init; }
 
     /// <inheritdoc />
     public decimal PctManaCost { get; init; }
+    
+    /// <inheritdoc />
+    public bool CanResist { get; init; }
     #endregion
 }

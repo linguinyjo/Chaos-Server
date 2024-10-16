@@ -1,0 +1,29 @@
+{
+    "assailIntervalMs": 1500,
+    "expReward": 15,
+    "moveIntervalMs": 1500,
+    "name": "Spider",
+    "lootTableKeys": ["spidersEye"],
+    "scriptKeys": ["default"],
+    "scriptVars": {},
+    "skillIntervalMs": 1500,
+    "skillTemplateKeys": ["Assail"],
+    "spellIntervalMs": 10000,
+    "spellTemplateKeys": [],
+    "sprite": 53,
+    "statSheet": {
+        "level": 3,
+        "ac": 98,
+        "maximumHp": 180,
+        "maximumMp": 100,
+        "physicalAttack": 0,
+        "con": 2,
+        "dex": 1,
+        "int": 1,
+        "str": 1,
+        "wis": 1
+    },
+    "templateKey": "crypt1Spider",
+    "type": "Normal",
+    "wanderIntervalMs": 2000
+}

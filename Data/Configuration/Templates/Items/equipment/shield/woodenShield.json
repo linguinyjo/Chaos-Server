@@ -1,0 +1,27 @@
+{
+    "buyCost": 500,
+    "category": "Shield",
+    "color": "Forest",
+    "displaySprite": 1,
+    "equipmentType": "Shield",
+    "gender": "Unisex",
+    "isModifiable": true,
+    "maxDurability": 1000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -2,
+        "maximumMp": -250
+    },
+    "level": 1,
+    "levelCircle": 1,
+    "sellValue": 200,
+    "weight": 3,
+    "description": "Class: All\nLevel: 1\nAc -2",
+    "name": "Wooden Shield",
+    "panelSprite": 92,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "woodenShield"
+}

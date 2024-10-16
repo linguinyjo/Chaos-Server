@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "vorlof_training_quest_complete",
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "vorlof_completed_torrances_request",
+  "text": "Well whatd'ya know? You survived Torrance's trial after all. Many a new Aisling has perished in that wretched wood.",
+  "type": "Normal"
+}

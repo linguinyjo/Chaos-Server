@@ -1,0 +1,18 @@
+{
+    "itemsForSale": [
+    ],
+    "itemsToBuy": [],
+    "name": "Oona",
+    "restockIntervalHrs": 1,
+    "restockPCt": 100,
+    "scriptKeys": ["showdialog", "verbalShop", "defaultBehaviors"],
+    "scriptVars": {
+        "showdialog": {
+            "dialogKey": "oona_initial"
+        }
+    },
+    "skillsToTeach": [],
+    "spellsToTeach": [],
+    "sprite": 24,
+    "templateKey": "oona"
+}

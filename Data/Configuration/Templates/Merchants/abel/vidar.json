@@ -1,0 +1,30 @@
+{
+    "itemsForSale": [
+        {
+            "itemTemplateKey": "louresSabre",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "claidheamh",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "broadSword",
+            "stock": 100
+        }
+    ],
+    "itemsToBuy": ["stick", "dirk", "eppe", "louresSabre", "claidheamh", "broadSword"],
+    "name": "Vidar",
+    "restockIntervalHrs": 1,
+    "restockPCt": 100,
+    "scriptKeys": ["showdialog", "verbalShop", "defaultBehaviors"],
+    "scriptVars": {
+        "showdialog": {
+            "dialogKey": "vidar_initial"
+        }
+    },
+    "skillsToTeach": [],
+    "spellsToTeach": [],
+    "sprite": 30,
+    "templateKey": "vidar"
+}

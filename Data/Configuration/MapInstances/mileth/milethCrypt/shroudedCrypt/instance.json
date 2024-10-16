@@ -1,0 +1,8 @@
+{
+    "flags": "None",
+    "instanceId": "shroudedCrypt",
+    "name": "Shrouded Crypt",
+    "scriptKeys": [],
+    "templateKey": "3001",
+    "autoDayNightCycle": false
+}

@@ -10,7 +10,7 @@ public class EquipmentScript(Item subject) : ConfigurableItemScriptBase(subject)
     public override void OnUse(Aisling source)
     {
         var template = Subject.Template;
-
+        Console.WriteLine(subject);
         if (!source.IsAlive)
         {
             source.SendOrangeBarMessage("You can't do that");
@@ -21,6 +21,13 @@ public class EquipmentScript(Item subject) : ConfigurableItemScriptBase(subject)
         if (template.EquipmentType is null or EquipmentType.NotEquipment)
         {
             source.SendOrangeBarMessage("You can't equip that");
+
+            return;
+        }
+
+        if (template.NotMonk && source.HasClass(BaseClass.Monk))
+        {
+            source.SendOrangeBarMessage("Your class is forbidden from wearing such things");
 
             return;
         }

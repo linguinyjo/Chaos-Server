@@ -1,0 +1,9 @@
+{
+  "key": "gardenBee",
+  "lootDrops": [
+    {
+      "dropChance": 0.35,
+      "itemTemplateKey": "mantisEye"
+    }
+  ]
+}

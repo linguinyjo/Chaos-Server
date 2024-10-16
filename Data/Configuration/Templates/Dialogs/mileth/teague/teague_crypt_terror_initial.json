@@ -1,0 +1,8 @@
+{
+  "scriptKeys": ["TerrorQuest"],
+  "scriptVars": {},
+  "nextDialogKey": "teague_crypt_terror_secondary",
+  "templateKey": "teague_crypt_terror_initial",
+  "text": "There's one more, isn't there? I can feel it in me bones. It's calling to me, pulling at me soul. The crypt. I hear... voices. Voices of those long gone, begging for help. Or maybe... maybe they're hungry for company.",
+  "type": "Normal"
+}

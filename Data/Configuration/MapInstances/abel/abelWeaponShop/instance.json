@@ -1,0 +1,9 @@
+{
+    "flags": "None",
+    "instanceId": "abelWeaponShop",
+    "music": 1,
+    "name": "Abel Weapon Shop",
+    "scriptKeys": [],
+    "templateKey": "184",
+    "autoDayNightCycle": true
+}

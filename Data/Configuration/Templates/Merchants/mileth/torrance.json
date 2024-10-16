@@ -1,0 +1,54 @@
+{
+    "itemsForSale": [
+        {
+            "itemTemplateKey": "woodenShield",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "leatherTunic",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "boots",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "leatherGauntlet",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "leatherGreaves",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "silverEarrings",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "goldEarrings",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "greyBoots",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "smallSpinelRing",
+            "stock": 100
+        }
+    ],
+    "itemsToBuy": ["shirt","woodenShield", "stick", "boots", "leatherTunic", "leatherGauntlet", "leatherGreaves", "silverEarrings", "goldEarrings", "greyBoots"],
+    "name": "Torrance",
+    "restockIntervalHrs": 1,
+    "restockPCt": 100,
+    "scriptKeys": ["showdialog", "verbalShop", "defaultBehaviors"],
+    "scriptVars": {
+        "showdialog": {
+            "dialogKey": "torrance_initial"
+        }
+    },
+    "skillsToTeach": [],
+    "spellsToTeach": [],
+    "sprite": 30,
+    "templateKey": "torrance"
+}

@@ -1,0 +1,26 @@
+{
+    "itemsForSale": [
+        {
+            "itemTemplateKey": "galuchatCoat",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "culotte",
+            "stock": 100
+        }
+    ],
+    "itemsToBuy": ["galuchatCoat", "dobok"],
+    "name": "Arnljot",
+    "restockIntervalHrs": 1,
+    "restockPCt": 100,
+    "scriptKeys": ["showdialog", "verbalShop", "defaultBehaviors"],
+    "scriptVars": {
+        "showdialog": {
+            "dialogKey": "shop_tester_initial"
+        }
+    },
+    "skillsToTeach": [],
+    "spellsToTeach": [],
+    "sprite": 56,
+    "templateKey": "arnljot"
+}

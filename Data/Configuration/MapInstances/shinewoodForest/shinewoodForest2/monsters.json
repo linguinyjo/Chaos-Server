@@ -1,0 +1,32 @@
+[
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 90,
+    "intervalVariancePct": 30,
+    "extraLootTableKeys": [],
+    "maxAmount": 30,
+    "maxPerSpawn": 30,
+    "monsterTemplateKey": "sw2Viper"
+  },
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 90,
+    "intervalVariancePct": 30,
+    "extraLootTableKeys": [],
+    "maxAmount": 50,
+    "maxPerSpawn": 50,
+    "monsterTemplateKey": "sw2Bee"
+  },
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 90,
+    "intervalVariancePct": 30,
+    "extraLootTableKeys": [],
+    "maxAmount": 12,
+    "maxPerSpawn": 12,
+    "monsterTemplateKey": "sw2Mantis"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "suomiCherryFarmer:(10, 5)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(15, 72)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "suomiVillageWay:(15, 14)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(39, 0)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "suomiVillageWay:(16, 14)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(40, 0)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "suomiVillageWay:(17, 14)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(41, 0)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "suomiWeaponShop:(6, 13)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(11, 54)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "suomiArmorShop:(10, 9)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(18, 48)"
+  }
+]

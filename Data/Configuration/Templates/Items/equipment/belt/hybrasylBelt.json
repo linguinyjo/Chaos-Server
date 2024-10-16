@@ -1,0 +1,27 @@
+{
+    "buyCost": 45000,
+    "category": "Belt",
+    "color": "Default",
+    "displaySprite": 237,
+    "equipmentType": "Belt",
+    "gender": "Unisex",
+    "isModifiable": false,
+    "maxDurability": 5000,
+    "maxStacks": 1,
+    "modifiers": {
+        "str": 2,
+        "maximumHp": 200
+    },
+    "level": 11,
+    "levelCircle": 2,
+    "sellValue": 17500,
+    "weight": 1,
+    "description": "Class: All\nLevel: 11\nHp 200, Str 2",
+    "name": "Hy-brasyl Belt",
+    "panelSprite": 237,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {},
+    },
+    "templateKey": "hybrasylBelt"
+}

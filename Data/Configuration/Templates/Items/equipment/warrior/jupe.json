@@ -1,0 +1,28 @@
+{
+    "buyCost": 10000,
+    "category": "Armor",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 7,
+    "equipmentType": "Armor",
+    "gender": "Unisex",
+    "maxDurability": 1000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -17
+    },
+    "class": "warrior",
+    "pantsColor": "Black",
+    "level": 11,
+    "levelCircle": 2,
+    "sellValue": 3300,
+    "weight": 4,
+    "description": "Class: Warrior\nLevel: 11\nAc -17",
+    "name": "Jupe",
+    "panelSprite": 102,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "jupe"
+}

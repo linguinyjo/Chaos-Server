@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "close",
+  "scriptKeys": ["IncrementDevlinsIngredientsQuestStatus"],
+  "scriptVars": {},
+  "templateKey": "devlins_ingredients_quest_b",
+  "text": "Please venture into the East Woodland and collect 3 pieces of raw wax from the bees that dwell there. This wax holds properties essential for certain white magic rituals. Once you've obtained it, return it to me.",
+  "type": "Normal"
+}

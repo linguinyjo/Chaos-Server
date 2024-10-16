@@ -17,7 +17,7 @@ public abstract class EffectBase : IEffect
         get => Duration - Elapsed;
         set => Elapsed = Duration - value;
     }
-
+    
     public Creature Subject { get; set; } = null!;
     public abstract byte Icon { get; }
     public abstract string Name { get; }

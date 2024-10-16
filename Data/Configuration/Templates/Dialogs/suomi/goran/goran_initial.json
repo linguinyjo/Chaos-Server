@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "generic_buyShop_initial",
+      "optionText": "Buy"
+    },
+    {
+      "dialogKey": "generic_sellshop_initial",
+      "optionText": "Sell"
+    }
+  ],
+  "scriptKeys": ["goran"],
+  "scriptVars": {},
+  "templateKey": "goran_initial",
+  "text": "Hello, what can I do for you?",
+  "type": "Menu"
+}

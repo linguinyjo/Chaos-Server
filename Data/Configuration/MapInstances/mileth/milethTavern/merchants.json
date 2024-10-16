@@ -1,0 +1,16 @@
+[
+    {
+        "blackList": [],
+        "direction": "Left",
+        "extraScriptKeys": [],
+        "merchantTemplateKey": "aingeal",
+        "spawnPoint": "(6, 5)"
+      },
+    {
+        "blackList": [],
+        "direction": "Right",
+        "extraScriptKeys": [],
+        "merchantTemplateKey": "Teague",
+        "spawnPoint": "(12, 10)"
+    }
+]

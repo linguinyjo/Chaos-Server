@@ -1,0 +1,32 @@
+{
+    "buyCost": 100000,
+    "category": "Staff",
+    "color": "Forest",
+    "displaySprite": 24,
+    "equipmentType": "Weapon",
+    "gender": "Unisex",
+    "isModifiable": true,
+    "maxDurability": 7000,
+    "maxStacks": 1,
+    "level": 11,
+    "levelCircle": 2,
+    "class": "wizard",
+    "modifiers": {
+        "magicAttack": 42,
+        "int": 2,
+        "maximumMp": 200
+    },
+    "sellValue": 35000,
+    "weight": 4,
+    "description": "Class: Priest, Wizard, Druid\nLevel: 11\nMagic Attack 42, Wis 2, Mana 200, Damage spells -1 lines",
+    "name": "Magus Kronos",
+    "panelSprite": 183,
+    "scriptKeys": ["Equipment", "EquipStaff"],
+    "scriptVars": {
+        "equipment": {},
+        "equipStaff": {
+            "spellCategory": "Damage"
+        }
+    },
+    "templateKey": "magusKronos"
+}

@@ -6,16 +6,19 @@ public record Attributes : Stats
 {
     protected int _ac;
     protected int _atkSpeedPct;
-    protected int _dmg;
+    protected int _dmg; // 1% damage increase ?
     protected int _flatSkillDamage;
     protected int _flatSpellDamage;
-    protected int _hit;
+    protected int _hit; // maybe rename this to spell hit or something
     protected int _magicResistance;
     protected int _maximumHp;
     protected int _maximumMp;
     protected int _skillDamagePct;
     protected int _spellDamagePct;
-
+    protected int _physicalAttack; // Weapon stat representing damage, a single value (do we really need weapon attack ranges?)
+    protected int _magicAttack; // Weapon stat representing damage for offensive spells, and bonus to heal amount - maybe should also have an impact on ability to land spells?
+    protected int _regen; // a stat which reduces the interval time between regen ticks - max of 15 regen which will result in base regen 20s --> 8s
+    
     public int Ac
     {
         get => _ac;
@@ -81,7 +84,25 @@ public record Attributes : Stats
         get => _spellDamagePct;
         set => _spellDamagePct = value;
     }
-
+    
+    public int PhysicalAttack
+    {
+        get => _physicalAttack;
+        set => _physicalAttack = value;
+    }
+    
+    public int MagicAttack
+    {
+        get => _magicAttack;
+        set => _magicAttack = value;
+    }
+    
+    public int Regen
+    {
+        get => _regen;
+        set => _regen = value;
+    }
+    
     public virtual void Add(Attributes other)
     {
         Interlocked.Add(ref _ac, other.Ac);
@@ -100,6 +121,10 @@ public record Attributes : Stats
         Interlocked.Add(ref _spellDamagePct, other.SpellDamagePct);
         Interlocked.Add(ref _flatSkillDamage, other.FlatSkillDamage);
         Interlocked.Add(ref _flatSpellDamage, other.FlatSpellDamage);
+        Interlocked.Add(ref _physicalAttack, other.PhysicalAttack);
+        Interlocked.Add(ref _magicAttack, other.MagicAttack);    
+        Interlocked.Add(ref _regen, other.Regen);        
+
     }
 
     public virtual void Subtract(Attributes other)
@@ -120,5 +145,8 @@ public record Attributes : Stats
         Interlocked.Add(ref _spellDamagePct, -other.SpellDamagePct);
         Interlocked.Add(ref _flatSkillDamage, -other.FlatSkillDamage);
         Interlocked.Add(ref _flatSpellDamage, -other.FlatSpellDamage);
+        Interlocked.Add(ref _physicalAttack, -other.PhysicalAttack);
+        Interlocked.Add(ref _magicAttack, -other.MagicAttack);
+        Interlocked.Add(ref _regen, -other.Regen);        
     }
 }

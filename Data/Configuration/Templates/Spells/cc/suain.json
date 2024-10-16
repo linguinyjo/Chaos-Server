@@ -1,0 +1,22 @@
+{
+  "spellType": "Targeted",
+  "castLines": 3,
+  "description": "",
+  "level": 11,
+  "name": "suain",
+  "panelSprite": 50,
+  "scriptKeys": [
+    "applyEffect"
+  ],
+  "scriptVars": {
+    "applyEffect": {
+      "manaCost": 100,
+      "bodyAnimation": "handsup",
+      "range": 10,
+      "sound": 8,
+      "effectKey": "suain",
+      "filter": "hostileOnly, aliveOnly"
+    }
+  },
+  "templateKey": "suain"
+}

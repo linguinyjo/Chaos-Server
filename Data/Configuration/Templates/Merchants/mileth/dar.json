@@ -1,0 +1,18 @@
+{
+  "itemsForSale": [],
+  "itemsToBuy": ["mold", "vipersGland", "spidersEye", "mantisEye", "rawHoney", "rawWax", "beeWing", "centipedeGland"],
+  "name": "Dar",
+  "scriptKeys": [
+    "showdialog",
+    "defaultBehaviors"
+  ],
+  "scriptVars": {
+    "showdialog": {
+      "dialogKey": "dar_initial"
+    }
+  },
+  "skillsToTeach": [],
+  "spellsToTeach": [],
+  "sprite": 37,
+  "templateKey": "dar"
+}

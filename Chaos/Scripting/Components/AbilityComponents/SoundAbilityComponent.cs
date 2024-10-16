@@ -12,7 +12,7 @@ public struct SoundAbilityComponent : IComponent
     {
         var options = vars.GetOptions<ISoundComponentOptions>();
         var points = vars.GetPoints();
-
+        
         if (!options.Sound.HasValue)
             return;
 
@@ -22,21 +22,5 @@ public struct SoundAbilityComponent : IComponent
     public interface ISoundComponentOptions
     {
         byte? Sound { get; init; }
-    }
-}
-
-public struct SoundClientComponent : IComponent
-{
-    /// <inheritdoc />
-    public void Execute(ActivationContext context, ComponentVars vars)
-    {
-        var options = vars.Get<Aisling>("Subject");
-        Console.WriteLine("This is a log message.");
-    }
-
-    public interface ISoundClientComponent
-    {
-        byte? Sound { get; init; }
-        Aisling Aisling { get; init; }
     }
 }

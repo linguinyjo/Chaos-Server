@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "neal_class_change",
+      "optionText": "I am prepared"
+    },
+    {
+      "dialogKey": "Close",
+      "optionText": "I need more time"
+    }
+  ],
+  "scriptKeys": ["warrior"],
+  "scriptVars": {},
+  "templateKey": "neal_become_a_warrior",
+  "text": "A noble choice, aspiring warrior. The path is fraught with danger, but the rewards are great. To become a warrior is to master both your mind and body, to stand firm in the face of overwhelming odds, and to protect those who cannot protect themselves. Are you prepared for this?",
+  "type": "Menu"
+}

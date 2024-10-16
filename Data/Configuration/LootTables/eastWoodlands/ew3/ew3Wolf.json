@@ -1,0 +1,13 @@
+{
+  "key": "ew3Wolf",
+  "lootDrops": [
+    {
+      "dropChance": 0.20,
+      "itemTemplateKey": "wolfSkin"
+    },
+    {
+      "dropChance": 0.15,
+      "itemTemplateKey": "wolfTeeth"
+    }
+  ]
+}

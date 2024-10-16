@@ -1,0 +1,28 @@
+{
+    "buyCost": 10000,
+    "category": "Armor",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 13,
+    "equipmentType": "Armor",
+    "gender": "Unisex",
+    "maxDurability": 1000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -14
+    },
+    "class": "monk",
+    "pantsColor": "Default",
+    "level": 11,
+    "levelCircle": 2,
+    "sellValue": 3300,
+    "weight": 5,
+    "description": "Class: Monk\nLevel: 11\nAc -14",
+    "name": "Culotte",
+    "panelSprite": 108,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "culotte"
+}

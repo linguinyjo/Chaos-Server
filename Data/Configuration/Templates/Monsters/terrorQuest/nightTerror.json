@@ -1,0 +1,35 @@
+{
+    "assailIntervalMs": 1200,
+    "expReward": 2000,
+    "moveIntervalMs": 1200,
+    "aggroRange": 10,
+    "name": "Night Terror",
+    "lootTableKeys": [],
+    "scriptKeys": ["default", "setMonsterElement", "terrorOnKill"],
+    "scriptVars": {
+        "terrorOnKill": {
+            "destination": "abelPort:(15,53)"
+        }
+    },
+    "skillIntervalMs": 1500,
+    "skillTemplateKeys": ["Assail"],
+    "spellIntervalMs": 6000,
+    "spellTemplateKeys": ["beag_sal", "beag_athar", "beag_creag", "beag_srad", "beag_cradh"],
+    "sprite": 105,
+    "statSheet": {
+        "level": 26,
+        "ac": 70,
+        "maximumHp": 5500,
+        "maximumMp": 1000,
+        "physicalAttack": 175,
+        "magicAttack": 175,
+        "con": 4,
+        "dex": 1,
+        "int": 25,
+        "str": 20,
+        "wis": 1
+    },
+    "templateKey": "nightTerror",
+    "type": "Normal",
+    "wanderIntervalMs": 1200
+}

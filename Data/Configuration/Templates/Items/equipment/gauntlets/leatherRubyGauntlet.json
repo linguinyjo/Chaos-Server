@@ -1,0 +1,28 @@
+{
+    "buyCost": 50000,
+    "category": "Gauntlet",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 1801,
+    "equipmentType": "Gauntlet",
+    "gender": "Unisex",
+    "maxDurability": 1000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -1,
+        "int": 1
+    },
+    "class": "peasant",
+    "level": 11,
+    "levelCircle": 2,
+    "sellValue": 22500,
+    "weight": 2,
+    "description": "Class: All\nLevel: 11\nAc -1, Int 1",
+    "name": "Leather Ruby Gauntlet",
+    "panelSprite": 1801,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "leatherRubyGauntlet"
+}

@@ -1,0 +1,42 @@
+[
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethVillage:(81, 73)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(14, 7)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethVillage:(81, 73)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(14, 8)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethCombatMaster:(12, 1)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(7, 14)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "milethCombatMaster:(12, 1)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(8, 14)"
+    }
+]

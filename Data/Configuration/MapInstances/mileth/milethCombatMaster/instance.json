@@ -1,0 +1,9 @@
+{
+    "flags": "None",
+    "instanceId": "milethCombatMaster",
+    "music": 1,
+    "name": "Mileth Combat Master",
+    "scriptKeys": [],
+    "templateKey": "301",
+    "autoDayNightCycle": true
+}

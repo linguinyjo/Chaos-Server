@@ -1,0 +1,8 @@
+{
+  "scriptKeys": ["TerrorQuest"],
+  "scriptVars": {},
+  "templateKey": "teague_garden_terror_slain",
+  "nextDialogKey": "close",
+  "text": "The terror, it's gone? I... I can feel it. The weight lifting off me chest. But wait... what's this? There's still something... something lurking in the shadows of me mind. There is no peace for old Teague...",
+  "type": "Normal"
+}

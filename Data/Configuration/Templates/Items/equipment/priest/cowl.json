@@ -1,0 +1,28 @@
+{
+    "buyCost": 1500,
+    "category": "Armor",
+    "color": "Blue",
+    "isDyable": true,
+    "displaySprite": 5,
+    "equipmentType": "Armor",
+    "gender": "Unisex",
+    "maxDurability": 1000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -8
+    },
+    "class": "priest",
+    "pantsColor": "Black",
+    "level": 1,
+    "levelCircle": 1,
+    "sellValue": 500,
+    "weight": 4,
+    "description": "Class: Priest\nLevel: 1\nAc -8",
+    "name": "Cowl",
+    "panelSprite": 100,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "cowl"
+}

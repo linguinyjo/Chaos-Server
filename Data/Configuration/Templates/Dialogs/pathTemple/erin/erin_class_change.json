@@ -1,0 +1,15 @@
+{
+  "nextDialogKey": "close",
+  "options": [],
+  "scriptKeys": [
+    "firstClassChange"
+  ],
+  "scriptVars": {
+    "firstClassChange": {
+      "class": 4
+    }
+  },
+  "templateKey": "erin_class_change",
+  "text": "The divine has guided you to me this day. Go forth, young priest, and begin your sacred journey. When you have grown in faith and power, return to me, and I may reveal to you the deeper mysteries of the divine.",
+  "type": "Normal"
+}

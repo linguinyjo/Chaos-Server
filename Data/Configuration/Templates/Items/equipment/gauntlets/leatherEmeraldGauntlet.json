@@ -1,0 +1,28 @@
+{
+    "buyCost": 50000,
+    "category": "Gauntlet",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 1802,
+    "equipmentType": "Gauntlet",
+    "gender": "Unisex",
+    "maxDurability": 1000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -1,
+        "con": 1
+    },
+    "class": "peasant",
+    "level": 11,
+    "levelCircle": 2,
+    "sellValue": 22500,
+    "weight": 2,
+    "description": "Class: All\nLevel: 11\nAc -1, Con 1",
+    "name": "Leather Emerald Gauntlet",
+    "panelSprite": 1802,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "leatherEmeraldGauntlet"
+}

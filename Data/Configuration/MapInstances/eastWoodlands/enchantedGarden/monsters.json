@@ -1,0 +1,33 @@
+[
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 120,
+    "intervalVariancePct": 50,
+    "extraLootTableKeys": [
+    ],
+    "maxAmount": 60,
+    "maxPerSpawn": 60,
+    "monsterTemplateKey": "viper"
+  },
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 120,
+    "intervalVariancePct": 50,
+    "extraLootTableKeys": [],
+    "maxAmount": 30,
+    "maxPerSpawn": 30,
+    "monsterTemplateKey": "gardenBee"
+  },
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 120,
+    "intervalVariancePct": 50,
+    "extraLootTableKeys": [],
+    "maxAmount": 5,
+    "maxPerSpawn": 5,
+    "monsterTemplateKey": "gardenMantis"
+  }
+]

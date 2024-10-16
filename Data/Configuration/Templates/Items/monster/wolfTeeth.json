@@ -1,0 +1,15 @@
+{
+  "buyCost": 750,
+  "category": "monster",
+  "color": "Default",
+  "isModifiable": false,
+  "maxStacks": 1,
+  "sellValue": 750,
+  "weight": 1,
+  "description": "The teeth from a wolf",
+  "name": "Wolf Teeth",
+  "panelSprite": 333,
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "wolfTeeth"
+}

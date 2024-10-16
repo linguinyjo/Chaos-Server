@@ -1,0 +1,8 @@
+{
+  "scriptKeys": ["TerrorQuest"],
+  "scriptVars": {},
+  "nextDialogKey": "teague_garden_terror_secondary",
+  "templateKey": "teague_garden_terror_initial",
+  "text": "Thank you... but old Teague is plagued by dreams y'see. Terrible, terrible dreams. Every time I close my eyes, I see it... that... that thing. There's no escaping the terror for old Teague.",
+  "type": "Normal"
+}

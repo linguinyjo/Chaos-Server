@@ -1,0 +1,27 @@
+{
+    "buyCost": 60000,
+    "category": "Necklace",
+    "color": "Forest",
+    "displaySprite": 1714,
+    "equipmentType": "Necklace",
+    "gender": "Unisex",
+    "isModifiable": false,
+    "maxDurability": 5000,
+    "maxStacks": 1,
+    "modifiers": {
+        "regen": 3,
+        "con": 1
+    },
+    "level": 11,
+    "levelCircle": 2,
+    "sellValue": 20000,
+    "weight": 1,
+    "description": "Class: All\nLevel: 11\nRegen 3, Con 1",
+    "name": "Phoenix Necklace",
+    "panelSprite": 1714,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "phoenixNecklace"
+}

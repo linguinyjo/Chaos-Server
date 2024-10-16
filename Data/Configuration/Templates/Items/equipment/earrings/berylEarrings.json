@@ -1,0 +1,27 @@
+{
+    "buyCost": 8000,
+    "category": "Earrings",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 232,
+    "equipmentType": "Earrings",
+    "gender": "Unisex",
+    "maxDurability": 1000,
+    "maxStacks": 1,
+    "modifiers": {
+        "int": 1
+    },
+    "level": 1,
+    "levelCircle": 1,
+    "pantsColor": "Black",
+    "sellValue": 2750,
+    "weight": 1,
+    "description": "Class: All\nLevel: 1\nInt 1",
+    "name": "Beryl Earrings",
+    "panelSprite": 232,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "berylEarrings"
+}

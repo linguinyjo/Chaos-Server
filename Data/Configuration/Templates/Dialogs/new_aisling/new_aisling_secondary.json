@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "new_aisling_tertiary",
+  "scriptKeys": ["WithAnimation"],
+  "scriptVars": {},
+  "templateKey": "new_aisling_secondary",
+  "text": "A light swirls around you.",
+  "type": "Normal"
+}

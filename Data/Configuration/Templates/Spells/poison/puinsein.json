@@ -1,0 +1,20 @@
+{
+  "spellType": "Targeted",
+  "description": "Applies a poison effect to your target.",
+  "level": 10,
+  "name": "Poison",
+  "panelSprite": 35,
+  "scriptKeys": [
+    "applyEffect"
+  ],
+  "scriptVars": {
+    "applyEffect": {
+      "bodyAnimation": "handsup",
+      "sound": 8,
+      "range": 2,
+      "effectKey": "puinsein",
+      "filter": "hostileOnly, aliveOnly"
+    }
+  },
+  "templateKey": "puinsein"
+}

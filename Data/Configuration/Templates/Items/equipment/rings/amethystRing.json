@@ -1,0 +1,28 @@
+{
+    "buyCost": 25000,
+    "category": "Ring",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 213,
+    "equipmentType": "Ring",
+    "gender": "Unisex",
+    "maxDurability": 1000,
+    "maxStacks": 1,
+    "modifiers": {
+        "maximumHp": 200,
+        "maximumMp": 100
+    },
+    "class": "peasant",
+    "level": 11,
+    "levelCircle": 2,
+    "sellValue": 10000,
+    "weight": 2,
+    "description": "Class: All\nLevel: 11\nHp 200, Mp 100",
+    "name": "Amethyst Ring",
+    "panelSprite": 209,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "amethystRing"
+}

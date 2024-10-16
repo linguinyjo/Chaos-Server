@@ -28,7 +28,10 @@ public sealed class AttributesMapperProfile : IMapperProfile<Attributes, Attribu
             FlatSkillDamage = obj.FlatSkillDamage,
             FlatSpellDamage = obj.FlatSpellDamage,
             SkillDamagePct = obj.SkillDamagePct,
-            SpellDamagePct = obj.SpellDamagePct
+            SpellDamagePct = obj.SpellDamagePct,
+            PhysicalAttack = obj.PhysicalAttack,
+            MagicAttack = obj.MagicAttack,
+            Regen = obj.Regen
         };
 
     public AttributesSchema Map(Attributes obj)
@@ -49,7 +52,10 @@ public sealed class AttributesMapperProfile : IMapperProfile<Attributes, Attribu
             FlatSkillDamage = obj.FlatSkillDamage,
             FlatSpellDamage = obj.FlatSkillDamage,
             SkillDamagePct = obj.SkillDamagePct,
-            SpellDamagePct = obj.SpellDamagePct
+            SpellDamagePct = obj.SpellDamagePct,
+            PhysicalAttack = obj.PhysicalAttack,
+            MagicAttack = obj.MagicAttack,
+            Regen = obj.Regen
         };
 
     /// <inheritdoc />
@@ -96,7 +102,10 @@ public sealed class AttributesMapperProfile : IMapperProfile<Attributes, Attribu
             CurrentHp = obj.CurrentHp,
             CurrentMp = obj.CurrentMp,
             AbilityLevel = obj.AbilityLevel,
-            Level = obj.Level
+            Level = obj.Level,
+            PhysicalAttack = obj.PhysicalAttack,
+            MagicAttack = obj.MagicAttack,
+            Regen = obj.Regen
         };
 
     public StatSheetSchema Map(StatSheet obj)
@@ -121,7 +130,10 @@ public sealed class AttributesMapperProfile : IMapperProfile<Attributes, Attribu
             MaximumHp = obj.MaximumHp,
             MaximumMp = obj.MaximumMp,
             Str = obj.Str,
-            Wis = obj.Wis
+            Wis = obj.Wis,
+            PhysicalAttack = obj.PhysicalAttack,
+            MagicAttack = obj.MagicAttack,
+            Regen = obj.Regen
         };
 
     public UserStatSheet Map(UserStatSheetSchema obj)
@@ -155,7 +167,10 @@ public sealed class AttributesMapperProfile : IMapperProfile<Attributes, Attribu
             UnspentPoints = obj.UnspentPoints,
             BaseClass = obj.BaseClass,
             AdvClass = obj.AdvClass,
-            MaxWeight = obj.MaxWeight
+            MaxWeight = obj.MaxWeight,
+            PhysicalAttack = obj.PhysicalAttack,
+            MagicAttack = obj.MagicAttack,
+            Regen = obj.Regen
         };
 
     public UserStatSheetSchema Map(UserStatSheet obj)
@@ -189,6 +204,9 @@ public sealed class AttributesMapperProfile : IMapperProfile<Attributes, Attribu
             MaximumMp = obj.MaximumMp,
             Str = obj.Str,
             Wis = obj.Wis,
-            MaxWeight = obj.MaxWeight
+            MaxWeight = obj.MaxWeight,
+            PhysicalAttack = obj.PhysicalAttack,
+            MagicAttack = obj.MagicAttack,
+            Regen = obj.Regen
         };
 }

@@ -953,6 +953,21 @@ public enum SpellType : byte
 }
 
 /// <summary>
+///     The category the spell belongs to
+/// </summary>
+public enum SpellCategory : byte
+{
+    None = 0,
+    Heal = 1,
+    Ao = 2,
+    Buff = 3,
+    Debuff = 4,
+    Cc = 5,
+    Song = 6,
+    Damage = 7
+}
+
+/// <summary>
 ///     A byte representing the emote/body animation being sent. Used by ServerOpCode.BodyAnimation
 /// </summary>
 public enum BodyAnimation : byte
@@ -1063,6 +1078,18 @@ public enum LevelCircle : byte
 }
 
 /// <summary>
+///     All towns which can be warped to
+/// </summary>
+public enum Town : byte
+{
+    Mileth = 1,
+    Abel = 2,
+    Rucesion = 3,
+    Piet = 4,
+    Suomi = 5
+}
+
+/// <summary>
 ///     A byte switch used when receiving information about an action performed on an exchange window. Used by
 ///     ClientOpCode.Exchange
 /// </summary>
@@ -1165,3 +1192,9 @@ public enum TileFlags : byte
     Unknown = 128
 }
 #endregion
+
+// Drop rates
+// > 15% - common
+// 5% to 15% - uncommon
+// 1% to 5% - rare
+// 0.5% to 1% - very rare

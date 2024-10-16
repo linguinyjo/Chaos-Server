@@ -1,0 +1,44 @@
+{
+    "isAssail": false,
+    "learningRequirements": {
+        "itemRequirements": [],
+        "requiredGold": 10000,
+        "requiredStats": {
+            "con": 5,
+            "dex": 12,
+            "int": 3,
+            "str": 8,
+            "wis": 3
+        },
+        "prerequisiteSkills": [],
+        "prerequisiteSpells": []
+    },
+    "description": "Deals minor damage to enemies infront of you. (3 tile range)",
+    "level": 21,
+    "levelsUp": true,
+    "name": "Windblade",
+    "class": "warrior",
+    "panelSprite": 15,
+    "cooldownMs": 22000,
+    "scriptKeys": ["damage"],
+    "scriptVars": {
+        "damage": {
+            "bodyAnimation": 1,
+            "sound": 7,
+            "animation": {
+                "targetAnimation": 166,
+                "animationSpeed": 100
+            },
+            "damageStat": "str",
+            "range": 3,
+            "shape": "front",
+            "singleTarget": false,
+            "excludeSourcePoint": true,
+            "damageStatMultiplier": 1,
+            "baseDamage": 50,
+            "filter": "hostileOnly, aliveOnly, othersOnly",
+            "usePAtk": true
+        }
+    },
+    "templateKey": "windBlade"
+}

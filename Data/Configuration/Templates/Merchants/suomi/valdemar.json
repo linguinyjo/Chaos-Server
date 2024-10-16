@@ -1,0 +1,35 @@
+{
+    "itemsForSale": [
+        {
+            "itemTemplateKey": "fireBelt",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "coralEarrings",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "rubyEarrings",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "spinelRing",
+            "stock": 100
+        }
+    ],
+    "itemsToBuy": ["shirt","woodenShield", "stick", "boots", "leatherTunic", "leatherGauntlet", "leatherGreaves", 
+        "silverEarrings", "goldEarrings", "coralEarrings", "rubyEarrings","spinelRing","emeraldRing"],
+    "name": "Valdemar",
+    "restockIntervalHrs": 1,
+    "restockPCt": 100,
+    "scriptKeys": ["showdialog", "verbalShop", "defaultBehaviors"],
+    "scriptVars": {
+        "showdialog": {
+            "dialogKey": "valdemar_initial"
+        }
+    },
+    "skillsToTeach": [],
+    "spellsToTeach": [],
+    "sprite": 30,
+    "templateKey": "valdemar"
+}

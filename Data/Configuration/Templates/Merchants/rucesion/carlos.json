@@ -1,0 +1,54 @@
+{
+    "itemsForSale": [
+        {
+            "itemTemplateKey": "smallEmeraldRing",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "berylEarrings",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "coralEarrings",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "windNecklace",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "earthNecklace",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "fireNecklace",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "seaNecklace",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "seaBelt",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "emeraldRing",
+            "stock": 100
+        }
+    ],
+    "itemsToBuy": ["shirt","woodenShield", "stick", "boots", "greyBoots", "leatherTunic", "jupe", "leatherGauntlet", "leatherGreaves", "smallSpinelRing", "smallEmeraldRing", "greyBoots", "seaBelt", "seaNecklace", "fireNecklace", "windNecklace", "seaNecklace", "berylEarrings"],
+    "name": "Carlos",
+    "restockIntervalHrs": 1,
+    "restockPCt": 100,
+    "scriptKeys": ["showdialog", "verbalShop", "defaultBehaviors"],
+    "scriptVars": {
+        "showdialog": {
+            "dialogKey": "torrance_initial"
+        }
+    },
+    "skillsToTeach": [],
+    "spellsToTeach": [],
+    "sprite": 30,
+    "templateKey": "carlos"
+}

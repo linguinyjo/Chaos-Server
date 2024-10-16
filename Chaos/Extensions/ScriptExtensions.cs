@@ -47,6 +47,19 @@ public static class ScriptExtensions
 
         scripted.ScriptKeys.Add(scriptKey);
     }
+    
+    public static void AddScriptInstance<TScript>(this IScripted<IScript> scripted, TScript scriptInstance) where TScript : IScript
+    {
+        var targetCompositeScript = (ICompositeScript)scripted.Script;
+
+        // Add the provided script instance to the composite script
+        targetCompositeScript.Add(scriptInstance);
+
+        // Generate a unique key for the script (if needed, you can modify this)
+        var scriptKey = ScriptBase.GetScriptKey(scriptInstance.GetType());
+
+        scripted.ScriptKeys.Add(scriptKey);
+    }
 
     public static TScript? As<TScript>(this IScript script) where TScript: IScript
         => script switch

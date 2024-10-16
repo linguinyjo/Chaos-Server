@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "neal_become_a_warrior",
+      "optionText": "I want to become a warrior"
+    },
+    {
+      "dialogKey": "neal_warrior_info",
+      "optionText": "Tell me about the path of the warrior"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "neal_initial",
+  "text": "Hello, I am the servant of the Warrior. Why have you come here?",
+  "type": "Menu"
+}

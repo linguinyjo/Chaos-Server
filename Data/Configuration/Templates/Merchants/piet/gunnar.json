@@ -1,0 +1,30 @@
+{
+    "itemsForSale": [
+        {
+            "itemTemplateKey": "dirk",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "louresSabre",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "eppe",
+            "stock": 100
+        }
+    ],
+    "itemsToBuy": ["woodenShield", "stick", "dirk", "eppe", "louresSabre"],
+    "name": "Gunnar",
+    "restockIntervalHrs": 1,
+    "restockPCt": 100,
+    "scriptKeys": ["showdialog", "verbalShop", "defaultBehaviors"],
+    "scriptVars": {
+        "showdialog": {
+            "dialogKey": "shop_tester_initial"
+        }
+    },
+    "skillsToTeach": [],
+    "spellsToTeach": [],
+    "sprite": 30,
+    "templateKey": "gunnar"
+}

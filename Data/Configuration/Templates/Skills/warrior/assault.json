@@ -1,0 +1,37 @@
+{
+    "isAssail": true,
+    "learningRequirements": {
+        "itemRequirements": [],
+        "requiredGold": 5000,
+        "requiredStats": {
+            "con": 10,
+            "dex": 3,
+            "int": 3,
+            "str": 14,
+            "wis": 3
+        },
+        "prerequisiteSkills": [],
+        "prerequisiteSpells": []
+    },
+    "description": "A second assail.",
+    "level": 11,
+    "levelsUp": true,
+    "name": "Assault",
+    "class": "warrior",
+    "panelSprite": 1,
+    "scriptKeys": ["damage"],
+    "scriptVars": {
+        "damage": {
+            "bodyAnimation": "assail",
+            "sound": 1,
+            "damageStat": "str",
+            "range": 1,
+            "shape": "front",
+            "excludeSourcePoint": true,
+            "damageStatMultiplier": 0.50,
+            "baseDamage": 3,
+            "filter": "hostileOnly, aliveOnly, othersOnly"
+        }
+    },
+    "templateKey": "assault"
+}

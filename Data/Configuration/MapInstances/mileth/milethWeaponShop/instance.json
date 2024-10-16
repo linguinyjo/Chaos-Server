@@ -1,0 +1,9 @@
+{
+    "flags": "None",
+    "instanceId": "milethWeaponShop",
+    "music": 1,
+    "name": "Mileth Weapon Shop",
+    "scriptKeys": [],
+    "templateKey": "132",
+    "autoDayNightCycle": true
+}

@@ -1,0 +1,18 @@
+{
+    "itemsForSale": [
+    ],
+    "itemsToBuy": [],
+    "name": "Teague",
+    "restockIntervalHrs": 1,
+    "restockPCt": 100,
+    "scriptKeys": ["showdialog", "verbalShop", "defaultBehaviors"],
+    "scriptVars": {
+        "showdialog": {
+            "dialogKey": "teague_initial"
+        }
+    },
+    "skillsToTeach": [],
+    "spellsToTeach": [],
+    "sprite": 21,
+    "templateKey": "teague"
+}

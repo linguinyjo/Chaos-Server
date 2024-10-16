@@ -1,0 +1,29 @@
+{
+    "buyCost": 20000,
+    "category": "Ring",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 213,
+    "equipmentType": "Ring",
+    "gender": "Unisex",
+    "maxDurability": 1000,
+    "maxStacks": 1,
+    "modifiers": {
+        "maximumMp": 200,
+        "regen": 1
+    },
+    "class": "peasant",
+    "pantsColor": "Black",
+    "level": 11,
+    "levelCircle": 2,
+    "sellValue": 7500,
+    "weight": 2,
+    "description": "Class: All\nLevel: 11\nMp 200, Regen 1",
+    "name": "Emerald Ring",
+    "panelSprite": 213,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "emeraldRing"
+}

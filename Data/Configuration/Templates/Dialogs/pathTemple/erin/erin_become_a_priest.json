@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "erin_class_change",
+      "optionText": "I am prepared"
+    },
+    {
+      "dialogKey": "Close",
+      "optionText": "I need more time"
+    }
+  ],
+  "scriptKeys": ["priest"],
+  "scriptVars": {},
+  "templateKey": "erin_become_a_priest",
+  "text": "A blessed choice, aspiring priest. The road ahead is filled with both joy and sorrow, but the calling is sacred. To become a priest is to open your soul to the divine, to stand as a bulwark against evil, and to bring solace to the suffering. Are you ready to embrace this holy duty?",
+  "type": "Menu"
+}

@@ -1,0 +1,34 @@
+{
+  "learningRequirements": {
+    "itemRequirements": [],
+    "requiredGold": 5000,
+    "requiredStats": {
+      "con": 4,
+      "dex": 3,
+      "int": 14,
+      "str": 3,
+      "wis": 7
+    },
+    "prerequisiteSkills": [],
+    "prerequisiteSpells": []
+  },
+  "spellType": "Targeted",
+  "class": "Priest",
+  "description": "Applies a minor curse effect to your target reducing their AC.",
+  "level": 41,
+  "name": "Cradh",
+  "panelSprite": 82,
+  "scriptKeys": [
+    "applyEffect"
+  ],
+  "scriptVars": {
+    "applyEffect": {
+      "manaCost": 100,
+      "bodyAnimation": "priestcast",
+      "effectKey": "cradh",
+      "filter": "aliveOnly",
+      "canResist": true
+    }
+  },
+  "templateKey": "cradh"
+}

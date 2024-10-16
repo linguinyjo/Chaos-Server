@@ -66,7 +66,10 @@ public sealed class ItemMapperProfile(ISimpleCache simpleCache, IScriptProvider 
         item.CustomNameOverride = obj.CustomNameOverride;
         item.Prefix = obj.Prefix;
         item.Suffix = obj.Suffix;
-
+        if (obj.Enchant.HasValue)
+        {
+            item.Enchant = obj.Enchant;
+        }
         return item;
     }
 
@@ -91,7 +94,8 @@ public sealed class ItemMapperProfile(ISimpleCache simpleCache, IScriptProvider 
             CustomNameOverride = obj.CustomNameOverride,
             Weight = obj.Weight == obj.Template.Weight ? null : obj.Weight,
             PanelSprite = obj.ItemSprite.PanelSprite == obj.Template.ItemSprite.PanelSprite ? null : obj.ItemSprite.PanelSprite,
-            DisplaySprite = obj.ItemSprite.DisplaySprite == obj.Template.ItemSprite.DisplaySprite ? null : obj.ItemSprite.DisplaySprite
+            DisplaySprite = obj.ItemSprite.DisplaySprite == obj.Template.ItemSprite.DisplaySprite ? null : obj.ItemSprite.DisplaySprite,
+            Enchant = obj.Enchant
         };
 
         return ret;
@@ -140,6 +144,7 @@ public sealed class ItemMapperProfile(ISimpleCache simpleCache, IScriptProvider 
             ScriptKeys = new HashSet<string>(obj.ScriptKeys, StringComparer.OrdinalIgnoreCase),
             AccountBound = obj.AccountBound,
             NoTrade = obj.NoTrade,
+            NotMonk = obj.NotMonk,
             Color = obj.Color,
             ItemSprite = new ItemSprite(obj.PanelSprite, obj.DisplaySprite ?? 0),
             MaxDurability = obj.MaxDurability,
@@ -164,7 +169,8 @@ public sealed class ItemMapperProfile(ISimpleCache simpleCache, IScriptProvider 
             AdvClass = obj.AdvClass,
             Category = obj.Category,
             EquipmentType = obj.EquipmentType,
-            Gender = obj.Gender
+            Gender = obj.Gender,
+            LevelCircle = obj.LevelCircle
         };
 
     public ItemTemplateSchema Map(ItemTemplate obj) => throw new NotImplementedException();

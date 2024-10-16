@@ -52,7 +52,7 @@ public sealed class EffectsBar : IEffectsBar
 
         return Effects.ContainsKey(effectName) || Effects.Values.Any(effect => effect.ScriptKey.EqualsI(effectName));
     }
-
+    
     public void Dispel(string effectName)
     {
         using var @lock = Sync.Enter();

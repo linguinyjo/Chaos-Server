@@ -1,0 +1,32 @@
+[
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "rucesionVillage:(32, 34)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(6, 14)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "rucesionVillage:(32, 34)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(7, 14)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "rucesionArmorShop:(1, 10)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(13, 0)"
+    }
+]

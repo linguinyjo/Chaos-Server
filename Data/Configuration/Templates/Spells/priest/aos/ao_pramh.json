@@ -1,0 +1,40 @@
+{
+  "castLines": 2,
+  "learningRequirements": {
+    "itemRequirements": [],
+    "requiredGold": 2500,
+    "requiredStats": {
+      "con": 3,
+      "dex": 3,
+      "int": 7,
+      "str": 3,
+      "wis": 14
+    },
+    "prerequisiteSkills": [],
+    "prerequisiteSpells": []
+  },
+  "spellType": "Targeted",
+  "class": "Priest",
+  "description": "Removes pramh effect",
+  "level": 41,
+  "name": "ao pramh",
+  "panelSprite": 201,
+  "scriptKeys": [
+    "removeEffect"
+  ],
+  "scriptVars": {
+    "removeEffect": {
+      "bodyAnimation": "priestCast",
+      "animation": {
+        "targetAnimation": 2,
+        "animationSpeed": 150
+      },
+      "manaCost": 50,
+      "sound": 8,
+      "range": 8,
+      "effectKey": "beagpramh, pramh, morpramh, ardpramh",
+      "filter": "aliveOnly"
+    }
+  },
+  "templateKey": "ao_pramh"
+}

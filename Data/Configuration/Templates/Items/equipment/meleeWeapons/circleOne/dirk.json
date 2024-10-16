@@ -1,0 +1,28 @@
+{
+    "buyCost": 500,
+    "category": "1h wep",
+    "color": "Forest",
+    "displaySprite": 6,
+    "equipmentType": "Weapon",
+    "gender": "Unisex",
+    "isModifiable": true,
+    "maxDurability": 1000,
+    "maxStacks": 1,
+    "modifiers": {
+        "physicalAttack": 8,
+        "maximumMp": -50
+
+    },
+    "level": 1,
+    "levelCircle": 1,
+    "sellValue": 250,
+    "weight": 2,
+    "description": "Class: All\nLevel: 1\nP.Atk 8",
+    "name": "Dirk",
+    "panelSprite": 91,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "dirk"
+}

@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "generic_learnspell_initial",
+      "optionText": "Learn Spell"
+    },
+    {
+      "dialogKey": "generic_forgetspell_initial",
+      "optionText": "Forget Spell"
+    }
+  ],
+  "scriptKeys": ["devlin"],
+  "scriptVars": {},
+  "templateKey": "devlin_initial",
+  "text": "Are you looking to learn in the ways of white magic?",
+  "type": "Menu"
+}

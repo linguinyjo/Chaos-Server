@@ -36,6 +36,7 @@
       },
       "healStatMultiplier": 25,
       "sound": 8,
+      "manaCost": 0,
       "baseHeal": 500,
       "healStat": "wis",
       "range": 2,

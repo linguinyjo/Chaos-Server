@@ -1,0 +1,8 @@
+{
+  "scriptKeys": ["TerrorQuest"],
+  "scriptVars": {},
+  "nextDialogKey": "close",
+  "templateKey": "teague_terror_ends",
+  "text": "I don't know how to thank you, friend. You've given old Teague peace from the nightmares. Finnally... can... sleep...",
+  "type": "Normal"
+}

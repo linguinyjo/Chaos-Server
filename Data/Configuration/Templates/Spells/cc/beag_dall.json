@@ -1,0 +1,40 @@
+{
+  "learningRequirements": {
+    "itemRequirements": [],
+    "requiredGold": 10000,
+    "requiredStats": {
+      "con": 3,
+      "dex": 7,
+      "int": 18,
+      "str": 4,
+      "wis": 13
+    },
+    "prerequisiteSkills": [],
+    "prerequisiteSpells": []
+  },
+  "spellType": "Targeted",
+  "castLines": 3,
+  "class": "Wizard",
+  "description": "",
+  "level": 11,
+  "name": "beag dall",
+  "panelSprite": 3,
+  "scriptKeys": [
+    "applyEffect"
+  ],
+  "scriptVars": {
+    "applyEffect": {
+      "manaCost": 100,
+      "bodyAnimation": "handsup",
+      "range": 10,
+      "sound": 8,
+      "effectKey": "beagDall",
+      "filter": "hostileOnly, aliveOnly",
+      "animation": {
+        "targetAnimation": 57,
+        "animationSpeed": 100
+      }
+    }
+  },
+  "templateKey": "beag_dall"
+}

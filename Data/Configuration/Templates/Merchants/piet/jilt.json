@@ -1,0 +1,18 @@
+{
+    "itemsForSale": [
+    ],
+    "itemsToBuy": [],
+    "name": "Jilt",
+    "restockIntervalHrs": 1,
+    "restockPCt": 100,
+    "scriptKeys": ["showdialog", "verbalBanker", "defaultBehaviors"],
+    "scriptVars": {
+        "showdialog": {
+            "dialogKey": "bank_tester_initial"
+        }
+    },
+    "skillsToTeach": [],
+    "spellsToTeach": [],
+    "sprite": 56,
+    "templateKey": "jilt"
+}

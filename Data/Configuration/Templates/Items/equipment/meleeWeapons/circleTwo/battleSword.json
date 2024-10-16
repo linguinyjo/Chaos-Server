@@ -1,0 +1,28 @@
+{
+    "buyCost": 75000,
+    "category": "Sword",
+    "color": "Forest",
+    "displaySprite": 12,
+    "equipmentType": "Weapon",
+    "gender": "Unisex",
+    "isModifiable": true,
+    "maxDurability": 7000,
+    "maxStacks": 1,
+    "level": 11,
+    "levelCircle": 2,
+    "class": "warrior",
+    "modifiers": {
+        "physicalAttack": 48,
+        "maximumMp": -750
+    },
+    "sellValue": 30000,
+    "weight": 10,
+    "description": "Class: All\nLevel: 1\nP.Atk 48",
+    "name": "Battle Sword",
+    "panelSprite": 171,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "battleSword"
+}

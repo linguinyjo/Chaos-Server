@@ -1,0 +1,31 @@
+{
+    "assailIntervalMs": 1500,
+    "expReward": 135,
+    "moveIntervalMs": 1500,
+    "aggroRange": 10,
+    "name": "Viper",
+    "lootTableKeys": ["vipersGland", "vipersEgg", "enchantWeaponScroll2nd"],
+    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptVars": {},
+    "skillIntervalMs": 1500,
+    "skillTemplateKeys": ["Assail"],
+    "spellIntervalMs": 10000,
+    "spellTemplateKeys": ["beag_sal", "beag_athar", "beag_creag", "beag_srad", "beag_cradh"],
+    "sprite": 269,
+    "statSheet": {
+        "level": 20,
+        "ac": 75,
+        "maximumHp": 1300,
+        "maximumMp": 1000,
+        "physicalAttack": 45,
+        "magicAttack": 100,
+        "con": 4,
+        "dex": 1,
+        "int": 20,
+        "str": 20,
+        "wis": 1
+    },
+    "templateKey": "sw4Viper",
+    "type": "Normal",
+    "wanderIntervalMs": 2000
+}

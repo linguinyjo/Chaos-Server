@@ -82,6 +82,12 @@ public class CascadingDamageScript : ConfigurableSpellScriptBase,
 
     /// <inheritdoc />
     public IScript SourceScript { get; init; }
+    /// <inheritdoc />
+    public bool? UsePAtk { get; init; }
+    /// <inheritdoc />
+    public bool? UseMatk { get; init; }
+    /// <inheritdoc />
+    public int? FistBonus { get; init; }
 
     /// <inheritdoc />
     public Animation? Animation { get; init; }
@@ -109,5 +115,6 @@ public class CascadingDamageScript : ConfigurableSpellScriptBase,
 
     /// <inheritdoc />
     public bool ShouldNotBreakHide { get; init; }
+    public bool CanResist { get; init; }
     #endregion
 }

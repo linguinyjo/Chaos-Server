@@ -2,6 +2,7 @@ using Chaos.Common.Abstractions;
 using Chaos.Models.Data;
 using Chaos.Models.Panel;
 using Chaos.Models.Templates;
+using Chaos.Models.World;
 using Chaos.Networking.Entities.Server;
 using Chaos.Schemas.Aisling;
 using Chaos.Schemas.Templates;
@@ -37,7 +38,7 @@ public sealed class SpellMapperProfile(ISimpleCache simpleCache, IScriptProvider
         var template = SimpleCache.Get<SpellTemplate>(obj.TemplateKey);
         var maxLevel = template.LevelsUp ? obj.MaxLevel ?? template.MaxLevel : template.MaxLevel;
         var level = template.LevelsUp ? obj.Level ?? 0 : maxLevel;
-
+        
         var spell = new Spell(
             template,
             ScriptProvider,
@@ -82,6 +83,7 @@ public sealed class SpellMapperProfile(ISimpleCache simpleCache, IScriptProvider
             CastLines = obj.CastLines,
             Prompt = obj.Prompt,
             SpellType = obj.SpellType,
+            SpellCategory = obj.SpellCategory,
             Cooldown = obj.CooldownMs == null ? null : TimeSpan.FromMilliseconds(obj.CooldownMs.Value),
             PanelSprite = obj.PanelSprite,
             ScriptVars = new Dictionary<string, IScriptVars>(
@@ -95,7 +97,7 @@ public sealed class SpellMapperProfile(ISimpleCache simpleCache, IScriptProvider
             AdvClass = obj.AdvClass,
             RequiresMaster = obj.RequiresMaster,
             LevelsUp = obj.LevelsUp,
-            MaxLevel = obj.MaxLevel ?? 100
+            MaxLevel = obj.MaxLevel ?? 100,
         };
 
     public SpellTemplateSchema Map(SpellTemplate obj) => throw new NotImplementedException();

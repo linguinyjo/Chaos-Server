@@ -1,0 +1,13 @@
+{
+  "nextDialogKey": "close",
+  "options": [],
+  "scriptKeys": ["warp"],
+  "scriptVars": {
+    "warp": {
+      "destination": "pathSittingRoom:(7, 7)"
+    }
+  },
+  "templateKey": "aoife_quarterly",
+  "text": "Very well. Choose your path wisely for once you do, there is no going back.",
+   "type": "Normal"
+}

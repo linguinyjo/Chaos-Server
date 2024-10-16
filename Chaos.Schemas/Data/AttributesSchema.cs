@@ -17,4 +17,16 @@ public record AttributesSchema : StatsSchema
     public int MaximumMp { get; set; }
     public int SkillDamagePct { get; set; }
     public int SpellDamagePct { get; set; }
+    public int PhysicalAttack { get; set; }
+    public int MagicAttack { get; set; }
+    public int Regen { get; set; }
+}
+
+public record struct SpellCastTimeReduction
+{
+    public int Heal { get; set; }
+    public int Debuff { get; set; }
+    public int Buff { get; set; }
+    public int Cc { get; set; }
+    public int Cure { get; set; }
 }

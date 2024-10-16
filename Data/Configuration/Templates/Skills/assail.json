@@ -1,20 +1,8 @@
 {
     "isAssail": true,
-    "learningRequirements": {
-        "itemRequirements": [],
-        "requiredGold": 0,
-        "requiredStats": {
-            "con": 1,
-            "dex": 1,
-            "int": 1,
-            "str": 1,
-            "wis": 1
-        },
-        "prerequisiteSkills": [],
-        "prerequisiteSpells": []
-    },
     "description": "A basic attack that deals a small amount of damage to an enemy immediately in front of you.",
     "level": 1,
+    "levelsUp": true,
     "name": "Assail",
     "class": "peasant",
     "panelSprite": 1,
@@ -27,9 +15,10 @@
             "range": 1,
             "shape": "front",
             "excludeSourcePoint": true,
-            "damageStatMultiplier": 2,
+            "damageStatMultiplier": 0.50,
             "baseDamage": 3,
-            "filter": "hostileOnly, aliveOnly, othersOnly"
+            "filter": "hostileOnly, aliveOnly, othersOnly",
+            "usePAtk": true
         }
     },
     "templateKey": "assail"

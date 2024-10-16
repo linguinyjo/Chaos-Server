@@ -1,0 +1,9 @@
+{
+    "flags": "None",
+    "instanceId": "milethMagicShop",
+    "music": 1,
+    "name": "Mileth Magic Shop",
+    "scriptKeys": [],
+    "templateKey": "127",
+    "autoDayNightCycle": true
+}

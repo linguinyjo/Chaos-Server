@@ -1,0 +1,32 @@
+[
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "abelPort:(55, 18)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(6, 14)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "abelPort:(55, 18)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(7, 14)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "abelArmorShop:(1, 10)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(13, 0)"
+    }
+]

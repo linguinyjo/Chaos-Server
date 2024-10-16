@@ -2,6 +2,7 @@ using Chaos.Common.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.Panel;
+using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
 using Chaos.Scripting.Abstractions;
 using Chaos.Scripting.Components.AbilityComponents;
@@ -26,10 +27,11 @@ public class DamageScript : ConfigurableSkillScriptBase,
 
     /// <inheritdoc />
     public override void OnUse(ActivationContext context)
-        => new ComponentExecutor(context).WithOptions(this)
-                                         .ExecuteAndCheck<GenericAbilityComponent<Creature>>()
-                                         ?.Execute<DamageAbilityComponent>();
-
+    {
+        new ComponentExecutor(context).WithOptions(this)
+            .ExecuteAndCheck<GenericAbilityComponent<Creature>>()
+            ?.Execute<DamageAbilityComponent>();
+    }
     #region ScriptVars
     /// <inheritdoc />
     public AoeShape Shape { get; init; }
@@ -91,5 +93,17 @@ public class DamageScript : ConfigurableSkillScriptBase,
 
     /// <inheritdoc />
     public bool ShouldNotBreakHide { get; init; }
+    
+    /// <inheritdoc />
+    public bool? UsePAtk { get; init; }
+   
+    /// <inheritdoc />
+    public bool? UseMatk { get; init; }
+
+    /// <inheritdoc />
+    public int? FistBonus { get; init; }
+
+    /// <inheritdoc />
+    public bool CanResist { get; init; }
     #endregion
 }
