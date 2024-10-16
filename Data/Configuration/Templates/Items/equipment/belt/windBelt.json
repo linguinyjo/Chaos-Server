@@ -13,7 +13,7 @@
     "levelCircle": 2,
     "sellValue": 3500,
     "weight": 1,
-    "description": "A basic wind belt",
+    "description": "Class: All\nLevel: 11\nWind defense",
     "name": "Wind Belt",
     "panelSprite": 243,
     "scriptKeys": ["Equipment", "setelement"],

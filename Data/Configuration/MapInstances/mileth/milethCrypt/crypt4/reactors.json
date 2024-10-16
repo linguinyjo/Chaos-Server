@@ -18,5 +18,16 @@
         },
         "shouldBlockPathfinding": true,
         "source": "(6,40)"
+    },
+    {
+        "scriptKeys": ["terrorQuestWarp"],
+        "scriptVars": {
+            "terrorQuestWarp": {
+                "destination": "shroudedCrypt:(1, 10)",
+                "requiredStatus": 7
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(44, 1)"
     }
 ]

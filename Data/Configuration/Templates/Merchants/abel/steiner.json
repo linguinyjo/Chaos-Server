@@ -5,6 +5,10 @@
             "stock": 100
         },
         {
+            "itemTemplateKey": "bronzeShield",
+            "stock": 100
+        },
+        {
             "itemTemplateKey": "jupe",
             "stock": 100
         },
@@ -21,7 +25,7 @@
             "stock": 100
         }
     ],
-    "itemsToBuy": ["shirt","woodenShield", "stick", "boots", "leatherTunic", "leatherGauntlet", "leatherGreaves", "jupe", "greyBoots"],
+    "itemsToBuy": ["shirt","woodenShield", "stick", "boots", "leatherTunic", "leatherGauntlet", "leatherGreaves", "jupe", "greyBoots", "bronzeShield"],
     "name": "Steiner",
     "restockIntervalHrs": 1,
     "restockPCt": 100,

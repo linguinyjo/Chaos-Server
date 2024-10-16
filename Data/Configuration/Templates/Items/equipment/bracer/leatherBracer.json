@@ -18,7 +18,7 @@
     "levelCircle": 2,
     "sellValue": 1000,
     "weight": 2,
-    "description": "A bracer for a monk",
+    "description": "Class: Monk\nLevel: 11\nAc -1, Con 1",
     "name": "Leather Bracer",
     "panelSprite": 224,
     "scriptKeys": ["Equipment"],

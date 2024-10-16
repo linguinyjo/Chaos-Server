@@ -1,5 +1,5 @@
 {
-    "buyCost": 15000,
+    "buyCost": 10000,
     "category": "Armor",
     "color": "Default",
     "isDyable": true,
@@ -15,9 +15,9 @@
     "pantsColor": "Black",
     "level": 11,
     "levelCircle": 2,
-    "sellValue": 5000,
+    "sellValue": 3300,
     "weight": 4,
-    "description": "A tunic made for a warrior",
+    "description": "Class: Warrior\nLevel: 11\nAc -17",
     "name": "Jupe",
     "panelSprite": 102,
     "scriptKeys": ["Equipment"],

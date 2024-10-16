@@ -1,0 +1,38 @@
+{
+    "itemsForSale": [
+        {
+            "itemTemplateKey": "redJadeRing",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "amethystRing",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "coralEarrings",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "earthNecklace",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "earthBelt",
+            "stock": 100
+        }
+    ],
+    "itemsToBuy": ["shirt","woodenShield", "stick", "boots", "greyBoots", "leatherTunic", "jupe", "leatherGauntlet", "leatherGreaves", "smallSpinelRing", "smallEmeraldRing", "greyBoots", "seaBelt", "seaNecklace", "fireNecklace", "windNecklace", "seaNecklace", "berylEarrings"],
+    "name": "Leo",
+    "restockIntervalHrs": 1,
+    "restockPCt": 100,
+    "scriptKeys": ["showdialog", "verbalShop", "defaultBehaviors"],
+    "scriptVars": {
+        "showdialog": {
+            "dialogKey": "shop_tester_initial"
+        }
+    },
+    "skillsToTeach": [],
+    "spellsToTeach": [],
+    "sprite": 30,
+    "templateKey": "leo"
+}

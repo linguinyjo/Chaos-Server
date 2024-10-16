@@ -18,7 +18,7 @@
     "levelCircle": 2,
     "sellValue": 1250,
     "weight": 4,
-    "description": "A pair of worn leather greaves",
+    "description": "Class: All\nLevel: 11\nAc -2",
     "name": "Leather Greaves",
     "panelSprite": 238,
     "scriptKeys": ["Equipment"],

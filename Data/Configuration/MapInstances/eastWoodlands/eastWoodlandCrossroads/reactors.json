@@ -58,5 +58,25 @@
         },
         "shouldBlockPathfinding": true,
         "source": "(4, 0)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "eastWoodland4-1:(26, 98)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(9, 0)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "eastWoodland4-1:(25, 98)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(8, 0)"
     }
 ]

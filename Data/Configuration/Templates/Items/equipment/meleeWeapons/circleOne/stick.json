@@ -15,7 +15,7 @@
     "levelCircle": 1,
     "sellValue": 50,
     "weight": 1,
-    "description": "A stick",
+    "description": "Class: All\nLevel: 1\nP.Atk 3",
     "name": "Stick",
     "panelSprite": 86,
     "scriptKeys": ["Equipment"],

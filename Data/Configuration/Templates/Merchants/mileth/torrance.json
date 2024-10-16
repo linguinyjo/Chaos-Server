@@ -31,6 +31,10 @@
         {
             "itemTemplateKey": "greyBoots",
             "stock": 100
+        },
+        {
+            "itemTemplateKey": "smallSpinelRing",
+            "stock": 100
         }
     ],
     "itemsToBuy": ["shirt","woodenShield", "stick", "boots", "leatherTunic", "leatherGauntlet", "leatherGreaves", "silverEarrings", "goldEarrings", "greyBoots"],

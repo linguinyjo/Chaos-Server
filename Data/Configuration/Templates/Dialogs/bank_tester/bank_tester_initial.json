@@ -20,6 +20,6 @@
   "scriptKeys": [],
   "scriptVars": {},
   "templateKey": "bank_tester_initial",
-  "text": "just a basic bitch dialog",
+  "text": "Welcome, what can I do for you?",
   "type": "Menu"
 }

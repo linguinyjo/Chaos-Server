@@ -24,7 +24,7 @@ public class SongScript : ConfigurableItemScriptBase,
     private readonly ISimpleCache SimpleCache;
     
     #region ScriptVars
-    protected Town Destination { get; init; }
+    protected Location Destination { get; init; } = null!;
     #endregion
 
     /// <inheritdoc />
@@ -42,35 +42,38 @@ public class SongScript : ConfigurableItemScriptBase,
         new ComponentExecutor(source, source).WithOptions(this)
             .ExecuteAndCheck<GenericAbilityComponent<Aisling>>()
             ?.Execute<ConsumableAbilityComponent>();
-        switch (Destination)
-        {
-            case Mileth:
-                Console.WriteLine("You are in Mileth");
-                var targetMap = SimpleCache.Get<MapInstance>("milethInn");
-                var destination = new Location("milethInn", 5, 10);
-                source.TraverseMap(targetMap, destination);
-                break;
-            case Abel:
-                Console.WriteLine("You are in Abel");
-                // Add Abel-specific logic here
-                break;
-            case Rucesion:
-                Console.WriteLine("You are in Rucesion");
-                // Add Rucesion-specific logic here
-                break;
-            case Piet:
-                Console.WriteLine("You are in Piet");
-                // Add Piet-specific logic here
-                break;
-            case Suomi:
-                Console.WriteLine("You are in Suomi");
-                // Add Suomi-specific logic here
-                break;
-            default:
-                Console.WriteLine("Unknown town");
-                // Handle unexpected cases
-                break;
-        }
+        var targetMap = SimpleCache.Get<MapInstance>(Destination.Map);
+        source.TraverseMap(targetMap, Destination);
+
+        // switch (Destination)
+        // {
+        //     case Mileth:
+        //         Console.WriteLine("You are in Mileth");
+        //         var targetMap = SimpleCache.Get<MapInstance>("milethInn");
+        //         var destination = new Location("milethInn", 5, 10);
+        //         source.TraverseMap(targetMap, destination);
+        //         break;
+        //     case Abel:
+        //         Console.WriteLine("You are in Abel");
+        //         // Add Abel-specific logic here
+        //         break;
+        //     case Rucesion:
+        //         Console.WriteLine("You are in Rucesion");
+        //         // Add Rucesion-specific logic here
+        //         break;
+        //     case Piet:
+        //         Console.WriteLine("You are in Piet");
+        //         // Add Piet-specific logic here
+        //         break;
+        //     case Suomi:
+        //         Console.WriteLine("You are in Suomi");
+        //         // Add Suomi-specific logic here
+        //         break;
+        //     default:
+        //         Console.WriteLine("Unknown town");
+        //         // Handle unexpected cases
+        //         break;
+        // }
     }
     
 

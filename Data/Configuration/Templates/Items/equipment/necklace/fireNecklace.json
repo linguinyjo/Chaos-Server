@@ -13,7 +13,7 @@
     "levelCircle": 2,
     "sellValue": 3500,
     "weight": 1,
-    "description": "A basic fire necklace",
+    "description": "Class: All\nLevel: 11\nFire offense",
     "name": "Fire Necklace",
     "panelSprite": 205,
     "scriptKeys": ["Equipment", "setelement"],

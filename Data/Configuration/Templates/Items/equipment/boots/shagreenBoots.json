@@ -16,7 +16,7 @@
     "notMonk": true,
     "sellValue": 20000,
     "weight": 2,
-    "description": "Usable by all except monk",
+    "description": "Class: All except monk\nLevel: 11\nDex 2",
     "name": "Shagreen Boots",
     "panelSprite": 95,
     "scriptKeys": ["Equipment"],

@@ -5,12 +5,21 @@
         "rewards": "Choosing a Path",
         "qualifyingCircles": ["one", "two", "three", "four"],
         "id": "TrainingQuest",
-        "result": "Training Completed"
+        "result": "Completed"
+    },
+    {
+        "title": "Choosing a Class",
+        "summary": "Go to the path temple after completing the training quest and choose your class.",
+        "rewards": "",
+        "prerequisiteEventId": "TrainingQuest",
+        "qualifyingCircles": ["one", "two", "three", "four"],
+        "id": "choosingAClass",
+        "result": "Completed"
     },
     {
         "title": "Devlin's Ingredients",
         "summary": "Speak to Devlin the white magic master in Mileth",
-        "rewards": "Gold and exp",
+        "rewards": "Gold and experience",
         "qualifyingCircles": ["one", "two", "three", "four"],
         "id": "devlinsIngredients",
         "result": "Completed"
@@ -26,34 +35,9 @@
     {
         "title": "The Beggar's Terror",
         "summary": "Speak with the beggar in Mileth's tavern. \nLevel requirement: 11-41",
-        "rewards": "literally nothing still",
+        "rewards": "Experience",
         "qualifyingCircles": ["two"],
         "id": "terrorOfTheBeggar",
         "result": "Completed"
-    },
-    {
-        "title": "I like carrots",
-        "summary": "I like carrots, go get me some",
-        "rewards": "literally nothing still",
-        "qualifyingCircles": ["four", "five", "six", "seven"],
-        "id": "Carrots1",
-        "result": "i ate some carrots"
-    },
-    {
-        "title": "I like melons",
-        "summary": "I like melons, go get me some",
-        "rewards": "literally nothing still",
-        "qualifyingCircles": ["one", "two", "three", "four"],
-        "id": "Melons1",
-        "result": "i ate some melons"
-    },
-    {
-        "pageOverride": 6,
-        "title": "I like pie",
-        "summary": "I like pie, go get me some",
-        "rewards": "literally nothing still",
-        "qualifyingCircles": ["five", "six", "seven"],
-        "id": "Pie1",
-        "result": "i ate some pie"
     }
 ]

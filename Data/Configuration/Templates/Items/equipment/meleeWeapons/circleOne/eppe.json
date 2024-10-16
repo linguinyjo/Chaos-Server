@@ -16,7 +16,7 @@
     "levelCircle": 1,
     "sellValue": 1500,
     "weight": 5,
-    "description": "Small enough for a child to wield",
+    "description": "Class: All\nLevel: 1\nP.Atk 15",
     "name": "Eppe",
     "panelSprite": 87,
     "scriptKeys": ["Equipment"],

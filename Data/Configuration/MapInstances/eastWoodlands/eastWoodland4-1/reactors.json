@@ -1,0 +1,22 @@
+[
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "eastWoodlandCrossroads:(8, 1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(25, 99)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "eastWoodlandCrossroads:(9, 1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(26, 99)"
+    }
+]

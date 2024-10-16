@@ -55,7 +55,7 @@ public class FirstClassChangeScript : ConfigurableDialogScriptBase
 
         var legendMark = new LegendMark(
             $"Became a {baseClass}",
-            baseClass.ToString(),
+            "choosingAClass",
             MarkIcon.Victory,
             MarkColor.White,
             1,

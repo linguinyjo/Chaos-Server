@@ -16,7 +16,7 @@
     "levelCircle": 1,
     "sellValue": 5000,
     "weight": 7,
-    "description": "A sword crafted by the smiths of Loures",
+    "description": "Class: All\nLevel: 1\nP.Atk 24",
     "name": "Loures Sabre",
     "panelSprite": 88,
     "scriptKeys": ["Equipment"],

@@ -1,0 +1,9 @@
+{
+    "flags": "None",
+    "instanceId": "pietWeaponShop",
+    "music": 1,
+    "name": "Piet Weapon Shop",
+    "scriptKeys": [],
+    "templateKey": "165",
+    "autoDayNightCycle": true
+}

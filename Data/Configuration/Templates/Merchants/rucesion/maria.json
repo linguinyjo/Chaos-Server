@@ -1,0 +1,25 @@
+{
+  "itemsForSale": [
+      {
+        "itemTemplateKey": "rucesionSong",
+        "stock": 999
+      }
+  ],
+  "restockIntervalHrs": 1,
+  "restockPCt": 100,
+  "itemsToBuy": [],
+  "name": "Maria",
+  "scriptKeys": [
+    "showdialog",
+    "defaultBehaviors"
+  ],
+  "scriptVars": {
+    "showdialog": {
+      "dialogKey": "maria_initial"
+    }
+  },
+  "skillsToTeach": [],
+  "spellsToTeach": [],
+  "sprite": 22,
+  "templateKey": "maria"
+}

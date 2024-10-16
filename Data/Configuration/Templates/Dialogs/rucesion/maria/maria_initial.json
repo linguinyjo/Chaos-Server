@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "generic_buyShop_initial",
+      "optionText": "Buy"
+    },
+    {
+      "dialogKey": "generic_sellshop_initial",
+      "optionText": "Sell"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "maria_initial",
+  "text": "Hello, welcome to Rucesion Inn. What can I do for you?",
+  "type": "Menu"
+}

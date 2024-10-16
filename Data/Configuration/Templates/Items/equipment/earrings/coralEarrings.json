@@ -16,7 +16,7 @@
     "pantsColor": "Black",
     "sellValue": 12000,
     "weight": 1,
-    "description": "Coral earrings",
+    "description": "Class: All\nLevel: 11\nInt 2",
     "name": "Coral Earrings",
     "panelSprite": 234,
     "scriptKeys": ["Equipment"],

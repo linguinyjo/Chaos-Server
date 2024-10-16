@@ -3,7 +3,7 @@
   "category": "misc",
   "color": "Default",
   "isModifiable": false,
-  "maxStacks": 1,
+  "maxStacks": 25,
   "sellValue": 250,
   "weight": 1,
   "description": "Mileth Song",
@@ -14,7 +14,7 @@
   ],
   "scriptVars": {
     "song": {
-      "destination": "Mileth"
+      "destination": "milethInn:(5, 10)"
     }
   },
   "templateKey": "milethSong"

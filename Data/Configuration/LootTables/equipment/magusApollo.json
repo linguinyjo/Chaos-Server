@@ -1,0 +1,9 @@
+{
+  "key": "magusApollo",
+  "lootDrops": [
+    {
+      "dropChance": 0.005,
+      "itemTemplateKey": "magusApollo"
+    }
+  ]
+}

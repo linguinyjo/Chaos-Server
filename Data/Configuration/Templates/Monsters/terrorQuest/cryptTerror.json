@@ -8,7 +8,7 @@
     "scriptKeys": ["default", "setMonsterElement", "terrorOnKill"],
     "scriptVars": {
         "terrorOnKill": {
-            "destination": "abelPort:(15,53)"
+            "destination": "milethCrypt4:(25,43)"
         }
     },
     "skillIntervalMs": 1500,

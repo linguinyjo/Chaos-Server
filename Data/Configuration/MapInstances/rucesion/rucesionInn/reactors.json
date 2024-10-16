@@ -1,0 +1,42 @@
+[
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "rucesionVillage:(41, 42)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(4, 11)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "rucesionVillage:(41, 42)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(5, 11)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "rucesionVillage:(41, 42)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(6, 11)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "rucesionVillage:(41, 42)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(7, 11)"
+    }
+]

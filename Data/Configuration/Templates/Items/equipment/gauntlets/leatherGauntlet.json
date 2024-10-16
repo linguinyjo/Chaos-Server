@@ -18,7 +18,7 @@
     "levelCircle": 2,
     "sellValue": 750,
     "weight": 2,
-    "description": "A single gauntlet made from leather",
+    "description": "Class: All\nLevel: 11\nAc -1",
     "name": "Leather Gauntlet",
     "panelSprite": 227,
     "scriptKeys": ["Equipment"],

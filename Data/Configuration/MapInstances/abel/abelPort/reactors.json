@@ -33,6 +33,16 @@
         "scriptKeys": ["warp"],
         "scriptVars": {
             "warp": {
+                "destination": "abelGoodsShop:(6, 13)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(24, 8)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
                 "destination": "abelPortWay:(10, 20)"
             }
         },

@@ -1,9 +1,6 @@
 using Chaos.Collections;
-using Chaos.Common.Definitions;
-using Chaos.Common.Utilities;
 using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
-using Chaos.Scripting.MonsterScripts;
 using Chaos.Scripting.MonsterScripts.Abstractions;
 using Chaos.Storage.Abstractions;
 
@@ -28,10 +25,12 @@ public class TerrorOnKillScript : ConfigurableMonsterScriptBase
     /// <inheritdoc />
     public override void OnDeath()
     {
-        var targetMap = SimpleCache.Get<MapInstance>(Destination.Map);
         if (player?.Group == null) return;
+        var targetMap = SimpleCache.Get<MapInstance>(Destination.Map);
+        var requiredMapId = player.Trackers.LastMapInstanceId;
         foreach (var aisling in player.Group)
         {
+            if (aisling.Trackers.LastMapInstanceId != requiredMapId) continue;
             TerrorQuestHelper.IncrementQuestStage(aisling);
             aisling.TraverseMap(targetMap, Destination);
         }

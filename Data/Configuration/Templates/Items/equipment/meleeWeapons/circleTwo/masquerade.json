@@ -17,7 +17,7 @@
     },
     "sellValue": 75000,
     "weight": 10,
-    "description": "A powerful sword",
+    "description": "Class: All\nLevel: 1\nP.Atk 72",
     "name": "Masquerade",
     "panelSprite": 170,
     "scriptKeys": ["Equipment"],

@@ -17,7 +17,7 @@
     },
     "sellValue": 30000,
     "weight": 10,
-    "description": "A sword made for battle",
+    "description": "Class: All\nLevel: 1\nP.Atk 48",
     "name": "Battle Sword",
     "panelSprite": 171,
     "scriptKeys": ["Equipment"],

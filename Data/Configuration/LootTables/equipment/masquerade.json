@@ -1,0 +1,9 @@
+{
+  "key": "masquerade",
+  "lootDrops": [
+    {
+      "dropChance": 0.003,
+      "itemTemplateKey": "masquerade"
+    }
+  ]
+}

@@ -16,7 +16,7 @@
     "levelCircle": 2,
     "sellValue": 4000,
     "weight": 5,
-    "description": "A leather shield",
+    "description": "Class: All\nLevel: 11\nAc -5",
     "name": "Leather Shield",
     "panelSprite": 188,
     "scriptKeys": ["Equipment"],

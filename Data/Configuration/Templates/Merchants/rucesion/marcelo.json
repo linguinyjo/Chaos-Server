@@ -14,7 +14,7 @@
         }
     ],
     "itemsToBuy": ["woodenShield", "stick", "dirk", "eppe", "louresSabre"],
-    "name": "Callough",
+    "name": "Marcelo",
     "restockIntervalHrs": 1,
     "restockPCt": 100,
     "scriptKeys": ["showdialog", "verbalShop", "defaultBehaviors"],

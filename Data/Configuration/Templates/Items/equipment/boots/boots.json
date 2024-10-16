@@ -15,7 +15,7 @@
     "notMonk": true,
     "sellValue": 200,
     "weight": 2,
-    "description": "Usable by all except monk",
+    "description": "Class: All except monk",
     "name": "Boots",
     "panelSprite": 95,
     "scriptKeys": ["Equipment"],

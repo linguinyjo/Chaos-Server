@@ -17,7 +17,7 @@
     "notMonk": true,
     "sellValue": 2000,
     "weight": 2,
-    "description": "Usable by all except monk",
+    "description": "Class: All except monk\nLevel: 11\nDex 1",
     "name": "Grey Boots",
     "panelSprite": 95,
     "scriptKeys": ["Equipment"],

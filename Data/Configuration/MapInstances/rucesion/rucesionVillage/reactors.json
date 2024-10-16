@@ -20,6 +20,36 @@
         "source": "(37, 28)"
     },
     {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "rucesionGoodsShop:(6, 13)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(7, 23)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "rucesionInn:(5, 10)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(40, 42)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "rucesionStorage:(6, 13)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(42, 11)"
+    },
+    {
         "scriptKeys": ["showWorldMap"],
         "scriptVars": {
             "showWorldMap": {

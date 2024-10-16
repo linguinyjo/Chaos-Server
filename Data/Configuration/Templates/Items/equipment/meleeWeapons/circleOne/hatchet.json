@@ -16,7 +16,7 @@
     "levelCircle": 1,
     "sellValue": 10000,
     "weight": 7,
-    "description": "A small axe",
+    "description": "Class: All\nLevel: 1\nP.Atk 32",
     "name": "Hatchet",
     "panelSprite": 527,
     "scriptKeys": ["Equipment"],

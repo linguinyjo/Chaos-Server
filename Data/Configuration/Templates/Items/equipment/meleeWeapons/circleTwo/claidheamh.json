@@ -17,7 +17,7 @@
     "sellValue": 10000,
     "class": "warrior",
     "weight": 8,
-    "description": "A sharp looking sword",
+    "description": "Class: All\nLevel: 1\nP.Atk 32",
     "name": "claidheamh",
     "panelSprite": 89,
     "scriptKeys": ["Equipment"],

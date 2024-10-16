@@ -1,0 +1,32 @@
+[
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pietVillage:(49, 29)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(6, 14)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pietVillage:(49, 29)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(7, 14)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pietArmorShop:(1, 10)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(13, 0)"
+    }
+]

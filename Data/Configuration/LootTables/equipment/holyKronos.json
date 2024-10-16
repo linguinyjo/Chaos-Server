@@ -1,0 +1,9 @@
+{
+  "key": "holyKronos",
+  "lootDrops": [
+    {
+      "dropChance": 0.005,
+      "itemTemplateKey": "holyKronos"
+    }
+  ]
+}

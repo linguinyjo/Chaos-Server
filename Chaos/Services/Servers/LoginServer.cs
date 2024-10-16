@@ -7,6 +7,7 @@ using Chaos.Common.Definitions;
 using Chaos.Common.Identity;
 using Chaos.Cryptography;
 using Chaos.Extensions.Common;
+using Chaos.Models.Legend;
 using Chaos.Models.Panel;
 using Chaos.Models.World;
 using Chaos.Networking.Abstractions;
@@ -22,6 +23,7 @@ using Chaos.Services.Factories.Abstractions;
 using Chaos.Services.Servers.Options;
 using Chaos.Services.Storage.Abstractions;
 using Chaos.Storage.Abstractions;
+using Chaos.Time;
 using Chaos.Utilities;
 using Microsoft.Extensions.Options;
 
@@ -155,6 +157,14 @@ public sealed class LoginServer : ServerBase<IChaosLoginClient>, ILoginServer<IC
                 var skillToLearn = SkillFactory.Create("assail");
                 ComplexActionHelper.LearnSkill(aisling, skillToLearn);
                 
+                var legendMark = new LegendMark(
+                    "Aisling",
+                    "born",
+                    MarkIcon.Victory,
+                    MarkColor.White,
+                    1,
+                    GameTime.Now);
+                aisling.Legend.AddOrAccumulate(legendMark);
                 var mailBox = MailBoxFactory.Create(aisling.Name);
 
                 await AislingStore.SaveAsync(aisling);

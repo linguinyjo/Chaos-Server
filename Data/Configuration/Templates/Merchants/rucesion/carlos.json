@@ -1,10 +1,6 @@
 {
     "itemsForSale": [
         {
-            "itemTemplateKey": "smallSpinelRing",
-            "stock": 100
-        },
-        {
             "itemTemplateKey": "smallEmeraldRing",
             "stock": 100
         },
@@ -34,6 +30,10 @@
         },
         {
             "itemTemplateKey": "seaBelt",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "emeraldRing",
             "stock": 100
         }
     ],

@@ -1,0 +1,21 @@
+{
+  "buyCost": 500,
+  "category": "misc",
+  "color": "Default",
+  "isModifiable": false,
+  "maxStacks": 25,
+  "sellValue": 250,
+  "weight": 1,
+  "description": "Piet Song",
+  "name": "Piet Song",
+  "panelSprite": 4,
+  "scriptKeys": [
+    "song"
+  ],
+  "scriptVars": {
+    "song": {
+      "destination": "pietInn:(5, 10)"
+    }
+  },
+  "templateKey": "pietSong"
+}

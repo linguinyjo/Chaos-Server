@@ -18,7 +18,7 @@
     "levelsUp": true,
     "name": "Double Punch",
     "class": "monk",
-    "panelSprite": 1,
+    "panelSprite": 4,
     "scriptKeys": ["damage"],
     "scriptVars": {
         "damage": {

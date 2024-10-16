@@ -17,7 +17,7 @@
     "levelCircle": 1,
     "sellValue": 250,
     "weight": 2,
-    "description": "A small, blunt dagger",
+    "description": "Class: All\nLevel: 1\nP.Atk 8",
     "name": "Dirk",
     "panelSprite": 91,
     "scriptKeys": ["Equipment"],

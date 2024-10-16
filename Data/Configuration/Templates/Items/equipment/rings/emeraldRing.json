@@ -18,7 +18,7 @@
     "levelCircle": 2,
     "sellValue": 7500,
     "weight": 2,
-    "description": "A ring made from emerald",
+    "description": "Class: All\nLevel: 11\nMp 200, Regen 1",
     "name": "Emerald Ring",
     "panelSprite": 213,
     "scriptKeys": ["Equipment"],

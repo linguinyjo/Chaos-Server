@@ -16,9 +16,9 @@
         "int": 2,
         "maximumMp": 200
     },
-    "sellValue": 45000,
-    "weight": 6,
-    "description": "When equipped damaging spells have -1 lines",
+    "sellValue": 35000,
+    "weight": 4,
+    "description": "Class: Priest, Wizard, Druid\nLevel: 11\nMagic Attack 42, Wis 2, Mana 200, Damage spells -1 lines",
     "name": "Magus Kronos",
     "panelSprite": 183,
     "scriptKeys": ["Equipment", "EquipStaff"],

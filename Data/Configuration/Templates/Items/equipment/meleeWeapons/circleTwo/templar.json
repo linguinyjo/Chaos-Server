@@ -17,7 +17,7 @@
     },
     "sellValue": 50000,
     "weight": 10,
-    "description": "A sword wielded by the knights of Loures",
+    "description": "Class: All\nLevel: 1\nP.Atk 62",
     "name": "Templar",
     "panelSprite": 169,
     "scriptKeys": ["Equipment"],

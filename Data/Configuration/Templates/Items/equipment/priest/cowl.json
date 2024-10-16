@@ -1,6 +1,6 @@
 {
     "buyCost": 1500,
-    "category": "armor",
+    "category": "Armor",
     "color": "Blue",
     "isDyable": true,
     "displaySprite": 5,
@@ -17,7 +17,7 @@
     "levelCircle": 1,
     "sellValue": 500,
     "weight": 4,
-    "description": "An old, worn tunic",
+    "description": "Class: Priest\nLevel: 1\nAc -8",
     "name": "Cowl",
     "panelSprite": 100,
     "scriptKeys": ["Equipment"],

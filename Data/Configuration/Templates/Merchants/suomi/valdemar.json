@@ -15,10 +15,6 @@
         {
             "itemTemplateKey": "spinelRing",
             "stock": 100
-        },
-        {
-            "itemTemplateKey": "emeraldRing",
-            "stock": 100
         }
     ],
     "itemsToBuy": ["shirt","woodenShield", "stick", "boots", "leatherTunic", "leatherGauntlet", "leatherGreaves", 

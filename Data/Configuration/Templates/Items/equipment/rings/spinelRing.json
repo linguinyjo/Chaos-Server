@@ -18,7 +18,7 @@
     "levelCircle": 2,
     "sellValue": 7500,
     "weight": 2,
-    "description": "A ring made from ruby",
+    "description": "Class: All\nLevel: 11\nHp 200, Dmg 1",
     "name": "Spinel Ring",
     "panelSprite": 210,
     "scriptKeys": ["Equipment"],

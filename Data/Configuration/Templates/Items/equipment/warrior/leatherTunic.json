@@ -17,7 +17,7 @@
     "levelCircle": 1,
     "sellValue": 500,
     "weight": 4,
-    "description": "Just a plain old shirt",
+    "description": "Class: Warrior\nLevel: 1\nAc -11",
     "name": "Leather Tunic",
     "panelSprite": 97,
     "scriptKeys": ["Equipment"],

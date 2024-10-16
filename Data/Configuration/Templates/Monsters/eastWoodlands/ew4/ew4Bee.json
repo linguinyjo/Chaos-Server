@@ -1,0 +1,30 @@
+{
+    "assailIntervalMs": 1500,
+    "expReward": 85,
+    "moveIntervalMs": 1500,
+    "name": "Bee",
+    "lootTableKeys": ["rawWax", "rawHoney"],
+    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptVars": {},
+    "skillIntervalMs": 1500,
+    "skillTemplateKeys": ["Assail"],
+    "spellIntervalMs": 10000,
+    "spellTemplateKeys": [],
+    "sprite": 1,
+    "statSheet": {
+        "level": 17,
+        "ac": 75,
+        "maximumHp": 1150,
+        "maximumMp": 1000,
+        "physicalAttack": 45,
+        "magicAttack": 60,
+        "con": 4,
+        "dex": 1,
+        "int": 20,
+        "str": 16,
+        "wis": 1
+    },
+    "templateKey": "ew4Bee",
+    "type": "Normal",
+    "wanderIntervalMs": 2000
+}
