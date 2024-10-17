@@ -1,0 +1,9 @@
+{
+    "key": "leatherRubyGauntlet",
+    "lootDrops": [
+        {
+            "dropChance": 0.007,
+            "itemTemplateKey": "leatherRubyGauntlet"
+        }
+    ]
+}

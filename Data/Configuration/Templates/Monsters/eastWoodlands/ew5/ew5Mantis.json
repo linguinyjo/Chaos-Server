@@ -1,0 +1,31 @@
+{
+    "assailIntervalMs": 1500,
+    "expReward": 144,
+    "aggroRange": 10,
+    "moveIntervalMs": 1500,
+    "name": "Mantis",
+    "lootTableKeys": ["ew5Mantis", "enchantWeaponScroll2nd"],
+    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptVars": {},
+    "skillIntervalMs": 1500,
+    "skillTemplateKeys": ["Assail"],
+    "spellIntervalMs": 20000,
+    "spellTemplateKeys": ["beag_sal", "beag_athar", "beag_creag", "beag_srad", "beag_cradh"],
+    "sprite": 87,
+    "statSheet": {
+        "level": 24,
+        "ac": 75,
+        "maximumHp": 1500,
+        "maximumMp": 1000,
+        "physicalAttack": 55,
+        "magicAttack": 60,
+        "con": 4,
+        "dex": 1,
+        "int": 20,
+        "str": 20,
+        "wis": 1
+    },
+    "templateKey": "ew5Mantis",
+    "type": "Normal",
+    "wanderIntervalMs": 2000
+}

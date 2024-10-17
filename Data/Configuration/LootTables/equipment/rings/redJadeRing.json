@@ -1,0 +1,9 @@
+{
+    "key": "redJadeRing",
+    "lootDrops": [
+        {
+            "dropChance": 0.008,
+            "itemTemplateKey": "redJadeRing"
+        }
+    ]
+}

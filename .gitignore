@@ -243,6 +243,8 @@ ModelManifest.xml
 # Paket dependency manager
 .paket/paket.exe
 
+password.txt
+
 # FAKE - F# Make
 .fake/
 PATH.txt

@@ -1,9 +1,0 @@
-{
-  "key": "wolfTeeth",
-  "lootDrops": [
-    {
-      "dropChance": 0.15,
-      "itemTemplateKey": "wolfTeeth"
-    }
-  ]
-}

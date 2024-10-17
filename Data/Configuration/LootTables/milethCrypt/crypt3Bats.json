@@ -1,0 +1,33 @@
+{
+  "key": "crypt3Bats",
+  "lootDrops": [
+    {
+      "dropChance": 0.25,
+      "itemTemplateKey": "batsWing"
+    },
+    {
+      "dropChance": 0.01,
+      "itemTemplateKey": "enchantWeaponScroll2nd"
+    },
+    {
+      "dropChance": 0.06,
+      "itemTemplateKey": "boneNecklace"
+    },
+    {
+      "dropChance": 0.008,
+      "itemTemplateKey": "rubyEarrings"
+    },
+    {
+      "dropChance": 0.009,
+      "itemTemplateKey": "smallEmeraldRing"
+    },
+    {
+      "dropChance": 0.008,
+      "itemTemplateKey": "leatherRubyGauntlet"
+    },
+    {
+      "dropChance": 0.01,
+      "itemTemplateKey": "leatherBracer"
+    }
+  ]
+}

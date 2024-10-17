@@ -1,9 +1,29 @@
 {
-  "key": "gardenMantis",
+  "key": "ew3Mantis",
   "lootDrops": [
     {
       "dropChance": 0.30,
       "itemTemplateKey": "mantisEye"
+    },
+    {
+      "dropChance": 0.01,
+      "itemTemplateKey": "enchantWeaponScroll2nd"
+    },
+    {
+      "dropChance": 0.007,
+      "itemTemplateKey": "goldEarrings"
+    },
+    {
+      "dropChance": 0.007,
+      "itemTemplateKey": "coralEarrings"
+    },
+    {
+      "dropChance": 0.009,
+      "itemTemplateKey": "leatherShield"
+    },
+    {
+      "dropChance": 0.009,
+      "itemTemplateKey": "leatherBracer"
     }
   ]
 }

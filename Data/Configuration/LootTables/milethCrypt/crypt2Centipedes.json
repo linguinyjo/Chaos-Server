@@ -1,0 +1,17 @@
+{
+  "key": "crypt2Centipedes",
+  "lootDrops": [
+    {
+      "dropChance": 0.35,
+      "itemTemplateKey": "centipedeGland"
+    },
+    {
+      "dropChance": 0.009,
+      "itemTemplateKey": "smallEmeraldRing"
+    },
+    {
+      "dropChance": 0.01,
+      "itemTemplateKey": "woodenShield"
+    }
+  ]
+}

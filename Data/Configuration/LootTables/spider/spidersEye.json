@@ -1,9 +1,0 @@
-{
-  "key": "spidersEye",
-  "lootDrops": [
-    {
-      "dropChance": 0.33,
-      "itemTemplateKey": "spidersEye"
-    }
-  ]
-}

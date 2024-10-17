@@ -1,0 +1,32 @@
+{
+    "assailIntervalMs": 1500,
+    "expReward": 182,
+    "moveIntervalMs": 1500,
+    "maxGoldDrop": 300,
+    "minGoldDrop": 200,
+    "name": "Kobold",
+    "lootTableKeys": ["ew5Kobolds","enchantWeaponScroll2nd"],
+    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptVars": {},
+    "skillIntervalMs": 1500,
+    "skillTemplateKeys": ["Assail"],
+    "spellIntervalMs": 20000,
+    "spellTemplateKeys": ["beag_sal", "beag_athar", "beag_creag", "beag_srad", "beag_cradh"],
+    "sprite": 50,
+    "statSheet": {
+        "level": 25,
+        "ac": 73,
+        "maximumHp": 1750,
+        "maximumMp": 1000,
+        "physicalAttack": 70,
+        "magicAttack": 60,
+        "con": 4,
+        "dex": 1,
+        "int": 20,
+        "str": 20,
+        "wis": 1
+    },
+    "templateKey": "ew5Kobold",
+    "type": "Normal",
+    "wanderIntervalMs": 2000
+}

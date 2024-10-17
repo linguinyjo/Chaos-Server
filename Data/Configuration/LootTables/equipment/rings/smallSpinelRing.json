@@ -1,0 +1,9 @@
+{
+    "key": "smallSpinelRing",
+    "lootDrops": [
+        {
+            "dropChance": 0.008,
+            "itemTemplateKey": "smallSpinelRing"
+        }
+    ]
+}

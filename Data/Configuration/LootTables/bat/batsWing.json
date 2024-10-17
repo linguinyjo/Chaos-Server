@@ -1,9 +1,0 @@
-{
-  "key": "batsWing",
-  "lootDrops": [
-    {
-      "dropChance": 0.20,
-      "itemTemplateKey": "batsWing"
-    }
-  ]
-}

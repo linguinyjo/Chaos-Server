@@ -68,7 +68,7 @@ public static class AJourneyToSuomiQuestHelper
             MarkColor.White,
             1,
             GameTime.Now);
-        player.TryGiveGold(2500);
+        player.TryGiveGold(5000);
         player.Legend.AddUnique(legendMark);
         player.Client.SendAnimation(new Animation()
         {

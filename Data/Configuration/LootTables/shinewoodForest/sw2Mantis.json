@@ -1,9 +1,25 @@
 {
-  "key": "gardenBee",
+  "key": "sw2Mantis",
   "lootDrops": [
     {
       "dropChance": 0.35,
       "itemTemplateKey": "mantisEye"
+    },
+    {
+      "dropChance": 0.009,
+      "itemTemplateKey": "smallSpinelRing"
+    },
+    {
+      "dropChance": 0.009,
+      "itemTemplateKey": "redJadeRing"
+    },
+    {
+      "dropChance": 0.009,
+      "itemTemplateKey": "silverEarrings"
+    },
+    {
+      "dropChance": 0.01,
+      "itemTemplateKey": "leatherShield"
     }
   ]
 }

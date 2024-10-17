@@ -1,0 +1,9 @@
+{
+    "key": "berylEarrings",
+    "lootDrops": [
+        {
+            "dropChance": 0.008,
+            "itemTemplateKey": "berylEarrings"
+        }
+    ]
+}

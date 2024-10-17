@@ -1,0 +1,33 @@
+{
+  "key": "sw4Vipers",
+  "lootDrops": [
+    {
+      "dropChance": 0.20,
+      "itemTemplateKey": "vipersGland"
+    },
+    {
+      "dropChance": 0.25,
+      "itemTemplateKey": "vipersEgg"
+    },
+    {
+      "dropChance": 0.01,
+      "itemTemplateKey": "enchantWeaponScroll2nd"
+    },
+    {
+      "dropChance": 0.007,
+      "itemTemplateKey": "spinelRing"
+    },
+    {
+      "dropChance": 0.008,
+      "itemTemplateKey": "leatherSaphireGauntlet"
+    },
+    {
+      "dropChance": 0.006,
+      "itemTemplateKey": "phoenixNecklace"
+    },
+    {
+      "dropChance": 0.006,
+      "itemTemplateKey": "leatherBelt"
+    }
+  ]
+}

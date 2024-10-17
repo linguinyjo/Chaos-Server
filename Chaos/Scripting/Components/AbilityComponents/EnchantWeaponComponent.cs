@@ -16,6 +16,11 @@ public struct EnchantWeaponComponent : IConditionalComponent
         var options = vars.GetOptions<IEnchantWeaponComponentOptions>();
         var item = context.SourceAisling?.Inventory[1];
         if (item == null) return false;
+        if (item.Template.EquipmentType != EquipmentType.Weapon)
+        {
+            context.SourceAisling?.SendOrangeBarMessage($"This scroll can only enchant weapons");
+            return false;
+        }
         if (item.LevelCircle != options.LevelCircle)
         {
             context.SourceAisling?.SendOrangeBarMessage($"This scroll can only enchant items of Circle {options.LevelCircle}");

@@ -1,5 +1,5 @@
 {
-    "buyCost": 75000,
+    "buyCost": 50000,
     "category": "Shield",
     "color": "Forest",
     "displaySprite": 6,
@@ -15,7 +15,7 @@
     },
     "level": 11,
     "levelCircle": 2,
-    "sellValue": 30000,
+    "sellValue": 22500,
     "weight": 12,
     "description": "Class: All\nLevel: 11\nAc -8, MR 20%",
     "name": "Bronze Shield",

@@ -1,0 +1,21 @@
+{
+  "key": "sw2Vipers",
+  "lootDrops": [
+    {
+      "dropChance": 0.30,
+      "itemTemplateKey": "vipersGland"
+    },
+    {
+      "dropChance": 0.009,
+      "itemTemplateKey": "smallSpinelRing"
+    },
+    {
+      "dropChance": 0.009,
+      "itemTemplateKey": "redJadeRing"
+    },
+    {
+      "dropChance": 0.009,
+      "itemTemplateKey": "silverEarrings"
+    }
+  ]
+}

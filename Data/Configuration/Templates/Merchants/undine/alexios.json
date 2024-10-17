@@ -7,10 +7,6 @@
         {
             "itemTemplateKey": "seaNecklace",
             "stock": 100
-        },
-        {
-            "itemTemplateKey": "leatherBracer",
-            "stock": 100
         }
     ],
     "itemsToBuy": ["shirt","woodenShield", "stick", "boots", "leatherTunic", "leatherGauntlet", "leatherGreaves", 

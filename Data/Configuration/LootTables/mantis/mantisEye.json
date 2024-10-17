@@ -1,9 +1,0 @@
-{
-  "key": "mantisEye",
-  "lootDrops": [
-    {
-      "dropChance": 0.30,
-      "itemTemplateKey": "mantisEye"
-    }
-  ]
-}

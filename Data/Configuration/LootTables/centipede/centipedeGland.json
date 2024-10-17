@@ -1,9 +1,0 @@
-{
-  "key": "centipedeGland",
-  "lootDrops": [
-    {
-      "dropChance": 0.35,
-      "itemTemplateKey": "centipedeGland"
-    }
-  ]
-}

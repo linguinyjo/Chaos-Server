@@ -1,0 +1,9 @@
+{
+    "key": "smallEmeraldRing",
+    "lootDrops": [
+        {
+            "dropChance": 0.008,
+            "itemTemplateKey": "smallEmeraldRing"
+        }
+    ]
+}

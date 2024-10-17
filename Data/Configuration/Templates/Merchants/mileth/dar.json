@@ -1,6 +1,6 @@
 {
   "itemsForSale": [],
-  "itemsToBuy": ["mold", "vipersGland", "spidersEye", "mantisEye", "rawHoney", "rawWax", "beeWing", "centipedeGland"],
+  "itemsToBuy": ["mold", "rottenApple","vipersGland", "spidersEye", "mantisEye", "rawHoney", "rawWax", "beeWing", "centipedeGland", "batsWing", "spidersLeg"],
   "name": "Dar",
   "scriptKeys": [
     "showdialog",

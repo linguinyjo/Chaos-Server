@@ -1,0 +1,32 @@
+[
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 120,
+    "intervalVariancePct": 50,
+    "extraLootTableKeys": [],
+    "maxAmount": 25,
+    "maxPerSpawn": 25,
+    "monsterTemplateKey": "ew5Mantis"
+  },
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 120,
+    "intervalVariancePct": 50,
+    "extraLootTableKeys": [],
+    "maxAmount": 25,
+    "maxPerSpawn": 25,
+    "monsterTemplateKey": "ew5Wolf"
+  },
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 120,
+    "intervalVariancePct": 50,
+    "extraLootTableKeys": [],
+    "maxAmount": 25,
+    "maxPerSpawn": 25,
+    "monsterTemplateKey": "ew5Kobold"
+  }
+]

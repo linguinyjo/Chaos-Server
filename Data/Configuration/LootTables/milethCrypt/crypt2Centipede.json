@@ -1,9 +1,0 @@
-{
-  "key": "crypt2Centipede",
-  "lootDrops": [
-    {
-      "dropChance": 0.35,
-      "itemTemplateKey": "centipedeGland"
-    }
-  ]
-}

@@ -44,7 +44,7 @@ public class DevlinsIngredientsQuestScript:  DialogScriptBase
     private void HandleFetchRawWax(Aisling source)
     {
         // check for raw wax
-        var hasWax = source.Inventory.HasCountByTemplateKey("rawWax", 3);
+        var hasWax = source.Inventory.HasCountByTemplateKey("rawWax", 1);
         if (hasWax)
         {
             var newDialog = CreateDialog(
@@ -52,7 +52,7 @@ public class DevlinsIngredientsQuestScript:  DialogScriptBase
                 nextKey: "Close"
             );
             newDialog.Display(source);
-            source.Inventory.RemoveQuantityByTemplateKey("rawWax", 3);
+            source.Inventory.RemoveQuantityByTemplateKey("rawWax", 1);
             source.TryGiveGold(250);
             source.GiveExperience(250);
             DevlinsIngredientsQuestHelper.IncrementQuestStage(source);

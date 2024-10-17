@@ -33,7 +33,7 @@
       "healStatMultiplier": 2,
       "manaCost": 50,
       "sound": 8,
-      "baseHeal": 100,
+      "baseHeal": 150,
       "healStat": "wis",
       "magicAttackMultiplier": 1,
       "range": 8,

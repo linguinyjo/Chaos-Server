@@ -1,9 +1,0 @@
-{
-  "key": "rawHoney",
-  "lootDrops": [
-    {
-      "dropChance": 0.05,
-      "itemTemplateKey": "rawHoney"
-    }
-  ]
-}

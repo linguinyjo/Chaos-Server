@@ -1,0 +1,25 @@
+{
+  "key": "ew5Mantis",
+  "lootDrops": [
+    {
+      "dropChance": 0.007,
+      "itemTemplateKey": "goldEarrings"
+    },
+    {
+      "dropChance": 0.007,
+      "itemTemplateKey": "coralEarrings"
+    },
+    {
+      "dropChance": 0.008,
+      "itemTemplateKey": "leatherEmeraldGauntlet"
+    },
+    {
+      "dropChance": 0.008,
+      "itemTemplateKey": "leatherHeartstoneGauntlet"
+    },
+    {
+      "dropChance": 0.007,
+      "itemTemplateKey": "shagreenBoots"
+    }
+  ]
+}

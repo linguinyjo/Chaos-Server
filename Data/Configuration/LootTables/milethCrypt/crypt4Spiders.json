@@ -1,0 +1,41 @@
+{
+  "key": "crypt4Spiders",
+  "lootDrops": [
+    {
+      "dropChance": 0.20,
+      "itemTemplateKey": "spidersEye"
+    },
+    {
+      "dropChance": 0.20,
+      "itemTemplateKey": "spidersLeg"
+    },
+    {
+      "dropChance": 0.15,
+      "itemTemplateKey": "spidersSilk"
+    },
+    {
+      "dropChance": 0.01,
+      "itemTemplateKey": "enchantWeaponScroll2nd"
+    },
+    {
+      "dropChance": 0.06,
+      "itemTemplateKey": "boneNecklace"
+    },
+    {
+      "dropChance": 0.06,
+      "itemTemplateKey": "mythrilBelt"
+    },
+    {
+      "dropChance": 0.008,
+      "itemTemplateKey": "rubyEarrings"
+    },
+    {
+      "dropChance": 0.009,
+      "itemTemplateKey": "emeraldRing"
+    },
+    {
+      "dropChance": 0.008,
+      "itemTemplateKey": "leatherRubyGauntlet"
+    }
+  ]
+}

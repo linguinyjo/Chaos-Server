@@ -36,7 +36,7 @@ public class TorranceTrainingQuestScript:  DialogScriptBase
                 break;
             case TrainingQuestStatus.SpokenToTorrance:
             {
-                var hasGlands = source.Inventory.HasCountByTemplateKey("vipersGland", 3);
+                var hasGlands = source.Inventory.HasCountByTemplateKey("vipersGland", 1);
                 if (hasGlands)
                 {
                     var newDialog = new Dialog(
@@ -48,7 +48,7 @@ public class TorranceTrainingQuestScript:  DialogScriptBase
                         NextDialogKey = "Close"
                     };
                     newDialog.Display(source);
-                    source.Inventory.RemoveQuantityByTemplateKey("vipersGland", 3);
+                    source.Inventory.RemoveQuantityByTemplateKey("vipersGland", 1);
                     source.TryGiveGold(500);
                     TrainingQuestHelper.IncrementQuestStage(source);
                 }

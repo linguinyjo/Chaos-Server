@@ -4,7 +4,7 @@
     "aggroRange": 10,
     "moveIntervalMs": 1500,
     "name": "Mantis",
-    "lootTableKeys": ["mantisEye"],
+    "lootTableKeys": ["gardenMantis"],
     "scriptKeys": ["default"],
     "scriptVars": {},
     "skillIntervalMs": 1500,

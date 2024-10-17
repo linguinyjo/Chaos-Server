@@ -3,7 +3,7 @@
     "expReward": 15,
     "moveIntervalMs": 1500,
     "name": "Spider",
-    "lootTableKeys": ["spidersEye"],
+    "lootTableKeys": ["crypt1Spiders"],
     "scriptKeys": ["default"],
     "scriptVars": {},
     "skillIntervalMs": 1500,

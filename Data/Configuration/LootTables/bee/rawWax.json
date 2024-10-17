@@ -1,9 +1,0 @@
-{
-  "key": "rawWax",
-  "lootDrops": [
-    {
-      "dropChance": 0.35,
-      "itemTemplateKey": "rawWax"
-    }
-  ]
-}

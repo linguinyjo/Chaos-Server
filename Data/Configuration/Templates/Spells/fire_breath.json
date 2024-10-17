@@ -1,32 +1,6 @@
 {
-    "learningRequirements": {
-        "itemRequirements": [
-            {
-                "amountRequired": 15,
-                "itemTemplateKey": "apple"
-            },
-            {
-                "amountRequired": 5,
-                "itemTemplateKey": "stick"
-            }
-        ],
-        "requiredStats": {
-            "con": 1,
-            "dex": 1,
-            "int": 2,
-            "str": 1,
-            "wis": 1
-        },
-        "prerequisiteSkills": [],
-        "prerequisiteSpells": [
-            {
-                "templateKey": "poison"
-            }
-        ]
-    },
     "prompt": "",
     "spellType": "NoTarget",
-    "class": "Peasant",
     "description": "A powerful spell that deals damage in a long ranged cone shape in the direction you are facing.",
     "level": 1,
     "name": "Fire Breath",

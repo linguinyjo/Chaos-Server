@@ -3,7 +3,7 @@
     "expReward": 40,
     "moveIntervalMs": 1500,
     "name": "Viper",
-    "lootTableKeys": ["vipersGland"],
+    "lootTableKeys": ["sw2Vipers"],
     "scriptKeys": ["default"],
     "scriptVars": {},
     "skillIntervalMs": 1500,

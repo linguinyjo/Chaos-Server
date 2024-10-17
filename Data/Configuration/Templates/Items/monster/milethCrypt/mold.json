@@ -4,7 +4,7 @@
   "color": "Default",
   "isModifiable": true,
   "maxStacks": 1,
-  "sellValue": 75,
+  "sellValue": 100,
   "weight": 1,
   "description": "A piece of mold",
   "name": "Mold",

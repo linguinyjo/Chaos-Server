@@ -1,0 +1,9 @@
+{
+  "key": "leatherBelt",
+  "lootDrops": [
+    {
+      "dropChance": 0.005,
+      "itemTemplateKey": "leatherBelt"
+    }
+  ]
+}

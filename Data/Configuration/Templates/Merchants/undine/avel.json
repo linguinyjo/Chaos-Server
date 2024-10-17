@@ -1,14 +1,6 @@
 {
     "itemsForSale": [
         {
-            "itemTemplateKey": "stick",
-            "stock": 100
-        },
-        {
-            "itemTemplateKey": "dirk",
-            "stock": 100
-        },
-        {
             "itemTemplateKey": "eppe",
             "stock": 100
         }

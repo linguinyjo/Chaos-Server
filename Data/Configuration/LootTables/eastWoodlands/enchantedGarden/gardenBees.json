@@ -1,0 +1,9 @@
+{
+  "key": "gardenBees",
+  "lootDrops": [
+    {
+      "dropChance": 0.35,
+      "itemTemplateKey": "rawWax"
+    }
+  ]
+}

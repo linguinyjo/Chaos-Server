@@ -1,9 +1,0 @@
-{
-  "key": "beeWing",
-  "lootDrops": [
-    {
-      "dropChance": 0.30,
-      "itemTemplateKey": "beeWing"
-    }
-  ]
-}

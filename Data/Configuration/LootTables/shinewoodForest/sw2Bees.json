@@ -1,0 +1,25 @@
+{
+  "key": "sw2Bees",
+  "lootDrops": [
+    {
+      "dropChance": 0.05,
+      "itemTemplateKey": "rawHoney"
+    },
+    {
+      "dropChance": 0.30,
+      "itemTemplateKey": "beeWing"
+    },
+    {
+      "dropChance": 0.009,
+      "itemTemplateKey": "smallSpinelRing"
+    },
+    {
+      "dropChance": 0.009,
+      "itemTemplateKey": "redJadeRing"
+    },
+    {
+      "dropChance": 0.009,
+      "itemTemplateKey": "silverEarrings"
+    }
+  ]
+}

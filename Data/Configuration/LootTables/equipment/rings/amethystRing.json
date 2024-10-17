@@ -1,0 +1,9 @@
+{
+    "key": "amethystRing",
+    "lootDrops": [
+        {
+            "dropChance": 0.005,
+            "itemTemplateKey": "amethystRing"
+        }
+    ]
+}

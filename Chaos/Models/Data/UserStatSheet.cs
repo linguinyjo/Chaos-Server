@@ -84,7 +84,7 @@ public sealed record UserStatSheet : StatSheet
         {
             _ac = 100,
             _maxWeight = 40,
-            _toNextLevel = 100,
+            _toNextLevel = 50,
             _str = 3,
             _int = 3,
             _wis = 3,

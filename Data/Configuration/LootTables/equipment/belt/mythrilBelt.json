@@ -1,0 +1,9 @@
+{
+  "key": "mythrilBelt",
+  "lootDrops": [
+    {
+      "dropChance": 0.005,
+      "itemTemplateKey": "mythrilBelt"
+    }
+  ]
+}

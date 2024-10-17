@@ -1,0 +1,9 @@
+{
+  "key": "pearlChainNecklace",
+  "lootDrops": [
+    {
+      "dropChance": 0.006,
+      "itemTemplateKey": "pearlChainNecklace"
+    }
+  ]
+}

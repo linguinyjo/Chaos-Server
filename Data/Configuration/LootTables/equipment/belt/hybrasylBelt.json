@@ -1,0 +1,9 @@
+{
+  "key": "hybrasylBelt",
+  "lootDrops": [
+    {
+      "dropChance": 0.005,
+      "itemTemplateKey": "hybrasylBelt"
+    }
+  ]
+}

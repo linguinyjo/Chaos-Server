@@ -1,0 +1,9 @@
+{
+  "key": "leatherGauntlet",
+  "lootDrops": [
+    {
+      "dropChance": 0.01,
+      "itemTemplateKey": "leatherGauntlet"
+    }
+  ]
+}

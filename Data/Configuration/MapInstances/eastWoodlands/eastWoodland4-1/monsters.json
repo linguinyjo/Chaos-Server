@@ -8,7 +8,7 @@
     ],
     "maxAmount": 40,
     "maxPerSpawn": 40,
-    "monsterTemplateKey": "ew3Bee"
+    "monsterTemplateKey": "ew4Bee"
   },
   {
     "blackList": [],
@@ -18,7 +18,7 @@
     "extraLootTableKeys": [],
     "maxAmount": 30,
     "maxPerSpawn": 30,
-    "monsterTemplateKey": "ew3Mantis"
+    "monsterTemplateKey": "ew4Mantis"
   },
   {
     "blackList": [],
@@ -28,6 +28,6 @@
     "extraLootTableKeys": [],
     "maxAmount": 15,
     "maxPerSpawn": 15,
-    "monsterTemplateKey": "ew3Wolf"
+    "monsterTemplateKey": "ew4Wolf"
   }
 ]

@@ -1,6 +1,10 @@
 {
     "itemsForSale": [
         {
+            "itemTemplateKey": "eppe",
+            "stock": 100
+        },
+        {
             "itemTemplateKey": "louresSabre",
             "stock": 100
         },
@@ -11,9 +15,13 @@
         {
             "itemTemplateKey": "broadSword",
             "stock": 100
+        },
+        {
+            "itemTemplateKey": "battleSword",
+            "stock": 100
         }
     ],
-    "itemsToBuy": ["stick", "dirk", "eppe", "louresSabre", "claidheamh", "broadSword"],
+    "itemsToBuy": ["stick", "dirk", "eppe", "louresSabre", "claidheamh", "broadSword","battleSword","masquerade","templar"],
     "name": "Vidar",
     "restockIntervalHrs": 1,
     "restockPCt": 100,

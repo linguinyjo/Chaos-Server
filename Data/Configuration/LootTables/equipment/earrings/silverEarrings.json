@@ -1,0 +1,9 @@
+{
+    "key": "silverEarrings",
+    "lootDrops": [
+        {
+            "dropChance": 0.008,
+            "itemTemplateKey": "silverEarrings"
+        }
+    ]
+}

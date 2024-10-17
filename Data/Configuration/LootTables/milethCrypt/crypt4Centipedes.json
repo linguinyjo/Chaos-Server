@@ -1,0 +1,33 @@
+{
+  "key": "crypt4Centipedes",
+  "lootDrops": [
+    {
+      "dropChance": 0.33,
+      "itemTemplateKey": "centipedeGland"
+    },
+    {
+      "dropChance": 0.01,
+      "itemTemplateKey": "enchantWeaponScroll2nd"
+    },
+    {
+      "dropChance": 0.06,
+      "itemTemplateKey": "boneNecklace"
+    },
+    {
+      "dropChance": 0.06,
+      "itemTemplateKey": "mythrilBelt"
+    },
+    {
+      "dropChance": 0.008,
+      "itemTemplateKey": "rubyEarrings"
+    },
+    {
+      "dropChance": 0.009,
+      "itemTemplateKey": "emeraldRing"
+    },
+    {
+      "dropChance": 0.008,
+      "itemTemplateKey": "leatherRubyGauntlet"
+    }
+  ]
+}

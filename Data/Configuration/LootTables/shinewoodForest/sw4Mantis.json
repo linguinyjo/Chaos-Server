@@ -1,0 +1,33 @@
+{
+  "key": "sw4Mantis",
+  "lootDrops": [
+    {
+      "dropChance": 0.35,
+      "itemTemplateKey": "mantisEye"
+    },
+    {
+      "dropChance": 0.01,
+      "itemTemplateKey": "enchantWeaponScroll2nd"
+    },
+    {
+      "dropChance": 0.007,
+      "itemTemplateKey": "spinelRing"
+    },
+    {
+      "dropChance": 0.008,
+      "itemTemplateKey": "leatherSaphireGauntlet"
+    },
+    {
+      "dropChance": 0.006,
+      "itemTemplateKey": "phoenixNecklace"
+    },
+    {
+      "dropChance": 0.006,
+      "itemTemplateKey": "leatherBelt"
+    },
+    {
+      "dropChance": 0.01,
+      "itemTemplateKey": "leatherShield"
+    }
+  ]
+}

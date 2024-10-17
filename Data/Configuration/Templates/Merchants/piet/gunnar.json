@@ -11,9 +11,17 @@
         {
             "itemTemplateKey": "eppe",
             "stock": 100
+        },
+        {
+            "itemTemplateKey": "claidheamh",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "broadSword",
+            "stock": 100
         }
     ],
-    "itemsToBuy": ["woodenShield", "stick", "dirk", "eppe", "louresSabre"],
+    "itemsToBuy": ["woodenShield", "stick", "dirk", "eppe", "louresSabre","broadSword","claidheamh","battleSword","masquerade","templar"],
     "name": "Gunnar",
     "restockIntervalHrs": 1,
     "restockPCt": 100,

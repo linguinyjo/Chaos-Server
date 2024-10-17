@@ -1,0 +1,9 @@
+{
+  "key": "crypt2Spiders",
+  "lootDrops": [
+    {
+      "dropChance": 0.30,
+      "itemTemplateKey": "spidersEye"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "key": "sw4Bees",
+  "lootDrops": [
+    {
+      "dropChance": 0.10,
+      "itemTemplateKey": "rawHoney"
+    },
+    {
+      "dropChance": 0.20,
+      "itemTemplateKey": "beeWing"
+    },
+    {
+      "dropChance": 0.01,
+      "itemTemplateKey": "enchantWeaponScroll2nd"
+    },
+    {
+      "dropChance": 0.007,
+      "itemTemplateKey": "spinelRing"
+    },
+    {
+      "dropChance": 0.01,
+      "itemTemplateKey": "leatherBracer"
+    },
+    {
+      "dropChance": 0.008,
+      "itemTemplateKey": "leatherSaphireGauntlet"
+    }
+  ]
+}

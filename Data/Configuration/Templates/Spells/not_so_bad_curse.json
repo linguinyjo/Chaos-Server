@@ -1,24 +1,5 @@
 {
-  "learningRequirements": {
-    "itemRequirements": [
-      {
-        "amountRequired": 1,
-        "itemTemplateKey": "apple"
-      }
-    ],
-    "requiredGold": 69,
-    "requiredStats": {
-      "con": 1,
-      "dex": 1,
-      "int": 1,
-      "str": 1,
-      "wis": 1
-    },
-    "prerequisiteSkills": [],
-    "prerequisiteSpells": []
-  },
   "spellType": "Targeted",
-  "class": "Peasant",
   "description": "Applies a minor curse effect to your target that does absolutely nothing.",
   "level": 1,
   "name": "Not So Bad Curse",
