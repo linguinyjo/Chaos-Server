@@ -1,5 +1,5 @@
 {
-    "buyCost": 10000,
+    "buyCost": 5000,
     "category": "Shield",
     "color": "Forest",
     "displaySprite": 5,
@@ -14,7 +14,7 @@
     },
     "level": 11,
     "levelCircle": 2,
-    "sellValue": 4000,
+    "sellValue": 2500,
     "weight": 5,
     "description": "Class: All\nLevel: 11\nAc -5",
     "name": "Leather Shield",

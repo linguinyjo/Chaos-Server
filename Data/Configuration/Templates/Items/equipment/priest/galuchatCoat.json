@@ -1,5 +1,5 @@
 {
-    "buyCost": 10000,
+    "buyCost": 7500,
     "category": "Armor",
     "color": "Blue",
     "isDyable": true,
@@ -15,7 +15,7 @@
     "pantsColor": "Black",
     "level": 11,
     "levelCircle": 2,
-    "sellValue": 3300,
+    "sellValue": 3750,
     "weight": 4,
     "description": "Class: Priest\nLevel: 11\nAc -13",
     "name": "Galuchat Coat",

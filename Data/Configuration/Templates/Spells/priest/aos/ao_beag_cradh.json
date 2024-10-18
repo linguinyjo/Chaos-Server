@@ -17,7 +17,7 @@
   "class": "Priest",
   "description": "Applies a small heal effect to your target.",
   "level": 11,
-  "name": "Ao Beag Cradh",
+  "name": "ao beag cradh",
   "panelSprite": 23,
   "scriptKeys": [
     "removeEffect"

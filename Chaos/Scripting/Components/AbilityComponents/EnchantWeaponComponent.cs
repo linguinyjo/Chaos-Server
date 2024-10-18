@@ -18,7 +18,7 @@ public struct EnchantWeaponComponent : IConditionalComponent
         if (item == null) return false;
         if (item.Template.EquipmentType != EquipmentType.Weapon)
         {
-            context.SourceAisling?.SendOrangeBarMessage($"This scroll can only enchant weapons");
+            context.SourceAisling?.SendOrangeBarMessage($"This scroll can only be used on weapons");
             return false;
         }
         if (item.LevelCircle != options.LevelCircle)

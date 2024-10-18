@@ -1,0 +1,54 @@
+{
+  "bodyColor": "White",
+  "bodySprite": "Male",
+  "channelSettings": [
+    {
+      "channelName": "!global"
+    },
+    {
+      "channelName": "!trade"
+    }
+  ],
+  "direction": "Up",
+  "gender": "Male",
+  "gold": 12550,
+  "hairColor": "Brown",
+  "hairStyle": 18,
+  "ignoreList": [],
+  "mapInstanceId": "shinewoodForest3",
+  "name": "bobl",
+  "nation": "Exile",
+  "statSheet": {
+    "advClass": "None",
+    "baseClass": "Warrior",
+    "maxWeight": 61,
+    "toNextLevel": 1557,
+    "totalExp": 23323,
+    "currentHp": 732,
+    "currentMp": 1,
+    "level": 15,
+    "ac": 95,
+    "maximumHp": 1230,
+    "maximumMp": 421,
+    "con": 18,
+    "dex": 5,
+    "int": 3,
+    "str": 14,
+    "wis": 3
+  },
+  "titles": [
+    ""
+  ],
+  "userOptions": {
+    "allowGroup": true,
+    "showBodyAnimations": true,
+    "listenToHitSounds": true,
+    "option3": true,
+    "option4": true,
+    "option5": true,
+    "allowExchange": true,
+    "option8": true
+  },
+  "x": 15,
+  "y": 44
+}

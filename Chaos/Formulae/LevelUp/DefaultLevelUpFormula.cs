@@ -38,7 +38,7 @@ public class DefaultLevelUpFormula : ILevelUpFormula
     public virtual int CalculateMaxWeight(Aisling aisling) => 40 + aisling.UserStatSheet.Level / 2 + aisling.UserStatSheet.Str;
 
     /// <inheritdoc />
-    public virtual int CalculateTnl(Aisling aisling) => Convert.ToInt32((Math.Pow(aisling.UserStatSheet.Level, 2) * 200) / 10);
+    public virtual int CalculateTnl(Aisling aisling) => Convert.ToInt32((Math.Pow(aisling.UserStatSheet.Level, 2) * 200) / 4);
     
     private static (int maxHpGain, int maxMpGain) GetMaxHpMpGain(int level)
     {

@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 78,
+    "expReward": 88,
     "moveIntervalMs": 1500,
     "name": "Viper",
     "lootTableKeys": ["sw3Vipers"],
@@ -14,9 +14,9 @@
     "statSheet": {
         "level": 14,
         "ac": 82,
-        "maximumHp": 850,
+        "maximumHp": 1150,
         "maximumMp": 1000,
-        "physicalAttack": 30,
+        "physicalAttack": 23,
         "magicAttack": 45,
         "con": 4,
         "dex": 1,

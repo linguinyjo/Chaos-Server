@@ -17,7 +17,7 @@
   "class": "Priest",
   "description": "Removes up to cradh effect",
   "level": 41,
-  "name": "Ao Cradh",
+  "name": "ao cradh",
   "panelSprite": 79,
   "scriptKeys": [
     "removeEffect"

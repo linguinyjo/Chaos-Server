@@ -1,5 +1,5 @@
 {
-    "buyCost": 100000,
+    "buyCost": 150000,
     "category": "Sword",
     "color": "Forest",
     "displaySprite": 11,
@@ -16,7 +16,7 @@
         "maximumMp": -750
     },
     "sellValue": 75000,
-    "weight": 10,
+    "weight": 8,
     "description": "Class: All\nLevel: 1\nP.Atk 72",
     "name": "Masquerade",
     "panelSprite": 170,

@@ -37,7 +37,15 @@
             "stock": 100
         }
     ],
-    "itemsToBuy": ["shirt","woodenShield", "stick", "boots", "leatherTunic", "leatherGauntlet", "leatherGreaves", "silverEarrings", "goldEarrings", "greyBoots"],
+    "itemsToBuy": [
+        "shirt",
+        "woodenShield", "leatherShield", "bronzeShield",
+        "boots", "greyBoots", "shagreenBoots",
+        "leatherTunic", "jupe", "dobok", "culotte",
+        "leatherGauntlet", "leatherBracer",
+        "leatherGreaves",
+        "smallSpinelRing", "smallEmeraldRing", "emeraldRing", "spinelRing",
+        "silverEarrings", "goldEarrings", "rubyEarrings", "coralEarrings"],
     "name": "Torrance",
     "restockIntervalHrs": 1,
     "restockPCt": 100,

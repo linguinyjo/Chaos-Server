@@ -2,7 +2,7 @@
   "key": "crypt4Bats",
   "lootDrops": [
     {
-      "dropChance": 0.25,
+      "dropChance": 0.35,
       "itemTemplateKey": "batsWing"
     },
     {

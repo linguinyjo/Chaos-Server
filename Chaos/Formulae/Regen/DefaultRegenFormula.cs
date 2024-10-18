@@ -9,9 +9,10 @@ public sealed class DefaultRegenFormula : IRegenFormula
 {
     private const decimal BaseMpRegenPercent = 5;
     private const decimal BaseHpRegenPercent = 10;
+    const decimal maxRegenPercent = 20;
     private const int BaseInterval = 18;
-    private const int MinInterval = 8;
-    private const int MaxRegenStat = 15;
+    private const int MinInterval = 6;
+    private const int MaxRegenStat = 25;
     
     /// <inheritdoc />
     public int CalculateHealthRegen(Creature creature)
@@ -61,8 +62,7 @@ public sealed class DefaultRegenFormula : IRegenFormula
     {
         const int baseStat = 3;
         const int maxStat = 110;
-        const decimal maxRegenPercent = 20;
-
+        
         // Clamp the con stat between base and max
         var clampedStat = Math.Clamp(stat, baseStat, maxStat);
 

@@ -9,12 +9,12 @@
     "maxDurability": 5000,
     "maxStacks": 1,
     "modifiers": {
-        "wis": 1,
+        "wis": 2,
         "regen": 3
     },
     "level": 11,
     "levelCircle": 2,
-    "sellValue": 17500,
+    "sellValue": 22500,
     "weight": 1,
     "description": "Class: All\nLevel: 11\nRegen 3, Wis 1",
     "name": "Leather Belt",

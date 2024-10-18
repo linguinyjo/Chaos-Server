@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 135,
+    "expReward": 145,
     "moveIntervalMs": 1500,
     "aggroRange": 10,
     "name": "Viper",
@@ -15,9 +15,9 @@
     "statSheet": {
         "level": 20,
         "ac": 75,
-        "maximumHp": 1300,
+        "maximumHp": 1500,
         "maximumMp": 1000,
-        "physicalAttack": 45,
+        "physicalAttack": 42,
         "magicAttack": 100,
         "con": 4,
         "dex": 1,

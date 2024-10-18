@@ -13,7 +13,7 @@
     "levelCircle": 1,
     "pantsColor": "Default",
     "notMonk": true,
-    "sellValue": 200,
+    "sellValue": 250,
     "weight": 2,
     "description": "Class: All except monk",
     "name": "Boots",

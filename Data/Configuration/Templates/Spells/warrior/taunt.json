@@ -3,11 +3,11 @@
     "itemRequirements": [],
     "requiredGold": 5000,
     "requiredStats": {
-      "con": 4,
+      "con": 15,
       "dex": 3,
-      "int": 14,
+      "int": 7,
       "str": 3,
-      "wis": 7
+      "wis": 4
     },
     "prerequisiteSkills": [],
     "prerequisiteSpells": []

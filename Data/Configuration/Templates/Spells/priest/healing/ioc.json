@@ -6,35 +6,39 @@
     "requiredStats": {
       "con": 3,
       "dex": 3,
-      "int": 24,
+      "int": 11,
       "str": 3,
-      "wis": 11
+      "wis": 24
     },
     "prerequisiteSkills": [],
     "prerequisiteSpells": []
   },
   "spellType": "Targeted",
+  "spellCategory": "Heal",
   "class": "Priest",
-  "description": "Removes poison effect",
+  "description": "Applies a heal effect to your target.",
   "level": 11,
-  "name": "ao puinsein",
-  "panelSprite": 24,
+  "name": "ioc",
+  "panelSprite": 29,
   "scriptKeys": [
-    "removeEffect"
+    "heal"
   ],
   "scriptVars": {
-    "removeEffect": {
+    "heal": {
       "bodyAnimation": "priestCast",
       "animation": {
-        "targetAnimation": 2,
+        "targetAnimation": 4,
         "animationSpeed": 150
       },
-      "manaCost": 50,
+      "healStatMultiplier": 2.5,
+      "manaCost": 150,
       "sound": 8,
+      "baseHeal": 300,
+      "healStat": "wis",
+      "magicAttackMultiplier": 1.5,
       "range": 8,
-      "effectKey": "puinsein",
-      "filter": "aliveOnly"
+      "filter": "friendlyOnly, aliveOnly"
     }
   },
-  "templateKey": "ao_puinsein"
+  "templateKey": "ioc"
 }

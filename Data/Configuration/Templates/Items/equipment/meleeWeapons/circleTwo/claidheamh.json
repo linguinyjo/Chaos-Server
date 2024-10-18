@@ -1,5 +1,5 @@
 {
-    "buyCost": 25000,
+    "buyCost": 20000,
     "category": "Sword",
     "color": "Forest",
     "displaySprite": 4,
@@ -14,7 +14,7 @@
         "physicalAttack": 32,
         "maximumMp": -750
     },
-    "sellValue": 10000,
+    "sellValue": 7500,
     "class": "warrior",
     "weight": 8,
     "description": "Class: All\nLevel: 1\nP.Atk 32",

@@ -15,7 +15,7 @@
     "class": "peasant",
     "level": 11,
     "levelCircle": 2,
-    "sellValue": 10000,
+    "sellValue": 12500,
     "weight": 2,
     "description": "Class: All\nLevel: 11\nHp 200, Mp 100",
     "name": "Amethyst Ring",

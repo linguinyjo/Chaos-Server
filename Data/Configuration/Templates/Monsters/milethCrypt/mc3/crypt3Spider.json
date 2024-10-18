@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 62,
+    "expReward": 75,
     "moveIntervalMs": 1500,
     "name": "Spider",
     "lootTableKeys": ["crypt3Spiders"],
@@ -14,9 +14,9 @@
     "statSheet": {
         "level": 14,
         "ac": 88,
-        "maximumHp": 775,
+        "maximumHp": 875,
         "maximumMp": 1000,
-        "physicalAttack": 13,
+        "physicalAttack": 8,
         "con": 4,
         "dex": 1,
         "int": 1,

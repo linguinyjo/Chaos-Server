@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 182,
+    "expReward": 192,
     "moveIntervalMs": 1500,
     "maxGoldDrop": 300,
     "minGoldDrop": 200,
@@ -15,8 +15,8 @@
     "sprite": 50,
     "statSheet": {
         "level": 25,
-        "ac": 73,
-        "maximumHp": 1750,
+        "ac": 69,
+        "maximumHp": 2100,
         "maximumMp": 1000,
         "physicalAttack": 70,
         "magicAttack": 60,

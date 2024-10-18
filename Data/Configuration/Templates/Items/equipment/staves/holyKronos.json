@@ -16,7 +16,7 @@
         "wis": 2,
         "maximumMp": 200
     },
-    "sellValue": 35000,
+    "sellValue": 50000,
     "weight": 3,
     "description": "Class: Priest, Wizard, Druid\nLevel: 11\nMagic Attack 42, Wis 2, Mana 200, Healing spells -1 lines",
     "name": "Holy Kronos",

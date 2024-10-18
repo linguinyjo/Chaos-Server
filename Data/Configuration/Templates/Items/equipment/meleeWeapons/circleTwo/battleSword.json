@@ -1,5 +1,5 @@
 {
-    "buyCost": 75000,
+    "buyCost": 50000,
     "category": "Sword",
     "color": "Forest",
     "displaySprite": 12,
@@ -15,7 +15,7 @@
         "physicalAttack": 48,
         "maximumMp": -750
     },
-    "sellValue": 30000,
+    "sellValue": 25000,
     "weight": 10,
     "description": "Class: All\nLevel: 1\nP.Atk 48",
     "name": "Battle Sword",

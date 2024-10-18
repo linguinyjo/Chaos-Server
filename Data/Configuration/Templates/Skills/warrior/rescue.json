@@ -1,0 +1,46 @@
+{
+    "isAssail": false,
+    "learningRequirements": {
+        "itemRequirements": [],
+        "requiredGold": 10000,
+        "requiredStats": {
+            "con": 10,
+            "dex": 8,
+            "int": 7,
+            "str": 14,
+            "wis": 4
+        },
+        "prerequisiteSkills": [],
+        "prerequisiteSpells": []
+    },
+    "description": "Causes the target creature attack you. If performed on a skulling player it will prevent death.",
+    "level": 11,
+    "levelsUp": true,
+    "name": "Rescue",
+    "class": "warrior",
+    "panelSprite": 13,
+    "scriptKeys": ["taunt", "removeEffect"],
+    "scriptVars": {
+        "taunt": {
+            "excludeSourcePoint": true,
+            "bodyAnimation": "assail",
+            "sound": 16,
+            "range": 1,
+            "shape": "front",
+            "filter": "hostileOnly, aliveOnly",
+            "canResist": false
+        },
+        "removeEffect": {
+            "excludeSourcePoint": true,
+            "range": 1,
+            "shape": "front",
+            "effectKey": "skulled",
+            "animation": {
+                "targetAnimation": 4,
+                "animationSpeed": 150
+            },
+            "filter": "AislingsOnly"
+        }
+    },
+    "templateKey": "rescue"
+}

@@ -18,7 +18,7 @@
   "class": "Priest",
   "description": "Applies a small heal effect to your target.",
   "level": 1,
-  "name": "Beag Ioc",
+  "name": "beag ioc",
   "panelSprite": 28,
   "scriptKeys": [
     "heal"
@@ -30,8 +30,8 @@
         "targetAnimation": 4,
         "animationSpeed": 150
       },
-      "healStatMultiplier": 2,
-      "manaCost": 50,
+      "healStatMultiplier": 1,
+      "manaCost": 30,
       "sound": 8,
       "baseHeal": 150,
       "healStat": "wis",

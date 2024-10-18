@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 85,
+    "expReward": 103,
     "moveIntervalMs": 1500,
     "name": "Bee",
     "lootTableKeys": ["ew4Bees","enchantWeaponScroll2nd"],
@@ -14,9 +14,9 @@
     "statSheet": {
         "level": 18,
         "ac": 75,
-        "maximumHp": 900,
+        "maximumHp": 1200,
         "maximumMp": 1000,
-        "physicalAttack": 32,
+        "physicalAttack": 25,
         "magicAttack": 50,
         "con": 4,
         "dex": 1,

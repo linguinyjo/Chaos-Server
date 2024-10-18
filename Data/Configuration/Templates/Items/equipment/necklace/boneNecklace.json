@@ -9,11 +9,11 @@
     "maxDurability": 5000,
     "maxStacks": 1,
     "modifiers": {
-        "dmg": 5,
+        "dmg": 5
     },
     "level": 11,
     "levelCircle": 2,
-    "sellValue": 25000,
+    "sellValue": 30000,
     "weight": 1,
     "description": "Class: All\nLevel: 11\nDmg 5",
     "name": "Bone Necklace",

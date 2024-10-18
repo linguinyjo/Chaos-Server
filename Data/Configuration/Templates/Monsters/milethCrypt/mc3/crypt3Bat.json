@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 75,
+    "expReward": 96,
     "aggroRange": 10,
     "moveIntervalMs": 1500,
     "name": "Bat",
@@ -15,9 +15,9 @@
     "statSheet": {
         "level": 15,
         "ac": 80,
-        "maximumHp": 1000,
+        "maximumHp": 1100,
         "maximumMp": 1000,
-        "physicalAttack": 25,
+        "physicalAttack": 15,
         "con": 4,
         "dex": 1,
         "int": 10,

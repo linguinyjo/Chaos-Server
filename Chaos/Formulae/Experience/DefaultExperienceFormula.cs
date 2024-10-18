@@ -38,9 +38,11 @@ public class DefaultExperienceFormula : IExperienceFormula
             2 => 0.10m,
             3 => 0.20m,
             4 => 0.30m,
-            5 => 0.40m,
-            6 => 0.50m,
-            _ => throw new ArgumentOutOfRangeException(nameof(group.Count), "Group size is too large.")
+            5 => 0.45m,
+            6 => 0.55m,
+            7 => 0.75m,
+            8 => 0.90m,
+            _ => 0.95m
         };
 
     // ReSharper disable once ParameterTypeCanBeEnumerable.Global
@@ -56,9 +58,9 @@ public class DefaultExperienceFormula : IExperienceFormula
         
         switch (levelDifference)
         {
-            case <= 5:
+            case <= 6:
             {
-                // Use existing logic for level differences of 4 or less
+                // Use existing logic for level differences of 6 or less
                 var upperBound = LevelRangeFormulae.Default.GetUpperBound(highestPlayerLevel);
                 var lowerBound = LevelRangeFormulae.Default.GetLowerBound(highestPlayerLevel);
 
@@ -71,11 +73,11 @@ public class DefaultExperienceFormula : IExperienceFormula
 
                 return Math.Min(1, faultSize / stepSize * 0.25m);
             }
-            case 6:
-                // 25% reduction for 6 levels higher
-                return 0.25m;
             case 7:
-                // 50% reduction for 7 levels higher
+                // 25% reduction for 7 levels higher
+                return 0.25m;
+            case 8:
+                // 50% reduction for 8 levels higher
                 return 0.50m;
             default:
                 // For 7 or more levels difference, we'll return a special value

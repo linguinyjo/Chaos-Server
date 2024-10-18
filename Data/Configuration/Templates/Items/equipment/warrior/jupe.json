@@ -1,5 +1,5 @@
 {
-    "buyCost": 10000,
+    "buyCost": 7500,
     "category": "Armor",
     "color": "Default",
     "isDyable": true,
@@ -15,8 +15,8 @@
     "pantsColor": "Black",
     "level": 11,
     "levelCircle": 2,
-    "sellValue": 3300,
-    "weight": 4,
+    "sellValue": 3750,
+    "weight": 7,
     "description": "Class: Warrior\nLevel: 11\nAc -17",
     "name": "Jupe",
     "panelSprite": 102,

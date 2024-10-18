@@ -17,7 +17,7 @@
   "class": "Priest",
   "description": "A small increase to physical attack",
   "level": 11,
-  "name": "Fas Deireas",
+  "name": "fas deireas",
   "panelSprite": 52,
   "scriptKeys": [
     "applyEffect"

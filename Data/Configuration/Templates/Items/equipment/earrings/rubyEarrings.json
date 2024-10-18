@@ -3,7 +3,7 @@
     "category": "Earrings",
     "color": "Default",
     "isDyable": true,
-    "displaySprite": 231,
+    "displaySprite": 233,
     "equipmentType": "Earrings",
     "gender": "Unisex",
     "maxDurability": 1000,
@@ -14,11 +14,11 @@
     "level": 11,
     "levelCircle": 2,
     "pantsColor": "Black",
-    "sellValue": 12000,
+    "sellValue": 12500,
     "weight": 1,
     "description": "Class: All\nLevel: 11\nWis 2",
     "name": "Ruby Earrings",
-    "panelSprite": 231,
+    "panelSprite": 233,
     "scriptKeys": ["Equipment"],
     "scriptVars": {
         "equipment": {}

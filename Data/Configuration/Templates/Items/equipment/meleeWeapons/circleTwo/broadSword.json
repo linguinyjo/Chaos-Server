@@ -1,5 +1,5 @@
 {
-    "buyCost": 40000,
+    "buyCost": 35000,
     "category": "Sword",
     "color": "Forest",
     "displaySprite": 5,
@@ -15,7 +15,7 @@
         "physicalAttack": 40,
         "maximumMp": -750
     },
-    "sellValue": 15000,
+    "sellValue": 17500,
     "weight": 9,
     "description": "Class: All\nLevel: 1\nP.Atk 40",
     "name": "Broad Sword",
