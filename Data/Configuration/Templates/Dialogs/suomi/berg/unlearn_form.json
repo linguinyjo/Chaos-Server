@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "unlearn_form_final",
+      "optionText": "I am sure"
+    },
+    {
+      "dialogKey": "top",
+      "optionText": "back"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "unlearn_form",
+  "text": "If you continue you will forget how to use the skills and spells associated with your current form. Are you sure this is what you want?",
+  "type": "Menu"
+}   

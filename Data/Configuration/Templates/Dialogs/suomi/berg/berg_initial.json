@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "generic_learnskill_initial",
+      "optionText": "Learn Skill"
+    },
+    {
+      "dialogKey": "generic_forgetskill_initial",
+      "optionText": "Forget Skill"
+    }
+  ],
+  "scriptKeys": ["berg"],
+  "scriptVars": {},
+  "templateKey": "berg_initial",
+  "text": "Need some training?",
+  "type": "Menu"
+}

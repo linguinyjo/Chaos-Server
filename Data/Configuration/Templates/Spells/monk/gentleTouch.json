@@ -31,11 +31,12 @@
       },
       "healStatMultiplier": 1,
       "manaCost": 50,
+      "shape": "allAround",
       "sound": 8,
-      "baseHeal": 200,
+      "baseHeal": 150,
       "healStat": "wis",
-      "range": 2,
-      "filter": "selfOnly, aliveOnly"
+      "range": 1,
+      "filter": "aliveOnly"
     }
   },
   "templateKey": "gentleTouch"

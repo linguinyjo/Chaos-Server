@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "close",
+  "scriptKeys": ["learnDracoForm"],
+  "scriptVars": {},
+  "templateKey": "draco_form_learn_b",
+  "text": "",
+  "type": "Normal"
+}   

@@ -1,0 +1,13 @@
+{
+    "isAssail": false,
+    "description": "",
+    "level": 11,
+    "levelsUp": true,
+    "name": "White Bat Stance",
+    "class": "monk",
+    "panelSprite": 2,
+    "cooldownMs": 15000,
+    "scriptKeys": ["damage"],
+    "scriptVars": {},
+    "templateKey": "whiteBatStance"
+}

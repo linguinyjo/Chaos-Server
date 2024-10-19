@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "Top",
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "kelberoth_form_requirements",
+  "text": "Learning the Kelberoth Form is no easy feat. You will need the following stats if you are to stand any chance:\nStrength: 30\nIntelligence: 4\nWisdom: 4\nConstitution: 16\nDexterity: 6",
+  "type": "Normal"
+}   

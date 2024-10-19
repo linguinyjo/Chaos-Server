@@ -1,0 +1,27 @@
+{
+    "isAssail": false,
+    "description": "Applies rapid regeneration to self",
+    "level": 11,
+    "levelsUp": true,
+    "name": "Draco Stance",
+    "class": "monk",
+    "panelSprite": 53,
+    "cooldownMs": 120000,
+    "scriptKeys": ["applyEffect"],
+    "scriptVars": {
+        "applyEffect": {
+            "bodyAnimation": "handsup",
+            "sound": 8,
+            "range": 2,
+            "effectKey": "dracoStance",
+            "filter": "selfOnly, aliveOnly",
+            "animation": {
+                "targetAnimation": 6,
+                "animationSpeed": 150
+            },
+            "manaCost": 300
+        }
+    },
+    "spellType": "NoTarget",
+    "templateKey": "dracoStance"
+}

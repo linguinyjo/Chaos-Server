@@ -1,0 +1,25 @@
+{
+  "options": [
+    {
+      "dialogKey": "kelberoth_form_learn_a",
+      "optionText": "Learn Kelberoth Form"
+    },
+    {
+      "dialogKey": "kelberoth_form_info",
+      "optionText": "Tell me more"
+    },
+    {
+      "dialogKey": "kelberoth_form_requirements",
+      "optionText": "What are the requirements?"
+    },
+    {
+      "dialogKey": "top",
+      "optionText": "back"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "kelberoth_form_initial",
+  "text": "Ah, the Kelberoth Form... Not for the faint of heart. This aggressive style was born from ancient warriors who believed the best defense was an overwhelming offense. Only those who can match its intensity should attempt to master it.",
+  "type": "Menu"
+}

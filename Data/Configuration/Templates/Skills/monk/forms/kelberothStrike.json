@@ -1,0 +1,31 @@
+{
+    "isAssail": false,
+    "description": "Deals 1/3 of your health in damage to the enemy. Costs 2/3 of your health.",
+    "level": 11,
+    "levelsUp": true,
+    "name": "Kelberoth Strike",
+    "class": "monk",
+    "panelSprite": 36,
+    "cooldownMs": 24000,
+    "scriptKeys": ["damage", "damageSelf"],
+    "scriptVars": {
+        "damage": {
+            "bodyAnimation": "punch",
+            "sound": 5,
+            "range": 1,
+            "animation": {
+                "targetAnimation": 48,
+                "animationSpeed": 150
+            },
+            "shape": "front",
+            "excludeSourcePoint": true,
+            "pctHpDamage": 33,
+            "filter": "hostileOnly, aliveOnly, othersOnly"
+        },
+        "damageSelf": {
+            "pctHpDamage": 66,
+            "filter": "selfOnly, aliveOnly"
+        }
+    },
+    "templateKey": "kelberothStrike"
+}

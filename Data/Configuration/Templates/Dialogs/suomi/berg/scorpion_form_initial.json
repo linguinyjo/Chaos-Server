@@ -1,0 +1,21 @@
+{
+  "options": [
+    {
+      "dialogKey": "generic_learnskill_initial",
+      "optionText": "Learn Skill"
+    },
+    {
+      "dialogKey": "Tell me more",
+      "optionText": "scorpion_form_info"
+    },
+    {
+      "dialogKey": "top",
+      "optionText": "Top"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "scorpion_form_initial",
+  "text": "Interested in the Scorpion Stance? Like its namesake, this form balances patience with precise strikes. You must learn when to guard and when to strike - one without the other makes the form worthless.",
+  "type": "Menu"
+}

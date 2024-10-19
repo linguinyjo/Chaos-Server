@@ -1,0 +1,26 @@
+{
+    "isAssail": false,
+    "description": "Deals Moderate damage to surrounding enemies",
+    "level": 11,
+    "levelsUp": true,
+    "name": "Draco Tail Kick",
+    "class": "monk",
+    "panelSprite": 34,
+    "cooldownMs": 23000,
+    "scriptKeys": ["damage"],
+    "scriptVars": {
+        "damage": {
+            "bodyAnimation": "Kick",
+            "sound": 53,
+            "damageStat": "con",
+            "range": 1,
+            "shape": "allAround",
+            "excludeSourcePoint": true,
+            "damageStatMultiplier": 2,
+            "baseDamage": 50,
+            "filter": "hostileOnly, aliveOnly, othersOnly",
+            "usePAtk": true
+        }
+    },
+    "templateKey": "dracoTailKick"
+}

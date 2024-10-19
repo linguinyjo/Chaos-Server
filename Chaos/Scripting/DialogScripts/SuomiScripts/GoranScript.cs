@@ -1,14 +1,10 @@
-using Chaos.Common.Definitions;
 using Chaos.Models.Menu;
 using Chaos.Models.World;
 using Chaos.Scripting.DialogScripts.Abstractions;
-using Chaos.Scripting.QuestScripts;
 using Chaos.Scripting.QuestScripts.AJourneyToSuomi;
-using Chaos.Scripting.QuestScripts.DevlinsIngredients;
-using Chaos.Scripting.QuestScripts.TrainingQuest;
 using Chaos.Services.Factories.Abstractions;
 
-namespace Chaos.Scripting.DialogScripts.MilethScripts;
+namespace Chaos.Scripting.DialogScripts.suomiScripts;
 
 public class GoranScript:  DialogScriptBase
 {

@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "close",
+  "scriptKeys": ["learnKelberothForm"],
+  "scriptVars": {},
+  "templateKey": "kelberoth_form_learn_b",
+  "text": "",
+  "type": "Normal"
+}   

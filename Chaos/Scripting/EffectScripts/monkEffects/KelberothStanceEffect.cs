@@ -7,9 +7,9 @@ using Chaos.Scripting.Components.EffectComponents;
 using Chaos.Scripting.Components.Execution;
 using Chaos.Scripting.EffectScripts.Abstractions;
 
-namespace Chaos.Scripting.EffectScripts.BuffEffects;
+namespace Chaos.Scripting.EffectScripts.monkEffects;
 
-public sealed class BeagAcBuffEffect : EffectBase,
+public sealed class KelberothStanceEffect : EffectBase,
     NonOverwritableEffectComponent.INonOverwritableEffectComponentOptions,
     GetTargetsAbilityComponent<Creature>.IGetTargetsComponentOptions,
     AnimationAbilityComponent.IAnimationComponentOptions,
@@ -23,12 +23,12 @@ public sealed class BeagAcBuffEffect : EffectBase,
 
     /// <inheritdoc />
     public List<string> ConflictingEffectNames { get; init; } =
-        [
-            "Armachd",
-        ];
+    [
+        "Fas Deireas",
+    ];
 
     /// <inheritdoc />
-    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(5);
+    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(2);
 
     /// <inheritdoc />
     public bool ExcludeSourcePoint { get; init; }
@@ -50,18 +50,21 @@ public sealed class BeagAcBuffEffect : EffectBase,
 
     /// <inheritdoc />
     public byte? Sound { get; init; }
-    
+
     /// <inheritdoc />
-    public override byte Icon { get; }
+    public override byte Icon => 13;
 
     /// <inheritdoc />
     public override string Name => "Kelberoth Stance";
     
-    private int AcBuff => 5;
+    private static int DamageBuff => 5;
+    private static int StrengthBuff => 3;
 
+    /// <inheritdoc />
     public override void OnTerminated()
     {
-        Subject.StatSheet.AddBonus(new Attributes { Ac = AcBuff });
+        Subject.StatSheet.SubtractBonus(new Attributes { Dmg = DamageBuff });
+        Subject.StatSheet.SubtractBonus(new Attributes { Str = StrengthBuff });
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
     
@@ -73,7 +76,9 @@ public sealed class BeagAcBuffEffect : EffectBase,
             ?.Execute<AnimationAbilityComponent>()
             .Execute<SoundAbilityComponent>();
             
-        Subject.StatSheet.SubtractBonus(new Attributes { Ac = AcBuff });
+        Subject.StatSheet.AddBonus(new Attributes { Dmg = DamageBuff });
+        Subject.StatSheet.AddBonus(new Attributes { Str = StrengthBuff });
+
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
 

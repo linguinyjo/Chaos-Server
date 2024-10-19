@@ -10,7 +10,7 @@
     "scriptVars": {
         "damage": {
             "bodyAnimation": "punch",
-            "sound": 53,
+            "sound": 16,
             "damageStat": "str",
             "range": 1,
             "shape": "front",

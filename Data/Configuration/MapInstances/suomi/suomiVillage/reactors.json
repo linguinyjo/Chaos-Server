@@ -58,5 +58,15 @@
     },
     "shouldBlockPathfinding": false,
     "source": "(18, 48)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "suomiCombatMaster:(6, 13)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(71, 80)"
   }
 ]

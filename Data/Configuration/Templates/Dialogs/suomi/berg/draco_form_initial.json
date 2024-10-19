@@ -1,0 +1,25 @@
+{
+  "options": [
+    {
+      "dialogKey": "draco_form_learn_a",
+      "optionText": "Learn Draco Form"
+    },
+    {
+      "dialogKey": "draco_form_info",
+      "optionText": "Tell me more"
+    },
+    {
+      "dialogKey": "draco_form_requirements",
+      "optionText": "What are the requirements?"
+    },
+    {
+      "dialogKey": "top",
+      "optionText": "back"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "draco_form_initial",
+  "text": "So you're interested in learning the Draco Form are you? It's a powerful form with a good mixture of offense and defense. Whether you will be able to learn it is another question entirely though.",
+  "type": "Menu"
+}   

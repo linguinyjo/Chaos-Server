@@ -37,9 +37,9 @@ public class DefaultExperienceFormula : IExperienceFormula
             1 => 0,
             2 => 0.10m,
             3 => 0.20m,
-            4 => 0.30m,
-            5 => 0.45m,
-            6 => 0.55m,
+            4 => 0.35m,
+            5 => 0.50m,
+            6 => 0.60m,
             7 => 0.75m,
             8 => 0.90m,
             _ => 0.95m
@@ -58,9 +58,9 @@ public class DefaultExperienceFormula : IExperienceFormula
         
         switch (levelDifference)
         {
-            case <= 6:
+            case <= 7:
             {
-                // Use existing logic for level differences of 6 or less
+                // Use existing logic for level differences of 7 or less
                 var upperBound = LevelRangeFormulae.Default.GetUpperBound(highestPlayerLevel);
                 var lowerBound = LevelRangeFormulae.Default.GetLowerBound(highestPlayerLevel);
 
@@ -70,17 +70,16 @@ public class DefaultExperienceFormula : IExperienceFormula
                 var bounds = monsterLevel < highestPlayerLevel ? lowerBound : upperBound;
                 var stepSize = Math.Abs(bounds - highestPlayerLevel) / 2.0m;
                 var faultSize = Math.Abs(bounds - monsterLevel);
-
                 return Math.Min(1, faultSize / stepSize * 0.25m);
             }
-            case 7:
-                // 25% reduction for 7 levels higher
-                return 0.25m;
             case 8:
-                // 50% reduction for 8 levels higher
+                // 25% reduction for 8 levels higher
+                return 0.25m;
+            case 9:
+                // 50% reduction for 9 levels higher
                 return 0.50m;
             default:
-                // For 7 or more levels difference, we'll return a special value
+                // For 10 or more levels difference, we'll return a special value
                 // to indicate that the exp should be set to 1
                 return decimal.MaxValue;
         }

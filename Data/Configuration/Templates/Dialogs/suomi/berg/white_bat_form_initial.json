@@ -1,0 +1,21 @@
+{
+  "options": [
+    {
+      "dialogKey": "generic_learnskill_initial",
+      "optionText": "Learn Skill"
+    },
+    {
+      "dialogKey": "Tell me more",
+      "optionText": "white_bat_form_info"
+    },
+    {
+      "dialogKey": "top",
+      "optionText": "Top"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "white_bat_form_initial",
+  "text": "The White Bat Form is as elusive as its namesake. This style teaches you to flow like mist through combat, turning your opponent's movements to your advantage. It requires a clever mind as much as it does a strong body.",
+  "type": "Menu"
+}

@@ -1,0 +1,15 @@
+{
+    "isAssail": false,
+    "description": "",
+    "level": 11,
+    "levelsUp": true,
+    "name": "Scorpion Stance",
+    "class": "monk",
+    "panelSprite": 2,
+    "cooldownMs": 15000,
+    "scriptKeys": [],
+    "scriptVars": {
+        
+    },
+    "templateKey": "scorpionStance"
+}

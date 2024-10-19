@@ -9,7 +9,7 @@ public sealed class DefaultRegenFormula : IRegenFormula
 {
     private const decimal BaseMpRegenPercent = 5;
     private const decimal BaseHpRegenPercent = 10;
-    const decimal maxRegenPercent = 20;
+    private const decimal MaxRegenPercent = 20;
     private const int BaseInterval = 18;
     private const int MinInterval = 6;
     private const int MaxRegenStat = 25;
@@ -67,7 +67,7 @@ public sealed class DefaultRegenFormula : IRegenFormula
         var clampedStat = Math.Clamp(stat, baseStat, maxStat);
 
         // Calculate the percentage based on the con stat
-        var regenPercent = baseRegenPercent + (clampedStat - baseStat) * (maxRegenPercent - baseRegenPercent) / (maxStat - baseStat);
+        var regenPercent = baseRegenPercent + (clampedStat - baseStat) * (MaxRegenPercent - baseRegenPercent) / (maxStat - baseStat);
 
         return regenPercent;
     }

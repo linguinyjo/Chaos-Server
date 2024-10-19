@@ -62,7 +62,7 @@ public struct DamageAbilityComponent : IComponent
         int? fistBonus = null)
     {
         var finalDamage = baseDamage ?? 0;
-        finalDamage += MathEx.GetPercentOf<int>((int)target.StatSheet.EffectiveMaximumHp, pctHpDamage ?? 0);
+        finalDamage += MathEx.GetPercentOf<int>(target.StatSheet.CurrentHp, pctHpDamage ?? 0);
         
         if (!damageStat.HasValue) return finalDamage;
 

@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "close",
+  "scriptKeys": ["unlearnForm"],
+  "scriptVars": {},
+  "templateKey": "unlearn_form_final",
+  "text": "",
+  "type": "Normal"
+}   
