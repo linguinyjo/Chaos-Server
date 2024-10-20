@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "white_bat_form_learn_b",
+      "optionText": "I am sure"
+    },
+    {
+      "dialogKey": "top",
+      "optionText": "On second thought..."
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "white_bat_form_learn_a",
+  "text": "So you've decided to learn the White Bat form have you. Well its your choice, but just know that unlearning it will be a painful process. Are you sure you wish to continue?",
+  "type": "Menu"
+}   

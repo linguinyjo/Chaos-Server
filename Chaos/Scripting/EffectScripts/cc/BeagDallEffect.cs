@@ -9,7 +9,7 @@ namespace Chaos.Scripting.EffectScripts.cc;
 public class BeagDallEffect : ContinuousAnimationEffectBase
 {
     /// <inheritdoc />
-    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMilliseconds(14000);
+    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMilliseconds(10000);
 
     /// <inheritdoc />
     protected override Animation Animation { get; } = new()

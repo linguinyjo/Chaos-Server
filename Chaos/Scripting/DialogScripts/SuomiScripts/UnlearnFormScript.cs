@@ -46,6 +46,11 @@ public class UnlearnFormScript:  DialogScriptBase
             source.SpellBook.RemoveByTemplateKey("scorpionStance");
             source.SkillBook.RemoveByTemplateKey("poisonPunch");
         }
+        if (formStatus == MonkFormType.WhiteBat)
+        {
+            source.SpellBook.RemoveByTemplateKey("whiteBatStance");
+            source.SkillBook.RemoveByTemplateKey("darkSpear");
+        }
        
         source.Trackers.Enums.Set(MonkFormType.None);
         

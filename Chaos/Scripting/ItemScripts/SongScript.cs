@@ -1,19 +1,14 @@
 using Chaos.Collections;
 using Chaos.Common.Definitions;
 using Chaos.Definitions;
-using Chaos.Formulae;
 using Chaos.Models.Data;
 using Chaos.Models.Panel;
 using Chaos.Models.World;
 using Chaos.Scripting.Abstractions;
 using Chaos.Scripting.Components.AbilityComponents;
 using Chaos.Scripting.Components.Execution;
-using Chaos.Scripting.FunctionalScripts.Abstractions;
-using Chaos.Scripting.FunctionalScripts.ApplyDamage;
-using Chaos.Scripting.FunctionalScripts.ApplyHealing;
 using Chaos.Scripting.ItemScripts.Abstractions;
 using Chaos.Storage.Abstractions;
-using static Chaos.Common.Definitions.Town;
 
 namespace Chaos.Scripting.ItemScripts;
 
@@ -45,39 +40,7 @@ public class SongScript : ConfigurableItemScriptBase,
             ?.Execute<ConsumableAbilityComponent>();
         var targetMap = SimpleCache.Get<MapInstance>(Destination.Map);
         source.TraverseMap(targetMap, Destination);
-
-        // switch (Destination)
-        // {
-        //     case Mileth:
-        //         Console.WriteLine("You are in Mileth");
-        //         var targetMap = SimpleCache.Get<MapInstance>("milethInn");
-        //         var destination = new Location("milethInn", 5, 10);
-        //         source.TraverseMap(targetMap, destination);
-        //         break;
-        //     case Abel:
-        //         Console.WriteLine("You are in Abel");
-        //         // Add Abel-specific logic here
-        //         break;
-        //     case Rucesion:
-        //         Console.WriteLine("You are in Rucesion");
-        //         // Add Rucesion-specific logic here
-        //         break;
-        //     case Piet:
-        //         Console.WriteLine("You are in Piet");
-        //         // Add Piet-specific logic here
-        //         break;
-        //     case Suomi:
-        //         Console.WriteLine("You are in Suomi");
-        //         // Add Suomi-specific logic here
-        //         break;
-        //     default:
-        //         Console.WriteLine("Unknown town");
-        //         // Handle unexpected cases
-        //         break;
-        // }
     }
-    
-
 
     #region ScriptVars
     /// <inheritdoc />

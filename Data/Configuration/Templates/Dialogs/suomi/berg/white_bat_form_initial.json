@@ -1,16 +1,20 @@
 {
   "options": [
     {
-      "dialogKey": "generic_learnskill_initial",
-      "optionText": "Learn Skill"
+      "dialogKey": "white_bat_form_learn_a",
+      "optionText": "Learn White Bat Form"
     },
     {
-      "dialogKey": "Tell me more",
-      "optionText": "white_bat_form_info"
+      "dialogKey": "white_bat_form_info",
+      "optionText": "Tell me more"
+    },
+    {
+      "dialogKey": "white_bat_form_requirements",
+      "optionText": "What are the requirements?"
     },
     {
       "dialogKey": "top",
-      "optionText": "Top"
+      "optionText": "back"
     }
   ],
   "scriptKeys": [],

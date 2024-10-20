@@ -1,0 +1,26 @@
+{
+    "isAssail": false,
+    "description": "Inflicts blind to targets in a line",
+    "level": 11,
+    "levelsUp": true,
+    "name": "Dark Spear",
+    "class": "monk",
+    "panelSprite": 4,
+    "cooldownMs": 18000,
+    "scriptKeys": ["applyEffect"],
+    "scriptVars": {
+        "applyEffect": {
+            "excludeSourcePoint": true,
+            "range": 4,
+            "shape": "front",
+            "effectKey": "dall",
+            "singleTarget": false,
+            "animation": {
+                "targetAnimation": 57,
+                "animationSpeed": 150
+            },
+            "filter": "hostileOnly, aliveOnly"
+        }
+    },
+    "templateKey": "darkSpear"
+}

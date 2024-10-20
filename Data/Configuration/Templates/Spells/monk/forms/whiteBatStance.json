@@ -1,13 +1,25 @@
 {
     "isAssail": false,
-    "description": "",
+    "description": "Hides the player",
     "level": 11,
     "levelsUp": true,
     "name": "White Bat Stance",
+    "spellType": "NoTarget",
     "class": "monk",
-    "panelSprite": 2,
-    "cooldownMs": 15000,
-    "scriptKeys": ["damage"],
-    "scriptVars": {},
+    "panelSprite": 10,
+    "cooldownMs": 30000,
+    "scriptKeys": ["applyEffect"],
+    "scriptVars": {
+        "applyEffect": {
+            "effectKey": "hide",
+            "sound": 8,
+            "animation": {
+                "targetAnimation": 6,
+                "animationSpeed": 150
+            },
+            "manaCost": 500,
+            "filter": "selfOnly, aliveOnly"
+        }
+    },
     "templateKey": "whiteBatStance"
 }

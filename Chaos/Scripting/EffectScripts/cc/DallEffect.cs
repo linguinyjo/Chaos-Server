@@ -9,7 +9,7 @@ namespace Chaos.Scripting.EffectScripts.cc;
 public class DallEffect : ContinuousAnimationEffectBase
 {
     /// <inheritdoc />
-    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMilliseconds(18000);
+    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMilliseconds(14000);
 
     /// <inheritdoc />
     protected override Animation Animation { get; } = new()
