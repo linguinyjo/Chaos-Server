@@ -8,23 +8,23 @@ using Chaos.Scripting.ItemScripts.Enchantments;
 
 namespace Chaos.Scripting.Components.AbilityComponents;
 
-public struct EnchantWeaponComponent : IConditionalComponent
+public struct EnchantWeaponComponent : IComponent
 {
     /// <inheritdoc />
-    public bool Execute(ActivationContext context, ComponentVars vars)
+    public void Execute(ActivationContext context, ComponentVars vars)
     {
         var options = vars.GetOptions<IEnchantWeaponComponentOptions>();
         var item = context.SourceAisling?.Inventory[1];
-        if (item == null) return false;
+        if (item == null) return;
         if (item.Template.EquipmentType != EquipmentType.Weapon)
         {
             context.SourceAisling?.SendOrangeBarMessage($"This scroll can only be used on weapons");
-            return false;
+            return;
         }
         if (item.LevelCircle != options.LevelCircle)
         {
             context.SourceAisling?.SendOrangeBarMessage($"This scroll can only enchant items of Circle {options.LevelCircle}");
-            return false;
+            return;
         }
         var shouldEnchant = RunEnchantCalculation(item);
         if (shouldEnchant)
@@ -38,7 +38,6 @@ public struct EnchantWeaponComponent : IConditionalComponent
             context.SourceAisling?.Inventory.Remove(1);
             context.SourceAisling?.Client.SendSound(10, false);
         }
-        return true;
     }
 
     /// Safe enchant up to 3

@@ -35,6 +35,17 @@ public class UnlearnFormScript:  DialogScriptBase
             source.SkillBook.RemoveByTemplateKey("dracoTailKick");
 
         }
+        if (formStatus == MonkFormType.Kelberoth)
+        {
+            source.SpellBook.RemoveByTemplateKey("kelberothStance");
+            source.SkillBook.RemoveByTemplateKey("kelberothStrike");
+
+        }
+        if (formStatus == MonkFormType.Scorpion)
+        {
+            source.SpellBook.RemoveByTemplateKey("scorpionStance");
+            source.SkillBook.RemoveByTemplateKey("poisonPunch");
+        }
        
         source.Trackers.Enums.Set(MonkFormType.None);
         

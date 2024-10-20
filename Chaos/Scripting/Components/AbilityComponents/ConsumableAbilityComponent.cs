@@ -1,4 +1,5 @@
 using Chaos.Models.Data;
+using Chaos.Models.Panel;
 using Chaos.Scripting.Components.Abstractions;
 using Chaos.Scripting.Components.Execution;
 using Chaos.Scripting.ItemScripts.Enchantments;
@@ -11,19 +12,14 @@ public struct ConsumableAbilityComponent : IComponent
     public void Execute(ActivationContext context, ComponentVars vars)
     {
         var options = vars.GetOptions<IConsumableComponentOptions>();
-        // Loop through the inventory
-        if (context.SourceAisling?.Inventory == null) return;
-        foreach (var item in context.SourceAisling.Inventory)
-        {
-            if (item.UniqueId != options.UniqueId) continue;
-            context.SourceAisling?.Inventory.RemoveQuantity(item.Slot, 1);
-            return;
-        }
+        context.SourceAisling?.Inventory.RemoveQuantity(options.Item.Slot, 1);
     }
 
     public interface IConsumableComponentOptions
     {
         string ItemName { get; init; }
-        ulong UniqueId { get; init; }
+        // Save the item here in order to get the slot - when the the item is initially constructed it doesnt have a
+        // slot value yet so saving the slot byte wont work
+        Item Item { get; init; }
     }
 }

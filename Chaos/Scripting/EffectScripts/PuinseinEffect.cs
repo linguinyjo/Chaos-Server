@@ -1,5 +1,8 @@
 using Chaos.Common.Definitions;
 using Chaos.Models.Data;
+using Chaos.Models.World.Abstractions;
+using Chaos.Scripting.Components.EffectComponents;
+using Chaos.Scripting.Components.Execution;
 using Chaos.Scripting.EffectScripts.Abstractions;
 using Chaos.Time;
 using Chaos.Time.Abstractions;
@@ -43,5 +46,11 @@ public class PuinseinEffect : ContinuousAnimationEffectBase
 
         if (Subject.StatSheet.TrySubtractHp(damagePerTick))
             AislingSubject?.Client.SendAttributes(StatUpdateType.Vitality);
+    }
+    
+    /// <inheritdoc />
+    public override bool ShouldApply(Creature source, Creature target)
+    {
+        return !Subject.Effects.Contains("Scorpion Stance");
     }
 }

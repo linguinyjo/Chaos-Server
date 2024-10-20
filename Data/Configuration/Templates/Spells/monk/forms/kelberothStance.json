@@ -20,7 +20,7 @@
                 "targetAnimation": 6,
                 "animationSpeed": 150
             },
-            "manaCost": 200,
+            "manaCost": 250,
             "filter": "selfOnly, aliveOnly"}
     },
     "templateKey": "kelberothStance"

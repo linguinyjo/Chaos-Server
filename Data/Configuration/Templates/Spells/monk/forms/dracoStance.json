@@ -19,7 +19,7 @@
                 "targetAnimation": 6,
                 "animationSpeed": 150
             },
-            "manaCost": 300
+            "manaCost": 450
         }
     },
     "spellType": "NoTarget",

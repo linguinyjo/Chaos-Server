@@ -5,10 +5,10 @@
     "requiredGold": 2500,
     "requiredStats": {
       "con": 3,
-      "dex": 3,
-      "int": 7,
+      "dex": 12,
+      "int": 18,
       "str": 3,
-      "wis": 14
+      "wis": 22
     },
     "prerequisiteSkills": [],
     "prerequisiteSpells": []
@@ -16,7 +16,7 @@
   "spellType": "Targeted",
   "class": "Priest",
   "description": "Removes blind effect",
-  "level": 41,
+  "level": 11,
   "name": "ao dall",
   "panelSprite": 25,
   "scriptKeys": [

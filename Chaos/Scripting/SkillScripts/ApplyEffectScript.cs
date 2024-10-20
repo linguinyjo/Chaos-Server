@@ -2,43 +2,36 @@ using Chaos.Common.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.Panel;
-using Chaos.Models.World;
+using Chaos.Models.World.Abstractions;
 using Chaos.Scripting.Abstractions;
 using Chaos.Scripting.Components.AbilityComponents;
 using Chaos.Scripting.Components.Execution;
-using Chaos.Scripting.ItemScripts.Abstractions;
+using Chaos.Scripting.SkillScripts.Abstractions;
+using Chaos.Services.Factories.Abstractions;
 
-namespace Chaos.Scripting.ItemScripts;
+namespace Chaos.Scripting.SkillScripts;
 
-public class EnchantScript : ConfigurableItemScriptBase,
-                                        GenericAbilityComponent<Aisling>.IAbilityComponentOptions,
-                                        ConsumableAbilityComponent.IConsumableComponentOptions,
-                                        EnchantWeaponComponent.IEnchantWeaponComponentOptions
+public class ApplyEffectScript : ConfigurableSkillScriptBase,
+                            GenericAbilityComponent<Creature>.IAbilityComponentOptions,
+                            ApplyEffectAbilityComponent.IApplyEffectComponentOptions
 {
-    // private readonly Item Item;
     
     /// <inheritdoc />
-    public EnchantScript(Item subject)
+    public ApplyEffectScript(Skill subject, IEffectFactory effectFactory)
         : base(subject)
     {
         SourceScript = this;
-        LevelCircle = subject.LevelCircle;
-        ItemName = subject.DisplayName;
-        Slot = subject.Slot;
-        Item = subject;
+        EffectFactory = effectFactory;
     }
 
     /// <inheritdoc />
-    public override void OnUse(Aisling source)
+    public override void OnUse(ActivationContext context)
     {
-        new ComponentExecutor(source, source).WithOptions(this)
-            .ExecuteAndCheck<GenericAbilityComponent<Aisling>>()
-            ?.Execute<EnchantWeaponComponent>()
-            .Execute<ConsumableAbilityComponent>();
-        Console.WriteLine(Item);
+        new ComponentExecutor(context).WithOptions(this)
+            .ExecuteAndCheck<GenericAbilityComponent<Creature>>()
+            ?.Execute<ApplyEffectAbilityComponent>();
     }
-
-
+    
     #region ScriptVars
     /// <inheritdoc />
     public AoeShape Shape { get; init; }
@@ -63,36 +56,26 @@ public class EnchantScript : ConfigurableItemScriptBase,
 
     /// <inheritdoc />
     public BodyAnimation BodyAnimation { get; init; }
-
     /// <inheritdoc />
     public ushort? AnimationSpeed { get; init; }
-
     /// <inheritdoc />
     public Animation? Animation { get; init; }
-
     /// <inheritdoc />
     public bool AnimatePoints { get; init; }
-
+    public IScript SourceScript { get; init; }
     /// <inheritdoc />
     public int? ManaCost { get; init; }
-
     /// <inheritdoc />
     public decimal PctManaCost { get; init; }
-
     /// <inheritdoc />
     public bool ShouldNotBreakHide { get; init; }
-
-    public IScript SourceScript { get; init; }
-
     /// <inheritdoc />
-    public LevelCircle LevelCircle { get; init; }
-
-    public string ItemName { get; init; }
-    
-    public byte Slot { get; init; }
-    public Item Item { get; init; }
-
     public bool CanResist { get; init; }
-
+    /// <inheritdoc />
+    public TimeSpan? EffectDurationOverride { get; init; }
+    /// <inheritdoc />
+    public IEffectFactory EffectFactory { get; init; }
+    /// <inheritdoc />
+    public string? EffectKey { get; init; }
     #endregion
 }

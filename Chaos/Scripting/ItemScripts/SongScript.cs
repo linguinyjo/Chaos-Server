@@ -32,7 +32,8 @@ public class SongScript : ConfigurableItemScriptBase,
         : base(subject)
     {
         SourceScript = this;
-        UniqueId = Subject.UniqueId;
+        Slot = Subject.Slot;
+        ItemName = Subject.DisplayName;
         SimpleCache = simpleCache;
     }
 
@@ -127,8 +128,8 @@ public class SongScript : ConfigurableItemScriptBase,
     public string ItemName { get; init; }
 
     /// <inheritdoc />
-    public ulong UniqueId { get; init; }
-
+    public byte Slot { get; init; }
+    public Item Item { get; init; }
     public bool CanResist { get; init; }
 
     #endregion

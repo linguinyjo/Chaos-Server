@@ -33,7 +33,7 @@ public class VitalityConsumableScript : ConfigurableItemScriptBase,
         ApplyHealScript.HealFormula = HealFormulae.Default;
         SourceScript = this;
         ItemName = Subject.DisplayName;
-        UniqueId = Subject.UniqueId;
+        Slot = Subject.Slot;
     }
 
     /// <inheritdoc />
@@ -149,8 +149,8 @@ public class VitalityConsumableScript : ConfigurableItemScriptBase,
     public string ItemName { get; init; }
     
     /// <inheritdoc />
-    public ulong UniqueId { get; init; }
-
+    public byte Slot { get; init; }
+    public Item Item { get; init; }
     public bool CanResist { get; init; }
 
     #endregion

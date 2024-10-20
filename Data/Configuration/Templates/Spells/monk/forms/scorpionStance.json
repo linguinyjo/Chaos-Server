@@ -1,15 +1,34 @@
 {
     "isAssail": false,
-    "description": "",
+    "description": "Reduces AC and immunity to poison effect",
     "level": 11,
     "levelsUp": true,
     "name": "Scorpion Stance",
     "class": "monk",
-    "panelSprite": 2,
-    "cooldownMs": 15000,
-    "scriptKeys": [],
+    "spellType": "NoTarget",
+    "panelSprite": 158,
+    "cooldownMs": 30000,
+    "scriptKeys": ["applyEffect", "removeEffect"],
     "scriptVars": {
-        
+        "applyEffect": {
+            "bodyAnimation": "handsup",
+            "excludeSourcePoint": false,
+            "sound": 8,
+            "range": 2,
+            "effectKey": "scorpionStance",
+            "animation": {
+                "targetAnimation": 6,
+                "animationSpeed": 150
+            },
+            "manaCost": 250,
+            "filter": "selfOnly, aliveOnly"
+        },
+        "removeEffect": {
+            "excludeSourcePoint": false,
+            "range": 8,
+            "effectKey": "puinsein",
+            "filter": "selfOnly, aliveOnly"
+        }
     },
     "templateKey": "scorpionStance"
 }

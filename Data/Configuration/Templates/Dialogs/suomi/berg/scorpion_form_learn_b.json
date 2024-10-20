@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "close",
+  "scriptKeys": ["learnScorpionForm"],
+  "scriptVars": {},
+  "templateKey": "scorpion_form_learn_b",
+  "text": "",
+  "type": "Normal"
+}   
