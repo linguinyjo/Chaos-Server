@@ -12,7 +12,8 @@ public abstract class MonkFormScriptBase : DialogScriptBase
     protected readonly Dialog Dialog;
     protected readonly ISkillFactory SkillFactory;
     protected readonly ISpellFactory SpellFactory;
-
+    private const int GoldRequiremnent = 50000;
+    
     protected MonkFormScriptBase(
         Dialog subject,
         IDialogFactory dialogFactory,
@@ -27,9 +28,15 @@ public abstract class MonkFormScriptBase : DialogScriptBase
 
     public override void OnDisplaying(Aisling source)
     {
-        if (!CheckRequirements(source))
+        if (!CheckStatRequirements(source))
         {
             ShowMissingRequirementsDialog(source);
+            return;
+        }
+
+        if (source.Gold < GoldRequiremnent)
+        {
+            ShowNotEnoughGoldDialog(source);
             return;
         }
 
@@ -42,7 +49,7 @@ public abstract class MonkFormScriptBase : DialogScriptBase
         ShowSuccessDialog(source);
     }
 
-    protected virtual bool CheckRequirements(Aisling source)
+    private bool CheckStatRequirements(Aisling source)
     {
         return source.StatSheet.EffectiveStr >= RequiredStr &&
                source.StatSheet.EffectiveInt >= RequiredInt &&
@@ -51,7 +58,7 @@ public abstract class MonkFormScriptBase : DialogScriptBase
                source.StatSheet.EffectiveDex >= RequiredDex;
     }
 
-    protected virtual bool TryLearnForm(Aisling source)
+    private bool TryLearnForm(Aisling source)
     {
         var stance = SpellFactory.Create(StanceSpellKey);
         if (!source.SpellBook.TryAddToNextSlot(stance))
@@ -64,11 +71,18 @@ public abstract class MonkFormScriptBase : DialogScriptBase
             return false;
         }
 
+        var goldTaken = source.TryTakeGold(GoldRequiremnent);
+        if (!goldTaken)
+        {
+            source.SpellBook.RemoveByTemplateKey(StanceSpellKey);
+            source.SkillBook.RemoveByTemplateKey(StanceSpellKey);
+            return false;
+        }
         source.Trackers.Enums.Set(FormType);
         return true;
     }
 
-    protected virtual void ShowMissingRequirementsDialog(Aisling source)
+    private void ShowMissingRequirementsDialog(Aisling source)
     {
         var dialog = new Dialog(
             Dialog.DialogSource,
@@ -81,7 +95,20 @@ public abstract class MonkFormScriptBase : DialogScriptBase
         dialog.Display(source);
     }
 
-    protected virtual void ShowSpellBookFullDialog(Aisling source)
+    private void ShowNotEnoughGoldDialog(Aisling source)
+    {
+        var dialog = new Dialog(
+            Dialog.DialogSource,
+            DialogFactory,
+            ChaosDialogType.Normal,
+            $"Hold on, you think I'm running a charity here? Come back when you have the full {GoldRequiremnent}.")
+        {
+            NextDialogKey = "Close"
+        };
+        dialog.Display(source);
+    }
+    
+    private void ShowSpellBookFullDialog(Aisling source)
     {
         var dialog = new Dialog(
             Dialog.DialogSource,
@@ -94,7 +121,7 @@ public abstract class MonkFormScriptBase : DialogScriptBase
         dialog.Display(source);
     }
 
-    protected virtual void ShowSuccessDialog(Aisling source)
+    private void ShowSuccessDialog(Aisling source)
     {
         var dialog = new Dialog(
             Dialog.DialogSource,

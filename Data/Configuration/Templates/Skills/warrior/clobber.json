@@ -1,0 +1,42 @@
+{
+    "isAssail": true,
+    "learningRequirements": {
+        "itemRequirements": [
+            {
+                "amountRequired": 1,
+                "itemTemplateKey": "battleSword"
+            }
+        ],
+        "requiredGold": 10000,
+        "requiredStats": {
+            "con": 10,
+            "dex": 18,
+            "int": 3,
+            "str": 34,
+            "wis": 3
+        },
+        "prerequisiteSkills": [],
+        "prerequisiteSpells": []
+    },
+    "description": "A third assail.",
+    "level": 11,
+    "levelsUp": true,
+    "name": "Clobber",
+    "class": "warrior",
+    "panelSprite": 0,
+    "scriptKeys": ["damage"],
+    "scriptVars": {
+        "damage": {
+            "bodyAnimation": "assail",
+            "sound": 1,
+            "damageStat": "str",
+            "range": 1,
+            "shape": "front",
+            "excludeSourcePoint": true,
+            "damageStatMultiplier": 0.50,
+            "baseDamage": 3,
+            "filter": "hostileOnly, aliveOnly, othersOnly"
+        }
+    },
+    "templateKey": "clobber"
+}

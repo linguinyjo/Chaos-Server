@@ -10,11 +10,11 @@
       "itemTemplateKey": "enchantWeaponScroll2nd"
     },
     {
-      "dropChance": 0.06,
+      "dropChance": 0.006,
       "itemTemplateKey": "boneNecklace"
     },
     {
-      "dropChance": 0.06,
+      "dropChance": 0.006,
       "itemTemplateKey": "mythrilBelt"
     },
     {

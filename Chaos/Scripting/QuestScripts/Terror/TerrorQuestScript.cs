@@ -8,68 +8,69 @@ namespace Chaos.Scripting.QuestScripts.Terror;
 
 public class TerrorQuestScript:  DialogScriptBase
 {
-    private readonly IDialogFactory DialogFactory;
-    private readonly Dialog Dialog;
 
     /// <inheritdoc />
-    public TerrorQuestScript(Dialog subject, IDialogFactory dialogFactory)
-        : base(subject)
-    {
-        DialogFactory = dialogFactory;
-        Dialog = subject;
-    } 
+    public TerrorQuestScript(Dialog subject) : base(subject) {} 
 
     /// <inheritdoc />
     public override void OnDisplaying(Aisling source)
     {
         var questStatus = TerrorQuestHelper.GetQuestStatus(source);
-        if (questStatus is TerrorQuestStatus.None or TerrorQuestStatus.GardenStarted)
+        switch (questStatus)
         {
-            var goldTaken = source.TryTakeGold(2000);
-            if (!goldTaken)
+            case TerrorQuestStatus.None or TerrorQuestStatus.GardenStarted:
             {
-                Subject.Close(source);
-                return;
+                var goldTaken = source.TryTakeGold(2000);
+                if (!goldTaken)
+                {
+                    Subject.Close(source);
+                    return;
+                }
+                if(questStatus is TerrorQuestStatus.None)
+                {
+                    TerrorQuestHelper.StartQuest(source);
+                }
+                break;
             }
-            if(questStatus is TerrorQuestStatus.None)
-            {
-                TerrorQuestHelper.StartQuest(source);
-            }
-        } else if (questStatus is TerrorQuestStatus.GardenSlain)
-        {
-            TerrorQuestHelper.IncrementQuestStage(source);
-        }  else if (questStatus is TerrorQuestStatus.GardenCompleted or TerrorQuestStatus.AlleyStarted)
-        {
-            var goldTaken = source.TryTakeGold(5000);
-            if (!goldTaken) return;
-            if(questStatus is TerrorQuestStatus.GardenCompleted)
-            {
+            
+            case TerrorQuestStatus.GardenSlain:
                 TerrorQuestHelper.IncrementQuestStage(source);
-            }
-        } 
-        else if (questStatus is TerrorQuestStatus.AlleySlain)
-        {
-            TerrorQuestHelper.IncrementQuestStage(source);
-        }
-        
-        else if (questStatus is TerrorQuestStatus.AlleyCompleted or TerrorQuestStatus.CryptStarted)
-        {
-            var goldTaken = source.TryTakeGold(10000);
-            if (!goldTaken) return;
-            if(questStatus is TerrorQuestStatus.AlleyCompleted)
+                break;
+            
+            case TerrorQuestStatus.GardenCompleted or TerrorQuestStatus.AlleyStarted:
             {
-                TerrorQuestHelper.IncrementQuestStage(source);
+                var goldTaken = source.TryTakeGold(5000);
+                if (!goldTaken) return;
+                if(questStatus is TerrorQuestStatus.GardenCompleted)
+                {
+                    TerrorQuestHelper.IncrementQuestStage(source);
+                }
+                break;
             }
-        }  else if (questStatus is TerrorQuestStatus.CryptSlain)
-        {
-            TerrorQuestHelper.IncrementQuestStage(source);
+            
+            case TerrorQuestStatus.AlleySlain:
+                TerrorQuestHelper.IncrementQuestStage(source);
+                break;
+            
+            case TerrorQuestStatus.AlleyCompleted or TerrorQuestStatus.CryptStarted:
+            {
+                var goldTaken = source.TryTakeGold(10000);
+                if (!goldTaken) return;
+                if(questStatus is TerrorQuestStatus.AlleyCompleted)
+                {
+                    TerrorQuestHelper.IncrementQuestStage(source);
+                }
+
+                break;
+            }
+            
+            case TerrorQuestStatus.CryptSlain:
+                TerrorQuestHelper.CompleteQuest(source);
+                break;
         }
     }
     
     public override void OnDisplayed(Aisling source) {}
 
-    public override void OnNext(Aisling source, byte? optionIndex = null)
-    {
-     
-    }
+    public override void OnNext(Aisling source, byte? optionIndex = null) {}
 }

@@ -1,0 +1,168 @@
+[
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pravatWorks:(41, 1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(41,49)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pravatWorks:(40, 1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(40, 49)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pravatWorks:(39, 1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(39, 49)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pravatWorks:(38, 1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(38, 49)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pravatWorks:(37, 1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(37, 49)"
+    },
+
+
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pravatWorks:(19, 1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(19,49)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pravatWorks:(18, 1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(18, 49)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pravatWorks:(17, 1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(17, 49)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pravatWorks:(16, 1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(16, 49)"
+    },
+
+    
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pravatProleGround:(1,25)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(49,25)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pravatProleGround:(1,24)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(49, 24)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pravatProleGround:(1,23)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(49, 23)"
+    },
+
+
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pravatProleGround:(1,7)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(49, 7)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pravatProleGround:(1,6)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(49, 6)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pravatProleGround:(1,5)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(49, 5)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pravatProleGround:(1,4)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(49, 4)"
+    }
+]

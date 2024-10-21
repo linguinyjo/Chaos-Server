@@ -1,0 +1,29 @@
+{
+    "buyCost": 25000,
+    "category": "Armor",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 12,
+    "equipmentType": "Armor",
+    "gender": "Unisex",
+    "maxDurability": 1000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -24,
+        "dex": -1
+    },
+    "class": "warrior",
+    "pantsColor": "Black",
+    "level": 26,
+    "levelCircle": 2,
+    "sellValue": 12500,
+    "weight": 14,
+    "description": "Class: Warrior\nLevel: 26\nAc -26\nDex -1",
+    "name": "Lorica",
+    "panelSprite": 107,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "lorica"
+}

@@ -30,7 +30,7 @@
             "shape": "front",
             "excludeSourcePoint": true,
             "damageStatMultiplier": 2,
-            "baseDamage": 50,
+            "baseDamage": 30,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "usePAtk": true
         }

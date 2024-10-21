@@ -6,9 +6,9 @@
         "requiredStats": {
             "con": 3,
             "dex": 6,
-            "int": 17,
+            "int": 7,
             "str": 3,
-            "wis": 13
+            "wis": 11
         },
         "prerequisiteSkills": [],
         "prerequisiteSpells": []
@@ -18,12 +18,12 @@
     "levelsUp": true,
     "name": "martial awareness",
     "class": "monk",
-    "panelSprite": 2,
+    "panelSprite": 10,
     "cooldownMs": 15000,
     "scriptKeys": ["sense"],
     "scriptVars": {
         "sense": {
-            "range": 1,
+            "range": 4,
             "shape": "front",
             "excludeSourcePoint": true,
             "filter": "hostileOnly, aliveOnly, othersOnly"

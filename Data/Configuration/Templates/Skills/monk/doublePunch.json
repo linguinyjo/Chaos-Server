@@ -4,10 +4,10 @@
         "itemRequirements": [],
         "requiredGold": 5000,
         "requiredStats": {
-            "con": 5,
+            "con": 4,
             "dex": 10,
             "int": 3,
-            "str": 14,
+            "str": 16,
             "wis": 3
         },
         "prerequisiteSkills": [],
@@ -31,7 +31,7 @@
             "baseDamage": 15,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "usePAtk": true,
-            "fistBonus": 15
+            "fistBonus": 30
         }
     },
     "templateKey": "doublePunch"

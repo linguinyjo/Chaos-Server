@@ -5,8 +5,8 @@
         "intervalSecs": 180,
         "intervalVariancePct": 30,
         "extraLootTableKeys": [],
-        "maxAmount": 12,
-        "maxPerSpawn": 12,
+        "maxAmount": 8,
+        "maxPerSpawn": 8,
         "monsterTemplateKey": "crypt4Bat"
     },
     {
@@ -25,8 +25,8 @@
         "intervalSecs": 180,
         "intervalVariancePct": 30,
         "extraLootTableKeys": [],
-        "maxAmount": 15,
-        "maxPerSpawn": 15,
+        "maxAmount": 12,
+        "maxPerSpawn": 12,
         "monsterTemplateKey": "crypt4Centipede"
     }
 ]

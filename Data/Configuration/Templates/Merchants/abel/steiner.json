@@ -13,6 +13,10 @@
             "stock": 100
         },
         {
+            "itemTemplateKey": "lorica",
+            "stock": 100
+        },
+        {
             "itemTemplateKey": "greyBoots",
             "stock": 100
         },
@@ -25,7 +29,15 @@
             "stock": 100
         }
     ],
-    "itemsToBuy": ["shirt","woodenShield", "stick", "boots", "leatherTunic", "leatherGauntlet", "leatherGreaves", "jupe", "greyBoots", "bronzeShield"],
+    "itemsToBuy": [
+        "shirt",
+        "woodenShield", "leatherShield", "bronzeShield",
+        "boots", "greyBoots", "shagreenBoots",
+        "leatherTunic", "jupe", "lorica", "dobok", "culotte",
+        "leatherGauntlet", "leatherBracer",
+        "leatherGreaves",
+        "smallSpinelRing", "smallEmeraldRing", "emeraldRing", "spinelRing",
+        "silverEarrings", "goldEarrings", "rubyEarrings", "coralEarrings"],
     "name": "Steiner",
     "restockIntervalHrs": 1,
     "restockPCt": 100,

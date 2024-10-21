@@ -1,0 +1,29 @@
+{
+    "buyCost": 45000,
+    "category": "Greaves",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 238,
+    "equipmentType": "Greaves",
+    "gender": "Unisex",
+    "maxDurability": 1000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -2,
+        "wis": 1
+    },
+    "class": "peasant",
+    "pantsColor": "Black",
+    "level": 11,
+    "levelCircle": 2,
+    "sellValue": 22500,
+    "weight": 4,
+    "description": "Class: All\nLevel: 11\nAc -2",
+    "name": "Leather Greaves",
+    "panelSprite": 238,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "leatherGreaves"
+}

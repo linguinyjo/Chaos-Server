@@ -6,10 +6,11 @@
     "name": "Dark Spear",
     "class": "monk",
     "panelSprite": 4,
-    "cooldownMs": 18000,
+    "cooldownMs": 24000,
     "scriptKeys": ["applyEffect"],
     "scriptVars": {
         "applyEffect": {
+            "bodyAnimation": "punch",
             "excludeSourcePoint": true,
             "range": 4,
             "shape": "front",

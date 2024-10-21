@@ -19,7 +19,7 @@ public struct ConsumableAbilityComponent : IComponent
     {
         string ItemName { get; init; }
         // Save the item here in order to get the slot - when the the item is initially constructed it doesnt have a
-        // slot value yet so saving the slot byte wont work
+        // slot value yet so saving the slot byte at this point doesnt work
         Item Item { get; init; }
     }
 }

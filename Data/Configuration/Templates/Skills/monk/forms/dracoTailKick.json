@@ -16,7 +16,7 @@
             "range": 1,
             "shape": "allAround",
             "excludeSourcePoint": true,
-            "damageStatMultiplier": 2,
+            "damageStatMultiplier": 2.5,
             "baseDamage": 50,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "usePAtk": true

@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 158,
+    "expReward": 178,
     "moveIntervalMs": 1500,
     "name": "Bee",
     "lootTableKeys": ["sw4Bees"],
@@ -17,7 +17,7 @@
         "maximumHp": 1650,
         "maximumMp": 1000,
         "physicalAttack": 33,
-        "magicAttack": 100,
+        "magicAttack": 50,
         "con": 4,
         "dex": 1,
         "int": 20,

@@ -1282,4 +1282,14 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
         //refresh will activate reactors, don't double up
         Refresh(true);
     }
+
+    public void SendQuestCompletedAnimation()
+    {
+        Client.SendAnimation(new Animation()
+        {
+            AnimationSpeed = 150,
+            TargetAnimation = 22
+        });
+        Client.SendSound(29, false);
+    }
 }

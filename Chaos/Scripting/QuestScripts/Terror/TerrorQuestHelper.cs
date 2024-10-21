@@ -37,21 +37,16 @@ public static class TerrorQuestHelper
     {
         player.Trackers.Enums.Set(TerrorQuestStatus.Completed);
         var legendMark = new LegendMark(
-            "Freed Teague from his haunting nightmares",
+            "Freed Teague from his terrible nightmares",
             "terrorOfTheBeggar",
             MarkIcon.Victory,
             MarkColor.White,
             1,
             GameTime.Now);
         
-        player.GiveExperience(25000);
+        player.GiveExperience(30000);
         player.Legend.AddUnique(legendMark);
-        player.Client.SendAnimation(new Animation()
-        {
-            AnimationSpeed = 150,
-            TargetAnimation = 22
-        });
-        player.Client.SendSound(29, false);
+        player.SendQuestCompletedAnimation();
     }
 }
 

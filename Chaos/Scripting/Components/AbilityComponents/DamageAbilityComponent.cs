@@ -1,6 +1,7 @@
 using Chaos.Common.Definitions;
 using Chaos.Common.Utilities;
 using Chaos.Models.Data;
+using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
 using Chaos.Scripting.Abstractions;
 using Chaos.Scripting.Components.Abstractions;
@@ -78,7 +79,7 @@ public struct DamageAbilityComponent : IComponent
             finalDamage += source.StatSheet.EffectiveMagicAttack;
         }
 
-        if (fistBonus != null && source.StatSheet.EffectivePhysicalAttack == 0)
+        if (source is Aisling aisling && fistBonus != null && aisling.Equipment[EquipmentSlot.Weapon] == null) 
         {
             finalDamage += fistBonus.Value;
         }

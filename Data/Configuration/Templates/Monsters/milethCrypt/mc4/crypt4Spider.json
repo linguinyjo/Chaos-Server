@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 131,
+    "expReward": 141,
     "moveIntervalMs": 1500,
     "name": "Spider",
     "lootTableKeys": ["crypt4Spiders", "enchantWeaponScroll2nd"],
@@ -17,7 +17,7 @@
         "maximumHp": 1600,
         "maximumMp": 1000,
         "physicalAttack": 26,
-        "magicAttack": 50,
+        "magicAttack": 40,
         "con": 4,
         "dex": 1,
         "int": 20,
