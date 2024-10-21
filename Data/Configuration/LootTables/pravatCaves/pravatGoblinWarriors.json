@@ -1,0 +1,21 @@
+{
+    "key": "pravatGoblinWarriors",
+    "lootDrops": [
+        {
+            "dropChance": 0.03,
+            "itemTemplateKey": "enchantWeaponScroll2nd"
+        },
+        {
+            "dropChance": 0.006,
+            "itemTemplateKey": "templar"
+        },
+        {
+            "dropChance": 0.006,
+            "itemTemplateKey": "masquerade"
+        },
+        {
+            "dropChance": 0.006,
+            "itemTemplateKey": "magusApollo"
+        }
+    ]
+}

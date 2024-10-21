@@ -1,0 +1,84 @@
+[
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pravatHearth:(1, 44)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(13,20)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pravatHearth:(1, 43)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(13, 19)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pravatHearth:(1, 42)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(13, 18)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pravatHearth:(1, 41)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(13, 17)"
+    },
+
+
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pravatHearth:(1, 27)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(13,3)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pravatHearth:(1, 26)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(13, 2)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pravatHearth:(1, 25)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(13, 1)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pravatHearth:(1, 24)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(13, 0)"
+    }
+]

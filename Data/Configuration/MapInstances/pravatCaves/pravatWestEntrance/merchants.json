@@ -1,0 +1,16 @@
+[
+  {
+    "blackList": [],
+    "direction": "Down",
+    "extraScriptKeys": [],
+    "merchantTemplateKey": "bahadir",
+    "spawnPoint": "(3, 9)"
+  },
+  {
+    "blackList": [],
+    "direction": "Down",
+    "extraScriptKeys": [],
+    "merchantTemplateKey": "ozkan",
+    "spawnPoint": "(7, 5)"
+  }
+]

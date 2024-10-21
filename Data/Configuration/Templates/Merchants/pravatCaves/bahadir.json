@@ -1,0 +1,16 @@
+{
+    "itemsForSale": [
+    ],
+    "itemsToBuy": [],
+    "name": "Bahadir",
+    "scriptKeys": ["showdialog", "defaultBehaviors"],
+    "scriptVars": {
+        "showdialog": {
+            "dialogKey": "bank_tester_initial"
+        }
+    },
+    "skillsToTeach": [],
+    "spellsToTeach": [],
+    "sprite": 17,
+    "templateKey": "bahadir"
+}

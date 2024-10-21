@@ -1,0 +1,25 @@
+{
+    "key": "pravatGrimlockWarriors",
+    "lootDrops": [
+        {
+            "dropChance": 0.03,
+            "itemTemplateKey": "enchantWeaponScroll2nd"
+        },
+        {
+            "dropChance": 0.008,
+            "itemTemplateKey": "reinforcedLeatherGreaves"
+        },
+        {
+            "dropChance": 0.008,
+            "itemTemplateKey": "pearlChainNecklace"
+        },
+        {
+            "dropChance": 0.006,
+            "itemTemplateKey": "holyKronos"
+        },
+        {
+            "dropChance": 0.006,
+            "itemTemplateKey": "magusKronos"
+        }
+    ]
+}

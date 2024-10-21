@@ -1,17 +1,17 @@
 {
     "itemsForSale": [],
     "itemsToBuy": [],
-    "name": "Daithi ",
+    "name": "Daithi",
     "restockIntervalHrs": 1,
     "restockPCt": 100,
-    "scriptKeys": ["showdialog", "verbalShop", "defaultBehaviors"],
+    "scriptKeys": ["showdialog", "defaultBehaviors"],
     "scriptVars": {
         "showdialog": {
-            "dialogKey": "callough_initial"
+            "dialogKey": "keallach_initial"
         }
     },
-    "skillsToTeach": [],
-    "spellsToTeach": [],
+    "skillsToTeach": ["martialAwareness"],
+    "spellsToTeach": ["taunt"],
     "sprite": 94,
     "templateKey": "daithi"
 }

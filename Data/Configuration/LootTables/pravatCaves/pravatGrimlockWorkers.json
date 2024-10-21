@@ -1,0 +1,21 @@
+{
+    "key": "pravatGrimlockWorkers",
+    "lootDrops": [
+        {
+            "dropChance": 0.01,
+            "itemTemplateKey": "enchantWeaponScroll2nd"
+        },
+        {
+            "dropChance": 0.006,
+            "itemTemplateKey": "hybrasylBelt"
+        },
+        {
+            "dropChance": 0.009,
+            "itemTemplateKey": "shagreenBoots"
+        },
+        {
+            "dropChance": 0.008,
+            "itemTemplateKey": "bronzeShield"
+        }
+    ]
+}

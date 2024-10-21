@@ -10,8 +10,8 @@
             "dialogKey": "keallach_initial"
         }
     },
-    "skillsToTeach": ["powerStrike", "assault", "windBlade", "kick", "doublePunch", "highKick", "martialAwareness", "clobber"],
-    "spellsToTeach": ["taunt"],
+    "skillsToTeach": ["powerStrike", "assault", "windBlade", "kick", "doublePunch", "highKick", "clobber"],
+    "spellsToTeach": [],
     "sprite": 93,
     "templateKey": "keallach"
 }
