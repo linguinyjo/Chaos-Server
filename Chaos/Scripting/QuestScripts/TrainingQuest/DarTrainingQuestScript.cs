@@ -37,7 +37,7 @@ public class DarTrainingQuestScript:  DialogScriptBase
             };
             newDialog.Display(source);
             source.Inventory.RemoveQuantity("mold", 3);
-            source.GiveExperience(100);
+            source.GiveExperience(150);
             TrainingQuestHelper.IncrementQuestStage(source);
         }
         else

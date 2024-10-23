@@ -3,7 +3,7 @@
     "expReward": 113,
     "moveIntervalMs": 1500,
     "name": "Bee",
-    "lootTableKeys": ["ew4Bees","enchantWeaponScroll2nd"],
+    "lootTableKeys": ["ew4Bees"],
     "scriptKeys": ["default", "setMonsterElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,

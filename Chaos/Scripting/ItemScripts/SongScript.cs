@@ -28,6 +28,7 @@ public class SongScript : ConfigurableItemScriptBase,
     {
         SourceScript = this;
         Slot = Subject.Slot;
+        Item = Subject;
         ItemName = Subject.DisplayName;
         SimpleCache = simpleCache;
     }

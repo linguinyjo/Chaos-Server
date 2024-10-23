@@ -2,7 +2,7 @@
   "key": "ew3Mantis",
   "lootDrops": [
     {
-      "dropChance": 0.30,
+      "dropChance": 0.25,
       "itemTemplateKey": "mantisEye"
     },
     {

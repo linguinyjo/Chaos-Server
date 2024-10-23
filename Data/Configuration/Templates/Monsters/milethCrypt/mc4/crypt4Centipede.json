@@ -4,7 +4,7 @@
     "moveIntervalMs": 1500,
     "aggroRange": 10,
     "name": "Centipede",
-    "lootTableKeys": ["crypt4Centipedes", "enchantWeaponScroll2nd"],
+    "lootTableKeys": ["crypt4Centipedes"],
     "scriptKeys": ["default", "setMonsterElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,

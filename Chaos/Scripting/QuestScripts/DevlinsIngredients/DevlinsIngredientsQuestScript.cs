@@ -31,7 +31,7 @@ public class DevlinsIngredientsQuestScript:  DialogScriptBase
             HandleFetchRawWax(source);
         } else if (questStatus is DevlinsIngredientsQuestStatus.FetchRawHoney)
         {
-            HandleFetchRawHoney(source);
+            HandleFetchCentipedeGland(source);
         } else if (questStatus is DevlinsIngredientsQuestStatus.OneFinalTask)
         {
             HandleOneFinalTask(source);
@@ -53,8 +53,8 @@ public class DevlinsIngredientsQuestScript:  DialogScriptBase
             );
             newDialog.Display(source);
             source.Inventory.RemoveQuantityByTemplateKey("rawWax", 1);
-            source.TryGiveGold(250);
-            source.GiveExperience(250);
+            source.TryGiveGold(300);
+            source.GiveExperience(300);
             DevlinsIngredientsQuestHelper.IncrementQuestStage(source);
         }
         else
@@ -67,7 +67,7 @@ public class DevlinsIngredientsQuestScript:  DialogScriptBase
         }
     }
     
-    private void HandleFetchRawHoney(Aisling source)
+    private void HandleFetchCentipedeGland(Aisling source)
     {
         var hasWax = source.Inventory.HasCountByTemplateKey("centipedeGland", 1);
         if (hasWax)
@@ -79,7 +79,7 @@ public class DevlinsIngredientsQuestScript:  DialogScriptBase
             newDialog.Display(source);
             source.Inventory.RemoveQuantityByTemplateKey("centipedeGland", 1);
             source.TryGiveGold(500);
-            source.GiveExperience(250);
+            source.GiveExperience(300);
             DevlinsIngredientsQuestHelper.IncrementQuestStage(source);
         }
         else
@@ -112,17 +112,8 @@ public class DevlinsIngredientsQuestScript:  DialogScriptBase
             );
             newDialog.Display(source);
             source.Inventory.RemoveQuantityByTemplateKey("beeWing", 3);
-            source.TryGiveGold(2000);
-            source.GiveExperience(250);
-            DevlinsIngredientsQuestHelper.IncrementQuestStage(source);
-            var legendMark = new LegendMark(
-                "Brought Devlin her ingredients",
-                "devlinsIngredients", 
-                MarkIcon.Victory,
-                MarkColor.White,
-                1,
-                GameTime.Now);
-            source.Legend.AddOrAccumulate(legendMark);
+            DevlinsIngredientsQuestHelper.CompleteQuest(source);
+           
         }
         else
         {

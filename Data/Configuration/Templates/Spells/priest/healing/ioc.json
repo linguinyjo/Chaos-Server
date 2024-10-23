@@ -31,7 +31,7 @@
         "animationSpeed": 150
       },
       "healStatMultiplier": 2.5,
-      "manaCost": 150,
+      "manaCost": 100,
       "sound": 8,
       "baseHeal": 300,
       "healStat": "wis",

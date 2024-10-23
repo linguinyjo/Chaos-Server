@@ -3,7 +3,7 @@
     "category": "Greaves",
     "color": "Default",
     "isDyable": true,
-    "displaySprite": 238,
+    "displaySprite": 1856,
     "equipmentType": "Greaves",
     "gender": "Unisex",
     "maxDurability": 1000,
@@ -18,12 +18,12 @@
     "levelCircle": 2,
     "sellValue": 22500,
     "weight": 4,
-    "description": "Class: All\nLevel: 11\nAc -2",
+    "description": "Class: All\nLevel: 11\nAc -2\nWis 1",
     "name": "Leather Greaves",
-    "panelSprite": 238,
+    "panelSprite": 1856,
     "scriptKeys": ["Equipment"],
     "scriptVars": {
         "equipment": {}
     },
-    "templateKey": "leatherGreaves"
+    "templateKey": "reinforcedLeatherGreaves"
 }

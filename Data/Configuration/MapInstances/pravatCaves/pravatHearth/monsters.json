@@ -1,3 +1,32 @@
 [
-    
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 300,
+    "intervalVariancePct": 30,
+    "extraLootTableKeys": [],
+    "maxAmount": 10,
+    "maxPerSpawn": 10,
+    "monsterTemplateKey": "hearthGoblinSoldier"
+  },
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 300,
+    "intervalVariancePct": 30,
+    "extraLootTableKeys": [],
+    "maxAmount": 10,
+    "maxPerSpawn": 10,
+    "monsterTemplateKey": "hearthGoblinWarrior"
+  },
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 300,
+    "intervalVariancePct": 30,
+    "extraLootTableKeys": [],
+    "maxAmount": 10,
+    "maxPerSpawn": 10,
+    "monsterTemplateKey": "hearthGrimlockWarrior"
+  } 
 ]

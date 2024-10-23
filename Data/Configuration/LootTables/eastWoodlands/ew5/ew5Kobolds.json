@@ -38,7 +38,7 @@
       "itemTemplateKey": "battleSword"
     },
     {
-      "dropChance": 0.003,
+      "dropChance": 0.002,
       "itemTemplateKey": "templar"
     }
   ]

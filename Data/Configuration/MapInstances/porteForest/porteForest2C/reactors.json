@@ -1,0 +1,42 @@
+[
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "porteForestWaitingRoom:(48, 25)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(35, 69)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "porteForestWaitingRoom:(48, 24)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(36, 69)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "porteForestWaitingRoom:(48, 23)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(37, 69)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "porteForestWaitingRoom:(48, 23)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(38, 69)"
+    }
+]

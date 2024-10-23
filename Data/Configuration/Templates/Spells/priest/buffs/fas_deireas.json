@@ -7,7 +7,7 @@
       "con": 3,
       "dex": 3,
       "int": 6,
-      "str": 8,
+      "str": 5,
       "wis": 16
     },
     "prerequisiteSkills": [],
@@ -25,7 +25,7 @@
   "scriptVars": {
     "applyEffect": {
       "bodyAnimation": "priestCast",
-      "manaCost": 100,
+      "manaCost": 75,
       "animation": {
         "targetAnimation": 123,
         "animationSpeed": 150

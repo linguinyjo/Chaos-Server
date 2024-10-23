@@ -30,7 +30,7 @@
         "animationSpeed": 150
       },
       "sound": 30,
-      "manaCost": 100,
+      "manaCost": 75,
       "effectKey": "beagAcBuff",
       "filter": "aliveOnly"
     }

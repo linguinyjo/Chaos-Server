@@ -2,11 +2,11 @@
   "key": "crypt2Rats",
   "lootDrops": [
     {
-      "dropChance": 0.35,
+      "dropChance": 0.30,
       "itemTemplateKey": "mold"
     },
     {
-      "dropChance": 0.33,
+      "dropChance": 0.25,
       "itemTemplateKey": "rottenApple"
     }
   ]

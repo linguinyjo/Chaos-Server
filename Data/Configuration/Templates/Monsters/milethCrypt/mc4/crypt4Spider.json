@@ -3,7 +3,7 @@
     "expReward": 141,
     "moveIntervalMs": 1500,
     "name": "Spider",
-    "lootTableKeys": ["crypt4Spiders", "enchantWeaponScroll2nd"],
+    "lootTableKeys": ["crypt4Spiders"],
     "scriptKeys": ["default", "setMonsterElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,

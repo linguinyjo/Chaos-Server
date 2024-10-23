@@ -1,3 +1,32 @@
 [
-    
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 300,
+    "intervalVariancePct": 30,
+    "extraLootTableKeys": [],
+    "maxAmount": 10,
+    "maxPerSpawn": 12,
+    "monsterTemplateKey": "proleGroundGrimlockProle"
+  },
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 300,
+    "intervalVariancePct": 30,
+    "extraLootTableKeys": [],
+    "maxAmount": 10,
+    "maxPerSpawn": 10,
+    "monsterTemplateKey": "proleGroundGrimlockSoldier"
+  },
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 300,
+    "intervalVariancePct": 30,
+    "extraLootTableKeys": [],
+    "maxAmount": 8,
+    "maxPerSpawn": 8,
+    "monsterTemplateKey": "proleGroundGoblinSoldier"
+  }
 ]

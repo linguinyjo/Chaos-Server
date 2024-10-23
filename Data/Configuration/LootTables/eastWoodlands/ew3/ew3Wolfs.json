@@ -2,7 +2,7 @@
   "key": "ew3Wolfs",
   "lootDrops": [
     {
-      "dropChance": 0.20,
+      "dropChance": 0.15,
       "itemTemplateKey": "wolfSkin"
     },
     {

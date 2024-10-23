@@ -15,7 +15,7 @@
     "sprite": 8,
     "statSheet": {
         "level": 28,
-        "ac": 65,
+        "ac": 55,
         "maximumHp": 2950,
         "maximumMp": 1000,
         "physicalAttack": 67,

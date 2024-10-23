@@ -15,7 +15,7 @@
     "sprite": 10,
     "statSheet": {
         "level": 35,
-        "ac": 60,
+        "ac": 50,
         "maximumHp": 3450,
         "maximumMp": 1000,
         "physicalAttack": 75,
@@ -26,7 +26,7 @@
         "str": 30,
         "wis": 10
     },
-    "templateKey": "proleGroundGrimlockSolider",
+    "templateKey": "proleGroundGrimlockSoldier",
     "type": "Normal",
     "wanderIntervalMs": 2000
 }

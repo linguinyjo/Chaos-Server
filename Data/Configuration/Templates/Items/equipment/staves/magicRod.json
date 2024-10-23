@@ -1,0 +1,31 @@
+{
+    "buyCost": 15000,
+    "category": "Staff",
+    "color": "Forest",
+    "displaySprite": 24,
+    "equipmentType": "Weapon",
+    "gender": "Unisex",
+    "isModifiable": true,
+    "maxDurability": 7000,
+    "maxStacks": 1,
+    "level": 1,
+    "levelCircle": 2,
+    "class": "peasant",
+    "modifiers": {
+        "magicAttack": 18,
+        "maximumMp": 100
+    },
+    "sellValue": 7500,
+    "weight": 2,
+    "description": "Class: Peasant\nLevel: 1\nMagic Attack 18, Mana 100",
+    "name": "Holy Kronos",
+    "panelSprite": 183,
+    "scriptKeys": ["Equipment", "EquipStaff"],
+    "scriptVars": {
+        "equipment": {},
+        "equipStaff": {
+            "spellCategory": "Heal"
+        }
+    },
+    "templateKey": "holyKronos"
+}

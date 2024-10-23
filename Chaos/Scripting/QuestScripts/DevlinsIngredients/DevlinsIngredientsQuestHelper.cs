@@ -1,5 +1,7 @@
 using Chaos.Common.Definitions;
+using Chaos.Models.Legend;
 using Chaos.Models.World;
+using Chaos.Time;
 
 namespace Chaos.Scripting.QuestScripts.DevlinsIngredients;
 
@@ -24,7 +26,7 @@ public static class DevlinsIngredientsQuestHelper
             return;
         
         // Increment to the next stage in the enum
-        DevlinsIngredientsQuestStatus nextStatus = questStatus + 1;
+        var nextStatus = questStatus + 1;
 
         // Update the player's quest status
         player.Trackers.Enums.Set(nextStatus);
@@ -33,6 +35,22 @@ public static class DevlinsIngredientsQuestHelper
     public static void StartQuest(Aisling player)
     {
         player.Trackers.Enums.Set(DevlinsIngredientsQuestStatus.FetchRawWax);
+    }
+
+    public static void CompleteQuest(Aisling source)
+    {
+        source.TryGiveGold(2000);
+        source.GiveExperience(750);
+        source.Trackers.Enums.Set(DevlinsIngredientsQuestStatus.Completed);
+        var legendMark = new LegendMark(
+            "Brought Devlin her ingredients",
+            "devlinsIngredients", 
+            MarkIcon.Victory,
+            MarkColor.White,
+            1,
+            GameTime.Now);
+        source.Legend.AddUnique(legendMark);
+        source.SendQuestCompletedAnimation();
     }
 }
 
@@ -43,5 +61,5 @@ public enum DevlinsIngredientsQuestStatus
     FetchRawHoney = 2,
     OneFinalTask = 3,
     ToShinewood = 4,
-    Completed = 8
+    Completed = 5
 }

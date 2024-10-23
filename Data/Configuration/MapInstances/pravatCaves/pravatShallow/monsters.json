@@ -1,3 +1,32 @@
 [
-    
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 300,
+    "intervalVariancePct": 30,
+    "extraLootTableKeys": [],
+    "maxAmount": 8,
+    "maxPerSpawn": 8,
+    "monsterTemplateKey": "shallowGrimlockProle"
+  },
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 300,
+    "intervalVariancePct": 30,
+    "extraLootTableKeys": [],
+    "maxAmount": 8,
+    "maxPerSpawn": 8,
+    "monsterTemplateKey": "shallowGrimlockWorker"
+  },
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 300,
+    "intervalVariancePct": 30,
+    "extraLootTableKeys": [],
+    "maxAmount": 6,
+    "maxPerSpawn": 6,
+    "monsterTemplateKey": "shallowGrimlockSoldier"
+  }
 ]

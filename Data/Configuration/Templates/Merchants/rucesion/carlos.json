@@ -37,7 +37,17 @@
             "stock": 100
         }
     ],
-    "itemsToBuy": ["shirt","woodenShield", "stick", "boots", "greyBoots", "leatherTunic", "jupe", "leatherGauntlet", "leatherGreaves", "smallSpinelRing", "smallEmeraldRing", "greyBoots", "seaBelt", "seaNecklace", "fireNecklace", "windNecklace", "seaNecklace", "berylEarrings"],
+    "itemsToBuy": [
+        "shirt",
+        "woodenShield", "leatherShield", "bronzeShield",
+        "boots", "greyBoots", "shagreenBoots",
+        "leatherTunic", "jupe", "dobok", "culotte",
+        "leatherGauntlet", "leatherBracer", "leatherEmeraldGauntlet","leatherHeartstoneGauntlet", "leatherRubyGauntlet", "leatherSapphireGauntlet",
+        "leatherGreaves", "reinforcedLeatherGreaves",
+        "windBelt", "fireBelt", "earthBelt", "seaBelt",
+        "boneNecklace", "earthNecklace", "fireNecklace", "pearlChainNecklace", "phoenixNecklace", "seaNecklace", "windNecklace",
+        "smallSpinelRing", "smallEmeraldRing", "emeraldRing", "spinelRing", "redJadeRing", "amethystRing",
+        "silverEarrings", "goldEarrings", "rubyEarrings", "coralEarrings", "berylEarrings"],
     "name": "Carlos",
     "restockIntervalHrs": 1,
     "restockPCt": 100,

@@ -2,7 +2,7 @@
   "key": "crypt2Centipedes",
   "lootDrops": [
     {
-      "dropChance": 0.35,
+      "dropChance": 0.25,
       "itemTemplateKey": "centipedeGland"
     },
     {

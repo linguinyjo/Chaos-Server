@@ -14,7 +14,7 @@
     "modifiers": {
         "magicAttack": 42,
         "wis": 2,
-        "maximumMp": 200
+        "maximumMp": 250
     },
     "sellValue": 50000,
     "weight": 3,

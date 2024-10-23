@@ -19,7 +19,7 @@
             "baseDamage": 3,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "usePAtk": true,
-            "fistBonus": 15
+            "fistBonus": 25
         }
     },
     "templateKey": "monkAssail"

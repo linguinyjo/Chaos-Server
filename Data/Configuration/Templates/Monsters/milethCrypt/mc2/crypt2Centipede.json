@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 35,
+    "expReward": 42,
     "moveIntervalMs": 1500,
     "aggroRange": 10,
     "name": "Centipede",

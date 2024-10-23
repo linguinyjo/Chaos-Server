@@ -4,7 +4,7 @@
     "aggroRange": 10,
     "moveIntervalMs": 1500,
     "name": "Bat",
-    "lootTableKeys": ["crypt4Bats","enchantWeaponScroll2nd"],
+    "lootTableKeys": ["crypt4Bats"],
     "scriptKeys": ["default", "setMonsterElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
