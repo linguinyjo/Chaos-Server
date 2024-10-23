@@ -47,6 +47,8 @@ public struct DamageAbilityComponent : IComponent
                 options.SourceScript,
                 damage,
                 options.Element);
+            
+            ApplyDurabilityLoss(target);
 
             if (sleepEffect != null) target.Effects.Dispel(sleepEffect);
         }
@@ -97,6 +99,28 @@ public struct DamageAbilityComponent : IComponent
         finalDamage = Convert.ToInt32(finalDamage * dmgMultiplier);
 
         return finalDamage;
+    }
+
+    private static void ApplyDurabilityLoss(Creature target)
+    {
+        if (target is not Aisling aisling) return;
+        foreach (var item in aisling.Equipment)
+        {
+            if (item.Template.MaxDurability == null) continue;
+
+            item.CurrentDurability -= 1;
+            if (item.CurrentDurability <= 0)
+            {
+                aisling.Equipment.Remove(item.Slot);
+                aisling.SendOrangeBarMessage($"Your {item.Template.Name} has been destroyed");
+                continue;
+            }
+            var currentPercentage = (item.CurrentDurability / (float)item.Template.MaxDurability) * 100;
+
+            if (!(currentPercentage <= 10) || item.HasShownLowDurabilityWarning) continue;
+            item.HasShownLowDurabilityWarning = true;
+            aisling.SendOrangeBarMessage($"Warning: {item.Template.Name} has less than 10% durability remaining!");
+        }
     }
     
     public interface IDamageComponentOptions

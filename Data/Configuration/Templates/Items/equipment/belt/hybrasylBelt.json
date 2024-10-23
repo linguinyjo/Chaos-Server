@@ -6,7 +6,7 @@
     "equipmentType": "Belt",
     "gender": "Unisex",
     "isModifiable": false,
-    "maxDurability": 5000,
+    "maxDurability": 10000,
     "maxStacks": 1,
     "modifiers": {
         "str": 2,

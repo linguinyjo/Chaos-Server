@@ -28,6 +28,7 @@ public sealed class Item : PanelEntityBase, IScripted<IItemScript>, IDialogSourc
 
     public int Count { get; set; }
     public int? CurrentDurability { get; set; }
+    public bool HasShownLowDurabilityWarning { get; set; } = false;
     public string? CustomDisplayName { get; set; }
 
     public string? CustomNameOverride

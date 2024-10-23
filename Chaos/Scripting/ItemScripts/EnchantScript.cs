@@ -33,9 +33,8 @@ public class EnchantScript : ConfigurableItemScriptBase,
     {
         new ComponentExecutor(source, source).WithOptions(this)
             .ExecuteAndCheck<GenericAbilityComponent<Aisling>>()
-            ?.Execute<EnchantWeaponComponent>()
-            .Execute<ConsumableAbilityComponent>();
-        Console.WriteLine(Item);
+            ?.ExecuteAndCheck<EnchantWeaponComponent>()
+            ?.Execute<ConsumableAbilityComponent>();
     }
 
 

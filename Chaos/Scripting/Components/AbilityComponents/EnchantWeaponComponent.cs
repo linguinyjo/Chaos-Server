@@ -8,36 +8,35 @@ using Chaos.Scripting.ItemScripts.Enchantments;
 
 namespace Chaos.Scripting.Components.AbilityComponents;
 
-public struct EnchantWeaponComponent : IComponent
+public struct EnchantWeaponComponent : IConditionalComponent
 {
     /// <inheritdoc />
-    public void Execute(ActivationContext context, ComponentVars vars)
+    public bool Execute(ActivationContext context, ComponentVars vars)
     {
         var options = vars.GetOptions<IEnchantWeaponComponentOptions>();
         var item = context.SourceAisling?.Inventory[1];
-        if (item == null) return;
-        if (item.Template.EquipmentType != EquipmentType.Weapon)
+        if (item == null) return false;
+        
+        if (item.LevelCircle != options.LevelCircle || item.Template.EquipmentType != EquipmentType.Weapon)
         {
-            context.SourceAisling?.SendOrangeBarMessage($"This scroll can only be used on weapons");
-            return;
-        }
-        if (item.LevelCircle != options.LevelCircle)
-        {
-            context.SourceAisling?.SendOrangeBarMessage($"This scroll can only enchant items of Circle {options.LevelCircle}");
-            return;
+            context.SourceAisling?.SendOrangeBarMessage($"This scroll can only enchant weapons of Circle {options.LevelCircle}");
+            return false;
         }
         var shouldEnchant = RunEnchantCalculation(item);
         if (shouldEnchant)
         {
             item.AddScript<EnchantWeaponScript>();
-            context.SourceAisling?.Inventory.Update(1);
+            context.SourceAisling?.Inventory.Update(item.Slot);
             context.SourceAisling?.Client.SendSound(19, false);
+            context.SourceAisling?.SendOrangeBarMessage($"Successfully enchanted Your {item.Template.Name} to +{item.Enchant}");
         }
         else
         {
-            context.SourceAisling?.Inventory.Remove(1);
+            context.SourceAisling?.Inventory.Remove(item.Slot);
             context.SourceAisling?.Client.SendSound(10, false);
+            context.SourceAisling?.SendOrangeBarMessage($"Your {item.Template.Name} has smashed into a thousand pieces");
         }
+        return true;
     }
 
     /// Safe enchant up to 3

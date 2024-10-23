@@ -6,7 +6,7 @@
     "displaySprite": 1804,
     "equipmentType": "Gauntlet",
     "gender": "Unisex",
-    "maxDurability": 1000,
+    "maxDurability": 5000,
     "maxStacks": 1,
     "modifiers": {
         "ac": -1,
