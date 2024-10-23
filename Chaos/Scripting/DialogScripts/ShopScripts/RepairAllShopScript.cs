@@ -27,7 +27,6 @@ public class RepairAllShopScript : DialogScriptBase
       
         switch (Subject.Template.TemplateKey.ToLower())
         {
-            
             case "generic_repairallshop_initial":
             {
                 OnDisplayingInitial(source);
@@ -44,7 +43,6 @@ public class RepairAllShopScript : DialogScriptBase
 
     private void OnDisplayingAccepted(Aisling source)
     {
-        
         var repairItemResult = ComplexActionHelper.RepairAllItems(source);
 
         switch (repairItemResult)
