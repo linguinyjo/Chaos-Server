@@ -1,0 +1,19 @@
+{
+  "options": [
+    {
+      "dialogKey": "generic_repairAllshop_accepted",
+      "optionText": "Yes"
+    },
+    {
+      "dialogKey": "generic_repairAllshop_declined",
+      "optionText": "No"
+    }
+  ],
+  "scriptKeys": [
+    "repairAllShop"
+  ],
+  "scriptVars": {},
+  "templateKey": "generic_repairAllshop_initial",
+  "text": "You want to repair all your items? That's going to cost you {Amount} gold, does that sound fair?",
+  "type": "Menu"
+}

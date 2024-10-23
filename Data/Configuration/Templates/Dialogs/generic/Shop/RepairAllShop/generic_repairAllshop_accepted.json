@@ -1,0 +1,12 @@
+{
+  "contextual": true,
+  "nextDialogKey": "close",
+  "options": [],
+  "scriptKeys": [
+    "repairAllShop"
+  ],
+  "scriptVars": {},
+  "templateKey": "generic_repairAllshop_accepted",
+  "text": "skip",
+  "type": "Normal"
+}

@@ -8,13 +8,13 @@ using Chaos.Utilities;
 
 namespace Chaos.Scripting.DialogScripts.ShopScripts;
 
-public class RepairShopScript : DialogScriptBase
+public class RepairAllShopScript : DialogScriptBase
 {
     private readonly ILogger<RepairShopScript> Logger;
     private readonly ISellShopSource SellShopSource;
 
     /// <inheritdoc />
-    public RepairShopScript(Dialog subject, ILogger<RepairShopScript> logger)
+    public RepairAllShopScript(Dialog subject, ILogger<RepairShopScript> logger)
         : base(subject)
     {
         Logger = logger;
@@ -24,24 +24,19 @@ public class RepairShopScript : DialogScriptBase
     /// <inheritdoc />
     public override void OnDisplaying(Aisling source)
     {
+      
         switch (Subject.Template.TemplateKey.ToLower())
         {
-            case "generic_repairshop_initial":
+            
+            case "generic_repairallshop_initial":
             {
                 OnDisplayingInitial(source);
-
                 break;
             }
-            case "generic_repairshop_confirmation":
-            {
-                OnDisplayingConfirmation(source);
-
-                break;
-            }
-            case "generic_repairshop_accepted":
+           
+            case "generic_repairallshop_accepted":
             {
                 OnDisplayingAccepted(source);
-
                 break;
             }
         }
@@ -49,17 +44,8 @@ public class RepairShopScript : DialogScriptBase
 
     private void OnDisplayingAccepted(Aisling source)
     {
-        if (!TryFetchArgs<byte>(out var slot)
-            || !source.Inventory.TryGetObject(slot, out var item))
-        {
-            Subject.ReplyToUnknownInput(source);
-
-            return;
-        }
-
-        if (item.Template.MaxDurability == null || item.CurrentDurability == null) return;
         
-        var repairItemResult = ComplexActionHelper.RepairItem(source, slot);
+        var repairItemResult = ComplexActionHelper.RepairAllItems(source);
 
         switch (repairItemResult)
         {
@@ -72,11 +58,9 @@ public class RepairShopScript : DialogScriptBase
                       .WithProperty(Subject)
                       .WithProperty(Subject.DialogSource)
                       .WithProperty(source)
-                      .WithProperty(item)
                       .LogInformation(
-                          "Aisling {@AislingName} repaired {@ItemName} to merchant {@MerchantName}",
+                          "Aisling {@AislingName} repaired all items to merchant {@MerchantName}",
                           source.Name,
-                          item.DisplayName,
                           SellShopSource.Name);
 
                 return;
@@ -92,27 +76,11 @@ public class RepairShopScript : DialogScriptBase
                 throw new ArgumentOutOfRangeException();
         }
     }
-
-    private void OnDisplayingConfirmation(Aisling source)
-    {
-        if (!TryFetchArgs<byte>(out var slot)
-            || !source.Inventory.TryGetObject(slot, out var item))
-        {
-            Subject.ReplyToUnknownInput(source);
-
-            return;
-        }
-
-        var repairCost = ComplexActionHelper.CalculateItemRepairCost(item);
-        if (repairCost == null) return;
-        Subject.InjectTextParameters(item.DisplayName, repairCost);
-    }
-
+    
     private void OnDisplayingInitial(Aisling source)
     {
-        Subject.Slots = source.Inventory
-            .Where(item => item.CurrentDurability < item.Template.MaxDurability)
-            .Select(item => item.Slot)
-            .ToList();
+        var repairCost = ComplexActionHelper.CalculateAllRepairCost(source);
+        if (repairCost == null) return;
+        Subject.InjectTextParameters(repairCost);
     }
 }

@@ -310,6 +310,40 @@ public static class ComplexActionHelper
             1 - ((decimal)item.CurrentDurability.Value / item.Template.MaxDurability.Value)) * 0.1m));
     }
     
+    public static int? CalculateAllRepairCost(Aisling source)
+    {
+        var damagedInventoryItems = source.Inventory
+            .Where(item => item.CurrentDurability < item.Template.MaxDurability);
+        var damagedEquipment = source.Equipment
+            .Where(item => item.CurrentDurability < item.Template.MaxDurability);
+        return damagedInventoryItems
+            .Concat(damagedEquipment)
+            .Select(ComplexActionHelper.CalculateItemRepairCost)
+            .Sum(itemRepairCost => itemRepairCost ?? 0);
+    }
+
+    public static RepairItemResult RepairAllItems(Aisling source)
+    {
+        ArgumentNullException.ThrowIfNull(source);
+        var totalRepairValue = CalculateAllRepairCost(source);
+        if (totalRepairValue == null) return RepairItemResult.BadInput;
+        
+        var takeGoldResult = source.TryTakeGold(totalRepairValue.Value);
+        if (!takeGoldResult) return RepairItemResult.NotEnoughGold;
+        
+        source.Inventory
+            .Where(item => item.CurrentDurability < item.Template.MaxDurability)
+            .ToList().ForEach(item => 
+                source.Inventory.Update(item.Slot, lItem => lItem.CurrentDurability = lItem.Template.MaxDurability));
+        
+        source.Equipment
+            .Where(item => item.CurrentDurability < item.Template.MaxDurability)
+            .ToList().ForEach(item => 
+                source.Equipment.Update(item.Slot, lItem => lItem.CurrentDurability = lItem.Template.MaxDurability));
+
+        return RepairItemResult.Success;
+    }
+
     public static RepairItemResult RepairItem(
         Aisling source,
         byte slot)

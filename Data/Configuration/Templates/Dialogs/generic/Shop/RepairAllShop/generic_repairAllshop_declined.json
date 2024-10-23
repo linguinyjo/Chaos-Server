@@ -1,0 +1,10 @@
+{
+  "nextDialogKey": "generic_repairAllshop_declined",
+  "options": [],
+  "prevDialogKey": "generic_repairAllshop_confirmation",
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "generic_repairAllshop_declined",
+  "text": "No deal then",
+  "type": "Normal"
+}

@@ -11,6 +11,10 @@
     {
       "dialogKey": "generic_repairShop_initial",
       "optionText": "Repair Item"
+    },
+    {
+      "dialogKey": "generic_repairAllShop_initial",
+      "optionText": "Repair All"
     }
   ],
   "scriptKeys": ["torrance"],
