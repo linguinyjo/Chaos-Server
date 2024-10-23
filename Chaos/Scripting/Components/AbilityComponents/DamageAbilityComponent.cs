@@ -48,6 +48,7 @@ public struct DamageAbilityComponent : IComponent
                 damage,
                 options.Element);
             
+            // TODO this probably belongs in its own functional script
             ApplyDurabilityLoss(target);
 
             if (sleepEffect != null) target.Effects.Dispel(sleepEffect);

@@ -7,6 +7,14 @@
     {
       "dialogKey": "generic_sellshop_initial",
       "optionText": "Sell"
+    },
+    {
+      "dialogKey": "generic_sellshop_initial",
+      "optionText": "Repair Item"
+    },
+    {
+      "dialogKey": "generic_sellshop_initial",
+      "optionText": "Repair All"
     }
   ],
   "scriptKeys": [],

@@ -68,6 +68,13 @@ public static class ComplexActionHelper
         BadInput,
         ItemDamaged
     }
+    
+    public enum RepairItemResult
+    {
+        Success,
+        BadInput,
+        NotEnoughGold
+    }
 
     public enum WithdrawGoldResult
     {
@@ -296,6 +303,38 @@ public static class ComplexActionHelper
             items.Select(item => (item.DisplayName, item.Count))
                  .ToArray());
 
+    public static int? CalculateItemRepairCost(Item item)
+    {
+        if(item.CurrentDurability == null || item.Template.MaxDurability == null) return null;
+        return (int)Math.Round((item.Template.BuyCost * (
+            1 - ((decimal)item.CurrentDurability.Value / item.Template.MaxDurability.Value)) * 0.1m));
+    }
+    
+    public static RepairItemResult RepairItem(
+        Aisling source,
+        byte slot)
+    {
+        ArgumentNullException.ThrowIfNull(source);
+
+        var slotItem = source.Inventory[slot];
+        
+        if (slotItem == null)
+            return RepairItemResult.BadInput;
+        
+        source.Inventory.TryGetObject(slot, out var item);
+
+        if (item?.Template.MaxDurability == null || item.CurrentDurability == null) return RepairItemResult.BadInput;;
+
+        var totalRepairValue = CalculateItemRepairCost(item);
+        if (totalRepairValue == null) return RepairItemResult.BadInput;
+        
+        var takeGoldResult = source.TryTakeGold(totalRepairValue.Value);
+        if (!takeGoldResult) return RepairItemResult.NotEnoughGold;
+        
+        source.Inventory.Update(item.Slot, lItem => lItem.CurrentDurability = item.Template.MaxDurability);
+        return RepairItemResult.Success;
+    }
+    
     public static SellItemResult SellItem(
         Aisling source,
         byte slot,
