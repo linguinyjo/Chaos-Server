@@ -16,14 +16,14 @@
     "statSheet": {
         "level": 38,
         "ac": 45,
-        "maximumHp": 3800,
+        "maximumHp": 3900,
         "maximumMp": 1000,
         "physicalAttack": 75,
         "magicAttack": 80,
         "con": 12,
         "dex": 12,
         "int": 20,
-        "str": 20,
+        "str": 36,
         "wis": 12
     },
     "templateKey": "hearthGoblinSoldier",

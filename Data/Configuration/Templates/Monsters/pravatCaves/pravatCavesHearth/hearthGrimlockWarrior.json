@@ -1,7 +1,7 @@
 {
     "assailIntervalMs": 1500,
     "expReward": 745,
-    "moveIntervalMs": 1500,
+    "moveIntervalMs": 1300,
     "maxGoldDrop": 1200,
     "minGoldDrop": 700,
     "name": "Grimlock Warrior",
@@ -16,17 +16,17 @@
     "statSheet": {
         "level": 40,
         "ac": 42,
-        "maximumHp": 4050,
+        "maximumHp": 4250,
         "maximumMp": 1000,
         "physicalAttack": 80,
         "magicAttack": 80,
         "con": 12,
         "dex": 12,
         "int": 20,
-        "str": 28,
+        "str": 42,
         "wis": 12
     },
     "templateKey": "hearthGrimlockWarrior",
     "type": "Normal",
-    "wanderIntervalMs": 2000
+    "wanderIntervalMs": 1500
 }
