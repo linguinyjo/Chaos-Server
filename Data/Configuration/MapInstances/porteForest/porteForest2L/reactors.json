@@ -7,7 +7,7 @@
             }
         },
         "shouldBlockPathfinding": false,
-        "source": "(38, 69)", 
+        "source": "(38, 69)"
     },
     {
         "scriptKeys": ["warp"],
@@ -17,7 +17,7 @@
             }
         },
         "shouldBlockPathfinding": false,
-        "source": "(39, 69)",
+        "source": "(39, 69)"
     },
     {
         "scriptKeys": ["warp"],
@@ -27,6 +27,102 @@
             }
         },
         "shouldBlockPathfinding": false,
-        "source": "(40, 69)",
+        "source": "(40, 69)"
+    },
+
+    
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "porteForest3L:(24, 48)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(30, 0)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "porteForest3L:(25, 48)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(31, 0)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "porteForest3L:(26, 48)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(32, 0)"
+    },
+
+    
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "porteForest2C:(1, 48)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(69, 18)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "porteForest2C:(1, 47)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(69, 17)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "porteForest2C:(1, 47)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(69, 16)"
+    },
+
+    
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "porteForest3C:(38, 68)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(26, 0)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "porteForest3C:(39, 68)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(27, 0)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "porteForest3C:(39, 68)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(28, 0)"
     }
 ]

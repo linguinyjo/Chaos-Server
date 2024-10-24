@@ -68,7 +68,10 @@ public sealed record WorldOptions : ServerOptions, IWorldOptions
     public required int MaxItemsPerSecond { get; init; }
 
     /// <inheritdoc />
-    public required int MaxLevel { get; init; }
+    public required int BaseClassMaxLevel { get; init; }
+    
+    /// <inheritdoc />
+    public required int AdvancedClassMaxLevel { get; init; }
 
     /// <inheritdoc />
     public required int MaxSkillsPerSecond { get; init; }

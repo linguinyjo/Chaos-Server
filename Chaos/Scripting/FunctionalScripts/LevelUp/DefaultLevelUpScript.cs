@@ -32,7 +32,12 @@ public class DefaultLevelUpScript : ScriptBase, ILevelUpScript
         aisling.UserStatSheet.AddLevel();
         aisling.UserStatSheet.GivePoints(2);
 
-        if (aisling.UserStatSheet.Level < WorldOptions.Instance.MaxLevel)
+        var maxLevel = aisling.UserStatSheet.AdvClass != AdvClass.None 
+            ? WorldOptions.Instance.AdvancedClassMaxLevel 
+            : WorldOptions.Instance.BaseClassMaxLevel;
+        
+        // aisling.UserStatSheet.AdvClass
+        if (aisling.UserStatSheet.Level < maxLevel)
         {
             var newTnl = LevelUpFormula.CalculateTnl(aisling);
             aisling.UserStatSheet.AddTnl(newTnl);

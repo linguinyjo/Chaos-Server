@@ -40,7 +40,18 @@ public class DefaultLevelUpFormula : ILevelUpFormula
     /// <inheritdoc />
     public virtual int CalculateTnl(Aisling aisling)
     {
-        return Convert.ToInt32((Math.Pow(aisling.UserStatSheet.Level, 2) * 200) / 6);
+        var level = aisling.UserStatSheet.Level;
+
+        double divisionFactor = level switch
+        {
+            >= 1 and <= 21 => 6,
+            >= 22 and <= 41 => 5,
+            >= 42 and <= 61 => 4,
+            >= 62 and <= 81 => 3,
+            >= 82 and <= 99 => 2,
+            _ => 6
+        };
+        return Convert.ToInt32((Math.Pow(level, 2) * 200) / divisionFactor);    
     } 
     
     private static (int maxHpGain, int maxMpGain) GetMaxHpMpGain(int level)

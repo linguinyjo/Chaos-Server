@@ -60,9 +60,14 @@ public class DefaultExperienceDistributionScript(ILogger<DefaultExperienceDistri
         Logger.WithTopics(Topics.Entities.Aisling, Topics.Entities.Experience, Topics.Actions.Add)
               .WithProperty(aisling)
               .LogInformation("Aisling {@AislingName} has gained {Amount:N0} experience", aisling.Name, amount);
-
+       
+        var maxLevel = aisling.UserStatSheet.AdvClass != AdvClass.None 
+            ? WorldOptions.Instance.AdvancedClassMaxLevel 
+            : WorldOptions.Instance.BaseClassMaxLevel;
+        
         while (amount > 0)
-            if (aisling.UserStatSheet.Level >= WorldOptions.Instance.MaxLevel)
+           
+            if (aisling.UserStatSheet.Level >= maxLevel)
             {
                 aisling.UserStatSheet.AddTotalExp(amount);
                 amount = 0;

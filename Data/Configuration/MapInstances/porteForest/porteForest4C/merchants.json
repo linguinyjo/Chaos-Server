@@ -1,16 +1,3 @@
 [
-  {
-    "blackList": [],
-    "direction": "Down",
-    "extraScriptKeys": [],
-    "merchantTemplateKey": "phailin",
-    "spawnPoint": "(7, 1)"
-  },
-  {
-    "blackList": [],
-    "direction": "Down",
-    "extraScriptKeys": [],
-    "merchantTemplateKey": "pricha",
-    "spawnPoint": "(3, 3)"
-  }
+ 
 ]

@@ -28,5 +28,37 @@
         },
         "shouldBlockPathfinding": false,
         "source": "(0, 35)"
+    },
+
+
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "porteForest2R:(24, 48)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(30, 0)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "porteForest2R:(25, 48)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(31, 0)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "porteForest2R:(26, 48)"
+            }
+        },
+        "shouldBlockPathfinding": false,
+        "source": "(32, 0)"
     }
 ]

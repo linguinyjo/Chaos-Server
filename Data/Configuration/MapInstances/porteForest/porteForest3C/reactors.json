@@ -1,84 +1,108 @@
 [
-    {
-        "scriptKeys": ["warp"],
-        "scriptVars": {
-            "warp": {
-                "destination": "pravatShallow:(48, 34)"
-            }
-        },
-        "shouldBlockPathfinding": true,
-        "source": "(11,15)"
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "porteForest2C:(27, 1)"
+      }
     },
-    {
-        "scriptKeys": ["warp"],
-        "scriptVars": {
-            "warp": {
-                "destination": "pravatShallow:(48, 33)"
-            }
-        },
-        "shouldBlockPathfinding": true,
-        "source": "(10, 15)"
-    },
-    {
-        "scriptKeys": ["warp"],
-        "scriptVars": {
-            "warp": {
-                "destination": "pravatShallow:(48, 32)"
-            }
-        },
-        "shouldBlockPathfinding": true,
-        "source": "(9, 15)"
-    },
-    {
-        "scriptKeys": ["warp"],
-        "scriptVars": {
-            "warp": {
-                "destination": "pravatShallow:(48, 31)"
-            }
-        },
-        "shouldBlockPathfinding": true,
-        "source": "(8, 15)"
-    },
+    "shouldBlockPathfinding": true,
+    "source": "(22, 49)"
+  },
 
 
-    {
-        "scriptKeys": ["warp"],
-        "scriptVars": {
-            "warp": {
-                "destination": "pravatShallow:(48, 14)"
-            }
-        },
-        "shouldBlockPathfinding": true,
-        "source": "(0,12)"
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "porteForest3L:(48, 33)"
+      }
     },
-    {
-        "scriptKeys": ["warp"],
-        "scriptVars": {
-            "warp": {
-                "destination": "pravatShallow:(48, 13)"
-            }
-        },
-        "shouldBlockPathfinding": true,
-        "source": "(0, 11)"
+    "shouldBlockPathfinding": true,
+    "source": "(0, 48)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "porteForest3L:(48, 32)"
+      }
     },
-    {
-        "scriptKeys": ["warp"],
-        "scriptVars": {
-            "warp": {
-                "destination": "pravatShallow:(48, 12)"
-            }
-        },
-        "shouldBlockPathfinding": true,
-        "source": "(0, 10)"
+    "shouldBlockPathfinding": true,
+    "source": "(0, 47)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "porteForest3L:(48, 31)"
+      }
     },
-    {
-        "scriptKeys": ["warp"],
-        "scriptVars": {
-            "warp": {
-                "destination": "pravatShallow:(48, 11)"
-            }
-        },
-        "shouldBlockPathfinding": true,
-        "source": "(0, 9)"
-    }
+    "shouldBlockPathfinding": true,
+    "source": "(0, 46)"
+  },
+
+
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "porteForest3R:(1, 19)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(49, 31)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "porteForest3R:(1, 18)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(49, 30)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "porteForest3R:(1, 17)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(49, 29)"
+  },
+
+
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "porteForest4C:(22, 48)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(8, 0)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "porteForest4C:(22, 48)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(9, 0)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "porteForest4C:(22, 48)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(10, 0)"
+  }
 ]

@@ -147,11 +147,17 @@ public interface IWorldOptions
     int MaxItemsPerSecond { get; }
 
     /// <summary>
-    ///     This is the level cap for players. Level formulas can be changed, but with the default level formula, if you reach
-    ///     this level you will stop gaining experience.
+    ///     This is the level cap for players with a base class only. Level formulas can be changed, but with the default
+    ///     level formula, if you reach this level you will stop gaining experience.
     /// </summary>
-    int MaxLevel { get; }
-
+    int BaseClassMaxLevel { get; }
+    
+    /// <summary>
+    ///     This is the level cap for players with an advanced class. Level formulas can be changed, but with the default
+    ///     level formula, if you reach this level you will stop gaining experience.
+    /// </summary>
+    int AdvancedClassMaxLevel { get; }
+    
     /// <summary>
     ///     The maximum number of skills a player can use in a second
     /// </summary>
