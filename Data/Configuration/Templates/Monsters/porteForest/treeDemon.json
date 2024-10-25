@@ -1,9 +1,10 @@
 {
     "assailIntervalMs": 1500,
     "expReward": 307,
+    "aggroRange": 10,
     "moveIntervalMs": 1500,
     "name": "Tree Demon",
-    "lootTableKeys": [],
+    "lootTableKeys": ["treeDemons"],
     "scriptKeys": ["default", "setMonsterElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,

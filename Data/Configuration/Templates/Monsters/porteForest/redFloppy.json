@@ -1,6 +1,8 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 246,
+    "expReward": 201,
+    "maxGoldDrop": 350,
+    "minGoldDrop": 200,
     "moveIntervalMs": 1500,
     "name": "Red Floppy",
     "lootTableKeys": [],
@@ -13,8 +15,8 @@
     "sprite": 259,
     "statSheet": {
         "level": 25,
-        "ac": 62,
-        "maximumHp": 2100,
+        "ac": 68,
+        "maximumHp": 1900,
         "maximumMp": 1000,
         "physicalAttack": 38,
         "magicAttack": 50,

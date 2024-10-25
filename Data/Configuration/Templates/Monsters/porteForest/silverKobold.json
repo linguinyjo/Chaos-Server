@@ -1,9 +1,12 @@
 {
     "assailIntervalMs": 1500,
     "expReward": 465,
+    "aggroRange": 10,
     "moveIntervalMs": 1500,
     "name": "Silver Kobold",
-    "lootTableKeys": [],
+    "maxGoldDrop": 1000,
+    "minGoldDrop": 750,
+    "lootTableKeys": ["silverKobolds"],
     "scriptKeys": ["default", "setMonsterElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,

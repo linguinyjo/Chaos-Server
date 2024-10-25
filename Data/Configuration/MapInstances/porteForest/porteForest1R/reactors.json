@@ -6,7 +6,7 @@
                 "destination": "porteForestWaitingRoom:(48, 25)"
             }
         },
-        "shouldBlockPathfinding": false,
+        "shouldBlockPathfinding": true,
         "source": "(0, 37)"
     },
     {
@@ -16,7 +16,7 @@
                 "destination": "porteForestWaitingRoom:(48, 24)"
             }
         },
-        "shouldBlockPathfinding": false,
+        "shouldBlockPathfinding": true,
         "source": "(0, 36)"
     },
     {
@@ -26,7 +26,7 @@
                 "destination": "porteForestWaitingRoom:(48, 23)"
             }
         },
-        "shouldBlockPathfinding": false,
+        "shouldBlockPathfinding": true,
         "source": "(0, 35)"
     },
 
@@ -38,7 +38,7 @@
                 "destination": "porteForest2R:(24, 48)"
             }
         },
-        "shouldBlockPathfinding": false,
+        "shouldBlockPathfinding": true,
         "source": "(30, 0)"
     },
     {
@@ -48,7 +48,7 @@
                 "destination": "porteForest2R:(25, 48)"
             }
         },
-        "shouldBlockPathfinding": false,
+        "shouldBlockPathfinding": true,
         "source": "(31, 0)"
     },
     {
@@ -58,7 +58,7 @@
                 "destination": "porteForest2R:(26, 48)"
             }
         },
-        "shouldBlockPathfinding": false,
+        "shouldBlockPathfinding": true,
         "source": "(32, 0)"
     }
 ]

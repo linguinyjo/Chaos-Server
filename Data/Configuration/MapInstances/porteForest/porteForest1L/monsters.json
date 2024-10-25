@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 180,
+    "intervalVariancePct": 30,
+    "extraLootTableKeys": [],
+    "maxAmount": 10,
+    "maxPerSpawn": 10,
+    "monsterTemplateKey": "greenFloppy"
+  },
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 180,
+    "intervalVariancePct": 30,
+    "extraLootTableKeys": [],
+    "maxAmount": 10,
+    "maxPerSpawn": 10,
+    "monsterTemplateKey": "redFloppy"
+  },
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 180,
+    "intervalVariancePct": 30,
+    "extraLootTableKeys": [],
+    "maxAmount": 10,
+    "maxPerSpawn": 10,
+    "monsterTemplateKey": "purpleFloppy"
+  },
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 180,
+    "intervalVariancePct": 30,
+    "extraLootTableKeys": [],
+    "maxAmount": 10,
+    "maxPerSpawn": 10,
+    "monsterTemplateKey": "silverFloppy"
+  }
+]

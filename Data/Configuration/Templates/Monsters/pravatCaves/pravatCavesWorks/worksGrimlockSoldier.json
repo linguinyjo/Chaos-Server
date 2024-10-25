@@ -2,6 +2,7 @@
     "assailIntervalMs": 1500,
     "expReward": 532,
     "moveIntervalMs": 1500,
+    "aggroRange": 10,
     "maxGoldDrop": 800,
     "minGoldDrop": 300,
     "name": "Grimlock Soldier",

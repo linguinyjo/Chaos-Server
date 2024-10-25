@@ -1,0 +1,13 @@
+{
+    "key": "silverKobolds",
+    "lootDrops": [
+        {
+            "dropChance": 0.12,
+            "itemTemplateKey": "silverFur"
+        },
+        {
+            "dropChance": 0.01,
+            "itemTemplateKey": "enchantWeaponScroll2nd"
+        }
+    ]
+}

@@ -72,7 +72,7 @@
                 "destination": "porteForestPath:(8, 38)"
             }
         },
-        "shouldBlockPathfinding": false,
+        "shouldBlockPathfinding": true,
         "source": "(8, 0)"
     },
     {
@@ -82,7 +82,7 @@
                 "destination": "porteForestPath:(9, 38)"
             }
         },
-        "shouldBlockPathfinding": false,
+        "shouldBlockPathfinding": true,
         "source": "(9, 0)"
     },
     {
@@ -92,7 +92,7 @@
                 "destination": "porteForestPath:(10, 38)"
             }
         },
-        "shouldBlockPathfinding": false,
+        "shouldBlockPathfinding": true,
         "source": "(10, 0)"
     }
 ]

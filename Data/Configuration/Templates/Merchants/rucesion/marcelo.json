@@ -1,19 +1,11 @@
 {
     "itemsForSale": [
         {
-            "itemTemplateKey": "dirk",
-            "stock": 100
-        },
-        {
-            "itemTemplateKey": "louresSabre",
-            "stock": 100
-        },
-        {
-            "itemTemplateKey": "eppe",
+            "itemTemplateKey": "magicRod",
             "stock": 100
         }
     ],
-    "itemsToBuy": ["woodenShield", "stick", "dirk", "eppe", "louresSabre"],
+    "itemsToBuy": ["stick", "dirk", "eppe", "louresSabre", "magicRod"],
     "name": "Marcelo",
     "restockIntervalHrs": 1,
     "restockPCt": 100,

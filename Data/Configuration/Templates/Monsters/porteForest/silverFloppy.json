@@ -1,8 +1,11 @@
 {
     "assailIntervalMs": 1500,
     "expReward": 281,
+    "maxGoldDrop": 350,
+    "minGoldDrop": 300,
     "moveIntervalMs": 1500,
     "name": "Silver Floppy",
+    "aggroRange": 10,
     "lootTableKeys": [],
     "scriptKeys": ["default", "setMonsterElement"],
     "scriptVars": {},

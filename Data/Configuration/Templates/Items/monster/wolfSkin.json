@@ -1,10 +1,10 @@
 {
-  "buyCost": 750,
+  "buyCost": 400,
   "category": "monster",
   "color": "Default",
   "isModifiable": false,
   "maxStacks": 1,
-  "sellValue": 750,
+  "sellValue": 400,
   "weight": 1,
   "description": "The skin from a wolf",
   "name": "Wolf Skin",

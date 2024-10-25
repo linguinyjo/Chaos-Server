@@ -1,6 +1,8 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 242,
+    "expReward": 193,
+    "maxGoldDrop": 350,
+    "minGoldDrop": 200,
     "moveIntervalMs": 1500,
     "name": "Green Floppy",
     "lootTableKeys": [],
@@ -13,8 +15,8 @@
     "sprite": 260,
     "statSheet": {
         "level": 25,
-        "ac": 65,
-        "maximumHp": 2100,
+        "ac": 68,
+        "maximumHp": 1800,
         "maximumMp": 1000,
         "physicalAttack": 46,
         "magicAttack": 50,

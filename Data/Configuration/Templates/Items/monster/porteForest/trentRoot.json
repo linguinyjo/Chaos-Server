@@ -1,0 +1,15 @@
+{
+  "buyCost": 1500,
+  "category": "monster",
+  "color": "Default",
+  "isModifiable": false,
+  "maxStacks": 1,
+  "sellValue": 800,
+  "weight": 1,
+  "description": "",
+  "name": "Trent Root",
+  "panelSprite": 1536,
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "trentRoot"
+}

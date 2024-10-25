@@ -1,0 +1,25 @@
+{
+    "buyCost": 100,
+    "category": "armor",
+    "isDyable": false,
+    "accountBound": true,
+    "noTrade": true,
+    "equipmentType": "OverArmor",
+    "gender": "Unisex",
+    "maxDurability": 1000,
+    "maxStacks": 1,
+    "modifiers": {},
+    "level": 1,
+    "levelCircle": 1,
+    "pantsColor": "Black",
+    "sellValue": 50,
+    "weight": 1,
+    "description": "Class: All\nLevel: 11\nProtection against some dark attacks",
+    "name": "Silver Fur Armor",
+    "panelSprite": 1625,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "silverFurArmor"
+}

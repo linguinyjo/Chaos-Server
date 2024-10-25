@@ -2,6 +2,7 @@
     "assailIntervalMs": 1500,
     "expReward": 733,
     "moveIntervalMs": 1300,
+    "aggroRange": 10,
     "maxGoldDrop": 1200,
     "minGoldDrop": 900,
     "name": "Goblin Warrior",

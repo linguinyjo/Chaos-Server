@@ -1,0 +1,37 @@
+{
+    "learningRequirements": {},
+    "spellType": "NoTarget",
+    "description": "A weak spell that deals water damage.",
+    "level": 1,
+    "castLines": 1,
+    "name": "dubh bas",
+    "panelSprite": 39,
+    "scriptKeys": ["damage", "applyEffect"],
+    "scriptVars": {
+        "damage": {
+            "animatePoints": false,
+            "shape": "allAround",
+            "range": 12,
+            "element": "darkness",
+            "damageStat": "int",
+            "manaCost": 50,
+            "spellCategory": "Damage",
+            "sound": 26,
+            "filter": "hostileOnly, aliveOnly, othersOnly",
+            "minSoundIntervalMs": 900,
+            "baseDamage": 200,
+            "animation": {
+                "targetAnimation": 62,
+                "animationSpeed": 100
+            },
+            "canResist": true
+        },
+        "applyEffect": {
+            "shape": "allAround",
+            "range": 12,
+            "filter": "hostileOnly, aliveOnly, othersOnly",
+            "effectKey": "solasBas"
+        }
+    },
+    "templateKey": "dubh_bas"
+}

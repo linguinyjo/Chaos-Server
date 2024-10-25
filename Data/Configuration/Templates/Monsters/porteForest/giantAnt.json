@@ -1,15 +1,16 @@
 {
     "assailIntervalMs": 1500,
     "expReward": 353,
+    "aggroRange": 10,
     "moveIntervalMs": 1500,
     "name": "Giant Ant",
-    "lootTableKeys": [],
+    "lootTableKeys": ["giantAnts"],
     "scriptKeys": ["default", "setMonsterElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],
     "spellIntervalMs": 15000,
-    "spellTemplateKeys": ["beag_sal", "beag_athar", "beag_creag", "beag_srad", "beag_cradh"],
+    "spellTemplateKeys": ["beag_sal", "beag_athar", "beag_creag", "beag_srad", "beag_cradh", "puinsein"],
     "sprite": 276,
     "statSheet": {
         "level": 34,

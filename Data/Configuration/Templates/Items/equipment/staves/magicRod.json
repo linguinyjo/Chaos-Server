@@ -1,5 +1,5 @@
 {
-    "buyCost": 15000,
+    "buyCost": 12000,
     "category": "Staff",
     "color": "Forest",
     "displaySprite": 24,
@@ -15,10 +15,10 @@
         "magicAttack": 18,
         "maximumMp": 100
     },
-    "sellValue": 7500,
+    "sellValue": 6000,
     "weight": 2,
     "description": "Class: Peasant\nLevel: 1\nMagic Attack 18, Mana 100",
-    "name": "Holy Kronos",
+    "name": "Magic Rod",
     "panelSprite": 183,
     "scriptKeys": ["Equipment", "EquipStaff"],
     "scriptVars": {
@@ -27,5 +27,5 @@
             "spellCategory": "Heal"
         }
     },
-    "templateKey": "holyKronos"
+    "templateKey": "magicRod"
 }

@@ -6,7 +6,7 @@
                 "destination": "porteForest3L:(22, 1)"
             }
         },
-        "shouldBlockPathfinding": false,
+        "shouldBlockPathfinding": true,
         "source": "(24, 49)"
     },
     {
@@ -16,7 +16,7 @@
                 "destination": "porteForest3L:(23, 1)"
             }
         },
-        "shouldBlockPathfinding": false,
+        "shouldBlockPathfinding": true,
         "source": "(25, 49)"
     },
     {
@@ -26,7 +26,7 @@
                 "destination": "porteForest3L:(24, 1)"
             }
         },
-        "shouldBlockPathfinding": false,
+        "shouldBlockPathfinding": true,
         "source": "(26, 49)"
     },
 
@@ -38,7 +38,7 @@
                 "destination": "porteForest4C:(1, 28)"
             }
         },
-        "shouldBlockPathfinding": false,
+        "shouldBlockPathfinding": true,
         "source": "(49, 23)"
     }
 ]

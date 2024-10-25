@@ -6,7 +6,7 @@
                 "destination": "porteForestWaitingRoom:(1, 24)"
             }
         },
-        "shouldBlockPathfinding": false,
+        "shouldBlockPathfinding": true,
         "source": "(69, 33)"
     },
     {
@@ -16,7 +16,7 @@
                 "destination": "porteForestWaitingRoom:(1, 23)"
             }
         },
-        "shouldBlockPathfinding": false,
+        "shouldBlockPathfinding": true,
         "source": "(69, 32)"
     },
     {
@@ -26,7 +26,7 @@
                 "destination": "porteForestWaitingRoom:(1, 22)"
             }
         },
-        "shouldBlockPathfinding": false,
+        "shouldBlockPathfinding": true,
         "source": "(69, 31)"
     },
     {
@@ -36,7 +36,7 @@
                 "destination": "porteForestWaitingRoom:(1, 21)"
             }
         },
-        "shouldBlockPathfinding": false,
+        "shouldBlockPathfinding": true,
         "source": "(69, 30)"
     },
     {
@@ -46,7 +46,7 @@
                 "destination": "porteForestWaitingRoom:(1, 20)"
             }
         },
-        "shouldBlockPathfinding": false,
+        "shouldBlockPathfinding": true,
         "source": "(69, 29)"
     },
     {
@@ -56,7 +56,7 @@
                 "destination": "porteForestWaitingRoom:(1, 19)"
             }
         },
-        "shouldBlockPathfinding": false,
+        "shouldBlockPathfinding": true,
         "source": "(69, 28)"
     },
 
@@ -67,7 +67,7 @@
                 "destination": "porteForest2L:(38, 68)"
             }
         },
-        "shouldBlockPathfinding": false,
+        "shouldBlockPathfinding": true,
         "source": "(30, 0)"
     },
     {
@@ -77,7 +77,7 @@
                 "destination": "porteForest2L:(39, 68)"
             }
         },
-        "shouldBlockPathfinding": false,
+        "shouldBlockPathfinding": true,
         "source": "(31, 0)"
     },
     {
@@ -87,7 +87,7 @@
                 "destination": "porteForest2L:(40, 68)"
             }
         },
-        "shouldBlockPathfinding": false,
+        "shouldBlockPathfinding": true,
         "source": "(32, 0)"
     }
 ]
