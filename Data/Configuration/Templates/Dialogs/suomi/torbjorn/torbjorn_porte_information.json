@@ -1,0 +1,21 @@
+{
+  "options": [
+    {
+      "dialogKey": "torbjorn_deep_wood_a",
+      "optionText": "How can I go into the deep wood?"
+    },
+    {
+      "dialogKey": "torbjorn_into_the_forest_a",
+      "optionText": "What happened when you went into the forest?"
+    },
+    {
+      "dialogKey": "Close",
+      "optionText": "Nothing, thank you."
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "torbjorn_porte_information",
+  "text": "What would you like to hear about?",
+  "type": "Menu"
+}

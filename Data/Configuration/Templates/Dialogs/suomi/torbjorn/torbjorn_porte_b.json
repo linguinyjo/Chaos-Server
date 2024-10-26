@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "close",
+  "scriptKeys": ["IncrementPorteForestQuest"],
+  "scriptVars": {},
+  "templateKey": "torbjorn_porte_b",
+  "text": "I tell you what, bring me {=s3 Trent Roots {=a and I'll tell you what I know. Those things have become near impossible to find ever since the forest turned dark...",
+  "type": "Normal"
+}

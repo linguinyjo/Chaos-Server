@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "Close",
+  "scriptKeys": ["porteForestQuest"],
+  "scriptVars": {},
+  "templateKey": "torbjorn_porte_trent_roots",
+  "text": "",
+  "type": "Normal"
+}

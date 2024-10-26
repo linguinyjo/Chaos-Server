@@ -1288,7 +1288,7 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
         Client.SendAnimation(new Animation()
         {
             AnimationSpeed = 150,
-            TargetAnimation = 22
+            TargetAnimation = 50
         });
         Client.SendSound(29, false);
     }

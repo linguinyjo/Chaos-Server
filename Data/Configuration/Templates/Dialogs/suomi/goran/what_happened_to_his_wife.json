@@ -1,0 +1,13 @@
+{
+  "options": [
+    {
+      "dialogKey": "what_happened_next",
+      "optionText": "What happened next?"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "what_happened_to_his_wife",
+  "text": "No one really knows... Some say the wife was so distraught that she took her own life. Others say she followed her husband to her death. Some optimists say she simply left Suomi, to start a new life.",
+  "type": "Menu"
+}

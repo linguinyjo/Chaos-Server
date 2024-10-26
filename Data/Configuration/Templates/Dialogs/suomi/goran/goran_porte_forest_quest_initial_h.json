@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "what_happened_to_his_wife",
+      "optionText": "What happened to his wife?"
+    },
+    {
+      "dialogKey": "what_happened_next",
+      "optionText": "What happened next?"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "goran_porte_forest_quest_initial_h",
+  "text": "Neither the man, nor his daughter ever returned home.",
+  "type": "Menu"
+}

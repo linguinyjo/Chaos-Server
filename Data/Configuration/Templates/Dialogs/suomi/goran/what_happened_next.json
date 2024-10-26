@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "close",
+  "scriptKeys": ["porteForestQuest"],
+  "scriptVars": {},
+  "templateKey": "what_happened_next",
+  "text": "What happened next? Why, that's all there is! It's just a story that my pappy used to tell me to keep me inside during night time. You can try asking some of the people around town about Porte Forest, but don't be surprised if they ignore you. It's still a painful topic for most of us living out here.",
+  "type": "Normal"
+}

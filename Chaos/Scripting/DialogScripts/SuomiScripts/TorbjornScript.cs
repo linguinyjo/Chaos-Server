@@ -7,7 +7,7 @@ using Chaos.Services.Factories.Abstractions;
 
 namespace Chaos.Scripting.DialogScripts.suomiScripts;
 
-public class GoranScript:  DialogScriptBase
+public class TorbjornScript:  DialogScriptBase
 {
     private readonly IDialogFactory DialogFactory;
     
@@ -16,23 +16,17 @@ public class GoranScript:  DialogScriptBase
     #endregion
     
     /// <inheritdoc />
-    public GoranScript(Dialog subject, IDialogFactory dialogFactory)
+    public TorbjornScript(Dialog subject, IDialogFactory dialogFactory)
         : base(subject) => DialogFactory = dialogFactory;
 
     /// <inheritdoc />
     public override void OnDisplaying(Aisling source)
     {
-        var isAvailable = AJourneyToSuomiQuestHelper.IsQuestAvailable(source);
-        if (isAvailable)
-        {
-            Subject.AddOption("Oona's shipment", "goran_a_journey_to_suomi_quest");
-        }
-        
-        var isPorteForestQuestAvailable = PorteForestQuestHelper.IsQuestAvailable(source);
-        if (isPorteForestQuestAvailable)
-        {
-            Subject.AddOption("Porte Forest", "goran_porte_forest_quest_initial");
-        }
+        // var porteForestQuestStatus = PorteForestQuestHelper.GetQuestStatus(source);
+        // if (porteForestQuestStatus == PorteForestQuestStatus.SpokenToTorbjorn)
+        // {
+        //     Subject.AddOption("Trent roots", "torbjorn_porte_roots");
+        // }
     }
     
     public override void OnDisplayed(Aisling source) {}

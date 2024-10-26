@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "torbjorn_deep_wood_b",
+      "optionText": "How can I go into the deep wood?"
+    },
+    {
+      "dialogKey": "torbjorn_use_your_tarp",
+      "optionText": "May I use your tarp?"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "torbjorn_porte_tarp",
+  "text": "Is that all I can help you with?",
+  "type": "Menu"
+}

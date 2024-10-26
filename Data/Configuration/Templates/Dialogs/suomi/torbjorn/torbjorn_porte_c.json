@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "close",
+  "scriptKeys": ["porteForestQuest"],
+  "scriptVars": {},
+  "templateKey": "torbjorn_porte_c",
+  "text": "You can find them out in the Porte forest south of town. Be careful venturing out there though, many have fallen prey to the forest.",
+  "type": "Normal"
+}

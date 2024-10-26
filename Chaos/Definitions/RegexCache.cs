@@ -29,6 +29,11 @@ public static partial class RegexCache
         SellItemRegex3());
 
     public static readonly ICollection<Regex> BUY_ITEM_PATTERNS = ImmutableList.Create(BuyItemRegex1());
+    
+    public static readonly ICollection<Regex> PORTE_FOREST_PATTERNS = ImmutableList.Create(PorteForestRegex());
+    
+    [GeneratedRegex(@"Porte Forest", RegexOptions.IgnoreCase | RegexOptions.Compiled)]
+    private static partial Regex PorteForestRegex();
 
     [GeneratedRegex(@"^I (?:will )?buy (?:(?<amount>\d+) )?(?<thing>.+)", RegexOptions.IgnoreCase | RegexOptions.Compiled)]
     private static partial Regex BuyItemRegex1();

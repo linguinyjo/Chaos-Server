@@ -24,14 +24,14 @@
         "leatherTunic", "jupe", "dobok", "culotte",
         "leatherGauntlet", "leatherBracer", "leatherEmeraldGauntlet","leatherHeartstoneGauntlet", "leatherRubyGauntlet", "leatherSapphireGauntlet",
         "leatherGreaves", "reinforcedLeatherGreaves",
-        "windBelt", "fireBelt", "earthBelt", "seaBelt", "hybrasylBelt", "mythrilBelt", "leatherBelt",
+        "windBelt", "fireBelt", "earthBelt", "seaBelt",
         "boneNecklace", "earthNecklace", "fireNecklace", "pearlChainNecklace", "phoenixNecklace", "seaNecklace", "windNecklace",
         "smallSpinelRing", "smallEmeraldRing", "emeraldRing", "spinelRing", "redJadeRing", "amethystRing",
         "silverEarrings", "goldEarrings", "rubyEarrings", "coralEarrings", "berylEarrings"],
     "name": "Valdemar",
     "restockIntervalHrs": 1,
     "restockPCt": 100,
-    "scriptKeys": ["showdialog", "verbalShop", "defaultBehaviors"],
+    "scriptKeys": ["showdialog", "verbalShop", "defaultBehaviors", "verbalQuest"],
     "scriptVars": {
         "showdialog": {
             "dialogKey": "valdemar_initial"
