@@ -45,7 +45,7 @@ public class PorteForestQuestScript:  DialogScriptBase
                 {
                     Dialog.Reply(
                         source, 
-                        "Still no trent roots, eh? Well if you do manage to find them come back to me and I'll share with you what I know.", 
+                        "Still no trent roots, eh? Well if you do manage to find them come back to me and I'll tell you everything I know about Porte Forest.", 
                         "Close");
                 }
                 break;

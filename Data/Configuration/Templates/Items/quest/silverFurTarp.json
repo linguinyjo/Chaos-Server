@@ -6,7 +6,7 @@
     "noTrade": true,
     "equipmentType": "OverArmor",
     "gender": "Unisex",
-    "maxDurability": 1000,
+    "maxDurability": 500,
     "maxStacks": 1,
     "modifiers": {},
     "level": 1,
@@ -15,11 +15,11 @@
     "sellValue": 50,
     "weight": 1,
     "description": "Class: All\nLevel: 11\nProtection against some dark attacks",
-    "name": "Silver Fur Armor",
+    "name": "Silver Fur Tarp",
     "panelSprite": 1625,
     "scriptKeys": ["Equipment"],
     "scriptVars": {
         "equipment": {}
     },
-    "templateKey": "silverFurArmor"
+    "templateKey": "silverFurTarp"
 }

@@ -1,9 +1,8 @@
 {
     "flags": "None",
-    "instanceId": "milethWhiteMagicMaster",
-    "music": 1,
-    "name": "Mileth White Magic Master",
+    "instanceId": "suomiWhiteMagicMaster",
+    "name": "Suomi White Magic Master",
     "scriptKeys": [],
-    "templateKey": "302",
+    "templateKey": "416",
     "autoDayNightCycle": true
 }

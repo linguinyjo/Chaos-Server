@@ -56,11 +56,8 @@ public class DubhBasEffect : EffectBase,
     
     public override void OnTerminated()
     {
-        Subject.StatSheet.SubtractHp((int)Subject.StatSheet.EffectiveMaximumHp);
+        Subject.StatSheet.SetHp(1);
         AislingSubject?.Client.SendAttributes(StatUpdateType.Vitality);
-
-        if (!Subject.IsAlive)
-            Subject.Script.OnDeath();
     }
     
     /// <inheritdoc />
@@ -68,7 +65,7 @@ public class DubhBasEffect : EffectBase,
     {
         new ComponentExecutor(Subject, Subject).WithOptions(this)
             .ExecuteAndCheck<GetTargetsAbilityComponent<Creature>>();
-        AislingSubject?.SendOrangeBarMessage($"You have been marked for death");
+        AislingSubject?.SendOrangeBarMessage("You have been marked for death");
     }
 
     /// <inheritdoc />

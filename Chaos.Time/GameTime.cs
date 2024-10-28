@@ -9,6 +9,18 @@ public readonly struct GameTime : IComparable, IComparable<GameTime>, IEquatable
 {
     private readonly DateTime DateTime;
 
+    public string GetSeason()
+    {
+        return Month switch
+        {
+            12 or 1 or 2 => "Winter",
+            3 or 4 or 5 => "Spring",
+            6 or 7 or 8 => "Summer",
+            9 or 10 or 11 => "Autumn",
+            _ => throw new ArgumentOutOfRangeException(nameof(Month))
+        };
+    }
+    
     /// <summary>
     ///     Gets the day component of the GameTime.
     /// </summary>

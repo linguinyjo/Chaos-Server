@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "bertil_porte_tarp_b",
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "bertil_porte_tarp_a",
+  "text": "Well I can certainly make you one, but it's going to cost you {=s10000 gold{=a. Oh, and I'm going to need {=s2 Silver Fur{=a from the kobolds in Porte Forest.",
+  "type": "Normal"
+}

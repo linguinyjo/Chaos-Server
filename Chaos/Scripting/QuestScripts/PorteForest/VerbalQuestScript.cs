@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using Chaos.Common.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.Menu;
@@ -18,7 +19,6 @@ public class VerbalQuestScript : VerbalShopScriptBase
     public VerbalQuestScript(Merchant subject, ILogger<VerbalSellShopScript> logger,  IDialogFactory dialogFactory)
         : base(subject, logger)
     {
-      
         DialogFactory = dialogFactory;
         Merchant = subject;
     }
@@ -28,68 +28,80 @@ public class VerbalQuestScript : VerbalShopScriptBase
     public override void OnPublicMessage(Creature source, string message)
     {
         if (source is not Aisling aisling) return;
-
-        var questStatus = PorteForestQuestHelper.GetQuestStatus(aisling);
-        var match = RegexCache.PORTE_FOREST_PATTERNS
-                              .Select(regex => regex.Match(message))
-                              .FirstOrDefault(x => x.Success);
-        
-        if (match is null) return;
-
-       
-        if (Merchant.Template.TemplateKey == "torbjorn")
-        {
-            if (questStatus == PorteForestQuestStatus.Started)
-            {
-                var newDialog = new Dialog(
-                    Merchant,
-                    DialogFactory,
-                    ChaosDialogType.Normal,
-                    "Well, well... I've not heard those two words spoken out loud in quite some time aisling.")
-                {
-                    NextDialogKey = "torbjorn_porte_a"
-                };
-                newDialog.Display(aisling);
-                // aisling.Trackers.Enums.Set(PorteForestQuestStatus.SpokenToTorbjorn);
-            } else if (questStatus == PorteForestQuestStatus.SpokenToTorbjorn)
-            {
-                var newDialog = new Dialog(
-                    Merchant,
-                    DialogFactory,
-                    ChaosDialogType.Normal,
-                    "Ah, so you've returned...")
-                {
-                    NextDialogKey = "torbjorn_porte_trent_roots"
-                };
-                newDialog.Display(aisling);
-            }
-            
-        }
-        else if (Merchant.Template.TemplateKey == "valdemar")
-        {
-            {
-                var newDialog = new Dialog(
-                    Merchant,
-                    DialogFactory,
-                    ChaosDialogType.Normal,
-                    "im the armorer round here")
-                {
-                    NextDialogKey = ""
-                };
-                newDialog.Display(aisling);
-            }
-        }
-
-
-
+        var handler = GetMessageHandler(aisling);
+        handler?.Invoke(aisling, message);
     }
-    
-    private const string ColorPrefix = "{=";
-    
-    private static string FormatColor(string text)
+
+    private MessageHandler? GetMessageHandler(Aisling aisling)
     {
-        const MessageColor color = MessageColor.Orange;
-        const char colorCode = (char)color;
-        return $"{ColorPrefix}{colorCode}{text}";
+        var questStatus = PorteForestQuestHelper.GetQuestStatus(aisling);
+        
+        return (Merchant.Template.TemplateKey, questStatus) switch
+        {
+            ("torbjorn", PorteForestQuestStatus.Started) => HandleTorbjornInitial,
+            ("torbjorn", PorteForestQuestStatus.SpokenToTorbjorn) => HandleTorbjornReturnWithRoots,
+            ("torbjorn", PorteForestQuestStatus.DeliveredTheRoots) => HandleTorbjornReturnForInformation,
+            ("bertil", _) => HandleBertilTarp,
+            _ => null
+        };
+    }
+
+    private delegate void MessageHandler(Aisling aisling, string message);
+
+    private void HandleTorbjornInitial(Aisling aisling, string message)
+    {
+        var porteForestMatch = FindFirstMatch(message, RegexCache.PORTE_FOREST_PATTERNS);
+        if (porteForestMatch is null) return;
+
+        DisplayDialog(aisling, 
+            "Well, well... I've not heard those two words spoken out loud in quite some time aisling.",
+            "torbjorn_porte_a");
+    }
+
+    private void HandleTorbjornReturnWithRoots(Aisling aisling, string message)
+    {
+        DisplayDialog(aisling,
+            "Ah, so you've returned...",
+            "torbjorn_porte_trent_roots");
+    }
+
+    private void HandleTorbjornReturnForInformation(Aisling aisling, string message)
+    {
+        DisplayDialog(aisling,
+            "Ah, so you've returned...",
+            "torbjorn_porte_information");
+    }
+
+    private void HandleBertilTarp(Aisling aisling, string message)
+    {
+        var tarpMatch = FindFirstMatch(message, RegexCache.TARP_PATTERNS);
+        if (tarpMatch is null) return;
+
+        if (PorteForestQuestHelper.IsElligibleToMakeTarp(aisling))
+        {
+            DisplayDialog(aisling,
+                "So you're interested in one of my special Tarps are you?",
+                "bertil_porte_tarp_a");
+        }
+    }
+
+    private static Match? FindFirstMatch(string input, IEnumerable<Regex> patterns)
+    {
+        return patterns
+            .Select(regex => regex.Match(input))
+            .FirstOrDefault(x => x.Success);
+    }
+
+    private void DisplayDialog(Aisling aisling, string message, string nextDialogKey)
+    {
+        var dialog = new Dialog(
+            Merchant,
+            DialogFactory,
+            ChaosDialogType.Normal,
+            message)
+        {
+            NextDialogKey = nextDialogKey
+        };
+        dialog.Display(aisling);
     }
 }

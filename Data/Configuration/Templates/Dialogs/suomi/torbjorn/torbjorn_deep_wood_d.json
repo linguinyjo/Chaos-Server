@@ -3,6 +3,6 @@
   "scriptKeys": [],
   "scriptVars": {},
   "templateKey": "torbjorn_deep_wood_d",
-  "text": "You must search the forest to find the Turuc Pendant. Only then will you be let into the summit point, where the heart of the trouble lies.",
+  "text": "You must search the forest to find the {=sTuruc Pendant{=a. Only then will you be let into the summit point, where the heart of the trouble lies.",
   "type": "Normal"
 }

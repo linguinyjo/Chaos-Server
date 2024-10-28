@@ -2,7 +2,7 @@
     "key": "treeDemons",
     "lootDrops": [
         {
-            "dropChance": 0.20,
+            "dropChance": 0.15,
             "itemTemplateKey": "trentRoot"
         },
         {

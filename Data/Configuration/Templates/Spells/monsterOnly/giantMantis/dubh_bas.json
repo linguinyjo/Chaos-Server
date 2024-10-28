@@ -1,5 +1,4 @@
 {
-    "learningRequirements": {},
     "spellType": "NoTarget",
     "description": "A weak spell that deals water damage.",
     "level": 1,
@@ -30,7 +29,7 @@
             "shape": "allAround",
             "range": 12,
             "filter": "hostileOnly, aliveOnly, othersOnly",
-            "effectKey": "solasBas"
+            "effectKey": "dubhBas"
         }
     },
     "templateKey": "dubh_bas"

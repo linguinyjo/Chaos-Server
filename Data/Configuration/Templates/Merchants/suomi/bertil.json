@@ -1,0 +1,17 @@
+{
+    "itemsForSale": [],
+    "itemsToBuy": [],
+    "name": "Bertil",
+    "restockIntervalHours": 6,
+    "restockPercent": 100,
+    "scriptKeys": ["showdialog", "defaultBehaviors", "verbalQuest"],
+    "scriptVars": {
+        "showdialog": {
+            "dialogKey": "bertil_initial"
+        }
+    },
+    "skillsToTeach": [],
+    "spellsToTeach": [],
+    "sprite": 42,
+    "templateKey": "bertil"
+}

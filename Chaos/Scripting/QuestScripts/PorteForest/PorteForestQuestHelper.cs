@@ -28,6 +28,12 @@ public static class PorteForestQuestHelper
         player.Trackers.Enums.Set(PorteForestQuestStatus.Started);
     }
 
+    public static bool IsElligibleToMakeTarp(Aisling source)
+    {
+        var questStatus = GetQuestStatus(source);
+        return questStatus is >= PorteForestQuestStatus.DeliveredTheRoots and < PorteForestQuestStatus.KilledTheMantis;
+    }
+    
     public static void CompleteQuest(Aisling source)
     {
         // source.TryGiveGold(2000);
@@ -48,7 +54,7 @@ public static class PorteForestQuestHelper
 public enum PorteForestQuestStatus
 {
     None = 0,
-    Started = 1, // From this point the player can say Porte Forest to Torbjorn and Valdemar
+    Started = 1, 
     SpokenToTorbjorn = 2,
     DeliveredTheRoots = 3,
     FoundThePendant = 4,

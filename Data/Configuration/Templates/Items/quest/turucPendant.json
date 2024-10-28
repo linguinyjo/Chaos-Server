@@ -1,0 +1,17 @@
+{
+  "buyCost": 1,
+  "category": "quest",
+  "color": "Default",
+  "isModifiable": false,
+  "accountBound": true,
+  "noTrade": true,
+  "maxStacks": 1,
+  "sellValue": 1,
+  "weight": 1,
+  "description": "A mysterious pendant. Could this hold the secret to solving the mystery of Porte Forest?",
+  "name": "Turuc Pendant",
+  "panelSprite": 663,
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "turucPendant"
+}

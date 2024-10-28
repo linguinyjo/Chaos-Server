@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "bertil_request_tarp",
+      "optionText": "Yes please, I have the stuff"
+    },
+    {
+      "dialogKey": "close",
+      "optionText": "Not right now"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "bertil_porte_tarp_b",
+  "text": "So, do you want me to make you one?",
+  "type": "Menu"
+}

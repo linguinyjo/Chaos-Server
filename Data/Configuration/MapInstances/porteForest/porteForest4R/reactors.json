@@ -39,5 +39,11 @@
         },
         "shouldBlockPathfinding": true,
         "source": "(0, 21)"
+    },
+    {
+        "scriptKeys": ["turucPendant"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(11, 37)"
     }
 ]

@@ -813,6 +813,7 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
 
     public bool TryPickupItem(GroundItem groundItem, byte destinationSlot)
     {
+        if (IsDead) return false;
         if (!groundItem.CanPickUp(this))
         {
             SendActiveMessage("You can't pick that up right now");
