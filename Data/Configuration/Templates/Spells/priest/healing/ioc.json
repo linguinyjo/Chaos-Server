@@ -16,7 +16,7 @@
   "spellType": "Targeted",
   "spellCategory": "Heal",
   "class": "Priest",
-  "description": "Applies a heal effect to your target.",
+  "description": "Applies a moderate heal to your target",
   "level": 11,
   "name": "ioc",
   "panelSprite": 29,

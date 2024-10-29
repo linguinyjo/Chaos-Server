@@ -8,26 +8,26 @@
             "str": 3,
             "wis": 7
         },
+        "requiredGold": 1000,
         "prerequisiteSkills": [],
-        "prerequisiteSpells": [
-           
-        ]
+        "prerequisiteSpells": []
     },
     "spellType": "Targeted",
     "class": "Wizard",
     "description": "A weak spell that deals water damage.",
     "level": 1,
-    "castLines": 4,
-    "name": "Beag Sal",
-    "panelSprite": 39,
+    "castLines": 3,
+    "name": "beag sal",
+    "panelSprite": 46,
     "scriptKeys": ["damage"],
     "scriptVars": {
         "damage": {
+            "bodyAnimation": "wizardCast",
             "animatePoints": true,
             "range": 12,
             "element": "water",
             "damageStat": "int",
-            "manaCost": 50,
+            "manaCost": 30,
             "spellCategory": "Damage",
             "sound": 167,
             "filter": "hostileOnly, aliveOnly, othersOnly",
@@ -36,7 +36,7 @@
             "damageStatMultiplier": 2,
             "animation": {
                 "targetAnimation": 10,
-                "animationSpeed": 100
+                "animationSpeed": 150
             },
             "useMatk": true,
             "canResist": true

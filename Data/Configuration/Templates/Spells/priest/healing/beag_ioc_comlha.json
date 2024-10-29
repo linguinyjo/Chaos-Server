@@ -2,24 +2,24 @@
   "castLines": 2,
   "learningRequirements": {
     "itemRequirements": [],
-    "requiredGold": 1000,
+    "requiredGold": 5000,
     "requiredStats": {
       "con": 3,
       "dex": 3,
-      "int": 4,
+      "int": 14,
       "str": 3,
-      "wis": 8
+      "wis": 22
     },
     "prerequisiteSkills": [],
     "prerequisiteSpells": []
   },
-  "spellType": "Targeted",
+  "spellType": "NoTarget",
   "spellCategory": "Heal",
   "class": "Priest",
-  "description": "Applies a small heal to your target",
-  "level": 1,
-  "name": "beag ioc",
-  "panelSprite": 28,
+  "description": "Applies a small heal to your group",
+  "level": 11,
+  "name": "beag ioc comlha",
+  "panelSprite": 32,
   "scriptKeys": [
     "heal"
   ],
@@ -30,8 +30,9 @@
         "targetAnimation": 4,
         "animationSpeed": 150
       },
+      "shape": "allAround",
       "healStatMultiplier": 1,
-      "manaCost": 30,
+      "manaCost": 75,
       "sound": 8,
       "baseHeal": 150,
       "healStat": "wis",
@@ -40,5 +41,5 @@
       "filter": "friendlyOnly, aliveOnly"
     }
   },
-  "templateKey": "beag_ioc"
+  "templateKey": "beag_ioc_comlha"
 }

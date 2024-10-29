@@ -1,0 +1,28 @@
+{
+    "buyCost": 7500,
+    "category": "Armor",
+    "color": "Blue",
+    "isDyable": true,
+    "displaySprite": 11,
+    "equipmentType": "Armor",
+    "gender": "Unisex",
+    "maxDurability": 5000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -9
+    },
+    "class": "wizard",
+    "pantsColor": "Black",
+    "level": 11,
+    "levelCircle": 2,
+    "sellValue": 3750,
+    "weight": 6,
+    "description": "Class: Wizard\nLevel: 11\nAc -9",
+    "name": "Journeyman",
+    "panelSprite": 106,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "journeyman"
+}

@@ -43,7 +43,7 @@ public class TorranceTrainingQuestScript:  DialogScriptBase
                         Dialog.DialogSource,
                         DialogFactory,
                         ChaosDialogType.Normal,
-                        "Well, I'll be... You actually managed to get them. You've done well, I suppose. Here's a bit of coin for your trouble. Now, don't let it go to your head – there's still much for you to learn. Go back and Speak with Vorlof.")
+                        "Well, I'll be... You actually managed to get them. You've done well, I suppose. Heres a bit of coin for your trouble. Now, don't let it go to your head... there's still much for you to learn. Go back and Speak with Vorlof.")
                     {
                         NextDialogKey = "Close"
                     };

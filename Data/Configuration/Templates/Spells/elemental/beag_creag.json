@@ -8,6 +8,7 @@
             "str": 3,
             "wis": 3
         },
+        "requiredGold": 1000,
         "prerequisiteSkills": [],
         "prerequisiteSpells": [
            
@@ -15,19 +16,20 @@
     },
     "spellType": "Targeted",
     "class": "Wizard",
-    "castLines": 4,
+    "castLines": 3,
     "description": "A weak spell that deals earth damage.",
     "level": 1,
-    "name": "Beag Creag",
-    "panelSprite": 39,
+    "name": "beag creag",
+    "panelSprite": 57,
     "scriptKeys": ["damage"],
     "scriptVars": {
         "damage": {
+            "bodyAnimation": "wizardCast",
             "animatePoints": true,
             "range": 12,
             "element": "earth",
             "damageStat": "int",
-            "manaCost": 50,
+            "manaCost": 30,
             "spellCategory": "Damage",
             "sound": 167,
             "filter": "hostileOnly, aliveOnly, othersOnly",

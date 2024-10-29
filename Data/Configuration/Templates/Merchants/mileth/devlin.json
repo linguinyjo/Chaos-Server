@@ -11,7 +11,13 @@
         }
     },
     "skillsToTeach": [],
-    "spellsToTeach": ["beag_ioc", "ao_beag_cradh", "armachd", "fas_deireas", "gentleTouch"],
+    "spellsToTeach": [
+        "beag_ioc", "ioc",
+        "beag_ioc_comlha", "ioc_comlha",
+        "ao_beag_cradh", "ao_cradh", "ao_puinsein", "ao_dall",
+        "armachd", "fas_deireas",
+        "gentleTouch"
+    ],
     "sprite": 42,
     "templateKey": "devlin"
 }

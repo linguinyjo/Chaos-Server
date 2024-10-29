@@ -1,0 +1,28 @@
+{
+    "buyCost": 1500,
+    "category": "Armor",
+    "color": "Blue",
+    "isDyable": true,
+    "displaySprite": 6,
+    "equipmentType": "Armor",
+    "gender": "Unisex",
+    "maxDurability": 5000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -5
+    },
+    "class": "wizard",
+    "pantsColor": "Black",
+    "level": 1,
+    "levelCircle": 1,
+    "sellValue": 750,
+    "weight": 4,
+    "description": "Class: Wizard\nLevel: 1\nAc -5",
+    "name": "Gardcorp",
+    "panelSprite": 101,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "Gardcorp"
+}

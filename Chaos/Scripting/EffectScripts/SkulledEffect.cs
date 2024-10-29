@@ -1,5 +1,6 @@
 using Chaos.Collections;
 using Chaos.Models.Data;
+using Chaos.Models.Panel;
 using Chaos.Models.World;
 using Chaos.Scripting.EffectScripts.Abstractions;
 using Chaos.Storage.Abstractions;
@@ -46,8 +47,14 @@ public class SkulledEffect(ISimpleCache simpleCache) : ContinuousAnimationEffect
         var currentPosition = AislingSubject.Trackers.LastPosition;
         if (currentPosition != null)
         {
-            //TODO add a chance to drop equipment
-            AislingSubject.TryDrop(currentPosition, AislingSubject.Inventory, out GroundItem[] itemsToDrop);
+            AislingSubject.TryDrop(currentPosition, AislingSubject.Equipment,  out var equipmentToDrop);
+            if (equipmentToDrop != null)
+                foreach (var groundItem in equipmentToDrop)
+                {
+                    if (groundItem.Item.Template.AccountBound) continue;
+                    AislingSubject.Equipment.RemoveByTemplateKey(groundItem.Item.Template.TemplateKey);
+                }
+            AislingSubject.TryDrop(currentPosition, AislingSubject.Inventory, out var itemsToDrop);
             AislingSubject.TryDropGold(currentPosition, AislingSubject.Gold, out _);
             if (itemsToDrop != null)
                 foreach (var groundItem in itemsToDrop)

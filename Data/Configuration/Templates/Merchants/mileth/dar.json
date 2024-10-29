@@ -12,7 +12,9 @@
     }
   },
   "skillsToTeach": [],
-  "spellsToTeach": [],
+  "spellsToTeach": [
+    "beag_srad", "beag_sal", "beag_creag", "beag_athar"
+  ],
   "sprite": 37,
   "templateKey": "dar"
 }
