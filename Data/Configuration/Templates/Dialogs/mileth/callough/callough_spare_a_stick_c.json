@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "close",
+  "scriptKeys": ["CalloughSpareAStick"],
+  "scriptVars": {},
+  "templateKey": "callough_spare_a_stick_c",
+  "text": "?",
+  "type": "Normal"
+}

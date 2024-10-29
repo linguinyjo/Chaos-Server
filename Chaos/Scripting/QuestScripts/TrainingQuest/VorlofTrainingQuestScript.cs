@@ -11,7 +11,6 @@ namespace Chaos.Scripting.QuestScripts.TrainingQuest;
 public class VorlofTrainingQuestScript:  DialogScriptBase
 {
     private readonly IDialogFactory DialogFactory;
-    private readonly IItemFactory ItemFactory;
     private readonly Dialog Dialog;
 
     #region ScriptVars
@@ -19,11 +18,10 @@ public class VorlofTrainingQuestScript:  DialogScriptBase
     #endregion
 
     /// <inheritdoc />
-    public VorlofTrainingQuestScript(Dialog subject, IDialogFactory dialogFactory, IItemFactory itemFactory)
+    public VorlofTrainingQuestScript(Dialog subject, IDialogFactory dialogFactory)
         : base(subject)
     {
         DialogFactory = dialogFactory;
-        ItemFactory = itemFactory;
         Dialog = subject;
     }
 
@@ -37,9 +35,7 @@ public class VorlofTrainingQuestScript:  DialogScriptBase
         {
             case TrainingQuestStatus.SpokenToRiona:
             {
-                var stick = ItemFactory.Create("stick");
-                var itemAdded = source.Inventory.TryAddToNextSlot(stick);
-                if (itemAdded) TrainingQuestHelper.IncrementQuestStage(source);
+                TrainingQuestHelper.IncrementQuestStage(source);
                 break;
             }
             case TrainingQuestStatus.CompletedTorrencesRequest:

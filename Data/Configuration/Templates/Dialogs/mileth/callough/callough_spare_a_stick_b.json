@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "callough_spare_a_stick_c",
+      "optionText": "You've got a deal"
+    },
+    {
+      "dialogKey": "close",
+      "optionText": "No thanks"
+    }
+  ],
+  "scriptKeys": ["CalloughSpareAStick"],
+  "scriptVars": {},
+  "templateKey": "callough_spare_a_stick_b",
+  "text": "Get out there and fetch me {=s6 Tree Branches{=a from some of the old oak tree's around town. That should be enough for a starting weapon and shield. We have a deal?",
+  "type": "Menu"
+}

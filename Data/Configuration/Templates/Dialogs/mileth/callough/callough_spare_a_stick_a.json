@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "callough_spare_a_stick_b",
+  "scriptKeys": ["CalloughSpareAStick"],
+  "scriptVars": {},
+  "templateKey": "callough_spare_a_stick_a",
+  "text": "In need of some basic equipment are you? Well seeing as you're new around here I guess I could help you out...",
+  "type": "Normal"
+}

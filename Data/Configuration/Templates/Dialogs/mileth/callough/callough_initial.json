@@ -7,9 +7,17 @@
     {
       "dialogKey": "generic_sellshop_initial",
       "optionText": "Sell"
+    },
+    {
+      "dialogKey": "generic_repairShop_initial",
+      "optionText": "Repair Item"
+    },
+    {
+      "dialogKey": "generic_repairAllShop_initial",
+      "optionText": "Repair All"
     }
   ],
-  "scriptKeys": [],
+  "scriptKeys": ["callough"],
   "scriptVars": {},
   "templateKey": "callough_initial",
   "text": "Can I interest you in a weapon?",

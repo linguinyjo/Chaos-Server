@@ -17,6 +17,14 @@
         "result": "Completed"
     },
     {
+        "title": "Spare a stick",
+        "summary": "Speak to ",
+        "rewards": "Stick and experience",
+        "qualifyingCircles": ["one", "two", "three", "four"],
+        "id": "spareAStick",
+        "result": "Completed"
+    },
+    {
         "title": "Devlin's Ingredients",
         "summary": "Speak to Devlin the white magic master in Mileth",
         "rewards": "Gold and experience",

@@ -218,5 +218,261 @@
         },
         "shouldBlockPathfinding": true,
         "source": "(99, 31)"
+    },
+
+
+
+
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(17, 57)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(17, 56)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(17, 55)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(17, 54)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(17, 53)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(17, 52)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(17, 51)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(18, 57)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(18, 56)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(18, 55)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(18, 54)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(18, 53)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(18, 52)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(18, 51)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(19, 57)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(19, 56)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(19, 55)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(19, 54)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(19, 53)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(19, 52)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(19, 51)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(20, 57)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(20, 56)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(20, 55)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(20, 54)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(20, 53)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(20, 52)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(20, 51)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(21, 57)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(21, 56)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(21, 55)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(21, 54)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(21, 53)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(21, 52)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(21, 51)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(22, 57)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(22, 56)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(22, 55)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(22, 54)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(22, 53)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(22, 52)"
+    },
+    {
+        "scriptKeys": ["treeBranch"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(22, 51)"
     }
 ]
