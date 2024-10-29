@@ -1,0 +1,12 @@
+[
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 60,
+    "intervalVariancePct": 30,
+    "extraLootTableKeys": [],
+    "maxAmount": 1,
+    "maxPerSpawn": 1,
+    "monsterTemplateKey": "giantMantis"
+  }
+]

@@ -19,6 +19,7 @@
     "name": "Rescue",
     "class": "warrior",
     "panelSprite": 13,
+    "cooldownMs": 60000,
     "scriptKeys": ["taunt", "removeEffect"],
     "scriptVars": {
         "taunt": {

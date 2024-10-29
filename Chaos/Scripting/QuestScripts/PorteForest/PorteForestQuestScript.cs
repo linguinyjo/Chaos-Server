@@ -59,8 +59,6 @@ public class PorteForestQuestScript:  DialogScriptBase
         }
     }
 
-
-
     public override void OnDisplayed(Aisling source)
     {}
 

@@ -1,28 +1,29 @@
 {
-    "buyCost": 2500,
+    "buyCost": 20000,
     "category": "Ring",
     "color": "Default",
     "isDyable": true,
-    "displaySprite": 210,
+    "displaySprite": 1575,
     "equipmentType": "Ring",
     "gender": "Unisex",
-    "maxDurability": 3000,
+    "maxDurability": 5000,
     "maxStacks": 1,
     "modifiers": {
-        "maximumHp": 100
+        "maximumHp": 300,
+        "maximumMp": 150,
+        "magicResistance": 10
     },
     "class": "peasant",
-    "pantsColor": "Black",
     "level": 1,
     "levelCircle": 1,
-    "sellValue": 1250,
+    "sellValue": 10000,
     "weight": 1,
-    "description": "Class: All\nLevel: 1\nHp 100",
-    "name": "Small Spinel Ring",
-    "panelSprite": 210,
+    "description": "Class: All\nLevel: 11\nHp 300, Mp 150\nMR 10%",
+    "name": "Tristar Ring",
+    "panelSprite": 1575,
     "scriptKeys": ["Equipment"],
     "scriptVars": {
         "equipment": {}
     },
-    "templateKey": "smallSpinelRing"
+    "templateKey": "tristarRing"
 }

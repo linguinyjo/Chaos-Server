@@ -1,7 +1,7 @@
 {
     "assailIntervalMs": 1500,
     "expReward": 300,
-    "aggroRange": 12,
+    "aggroRange": 20,
     "moveIntervalMs": 1500,
     "name": "Guardian of Porte Forest",
     "lootTableKeys": [],
@@ -9,8 +9,8 @@
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],
-    "spellIntervalMs": 15000,
-    "spellTemplateKeys": ["beag_sal", "beag_athar", "beag_creag", "beag_srad"],
+    "spellIntervalMs": 10000,
+    "spellTemplateKeys": ["beag_sal", "beag_athar", "beag_creag", "beag_srad", "puinsein"],
     "sprite": 87,
     "statSheet": {
         "level": 34,

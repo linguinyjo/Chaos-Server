@@ -124,11 +124,13 @@ public class DefaultAislingScript : AislingScriptBase
     /// <inheritdoc />
     public override void OnDeath() 
     {
-        new ApplyNonSpellEffect(EffectFactory)
-        {
-            Subject = Subject,
-            EffectKey = "skulled",
-        }.OnApplied();
+        var effect = EffectFactory.Create("skulled");
+        Subject.Effects.Apply(Subject, effect);
+        // new ApplyNonSpellEffect(EffectFactory)
+        // {
+        //     Subject = Subject,
+        //     EffectKey = "skulled",
+        // }.OnApplied();
     }
 
     /// <inheritdoc />

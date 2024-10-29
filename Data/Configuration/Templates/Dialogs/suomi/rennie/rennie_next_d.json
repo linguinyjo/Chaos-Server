@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "close",
+  "scriptKeys": ["RenniePorteForestQuest"],
+  "scriptVars": {},
+  "templateKey": "rennie_next_d",
+  "text": "",
+  "type": "Normal"
+}

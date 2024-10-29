@@ -1,5 +1,7 @@
 using Chaos.Common.Definitions;
+using Chaos.Models.Legend;
 using Chaos.Models.World;
+using Chaos.Time;
 
 namespace Chaos.Scripting.QuestScripts.PorteForest;
 
@@ -36,17 +38,35 @@ public static class PorteForestQuestHelper
     
     public static void CompleteQuest(Aisling source)
     {
-        // source.TryGiveGold(2000);
-        // source.GiveExperience(750);
-        // source.Trackers.Enums.Set(PorteForestQuestStatus.Completed);
-        // var legendMark = new LegendMark(
-        //     "Brought Devlin her ingredients",
-        //     "devlinsIngredients", 
-        //     MarkIcon.Victory,
-        //     MarkColor.White,
-        //     1,
-        //     GameTime.Now);
-        // source.Legend.AddUnique(legendMark);
+        source.Trackers.Enums.Set(PorteForestQuestStatus.Completed);
+        var legendMark = new LegendMark(
+            "Saved the daughter of Porte Forest",
+            "porteForest", 
+            MarkIcon.Victory,
+            MarkColor.White,
+            1,
+            GameTime.Now);
+        source.Legend.AddUnique(legendMark);
+    }
+    
+    public static bool PlayerHasEasedTheSuffering(Aisling player)
+    {
+        player.Trackers.Enums.TryGetValue<EasedSufferingQuestStatus>(out var status);
+        return status == EasedSufferingQuestStatus.Completed;
+    }
+    
+    public static void CompleteEaseTheSuffering(Aisling source)
+    {
+        source.Trackers.Enums.Set(EasedSufferingQuestStatus.Completed);
+        var legendMark = new LegendMark(
+            "Eased the suffering of Porte Forest",
+            "easedTheSuffering", 
+            MarkIcon.Victory,
+            MarkColor.Blue,
+            1,
+            GameTime.Now);
+        source.Legend.AddUnique(legendMark);
+        source.GiveExperience(75000);
         source.SendQuestCompletedAnimation();
     }
 }
@@ -59,6 +79,11 @@ public enum PorteForestQuestStatus
     DeliveredTheRoots = 3,
     FoundThePendant = 4,
     KilledTheMantis = 5,
-    SavedTheDaughter = 6,
-    Completed = 7
+    Completed = 6
+}
+
+public enum EasedSufferingQuestStatus
+{
+    Started = 0,
+    Completed = 1
 }

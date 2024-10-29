@@ -65,13 +65,13 @@ public class DubhBasEffect : EffectBase,
     {
         new ComponentExecutor(Subject, Subject).WithOptions(this)
             .ExecuteAndCheck<GetTargetsAbilityComponent<Creature>>();
-        AislingSubject?.SendOrangeBarMessage("You have been marked for death");
+        AislingSubject?.SendOrangeBarMessage("You feel a darkness seeping through you veins");
     }
 
     /// <inheritdoc />
     public override bool ShouldApply(Creature source, Creature target)
     {
-        if (AislingSubject?.Equipment.ContainsByTemplateKey("silverFurArmor") == true) return false;
+        if (AislingSubject?.Equipment.ContainsByTemplateKey("silverFurTarp") == true) return false;
         var execution = new ComponentExecutor(source, target).WithOptions(this)
             .ExecuteAndCheck<NonOverwritableEffectComponent>();
 

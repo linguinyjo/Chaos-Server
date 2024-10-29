@@ -1,5 +1,5 @@
 {
-    "buyCost": 100,
+    "buyCost": 2000,
     "category": "armor",
     "isDyable": false,
     "accountBound": true,
@@ -12,7 +12,7 @@
     "level": 1,
     "levelCircle": 1,
     "pantsColor": "Black",
-    "sellValue": 50,
+    "sellValue": 1000,
     "weight": 1,
     "description": "Class: All\nLevel: 11\nProtection against some dark attacks",
     "name": "Silver Fur Tarp",

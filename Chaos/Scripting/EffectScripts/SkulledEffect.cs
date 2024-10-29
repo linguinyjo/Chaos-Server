@@ -10,7 +10,7 @@ namespace Chaos.Scripting.EffectScripts;
 
 public class SkulledEffect(ISimpleCache simpleCache) : ContinuousAnimationEffectBase
 {
-    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMilliseconds(10000);
+    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMilliseconds(15000);
 
     /// <inheritdoc />
     protected override Animation Animation { get; } = new()
@@ -46,11 +46,13 @@ public class SkulledEffect(ISimpleCache simpleCache) : ContinuousAnimationEffect
         var currentPosition = AislingSubject.Trackers.LastPosition;
         if (currentPosition != null)
         {
+            //TODO add a chance to drop equipment
             AislingSubject.TryDrop(currentPosition, AislingSubject.Inventory, out GroundItem[] itemsToDrop);
             AislingSubject.TryDropGold(currentPosition, AislingSubject.Gold, out _);
             if (itemsToDrop != null)
                 foreach (var groundItem in itemsToDrop)
                 {
+                    if (groundItem.Item.Template.AccountBound) continue;
                     AislingSubject.Inventory.RemoveByTemplateKey(groundItem.Item.Template.TemplateKey);
                 }
         }
@@ -58,8 +60,11 @@ public class SkulledEffect(ISimpleCache simpleCache) : ContinuousAnimationEffect
         var mapInstance = simpleCache.Get<MapInstance>("cthonicRoom2");
         var destination = new Location("cthonicRoom2",10, 10);
         AislingSubject.TraverseMap(mapInstance, destination);
-        AislingSubject.Refresh(true);
-        AislingSubject.Display();
+        foreach (var effect in AislingSubject.Effects)
+        {
+            if (effect.Name != "SkulledEffect") continue;
+            AislingSubject.Effects.Terminate(effect.Name);
+        }
     }
     
     public override void OnDispelled() {

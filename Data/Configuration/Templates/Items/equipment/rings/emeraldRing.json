@@ -17,7 +17,7 @@
     "level": 11,
     "levelCircle": 2,
     "sellValue": 10000,
-    "weight": 2,
+    "weight": 1,
     "description": "Class: All\nLevel: 11\nMp 200, Regen 1",
     "name": "Emerald Ring",
     "panelSprite": 213,

@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "lureca_next_a",
+      "optionText": "She gave me this ring to give to you"
+    },
+    {
+      "dialogKey": "close",
+      "optionText": "Ummm... you'll have to take my word for it. Goodbye!"
+    }
+  ],
+  "scriptKeys": ["LurecaPorteForestQuest"],
+  "scriptVars": {},
+  "templateKey": "lureca_initial",
+  "text": "Rennie is... she is well? Yes... you have told me this already. But how do I know she is safe?",
+  "type": "Menu"
+}

@@ -39,6 +39,6 @@ public class TerrorOnKillScript : ConfigurableMonsterScriptBase
     /// <inheritdoc />
     public override void OnAttacked(Creature source, int damage)
     {
-        player = source as Aisling;
+        player ??= source as Aisling;
     } 
 }

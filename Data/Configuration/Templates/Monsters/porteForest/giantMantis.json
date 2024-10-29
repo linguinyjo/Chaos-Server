@@ -1,23 +1,27 @@
 {
-    "assailIntervalMs": 1300,
+    "assailIntervalMs": 1200,
     "expReward": 2131,
-    "aggroRange": 10,
+    "aggroRange": 20,
     "moveIntervalMs": 1000,
     "name": "Giant Mantis",
     "lootTableKeys": [],
-    "scriptKeys": ["default", "setMonsterElement"],
-    "scriptVars": {},
+    "scriptKeys": ["default", "setMonsterElement", "giantMantis"],
+    "scriptVars": {
+        "giantMantis": {
+            "destination": "giantMantisUnderGround:(6,11)"
+        }
+    },
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],
-    "spellIntervalMs": 8000,
-    "spellTemplateKeys": ["dubh_bas", "cradh", "puinsein"],
+    "spellIntervalMs": 6000,
+    "spellTemplateKeys": ["dubh_bas", "cradh"],
     "sprite": 266,
     "statSheet": {
         "level": 41,
-        "ac": 25,
-        "maximumHp": 10000,
-        "maximumMp": 1000,
-        "physicalAttack": 70,
+        "ac": -10,
+        "maximumHp": 1000,
+        "maximumMp": 10000,
+        "physicalAttack": 80,
         "magicAttack": 80,
         "con": 40,
         "dex": 40,
