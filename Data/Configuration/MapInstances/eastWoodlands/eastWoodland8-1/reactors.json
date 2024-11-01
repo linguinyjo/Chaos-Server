@@ -3,7 +3,28 @@
         "scriptKeys": ["warp"],
         "scriptVars": {
             "warp": {
-                "destination": "eastWoodlandCrossroads:(17, 1)"
+                "destination": "eastWoodland7-1:(1, 24)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(49, 26)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "eastWoodland7-1:(1, 23)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(49, 25)"
+    },
+
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "eastWoodland9-1:(23, 1)"
             }
         },
         "shouldBlockPathfinding": true,
@@ -13,7 +34,7 @@
         "scriptKeys": ["warp"],
         "scriptVars": {
             "warp": {
-                "destination": "eastWoodlandCrossroads:(18, 1)"
+                "destination": "eastWoodland9-1:(24, 1)"
             }
         },
         "shouldBlockPathfinding": true,
@@ -24,7 +45,7 @@
         "scriptKeys": ["warp"],
         "scriptVars": {
             "warp": {
-                "destination": "eastWoodland7-1:(25, 48)"
+                "destination": "eastWoodland9-2:(25, 48)"
             }
         },
         "shouldBlockPathfinding": true,
@@ -34,31 +55,10 @@
         "scriptKeys": ["warp"],
         "scriptVars": {
             "warp": {
-                "destination": "eastWoodland7-1:(26, 48)"
+                "destination": "eastWoodland9-2:(26, 48)"
             }
         },
         "shouldBlockPathfinding": true,
         "source": "(24, 0)"
-    },
-
-    {
-        "scriptKeys": ["warp"],
-        "scriptVars": {
-            "warp": {
-                "destination": "eastWoodland10-1:(1, 24)"
-            }
-        },
-        "shouldBlockPathfinding": true,
-        "source": "(49, 24)"
-    },
-    {
-        "scriptKeys": ["warp"],
-        "scriptVars": {
-            "warp": {
-                "destination": "eastWoodland10-1:(1, 23)"
-            }
-        },
-        "shouldBlockPathfinding": true,
-        "source": "(49, 23)"
     }
 ]
