@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 148,
+    "expReward": 113,
     "moveIntervalMs": 1500,
     "aggroRange": 10,
     "name": "Centipede",
@@ -15,9 +15,9 @@
     "statSheet": {
         "level": 21,
         "ac": 75,
-        "maximumHp": 1500,
+        "maximumHp": 1200,
         "maximumMp": 1000,
-        "physicalAttack": 30,
+        "physicalAttack": 22,
         "magicAttack": 40,
         "con": 4,
         "dex": 1,

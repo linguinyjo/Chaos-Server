@@ -1,0 +1,31 @@
+{
+    "assailIntervalMs": 1500,
+    "expReward": 195,
+    "aggroRange": 10,
+    "moveIntervalMs": 1300,
+    "name": "Scorpion",
+    "lootTableKeys": ["crypt5Scorpions"],
+    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptVars": {},
+    "skillIntervalMs": 1500,
+    "skillTemplateKeys": ["Assail"],
+    "spellIntervalMs": 20000,
+    "spellTemplateKeys": ["beag_sal", "beag_athar", "beag_creag", "beag_srad", "beag_cradh"],
+    "sprite": 55,
+    "statSheet": {
+        "level": 29,
+        "ac": 65,
+        "maximumHp": 2200,
+        "maximumMp": 1000,
+        "physicalAttack": 32,
+        "magicAttack": 45,
+        "con": 4,
+        "dex": 1,
+        "int": 20,
+        "str": 23,
+        "wis": 1
+    },
+    "templateKey": "crypt5Scorpion",
+    "type": "Normal",
+    "wanderIntervalMs": 2000
+}

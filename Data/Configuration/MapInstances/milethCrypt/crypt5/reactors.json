@@ -23,7 +23,7 @@
         "scriptKeys": ["terrorQuestWarp"],
         "scriptVars": {
             "terrorQuestWarp": {
-                "destination": "shroudedCrypt:(1, 10)",
+                "destination": "shroudedCrypt:(1, 4)",
                 "requiredStatus": 7
             }
         },

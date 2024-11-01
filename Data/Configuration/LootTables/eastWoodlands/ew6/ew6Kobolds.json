@@ -1,0 +1,29 @@
+{
+  "key": "ew6Kobolds",
+  "lootDrops": [
+    {
+      "dropChance": 0.2,
+      "itemTemplateKey": "wolfSkin"
+    },
+    {
+      "dropChance": 0.1,
+      "itemTemplateKey": "koboldSkull"
+    },
+    {
+      "dropChance": 0.01,
+      "itemTemplateKey": "enchantWeaponScroll2nd"
+    },
+    {
+      "dropChance": 0.008,
+      "itemTemplateKey": "leatherEmeraldGauntlet"
+    },
+    {
+      "dropChance": 0.006,
+      "itemTemplateKey": "shagreenBoots"
+    },
+    {
+      "dropChance": 0.005,
+      "itemTemplateKey": "battleSword"
+    }
+  ]
+}

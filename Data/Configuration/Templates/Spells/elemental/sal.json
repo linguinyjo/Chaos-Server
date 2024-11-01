@@ -1,0 +1,46 @@
+{
+    "learningRequirements": {
+        "itemRequirements": [],
+        "requiredStats": {
+            "con": 5,
+            "dex": 13,
+            "int": 7,
+            "str": 4,
+            "wis": 18
+        },
+        "requiredGold": 10000,
+        "prerequisiteSkills": [],
+        "prerequisiteSpells": []
+    },
+    "spellType": "Targeted",
+    "class": "Wizard",
+    "description": "A weak spell that deals water damage.",
+    "level": 11,
+    "castLines": 3,
+    "name": "sal",
+    "panelSprite": 46,
+    "scriptKeys": ["damage"],
+    "scriptVars": {
+        "damage": {
+            "bodyAnimation": "wizardCast",
+            "animatePoints": true,
+            "range": 12,
+            "element": "water",
+            "damageStat": "int",
+            "manaCost": 100,
+            "spellCategory": "Damage",
+            "sound": 167,
+            "filter": "hostileOnly, aliveOnly, othersOnly",
+            "minSoundIntervalMs": 900,
+            "baseDamage": 75,
+            "damageStatMultiplier": 3,
+            "animation": {
+                "targetAnimation": 11,
+                "animationSpeed": 150
+            },
+            "useMatk": true,
+            "canResist": true
+        }
+    },
+    "templateKey": "sal"
+}

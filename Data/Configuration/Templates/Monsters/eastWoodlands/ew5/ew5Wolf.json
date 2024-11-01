@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 170,
+    "expReward": 202,
     "aggroRange": 10,
     "moveIntervalMs": 1500,
     "name": "Wolf",
@@ -17,7 +17,7 @@
         "ac": 71,
         "maximumHp": 2100,
         "maximumMp": 1000,
-        "physicalAttack": 41,
+        "physicalAttack": 38,
         "magicAttack": 45,
         "con": 4,
         "dex": 1,

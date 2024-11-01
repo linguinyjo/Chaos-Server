@@ -1,0 +1,31 @@
+{
+    "assailIntervalMs": 1500,
+    "expReward": 285,
+    "moveIntervalMs": 1300,
+    "aggroRange": 10,
+    "name": "Greater Bat",
+    "lootTableKeys": ["crypt7GreaterBats"],
+    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptVars": {},
+    "skillIntervalMs": 1500,
+    "skillTemplateKeys": ["Assail"],
+    "spellIntervalMs": 20000,
+    "spellTemplateKeys": ["beag_sal", "beag_athar", "beag_creag", "beag_srad", "beag_cradh"],
+    "sprite": 46,
+    "statSheet": {
+        "level": 39,
+        "ac": 55,
+        "maximumHp": 2650,
+        "maximumMp": 1000,
+        "physicalAttack": 43,
+        "magicAttack": 55,
+        "con": 4,
+        "dex": 3,
+        "int": 26,
+        "str": 26,
+        "wis": 3
+    },
+    "templateKey": "crypt7GreaterBat",
+    "type": "Normal",
+    "wanderIntervalMs": 2000
+}

@@ -2,31 +2,31 @@
     {
         "blackList": [],
         "extraScriptKeys": [],
-        "intervalSecs": 180,
+        "intervalSecs": 420,
         "intervalVariancePct": 30,
         "extraLootTableKeys": [],
-        "maxAmount": 15,
-        "maxPerSpawn": 15,
-        "monsterTemplateKey": "crypt2Rat"
+        "maxAmount": 12,
+        "maxPerSpawn": 12,
+        "monsterTemplateKey": "crypt5Centipede"
       },
     {
         "blackList": [],
         "extraScriptKeys": [],
-        "intervalSecs": 180,
-        "intervalVariancePct": 30,
-        "extraLootTableKeys": [],
-        "maxAmount": 15,
-        "maxPerSpawn": 15,
-        "monsterTemplateKey": "crypt2Spider"
-    },
-    {
-        "blackList": [],
-        "extraScriptKeys": [],
-        "intervalSecs": 180,
+        "intervalSecs": 420,
         "intervalVariancePct": 30,
         "extraLootTableKeys": [],
         "maxAmount": 10,
         "maxPerSpawn": 10,
-        "monsterTemplateKey": "crypt2Centipede"
+        "monsterTemplateKey": "crypt5Bat"
+    },
+    {
+        "blackList": [],
+        "extraScriptKeys": [],
+        "intervalSecs": 420,
+        "intervalVariancePct": 30,
+        "extraLootTableKeys": [],
+        "maxAmount": 8,
+        "maxPerSpawn": 8,
+        "monsterTemplateKey": "crypt5Scorpion"
     }
 ]

@@ -1,0 +1,15 @@
+{
+  "buyCost": 750,
+  "category": "monster",
+  "color": "Default",
+  "isModifiable": false,
+  "maxStacks": 1,
+  "sellValue": 750,
+  "weight": 1,
+  "description": "",
+  "name": "Bat Wing",
+  "panelSprite": 326,
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "batWing"
+}

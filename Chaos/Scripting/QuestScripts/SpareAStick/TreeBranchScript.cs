@@ -30,7 +30,7 @@ public class TreeBranchScript :  ReactorTileScriptBase
         var chance = random.Next(1, 101);
     
         // 5% chance (if number is 1-5)
-        if (chance > 5) return;
+        if (chance > 10) return;
         var item = ItemFactory.Create("treeBranch");
         aisling.Inventory.TryAddToNextSlot(item);
     }

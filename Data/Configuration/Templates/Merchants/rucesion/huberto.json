@@ -4,12 +4,17 @@
             "itemTemplateKey": "galuchatCoat",
             "stock": 100
         },
+       
         {
-            "itemTemplateKey": "culotte",
+            "itemTemplateKey": "gardcorp",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "journeyman",
             "stock": 100
         }
     ],
-    "itemsToBuy": ["galuchatCoat", "dobok"],
+    "itemsToBuy": ["galuchatCoat", "dobok", "culotte",  "cowl"],
     "name": "Huberto",
     "restockIntervalHrs": 1,
     "restockPCt": 100,

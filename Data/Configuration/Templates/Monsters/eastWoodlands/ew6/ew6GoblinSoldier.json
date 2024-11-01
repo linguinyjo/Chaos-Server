@@ -1,0 +1,33 @@
+{
+    "assailIntervalMs": 1500,
+    "expReward": 273,
+    "aggroRange": 10,
+    "moveIntervalMs": 1300,
+    "maxGoldDrop": 600,
+    "minGoldDrop": 300,
+    "name": "Goblin Soldier",
+    "lootTableKeys": ["ew6GoblinSoldiers"],
+    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptVars": {},
+    "skillIntervalMs": 1500,
+    "skillTemplateKeys": ["Assail"],
+    "spellIntervalMs": 20000,
+    "spellTemplateKeys": ["beag_sal", "beag_athar", "beag_creag", "beag_srad", "beag_cradh", "puinsein"],
+    "sprite": 15,
+    "statSheet": {
+        "level": 32,
+        "ac": 63,
+        "maximumHp": 2600,
+        "maximumMp": 1000,
+        "physicalAttack": 42,
+        "magicAttack": 50,
+        "con": 4,
+        "dex": 1,
+        "int": 20,
+        "str": 20,
+        "wis": 1
+    },
+    "templateKey": "ew6GoblinSoldier",
+    "type": "Normal",
+    "wanderIntervalMs": 2000
+}

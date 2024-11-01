@@ -47,7 +47,7 @@ public class TeagueScript:  DialogScriptBase
                 Subject.AddOption("Give 10000 coins", "teague_crypt_terror_initial");
                 break;
             case TerrorQuestStatus.CryptSlain:
-                Subject.AddOption("I slew the terror in the crypt", "teague_garden_terror_slain");
+                Subject.AddOption("I slew the terror in the crypt", "teague_crypt_terror_slain");
                 break;
         }
     }

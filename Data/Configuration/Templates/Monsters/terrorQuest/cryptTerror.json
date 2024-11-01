@@ -8,7 +8,7 @@
     "scriptKeys": ["default", "setMonsterElement", "terrorOnKill"],
     "scriptVars": {
         "terrorOnKill": {
-            "destination": "milethCrypt4:(25,43)"
+            "destination": "crypt5:(2,45)"
         }
     },
     "skillIntervalMs": 1500,
@@ -19,7 +19,7 @@
     "statSheet": {
         "level": 31,
         "ac": 63,
-        "maximumHp": 10000,
+        "maximumHp": 1000,
         "maximumMp": 1000,
         "physicalAttack": 140,
         "magicAttack": 140,

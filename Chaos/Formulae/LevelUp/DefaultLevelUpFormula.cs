@@ -9,12 +9,12 @@ public class DefaultLevelUpFormula : ILevelUpFormula
     /// <inheritdoc />
     public virtual Attributes CalculateAttributesIncrease(Aisling aisling)
     {
-        var conMod = (double)aisling.StatSheet.Con / aisling.StatSheet.Level + 1;
-        var wisMod = (double)aisling.StatSheet.Wis / aisling.StatSheet.Level + 1;
+        var conMod = (double)aisling.StatSheet.Con / (aisling.StatSheet.Level + 1);
+        var wisMod = (double)aisling.StatSheet.Wis / (aisling.StatSheet.Level + 1);
 
         var random = new Random();
         var hpRandom = random.Next(21, 41);  
-        var mpRandom = random.Next(11, 21);  
+        var mpRandom = random.Next(21, 41);  
         
         var (maxHpGain, maxMpGain) = GetMaxHpMpGain(aisling.StatSheet.Level);
 
@@ -36,21 +36,21 @@ public class DefaultLevelUpFormula : ILevelUpFormula
     public virtual int CalculateTnl(Aisling aisling)
     {
         var level = aisling.UserStatSheet.Level;
-
+        // return 100;   //TODO 
         double divisionFactor = level switch
         {
-            >= 1 and <= 21 => 6,
-            >= 22 and <= 41 => 5,
-            >= 42 and <= 61 => 4,
-            >= 62 and <= 79 => 3,
-            >= 80 and <= 99 => 2,
-            _ => 6
+            >= 1 and <= 19 => 6,
+            >= 20 and <= 39 => 5,
+            >= 31 and <= 40 => 4,
+            >= 41 and <= 50 => 3,
+            >= 51 and <= 71 => 2,
+            _ => 1
         };
-        return Convert.ToInt32((Math.Pow(level, 2) * 200) / divisionFactor);    
-    } 
+        return Convert.ToInt32((Math.Pow(level, 2) * 250) / divisionFactor);    
+    }
     
     private static (int maxHpGain, int maxMpGain) GetMaxHpMpGain(int level)
     {
-        return level >= 5 ? (175, 99) : (97, 75);
+        return level >= 5 ? (199, 99) : (99, 99);
     }
 }

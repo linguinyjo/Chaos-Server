@@ -9,7 +9,8 @@
     "maxDurability": 5000,
     "maxStacks": 1,
     "modifiers": {
-        "ac": -13
+        "ac": -13,
+        "maximumMp": 150
     },
     "class": "priest",
     "pantsColor": "Black",
@@ -17,7 +18,7 @@
     "levelCircle": 2,
     "sellValue": 3750,
     "weight": 4,
-    "description": "Class: Priest\nLevel: 11\nAc -13",
+    "description": "Class: Priest\nLevel: 11\nAc -13\n150 Mana",
     "name": "Galuchat Coat",
     "panelSprite": 1611,
     "scriptKeys": ["Equipment"],

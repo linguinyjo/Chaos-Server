@@ -2,20 +2,16 @@
   "key": "ew4Bees",
   "lootDrops": [
     {
-      "dropChance": 0.15,
+      "dropChance": 0.20,
       "itemTemplateKey": "rawWax"
     },
     {
-      "dropChance": 0.10,
+      "dropChance": 0.07,
       "itemTemplateKey": "rawHoney"
     },
     {
-      "dropChance": 0.01,
+      "dropChance": 0.008,
       "itemTemplateKey": "enchantWeaponScroll2nd"
-    },
-    {
-      "dropChance": 0.007,
-      "itemTemplateKey": "goldEarrings"
     },
     {
       "dropChance": 0.007,
@@ -23,11 +19,7 @@
     },
     {
       "dropChance": 0.008,
-      "itemTemplateKey": "leatherEmeraldGauntlet"
-    },
-    {
-      "dropChance": 0.008,
-      "itemTemplateKey": "leatherHeartstoneGauntlet"
+      "itemTemplateKey": "leatherBracer"
     }
   ]
 }

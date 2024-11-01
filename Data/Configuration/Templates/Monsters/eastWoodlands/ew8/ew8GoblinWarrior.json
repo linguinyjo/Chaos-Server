@@ -1,0 +1,33 @@
+{
+    "assailIntervalMs": 1500,
+    "expReward": 307,
+    "aggroRange": 10,
+    "moveIntervalMs": 1500,
+    "name": "Goblin Warrior",
+    "maxGoldDrop": 700,
+    "minGoldDrop": 400,
+    "lootTableKeys": ["ew8GoblinWarriors"],
+    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptVars": {},
+    "skillIntervalMs": 1500,
+    "skillTemplateKeys": ["Assail"],
+    "spellIntervalMs": 20000,
+    "spellTemplateKeys": ["beag_sal", "beag_athar", "beag_creag", "beag_srad", "beag_cradh", "puinsein"],
+    "sprite": 17,
+    "statSheet": {
+        "level": 35,
+        "ac": 59,
+        "maximumHp": 3050,
+        "maximumMp": 1000,
+        "physicalAttack": 51,
+        "magicAttack": 55,
+        "con": 4,
+        "dex": 1,
+        "int": 22,
+        "str": 28,
+        "wis": 1
+    },
+    "templateKey": "ew8GoblinWarrior",
+    "type": "Normal",
+    "wanderIntervalMs": 2000
+}

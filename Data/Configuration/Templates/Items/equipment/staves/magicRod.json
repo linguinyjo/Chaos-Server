@@ -2,7 +2,7 @@
     "buyCost": 12000,
     "category": "Staff",
     "color": "Forest",
-    "displaySprite": 24,
+    "displaySprite": 151,
     "equipmentType": "Weapon",
     "gender": "Unisex",
     "isModifiable": true,
@@ -19,7 +19,7 @@
     "weight": 2,
     "description": "Class: Peasant\nLevel: 1\nMagic Attack 18, Mana 100",
     "name": "Magic Rod",
-    "panelSprite": 183,
+    "panelSprite": 2281,
     "scriptKeys": ["Equipment", "EquipStaff"],
     "scriptVars": {
         "equipment": {},

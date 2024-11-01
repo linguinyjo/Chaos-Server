@@ -21,7 +21,7 @@
     "panelSprite": 237,
     "scriptKeys": ["Equipment"],
     "scriptVars": {
-        "equipment": {},
+        "equipment": {}
     },
     "templateKey": "hybrasylBelt"
 }

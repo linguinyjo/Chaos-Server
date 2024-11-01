@@ -2,7 +2,7 @@
   {
     "blackList": [],
     "extraScriptKeys": [],
-    "intervalSecs": 180,
+    "intervalSecs": 500,
     "intervalVariancePct": 30,
     "extraLootTableKeys": [],
     "maxAmount": 12,
@@ -12,7 +12,7 @@
   {
     "blackList": [],
     "extraScriptKeys": [],
-    "intervalSecs": 180,
+    "intervalSecs": 500,
     "intervalVariancePct": 30,
     "extraLootTableKeys": [],
     "maxAmount": 12,
@@ -22,7 +22,7 @@
   {
     "blackList": [],
     "extraScriptKeys": [],
-    "intervalSecs": 180,
+    "intervalSecs": 500,
     "intervalVariancePct": 30,
     "extraLootTableKeys": [],
     "maxAmount": 8,
@@ -32,7 +32,7 @@
   {
     "blackList": [],
     "extraScriptKeys": [],
-    "intervalSecs": 180,
+    "intervalSecs": 500,
     "intervalVariancePct": 30,
     "extraLootTableKeys": [],
     "maxAmount": 8,

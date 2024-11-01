@@ -58,7 +58,7 @@ public class DefaultExperienceFormula : IExperienceFormula
         
         switch (levelDifference)
         {
-            case <= 7:
+            case <= 6:
             {
                 // Use existing logic for level differences of 7 or less
                 var upperBound = LevelRangeFormulae.Default.GetUpperBound(highestPlayerLevel);
@@ -72,10 +72,10 @@ public class DefaultExperienceFormula : IExperienceFormula
                 var faultSize = Math.Abs(bounds - monsterLevel);
                 return Math.Min(1, faultSize / stepSize * 0.25m);
             }
-            case 8:
+            case 7:
                 // 25% reduction for 8 levels higher
                 return 0.25m;
-            case 9:
+            case 8:
                 // 50% reduction for 9 levels higher
                 return 0.50m;
             default:

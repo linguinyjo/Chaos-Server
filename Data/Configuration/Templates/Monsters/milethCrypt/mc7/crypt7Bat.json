@@ -1,0 +1,31 @@
+{
+    "assailIntervalMs": 1500,
+    "expReward": 241,
+    "aggroRange": 10,
+    "moveIntervalMs": 1500,
+    "name": "Bat",
+    "lootTableKeys": ["crypt4Bats"],
+    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptVars": {},
+    "skillIntervalMs": 1500,
+    "skillTemplateKeys": ["Assail"],
+    "spellIntervalMs": 20000,
+    "spellTemplateKeys": ["beag_sal", "beag_athar", "beag_creag", "beag_srad", "beag_cradh"],
+    "sprite": 47,
+    "statSheet": {
+        "level": 37,
+        "ac": 56,
+        "maximumHp": 2500,
+        "maximumMp": 1000,
+        "physicalAttack": 38,
+        "magicAttack": 55,
+        "con": 4,
+        "dex": 1,
+        "int": 25,
+        "str": 25,
+        "wis": 1
+    },
+    "templateKey": "crypt7Bat",
+    "type": "Normal",
+    "wanderIntervalMs": 2000
+}

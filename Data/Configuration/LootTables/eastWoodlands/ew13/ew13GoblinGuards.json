@@ -1,0 +1,33 @@
+{
+  "key": "ew13GoblinGuards",
+  "lootDrops": [
+    {
+      "dropChance": 0.1,
+      "itemTemplateKey": "goblinSkull"
+    },
+    {
+      "dropChance": 0.02,
+      "itemTemplateKey": "enchantWeaponScroll2nd"
+    },
+    {
+      "dropChance": 0.008,
+      "itemTemplateKey": "leatherHeartstoneGauntlet"
+    },
+    {
+      "dropChance": 0.006,
+      "itemTemplateKey": "hybrasylBelt"
+    },
+    {
+      "dropChance": 0.005,
+      "itemTemplateKey": "battleSword"
+    },
+    {
+      "dropChance": 0.005,
+      "itemTemplateKey": "templar"
+    },
+    {
+      "dropChance": 0.003,
+      "itemTemplateKey": "masquerade"
+    }
+  ]
+}

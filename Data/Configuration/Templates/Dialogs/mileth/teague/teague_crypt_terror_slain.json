@@ -1,4 +1,5 @@
 {
+  "nextDialogKey": "teague_terror_ends",
   "scriptKeys": ["TerrorQuest"],
   "scriptVars": {},
   "templateKey": "teague_crypt_terror_slain",

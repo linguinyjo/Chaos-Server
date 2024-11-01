@@ -4,8 +4,13 @@
     "extraScriptKeys": [],
     "intervalSecs": 600,
     "intervalVariancePct": 50,
-    "extraLootTableKeys": [
-    ],
+    "extraLootTableKeys": [],
+    "spawnArea": {
+      "Top": 9,
+      "Left": 5,
+      "Width": 2,
+      "Height": 2
+    },
     "maxAmount": 1,
     "maxPerSpawn": 1,
     "monsterTemplateKey": "nightTerror"

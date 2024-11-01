@@ -2,7 +2,7 @@
     {
         "blackList": [],
         "extraScriptKeys": [],
-        "intervalSecs": 180,
+        "intervalSecs": 420,
         "intervalVariancePct": 30,
         "extraLootTableKeys": [],
         "maxAmount": 8,
@@ -12,7 +12,7 @@
     {
         "blackList": [],
         "extraScriptKeys": [],
-        "intervalSecs": 180,
+        "intervalSecs": 420,
         "intervalVariancePct": 30,
         "extraLootTableKeys": [],
         "maxAmount": 10,
@@ -22,11 +22,11 @@
     {
         "blackList": [],
         "extraScriptKeys": [],
-        "intervalSecs": 180,
+        "intervalSecs": 420,
         "intervalVariancePct": 30,
         "extraLootTableKeys": [],
-        "maxAmount": 12,
-        "maxPerSpawn": 12,
+        "maxAmount": 8,
+        "maxPerSpawn": 8,
         "monsterTemplateKey": "crypt4Centipede"
     }
 ]

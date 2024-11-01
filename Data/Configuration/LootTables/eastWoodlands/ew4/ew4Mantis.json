@@ -2,7 +2,7 @@
   "key": "ew4Mantis",
   "lootDrops": [
     {
-      "dropChance": 0.30,
+      "dropChance": 0.25,
       "itemTemplateKey": "mantisEye"
     },
     {
@@ -18,12 +18,12 @@
       "itemTemplateKey": "coralEarrings"
     },
     {
-      "dropChance": 0.008,
-      "itemTemplateKey": "leatherEmeraldGauntlet"
+      "dropChance": 0.009,
+      "itemTemplateKey": "leatherShield"
     },
     {
-      "dropChance": 0.008,
-      "itemTemplateKey": "leatherHeartstoneGauntlet"
+      "dropChance": 0.009,
+      "itemTemplateKey": "leatherBracer"
     }
   ]
 }

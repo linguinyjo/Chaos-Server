@@ -2,7 +2,7 @@
   "key": "ew5Wolfs",
   "lootDrops": [
     {
-      "dropChance": 0.20,
+      "dropChance": 0.15,
       "itemTemplateKey": "wolfSkin"
     },
     {
@@ -22,20 +22,12 @@
       "itemTemplateKey": "coralEarrings"
     },
     {
-      "dropChance": 0.008,
-      "itemTemplateKey": "leatherEmeraldGauntlet"
+      "dropChance": 0.009,
+      "itemTemplateKey": "leatherShield"
     },
     {
-      "dropChance": 0.008,
-      "itemTemplateKey": "leatherHeartstoneGauntlet"
-    },
-    {
-      "dropChance": 0.006,
-      "itemTemplateKey": "hybrasylBelt"
-    },
-    {
-      "dropChance": 0.007,
-      "itemTemplateKey": "shagreenBoots"
+      "dropChance": 0.009,
+      "itemTemplateKey": "leatherBracer"
     }
   ]
 }

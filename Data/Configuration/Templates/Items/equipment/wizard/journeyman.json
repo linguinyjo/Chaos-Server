@@ -9,7 +9,8 @@
     "maxDurability": 5000,
     "maxStacks": 1,
     "modifiers": {
-        "ac": -9
+        "ac": -9,
+        "maximumMp": 150
     },
     "class": "wizard",
     "pantsColor": "Black",

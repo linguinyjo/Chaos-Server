@@ -21,7 +21,7 @@
     "panelSprite": 236,
     "scriptKeys": ["Equipment"],
     "scriptVars": {
-        "equipment": {},
+        "equipment": {}
     },
     "templateKey": "mythrilBelt"
 }

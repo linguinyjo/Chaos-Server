@@ -1,10 +1,6 @@
 {
     "itemsForSale": [
         {
-            "itemTemplateKey": "galuchatCoat",
-            "stock": 100
-        },
-        {
             "itemTemplateKey": "culotte",
             "stock": 100
         }

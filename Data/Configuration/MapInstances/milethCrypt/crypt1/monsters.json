@@ -2,21 +2,21 @@
     {
         "blackList": [],
         "extraScriptKeys": [],
-        "intervalSecs": 90,
+        "intervalSecs": 420,
         "intervalVariancePct": 30,
         "extraLootTableKeys": [],
-        "maxAmount": 20,
-        "maxPerSpawn": 20,
+        "maxAmount": 30,
+        "maxPerSpawn": 30,
         "monsterTemplateKey": "crypt1Rat"
       },
     {
         "blackList": [],
         "extraScriptKeys": [],
-        "intervalSecs": 90,
+        "intervalSecs": 420,
         "intervalVariancePct": 30,
         "extraLootTableKeys": [],
-        "maxAmount": 10,
-        "maxPerSpawn": 10,
+        "maxAmount": 15,
+        "maxPerSpawn": 15,
         "monsterTemplateKey": "crypt1Spider"
     }
 ]
