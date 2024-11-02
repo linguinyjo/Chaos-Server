@@ -45,7 +45,7 @@
         "scriptKeys": ["warp"],
         "scriptVars": {
             "warp": {
-                "destination": "eastWoodland10-1:(1, 23)"
+                "destination": "eastWoodland11-1:(1, 23)"
             }
         },
         "shouldBlockPathfinding": true,
@@ -55,7 +55,7 @@
         "scriptKeys": ["warp"],
         "scriptVars": {
             "warp": {
-                "destination": "eastWoodland10-1:(1, 24)"
+                "destination": "eastWoodland11-1:(1, 24)"
             }
         },
         "shouldBlockPathfinding": true,

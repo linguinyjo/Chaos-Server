@@ -7,7 +7,8 @@
     "spellType": "NoTarget",
     "class": "monk",
     "panelSprite": 10,
-    "cooldownMs": 30000,
+    "cooldownMs": 10000,
+    "spellCategory": "Hide",
     "scriptKeys": ["applyEffect"],
     "scriptVars": {
         "applyEffect": {

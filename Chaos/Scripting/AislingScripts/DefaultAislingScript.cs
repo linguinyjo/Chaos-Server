@@ -126,11 +126,6 @@ public class DefaultAislingScript : AislingScriptBase
     {
         var effect = EffectFactory.Create("skulled");
         Subject.Effects.Apply(Subject, effect);
-        // new ApplyNonSpellEffect(EffectFactory)
-        // {
-        //     Subject = Subject,
-        //     EffectKey = "skulled",
-        // }.OnApplied();
     }
 
     /// <inheritdoc />

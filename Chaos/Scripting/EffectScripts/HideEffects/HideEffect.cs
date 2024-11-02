@@ -1,3 +1,4 @@
+using Chaos.Common.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.World.Abstractions;
 using Chaos.Scripting.EffectScripts.Abstractions;
@@ -15,11 +16,25 @@ public sealed class HideEffect : EffectBase
     /// <inheritdoc />
     public override string Name => "Hide";
 
-    /// <inheritdoc />
-    public override void OnApplied() => Subject.SetVisibility(VisibilityType.Hidden);
+    private static readonly TimeSpan TemporaryCooldown = TimeSpan.FromMilliseconds(5000);
 
     /// <inheritdoc />
-    public override void OnTerminated() => Subject.SetVisibility(VisibilityType.Normal);
+    public override void OnApplied()
+    {
+        Subject.SetVisibility(VisibilityType.Hidden);
+        AislingSubject?.Refresh(true);
+    }
+
+    /// <inheritdoc />
+    public override void OnTerminated()
+    {
+        Subject.SetVisibility(VisibilityType.Normal);
+        foreach (var spell in AislingSubject.SpellBook.Where(s => s.Template.SpellCategory == SpellCategory.Hide))
+        {
+            spell.BeginCooldown(AislingSubject, TemporaryCooldown);
+        }
+        AislingSubject?.Refresh(true);
+    }
 
     /// <inheritdoc />
     public override bool ShouldApply(Creature source, Creature target)

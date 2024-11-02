@@ -964,7 +964,8 @@ public enum SpellCategory : byte
     Debuff = 4,
     Cc = 5,
     Song = 6,
-    Damage = 7
+    Damage = 7,
+    Hide = 8
 }
 
 /// <summary>

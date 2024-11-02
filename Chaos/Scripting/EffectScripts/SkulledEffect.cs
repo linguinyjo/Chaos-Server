@@ -2,6 +2,7 @@ using Chaos.Collections;
 using Chaos.Models.Data;
 using Chaos.Models.Panel;
 using Chaos.Models.World;
+using Chaos.Models.World.Abstractions;
 using Chaos.Scripting.EffectScripts.Abstractions;
 using Chaos.Storage.Abstractions;
 using Chaos.Time;
@@ -27,7 +28,7 @@ public class SkulledEffect(ISimpleCache simpleCache) : ContinuousAnimationEffect
     protected override IIntervalTimer Interval { get; } = new IntervalTimer(TimeSpan.FromMilliseconds(1500));
 
     /// <inheritdoc />
-    public override byte Icon => 35;
+    public override byte Icon => 89;
 
     /// <inheritdoc />
     public override string Name => "Skulled";

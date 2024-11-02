@@ -47,10 +47,4 @@ public class PuinseinEffect : ContinuousAnimationEffectBase
         if (Subject.StatSheet.TrySubtractHp(damagePerTick))
             AislingSubject?.Client.SendAttributes(StatUpdateType.Vitality);
     }
-    
-    /// <inheritdoc />
-    public override bool ShouldApply(Creature source, Creature target)
-    {
-        return !Subject.Effects.Contains("Scorpion Stance");
-    }
 }
