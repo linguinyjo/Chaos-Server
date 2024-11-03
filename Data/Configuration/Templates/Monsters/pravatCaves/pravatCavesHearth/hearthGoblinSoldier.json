@@ -1,8 +1,8 @@
 {
     "assailIntervalMs": 1500,
     "expReward": 657,
-    "moveIntervalMs": 1500,
-    "aggroRange": 10,
+    "moveIntervalMs": 1300,
+    "aggroRange": 14,
     "maxGoldDrop": 1100,
     "minGoldDrop": 600,
     "name": "Goblin Soldier",
@@ -12,10 +12,10 @@
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],
     "spellIntervalMs": 12000,
-    "spellTemplateKeys": ["beag_sal", "beag_athar", "beag_creag", "beag_srad", "beag_cradh"],
+    "spellTemplateKeys": ["sal", "athar", "creag", "srad", "cradh"],
     "sprite": 15,
     "statSheet": {
-        "level": 38,
+        "level": 35,
         "ac": 45,
         "maximumHp": 4500,
         "maximumMp": 1000,

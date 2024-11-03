@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1500,
-    "aggroRange": 10,
+    "aggroRange": 14,
     "expReward": 421,
     "moveIntervalMs": 1500,
     "maxGoldDrop": 500,

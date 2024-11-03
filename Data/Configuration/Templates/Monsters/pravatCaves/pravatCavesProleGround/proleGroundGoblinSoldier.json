@@ -1,8 +1,8 @@
 {
     "assailIntervalMs": 1500,
     "expReward": 571,
-    "aggroRange": 10,
-    "moveIntervalMs": 1500,
+    "aggroRange": 14,
+    "moveIntervalMs": 1300,
     "maxGoldDrop": 750,
     "minGoldDrop": 450,
     "name": "Goblin Soldier",

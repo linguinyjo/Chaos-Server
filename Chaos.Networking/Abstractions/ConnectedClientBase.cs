@@ -1,3 +1,4 @@
+using System.Net;
 using System.Net.Sockets;
 using Chaos.Cryptography.Abstractions;
 using Chaos.Networking.Entities.Server;
@@ -13,6 +14,20 @@ namespace Chaos.Networking.Abstractions;
 /// </summary>
 public abstract class ConnectedClientBase : SocketClientBase, IConnectedClient
 {
+    
+    private static readonly IPAddress MyIp;
+
+    static ConnectedClientBase()
+    {
+        using var client = new HttpClient();
+
+        var ipString = client.GetStringAsync("https://api.ipify.org")
+            .GetAwaiter()
+            .GetResult();
+
+        MyIp = IPAddress.Parse(ipString);
+    }
+    
     /// <inheritdoc />
     protected ConnectedClientBase(
         Socket socket,
@@ -59,6 +74,11 @@ public abstract class ConnectedClientBase : SocketClientBase, IConnectedClient
             Name = redirect.Name,
             Id = redirect.Id
         };
+
+        if (RemoteIp.Equals(MyIp) || RemoteIp.Equals(IPAddress.Loopback))
+        {
+            args.EndPoint = new IPEndPoint(IPAddress.Loopback, args.EndPoint.Port);
+        }
 
         Send(args);
     }

@@ -2,7 +2,7 @@
   {
     "blackList": [],
     "extraScriptKeys": [],
-    "intervalSecs": 180,
+    "intervalSecs": 500,
     "intervalVariancePct": 50,
     "extraLootTableKeys": [
     ],
@@ -13,7 +13,7 @@
   {
     "blackList": [],
     "extraScriptKeys": [],
-    "intervalSecs": 180,
+    "intervalSecs": 500,
     "intervalVariancePct": 50,
     "extraLootTableKeys": [],
     "maxAmount": 30,
@@ -23,7 +23,7 @@
   {
     "blackList": [],
     "extraScriptKeys": [],
-    "intervalSecs": 180,
+    "intervalSecs": 500,
     "intervalVariancePct": 50,
     "extraLootTableKeys": [],
     "maxAmount": 15,

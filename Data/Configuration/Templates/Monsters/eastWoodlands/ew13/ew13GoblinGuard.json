@@ -12,10 +12,10 @@
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],
     "spellIntervalMs": 20000,
-    "spellTemplateKeys": ["beag_sal", "beag_athar", "beag_creag", "beag_srad", "beag_cradh", "puinsein"],
+    "spellTemplateKeys": ["sal", "athar", "creag", "srad", "cradh", "puinsein"],
     "sprite": 16,
     "statSheet": {
-        "level": 38,
+        "level": 35,
         "ac": 38,
         "maximumHp": 4500,
         "maximumMp": 1000,

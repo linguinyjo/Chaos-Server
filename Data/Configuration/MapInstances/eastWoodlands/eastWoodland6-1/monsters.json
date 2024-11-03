@@ -2,31 +2,31 @@
   {
     "blackList": [],
     "extraScriptKeys": [],
-    "intervalSecs": 180,
+    "intervalSecs": 360,
     "intervalVariancePct": 50,
     "extraLootTableKeys": [],
-    "maxAmount": 25,
-    "maxPerSpawn": 25,
-    "monsterTemplateKey": "ew5Mantis"
+    "maxAmount": 10,
+    "maxPerSpawn": 10,
+    "monsterTemplateKey": "ew6GoblinSoldier"
   },
   {
     "blackList": [],
     "extraScriptKeys": [],
-    "intervalSecs": 180,
+    "intervalSecs": 360,
     "intervalVariancePct": 50,
     "extraLootTableKeys": [],
-    "maxAmount": 25,
-    "maxPerSpawn": 25,
-    "monsterTemplateKey": "ew5Wolf"
+    "maxAmount": 12,
+    "maxPerSpawn": 12,
+    "monsterTemplateKey": "ew6Wolf"
   },
   {
     "blackList": [],
     "extraScriptKeys": [],
-    "intervalSecs": 180,
+    "intervalSecs": 360,
     "intervalVariancePct": 50,
     "extraLootTableKeys": [],
-    "maxAmount": 25,
-    "maxPerSpawn": 25,
-    "monsterTemplateKey": "ew5Kobold"
+    "maxAmount": 12,
+    "maxPerSpawn": 12,
+    "monsterTemplateKey": "ew6Kobold"
   }
 ]

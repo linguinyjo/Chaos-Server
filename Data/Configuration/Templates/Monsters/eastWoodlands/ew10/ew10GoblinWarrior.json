@@ -15,7 +15,7 @@
     "spellTemplateKeys": ["beag_sal", "beag_athar", "beag_creag", "beag_srad", "beag_cradh", "puinsein"],
     "sprite": 17,
     "statSheet": {
-        "level": 38,
+        "level": 34,
         "ac": 51,
         "maximumHp": 3400,
         "maximumMp": 1000,

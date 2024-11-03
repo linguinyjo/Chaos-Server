@@ -14,7 +14,7 @@
     },
     "spellType": "Targeted",
     "class": "Wizard",
-    "description": "A weak spell that deals water damage.",
+    "description": "Deals moderate water damage to target",
     "level": 11,
     "castLines": 3,
     "name": "sal",
@@ -35,7 +35,7 @@
             "baseDamage": 75,
             "damageStatMultiplier": 3,
             "animation": {
-                "targetAnimation": 11,
+                "targetAnimation": 10,
                 "animationSpeed": 150
             },
             "useMatk": true,

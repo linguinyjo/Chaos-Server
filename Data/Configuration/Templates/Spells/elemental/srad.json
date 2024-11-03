@@ -14,10 +14,10 @@
     },
     "spellType": "Targeted",
     "class": "Wizard",
-    "description": "A weak spell that deals water damage.",
+    "description": "Deals moderate fire damage to target",
     "level": 1,
     "castLines": 3,
-    "name": "beag sal",
+    "name": "srad",
     "panelSprite": 46,
     "scriptKeys": ["damage"],
     "scriptVars": {
@@ -25,22 +25,22 @@
             "bodyAnimation": "wizardCast",
             "animatePoints": true,
             "range": 12,
-            "element": "water",
+            "element": "fire",
             "damageStat": "int",
             "manaCost": 30,
             "spellCategory": "Damage",
             "sound": 167,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "minSoundIntervalMs": 900,
-            "baseDamage": 30,
-            "damageStatMultiplier": 2,
+            "baseDamage": 75,
+            "damageStatMultiplier": 3,
             "animation": {
-                "targetAnimation": 9,
+                "targetAnimation": 13,
                 "animationSpeed": 150
             },
             "useMatk": true,
             "canResist": true
         }
     },
-    "templateKey": "beag_sal"
+    "templateKey": "srad"
 }

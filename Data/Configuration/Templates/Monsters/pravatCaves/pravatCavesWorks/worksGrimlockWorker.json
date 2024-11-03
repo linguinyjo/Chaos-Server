@@ -2,6 +2,7 @@
     "assailIntervalMs": 1500,
     "expReward": 481,
     "moveIntervalMs": 1500,
+    "aggroRange": 14,
     "maxGoldDrop": 600,
     "minGoldDrop": 300,
     "name": "Grimlock Worker",

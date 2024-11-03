@@ -2,6 +2,7 @@
     "assailIntervalMs": 1500,
     "expReward": 396,
     "moveIntervalMs": 1500,
+    "aggroRange": 14,
     "maxGoldDrop": 500,
     "minGoldDrop": 200,
     "name": "Grimlock Prole",

@@ -1,8 +1,8 @@
 {
     "assailIntervalMs": 1500,
     "expReward": 745,
-    "moveIntervalMs": 1300,
-    "aggroRange": 10,
+    "moveIntervalMs": 1200,
+    "aggroRange": 14,
     "maxGoldDrop": 1200,
     "minGoldDrop": 700,
     "name": "Grimlock Warrior",
@@ -12,10 +12,10 @@
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],
     "spellIntervalMs": 12000,
-    "spellTemplateKeys": ["beag_sal", "beag_athar", "beag_creag", "beag_srad", "beag_cradh", "beag_dall", "puinsein"],
+    "spellTemplateKeys": ["sal", "athar", "creag", "srad", "cradh", "beag_dall", "puinsein"],
     "sprite": 9,
     "statSheet": {
-        "level": 40,
+        "level": 37,
         "ac": 35,
         "maximumHp": 4900,
         "maximumMp": 1000,

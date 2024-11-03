@@ -82,7 +82,7 @@ public sealed class LobbyServer : ServerBase<IChaosLobbyClient>, ILobbyServer<IC
                             ServerType.Login,
                             Encoding.ASCII.GetString(client.Crypto.Key),
                             client.Crypto.Seed);
-
+                        
                         RedirectManager.Add(redirect);
 
                         Logger.WithTopics(Topics.Servers.LobbyServer, Topics.Entities.Client, Topics.Actions.Redirect)
@@ -143,7 +143,7 @@ public sealed class LobbyServer : ServerBase<IChaosLobbyClient>, ILobbyServer<IC
     protected override void OnConnected(Socket clientSocket)
     {
         var ip = clientSocket.RemoteEndPoint as IPEndPoint;
-
+       
         Logger.WithTopics(Topics.Servers.LobbyServer, Topics.Entities.Client, Topics.Actions.Connect)
               .LogDebug("Incoming connection from {@ClientIp}", ip!.Address);
 
