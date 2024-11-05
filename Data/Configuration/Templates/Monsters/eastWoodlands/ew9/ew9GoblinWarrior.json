@@ -1,7 +1,7 @@
 {
     "assailIntervalMs": 1500,
     "expReward": 307,
-    "aggroRange": 10,
+    "aggroRange": 12,
     "moveIntervalMs": 1500,
     "name": "Goblin Warrior",
     "maxGoldDrop": 700,
@@ -15,7 +15,7 @@
     "spellTemplateKeys": ["beag_sal", "beag_athar", "beag_creag", "beag_srad", "beag_cradh", "puinsein","puinsein"],
     "sprite": 17,
     "statSheet": {
-        "level": 35,
+        "level": 30,
         "ac": 59,
         "maximumHp": 3050,
         "maximumMp": 1000,

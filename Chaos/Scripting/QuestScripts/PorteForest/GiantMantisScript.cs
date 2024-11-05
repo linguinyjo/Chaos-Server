@@ -1,6 +1,4 @@
 using Chaos.Collections;
-using Chaos.Common.Definitions;
-using Chaos.Common.Utilities;
 using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
 using Chaos.Scripting.MonsterScripts.Abstractions;
@@ -17,6 +15,8 @@ public class GiantMantisScript : ConfigurableMonsterScriptBase
     private Aisling? player;
     private bool _triggered66Percent = false;
     private bool _triggered33Percent = false;
+    private bool _triggered15Percent = false;
+
     private static readonly (int, int)[] Coordinates = [(9, 9), (4, 10), (6, 16), (14, 11), (14, 16)];
     
     #region ScriptVars
@@ -30,7 +30,6 @@ public class GiantMantisScript : ConfigurableMonsterScriptBase
         Monster = subject;
         MonsterFactory = monsterFactory;
         SimpleCache = simpleCache;
-
     }
 
     /// <inheritdoc />
@@ -53,10 +52,10 @@ public class GiantMantisScript : ConfigurableMonsterScriptBase
         }
 
         // Check 33% threshold
-        if (_triggered33Percent || !(healthPercentage <= 25)) return;
+        if (!_triggered33Percent && healthPercentage <= 33) 
         {
             var mapInstance = SimpleCache.Get<MapInstance>("porteForestPeak");
-            var points = GenerateSpawnPoints(3);
+            var points = GenerateSpawnPoints(4);
             foreach (var point in points)
             {
                 var monster = MonsterFactory.Create("guardianOfPorteForest", mapInstance, point);
@@ -64,20 +63,31 @@ public class GiantMantisScript : ConfigurableMonsterScriptBase
             }   
             _triggered33Percent = true;
         }
+        
+        // Check 15% threshold
+        if (!_triggered15Percent && healthPercentage <= 15)
+        {
+            var mapInstance = SimpleCache.Get<MapInstance>("porteForestPeak");
+            var points = GenerateSpawnPoints(5);
+            foreach (var point in points)
+            {
+                var monster = MonsterFactory.Create("guardianOfPorteForest", mapInstance, point);
+                mapInstance.AddEntity(monster, point);
+            }
+            _triggered15Percent = true;
+        }
     }
 
     private static List<Point> GenerateSpawnPoints(int count)
     {
         var random = new Random();
         var selectedPoints = new List<Point>();
-
-        // Ensure the requested count does not exceed available points
+        
         if (count > Coordinates.Length)
         {
             throw new ArgumentException("Requested count exceeds the number of available coordinates.");
         }
-
-        // Select unique points
+        
         var usedIndices = new HashSet<int>();
         while (selectedPoints.Count < count)
         {
@@ -109,8 +119,8 @@ public class GiantMantisScript : ConfigurableMonsterScriptBase
         
         foreach (var aisling in player.Group)
         {
-            aisling.Trackers.Enums.Set(PorteForestQuestStatus.KilledTheMantis);
             if (aisling.Trackers.LastMapInstanceId != requiredMapId) continue;
+            aisling.Trackers.Enums.Set(PorteForestQuestStatus.KilledTheMantis);
             aisling.TraverseMap(targetMap, Destination);
         }
     }

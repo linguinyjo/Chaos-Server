@@ -3,30 +3,30 @@
     "blackList": [],
     "extraScriptKeys": [],
     "intervalSecs": 360,
-    "intervalVariancePct": 50,
+    "intervalVariancePct": 10,
     "extraLootTableKeys": [],
-    "maxAmount": 14,
-    "maxPerSpawn": 14,
+    "maxAmount": 12,
+    "maxPerSpawn": 12,
     "monsterTemplateKey": "ew11GoblinSoldier"
   },
   {
     "blackList": [],
     "extraScriptKeys": [],
     "intervalSecs": 360,
-    "intervalVariancePct": 50,
+    "intervalVariancePct": 10,
     "extraLootTableKeys": [],
-    "maxAmount": 12,
-    "maxPerSpawn": 12,
+    "maxAmount": 10,
+    "maxPerSpawn": 10,
     "monsterTemplateKey": "ew11GoblinWarrior"
   },
   {
     "blackList": [],
     "extraScriptKeys": [],
     "intervalSecs": 360,
-    "intervalVariancePct": 50,
+    "intervalVariancePct": 10,
     "extraLootTableKeys": [],
-    "maxAmount": 12,
-    "maxPerSpawn": 12,
+    "maxAmount": 10,
+    "maxPerSpawn": 10,
     "monsterTemplateKey": "ew11Kobold"
   }
 ]

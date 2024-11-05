@@ -1,0 +1,37 @@
+{
+  "key": "ew13OrcChiefs",
+  "lootDrops": [
+    {
+      "dropChance": 0.5,
+      "itemTemplateKey": "goblinSkull"
+    },
+    {
+      "dropChance": 0.50,
+      "itemTemplateKey": "enchantWeaponScroll2nd"
+    },
+    {
+      "dropChance": 0.50,
+      "itemTemplateKey": "enchantWeaponScroll2nd"
+    },
+    {
+      "dropChance": 0.50,
+      "itemTemplateKey": "enchantWeaponScroll2nd"
+    },
+    {
+      "dropChance": 0.15,
+      "itemTemplateKey": "leatherHeartstoneGauntlet"
+    },
+    {
+      "dropChance": 0.15,
+      "itemTemplateKey": "hybrasylBelt"
+    },
+    {
+      "dropChance": 0.10,
+      "itemTemplateKey": "masquerade"
+    },
+    {
+      "dropChance": 0.15,
+      "itemTemplateKey": "templar"
+    }
+  ]
+}

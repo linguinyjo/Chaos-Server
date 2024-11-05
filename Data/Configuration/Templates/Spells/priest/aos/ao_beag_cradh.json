@@ -16,7 +16,7 @@
   "spellType": "Targeted",
   "class": "Priest",
   "description": "Applies a small heal effect to your target.",
-  "level": 11,
+  "level": 1,
   "name": "ao beag cradh",
   "panelSprite": 23,
   "scriptKeys": [

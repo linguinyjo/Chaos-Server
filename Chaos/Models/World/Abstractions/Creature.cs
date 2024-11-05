@@ -478,8 +478,10 @@ public abstract class Creature : NamedEntity, IAffected, IScripted<ICreatureScri
 
     public virtual bool TryDrop(IPoint point, IEnumerable<Item> items, [MaybeNullWhen(false)] out GroundItem[] groundItems)
     {
-        groundItems = items.Select(i => new GroundItem(i, MapInstance, point))
-                           .ToArray();
+        groundItems = items
+            .Where(i => i.Template is { AccountBound: false, NoTrade: false })
+            .Select(i => new GroundItem(i, MapInstance, point))
+            .ToArray();
 
         if (!groundItems.Any())
             return false;

@@ -3,7 +3,7 @@
     "blackList": [],
     "extraScriptKeys": [],
     "intervalSecs": 360,
-    "intervalVariancePct": 50,
+    "intervalVariancePct": 10,
     "extraLootTableKeys": [],
     "maxAmount": 15,
     "maxPerSpawn": 15,
@@ -13,7 +13,7 @@
     "blackList": [],
     "extraScriptKeys": [],
     "intervalSecs": 360,
-    "intervalVariancePct": 50,
+    "intervalVariancePct": 10,
     "extraLootTableKeys": [],
     "maxAmount": 15,
     "maxPerSpawn": 15,
@@ -23,10 +23,20 @@
     "blackList": [],
     "extraScriptKeys": [],
     "intervalSecs": 360,
-    "intervalVariancePct": 50,
+    "intervalVariancePct": 10,
     "extraLootTableKeys": [],
     "maxAmount": 12,
     "maxPerSpawn": 12,
     "monsterTemplateKey": "ew13GoblinGuard"
+  },
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 172800,
+    "intervalVariancePct":  12,
+    "extraLootTableKeys": [],
+    "maxAmount": 1,
+    "maxPerSpawn": 1,
+    "monsterTemplateKey": "ew13OrcChief"
   }
 ]

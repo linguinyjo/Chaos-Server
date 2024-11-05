@@ -4,9 +4,9 @@
     "itemRequirements": [],
     "requiredGold": 2500,
     "requiredStats": {
-      "con": 6,
+      "con": 4,
       "dex": 3,
-      "int": 8,
+      "int": 6,
       "str": 3,
       "wis": 10
     },
@@ -16,7 +16,7 @@
   "spellType": "Targeted",
   "class": "Priest",
   "description": "Applies a small armor buff",
-  "level": 11,
+  "level": 1,
   "name": "armachd",
   "panelSprite": 94,
   "scriptKeys": [

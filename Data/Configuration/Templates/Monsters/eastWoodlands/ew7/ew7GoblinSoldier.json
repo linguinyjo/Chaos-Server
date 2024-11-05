@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 170,
+    "expReward": 270,
     "aggroRange": 10,
     "moveIntervalMs": 1500,
     "maxGoldDrop": 600,
@@ -15,7 +15,7 @@
     "spellTemplateKeys": ["beag_sal", "beag_athar", "beag_creag", "beag_srad", "beag_cradh","puinsein"],
     "sprite": 15,
     "statSheet": {
-        "level": 25,
+        "level": 28,
         "ac": 71,
         "maximumHp": 2100,
         "maximumMp": 1000,

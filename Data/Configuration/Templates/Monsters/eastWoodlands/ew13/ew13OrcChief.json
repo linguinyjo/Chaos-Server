@@ -1,0 +1,33 @@
+{
+    "assailIntervalMs": 1500,
+    "expReward": 12360,
+    "aggroRange": 14,
+    "moveIntervalMs": 1000,
+    "maxGoldDrop": 20000,
+    "minGoldDrop": 10000,
+    "name": "Orc Chief",
+    "lootTableKeys": ["ew13OrcChiefs"],
+    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptVars": {},
+    "skillIntervalMs": 1500,
+    "skillTemplateKeys": ["Assail", "Assault"],
+    "spellIntervalMs": 15000,
+    "spellTemplateKeys": ["sal", "athar", "creag", "srad", "cradh"],
+    "sprite": 18,
+    "statSheet": {
+        "level": 40,
+        "ac": -10,
+        "maximumHp": 22500,
+        "maximumMp": 5000,
+        "physicalAttack": 150,
+        "magicAttack": 120,
+        "con": 4,
+        "dex": 1,
+        "int": 38,
+        "str": 54,
+        "wis": 1
+    },
+    "templateKey": "ew13OrcChief",
+    "type": "Normal",
+    "wanderIntervalMs": 1500
+}

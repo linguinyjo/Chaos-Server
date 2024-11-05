@@ -3,7 +3,7 @@
     "blackList": [],
     "extraScriptKeys": [],
     "intervalSecs": 120,
-    "intervalVariancePct": 50,
+    "intervalVariancePct": 10,
     "extraLootTableKeys": [
     ],
     "maxAmount": 60,
@@ -13,8 +13,8 @@
   {
     "blackList": [],
     "extraScriptKeys": [],
-    "intervalSecs": 120,
-    "intervalVariancePct": 50,
+    "intervalSecs": 300,
+    "intervalVariancePct": 10,
     "extraLootTableKeys": [],
     "maxAmount": 30,
     "maxPerSpawn": 30,
@@ -23,8 +23,8 @@
   {
     "blackList": [],
     "extraScriptKeys": [],
-    "intervalSecs": 120,
-    "intervalVariancePct": 50,
+    "intervalSecs": 300,
+    "intervalVariancePct": 10,
     "extraLootTableKeys": [],
     "maxAmount": 5,
     "maxPerSpawn": 5,

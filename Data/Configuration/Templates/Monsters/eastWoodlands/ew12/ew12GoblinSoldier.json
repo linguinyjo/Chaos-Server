@@ -1,7 +1,7 @@
 {
     "assailIntervalMs": 1500,
     "expReward": 332,
-    "aggroRange": 10,
+    "aggroRange": 14,
     "moveIntervalMs": 1300,
     "maxGoldDrop": 900,
     "minGoldDrop": 400,
@@ -12,7 +12,7 @@
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],
     "spellIntervalMs": 20000,
-    "spellTemplateKeys": ["beag_sal", "beag_athar", "beag_creag", "beag_srad", "beag_cradh","puinsein"],
+    "spellTemplateKeys": ["sal", "athar", "creag", "srad", "cradh","puinsein"],
     "sprite": 15,
     "statSheet": {
         "level": 34,

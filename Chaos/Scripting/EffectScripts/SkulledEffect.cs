@@ -52,7 +52,6 @@ public class SkulledEffect(ISimpleCache simpleCache) : ContinuousAnimationEffect
             if (equipmentToDrop != null)
                 foreach (var groundItem in equipmentToDrop)
                 {
-                    if (groundItem.Item.Template.AccountBound) continue;
                     AislingSubject.Equipment.RemoveByTemplateKey(groundItem.Item.Template.TemplateKey);
                 }
             AislingSubject.TryDrop(currentPosition, AislingSubject.Inventory, out var itemsToDrop);
@@ -60,7 +59,6 @@ public class SkulledEffect(ISimpleCache simpleCache) : ContinuousAnimationEffect
             if (itemsToDrop != null)
                 foreach (var groundItem in itemsToDrop)
                 {
-                    if (groundItem.Item.Template.AccountBound) continue;
                     AislingSubject.Inventory.RemoveByTemplateKey(groundItem.Item.Template.TemplateKey);
                 }
         }
@@ -70,7 +68,7 @@ public class SkulledEffect(ISimpleCache simpleCache) : ContinuousAnimationEffect
         AislingSubject.TraverseMap(mapInstance, destination);
         foreach (var effect in AislingSubject.Effects)
         {
-            if (effect.Name != "SkulledEffect") continue;
+            if (effect.Name == "SkulledEffect") continue;
             AislingSubject.Effects.Terminate(effect.Name);
         }
     }

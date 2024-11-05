@@ -50,9 +50,7 @@ public struct EnchantWeaponComponent : IConditionalComponent
         }
 
         var random = new Random();
-        // Generate a random number between 0 and 99 (inclusive)
         var randomNumber = random.Next(100);
-
         // Check if the number is less than 66 (66% chance)
         return randomNumber < 66;
     }
