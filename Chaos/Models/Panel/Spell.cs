@@ -36,7 +36,6 @@ public sealed class Spell : PanelEntityBase, IScripted<ISpellScript>
 
         if (extraScriptKeys != null)
             ScriptKeys.AddRange(extraScriptKeys);
-
         Script = scriptProvider.CreateScript<ISpellScript, Spell>(ScriptKeys, this);
     }
 

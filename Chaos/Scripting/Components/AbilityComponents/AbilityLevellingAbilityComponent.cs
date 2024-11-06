@@ -1,0 +1,147 @@
+using Chaos.Models.Data;
+using Chaos.Models.World;
+using Chaos.Scripting.Components.Abstractions;
+using Chaos.Scripting.Components.Execution;
+
+namespace Chaos.Scripting.Components.AbilityComponents;
+
+public struct AbilityLevellingAbilityComponent : IComponent
+{
+    /// <inheritdoc />
+    public void Execute(ActivationContext context, ComponentVars vars)
+    {
+        var options = vars.GetOptions<IAbilityLevellingComponentOptions>();
+        var aisling = context.SourceAisling;
+        if (aisling == null) return;
+        if (options.IsSpell) UpdateSpellCount(aisling, options);
+        else UpdateSkillCount(aisling, options);
+    }
+
+    private static void UpdateSkillCount(Aisling aisling, IAbilityLevellingComponentOptions options)
+    {
+        if (!aisling.SkillBook.TryGetObjectByTemplateKey(options.AbilityTemplateKey, out var skill) ||
+            skill.Level >= skill.MaxLevel) return;
+        var currentUses = IncrementCounter(aisling, options.AbilityTemplateKey);
+        var requiredUses = SkillLevelingConfig.GetSkillRequiredUses(skill.Level, options.Rate, skill.Template.IsAssail);
+        if (currentUses < requiredUses) return;
+        aisling.SkillBook.Update(skill.Slot, lSkill => lSkill.Level = (byte)(lSkill.Level + 1));
+        aisling.SendOrangeBarMessage($"{skill.Template.Name} has improved");
+        ResetCounter(aisling, options.AbilityTemplateKey);
+    }
+    
+    private static void UpdateSpellCount(Aisling aisling, IAbilityLevellingComponentOptions options)
+    {
+        if (!aisling.SpellBook.TryGetObjectByTemplateKey(options.AbilityTemplateKey, out var spell) ||
+            spell.Level >= spell.MaxLevel) return;
+        var currentUses = IncrementCounter(aisling, options.AbilityTemplateKey);
+        var requiredUses = SkillLevelingConfig.GetSpellRequiredUses(spell.Level, options.Rate);
+        if (currentUses < requiredUses) return;
+        aisling.SpellBook.Update(spell.Slot, lSpell => lSpell.Level = (byte)(lSpell.Level + 1));
+        aisling.SendOrangeBarMessage($"{spell.Template.Name} has improved");
+        ResetCounter(aisling, options.AbilityTemplateKey);
+    }
+
+    private static int IncrementCounter(Aisling aisling, string abilityTemplateKey)
+    {
+        aisling.Trackers.Counters.AddOrIncrement(abilityTemplateKey);
+        aisling.Trackers.Counters.TryGetValue(abilityTemplateKey, out var value);
+        return value;
+    }
+    
+    private static void ResetCounter(Aisling aisling, string abilityTemplateKey)
+    {
+        aisling.Trackers.Counters.Set(abilityTemplateKey, 0);
+    }
+        
+    public interface IAbilityLevellingComponentOptions
+    {
+        AbilityLevellingRate Rate { get; init; }
+        string AbilityTemplateKey { get; init; }
+        bool IsSpell { get; init; }
+    }
+}
+
+public enum AbilityLevellingRate
+{
+    VerySlow = 1,
+    Slow = 2,
+    Medium = 3,
+    Fast = 4,
+    VeryFast = 5,
+}
+
+public static class SkillLevelingConfig
+{
+    private static readonly Dictionary<AbilityLevellingRate, (int baseUses, int incrementPerLevel)>  SkillRate = new()
+    {
+        // Very Fast: 20 mins → 30 mins (800 → 1200 attacks)
+        { AbilityLevellingRate.VeryFast, (100, 4) },
+        
+        // Fast: 30 mins → 45 mins (1200 → 1800 attacks)  
+        { AbilityLevellingRate.Fast, (300, 6) },
+        
+        // Medium: 38 mins → 57 mins (1520 → 2280 attacks)
+        { AbilityLevellingRate.Medium, (450, 8) },
+        
+        // Slow: 45 mins → 68 mins (1800 → 2720 attacks)
+        { AbilityLevellingRate.Slow, (600, 10) },
+        
+        // Very Slow: 53 mins → 80 mins (2120 → 3200 attacks)
+        { AbilityLevellingRate.VerySlow, (750, 12) }
+    };
+    
+    private static readonly Dictionary<AbilityLevellingRate, (int baseUses, int incrementPerLevel)> AssailRate = new()
+    {
+        // Very Fast: 20 mins → 30 mins (800 → 1200 attacks)
+        { AbilityLevellingRate.VeryFast, (800, 4) },
+        
+        // Fast: 30 mins → 45 mins (1200 → 1800 attacks)  
+        { AbilityLevellingRate.Fast, (1200, 6) },
+        
+        // Medium: 38 mins → 57 mins (1520 → 2280 attacks)
+        { AbilityLevellingRate.Medium, (1520, 8) },
+        
+        // Slow: 45 mins → 68 mins (1800 → 2720 attacks)
+        { AbilityLevellingRate.Slow, (1800, 10) },
+        
+        // Very Slow: 53 mins → 80 mins (2120 → 3200 attacks)
+        { AbilityLevellingRate.VerySlow, (2120, 12) }
+    };
+    
+    private static readonly Dictionary<AbilityLevellingRate, (int baseUses, int incrementPerLevel)>  SpellRate = new()
+    {
+        // Very Fast: 20 mins → 30 mins (800 → 1200 attacks)
+        { AbilityLevellingRate.VeryFast, (100, 4) },
+        
+        // Fast: 30 mins → 45 mins (1200 → 1800 attacks)  
+        { AbilityLevellingRate.Fast, (5, 6) },
+        
+        // Medium: 38 mins → 57 mins (1520 → 2280 attacks)
+        { AbilityLevellingRate.Medium, (350, 8) },
+        
+        // Slow: 45 mins → 68 mins (1800 → 2720 attacks)
+        { AbilityLevellingRate.Slow, (500, 10) },
+        
+        // Very Slow: 53 mins → 80 mins (2120 → 3200 attacks)
+        { AbilityLevellingRate.VerySlow, (700, 12) }
+    };
+
+    public static int GetSkillRequiredUses(
+        int currentLevel, 
+        AbilityLevellingRate rate,
+        bool isAssail
+    )
+    {
+        var (baseUses, incrementPerLevel) = isAssail ? AssailRate[rate] : SkillRate[rate];
+        return baseUses + (currentLevel * incrementPerLevel);
+    }
+    
+    public static int GetSpellRequiredUses(
+        int currentLevel, 
+        AbilityLevellingRate rate
+    )
+    {
+        var (baseUses, incrementPerLevel) = SpellRate[rate];
+        return baseUses + (currentLevel * incrementPerLevel);
+    }
+}

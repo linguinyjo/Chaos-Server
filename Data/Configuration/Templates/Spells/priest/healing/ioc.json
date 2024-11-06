@@ -13,6 +13,7 @@
     "prerequisiteSkills": [],
     "prerequisiteSpells": []
   },
+  "levelsUp": true,
   "spellType": "Targeted",
   "spellCategory": "Heal",
   "class": "Priest",

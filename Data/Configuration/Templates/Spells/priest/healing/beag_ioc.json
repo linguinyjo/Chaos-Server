@@ -13,6 +13,7 @@
     "prerequisiteSkills": [],
     "prerequisiteSpells": []
   },
+  "levelsUp": true,
   "spellType": "Targeted",
   "spellCategory": "Heal",
   "class": "Priest",
@@ -20,9 +21,7 @@
   "level": 1,
   "name": "beag ioc",
   "panelSprite": 28,
-  "scriptKeys": [
-    "heal"
-  ],
+  "scriptKeys": ["heal", "levelUp"],
   "scriptVars": {
     "heal": {
       "bodyAnimation": "priestCast",
@@ -38,6 +37,9 @@
       "magicAttackMultiplier": 1,
       "range": 8,
       "filter": "friendlyOnly, aliveOnly"
+    },
+    "levelUp": {
+      "rate": "fast"
     }
   },
   "templateKey": "beag_ioc"

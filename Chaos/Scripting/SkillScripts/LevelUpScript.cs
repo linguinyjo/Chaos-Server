@@ -13,12 +13,12 @@ using Chaos.Scripting.SkillScripts.Abstractions;
 
 namespace Chaos.Scripting.SkillScripts;
 
-public class DamageScript : ConfigurableSkillScriptBase,
+public class LevelUpScript : ConfigurableSkillScriptBase,
                             GenericAbilityComponent<Creature>.IAbilityComponentOptions,
-                            DamageAbilityComponent.IDamageComponentOptions
+                            AbilityLevellingAbilityComponent.IAbilityLevellingComponentOptions
 {
     /// <inheritdoc />
-    public DamageScript(Skill subject)
+    public LevelUpScript(Skill subject)
         : base(subject)
     {
         ApplyDamageScript = ApplyAttackDamageScript.Create();
@@ -32,8 +32,9 @@ public class DamageScript : ConfigurableSkillScriptBase,
     {
         new ComponentExecutor(context).WithOptions(this)
             .ExecuteAndCheck<GenericAbilityComponent<Creature>>()
-            ?.Execute<DamageAbilityComponent>();
+            ?.Execute<AbilityLevellingAbilityComponent>();
     }
+    
     #region ScriptVars
     /// <inheritdoc />
     public AoeShape Shape { get; init; }
@@ -70,21 +71,6 @@ public class DamageScript : ConfigurableSkillScriptBase,
 
     public IApplyDamageScript ApplyDamageScript { get; init; }
 
-    /// <inheritdoc />
-    public int? BaseDamage { get; init; }
-
-    /// <inheritdoc />
-    public Stat? DamageStat { get; init; }
-
-    /// <inheritdoc />
-    public decimal? DamageStatMultiplier { get; init; }
-
-    /// <inheritdoc />
-    public Element? Element { get; init; }
-
-    /// <inheritdoc />
-    public decimal? PctHpDamage { get; init; }
-
     public IScript SourceScript { get; init; }
 
     /// <inheritdoc />
@@ -95,21 +81,15 @@ public class DamageScript : ConfigurableSkillScriptBase,
 
     /// <inheritdoc />
     public bool ShouldNotBreakHide { get; init; }
-    
-    /// <inheritdoc />
-    public bool? UsePAtk { get; init; }
-   
-    /// <inheritdoc />
-    public bool? UseMatk { get; init; }
-
-    /// <inheritdoc />
-    public int? FistBonus { get; init; }
 
     /// <inheritdoc />
     public bool CanResist { get; init; }
     
-    public string AbilityTemplateKey { get; init; }
-    public bool? IsSpell { get; init; }
+    /// <inheritdoc />
+    public AbilityLevellingRate Rate { get; init; }
 
+    public string AbilityTemplateKey { get; init; }
+    public bool IsSpell { get; init; }
     #endregion
 }
+

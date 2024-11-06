@@ -23,6 +23,7 @@ public class TauntScript : ConfigurableSpellScriptBase,
     {
         ApplyDamageScript = ApplyAttackDamageScript.Create();
         SourceScript = this;
+        IsSpell = true;
     }
 
     /// <inheritdoc />
@@ -101,6 +102,9 @@ public class TauntScript : ConfigurableSpellScriptBase,
 
     /// <inheritdoc />
     public int? FistBonus { get; init; }
+
+    public string AbilityTemplateKey { get; init; }
+    public bool? IsSpell { get; init; }
 
     /// <inheritdoc />
     public bool CanResist { get; init; }

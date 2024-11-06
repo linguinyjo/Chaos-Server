@@ -20,7 +20,7 @@
     "class": "monk",
     "panelSprite": 2,
     "cooldownMs": 10000,
-    "scriptKeys": ["damage"],
+    "scriptKeys": ["damage", "levelUp"],
     "scriptVars": {
         "damage": {
             "bodyAnimation": "Kick",
@@ -33,6 +33,9 @@
             "baseDamage": 30,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "usePAtk": true
+        },
+        "levelUp": {
+            "rate": "fast"
         }
     },
     "templateKey": "kick"
