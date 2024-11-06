@@ -24,7 +24,7 @@
     "name": "Clobber",
     "class": "warrior",
     "panelSprite": 0,
-    "scriptKeys": ["damage"],
+    "scriptKeys": ["damage", "levelup"],
     "scriptVars": {
         "damage": {
             "bodyAnimation": "assail",
@@ -36,6 +36,9 @@
             "damageStatMultiplier": 0.50,
             "baseDamage": 10,
             "filter": "hostileOnly, aliveOnly, othersOnly"
+        },
+        "levelUp": {
+            "rate": "medium"
         }
     },
     "templateKey": "clobber"

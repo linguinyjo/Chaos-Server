@@ -20,7 +20,7 @@
     "class": "warrior",
     "panelSprite": 73,
     "cooldownMs": 15000,
-    "scriptKeys": ["damage"],
+    "scriptKeys": ["damage", "levelup"],
     "scriptVars": {
         "damage": {
             "bodyAnimation": 1,
@@ -33,6 +33,9 @@
             "baseDamage": 20,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "usePAtk": true
+        },
+        "levelUp": {
+            "rate": "veryfast"
         }
     },
     "templateKey": "powerStrike"

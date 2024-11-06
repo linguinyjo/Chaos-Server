@@ -19,7 +19,7 @@
     "name": "Double Punch",
     "class": "monk",
     "panelSprite": 4,
-    "scriptKeys": ["damage"],
+    "scriptKeys": ["damage", "levelup"],
     "scriptVars": {
         "damage": {
             "bodyAnimation": "punch",
@@ -32,6 +32,9 @@
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "usePAtk": true,
             "fistBonus": 30
+        },
+        "levelUp": {
+            "rate": "fast"
         }
     },
     "templateKey": "doublePunch"

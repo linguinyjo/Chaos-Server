@@ -21,7 +21,7 @@
   "name": "beag ioc comlha",
   "panelSprite": 32,
   "scriptKeys": [
-    "heal"
+    "heal", "levelup"
   ],
   "scriptVars": {
     "heal": {
@@ -39,6 +39,9 @@
       "magicAttackMultiplier": 1,
       "range": 8,
       "filter": "friendlyOnly, aliveOnly"
+    },
+    "levelUp": {
+      "rate": "veryfast"
     }
   },
   "templateKey": "beag_ioc_comlha"

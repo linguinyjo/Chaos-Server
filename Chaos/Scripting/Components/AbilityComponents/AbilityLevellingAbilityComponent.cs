@@ -75,19 +75,19 @@ public static class SkillLevelingConfig
     private static readonly Dictionary<AbilityLevellingRate, (int baseUses, int incrementPerLevel)>  SkillRate = new()
     {
         // Very Fast: 20 mins → 30 mins (800 → 1200 attacks)
-        { AbilityLevellingRate.VeryFast, (100, 4) },
+        { AbilityLevellingRate.VeryFast, (30, 1) },
         
         // Fast: 30 mins → 45 mins (1200 → 1800 attacks)  
-        { AbilityLevellingRate.Fast, (300, 6) },
+        { AbilityLevellingRate.Fast, (50, 1) },
         
         // Medium: 38 mins → 57 mins (1520 → 2280 attacks)
-        { AbilityLevellingRate.Medium, (450, 8) },
+        { AbilityLevellingRate.Medium, (75, 2) },
         
         // Slow: 45 mins → 68 mins (1800 → 2720 attacks)
-        { AbilityLevellingRate.Slow, (600, 10) },
+        { AbilityLevellingRate.Slow, (125, 2) },
         
         // Very Slow: 53 mins → 80 mins (2120 → 3200 attacks)
-        { AbilityLevellingRate.VerySlow, (750, 12) }
+        { AbilityLevellingRate.VerySlow, (150, 2) }
     };
     
     private static readonly Dictionary<AbilityLevellingRate, (int baseUses, int incrementPerLevel)> AssailRate = new()
@@ -111,19 +111,19 @@ public static class SkillLevelingConfig
     private static readonly Dictionary<AbilityLevellingRate, (int baseUses, int incrementPerLevel)>  SpellRate = new()
     {
         // Very Fast: 20 mins → 30 mins (800 → 1200 attacks)
-        { AbilityLevellingRate.VeryFast, (100, 4) },
+        { AbilityLevellingRate.VeryFast, (100, 2) },
         
         // Fast: 30 mins → 45 mins (1200 → 1800 attacks)  
-        { AbilityLevellingRate.Fast, (5, 6) },
+        { AbilityLevellingRate.Fast, (150, 3) },
         
         // Medium: 38 mins → 57 mins (1520 → 2280 attacks)
-        { AbilityLevellingRate.Medium, (350, 8) },
+        { AbilityLevellingRate.Medium, (225, 3) },
         
         // Slow: 45 mins → 68 mins (1800 → 2720 attacks)
-        { AbilityLevellingRate.Slow, (500, 10) },
+        { AbilityLevellingRate.Slow, (325, 4) },
         
         // Very Slow: 53 mins → 80 mins (2120 → 3200 attacks)
-        { AbilityLevellingRate.VerySlow, (700, 12) }
+        { AbilityLevellingRate.VerySlow, (450, 5) }
     };
 
     public static int GetSkillRequiredUses(

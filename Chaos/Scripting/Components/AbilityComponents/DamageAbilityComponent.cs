@@ -57,6 +57,7 @@ public struct DamageAbilityComponent : IComponent
         }
     }
     
+    //TODO need to tidy this function up
     private static int CalculateDamage(Creature source,
         Creature target,
         int? baseDamage = null,
@@ -70,8 +71,15 @@ public struct DamageAbilityComponent : IComponent
     {
         var finalDamage = baseDamage ?? 0;
         finalDamage += MathEx.GetPercentOf<int>(target.StatSheet.CurrentHp, pctHpDamage ?? 0);
-        
-        if (!damageStat.HasValue) return finalDamage;
+
+        if (!damageStat.HasValue)
+        {
+            if (abilityDamageMultiplier is > 0 && finalDamage > 0)
+            {
+                finalDamage = Convert.ToInt32(finalDamage * abilityDamageMultiplier.Value);
+            }
+            return finalDamage;
+        } 
         
         if (!damageStatMultiplier.HasValue)
         {

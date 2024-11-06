@@ -20,7 +20,7 @@
   "name": "beag ioc fein",
   "panelSprite": 21,
   "scriptKeys": [
-    "heal"
+    "heal", "levelup"
   ],
   "scriptVars": {
     "heal": {
@@ -37,6 +37,9 @@
       "healStat": "wis",
       "range": 2,
       "filter": "selfOnly, aliveOnly"
+    },
+    "levelUp": {
+      "rate": "veryfast"
     }
   },
   "templateKey": "beag_ioc_fein"

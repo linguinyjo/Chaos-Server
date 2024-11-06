@@ -35,7 +35,7 @@
             "usePAtk": true
         },
         "levelUp": {
-            "rate": "fast"
+            "rate": "veryfast"
         }
     },
     "templateKey": "kick"

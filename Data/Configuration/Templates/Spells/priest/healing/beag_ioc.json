@@ -39,7 +39,7 @@
       "filter": "friendlyOnly, aliveOnly"
     },
     "levelUp": {
-      "rate": "fast"
+      "rate": "veryfast"
     }
   },
   "templateKey": "beag_ioc"

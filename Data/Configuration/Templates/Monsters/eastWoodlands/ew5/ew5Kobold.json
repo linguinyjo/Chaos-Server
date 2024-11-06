@@ -1,5 +1,5 @@
 {
-    "assailIntervalMs": 221500,
+    "assailIntervalMs": 1500,
     "expReward": 222,
     "aggroRange": 10,
     "moveIntervalMs": 1500,

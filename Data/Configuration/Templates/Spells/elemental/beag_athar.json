@@ -19,7 +19,7 @@
     "level": 1,
     "name": "beag athar",
     "panelSprite": 43,
-    "scriptKeys": ["damage"],
+    "scriptKeys": ["damage", "levelup"],
     "scriptVars": {
         "damage": {
             "bodyAnimation": "wizardCast",
@@ -40,6 +40,9 @@
             },
             "useMatk": true,
             "canResist": true
+        },
+        "levelUp": {
+            "rate": "veryfast"
         }
     },
     "templateKey": "beag_athar"

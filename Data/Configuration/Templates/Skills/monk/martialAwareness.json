@@ -20,13 +20,16 @@
     "class": "monk",
     "panelSprite": 10,
     "cooldownMs": 15000,
-    "scriptKeys": ["sense"],
+    "scriptKeys": ["sense", "levelup"],
     "scriptVars": {
         "sense": {
             "range": 4,
             "shape": "front",
             "excludeSourcePoint": true,
             "filter": "hostileOnly, aliveOnly, othersOnly"
+        },
+        "levelUp": {
+            "rate": "veryfast"
         }
     },
     "templateKey": "martialAwareness"

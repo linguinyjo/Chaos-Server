@@ -7,7 +7,7 @@
     "class": "monk",
     "panelSprite": 36,
     "cooldownMs": 24000,
-    "scriptKeys": ["damage", "damageSelf"],
+    "scriptKeys": ["damage", "damageSelf", "levelup"],
     "scriptVars": {
         "damage": {
             "bodyAnimation": "punch",
@@ -25,6 +25,9 @@
         "damageSelf": {
             "pctHpDamage": 66,
             "filter": "selfOnly, aliveOnly"
+        },
+        "levelUp": {
+            "rate": "fast"
         }
     },
     "templateKey": "kelberothStrike"

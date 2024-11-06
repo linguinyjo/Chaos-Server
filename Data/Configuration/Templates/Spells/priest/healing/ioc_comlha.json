@@ -21,7 +21,7 @@
   "name": "ioc comlha",
   "panelSprite": 33,
   "scriptKeys": [
-    "heal"
+    "heal", "levelup"
   ],
   "scriptVars": {
     "heal": {
@@ -39,6 +39,9 @@
       "magicAttackMultiplier": 2,
       "range": 8,
       "filter": "friendlyOnly, aliveOnly"
+    },
+    "levelUp": {
+      "rate": "fast"
     }
   },
   "templateKey": "ioc_comlha"
