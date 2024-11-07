@@ -32,8 +32,8 @@
   {
     "blackList": [],
     "extraScriptKeys": [],
-    "intervalSecs": 172800,
-    "intervalVariancePct":  12,
+    "intervalSecs": 86400,
+    "intervalVariancePct": 12,
     "extraLootTableKeys": [],
     "maxAmount": 1,
     "maxPerSpawn": 1,

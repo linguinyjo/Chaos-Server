@@ -1,0 +1,41 @@
+{
+    "itemsForSale": [
+        {
+            "itemTemplateKey": "bronzeShield",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "jupe",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "lorica",
+            "stock": 100
+        }
+    ],
+    "itemsToBuy": [
+        "apple",
+        "shirt",
+        "woodenShield", "leatherShield", "bronzeShield",
+        "boots", "greyBoots", "shagreenBoots",
+        "leatherTunic", "jupe", "dobok", "culotte",
+        "leatherGauntlet", "leatherBracer", "leatherEmeraldGauntlet","leatherHeartstoneGauntlet", "leatherRubyGauntlet", "leatherSapphireGauntlet",
+        "leatherGreaves", "reinforcedLeatherGreaves",
+        "windBelt", "fireBelt", "earthBelt", "seaBelt", "hybrasylBelt", "leatherBelt", "mythrilBelt",
+        "boneNecklace", "earthNecklace", "fireNecklace", "pearlChainNecklace", "phoenixNecklace", "seaNecklace", "windNecklace",
+        "smallSpinelRing", "smallEmeraldRing", "emeraldRing", "spinelRing", "redJadeRing", "amethystRing",
+        "silverEarrings", "goldEarrings", "rubyEarrings", "coralEarrings", "berylEarrings"],
+    "name": "Lowell",
+    "restockIntervalHrs": 1,
+    "restockPCt": 100,
+    "scriptKeys": ["showdialog", "verbalShop", "defaultBehaviors"],
+    "scriptVars": {
+        "showdialog": {
+            "dialogKey": "vidar_initial"
+        }
+    },
+    "skillsToTeach": [],
+    "spellsToTeach": [],
+    "sprite": 30,
+    "templateKey": "Lowell"
+}

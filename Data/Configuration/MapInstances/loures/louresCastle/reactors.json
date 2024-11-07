@@ -1,0 +1,63 @@
+[
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "louresCastleWay:(1, 5)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(64, 61)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "louresCastleWay:(1, 4)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(64, 60)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "louresCastleWay:(1, 3)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(64, 59)"
+  },
+
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "loures1FloorHall:(5, 14)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(28, 37)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "loures1FloorHall:(5, 14)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(29, 37)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "loures1FloorHall:(5, 14)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(30, 37)"
+  }
+]

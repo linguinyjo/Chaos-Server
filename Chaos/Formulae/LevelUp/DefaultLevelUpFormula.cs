@@ -39,13 +39,13 @@ public class DefaultLevelUpFormula : ILevelUpFormula
         double divisionFactor = level switch
         {
             >= 1 and <= 19 => 6,
-            >= 20 and <= 39 => 5,
+            >= 20 and <= 30 => 5,
             >= 31 and <= 40 => 4,
             >= 41 and <= 50 => 3,
             >= 51 and <= 71 => 2,
             _ => 1
         };
-        return Convert.ToInt32((Math.Pow(level, 2) * 250) / divisionFactor);    
+        return Convert.ToInt32((Math.Pow(level, 2) * 300) / divisionFactor);    
     }
     
     private static (int maxHpGain, int maxMpGain) GetMaxHpMpGain(int level)

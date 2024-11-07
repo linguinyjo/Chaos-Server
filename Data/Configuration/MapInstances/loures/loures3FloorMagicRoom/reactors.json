@@ -1,0 +1,12 @@
+[
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "loures3FloorCorridor:(1, 5)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(9, 6)"
+  }
+]

@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 285,
+    "expReward": 237,
     "moveIntervalMs": 1300,
     "aggroRange": 10,
     "name": "Greater Bat",
@@ -17,7 +17,7 @@
         "ac": 55,
         "maximumHp": 2650,
         "maximumMp": 1000,
-        "physicalAttack": 43,
+        "physicalAttack": 34,
         "magicAttack": 55,
         "con": 4,
         "dex": 3,

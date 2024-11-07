@@ -1,0 +1,23 @@
+[
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "loures2FloorCorridor:(1, 4)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(9, 6)"
+  },
+
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "loures2FloorWeaponStorage:(6, 8)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(5, 0)"
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "loures2FloorCorridor:(2, 1)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(5, 15)"
+  },
+
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "loures3FloorOffice:(8, 14)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(14, 6)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "loures3FloorOffice:(8, 14)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(15, 6)"
+  }
+]

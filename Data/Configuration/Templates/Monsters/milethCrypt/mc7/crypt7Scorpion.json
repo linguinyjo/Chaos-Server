@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 275,
+    "expReward": 233,
     "moveIntervalMs": 1300,
     "aggroRange": 10,
     "name": "Scorpion",
@@ -17,7 +17,7 @@
         "ac": 56,
         "maximumHp": 2700,
         "maximumMp": 1000,
-        "physicalAttack": 39,
+        "physicalAttack": 34,
         "magicAttack": 55,
         "con": 4,
         "dex": 1,

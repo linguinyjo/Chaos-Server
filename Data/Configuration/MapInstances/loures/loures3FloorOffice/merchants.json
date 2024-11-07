@@ -1,0 +1,16 @@
+[
+  {
+    "blackList": [],
+    "direction": "Up",
+    "extraScriptKeys": [],
+    "merchantTemplateKey": "bruce",
+    "spawnPoint": "(8, 1)"
+  },
+  {
+    "blackList": [],
+    "direction": "Down",
+    "extraScriptKeys": [],
+    "merchantTemplateKey": "Thibault",
+    "spawnPoint": "(11, 4)"
+  }
+]

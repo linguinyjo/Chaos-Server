@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 234,
+    "expReward": 211,
     "moveIntervalMs": 1300,
     "aggroRange": 10,
     "name": "Greater Bat",

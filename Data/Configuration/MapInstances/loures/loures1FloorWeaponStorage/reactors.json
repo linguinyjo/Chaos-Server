@@ -1,0 +1,23 @@
+[
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "loures1FloorRestaurant:(8, 1)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(6, 9)"
+  },
+
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "louresUndergroundJail:(2, 8)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(9, 5)"
+  }
+]
