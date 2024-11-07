@@ -2,48 +2,48 @@
     "learningRequirements": {
         "itemRequirements": [],
         "requiredStats": {
-            "con": 3,
-            "dex": 4,
-            "int": 4,
-            "str": 3,
-            "wis": 7
+            "str": 4,
+            "int": 5,
+            "wis": 13,
+            "con": 4,
+            "dex": 7
         },
-        "requiredGold": 1000,
+        "requiredGold": 5000,
         "prerequisiteSkills": [],
         "prerequisiteSpells": []
     },
-    "spellType": "Targeted",
+    "spellType": "NoTarget",
     "class": "Wizard",
-    "description": "Deals moderate fire damage to target",
+    "description": "Attacks all enemies with weak water",
     "level": 1,
     "castLines": 3,
-    "name": "srad",
-    "panelSprite": 46,
+    "name": "beag sal lamh",
+    "panelSprite": 63,
     "scriptKeys": ["damage", "levelup"],
     "scriptVars": {
         "damage": {
+            "shape": "allAround",
             "bodyAnimation": "wizardCast",
-            "animatePoints": true,
-            "range": 12,
-            "element": "fire",
+            "range": 6,
+            "element": "water",
             "damageStat": "int",
-            "manaCost": 30,
-            "spellCategory": "Damage",
             "sound": 167,
+            "manaCost": 75,
+            "spellCategory": "Damage",
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "minSoundIntervalMs": 900,
-            "baseDamage": 75,
-            "damageStatMultiplier": 3,
+            "baseDamage": 15,
+            "damageStatMultiplier": 2,
             "animation": {
-                "targetAnimation": 13,
-                "animationSpeed": 150
+                "targetAnimation": 9,
+                "animationSpeed": 100
             },
             "useMatk": true,
             "canResist": true
         },
         "levelUp": {
-            "rate": "fast"
+            "rate": "veryfast"
         }
     },
-    "templateKey": "srad"
+    "templateKey": "beag_sal_lamh"
 }

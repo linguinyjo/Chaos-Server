@@ -1,0 +1,49 @@
+{
+    "learningRequirements": {
+        "itemRequirements": [],
+        "requiredStats": {
+            "str": 17,
+            "int": 7,
+            "wis": 3,
+            "con": 6,
+            "dex": 3
+        },
+        "requiredGold": 10000,
+        "prerequisiteSkills": [],
+        "prerequisiteSpells": []
+    },
+    "spellType": "Targeted",
+    "class": "Wizard",
+    "description": "Deals moderate fire damage to target",
+    "level": 11,
+    "castLines": 3,
+    "name": "srad",
+    "panelSprite": 46,
+    "scriptKeys": ["damage", "levelup"],
+    "scriptVars": {
+        "damage": {
+            "bodyAnimation": "wizardCast",
+            "animatePoints": true,
+            "range": 12,
+            "element": "fire",
+            "damageStat": "int",
+            "manaCost": 30,
+            "spellCategory": "Damage",
+            "sound": 167,
+            "filter": "hostileOnly, aliveOnly, othersOnly",
+            "minSoundIntervalMs": 900,
+            "baseDamage": 75,
+            "damageStatMultiplier": 3,
+            "animation": {
+                "targetAnimation": 13,
+                "animationSpeed": 150
+            },
+            "useMatk": true,
+            "canResist": true
+        },
+        "levelUp": {
+            "rate": "fast"
+        }
+    },
+    "templateKey": "srad"
+}

@@ -2,37 +2,37 @@
     "learningRequirements": {
         "itemRequirements": [],
         "requiredStats": {
-            "con": 3,
-            "dex": 4,
-            "int": 4,
-            "str": 3,
-            "wis": 7
+            "str": 20,
+            "int": 8,
+            "wis": 3,
+            "con": 7,
+            "dex": 3
         },
-        "requiredGold": 1000,
+        "requiredGold": 25000,
         "prerequisiteSkills": [],
         "prerequisiteSpells": []
     },
-    "spellType": "Targeted",
+    "spellType": "NoTarget",
     "class": "Wizard",
-    "description": "Deals moderate earth damage to target",
-    "level": 1,
+    "description": "Attacks all enemies with earth",
+    "level": 11,
     "castLines": 3,
-    "name": "creag",
-    "panelSprite": 46,
+    "name": "creag lamh",
+    "panelSprite": 69,
     "scriptKeys": ["damage", "levelup"],
     "scriptVars": {
         "damage": {
+            "shape": "allAround",
             "bodyAnimation": "wizardCast",
-            "animatePoints": true,
-            "range": 12,
+            "range": 7,
             "element": "earth",
             "damageStat": "int",
-            "manaCost": 30,
-            "spellCategory": "Damage",
             "sound": 167,
+            "manaCost": 225,
+            "spellCategory": "Damage",
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "minSoundIntervalMs": 900,
-            "baseDamage": 75,
+            "baseDamage": 45,
             "damageStatMultiplier": 3,
             "animation": {
                 "targetAnimation": 30,
@@ -42,8 +42,8 @@
             "canResist": true
         },
         "levelUp": {
-            "rate": "fast"
+            "rate": "veryfast"
         }
     },
-    "templateKey": "creag"
+    "templateKey": "creag_lamh"
 }

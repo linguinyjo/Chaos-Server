@@ -1,0 +1,49 @@
+{
+    "learningRequirements": {
+        "itemRequirements": [],
+        "requiredStats": {
+            "str": 11,
+            "int": 5,
+            "wis": 3,
+            "con": 4,
+            "dex": 3
+        },
+        "requiredGold": 5000,
+        "prerequisiteSkills": [],
+        "prerequisiteSpells": []
+    },
+    "spellType": "NoTarget",
+    "class": "Wizard",
+    "description": "Attacks all enemies with weak fire",
+    "level": 1,
+    "castLines": 3,
+    "name": "beag srad lamh",
+    "panelSprite": 60,
+    "scriptKeys": ["damage", "levelup"],
+    "scriptVars": {
+        "damage": {
+            "shape": "allAround",
+            "bodyAnimation": "wizardCast",
+            "range": 6,
+            "element": "fire",
+            "damageStat": "int",
+            "sound": 167,
+            "manaCost": 75,
+            "spellCategory": "Damage",
+            "filter": "hostileOnly, aliveOnly, othersOnly",
+            "minSoundIntervalMs": 900,
+            "baseDamage": 15,
+            "damageStatMultiplier": 2,
+            "animation": {
+                "targetAnimation": 12,
+                "animationSpeed": 100
+            },
+            "useMatk": true,
+            "canResist": true
+        },
+        "levelUp": {
+            "rate": "veryfast"
+        }
+    },
+    "templateKey": "beag_srad_lamh"
+}

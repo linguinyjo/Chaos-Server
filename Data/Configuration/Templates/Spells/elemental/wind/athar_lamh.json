@@ -1,0 +1,49 @@
+{
+    "learningRequirements": {
+        "itemRequirements": [],
+        "requiredStats": {
+            "str": 3,
+            "int": 8,
+            "wis": 7,
+            "con": 3,
+            "dex": 24
+        },
+        "requiredGold": 25000,
+        "prerequisiteSkills": [],
+        "prerequisiteSpells": []
+    },
+    "spellType": "NoTarget",
+    "class": "Wizard",
+    "description": "Attacks all enemies with wind",
+    "level": 11,
+    "castLines": 3,
+    "name": "athar lamh",
+    "panelSprite": 66,
+    "scriptKeys": ["damage", "levelup"],
+    "scriptVars": {
+        "damage": {
+            "shape": "allAround",
+            "bodyAnimation": "wizardCast",
+            "range": 7,
+            "element": "wind",
+            "damageStat": "int",
+            "sound": 167,
+            "manaCost": 225,
+            "spellCategory": "Damage",
+            "filter": "hostileOnly, aliveOnly, othersOnly",
+            "minSoundIntervalMs": 900,
+            "baseDamage": 45,
+            "damageStatMultiplier": 3,
+            "animation": {
+                "targetAnimation": 16,
+                "animationSpeed": 150
+            },
+            "useMatk": true,
+            "canResist": true
+        },
+        "levelUp": {
+            "rate": "veryfast"
+        }
+    },
+    "templateKey": "athar_lamh"
+}

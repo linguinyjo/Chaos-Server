@@ -1,22 +1,22 @@
 {
   "learningRequirements": {
     "itemRequirements": [],
-    "requiredGold": 5000,
+    "requiredGold": 25000,
     "requiredStats": {
-      "con": 4,
-      "dex": 3,
-      "int": 14,
-      "str": 3,
-      "wis": 7
+      "str": 10,
+      "int": 25,
+      "wis": 20,
+      "con": 10,
+      "dex": 10
     },
     "prerequisiteSkills": [],
     "prerequisiteSpells": []
   },
   "spellType": "Targeted",
-  "class": "Priest",
-  "description": "Applies a minor curse effect to your target reducing their AC.",
-  "level": 41,
-  "name": "Cradh",
+  "class": "Wizard",
+  "description": "Applies a curse effect to your target reducing their AC.",
+  "level": 11,
+  "name": "cradh",
   "panelSprite": 82,
   "scriptKeys": [
     "applyEffect"

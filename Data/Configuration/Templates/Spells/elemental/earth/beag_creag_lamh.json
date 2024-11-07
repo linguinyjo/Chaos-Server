@@ -1,0 +1,49 @@
+{
+    "learningRequirements": {
+        "itemRequirements": [],
+        "requiredStats": {
+            "str": 5,
+            "int": 5,
+            "wis": 3,
+            "con": 12,
+            "dex": 3
+        },
+        "requiredGold": 5000,
+        "prerequisiteSkills": [],
+        "prerequisiteSpells": []
+    },
+    "spellType": "NoTarget",
+    "class": "Wizard",
+    "description": "Attacks all enemies with weak earth",
+    "level": 1,
+    "castLines": 3,
+    "name": "beag creag lamh",
+    "panelSprite": 63,
+    "scriptKeys": ["damage", "levelup"],
+    "scriptVars": {
+        "damage": {
+            "shape": "allAround",
+            "bodyAnimation": "wizardCast",
+            "range": 6,
+            "element": "earth",
+            "damageStat": "int",
+            "sound": 167,
+            "manaCost": 75,
+            "spellCategory": "Damage",
+            "filter": "hostileOnly, aliveOnly, othersOnly",
+            "minSoundIntervalMs": 900,
+            "baseDamage": 15,
+            "damageStatMultiplier": 2,
+            "animation": {
+                "targetAnimation": 12,
+                "animationSpeed": 100
+            },
+            "useMatk": true,
+            "canResist": true
+        },
+        "levelUp": {
+            "rate": "veryfast"
+        }
+    },
+    "templateKey": "beag_creag_lamh"
+}

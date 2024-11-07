@@ -1,0 +1,49 @@
+{
+    "learningRequirements": {
+        "itemRequirements": [],
+        "requiredStats": {
+            "str": 20,
+            "int": 8,
+            "wis": 3,
+            "con": 7,
+            "dex": 3
+        },
+        "requiredGold": 25000,
+        "prerequisiteSkills": [],
+        "prerequisiteSpells": []
+    },
+    "spellType": "NoTarget",
+    "class": "Wizard",
+    "description": "Attacks all enemies with fire",
+    "level": 11,
+    "castLines": 3,
+    "name": "srad lamh",
+    "panelSprite": 60,
+    "scriptKeys": ["damage", "levelup"],
+    "scriptVars": {
+        "damage": {
+            "shape": "allAround",
+            "bodyAnimation": "wizardCast",
+            "range": 7,
+            "element": "fire",
+            "damageStat": "int",
+            "sound": 167,
+            "manaCost": 225,
+            "spellCategory": "Damage",
+            "filter": "hostileOnly, aliveOnly, othersOnly",
+            "minSoundIntervalMs": 900,
+            "baseDamage": 45,
+            "damageStatMultiplier": 3,
+            "animation": {
+                "targetAnimation": 13,
+                "animationSpeed": 150
+            },
+            "useMatk": true,
+            "canResist": true
+        },
+        "levelUp": {
+            "rate": "veryfast"
+        }
+    },
+    "templateKey": "srad_lamh"
+}
