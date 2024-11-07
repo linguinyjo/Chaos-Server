@@ -19,7 +19,7 @@
     "castLines": 3,
     "name": "srad",
     "panelSprite": 46,
-    "scriptKeys": ["damage"],
+    "scriptKeys": ["damage", "levelup"],
     "scriptVars": {
         "damage": {
             "bodyAnimation": "wizardCast",
@@ -40,6 +40,9 @@
             },
             "useMatk": true,
             "canResist": true
+        },
+        "levelUp": {
+            "rate": "fast"
         }
     },
     "templateKey": "srad"

@@ -27,7 +27,9 @@ public class CascadingDamageScript : ConfigurableSpellScriptBase,
         ApplyDamageScript = ApplyAttackDamageScript.Create();
         SourceScript = this;
         ReactorTileFactory = reactorTileFactory;
+        AbilityTemplateKey = subject.Template.TemplateKey;
         CascadeScriptVars ??= Subject.Template.ScriptVars;
+        IsSpell = true;
     }
 
     /// <inheritdoc />
@@ -88,6 +90,9 @@ public class CascadingDamageScript : ConfigurableSpellScriptBase,
     public bool? UseMatk { get; init; }
     /// <inheritdoc />
     public int? FistBonus { get; init; }
+
+    public string AbilityTemplateKey { get; init; }
+    public bool? IsSpell { get; init; }
 
     /// <inheritdoc />
     public Animation? Animation { get; init; }

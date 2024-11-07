@@ -20,7 +20,7 @@
   "name": "Gentle Touch",
   "panelSprite": 120,
   "scriptKeys": [
-    "heal"
+    "heal", "levelup"
   ],
   "scriptVars": {
     "heal": {
@@ -37,6 +37,9 @@
       "healStat": "wis",
       "range": 1,
       "filter": "aliveOnly, friendlyOnly"
+    },
+    "levelUp": {
+      "rate": "fast"
     }
   },
   "templateKey": "gentleTouch"

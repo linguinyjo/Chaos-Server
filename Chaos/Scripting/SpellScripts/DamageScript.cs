@@ -22,6 +22,8 @@ public class DamageScript : ConfigurableSpellScriptBase,
     {
         ApplyDamageScript = ApplyAttackDamageScript.Create();
         SourceScript = this;
+        AbilityTemplateKey = subject.Template.TemplateKey;
+        IsSpell = true;
     }
 
     /// <inheritdoc />
@@ -93,6 +95,9 @@ public class DamageScript : ConfigurableSpellScriptBase,
     public bool? UseMatk { get; init; }
     /// <inheritdoc />
     public int? FistBonus { get; init; }
+
+    public string AbilityTemplateKey { get; init; }
+    public bool? IsSpell { get; init; }
 
     /// <inheritdoc />
     public int? ManaCost { get; init; }

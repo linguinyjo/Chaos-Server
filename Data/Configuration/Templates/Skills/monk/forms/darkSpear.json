@@ -7,7 +7,7 @@
     "class": "monk",
     "panelSprite": 4,
     "cooldownMs": 24000,
-    "scriptKeys": ["applyEffect"],
+    "scriptKeys": ["applyEffect", "levelup"],
     "scriptVars": {
         "applyEffect": {
             "bodyAnimation": "punch",
@@ -21,6 +21,9 @@
                 "animationSpeed": 150
             },
             "filter": "hostileOnly, aliveOnly"
+        },
+        "levelUp": {
+            "rate": "fast"
         }
     },
     "templateKey": "darkSpear"

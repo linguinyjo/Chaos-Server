@@ -21,6 +21,7 @@ public class HealScript : ConfigurableSpellScriptBase,
     {
         ApplyHealScript = FunctionalScripts.ApplyHealing.ApplyHealScript.Create();
         SourceScript = this;
+        AbilityTemplateKey = subject.Template.TemplateKey;
     }
 
     /// <inheritdoc />
@@ -86,6 +87,8 @@ public class HealScript : ConfigurableSpellScriptBase,
 
     /// <inheritdoc />
     public IScript SourceScript { get; init; }
+
+    public string AbilityTemplateKey { get; init; }
 
     /// <inheritdoc />
     public int? ManaCost { get; init; }

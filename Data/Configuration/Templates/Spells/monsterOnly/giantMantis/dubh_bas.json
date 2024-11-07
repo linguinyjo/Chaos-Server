@@ -1,6 +1,6 @@
 {
     "spellType": "NoTarget",
-    "description": "A weak spell that deals water damage.",
+    "description": "A spell that deals dark damage to all creatures on screen",
     "level": 1,
     "castLines": 1,
     "name": "dubh bas",

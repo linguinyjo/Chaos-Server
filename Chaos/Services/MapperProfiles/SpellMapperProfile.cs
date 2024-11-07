@@ -30,7 +30,7 @@ public sealed class SpellMapperProfile(ISimpleCache simpleCache, IScriptProvider
             Prompt = obj.Template.Prompt ?? string.Empty,
             Slot = obj.Slot,
             SpellType = obj.Template.SpellType,
-            Sprite = obj.Template.PanelSprite
+            Sprite = obj.Template.PanelSprite,
         };
 
     public Spell Map(SpellSchema obj)
@@ -38,7 +38,7 @@ public sealed class SpellMapperProfile(ISimpleCache simpleCache, IScriptProvider
         var template = SimpleCache.Get<SpellTemplate>(obj.TemplateKey);
         var maxLevel = template.LevelsUp ? obj.MaxLevel ?? template.MaxLevel : template.MaxLevel;
         var level = template.LevelsUp ? obj.Level ?? 0 : maxLevel;
-        
+
         var spell = new Spell(
             template,
             ScriptProvider,

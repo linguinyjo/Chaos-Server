@@ -20,7 +20,7 @@
     "class": "warrior",
     "panelSprite": 13,
     "cooldownMs": 60000,
-    "scriptKeys": ["taunt", "removeEffect"],
+    "scriptKeys": ["taunt", "removeEffect", "levelup"],
     "scriptVars": {
         "taunt": {
             "excludeSourcePoint": true,
@@ -41,6 +41,9 @@
                 "animationSpeed": 150
             },
             "filter": "AislingsOnly"
+        },
+        "levelUp": {
+            "rate": "fast"
         }
     },
     "templateKey": "rescue"

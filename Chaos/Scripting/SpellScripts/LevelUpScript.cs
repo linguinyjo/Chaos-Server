@@ -2,38 +2,36 @@ using Chaos.Common.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.Panel;
-using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
 using Chaos.Scripting.Abstractions;
 using Chaos.Scripting.Components.AbilityComponents;
 using Chaos.Scripting.Components.Execution;
 using Chaos.Scripting.FunctionalScripts.Abstractions;
 using Chaos.Scripting.FunctionalScripts.ApplyDamage;
-using Chaos.Scripting.SkillScripts.Abstractions;
+using Chaos.Scripting.SpellScripts.Abstractions;
 
-namespace Chaos.Scripting.SkillScripts;
+namespace Chaos.Scripting.SpellScripts;
 
-public class DamageScript : ConfigurableSkillScriptBase,
+public class LevelUpScript : ConfigurableSpellScriptBase,
                             GenericAbilityComponent<Creature>.IAbilityComponentOptions,
-                            DamageAbilityComponent.IDamageComponentOptions
+                            AbilityLevellingAbilityComponent.IAbilityLevellingComponentOptions
 {
     /// <inheritdoc />
-    public DamageScript(Skill subject)
+    public LevelUpScript(Spell subject)
         : base(subject)
     {
         ApplyDamageScript = ApplyAttackDamageScript.Create();
         SourceScript = this;
         AbilityTemplateKey = subject.Template.TemplateKey;
-        IsSpell = false;
+        IsSpell = true;
     }
 
     /// <inheritdoc />
-    public override void OnUse(ActivationContext context)
-    {
-        new ComponentExecutor(context).WithOptions(this)
+    public override void OnUse(SpellContext context)
+        => new ComponentExecutor(context).WithOptions(this)
             .ExecuteAndCheck<GenericAbilityComponent<Creature>>()
-            ?.Execute<DamageAbilityComponent>();
-    }
+            ?.Execute<AbilityLevellingAbilityComponent>();
+    
     #region ScriptVars
     /// <inheritdoc />
     public AoeShape Shape { get; init; }
@@ -70,21 +68,6 @@ public class DamageScript : ConfigurableSkillScriptBase,
 
     public IApplyDamageScript ApplyDamageScript { get; init; }
 
-    /// <inheritdoc />
-    public int? BaseDamage { get; init; }
-
-    /// <inheritdoc />
-    public Stat? DamageStat { get; init; }
-
-    /// <inheritdoc />
-    public decimal? DamageStatMultiplier { get; init; }
-
-    /// <inheritdoc />
-    public Element? Element { get; init; }
-
-    /// <inheritdoc />
-    public decimal? PctHpDamage { get; init; }
-
     public IScript SourceScript { get; init; }
 
     /// <inheritdoc />
@@ -95,21 +78,14 @@ public class DamageScript : ConfigurableSkillScriptBase,
 
     /// <inheritdoc />
     public bool ShouldNotBreakHide { get; init; }
-    
-    /// <inheritdoc />
-    public bool? UsePAtk { get; init; }
-   
-    /// <inheritdoc />
-    public bool? UseMatk { get; init; }
-
-    /// <inheritdoc />
-    public int? FistBonus { get; init; }
 
     /// <inheritdoc />
     public bool CanResist { get; init; }
     
+    /// <inheritdoc />
+    public AbilityLevellingRate Rate { get; init; }
     public string AbilityTemplateKey { get; init; }
-    public bool? IsSpell { get; init; }
-
+    public bool IsSpell { get; init; }
     #endregion
 }
+

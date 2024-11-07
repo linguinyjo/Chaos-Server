@@ -6,7 +6,7 @@
     "name": "Assail",
     "class": "peasant",
     "panelSprite": 1,
-    "scriptKeys": ["damage"],
+    "scriptKeys": ["damage", "levelUp"],
     "scriptVars": {
         "damage": {
             "bodyAnimation": "assail",
@@ -19,6 +19,9 @@
             "baseDamage": 3,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "usePAtk": true
+        },
+        "levelUp": {
+            "rate": "fast"
         }
     },
     "templateKey": "assail"

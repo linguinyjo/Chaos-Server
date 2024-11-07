@@ -20,7 +20,7 @@
     "class": "warrior",
     "panelSprite": 15,
     "cooldownMs": 22000,
-    "scriptKeys": ["damage"],
+    "scriptKeys": ["damage", "levelup"],
     "scriptVars": {
         "damage": {
             "bodyAnimation": 1,
@@ -38,6 +38,9 @@
             "baseDamage": 50,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "usePAtk": true
+        },
+        "levelUp": {
+            "rate": "fast"
         }
     },
     "templateKey": "windBlade"

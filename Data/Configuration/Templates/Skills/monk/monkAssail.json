@@ -6,7 +6,7 @@
     "name": "Assail",
     "class": "peasant",
     "panelSprite": 1,
-    "scriptKeys": ["damage"],
+    "scriptKeys": ["damage", "levelUp"],
     "scriptVars": {
         "damage": {
             "bodyAnimation": "punch",
@@ -20,6 +20,9 @@
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "usePAtk": true,
             "fistBonus": 25
+        },
+        "levelUp": {
+            "rate": "fast"
         }
     },
     "templateKey": "monkAssail"

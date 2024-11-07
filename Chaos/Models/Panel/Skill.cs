@@ -38,7 +38,6 @@ public sealed class Skill : PanelEntityBase, IScripted<ISkillScript>
 
         if (template.IsAssail && !Cooldown.HasValue)
             Cooldown = TimeSpan.Zero;
-
         Script = scriptProvider.CreateScript<ISkillScript, Skill>(ScriptKeys, this);
     }
 

@@ -34,7 +34,6 @@ public sealed class SkillMapperProfile(ISimpleCache simpleCache, IScriptProvider
         var template = SimpleCache.Get<SkillTemplate>(obj.TemplateKey);
         var maxLevel = template.LevelsUp ? obj.MaxLevel ?? template.MaxLevel : template.MaxLevel;
         var level = template.LevelsUp ? obj.Level ?? 0 : maxLevel;
-
         var skill = new Skill(
             template,
             ScriptProvider,

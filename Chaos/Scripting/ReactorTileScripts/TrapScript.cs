@@ -113,6 +113,9 @@ public class TrapScript : ConfigurableReactorTileScriptBase,
     public bool? UseMatk { get; init; }
     /// <inheritdoc />
     public int? FistBonus { get; init; }
+
+    public string AbilityTemplateKey { get; init; }
+    public bool? IsSpell { get; init; }
     public Element? Element { get; init; }
     public int? DurationSecs { get; init; }
     public int? MaxTriggers { get; init; }

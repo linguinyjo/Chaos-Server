@@ -19,7 +19,7 @@
     "castLines": 3,
     "name": "Beag Srad",
     "panelSprite": 40,
-    "scriptKeys": ["damage"],
+    "scriptKeys": ["damage", "levelup"],
     "scriptVars": {
         "damage": {
             "bodyAnimation": "wizardCast",
@@ -40,6 +40,9 @@
             },
             "useMatk": true,
             "canResist": true
+        },
+        "levelUp": {
+            "rate": "veryfast"
         }
     },
     "templateKey": "beag_srad"

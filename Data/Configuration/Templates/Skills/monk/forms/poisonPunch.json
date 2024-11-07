@@ -7,7 +7,7 @@
     "class": "monk",
     "panelSprite": 4,
     "cooldownMs": 18000,
-    "scriptKeys": ["damage", "applyEffect"],
+    "scriptKeys": ["damage", "applyEffect", "levelup"],
     "scriptVars": {
         "damage": {
             "bodyAnimation": "punch",
@@ -31,6 +31,9 @@
                 "animationSpeed": 150
             },
             "filter": "hostileOnly, aliveOnly"
+        },
+        "levelUp": {
+            "rate": "fast"
         }
     },
     "templateKey": "poisonPunch"

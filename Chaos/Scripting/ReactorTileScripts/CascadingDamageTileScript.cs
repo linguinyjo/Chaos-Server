@@ -139,6 +139,9 @@ public sealed class CascadingDamageTileScript : ConfigurableReactorTileScriptBas
     /// <inheritdoc />
     public int? FistBonus { get; init; }
 
+    public string AbilityTemplateKey { get; init; }
+    public bool? IsSpell { get; init; }
+
     /// <inheritdoc />
     public byte? Sound { get; init; }
 
