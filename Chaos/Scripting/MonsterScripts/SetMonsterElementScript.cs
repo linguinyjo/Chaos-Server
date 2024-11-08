@@ -26,6 +26,5 @@ public class SetMonsterElementScript : MonsterScriptBase
 
         Monster.StatSheet.SetOffenseElement(offensiveElement);
         Monster.StatSheet.SetDefenseElement(defensiveElement);
-        Console.WriteLine(Monster);
     } 
 }

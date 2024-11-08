@@ -28,5 +28,15 @@
     "maxAmount": 15,
     "maxPerSpawn": 15,
     "monsterTemplateKey": "hearthGrimlockWarrior"
-  } 
+  },
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 115200,
+    "intervalVariancePct": 12,
+    "extraLootTableKeys": [],
+    "maxAmount": 1,
+    "maxPerSpawn": 1,
+    "monsterTemplateKey": "hearthGrimlockQueen"
+  }
 ]

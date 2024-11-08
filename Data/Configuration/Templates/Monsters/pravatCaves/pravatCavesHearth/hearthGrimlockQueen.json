@@ -1,0 +1,33 @@
+{
+    "assailIntervalMs": 1300,
+    "expReward": 14360,
+    "aggroRange": 14,
+    "moveIntervalMs": 1000,
+    "maxGoldDrop": 25000,
+    "minGoldDrop": 15000,
+    "name": "Grimlock Queen",
+    "lootTableKeys": ["pravatGrimlockQueens"],
+    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptVars": {},
+    "skillIntervalMs": 1500,
+    "skillTemplateKeys": ["Assail"],
+    "spellIntervalMs": 8000,
+    "spellTemplateKeys": ["sal", "athar", "creag", "srad", "sal_lamh", "athar_lamh", "creag_lamh", "srad_lamh"],
+    "sprite": 11,
+    "statSheet": {
+        "level": 42,
+        "ac": -12,
+        "maximumHp": 25500,
+        "maximumMp": 40000,
+        "physicalAttack": 90,
+        "magicAttack": 240,
+        "con": 4,
+        "dex": 1,
+        "int": 68,
+        "str": 32,
+        "wis": 1
+    },
+    "templateKey": "hearthGrimlockQueens",
+    "type": "Normal",
+    "wanderIntervalMs": 1500
+}

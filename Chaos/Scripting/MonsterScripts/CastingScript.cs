@@ -65,34 +65,4 @@ public class CastingScript : MonsterScriptBase
                !spellName.Contains("creag", StringComparison.OrdinalIgnoreCase) && 
                !spellName.Contains("srad", StringComparison.OrdinalIgnoreCase);
     }
-    
-    // Low
-    public static T? PickRandomWeightedSingle<T>(ICollection<KeyValuePair<T, int>>? weightedChoices)
-    {
-        // If there are no valid choices, return default
-        if (weightedChoices == null || weightedChoices.Count == 0)
-            return default;
-
-        // Calculate the total sum of all weights
-        var totalWeight = weightedChoices.Sum(pair => pair.Value);
-
-        // If total weight is 0, no selection can be made
-        if (totalWeight <= 0)
-            return default;
-
-        // Roll a random number between 1 and the total weight
-        var randomRoll = Random.Shared.Next(1, totalWeight + 1);
-
-        // Iterate through the weighted choices and select one based on the random roll
-        foreach (var pair in weightedChoices)
-        {
-            if (randomRoll <= pair.Value)
-                return pair.Key;
-
-            randomRoll -= pair.Value;
-        }
-
-        // Fallback in case no item was selected, which should not happen
-        return default;
-    }
 }

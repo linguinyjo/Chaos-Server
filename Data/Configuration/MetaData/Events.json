@@ -55,5 +55,13 @@
         "qualifyingCircles": ["two"],
         "id": "porteForest",
         "result": "Completed"
+    },
+    {
+        "title": "The Generals of Darkness",
+        "summary": "Speak with Thibault in Loures Castle.\nLevel requirement: 21-50",
+        "rewards": "Experience",
+        "qualifyingCircles": ["two", "three"],
+        "id": "generalsOfDarkness",
+        "result": "Completed"
     }
 ]
