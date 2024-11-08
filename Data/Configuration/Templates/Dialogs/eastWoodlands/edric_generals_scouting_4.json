@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "close",
+  "scriptKeys": ["IncrementGeneralsQuest"],
+  "scriptVars": {},
+  "templateKey": "edric_generals_scouting_4",
+  "text": "Thibault must know of this immediately. Return to him in Loures with your findings. May the gods watch over you, friend.",
+  "type": "Normal"
+}

@@ -1,3 +1,9 @@
 [
-
+  {
+    "blackList": [],
+    "direction": "Right",
+    "extraScriptKeys": [],
+    "merchantTemplateKey": "edric",
+    "spawnPoint": "(19, 9)"
+  }
 ]

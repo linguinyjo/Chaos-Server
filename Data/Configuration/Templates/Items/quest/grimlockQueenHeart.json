@@ -1,0 +1,17 @@
+{
+  "buyCost": 1,
+  "category": "quest",
+  "color": "Default",
+  "isModifiable": false,
+  "accountBound": true,
+  "noTrade": true,
+  "maxStacks": 1,
+  "sellValue": 1,
+  "weight": 1,
+  "description": "The Grimlock Queen's heart",
+  "name": "Grimlock Queen Heart",
+  "panelSprite": 4523,
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "grimlockQueenHeart"
+}

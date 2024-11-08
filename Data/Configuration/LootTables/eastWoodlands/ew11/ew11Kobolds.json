@@ -26,11 +26,11 @@
       "itemTemplateKey": "battleSword"
     },
     {
-      "dropChance": 0.003,
+      "dropChance": 0.005,
       "itemTemplateKey": "holyKronos"
     },
     {
-      "dropChance": 0.003,
+      "dropChance": 0.005,
       "itemTemplateKey": "magusKronos"
     }
   ]

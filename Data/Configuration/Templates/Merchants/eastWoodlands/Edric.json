@@ -1,0 +1,18 @@
+{
+  "itemsForSale": [],
+  "itemsToBuy": [],
+  "name": "Edric",
+  "scriptKeys": [
+    "showdialog",
+    "defaultBehaviors"
+  ],
+  "scriptVars": {
+    "showdialog": {
+      "dialogKey": "Edric_initial"
+    }
+  },
+  "skillsToTeach": [],
+  "spellsToTeach": [],
+  "sprite": 28,
+  "templateKey": "Edric "
+}

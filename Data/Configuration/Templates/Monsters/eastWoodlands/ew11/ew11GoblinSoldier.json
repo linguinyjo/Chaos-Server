@@ -7,7 +7,7 @@
     "minGoldDrop": 400,
     "name": "Goblin Soldier",
     "lootTableKeys": ["ew11GoblinSoldiers"],
-    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptKeys": ["default", "setMonsterElement","GoblinArmorDrop"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],

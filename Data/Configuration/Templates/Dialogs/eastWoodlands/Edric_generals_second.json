@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "edric_generals_quest_accept",
+      "optionText": "I am ready"
+    },
+    {
+      "dialogKey": "edric_generals_quest_reject",
+      "optionText": "I need more time to prepare"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "edric_generals_second",
+  "text": "We need to slow their numbers and show those filthy creatures we mean business. Are you ready to enter the battle?",
+  "type": "Menu"
+}

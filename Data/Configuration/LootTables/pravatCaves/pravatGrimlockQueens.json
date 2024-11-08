@@ -2,39 +2,39 @@
     "key": "pravatGrimlockQueens",
     "lootDrops": [
         {
-            "dropChance": 0.5,
+            "dropChance": 0.7,
             "itemTemplateKey": "enchantWeaponScroll2nd"
         },
         {
-            "dropChance": 0.5,
+            "dropChance": 0.7,
             "itemTemplateKey": "enchantWeaponScroll2nd"
         },
         {
-            "dropChance": 0.5,
+            "dropChance": 0.7,
             "itemTemplateKey": "enchantWeaponScroll2nd"
         },
         {
-            "dropChance": 0.5,
+            "dropChance": 0.7,
             "itemTemplateKey": "enchantWeaponScroll2nd"
         },
         {
-            "dropChance": 0.15,
+            "dropChance": 0.2,
             "itemTemplateKey": "reinforcedLeatherGreaves"
         },
         {
-            "dropChance": 0.15,
+            "dropChance": 0.2,
             "itemTemplateKey": "pearlChainNecklace"
         },
         {
-            "dropChance": 0.15,
+            "dropChance": 0.2,
             "itemTemplateKey": "holyKronos"
         },
         {
-            "dropChance": 0.15,
+            "dropChance": 0.2,
             "itemTemplateKey": "magusKronos"
         },
         {
-            "dropChance": 0.15,
+            "dropChance": 0.20,
             "itemTemplateKey": "magusApollo"
         }
     ]

@@ -7,7 +7,7 @@
     "maxGoldDrop": 700,
     "minGoldDrop": 400,
     "lootTableKeys": ["ew9GoblinWarriors"],
-    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptKeys": ["default", "setMonsterElement","GoblinArmorDrop"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],

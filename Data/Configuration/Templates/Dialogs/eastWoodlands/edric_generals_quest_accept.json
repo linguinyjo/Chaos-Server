@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "Close",
+  "scriptKeys": ["IncrementGeneralsQuest"],
+  "scriptVars": {},
+  "templateKey": "edric_generals_quest_accept",
+  "text": "Good. Return to me with {=s50 Goblin Armor{=a. Any of the goblin in the area should drop them. This will show the scum that Loures will not fall so easily!",
+  "type": "Normal"
+}

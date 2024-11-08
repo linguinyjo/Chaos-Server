@@ -248,5 +248,49 @@
         },
         "shouldBlockPathfinding": true,
         "source": "(0,24)"
+    },
+
+    {
+        "scriptKeys": ["ScoutingPravat"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(14,10)"
+    },
+    {
+        "scriptKeys": ["ScoutingPravat"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(15,10)"
+    },
+    {
+        "scriptKeys": ["ScoutingPravat"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(16,10)"
+    },
+    {
+        "scriptKeys": ["ScoutingPravat"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(17,10)"
+    },
+    {
+        "scriptKeys": ["ScoutingPravat"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(18,10)"
+    },
+    {
+        "scriptKeys": ["ScoutingPravat"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(19,10)"
+    },
+    {
+        "scriptKeys": ["ScoutingPravat"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(20,10)"
     }
+    
 ]

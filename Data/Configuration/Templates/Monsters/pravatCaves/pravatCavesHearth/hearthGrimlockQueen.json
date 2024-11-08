@@ -7,8 +7,12 @@
     "minGoldDrop": 15000,
     "name": "Grimlock Queen",
     "lootTableKeys": ["pravatGrimlockQueens"],
-    "scriptKeys": ["default", "setMonsterElement"],
-    "scriptVars": {},
+    "scriptKeys": ["default", "setMonsterElement", "GeneralOnKill"],
+    "scriptVars": {
+        "GeneralOnKill": {
+            "itemTemplateKey": "grimlockQueenHeart"
+        }
+    },
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],
     "spellIntervalMs": 8000,
@@ -27,7 +31,7 @@
         "str": 32,
         "wis": 1
     },
-    "templateKey": "hearthGrimlockQueens",
+    "templateKey": "hearthGrimlockQueen",
     "type": "Normal",
     "wanderIntervalMs": 1500
 }

@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "close",
+  "scriptKeys": ["edricGeneralsQuest"],
+  "scriptVars": {},
+  "templateKey": "Edric_initial",
+  "text": "The goblins are swarming this area, aisling. Go no further. Consider yourself warned.",
+  "type": "Normal"
+}

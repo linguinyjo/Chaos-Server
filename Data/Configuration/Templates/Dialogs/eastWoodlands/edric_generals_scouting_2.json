@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "close",
+  "scriptKeys": ["IncrementGeneralsQuest"],
+  "scriptVars": {},
+  "templateKey": "edric_generals_scouting_2",
+  "text": "Your next task is to investigate the Pravat Caves. We've lost too many scouts in there already. We need to know what foul deeds the grimlocks are plotting. Once you have scouted it out, report back to me.",
+  "type": "Normal"
+}
