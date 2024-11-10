@@ -70,7 +70,7 @@ public struct DamageAbilityComponent : IComponent
         decimal? abilityDamageMultiplier = null)
     {
         var finalDamage = baseDamage ?? 0;
-        finalDamage += MathEx.GetPercentOf<int>(target.StatSheet.CurrentHp, pctHpDamage ?? 0);
+        finalDamage += MathEx.GetPercentOf<int>(source.StatSheet.CurrentHp, pctHpDamage ?? 0);
 
         if (!damageStat.HasValue)
         {

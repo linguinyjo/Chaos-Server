@@ -118,7 +118,7 @@ public struct SenseAbilityComponent : IComponent
         return element switch
         {
             Element.Fire => MessageColor.Red,
-            Element.Water => MessageColor.Blue,
+            Element.Water => MessageColor.Silver,
             Element.Wind => MessageColor.Yellow,
             Element.Earth => MessageColor.DarkGreen,
             Element.Holy => MessageColor.HotPink,

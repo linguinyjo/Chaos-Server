@@ -48,7 +48,7 @@ public class SkulledEffect(ISimpleCache simpleCache) : ContinuousAnimationEffect
         var currentPosition = AislingSubject.Trackers.LastPosition;
         if (currentPosition != null)
         {
-            AislingSubject.TryDrop(currentPosition, AislingSubject.Equipment,  out var equipmentToDrop);
+            AislingSubject.TryDrop(currentPosition, AislingSubject.Equipment, out var equipmentToDrop);
             if (equipmentToDrop != null)
                 foreach (var groundItem in equipmentToDrop)
                 {

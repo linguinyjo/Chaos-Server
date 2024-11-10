@@ -1,28 +1,18 @@
-using Chaos.Collections;
 using Chaos.Models.Menu;
 using Chaos.Models.World;
 using Chaos.Scripting.DialogScripts.Abstractions;
-using Chaos.Scripting.QuestScripts.PorteForest;
-using Chaos.Services.Factories.Abstractions;
-using Chaos.Storage.Abstractions;
 
 namespace Chaos.Scripting.QuestScripts.GeneralsOfDarkness;
 
 public class EdricGeneralsQuestScript: DialogScriptBase
 {
-    private readonly IDialogFactory DialogFactory;
     private readonly Dialog Dialog;
-    private readonly IItemFactory ItemFactory;
-    private readonly ISimpleCache SimpleCache;
-
+    
     /// <inheritdoc />
-    public EdricGeneralsQuestScript(Dialog subject, IDialogFactory dialogFactory, IItemFactory itemFactory, ISimpleCache simpleCache)
+    public EdricGeneralsQuestScript(Dialog subject)
         : base(subject)
     {
-        DialogFactory = dialogFactory;
         Dialog = subject;
-        ItemFactory = itemFactory;
-        SimpleCache = simpleCache;
     }
 
     /// <inheritdoc />
@@ -45,7 +35,7 @@ public class EdricGeneralsQuestScript: DialogScriptBase
                     {
                         GeneralsOfDarknessQuestHelper.IncrementQuestStage(source);
                         source.Inventory.RemoveQuantityByTemplateKey("goblinArmor", 50);
-                        Dialog.Reply(
+                        Subject.Reply(
                             source,
                             "Well done! This armor will serve as both a warning and a testament to our strength",
                             "edric_generals_scouting_1");

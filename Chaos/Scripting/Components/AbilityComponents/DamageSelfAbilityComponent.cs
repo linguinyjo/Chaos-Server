@@ -16,51 +16,37 @@ public struct DamageSelfAbilityComponent : IComponent
     public void Execute(ActivationContext context, ComponentVars vars)
     {
         var options = vars.GetOptions<IDamageSelfComponentOptions>();
-        var targets = vars.GetTargets<Creature>();
-
-        foreach (var target in targets)
+        if (context.Source is not Aisling aisling) return;
+        var damage = CalculateDamage(
+            aisling,
+            options.BaseDamage,
+            options.PctHpDamage
+        );
+        if (damage <= 0) return;
+        if (damage > context.Source.StatSheet.CurrentHp)
         {
-            var damage = CalculateDamage(
-                context.Source,
-                target,
-                options.BaseDamage,
-                options.PctHpDamage
-            );
-
-            if (damage <= 0) continue;
-            if (damage > context.Source.StatSheet.CurrentHp)
-            {
-                switch (target)
-                {
-                    case Aisling aisling:
-                        aisling.StatSheet.SetHp(1);
-                        aisling.Client.SendAttributes(StatUpdateType.Vitality);
-                        aisling.ShowHealth();
-                        break;
-                    case Monster _:
-                        break;
-                }
-            }
-            else
-            {
-                options.ApplyDamageScript.ApplyDamage(
-                    context.Source,
-                    target,
-                    options.SourceScript,
-                    damage);
-            }
-            
+            aisling.StatSheet.SetHp(1);
+            aisling.Client.SendAttributes(StatUpdateType.Vitality);
+            aisling.ShowHealth();
+        }
+        else
+        {
+            options.ApplyDamageScript.ApplyDamage(
+                aisling,
+                aisling,
+                options.SourceScript,
+                damage);
         }
     }
 
-    private int CalculateDamage(Creature source,
+    private static int CalculateDamage(
         Creature target,
         int? baseDamage = null,
         decimal? pctHpDamage = null
     )
     {
         var finalDamage = baseDamage ?? 0;
-        finalDamage += MathEx.GetPercentOf<int>((int)target.StatSheet.EffectiveMaximumHp, pctHpDamage ?? 0);
+        finalDamage += MathEx.GetPercentOf<int>(target.StatSheet.CurrentHp, pctHpDamage ?? 0);
         return finalDamage;
     }
 

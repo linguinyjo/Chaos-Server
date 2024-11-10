@@ -10,19 +10,13 @@ namespace Chaos.Scripting.QuestScripts.GeneralsOfDarkness;
 
 public class ThibaultGeneralsQuestScript: DialogScriptBase
 {
-    private readonly IDialogFactory DialogFactory;
     private readonly Dialog Dialog;
-    private readonly IItemFactory ItemFactory;
-    private readonly ISimpleCache SimpleCache;
 
     /// <inheritdoc />
-    public ThibaultGeneralsQuestScript(Dialog subject, IDialogFactory dialogFactory, IItemFactory itemFactory, ISimpleCache simpleCache)
+    public ThibaultGeneralsQuestScript(Dialog subject)
         : base(subject)
     {
-        DialogFactory = dialogFactory;
         Dialog = subject;
-        ItemFactory = itemFactory;
-        SimpleCache = simpleCache;
     }
 
     /// <inheritdoc />

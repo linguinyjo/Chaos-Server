@@ -1,12 +1,12 @@
 {
     "isAssail": false,
-    "description": "Deals 1/3 of your health in damage to the enemy. Costs 2/3 of your health.",
+    "description": "Sacrifice your health to deal severe damage",
     "level": 11,
     "levelsUp": true,
     "name": "Kelberoth Strike",
     "class": "monk",
     "panelSprite": 36,
-    "cooldownMs": 24000,
+    "cooldownMs": 32000,
     "scriptKeys": ["damage", "damageSelf", "levelup"],
     "scriptVars": {
         "damage": {
@@ -19,7 +19,7 @@
             },
             "shape": "front",
             "excludeSourcePoint": true,
-            "pctHpDamage": 33,
+            "pctHpDamage": 15,
             "filter": "hostileOnly, aliveOnly, othersOnly"
         },
         "damageSelf": {

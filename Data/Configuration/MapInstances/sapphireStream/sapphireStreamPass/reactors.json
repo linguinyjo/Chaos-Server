@@ -1,0 +1,133 @@
+[
+  {
+    "scriptKeys": ["showWorldMap"],
+    "scriptVars": {
+      "showWorldMap": {
+        "worldMapKey": "field006"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(15, 8)"
+  },
+  {
+    "scriptKeys": ["showWorldMap"],
+    "scriptVars": {
+      "showWorldMap": {
+        "worldMapKey": "field006"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(15, 7)"
+  },
+  {
+    "scriptKeys": ["showWorldMap"],
+    "scriptVars": {
+      "showWorldMap": {
+        "worldMapKey": "field006"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(15, 6)"
+  },
+  {
+    "scriptKeys": ["showWorldMap"],
+    "scriptVars": {
+      "showWorldMap": {
+        "worldMapKey": "field006"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(15, 5)"
+  },
+  {
+    "scriptKeys": ["showWorldMap"],
+    "scriptVars": {
+      "showWorldMap": {
+        "worldMapKey": "field006"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(15, 4)"
+  },
+  {
+    "scriptKeys": ["showWorldMap"],
+    "scriptVars": {
+      "showWorldMap": {
+        "worldMapKey": "field006"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(15, 3)"
+  },
+  {
+    "scriptKeys": ["showWorldMap"],
+    "scriptVars": {
+      "showWorldMap": {
+        "worldMapKey": "field006"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(15, 2)"
+  },
+
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "cedarGrove:(14, 11)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(0, 4)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "cedarGrove:(14, 11)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(0, 5)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "cedarGrove:(14, 11)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(0, 6)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "cedarGrove:(14, 11)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(0, 7)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "cedarGrove:(14, 11)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(0, 8)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "cedarGrove:(14, 11)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(0, 9)"
+  }
+]

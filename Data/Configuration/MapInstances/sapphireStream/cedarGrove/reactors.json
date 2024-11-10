@@ -1,0 +1,52 @@
+[
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "sapphireStreamPass:(1, 4)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(15, 9)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "sapphireStreamPass:(1, 5)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(15, 10)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "sapphireStreamPass:(1, 6)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(15, 11)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "sapphireStreamPass:(1, 7)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(15, 12)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "sapphireStreamPass:(1, 8)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(15, 13)"
+  }
+]
