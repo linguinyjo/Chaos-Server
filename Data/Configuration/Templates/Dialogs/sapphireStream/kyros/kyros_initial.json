@@ -1,0 +1,13 @@
+{
+  "options": [
+    {
+      "dialogKey": "kyros_what_is_this_place",
+      "optionText": "What is this place?"
+    }
+  ],
+  "scriptKeys": ["kyros"],
+  "scriptVars": {},
+  "templateKey": "kyros_initial",
+  "text": "Welcome to the Sapphire Stream young aisling. What brings you here today?",
+  "type": "Menu"
+}

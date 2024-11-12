@@ -48,5 +48,65 @@
     },
     "shouldBlockPathfinding": false,
     "source": "(15, 13)"
+  },
+
+  {
+    "scriptKeys": ["dojoTile"],
+    "scriptVars": {},
+    "shouldBlockPathfinding": false,
+    "source": "(0, 10)"
+  },
+  {
+    "scriptKeys": ["dojoTile"],
+    "scriptVars": {},
+    "shouldBlockPathfinding": false,
+    "source": "(0, 9)"
+  },
+  {
+    "scriptKeys": ["dojoTile"],
+    "scriptVars": {},
+    "shouldBlockPathfinding": false,
+    "source": "(0, 8)"
+  },
+
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "sapphireStream:(6, 15)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(2, 0)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "sapphireStream:(7, 15)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(3, 0)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "sapphireStream:(8, 15)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(4, 0)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "sapphireStream:(9, 15)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(5, 0)"
   }
 ]

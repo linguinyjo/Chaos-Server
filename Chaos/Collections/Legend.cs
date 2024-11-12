@@ -34,6 +34,14 @@ public sealed class Legend : IEnumerable<LegendMark>
 
         return Marks.TryAdd(mark.Key, mark);
     }
+    
+    public bool AddOrReplace(LegendMark mark)
+    {
+        if (!Marks.TryGetValue(mark.Key, out var existingMark)) return Marks.TryAdd(mark.Key, mark);
+        existingMark.Text = mark.Text;
+        existingMark.Added = GameTime.Now;
+        return true;
+    }
 
     public void AddUnique(LegendMark mark) => Marks[mark.Key] = mark;
 

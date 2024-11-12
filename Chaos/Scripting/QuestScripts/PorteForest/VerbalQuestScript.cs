@@ -50,7 +50,7 @@ public class VerbalQuestScript : VerbalShopScriptBase
 
     private void HandleTorbjornInitial(Aisling aisling, string message)
     {
-        var porteForestMatch = FindFirstMatch(message, RegexCache.PORTE_FOREST_PATTERNS);
+        var porteForestMatch = FindFirstMatch(message, PorteForestRegexCache.PORTE_FOREST_PATTERNS);
         if (porteForestMatch is null) return;
 
         DisplayDialog(aisling, 
@@ -74,7 +74,7 @@ public class VerbalQuestScript : VerbalShopScriptBase
 
     private void HandleBertilTarp(Aisling aisling, string message)
     {
-        var tarpMatch = FindFirstMatch(message, RegexCache.TARP_PATTERNS);
+        var tarpMatch = FindFirstMatch(message, PorteForestRegexCache.TARP_PATTERNS);
         if (tarpMatch is null) return;
 
         if (PorteForestQuestHelper.IsElligibleToMakeTarp(aisling))

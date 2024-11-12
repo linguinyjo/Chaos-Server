@@ -1,0 +1,28 @@
+{
+    "buyCost": 7500,
+    "category": "monk",
+    "color": "Default",
+    "isDyable": false,
+    "displaySprite": 141,
+    "equipmentType": "Helmet",
+    "gender": "Unisex",
+    "maxDurability": 10000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -1
+    },
+    "class": "monk",
+    "pantsColor": "Default",
+    "level": 11,
+    "levelCircle": 2,
+    "sellValue": 3750,
+    "weight": 5,
+    "description": "Class: Monk\nLevel: 11\nAc -1",
+    "name": "White Dugon",
+    "panelSprite": 537,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "whiteDugon"
+}

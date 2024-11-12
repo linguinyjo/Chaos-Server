@@ -1,0 +1,25 @@
+{
+  "options": [
+    {
+      "dialogKey": "close",
+      "optionText": "Potential"
+    },
+    {
+      "dialogKey": "close",
+      "optionText": "Strength"
+    },
+    {
+      "dialogKey": "close",
+      "optionText": "Intelligence"
+    },
+    {
+      "dialogKey": "close",
+      "optionText": "Resilience"
+    }
+  ],
+  "scriptKeys": ["WhiteDugonMeditation"],
+  "scriptVars": {},
+  "templateKey": "white_dugon_meditation_1",
+  "text": "A voice echoes in your mind:\n\n\"A butterfly sees not its own wings, yet still it flies with little effort. Only the sky holds its limit.\n\nWhat lies within you that you cannot see?\"",
+  "type": "Menu"
+}

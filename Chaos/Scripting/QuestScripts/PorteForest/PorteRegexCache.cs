@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Chaos.Scripting.QuestScripts.PorteForest;
 
-public static partial class RegexCache
+public static partial class PorteForestRegexCache
 {
     [GeneratedRegex(@"Porte Forest", RegexOptions.IgnoreCase | RegexOptions.Compiled)]
     private static partial Regex PorteForestRegex();

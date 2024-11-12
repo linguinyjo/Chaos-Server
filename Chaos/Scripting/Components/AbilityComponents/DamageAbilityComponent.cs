@@ -57,7 +57,7 @@ public struct DamageAbilityComponent : IComponent
         }
     }
     
-    //TODO need to tidy this function up
+    //TODO need to tidy this function up, mabe seperate it out into different ability components
     private static int CalculateDamage(Creature source,
         Creature target,
         int? baseDamage = null,

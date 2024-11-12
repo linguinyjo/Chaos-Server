@@ -3,28 +3,26 @@ using Chaos.Models.World;
 using Chaos.Scripting.DialogScripts.Abstractions;
 using Chaos.Services.Factories.Abstractions;
 
-namespace Chaos.Scripting.QuestScripts.Dugons;
+namespace Chaos.Scripting.QuestScripts.Dugons.WhiteDugonScripts;
 
-public class DugonQuestScript:  DialogScriptBase
+public class IncrementWhiteDugonScript:  DialogScriptBase
 {
     private readonly IDialogFactory DialogFactory;
-    private readonly Dialog Dialog;
-
+    
     /// <inheritdoc />
-    public DugonQuestScript(Dialog subject, IDialogFactory dialogFactory)
+    public IncrementWhiteDugonScript(Dialog subject, IDialogFactory dialogFactory)
         : base(subject)
     {
         DialogFactory = dialogFactory;
-        Dialog = subject;
-    } 
+    }
 
     /// <inheritdoc />
-    public override void OnDisplaying(Aisling source)
+    public override void OnDisplaying(Aisling source) {}
+
+    public override void OnDisplayed(Aisling source)
     {
-       
+       WhiteDugonQuestHelper.IncrementQuestStage(source);
     }
-    
-    public override void OnDisplayed(Aisling source) {}
 
     public override void OnNext(Aisling source, byte? optionIndex = null) {}
 }

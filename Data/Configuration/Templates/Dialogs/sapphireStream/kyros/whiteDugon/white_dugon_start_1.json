@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "white_dugon_start_2",
+  "scriptKeys": ["startWhiteDugon"],
+  "scriptVars": {},
+  "templateKey": "white_dugon_start_1",
+  "text": "Go out and slay a bat. They are a common monster in Mileth's Crypt and should pose little threat to a monk of your insight.",
+  "type": "Normal"
+}

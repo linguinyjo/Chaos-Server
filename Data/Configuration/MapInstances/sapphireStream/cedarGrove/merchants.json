@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "blackList": [],
+    "direction": "Down",
+    "extraScriptKeys": [],
+    "merchantTemplateKey": "kyros",
+    "spawnPoint": "(2, 6)"
+  }
+]

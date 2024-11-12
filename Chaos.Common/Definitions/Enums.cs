@@ -759,6 +759,22 @@ public enum EquipmentType : byte
     Boots,
     Accessory
 }
+
+/// <summary>
+///     A byte representing the dugons available to monk.
+/// </summary>
+public enum Dugon
+{
+    None = 0,
+    White = 1,
+    Green = 2,
+    Blue = 3,
+    Yellow = 4,
+    Purple = 5,
+    Brown = 6,
+    Red = 7, 
+    Black = 8
+}
 #endregion
 
 #region Options

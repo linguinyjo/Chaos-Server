@@ -23,7 +23,7 @@
             "filter": "hostileOnly, aliveOnly, othersOnly"
         },
         "damageSelf": {
-            "pctHpDamage": 66,
+            "pctHpDamage": 75,
             "filter": "selfOnly, aliveOnly"
         },
         "levelUp": {
