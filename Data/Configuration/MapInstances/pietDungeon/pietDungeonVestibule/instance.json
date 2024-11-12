@@ -1,0 +1,9 @@
+{
+    "flags": "None",
+    "instanceId": "pietDungeonVestibule",
+    "music": 1,
+    "name": "Piet Dungeon Vestibule",
+    "scriptKeys": [],
+    "templateKey": "426",
+    "autoDayNightCycle": false
+}

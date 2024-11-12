@@ -1,0 +1,17 @@
+{
+    "itemsForSale": [],
+    "itemsToBuy": [],
+    "name": "Sabonim",
+    "restockIntervalHrs": 1,
+    "restockPCt": 100,
+    "scriptKeys": ["showdialog", "defaultBehaviors", "WhiteDugonVerbal"],
+    "scriptVars": {
+        "showdialog": {
+            "dialogKey": "sabonim_initial"
+        }
+    },
+    "skillsToTeach": [],
+    "spellsToTeach": ["GentleTouch"],
+    "sprite": 19,
+    "templateKey": "sabonimWhite"
+}

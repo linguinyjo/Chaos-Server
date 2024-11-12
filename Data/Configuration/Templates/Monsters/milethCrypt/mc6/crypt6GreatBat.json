@@ -3,8 +3,8 @@
     "expReward": 211,
     "moveIntervalMs": 1300,
     "aggroRange": 10,
-    "name": "Greater Bat",
-    "lootTableKeys": ["crypt6GreaterBats"],
+    "name": "Great Bat",
+    "lootTableKeys": ["crypt6GreatBats"],
     "scriptKeys": ["default", "setMonsterElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
@@ -25,7 +25,7 @@
         "str": 24,
         "wis": 3
     },
-    "templateKey": "crypt6GreaterBat",
+    "templateKey": "crypt6GreatBat",
     "type": "Normal",
     "wanderIntervalMs": 2000
 }

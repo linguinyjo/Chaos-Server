@@ -1,0 +1,22 @@
+[
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pietDungeon6:(4, 3)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(4, 39)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "pietDungeon8:(4, 5)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(4, 2)"
+    }
+]

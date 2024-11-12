@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "blackList": [],
+    "direction": "Down",
+    "extraScriptKeys": [],
+    "merchantTemplateKey": "sabonimWhite",
+    "spawnPoint": "(3, 3)"
+  }
+]

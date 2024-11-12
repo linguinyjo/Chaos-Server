@@ -1,0 +1,25 @@
+{
+  "options": [
+    {
+      "dialogKey": "generic_learnskill_initial",
+      "optionText": "Learn Skill"
+    },
+    {
+      "dialogKey": "generic_forgetskill_initial",
+      "optionText": "Forget Skill"
+    },
+    {
+      "dialogKey": "generic_learnspell_initial",
+      "optionText": "Learn Spell"
+    },
+    {
+      "dialogKey": "generic_forgetspell_initial",
+      "optionText": "Forget Spell"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "sabonim_initial",
+  "text": "Welcome Monk, are you looking to train?",
+  "type": "Menu"
+}

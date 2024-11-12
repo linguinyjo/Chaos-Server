@@ -3,7 +3,7 @@
   "lootDrops": [
     {
       "dropChance": 0.30,
-      "itemTemplateKey": "batsWing"
+      "itemTemplateKey": "batWing"
     },
     {
       "dropChance": 0.01,

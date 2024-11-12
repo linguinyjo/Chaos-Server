@@ -23,7 +23,7 @@ public static class WhiteDugonQuestHelper
     {
         if(player.Trackers.TimedEvents.HasActiveEvent(WhiteDugonBlock, out _)) return false;
         player.Trackers.Enums.Set(WhiteDugonQuestStatus.Started);
-        player.Trackers.TimedEvents.AddEvent(WhiteDugonId, TimeSpan.FromMinutes(30));
+        player.Trackers.TimedEvents.AddEvent(WhiteDugonId, TimeSpan.FromMinutes(15));
         return true;
     }
     

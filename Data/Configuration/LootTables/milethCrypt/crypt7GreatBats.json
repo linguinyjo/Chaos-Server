@@ -1,9 +1,9 @@
 {
-  "key": "crypt6GreaterBats",
+  "key": "crypt7GreatBats",
   "lootDrops": [
     {
       "dropChance": 0.25,
-      "itemTemplateKey": "greaterBatsWing"
+      "itemTemplateKey": "greatBatWing"
     },
     {
       "dropChance": 0.01,
@@ -18,11 +18,11 @@
       "itemTemplateKey": "mythrilBelt"
     },
     {
-      "dropChance": 0.008,
+      "dropChance": 0.007,
       "itemTemplateKey": "rubyEarrings"
     },
     {
-      "dropChance": 0.007,
+      "dropChance": 0.009,
       "itemTemplateKey": "emeraldRing"
     },
     {
