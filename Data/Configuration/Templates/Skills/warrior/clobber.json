@@ -34,11 +34,13 @@
             "shape": "front",
             "excludeSourcePoint": true,
             "damageStatMultiplier": 0.50,
-            "baseDamage": 10,
+            "baseDamage": 3,
+            "PAtkMultiplier": -80,
             "filter": "hostileOnly, aliveOnly, othersOnly"
         },
         "levelUp": {
-            "rate": "medium"
+            "rate": "medium",
+            "filter": "hostileOnly, aliveOnly, othersOnly"
         }
     },
     "templateKey": "clobber"

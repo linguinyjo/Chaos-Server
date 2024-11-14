@@ -29,7 +29,8 @@
             "filter": "hostileOnly, aliveOnly, othersOnly"
         },
         "levelUp": {
-            "rate": "veryfast"
+            "rate": "veryfast",
+            "filter": "hostileOnly, aliveOnly, othersOnly"
         }
     },
     "templateKey": "martialAwareness"

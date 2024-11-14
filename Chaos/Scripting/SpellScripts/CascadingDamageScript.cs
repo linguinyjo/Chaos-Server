@@ -85,7 +85,8 @@ public class CascadingDamageScript : ConfigurableSpellScriptBase,
     /// <inheritdoc />
     public IScript SourceScript { get; init; }
     /// <inheritdoc />
-    public bool? UsePAtk { get; init; }
+    public decimal? PAtkMultiplier { get; init; }
+
     /// <inheritdoc />
     public bool? UseMatk { get; init; }
     /// <inheritdoc />

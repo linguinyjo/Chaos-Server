@@ -90,7 +90,8 @@ public class DamageScript : ConfigurableSpellScriptBase,
     /// <inheritdoc />
     public IScript SourceScript { get; init; }
 
-    public bool? UsePAtk { get; init; }
+    /// <inheritdoc />
+    public decimal? PAtkMultiplier { get; init; }
     
     public bool? UseMatk { get; init; }
     /// <inheritdoc />

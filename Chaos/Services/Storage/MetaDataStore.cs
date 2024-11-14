@@ -206,7 +206,7 @@ public class MetaDataStore : IMetaDataStore
                 Class = template.Class ?? BaseClass.Peasant,
                 Weight = template.Weight,
                 Description = template.Description ?? string.Empty,
-                Category = template.Category
+                Category = template.Category,
             };
 
             //add basic node

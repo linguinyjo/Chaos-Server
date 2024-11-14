@@ -30,11 +30,12 @@
             "damageStatMultiplier": 0.50,
             "baseDamage": 15,
             "filter": "hostileOnly, aliveOnly, othersOnly",
-            "usePAtk": true,
+            "PAtkMultiplier": -80,
             "fistBonus": 30
         },
         "levelUp": {
-            "rate": "fast"
+            "rate": "fast",
+            "filter": "hostileOnly, aliveOnly, othersOnly"
         }
     },
     "templateKey": "doublePunch"

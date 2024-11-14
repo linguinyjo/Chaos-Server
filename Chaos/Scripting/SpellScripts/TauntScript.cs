@@ -15,7 +15,8 @@ namespace Chaos.Scripting.SpellScripts;
 
 public class TauntScript : ConfigurableSpellScriptBase,
                             GenericAbilityComponent<Monster>.IAbilityComponentOptions,
-                            DamageAbilityComponent.IDamageComponentOptions
+                            DamageAbilityComponent.IDamageComponentOptions,
+                            TauntAbilityComponent.ITauntComponentOptions
 {
     /// <inheritdoc />
     public TauntScript(Spell subject)
@@ -84,6 +85,7 @@ public class TauntScript : ConfigurableSpellScriptBase,
     public decimal? PctHpDamage { get; init; }
 
     public IScript SourceScript { get; init; }
+    public decimal? PAtkMultiplier { get; init; }
 
     /// <inheritdoc />
     public int? ManaCost { get; init; }
@@ -93,9 +95,6 @@ public class TauntScript : ConfigurableSpellScriptBase,
 
     /// <inheritdoc />
     public bool ShouldNotBreakHide { get; init; }
-    
-    /// <inheritdoc />
-    public bool? UsePAtk { get; init; }
    
     /// <inheritdoc />
     public bool? UseMatk { get; init; }
@@ -108,5 +107,8 @@ public class TauntScript : ConfigurableSpellScriptBase,
 
     /// <inheritdoc />
     public bool CanResist { get; init; }
+    
+    /// <inheritdoc />
+    public int Enmity { get; init; }
     #endregion
 }

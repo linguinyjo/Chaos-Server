@@ -18,11 +18,12 @@
             "damageStatMultiplier": 0.50,
             "baseDamage": 3,
             "filter": "hostileOnly, aliveOnly, othersOnly",
-            "usePAtk": true,
+            "PAtkMultiplier": 0,
             "fistBonus": 25
         },
         "levelUp": {
-            "rate": "fast"
+            "rate": "fast",
+            "filter": "hostileOnly, aliveOnly, othersOnly"
         }
     },
     "templateKey": "monkAssail"

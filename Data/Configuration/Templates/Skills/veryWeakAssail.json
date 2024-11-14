@@ -16,7 +16,7 @@
             "excludeSourcePoint": true,
             "baseDamage": 0,
             "filter": "hostileOnly, aliveOnly, othersOnly",
-            "usePAtk": true
+            "PAtkMultiplier": 0
         }
     },
     "templateKey": "veryWeakAssail"

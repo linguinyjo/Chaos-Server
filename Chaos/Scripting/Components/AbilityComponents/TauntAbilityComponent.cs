@@ -15,7 +15,7 @@ public struct TauntAbilityComponent : IComponent
     /// <inheritdoc />
     public void Execute(ActivationContext context, ComponentVars vars)
     {
-       
+        var options = vars.GetOptions<ITauntComponentOptions>();
         var targets = vars.GetTargets<Creature>();
 
         foreach (var target in targets)
@@ -25,10 +25,15 @@ public struct TauntAbilityComponent : IComponent
                 case Aisling aisling:
                     break;
                 case Monster monster:
-                    monster.AggroList.Clear();
-                    monster.AggroList.AddOrUpdate(context.Source.Id, _ => 100, (_, currentAggro) => currentAggro + 100);
+                    monster.AggroList.AddOrUpdate(context.Source.Id, _ => 
+                        options.Enmity, (_, currentAggro) => currentAggro + options.Enmity);
                     break;
             }
         }
+    }
+    
+    public interface ITauntComponentOptions
+    {
+        int Enmity { get; init; }
     }
 }

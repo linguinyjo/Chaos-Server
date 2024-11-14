@@ -14,7 +14,10 @@ using Chaos.Scripting.SkillScripts.Abstractions;
 namespace Chaos.Scripting.SkillScripts;
 
 public class TauntScript : ConfigurableSkillScriptBase,
-                            GenericAbilityComponent<Creature>.IAbilityComponentOptions
+                            GenericAbilityComponent<Creature>.IAbilityComponentOptions,
+                            TauntAbilityComponent.ITauntComponentOptions
+
+                            
     
 {
     /// <inheritdoc />
@@ -78,5 +81,7 @@ public class TauntScript : ConfigurableSkillScriptBase,
 
     /// <inheritdoc />
     public bool CanResist { get; init; }
+    /// <inheritdoc />
+    public int Enmity { get; init; }
     #endregion
 }

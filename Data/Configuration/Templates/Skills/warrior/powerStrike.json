@@ -32,10 +32,11 @@
             "damageStatMultiplier": 1,
             "baseDamage": 20,
             "filter": "hostileOnly, aliveOnly, othersOnly",
-            "usePAtk": true
+            "PAtkMultiplier": 0
         },
         "levelUp": {
-            "rate": "veryfast"
+            "rate": "veryfast",
+            "filter": "hostileOnly, aliveOnly, othersOnly"
         }
     },
     "templateKey": "powerStrike"

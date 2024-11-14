@@ -42,7 +42,8 @@
             "canResist": true
         },
         "levelUp": {
-            "rate": "fast"
+            "rate": "fast",
+            "filter": "hostileOnly, aliveOnly, othersOnly"
         }
     },
     "templateKey": "athar"

@@ -109,7 +109,9 @@ public class TrapScript : ConfigurableReactorTileScriptBase,
     public decimal? DamageStatMultiplier { get; init; }
     public decimal? PctHpDamage { get; init; }
     public IScript SourceScript { get; init; }
-    public bool? UsePAtk { get; init; }
+    /// <inheritdoc />
+    public decimal? PAtkMultiplier { get; init; }
+
     public bool? UseMatk { get; init; }
     /// <inheritdoc />
     public int? FistBonus { get; init; }

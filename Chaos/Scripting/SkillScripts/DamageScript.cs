@@ -97,8 +97,8 @@ public class DamageScript : ConfigurableSkillScriptBase,
     public bool ShouldNotBreakHide { get; init; }
     
     /// <inheritdoc />
-    public bool? UsePAtk { get; init; }
-   
+    public decimal? PAtkMultiplier { get; init; }
+    
     /// <inheritdoc />
     public bool? UseMatk { get; init; }
 

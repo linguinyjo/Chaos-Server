@@ -29,11 +29,13 @@
             "shape": "front",
             "excludeSourcePoint": true,
             "damageStatMultiplier": 0.50,
-            "baseDamage": 5,
+            "baseDamage": 3,
+            "PAtkMultiplier": -80,
             "filter": "hostileOnly, aliveOnly, othersOnly"
         },
         "levelUp": {
-            "rate": "fast"
+            "rate": "fast",
+            "filter": "hostileOnly, aliveOnly, othersOnly"
         }
     },
     "templateKey": "assault"

@@ -95,7 +95,7 @@ public sealed class ItemMapperProfile(ISimpleCache simpleCache, IScriptProvider 
             Weight = obj.Weight == obj.Template.Weight ? null : obj.Weight,
             PanelSprite = obj.ItemSprite.PanelSprite == obj.Template.ItemSprite.PanelSprite ? null : obj.ItemSprite.PanelSprite,
             DisplaySprite = obj.ItemSprite.DisplaySprite == obj.Template.ItemSprite.DisplaySprite ? null : obj.ItemSprite.DisplaySprite,
-            Enchant = obj.Enchant
+            Enchant = obj.Enchant ?? obj.Template.Enchant,
         };
 
         return ret;

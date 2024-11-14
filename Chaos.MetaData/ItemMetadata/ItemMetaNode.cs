@@ -49,10 +49,8 @@ public sealed record ItemMetaNode(string Name) : IMetaNode
            + Name.Length
            + Category.Length
            + Description.Length
-           + Level.ToString()
-                  .Length
-           + Weight.ToString()
-                   .Length;
+           + Level.ToString().Length
+           + Weight.ToString().Length;
 
     /// <inheritdoc />
     public void Serialize(ref SpanWriter writer)

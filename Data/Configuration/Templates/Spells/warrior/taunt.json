@@ -15,7 +15,7 @@
   "spellType": "Targeted",
   "class": "Warrior",
   "castLines": 1,
-  "cooldownMs": 30000,
+  "cooldownMs": 15000,
   "description": "Taunt",
   "level": 11,
   "name": "Taunt",
@@ -27,7 +27,9 @@
     "taunt": {
       "bodyAnimation": "priestcast",
       "filter": "aliveOnly",
-      "canResist": true
+      "canResist": false,
+      "sound": 1,
+      "enmity": 250
     }
   },
   "templateKey": "taunt"

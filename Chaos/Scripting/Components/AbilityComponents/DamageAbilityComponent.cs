@@ -32,7 +32,7 @@ public struct DamageAbilityComponent : IComponent
                 options.PctHpDamage,
                 options.DamageStat,
                 options.DamageStatMultiplier,
-                options.UsePAtk,
+                options.PAtkMultiplier,
                 options.UseMatk,
                 options.FistBonus,
                 abilityDamageMultiplier
@@ -64,14 +64,17 @@ public struct DamageAbilityComponent : IComponent
         decimal? pctHpDamage = null,
         Stat? damageStat = null,
         decimal? damageStatMultiplier = null,
-        bool? usePAtk = null,
+        decimal? PAtkMultiplier = null,
         bool? useMAtk = null,
         int? fistBonus = null, 
         decimal? abilityDamageMultiplier = null)
     {
         var finalDamage = baseDamage ?? 0;
-        finalDamage += MathEx.GetPercentOf<int>(source.StatSheet.CurrentHp, pctHpDamage ?? 0);
-
+        if (pctHpDamage.HasValue)
+        {
+            finalDamage += MathEx.GetPercentOf<int>(source.StatSheet.CurrentHp, (decimal)pctHpDamage);
+        }
+        
         if (!damageStat.HasValue)
         {
             if (abilityDamageMultiplier is > 0 && finalDamage > 0)
@@ -96,9 +99,11 @@ public struct DamageAbilityComponent : IComponent
         }
         
         // Apply weapon damage
-        if (usePAtk == true)
+        if (PAtkMultiplier.HasValue)
         {
-            finalDamage += source.StatSheet.EffectivePhysicalAttack;
+            var multiplier = 1 + (PAtkMultiplier.Value / 100);
+            var weaponDamageBonus = Convert.ToInt32(source.StatSheet.EffectivePhysicalAttack * multiplier);
+            finalDamage += weaponDamageBonus;
         }
         
         // Apply magic damage
@@ -169,7 +174,7 @@ public struct DamageAbilityComponent : IComponent
         Element? Element { get; init; }
         decimal? PctHpDamage { get; init; }
         IScript SourceScript { get; init; }
-        bool? UsePAtk { get; init; }
+        decimal? PAtkMultiplier { get; init; }
         bool? UseMatk { get; init; }
         int? FistBonus { get; init; }
         string AbilityTemplateKey { get; init; }

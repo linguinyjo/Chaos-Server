@@ -22,10 +22,40 @@ public struct EnchantWeaponComponent : IConditionalComponent
             context.SourceAisling?.SendOrangeBarMessage($"This scroll can only enchant weapons of Circle {options.LevelCircle}");
             return false;
         }
-        var shouldEnchant = RunEnchantCalculation(item);
+
+        var shouldEnchant = true; //RunEnchantCalculation(item);
         if (shouldEnchant)
         {
-            item.AddScript<EnchantWeaponScript>();
+            switch (item.Enchant)
+            {
+                case null:
+                case 0: 
+                    item.AddScript<EnchantWeapon1Script>();
+                    break;
+                case 1: 
+                    item.AddScript<EnchantWeapon2Script>();
+                    break;
+                case 2: 
+                    item.AddScript<EnchantWeapon3Script>();
+                    break;
+                case 3: 
+                    item.AddScript<EnchantWeapon4Script>();
+                    break;
+                case 4: 
+                    item.AddScript<EnchantWeapon5Script>();
+                    break;
+                case 5: 
+                    item.AddScript<EnchantWeapon6Script>();
+                    break;
+                case 6: 
+                    item.AddScript<EnchantWeapon7Script>();
+                    break;
+                case 7: 
+                    item.AddScript<EnchantWeapon8Script>();
+                    break;
+            }
+
+            // item.AddScript<EnchantWeaponScript>();
             context.SourceAisling?.Inventory.Update(item.Slot);
             context.SourceAisling?.Client.SendSound(19, false);
             context.SourceAisling?.SendOrangeBarMessage($"Successfully enchanted Your {item.Template.Name} to +{item.Enchant}");

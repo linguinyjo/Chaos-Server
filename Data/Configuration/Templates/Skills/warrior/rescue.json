@@ -29,7 +29,8 @@
             "range": 1,
             "shape": "front",
             "filter": "hostileOnly, aliveOnly",
-            "canResist": false
+            "canResist": false,
+            "enmity": 250
         },
         "removeEffect": {
             "excludeSourcePoint": true,
@@ -43,7 +44,8 @@
             "filter": "AislingsOnly"
         },
         "levelUp": {
-            "rate": "fast"
+            "rate": "fast",
+            "filter": "hostileOnly, aliveOnly, othersOnly"
         }
     },
     "templateKey": "rescue"

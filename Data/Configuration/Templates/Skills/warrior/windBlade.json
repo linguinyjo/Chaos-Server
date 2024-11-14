@@ -37,10 +37,11 @@
             "damageStatMultiplier": 1,
             "baseDamage": 50,
             "filter": "hostileOnly, aliveOnly, othersOnly",
-            "usePAtk": true
+            "PAtkMultiplier": 0
         },
         "levelUp": {
-            "rate": "fast"
+            "rate": "fast",
+            "filter": "hostileOnly, aliveOnly, othersOnly"
         }
     },
     "templateKey": "windBlade"

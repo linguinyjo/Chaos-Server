@@ -42,7 +42,8 @@
             "canResist": true
         },
         "levelUp": {
-            "rate": "veryfast"
+            "rate": "veryfast",
+            "filter": "hostileOnly, aliveOnly, othersOnly"
         }
     },
     "templateKey": "srad_lamh"

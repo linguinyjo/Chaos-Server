@@ -1,18 +1,17 @@
 using Chaos.Common.Definitions;
 using Chaos.Models.Data;
-using Chaos.Models.World.Abstractions;
 using Chaos.Scripting.Components.EffectComponents;
-using Chaos.Scripting.Components.Execution;
 using Chaos.Scripting.EffectScripts.Abstractions;
 using Chaos.Time;
 using Chaos.Time.Abstractions;
 
-namespace Chaos.Scripting.EffectScripts;
+namespace Chaos.Scripting.EffectScripts.PoisonEffects;
 
-public class PuinseinEffect : ContinuousAnimationEffectBase
+public class MorPoisonEffect : ContinuousAnimationEffectBase,
+    NonOverwritableEffectComponent.INonOverwritableEffectComponentOptions
 {
     /// <inheritdoc />
-    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(1);
+    protected override TimeSpan Duration { get; set; } = TimeSpan.FromSeconds(15);
 
     /// <inheritdoc />
     protected override Animation Animation { get; } = new()
@@ -21,6 +20,13 @@ public class PuinseinEffect : ContinuousAnimationEffectBase
         TargetAnimation = 247
     };
 
+    public List<string> ConflictingEffectNames { get; init; } =
+    [
+        "beag poison",
+        "poison",
+        "mor poison"
+    ];
+    
     /// <inheritdoc />
     protected override IIntervalTimer AnimationInterval { get; } = new IntervalTimer(TimeSpan.FromMilliseconds(1500));
 
@@ -31,20 +37,18 @@ public class PuinseinEffect : ContinuousAnimationEffectBase
     public override byte Icon => 35;
 
     /// <inheritdoc />
-    public override string Name => "Puinsein";
+    public override string Name => "mor poison";
+
+    private const int DamagePerTick = 100;
 
     /// <inheritdoc />
     protected override void OnIntervalElapsed()
     {
-        if (Subject.StatSheet.CurrentHp <= 1) return;
-        var damagePerTick = (int)(Subject.StatSheet.EffectiveMaximumHp * 0.03);
-        if (Subject.StatSheet.CurrentHp <= damagePerTick)
-        {
-            Subject.StatSheet.SetHp(1);
-            return;
-        }
 
-        if (Subject.StatSheet.TrySubtractHp(damagePerTick))
+        if (Subject.StatSheet.CurrentHp <= DamagePerTick)
+            return;
+
+        if (Subject.StatSheet.TrySubtractHp(DamagePerTick))
             AislingSubject?.Client.SendAttributes(StatUpdateType.Vitality);
     }
 }
