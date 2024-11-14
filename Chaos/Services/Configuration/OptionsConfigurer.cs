@@ -89,7 +89,14 @@ public sealed class OptionsConfigurer(IStagingDirectory stagingDirectory, IChann
         options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantWeapon6Script.Mutate));
         options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantWeapon7Script.Mutate));
         options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantWeapon8Script.Mutate));
-
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantWeapon9Script.Mutate));
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantWeapon10Script.Mutate));
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantWeapon11Script.Mutate));
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantWeapon12Script.Mutate));
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantWeapon13Script.Mutate));
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantWeapon14Script.Mutate));
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantWeapon15Script.Mutate));
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantWeapon16Script.Mutate));
     }
 
     /// <inheritdoc />

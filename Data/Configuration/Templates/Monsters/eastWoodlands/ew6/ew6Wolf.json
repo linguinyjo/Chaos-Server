@@ -1,5 +1,5 @@
 {
-    "assailIntervalMs": 111500,
+    "assailIntervalMs": 1500,
     "expReward": 245,
     "aggroRange": 12,
     "moveIntervalMs": 1500,
@@ -10,7 +10,7 @@
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],
     "spellIntervalMs": 20000,
-    "spellTemplateKeys": [],
+    "spellTemplateKeys": ["beag_sal", "beag_athar", "beag_creag", "beag_srad", "beag_cradh"],
     "sprite": 2,
     "statSheet": {
         "level": 27,

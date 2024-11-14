@@ -14,7 +14,7 @@
   },
   "spellType": "Targeted",
   "class": "Warrior",
-  "castLines": 1,
+  "castLines": 0,
   "cooldownMs": 15000,
   "description": "Taunt",
   "level": 11,
