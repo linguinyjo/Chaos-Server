@@ -48,19 +48,19 @@ public class DevlinsIngredientsQuestScript:  DialogScriptBase
         if (hasWax)
         {
             var newDialog = CreateDialog(
-                text: "Well done! You've successfully gathered the raw wax. I can sense its magical properties. Now, I desperately need a Centipede gland for my research. You should be able to find one from the crypt in town.",
+                text: "Well done! You've successfully gathered the {=sRaw Wax{=a. I can sense its magical properties. Now, I desperately need a {=sCentipede Gland{=a for my research. You should be able to find one from the crypt in town.",
                 nextKey: "Close"
             );
             newDialog.Display(source);
             source.Inventory.RemoveQuantityByTemplateKey("rawWax", 1);
             source.TryGiveGold(300);
-            source.GiveExperience(300);
+            source.GiveExperience(600);
             DevlinsIngredientsQuestHelper.IncrementQuestStage(source);
         }
         else
         {
             var newDialog = CreateDialog(
-                text: "I see you've returned, but without the raw wax. Return when you've gathered the wax.",
+                text: "I see you've returned, but without the {=sRaw Wax{=a. Return when you've gathered the wax.",
                 nextKey: "Close"
             );
             newDialog.Display(source);
@@ -73,19 +73,19 @@ public class DevlinsIngredientsQuestScript:  DialogScriptBase
         if (hasWax)
         {
             var newDialog = CreateDialog(
-                text: "Wonderful! You managed to find the centipede gland. And one in such excellent condition too. Return to me in a moment, I have one final task for you.",
+                text: "Wonderful! You managed to find the {=sCentipede gland{=a. And one in such excellent condition too. Return to me in a moment, I have one final task for you.",
                 nextKey: "Close"
             );
             newDialog.Display(source);
             source.Inventory.RemoveQuantityByTemplateKey("centipedeGland", 1);
             source.TryGiveGold(500);
-            source.GiveExperience(300);
+            source.GiveExperience(900);
             DevlinsIngredientsQuestHelper.IncrementQuestStage(source);
         }
         else
         {
             var newDialog = CreateDialog(
-                text: "Ah, the centipede gland proves elusive, does it? Please find me one as soon as possible.",
+                text: "Ah, the {=sCentipede gland{=a proves elusive, does it? Please find me one as soon as possible.",
                 nextKey: "Close"
             );
             newDialog.Display(source);
@@ -103,7 +103,7 @@ public class DevlinsIngredientsQuestScript:  DialogScriptBase
     
     private void HandleToShinewood(Aisling source)
     {
-        var hasWax = source.Inventory.HasCountByTemplateKey("beeWing", 3);
+        var hasWax = source.Inventory.HasCountByTemplateKey("beeWing", 1);
         if (hasWax)
         {
             var newDialog = CreateDialog(
@@ -111,14 +111,14 @@ public class DevlinsIngredientsQuestScript:  DialogScriptBase
                 nextKey: "Close"
             );
             newDialog.Display(source);
-            source.Inventory.RemoveQuantityByTemplateKey("beeWing", 3);
+            source.Inventory.RemoveQuantityByTemplateKey("beeWing", 1);
             DevlinsIngredientsQuestHelper.CompleteQuest(source);
            
         }
         else
         {
             var newDialog = CreateDialog(
-                text: "I see you've returned, but without the wings. Don't be fearful now Aisling. Bring me 3 wings from the bee's in Shinewood forest.",
+                text: "I see you've returned, but without the wing. Don't be fearful now Aisling. Bring me a wing from one of the bee's in Shinewood forest.",
                 nextKey: "Close"
             );
             newDialog.Display(source);

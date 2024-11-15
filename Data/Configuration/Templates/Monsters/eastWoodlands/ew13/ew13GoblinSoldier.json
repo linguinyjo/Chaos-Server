@@ -1,10 +1,10 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 478,
+    "expReward": 2151,
     "aggroRange": 14,
     "moveIntervalMs": 1300,
-    "maxGoldDrop": 1500,
-    "minGoldDrop": 700,
+    "maxGoldDrop": 800,
+    "minGoldDrop": 500,
     "name": "Goblin Soldier",
     "lootTableKeys": ["ew13GoblinSoldiers"],
     "scriptKeys": ["default", "setMonsterElement","GoblinArmorDrop"],

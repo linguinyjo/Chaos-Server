@@ -40,7 +40,7 @@ public static class DevlinsIngredientsQuestHelper
     public static void CompleteQuest(Aisling source)
     {
         source.TryGiveGold(2000);
-        source.GiveExperience(750);
+        source.GiveExperience(2000);
         source.Trackers.Enums.Set(DevlinsIngredientsQuestStatus.Completed);
         var legendMark = new LegendMark(
             "Brought Devlin her ingredients",

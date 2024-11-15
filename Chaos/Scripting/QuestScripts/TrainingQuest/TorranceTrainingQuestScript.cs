@@ -49,7 +49,7 @@ public class TorranceTrainingQuestScript:  DialogScriptBase
                     };
                     newDialog.Display(source);
                     source.Inventory.RemoveQuantityByTemplateKey("vipersGland", 1);
-                    source.GiveExperience(150);
+                    source.GiveExperience(350);
                     source.TryGiveGold(500);
                     TrainingQuestHelper.IncrementQuestStage(source);
                 }

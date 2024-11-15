@@ -1,6 +1,11 @@
 {
   "itemsForSale": [],
-  "itemsToBuy": ["mold", "rottenApple","vipersGland", "spidersEye", "mantisEye", "rawHoney", "rawWax", "beeWing", "centipedeGland", "batsWing", "spidersLeg"],
+  "itemsToBuy": [
+    "mold", "rottenApple", "spidersEye", "centipedeGland",
+    "batWing", "spidersLeg", "spidersSilk", "greatBatWing", "scorpionSting",
+    "vipersGland",  "mantisEye", "rawHoney", "rawWax", "beeWing", "vipersEgg",
+    "wolfTeeth", "wolfSkin", "goblinSkull", "koboldSkull"
+  ],
   "name": "Dar",
   "scriptKeys": [
     "showdialog",

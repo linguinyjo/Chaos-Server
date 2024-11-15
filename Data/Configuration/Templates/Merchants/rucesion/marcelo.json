@@ -5,7 +5,8 @@
             "stock": 100
         }
     ],
-    "itemsToBuy": ["stick", "dirk", "eppe", "louresSabre", "magicRod"],
+    "itemsToBuy": ["stick", "dirk", "eppe", "louresSabre", "magicRod", "claidheamh", "broadSword","battleSword",
+        "masquerade","templar"],
     "name": "Marcelo",
     "restockIntervalHrs": 1,
     "restockPCt": 100,

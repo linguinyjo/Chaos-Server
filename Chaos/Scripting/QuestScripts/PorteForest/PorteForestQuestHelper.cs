@@ -66,7 +66,7 @@ public static class PorteForestQuestHelper
             1,
             GameTime.Now);
         source.Legend.AddUnique(legendMark);
-        source.GiveExperience(75000);
+        source.GiveExperience(200000);
         source.SendQuestCompletedAnimation();
     }
 }

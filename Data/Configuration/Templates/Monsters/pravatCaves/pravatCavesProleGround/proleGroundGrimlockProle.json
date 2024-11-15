@@ -1,9 +1,9 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 481,
+    "expReward": 2164,
     "moveIntervalMs": 1500,
     "aggroRange": 14,
-    "maxGoldDrop": 500,
+    "maxGoldDrop": 350,
     "minGoldDrop": 200,
     "name": "Grimlock Prole",
     "lootTableKeys": ["pravatGrimlockProles"],

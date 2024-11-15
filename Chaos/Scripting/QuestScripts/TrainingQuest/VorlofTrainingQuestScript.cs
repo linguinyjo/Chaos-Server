@@ -41,7 +41,7 @@ public class VorlofTrainingQuestScript:  DialogScriptBase
             case TrainingQuestStatus.CompletedTorrencesRequest:
             {
                 TrainingQuestHelper.IncrementQuestStage(source);
-                source.GiveExperience(250);
+                source.GiveExperience(500);
                 var legendMark = new LegendMark(
                     "Completed Vorlof's training",
                     "TrainingQuest",

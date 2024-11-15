@@ -2,15 +2,15 @@
   "key": "crypt4Spiders",
   "lootDrops": [
     {
-      "dropChance": 0.10,
+      "dropChance": 0.15,
       "itemTemplateKey": "spidersEye"
     },
     {
-      "dropChance": 0.15,
+      "dropChance": 0.10,
       "itemTemplateKey": "spidersLeg"
     },
     {
-      "dropChance": 0.15,
+      "dropChance": 0.05,
       "itemTemplateKey": "spidersSilk"
     },
     {

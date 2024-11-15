@@ -26,8 +26,7 @@ public static class SpareAStickQuestHelper
     public static void CompleteQuest(Aisling player)
     {
         player.Trackers.Enums.Set(SpareAStickQuestStatus.Completed);
-        // give stick and wooden shield
-        player.GiveExperience(100);
+        player.GiveExperience(150);
     }
 }
 

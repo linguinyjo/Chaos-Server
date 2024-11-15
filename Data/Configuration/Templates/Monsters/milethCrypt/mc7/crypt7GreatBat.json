@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 237,
+    "expReward": 1161,
     "moveIntervalMs": 1300,
     "aggroRange": 10,
     "name": "Great Bat",
@@ -14,7 +14,7 @@
     "sprite": 46,
     "statSheet": {
         "level": 39,
-        "ac": 55,
+        "ac": 50,
         "maximumHp": 2650,
         "maximumMp": 1000,
         "physicalAttack": 34,

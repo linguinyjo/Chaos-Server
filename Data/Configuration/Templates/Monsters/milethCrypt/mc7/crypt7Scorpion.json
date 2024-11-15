@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 233,
+    "expReward": 1149,
     "moveIntervalMs": 1300,
     "aggroRange": 10,
     "name": "Scorpion",
@@ -14,7 +14,7 @@
     "sprite": 55,
     "statSheet": {
         "level": 37,
-        "ac": 56,
+        "ac": 50,
         "maximumHp": 2700,
         "maximumMp": 1000,
         "physicalAttack": 34,

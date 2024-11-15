@@ -3,6 +3,6 @@
   "scriptKeys": [],
   "scriptVars": {},
   "templateKey": "devlin_to_shinewood_b",
-  "text": "Please return to me when you have 3 of their wings. I will reward you kindly for your efforts.",
+  "text": "Please return to me when you have {=s1 Bee Wing{=a. I will reward you kindly for your efforts.",
   "type": "Normal"
 }

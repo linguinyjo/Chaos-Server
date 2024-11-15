@@ -2,11 +2,11 @@
   "key": "ew6Kobolds",
   "lootDrops": [
     {
-      "dropChance": 0.2,
+      "dropChance": 0.10,
       "itemTemplateKey": "wolfSkin"
     },
     {
-      "dropChance": 0.1,
+      "dropChance": 0.10,
       "itemTemplateKey": "koboldSkull"
     },
     {

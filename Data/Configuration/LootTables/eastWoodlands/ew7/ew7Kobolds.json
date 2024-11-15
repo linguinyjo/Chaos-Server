@@ -2,7 +2,7 @@
   "key": "ew7Kobolds",
   "lootDrops": [
     {
-      "dropChance": 0.2,
+      "dropChance": 0.1,
       "itemTemplateKey": "wolfSkin"
     },
     {

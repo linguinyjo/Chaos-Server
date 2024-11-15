@@ -2,7 +2,7 @@
   "key": "ew6GoblinSoldiers",
   "lootDrops": [
     {
-      "dropChance": 0.1,
+      "dropChance": 0.10,
       "itemTemplateKey": "goblinSkull"
     },
     {

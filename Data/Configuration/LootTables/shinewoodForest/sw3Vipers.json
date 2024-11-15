@@ -2,7 +2,7 @@
   "key": "sw3Vipers",
   "lootDrops": [
     {
-      "dropChance": 0.30,
+      "dropChance": 0.20,
       "itemTemplateKey": "vipersGland"
     },
     {

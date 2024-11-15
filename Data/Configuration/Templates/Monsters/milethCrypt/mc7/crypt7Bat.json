@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 228,
+    "expReward": 1081,
     "aggroRange": 10,
     "moveIntervalMs": 1500,
     "name": "Bat",
@@ -14,7 +14,7 @@
     "sprite": 47,
     "statSheet": {
         "level": 37,
-        "ac": 56,
+        "ac": 52,
         "maximumHp": 2500,
         "maximumMp": 1000,
         "physicalAttack": 33,

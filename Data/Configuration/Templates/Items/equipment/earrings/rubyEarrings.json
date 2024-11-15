@@ -6,7 +6,7 @@
     "displaySprite": 233,
     "equipmentType": "Earrings",
     "gender": "Unisex",
-    "maxDurability": 6000,
+    "maxDurability": 10000,
     "maxStacks": 1,
     "modifiers": {
         "wis": 2

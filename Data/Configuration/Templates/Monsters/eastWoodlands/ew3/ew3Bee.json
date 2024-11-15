@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 82,
+    "expReward": 246,
     "moveIntervalMs": 1500,
     "name": "Bee",
     "lootTableKeys": ["ew3Bees"],

@@ -1,10 +1,10 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 571,
+    "expReward": 2569,
     "aggroRange": 14,
     "moveIntervalMs": 1300,
-    "maxGoldDrop": 750,
-    "minGoldDrop": 450,
+    "maxGoldDrop": 500,
+    "minGoldDrop": 200,
     "name": "Goblin Soldier",
     "lootTableKeys": ["pravatGoblinSoldiers"],
     "scriptKeys": ["default", "setMonsterElement"],

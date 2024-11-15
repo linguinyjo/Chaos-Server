@@ -6,7 +6,7 @@
     "displaySprite": 5,
     "equipmentType": "Armor",
     "gender": "Unisex",
-    "maxDurability": 5000,
+    "maxDurability": 2500,
     "maxStacks": 1,
     "modifiers": {
         "ac": -8

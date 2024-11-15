@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 40,
+    "expReward": 120,
     "moveIntervalMs": 1500,
     "name": "Viper",
     "lootTableKeys": ["sw2Vipers"],
@@ -12,7 +12,7 @@
     "spellTemplateKeys": [],
     "sprite": 268,
     "statSheet": {
-        "level": 7,
+        "level": 8,
         "ac": 90,
         "maximumHp": 500,
         "maximumMp": 1000,

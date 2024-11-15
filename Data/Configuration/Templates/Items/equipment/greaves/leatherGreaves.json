@@ -6,7 +6,7 @@
     "displaySprite": 238,
     "equipmentType": "Greaves",
     "gender": "Unisex",
-    "maxDurability": 3000,
+    "maxDurability": 7500,
     "maxStacks": 1,
     "modifiers": {
         "ac": -2,

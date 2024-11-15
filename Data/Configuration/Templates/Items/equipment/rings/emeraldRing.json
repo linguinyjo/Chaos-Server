@@ -6,7 +6,7 @@
     "displaySprite": 213,
     "equipmentType": "Ring",
     "gender": "Unisex",
-    "maxDurability": 5000,
+    "maxDurability": 15000,
     "maxStacks": 1,
     "modifiers": {
         "maximumMp": 200,

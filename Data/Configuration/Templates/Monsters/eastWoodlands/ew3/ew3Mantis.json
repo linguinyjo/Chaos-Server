@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 93,
+    "expReward": 279,
     "aggroRange": 10,
     "moveIntervalMs": 1500,
     "name": "Mantis",

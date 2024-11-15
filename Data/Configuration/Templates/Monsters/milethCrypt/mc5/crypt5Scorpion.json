@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 195,
+    "expReward": 730,
     "aggroRange": 10,
     "moveIntervalMs": 1300,
     "name": "Scorpion",

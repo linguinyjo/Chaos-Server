@@ -2,7 +2,7 @@
   "key": "sw4Bees",
   "lootDrops": [
     {
-      "dropChance": 0.10,
+      "dropChance": 0.07,
       "itemTemplateKey": "rawHoney"
     },
     {

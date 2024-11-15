@@ -46,7 +46,7 @@ public static class GeneralsOfDarknessQuestHelper
             1,
             GameTime.Now);
         source.Legend.AddUnique(legendMark);
-        source.GiveExperience(100000);
+        source.GiveExperience(300000);
         source.SendQuestCompletedAnimation();
     }
 }

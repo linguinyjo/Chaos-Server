@@ -6,7 +6,7 @@
     "equipmentType": "Necklace",
     "gender": "Unisex",
     "isModifiable": false,
-    "maxDurability": 5000,
+    "maxDurability": 15000,
     "maxStacks": 1,
     "modifiers": {
         "regen": 3,

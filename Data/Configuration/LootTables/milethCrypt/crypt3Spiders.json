@@ -2,11 +2,11 @@
   "key": "crypt3Spiders",
   "lootDrops": [
     {
-      "dropChance": 0.25,
+      "dropChance": 0.20,
       "itemTemplateKey": "spidersEye"
     },
     {
-      "dropChance": 0.25,
+      "dropChance": 0.10,
       "itemTemplateKey": "spidersLeg"
     },
     {

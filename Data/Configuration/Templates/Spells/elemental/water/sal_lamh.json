@@ -24,7 +24,7 @@
         "damage": {
             "shape": "allAround",
             "bodyAnimation": "wizardCast",
-            "range": 7,
+            "range": 6,
             "element": "water",
             "damageStat": "int",
             "sound": 167,

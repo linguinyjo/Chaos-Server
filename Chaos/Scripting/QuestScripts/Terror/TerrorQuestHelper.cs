@@ -44,7 +44,7 @@ public static class TerrorQuestHelper
             1,
             GameTime.Now);
         
-        player.GiveExperience(50000);
+        player.GiveExperience(100000);
         player.Legend.AddUnique(legendMark);
         player.SendQuestCompletedAnimation();
     }

@@ -8,30 +8,6 @@ using Chaos.Time;
 
 namespace Chaos.Scripting.QuestScripts.AJourneyToSuomi;
 
-            // public class AJourneyToSuomiQuestHelper : QuestHelper<AJourneyToSuomiQuestStatus>
-            // {
-            //     public override void StartQuest(Aisling player)
-            //     {
-            //         player.Trackers.Enums.Set(AJourneyToSuomiQuestStatus.FetchFruitShipment);
-            //     }
-            //
-            //     public override void CompleteQuest(Aisling player)
-            //     {
-            //         player.Trackers.Enums.Set(AJourneyToSuomiQuestStatus.Completed);
-            //         var legendMark = new LegendMark(
-            //             "Delivered Oona's shipment of fruit",
-            //             "aJourneyToSuomi",
-            //             MarkIcon.Victory,
-            //             MarkColor.White,
-            //             1,
-            //             GameTime.Now);
-            //         player.Legend.AddUnique(legendMark);
-            //     }
-            //
-            //     protected override AJourneyToSuomiQuestStatus GetCompletedStatus() => AJourneyToSuomiQuestStatus.Completed;
-            //     protected override AJourneyToSuomiQuestStatus GetInitialStatus() => AJourneyToSuomiQuestStatus.FetchFruitShipment;
-            // }
-
 public static class AJourneyToSuomiQuestHelper
 {
     public static AJourneyToSuomiQuestStatus GetQuestStatus(Aisling player)

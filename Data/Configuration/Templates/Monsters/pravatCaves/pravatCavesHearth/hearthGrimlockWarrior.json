@@ -1,10 +1,10 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 745,
+    "expReward": 3352,
     "moveIntervalMs": 1200,
     "aggroRange": 14,
-    "maxGoldDrop": 1200,
-    "minGoldDrop": 700,
+    "maxGoldDrop": 600,
+    "minGoldDrop": 350,
     "name": "Grimlock Warrior",
     "lootTableKeys": ["pravatGrimlockWarriors"],
     "scriptKeys": ["default", "setMonsterElement"],

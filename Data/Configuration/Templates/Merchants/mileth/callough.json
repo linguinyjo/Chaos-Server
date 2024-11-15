@@ -17,7 +17,8 @@
             "stock": 100
         }
     ],
-    "itemsToBuy": ["woodenShield", "stick", "dirk", "eppe", "louresSabre"],
+    "itemsToBuy": ["woodenShield", "stick", "dirk", "eppe", "louresSabre", "claidheamh", "broadSword","battleSword", 
+        "masquerade","templar"],
     "name": "Callough",
     "restockIntervalHrs": 1,
     "restockPCt": 100,

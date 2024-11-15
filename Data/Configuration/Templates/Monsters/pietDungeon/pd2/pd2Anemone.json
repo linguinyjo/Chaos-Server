@@ -1,0 +1,29 @@
+{
+    "assailIntervalMs": 1500,
+    "expReward": 10,
+    "moveIntervalMs": 1500,
+    "name": "Common Rat",
+    "lootTableKeys": ["crypt1Rats"],
+    "scriptKeys": ["default"],
+    "scriptVars": {},
+    "skillIntervalMs": 1500,
+    "skillTemplateKeys": ["VeryWeakAssail"],
+    "spellIntervalMs": 10000,
+    "spellTemplateKeys": [],
+    "sprite": 7,
+    "statSheet": {
+        "level": 1,
+        "ac": 100,
+        "maximumHp": 90,
+        "maximumMp": 100,
+        "physicalAttack": 0,
+        "con": 2,
+        "dex": 1,
+        "int": 1,
+        "str": 1,
+        "wis": 1
+    },
+    "templateKey": "crypt1Rat",
+    "type": "Normal",
+    "wanderIntervalMs": 2000
+}

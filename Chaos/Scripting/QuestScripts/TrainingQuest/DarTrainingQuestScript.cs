@@ -32,17 +32,8 @@ public class DarTrainingQuestScript:  DialogScriptBase
                 "Well, well... You've actually managed to collect the mold. I must admit, I'm mildly impressed. Perhaps there's a flicker of potential in you after all. Go back and tell Vorlof that you have succeeded in doing as I have asked.",
                 "Close"
                 );
-            // var newDialog = new Dialog(
-            //     Dialog.DialogSource,
-            //     DialogFactory,
-            //     ChaosDialogType.Normal,
-            //     "Well, well... You've actually managed to collect the mold. I must admit, I'm mildly impressed. Perhaps there's a flicker of potential in you after all. Go back and tell Vorlof that you have succeeded in doing as I have asked.")
-            // {
-            //     NextDialogKey = "Close"
-            // };
-            // newDialog.Display(source);
             source.Inventory.RemoveQuantity("mold", 3);
-            source.GiveExperience(150);
+            source.GiveExperience(350);
             TrainingQuestHelper.IncrementQuestStage(source);
         }
         else

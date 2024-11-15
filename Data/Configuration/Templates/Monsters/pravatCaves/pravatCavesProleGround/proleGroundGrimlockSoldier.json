@@ -1,9 +1,9 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 564,
+    "expReward": 2538,
     "moveIntervalMs": 1500,
     "aggroRange": 14,
-    "maxGoldDrop": 800,
+    "maxGoldDrop": 400,
     "minGoldDrop": 300,
     "name": "Grimlock Soldier",
     "lootTableKeys": ["pravatGrimlockSoldiers"],

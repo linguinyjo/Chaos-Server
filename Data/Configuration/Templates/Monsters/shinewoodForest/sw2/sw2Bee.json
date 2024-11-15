@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 48,
+    "expReward": 144,
     "moveIntervalMs": 1500,
     "name": "Bee",
     "lootTableKeys": ["sw2Bees"],
@@ -12,7 +12,7 @@
     "spellTemplateKeys": [],
     "sprite": 271,
     "statSheet": {
-        "level": 8,
+        "level": 9,
         "ac": 90,
         "maximumHp": 575,
         "maximumMp": 1000,
