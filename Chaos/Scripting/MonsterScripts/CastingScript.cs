@@ -2,8 +2,11 @@ using Chaos.Common.Definitions;
 using Chaos.Common.Utilities;
 using Chaos.Extensions;
 using Chaos.Extensions.Common;
+using Chaos.Models.Panel;
 using Chaos.Models.World;
+using Chaos.Models.World.Abstractions;
 using Chaos.Scripting.MonsterScripts.Abstractions;
+using Chaos.Scripting.SpellScripts;
 using Namotion.Reflection;
 
 namespace Chaos.Scripting.MonsterScripts;
@@ -29,17 +32,27 @@ public class CastingScript : MonsterScriptBase
             return;
 
         Spells.ShuffleInPlace();
-
-        var spell = Spells.Where(spell => Subject.CanUse(spell, Target, null, out _)
-                                                  && IsNonElemental(spell.Template.Name) || 
-                                                  SpellMatchesElement(spell.Template.Name, Monster.StatSheet.OffenseElement))
-            .PickRandomWeightedSingle(1);
+       
+        var spell = Spells
+            .Where(spell => 
+                Subject.CanUse(spell, Target, null, out _) && !EffectAlreadyOnTarget(spell, Target) &&
+                    IsNonElemental(spell.Template.Name) || 
+                    SpellMatchesElement(spell.Template.Name, Monster.StatSheet.OffenseElement)
+                ).PickRandomWeightedSingle(1);
         if (spell is null || !Subject.TryUseSpell(spell, Target.Id)) return;
         Subject.WanderTimer.Reset();
         Subject.MoveTimer.Reset();
         Subject.SkillTimer.Reset();
     }
-    
+
+    /** If the spell is an effect and the target already has that effect filter it out */
+    private static bool EffectAlreadyOnTarget(Spell spell, Creature target)
+    {
+        var effect = spell.Script.As<ApplyEffectScript>();
+        return effect?.EffectKey is not null && target.Effects.Contains(effect.EffectKey);
+    }
+
+    /** Match offensive elemental spells to the monsters offensive element */
     private static bool SpellMatchesElement(string spellName, Element element)
     {
         switch (element)

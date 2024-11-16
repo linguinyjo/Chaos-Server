@@ -41,28 +41,11 @@ public class DefaultLevelUpFormula : ILevelUpFormula
             >= 1 and <= 50 => 6,
             >= 51 and <= 71 => 5,
             >= 72 and <= 96 => 4,
-            >= 97 and <= 99 => 2,
-            // >= 42 and <= 51 => 4,
-            // >= 52 and <= 61 => 3,
-            // >= 62 and <= 81 => 2,
+            >= 97 and <= 99 => 3,
             _ => 1
         };
         return Convert.ToInt32((Math.Pow(level, 2.5) * 200) / divisionFactor);    
     }
-    // public virtual int CalculateTnl(Aisling aisling)
-    // {
-    //     var level = aisling.UserStatSheet.Level;
-    //     double divisionFactor = level switch
-    //     {
-    //         >= 1 and <= 21 => 6,
-    //         >= 22 and <= 31 => 5,
-    //         >= 32 and <= 51 => 4,
-    //         // >= 52 and <= 61 => 3,
-    //         // >= 62 and <= 81 => 2,
-    //         _ => 1
-    //     };
-    //     return Convert.ToInt32((Math.Pow(level, 2) * 300) / divisionFactor);    
-    // }
     
     private static (int maxHpGain, int maxMpGain) GetMaxHpMpGain(int level)
     {
