@@ -1,5 +1,18 @@
 {
-  "itemsForSale": [],
+  "itemsForSale": [
+    {
+      "itemTemplateKey": "beagIocDeum",
+      "stock": 999
+    },
+    {
+      "itemTemplateKey": "beagSpioradDeum",
+      "stock": 999
+    },
+    {
+      "itemTemplateKey": "Komadium",
+      "stock": 999
+    }
+  ],
   "itemsToBuy": [],
   "name": "Cian",
   "scriptKeys": [

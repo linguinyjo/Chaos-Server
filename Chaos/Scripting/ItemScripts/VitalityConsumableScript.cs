@@ -33,7 +33,7 @@ public class VitalityConsumableScript : ConfigurableItemScriptBase,
         ApplyHealScript.HealFormula = HealFormulae.Default;
         SourceScript = this;
         ItemName = Subject.DisplayName;
-        Slot = Subject.Slot;
+        Item = subject;
     }
 
     /// <inheritdoc />
@@ -152,8 +152,6 @@ public class VitalityConsumableScript : ConfigurableItemScriptBase,
     /// <inheritdoc />
     public string ItemName { get; init; }
     
-    /// <inheritdoc />
-    public byte Slot { get; init; }
     public Item Item { get; init; }
     public bool CanResist { get; init; }
 

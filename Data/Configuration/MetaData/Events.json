@@ -50,8 +50,8 @@
     },
     {
         "title": "Porte Forest",
-        "summary": "Speak with Goran in Suomi.\nLevel requirement: 11-41",
-        "rewards": "Experience",
+        "summary": "Speak with Goran in Suomi.\nLevel requirement: 21-41",
+        "rewards": "Experience or Tristar Ring",
         "qualifyingCircles": ["two"],
         "id": "porteForest",
         "result": "Completed"
@@ -59,7 +59,7 @@
     {
         "title": "The Generals of Darkness",
         "summary": "Speak with Thibault in Loures Castle.\nLevel requirement: 21-50",
-        "rewards": "Experience",
+        "rewards": "Experience and Gold",
         "qualifyingCircles": ["two", "three"],
         "id": "generalsOfDarkness",
         "result": "Completed"

@@ -1,0 +1,29 @@
+{
+  "buyCost": 100,
+  "category": "potion",
+  "color": "Default",
+  "isModifiable": true,
+  "maxStacks": 6,
+  "sellValue": 50,
+  "weight": 1,
+  "description": "Revives a skulled player",
+  "name": "komadium",
+  "panelSprite": 62,
+  "scriptKeys": [
+    "removeEffectConsumable"
+  ],
+  "scriptVars": {
+    "removeEffectConsumable": {
+      "excludeSourcePoint": true,
+      "range": 1,
+      "shape": "front",
+      "effectKey": "skulled",
+      "animation": {
+        "targetAnimation": 5,
+        "animationSpeed": 150
+      },
+      "filter": "AislingsOnly"
+    }
+  },
+  "templateKey": "Komadium"
+}

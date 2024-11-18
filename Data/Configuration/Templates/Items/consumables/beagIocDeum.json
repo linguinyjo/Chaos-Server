@@ -1,0 +1,22 @@
+{
+  "buyCost": 100,
+  "category": "potion",
+  "color": "Default",
+  "isModifiable": true,
+  "maxStacks": 30,
+  "sellValue": 50,
+  "weight": 1,
+  "description": "Restores 100 Hp",
+  "name": "beag ioc deum",
+  "panelSprite": 63,
+  "scriptKeys": [
+    "vitalityConsumable"
+  ],
+  "scriptVars": {
+    "vitalityConsumable": {
+      "baseHeal": 100,
+      "filter": "selfOnly, aliveOnly"
+    }
+  },
+  "templateKey": "beagIocDeum"
+}
