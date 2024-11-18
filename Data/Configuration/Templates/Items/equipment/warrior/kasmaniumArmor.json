@@ -1,0 +1,29 @@
+{
+    "buyCost": 25000,
+    "category": "Armor M",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 17,
+    "equipmentType": "Armor",
+    "gender": "Male",
+    "maxDurability": 25000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -30,
+        "dex": -2
+    },
+    "class": "warrior",
+    "pantsColor": "Black",
+    "level": 41,
+    "levelCircle": 3,
+    "sellValue": 12500,
+    "weight": 25,
+    "description": "Class: Male Warrior\nLevel: 41\nAc -30\nDex -2",
+    "name": "Kasmanium Armor",
+    "panelSprite": 147,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "kasmaniumArmor"
+}

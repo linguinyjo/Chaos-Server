@@ -18,23 +18,23 @@
       "itemTemplateKey": "enchantWeaponScroll2nd"
     },
     {
-      "dropChance": 0.006,
+      "dropChance": 0.004,
       "itemTemplateKey": "boneNecklace"
     },
     {
-      "dropChance": 0.006,
+      "dropChance": 0.004,
       "itemTemplateKey": "mythrilBelt"
     },
     {
-      "dropChance": 0.007,
+      "dropChance": 0.005,
       "itemTemplateKey": "rubyEarrings"
     },
     {
-      "dropChance": 0.006,
+      "dropChance": 0.005,
       "itemTemplateKey": "emeraldRing"
     },
     {
-      "dropChance": 0.008,
+      "dropChance": 0.005,
       "itemTemplateKey": "leatherRubyGauntlet"
     }
   ]

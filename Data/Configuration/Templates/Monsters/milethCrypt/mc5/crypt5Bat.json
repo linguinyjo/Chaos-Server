@@ -4,7 +4,7 @@
     "aggroRange": 10,
     "moveIntervalMs": 1500,
     "name": "Bat",
-    "lootTableKeys": ["crypt5Bats"],
+    "lootTableKeys": ["crypt4Bats"],
     "scriptKeys": ["default", "setMonsterElement", "WhiteDugonBatOnKill"],
     "scriptVars": {},
     "skillIntervalMs": 1500,

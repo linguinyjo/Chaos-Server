@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "green_dugon_start_2",
+  "scriptKeys": ["startGreenDugon"],
+  "scriptVars": {},
+  "templateKey": "green_dugon_start_1",
+  "text": "Go out and slay a crab. This is a tough foe, but you will find them around Piet Village.",
+  "type": "Normal"
+}

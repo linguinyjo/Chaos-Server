@@ -1,0 +1,9 @@
+{
+  "key": "pdFrogs",
+  "lootDrops": [
+    {
+      "dropChance": 0.10,
+      "itemTemplateKey": "frogLeg"
+    }
+  ]
+}

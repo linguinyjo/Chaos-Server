@@ -8,5 +8,15 @@
         },
         "shouldBlockPathfinding": true,
         "source": "(14,0)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "crypt8:(32,1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(12,22)"
     }
 ]

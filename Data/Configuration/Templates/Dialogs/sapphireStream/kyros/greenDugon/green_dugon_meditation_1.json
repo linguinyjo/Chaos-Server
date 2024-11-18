@@ -1,0 +1,25 @@
+{
+  "options": [
+    {
+      "dialogKey": "close",
+      "optionText": "Speed"
+    },
+    {
+      "dialogKey": "close",
+      "optionText": "Power"
+    },
+    {
+      "dialogKey": "close",
+      "optionText": "Growth"
+    },
+    {
+      "dialogKey": "close",
+      "optionText": "Wisdom"
+    }
+  ],
+  "scriptKeys": ["greenDugonMeditation"],
+  "scriptVars": {},
+  "templateKey": "green_dugon_meditation_1",
+  "text": "A voice echoes in your mind:\n\n\"A bamboo shoot pushes through the earth, reaching ever upward.\nThough it starts small, within lies the promise of a mighty forest.\"\n\nWhat force drives the bamboo?",
+  "type": "Menu"
+}

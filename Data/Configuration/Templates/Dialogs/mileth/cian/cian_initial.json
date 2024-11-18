@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "generic_buyShop_initial",
+      "optionText": "Buy"
+    },
+    {
+      "dialogKey": "generic_sellshop_initial",
+      "optionText": "Sell"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "cian_initial",
+  "text": "Welcome to my magic emporium aisling. What is it that you need?",
+  "type": "Menu"
+}

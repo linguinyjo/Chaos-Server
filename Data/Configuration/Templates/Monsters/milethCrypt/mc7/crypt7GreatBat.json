@@ -4,7 +4,7 @@
     "moveIntervalMs": 1300,
     "aggroRange": 10,
     "name": "Great Bat",
-    "lootTableKeys": ["crypt7GreatBats"],
+    "lootTableKeys": ["cryptGreatBats"],
     "scriptKeys": ["default", "setMonsterElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,

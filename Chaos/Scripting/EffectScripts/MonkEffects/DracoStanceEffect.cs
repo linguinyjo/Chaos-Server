@@ -22,6 +22,7 @@ public sealed class DracoStanceEffect : IntervalEffectBase
     /// <inheritdoc />
     protected override void OnIntervalElapsed()
     {
+        if (Subject.IsSkulled()) return;
         //the interval is 100ms, so this will be applied 10 times a second
         var healPerTick = (Subject.StatSheet.EffectiveMaximumHp * 0.10);
 

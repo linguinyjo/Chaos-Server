@@ -15,7 +15,8 @@ public class WhiteDugonVerbalScript : VerbalShopScriptBase
     private readonly IDialogFactory DialogFactory;
     private Merchant Merchant { get; set; }
     private readonly IItemFactory ItemFactory;
-    
+    private readonly WhiteDugonQuestHelper WhiteDugonQuestHelper = new();
+
     /// <inheritdoc />
     public WhiteDugonVerbalScript(Merchant subject, ILogger<VerbalSellShopScript> logger,  IDialogFactory dialogFactory, IItemFactory itemFactory)
         : base(subject, logger)

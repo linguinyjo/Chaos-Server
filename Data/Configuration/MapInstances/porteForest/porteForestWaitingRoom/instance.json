@@ -4,5 +4,7 @@
     "name": "Porte Forest Waiting Room",
     "scriptKeys": [],
     "templateKey": "4600",
-    "autoDayNightCycle": true
+    "autoDayNightCycle": true,
+    "MaximumLevel": 41,
+    "MinimumLevel": 21
 }

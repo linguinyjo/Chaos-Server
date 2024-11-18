@@ -10,15 +10,15 @@
     "maxStacks": 1,
     "level": 11,
     "levelCircle": 2,
-    "class": "wizard",
+    "class": "peasant",
     "modifiers": {
-        "magicAttack": 42,
+        "magicAttack": 72,
         "wis": 2,
         "maximumMp": 250
     },
     "sellValue": 50000,
     "weight": 3,
-    "description": "Class: Priest, Wizard, Druid\nLevel: 11\nMagic Attack 42, Wis 2, Mana 200, CC spells -1 lines",
+    "description": "Class: Peasant\nLevel: 11\nMagic Attack 42, Wis 2, Mana 200, CC spells -1 lines",
     "name": "Magus Apollo",
     "panelSprite": 184,
     "scriptKeys": ["Equipment", "EquipStaff"],

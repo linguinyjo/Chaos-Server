@@ -1,0 +1,33 @@
+{
+  "key": "crypt6GreatBats",
+  "lootDrops": [
+    {
+      "dropChance": 0.15,
+      "itemTemplateKey": "greatBatWing"
+    },
+    {
+      "dropChance": 0.01,
+      "itemTemplateKey": "enchantWeaponScroll2nd"
+    },
+    {
+      "dropChance": 0.005,
+      "itemTemplateKey": "boneNecklace"
+    },
+    {
+      "dropChance": 0.005,
+      "itemTemplateKey": "mythrilBelt"
+    },
+    {
+      "dropChance": 0.006,
+      "itemTemplateKey": "rubyEarrings"
+    },
+    {
+      "dropChance": 0.006,
+      "itemTemplateKey": "emeraldRing"
+    },
+    {
+      "dropChance": 0.008,
+      "itemTemplateKey": "leatherRubyGauntlet"
+    }
+  ]
+}

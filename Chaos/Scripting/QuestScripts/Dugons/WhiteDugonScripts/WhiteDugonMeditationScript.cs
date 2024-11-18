@@ -8,7 +8,8 @@ namespace Chaos.Scripting.QuestScripts.Dugons.WhiteDugonScripts;
 public class WhiteDugonMeditationScript:  DialogScriptBase
 {
     private readonly IDialogFactory DialogFactory;
-    
+    private readonly WhiteDugonQuestHelper WhiteDugonQuestHelper = new();
+
     /// <inheritdoc />
     public WhiteDugonMeditationScript(Dialog subject, IDialogFactory dialogFactory)
         : base(subject) => DialogFactory = dialogFactory;
@@ -24,7 +25,7 @@ public class WhiteDugonMeditationScript:  DialogScriptBase
         {
             Subject.Reply(
                 source,
-                "*The waters shimmer with approval, and you hear a resounding voice from within.*\n\"Sabonim I understand my inner potential\"",
+                "*The waters shimmer with approval, and you hear a resounding voice from students past*\n\"Sabonim, I understand my inner potential\"",
                 "close"
             );
             WhiteDugonQuestHelper.HandleMeditationSuccess(source);

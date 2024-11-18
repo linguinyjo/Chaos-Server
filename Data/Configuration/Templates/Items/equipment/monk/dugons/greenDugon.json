@@ -1,0 +1,29 @@
+{
+    "buyCost": 7500,
+    "category": "monk",
+    "color": "Default",
+    "isDyable": false,
+    "displaySprite": 144,
+    "equipmentType": "Helmet",
+    "gender": "Unisex",
+    "maxDurability": 10000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -1, 
+        "dex": 1
+    },
+    "class": "monk",
+    "pantsColor": "Default",
+    "level": 11,
+    "levelCircle": 2,
+    "sellValue": 3750,
+    "weight": 5,
+    "description": "Class: Monk\nLevel: 21\nAc -1, Dex 1 ",
+    "name": "Green Dugon",
+    "panelSprite": 540,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "greenDugon"
+}

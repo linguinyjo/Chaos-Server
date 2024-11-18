@@ -10,6 +10,7 @@ namespace Chaos.Scripting.QuestScripts.Dugons.WhiteDugonScripts;
 public class WhiteDugonMeditationTileScript :  ReactorTileScriptBase
 {
     private readonly IDialogFactory DialogFactory;
+    private readonly WhiteDugonQuestHelper WhiteDugonQuestHelper = new();
 
     /// <inheritdoc />
     public WhiteDugonMeditationTileScript(ReactorTile subject, IDialogFactory dialogFactory)

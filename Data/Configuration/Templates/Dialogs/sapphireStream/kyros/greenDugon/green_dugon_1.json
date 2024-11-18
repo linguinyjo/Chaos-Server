@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "green_dugon_start_1",
+      "optionText": "Yes, I am ready"
+    },
+    {
+      "dialogKey": "close",
+      "optionText": "I need more time to prepare"
+    }
+  ],
+  "scriptKeys": ["KyrosgreenDugon"],
+  "scriptVars": {},
+  "templateKey": "green_dugon_1",
+  "text": "Are ready to begin your training for the green dugon, young monk?",
+  "type": "Menu"
+}

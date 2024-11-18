@@ -4,7 +4,6 @@
             "itemTemplateKey": "galuchatCoat",
             "stock": 100
         },
-       
         {
             "itemTemplateKey": "gardcorp",
             "stock": 100
@@ -12,9 +11,17 @@
         {
             "itemTemplateKey": "journeyman",
             "stock": 100
+        },
+        {
+            "itemTemplateKey": "magiSkirt",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "benusta",
+            "stock": 100
         }
     ],
-    "itemsToBuy": ["galuchatCoat", "dobok", "culotte",  "cowl"],
+    "itemsToBuy": ["galuchatCoat", "dobok", "culotte",  "cowl", "benusta",  "magiSkirt"],
     "name": "Huberto",
     "restockIntervalHrs": 1,
     "restockPCt": 100,

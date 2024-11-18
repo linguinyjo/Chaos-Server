@@ -1,0 +1,21 @@
+{
+  "buyCost": 500,
+  "category": "misc",
+  "color": "Default",
+  "isModifiable": false,
+  "maxStacks": 25,
+  "sellValue": 250,
+  "weight": 1,
+  "description": "Suomi Song",
+  "name": "Suomi Song",
+  "panelSprite": 1,
+  "scriptKeys": [
+    "song"
+  ],
+  "scriptVars": {
+    "song": {
+      "destination": "suomiInn:(5, 10)"
+    }
+  },
+  "templateKey": "suomiSong"
+}

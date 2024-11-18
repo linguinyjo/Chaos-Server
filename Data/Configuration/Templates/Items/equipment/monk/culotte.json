@@ -1,11 +1,11 @@
 {
     "buyCost": 7500,
-    "category": "Armor",
+    "category": "Armor M",
     "color": "Default",
     "isDyable": true,
     "displaySprite": 13,
     "equipmentType": "Armor",
-    "gender": "Unisex",
+    "gender": "Male",
     "maxDurability": 10000,
     "maxStacks": 1,
     "modifiers": {
@@ -17,7 +17,7 @@
     "levelCircle": 2,
     "sellValue": 3750,
     "weight": 5,
-    "description": "Class: Monk\nLevel: 11\nAc -14",
+    "description": "Class: Male Monk\nLevel: 11\nAc -14",
     "name": "Culotte",
     "panelSprite": 108,
     "scriptKeys": ["Equipment"],

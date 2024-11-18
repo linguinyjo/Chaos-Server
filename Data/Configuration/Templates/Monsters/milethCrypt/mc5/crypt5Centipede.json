@@ -4,7 +4,7 @@
     "moveIntervalMs": 1500,
     "aggroRange": 10,
     "name": "Centipede",
-    "lootTableKeys": ["crypt5Centipedes"],
+    "lootTableKeys": ["crypt4Centipedes"],
     "scriptKeys": ["default", "setMonsterElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,

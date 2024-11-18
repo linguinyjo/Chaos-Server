@@ -5,5 +5,7 @@
     "name": "East Woodland 7-1",
     "scriptKeys": [],
     "templateKey": "605",
-    "autoDayNightCycle": false
+    "autoDayNightCycle": false,
+    "MaximumLevel": 41,
+    "MinimumLevel": 21
 }

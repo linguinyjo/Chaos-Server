@@ -1,0 +1,31 @@
+{
+    "assailIntervalMs": 1500,
+    "expReward": 828,
+    "moveIntervalMs": 1500,
+    "aggroRange": 10,
+    "name": "Anemone",
+    "lootTableKeys": ["pdAnemones"],
+    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptVars": {},
+    "skillIntervalMs": 1500,
+    "skillTemplateKeys": ["Assail"],
+    "spellIntervalMs": 10000,
+    "spellTemplateKeys": ["sal", "athar", "creag", "srad", "cradh", "puinsein"],
+    "sprite": 51,
+    "statSheet": {
+        "level": 32,
+        "ac": 48,
+        "maximumHp": 2850,
+        "maximumMp": 1000,
+        "physicalAttack": 38,
+        "magicAttack": 50,
+        "con": 20,
+        "dex": 1,
+        "int": 30,
+        "str": 20,
+        "wis": 1
+    },
+    "templateKey": "pd3Anemone",
+    "type": "Normal",
+    "wanderIntervalMs": 1500
+}

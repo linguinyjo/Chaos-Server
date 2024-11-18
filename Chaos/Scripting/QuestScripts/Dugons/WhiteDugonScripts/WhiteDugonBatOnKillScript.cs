@@ -8,7 +8,8 @@ namespace Chaos.Scripting.QuestScripts.Dugons.WhiteDugonScripts;
 public class WhiteDugonBatOnKillScript : MonsterScriptBase
 {
     private Aisling? player;
-    
+    private readonly WhiteDugonQuestHelper WhiteDugonQuestHelper = new();
+
     /// <inheritdoc />
     public WhiteDugonBatOnKillScript(Monster subject)
         : base(subject) {}
@@ -24,8 +25,8 @@ public class WhiteDugonBatOnKillScript : MonsterScriptBase
         if (player == null) return;
         var questStatus = WhiteDugonQuestHelper.GetQuestStatus(player);
         if (questStatus != WhiteDugonQuestStatus.Started) return;
-        WhiteDugonQuestHelper.HandleBatKill(player);
-        player.SendOrangeBarMessage("You feel the presence of your sabonim confirming your kill");
+        WhiteDugonQuestHelper.HandleKill(player);
+        player.SendOrangeBarMessage("You feel the presence of your sabonim watching over you");
         player.Client.SendSound(47, false);
         player.Client.SendAnimation(
             new Animation { AnimationSpeed = 150, TargetAnimation = 22 }

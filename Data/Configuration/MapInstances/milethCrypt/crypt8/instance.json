@@ -1,0 +1,10 @@
+{
+    "flags": "None",
+    "instanceId": "crypt8",
+    "music": 1,
+    "name": "Crypt 8",
+    "scriptKeys": [],
+    "templateKey": "21",
+    "autoDayNightCycle": false,
+    "MinimumLevel": 21
+}

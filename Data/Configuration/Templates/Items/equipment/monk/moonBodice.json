@@ -1,0 +1,28 @@
+{
+    "buyCost": 7500,
+    "category": "Armor F",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 13,
+    "equipmentType": "Armor",
+    "gender": "Female",
+    "maxDurability": 10000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -29
+    },
+    "class": "monk",
+    "pantsColor": "Default",
+    "level": 41,
+    "levelCircle": 3,
+    "sellValue": 3750,
+    "weight": 8,
+    "description": "Class: Female Monk\nLevel: 41\nAc -29",
+    "name": "Moon Bodice",
+    "panelSprite": 127,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "moonBodice"
+}

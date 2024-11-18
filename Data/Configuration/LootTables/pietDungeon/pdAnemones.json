@@ -1,0 +1,9 @@
+{
+  "key": "pdAnemones",
+  "lootDrops": [
+    {
+      "dropChance": 0.10,
+      "itemTemplateKey": "anemoneAntenna"
+    }
+  ]
+}

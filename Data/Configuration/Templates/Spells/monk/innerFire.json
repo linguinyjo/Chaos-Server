@@ -1,0 +1,39 @@
+{
+  "castLines": 2,
+  "learningRequirements": {
+    "itemRequirements": [],
+    "requiredGold": 25000,
+    "requiredStats": {
+      "con": 20,
+      "dex": 3,
+      "int": 6,
+      "str": 3,
+      "wis": 12
+    },
+    "prerequisiteSkills": [],
+    "prerequisiteSpells": []
+  },
+  "spellType": "NoTarget",
+  "class": "Monk",
+  "description": "Improves regeneration",
+  "level": 1,
+  "name": "inner fire",
+  "panelSprite": 126,
+  "scriptKeys": [
+    "applyEffect"
+  ],
+  "scriptVars": {
+    "applyEffect": {
+      "bodyAnimation": "priestCast",
+      "animation": {
+        "targetAnimation": 5,
+        "animationSpeed": 150
+      },
+      "sound": 30,
+      "manaCost": 150,
+      "effectKey": "regenBuff",
+      "filter": "aliveOnly"
+    }
+  },
+  "templateKey": "innerFire"
+}

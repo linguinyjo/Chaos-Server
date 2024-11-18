@@ -1,0 +1,32 @@
+{
+    "buyCost": 75000,
+    "category": "Staff",
+    "color": "Default",
+    "displaySprite": 60,
+    "equipmentType": "Weapon",
+    "gender": "Unisex",
+    "isModifiable": true,
+    "maxDurability": 1000,
+    "maxStacks": 1,
+    "level": 11,
+    "levelCircle": 2,
+    "class": "peasant",
+    "modifiers": {
+        "magicAttack": 24,
+        "int": 2,
+        "maximumMp": 250
+    },
+    "sellValue": 37500,
+    "weight": 3,
+    "description": "Class: Peasant\nLevel: 11\nMagic Attack 24, Elemental spells -1 lines",
+    "name": "Magus Luathus",
+    "panelSprite": 548,
+    "scriptKeys": ["Equipment", "EquipStaff"],
+    "scriptVars": {
+        "equipment": {},
+        "equipStaff": {
+            "spellCategory": "Damage"
+        }
+    },
+    "templateKey": "magusLuathus"
+}

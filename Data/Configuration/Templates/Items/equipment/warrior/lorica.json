@@ -1,11 +1,11 @@
 {
     "buyCost": 25000,
-    "category": "Armor",
+    "category": "Armor M",
     "color": "Default",
     "isDyable": true,
     "displaySprite": 12,
     "equipmentType": "Armor",
-    "gender": "Unisex",
+    "gender": "Male",
     "maxDurability": 25000,
     "maxStacks": 1,
     "modifiers": {
@@ -18,7 +18,7 @@
     "levelCircle": 2,
     "sellValue": 12500,
     "weight": 14,
-    "description": "Class: Warrior\nLevel: 26\nAc -26\nDex -1",
+    "description": "Class: Male Warrior\nLevel: 26\nAc -24\nDex -1",
     "name": "Lorica",
     "panelSprite": 107,
     "scriptKeys": ["Equipment"],

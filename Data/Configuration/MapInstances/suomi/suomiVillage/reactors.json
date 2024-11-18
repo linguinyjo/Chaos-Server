@@ -63,6 +63,36 @@
     "scriptKeys": ["warp"],
     "scriptVars": {
       "warp": {
+        "destination": "suomiInn:(5, 10)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(32, 54)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "suomiInn:(5, 10)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(32, 54)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "suomiInn:(10, 3)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(39, 48)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
         "destination": "suomiCombatMaster:(6, 13)"
       }
     },

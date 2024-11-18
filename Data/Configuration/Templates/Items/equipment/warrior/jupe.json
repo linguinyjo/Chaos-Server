@@ -1,11 +1,11 @@
 {
     "buyCost": 7500,
-    "category": "Armor",
+    "category": "Armor M",
     "color": "Default",
     "isDyable": true,
     "displaySprite": 7,
     "equipmentType": "Armor",
-    "gender": "Unisex",
+    "gender": "Male",
     "maxDurability": 15000,
     "maxStacks": 1,
     "modifiers": {
@@ -17,7 +17,7 @@
     "levelCircle": 2,
     "sellValue": 3750,
     "weight": 7,
-    "description": "Class: Warrior\nLevel: 11\nAc -17",
+    "description": "Class: Male Warrior\nLevel: 11\nAc -17",
     "name": "Jupe",
     "panelSprite": 102,
     "scriptKeys": ["Equipment"],

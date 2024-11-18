@@ -8,7 +8,8 @@ namespace Chaos.Scripting.QuestScripts.Dugons.WhiteDugonScripts;
 public class StartWhiteDugonScript:  DialogScriptBase
 {
     private readonly IDialogFactory DialogFactory;
-    
+    private readonly WhiteDugonQuestHelper WhiteDugonQuestHelper = new();
+
     /// <inheritdoc />
     public StartWhiteDugonScript(Dialog subject, IDialogFactory dialogFactory)
         : base(subject) => DialogFactory = dialogFactory;

@@ -3,6 +3,14 @@
         {
             "itemTemplateKey": "magicRod",
             "stock": 100
+        },
+        {
+            "itemTemplateKey": "magusGlioca",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "magusLuathus",
+            "stock": 100
         }
     ],
     "itemsToBuy": ["stick", "dirk", "eppe", "louresSabre", "magicRod", "claidheamh", "broadSword","battleSword",
@@ -13,7 +21,7 @@
     "scriptKeys": ["showdialog", "verbalShop", "defaultBehaviors"],
     "scriptVars": {
         "showdialog": {
-            "dialogKey": "callough_initial"
+            "dialogKey": "generic_smith_shop_initial"
         }
     },
     "skillsToTeach": [],

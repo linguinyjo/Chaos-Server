@@ -1,11 +1,11 @@
 {
     "buyCost": 7500,
-    "category": "Armor",
-    "color": "Blue",
+    "category": "Armor M",
+    "color": "Default",
     "isDyable": true,
-    "displaySprite": 237,
+    "displaySprite": 10,
     "equipmentType": "Armor",
-    "gender": "Unisex",
+    "gender": "Male",
     "maxDurability": 5000,
     "maxStacks": 1,
     "modifiers": {
@@ -18,9 +18,9 @@
     "levelCircle": 2,
     "sellValue": 3750,
     "weight": 4,
-    "description": "Class: Priest\nLevel: 11\nAc -13\n150 Mana",
+    "description": "Class: Male Priest\nLevel: 11\nAc -13\n150 Mana",
     "name": "Galuchat Coat",
-    "panelSprite": 1611,
+    "panelSprite": 105,
     "scriptKeys": ["Equipment"],
     "scriptVars": {
         "equipment": {}

@@ -1,0 +1,29 @@
+{
+    "buyCost": 7500,
+    "category": "Armor F",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 11,
+    "equipmentType": "Armor",
+    "gender": "Female",
+    "maxDurability": 5000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -9,
+        "maximumMp": 150
+    },
+    "class": "wizard",
+    "pantsColor": "Black",
+    "level": 11,
+    "levelCircle": 2,
+    "sellValue": 3750,
+    "weight": 6,
+    "description": "Class: Female Wizard\nLevel: 11\nAc -9, 150 Mana",
+    "name": "Benusta",
+    "panelSprite": 125,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "benusta"
+}

@@ -71,7 +71,9 @@ public abstract class Creature : NamedEntity, IAffected, IScripted<ICreatureScri
     {
         return FrozenEffects.Any(effect => Effects.Contains(effect));
     }
-
+    
+    public bool IsSkulled() => Effects.Contains("skulled");
+    
     protected Creature(
         string name,
         ushort sprite,

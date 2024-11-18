@@ -46,5 +46,11 @@
     "scriptVars": {},
     "shouldBlockPathfinding": false,
     "source": "(3, 3)"
+  },
+  {
+    "scriptKeys": ["greenDugonMeditationTile"],
+    "scriptVars": {},
+    "shouldBlockPathfinding": false,
+    "source": "(15, 9)"
   }
 ]

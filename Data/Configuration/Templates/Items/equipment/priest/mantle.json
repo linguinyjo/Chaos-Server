@@ -1,0 +1,29 @@
+{
+    "buyCost": 7500,
+    "category": "Armor M",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 15,
+    "equipmentType": "Armor",
+    "gender": "Male",
+    "maxDurability": 5000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -26,
+        "maximumMp": 300
+    },
+    "class": "priest",
+    "pantsColor": "Black",
+    "level": 41,
+    "levelCircle": 3,
+    "sellValue": 3750,
+    "weight": 4,
+    "description": "Class: Male Priest\nLevel: 41\nAc -26\n300 Mana",
+    "name": "Mantle",
+    "panelSprite": 110,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "mantle"
+}

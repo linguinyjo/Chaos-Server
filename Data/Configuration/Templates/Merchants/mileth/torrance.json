@@ -9,6 +9,10 @@
             "stock": 100
         },
         {
+            "itemTemplateKey": "leatherBliaut",
+            "stock": 100
+        },
+        {
             "itemTemplateKey": "boots",
             "stock": 100
         },
@@ -42,7 +46,7 @@
         "shirt",
         "woodenShield", "leatherShield", "bronzeShield",
         "boots", "greyBoots", "shagreenBoots",
-        "leatherTunic", "jupe", "dobok", "culotte",
+        "leatherTunic", "jupe", "dobok", "culotte", "leatherBliaut", "Cuirass", "Lorica", "Cotehardie",
         "leatherGauntlet", "leatherBracer", "leatherEmeraldGauntlet","leatherHeartstoneGauntlet", "leatherRubyGauntlet", "leatherSapphireGauntlet",
         "leatherGreaves", "reinforcedLeatherGreaves",
         "windBelt", "fireBelt", "earthBelt", "seaBelt", "hybrasylBelt", "leatherBelt", "mythrilBelt",

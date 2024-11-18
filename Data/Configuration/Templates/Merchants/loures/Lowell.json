@@ -11,14 +11,21 @@
         {
             "itemTemplateKey": "lorica",
             "stock": 100
+        },
+        {
+            "itemTemplateKey": "Cuirass",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "Cotehardie",
+            "stock": 100
         }
     ],
     "itemsToBuy": [
-        "apple",
         "shirt",
         "woodenShield", "leatherShield", "bronzeShield",
         "boots", "greyBoots", "shagreenBoots",
-        "leatherTunic", "jupe", "dobok", "culotte",
+        "leatherTunic", "jupe", "dobok", "culotte", "leatherBliaut", "Cuirass", "Lorica", "Cotehardie",
         "leatherGauntlet", "leatherBracer", "leatherEmeraldGauntlet","leatherHeartstoneGauntlet", "leatherRubyGauntlet", "leatherSapphireGauntlet",
         "leatherGreaves", "reinforcedLeatherGreaves",
         "windBelt", "fireBelt", "earthBelt", "seaBelt", "hybrasylBelt", "leatherBelt", "mythrilBelt",

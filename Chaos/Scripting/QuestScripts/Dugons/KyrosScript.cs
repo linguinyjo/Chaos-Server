@@ -27,6 +27,10 @@ public class KyrosScript:  DialogScriptBase
         {
             Subject.AddOption("White Dugon", "white_dugon_1");
             return;
+        } else if (currentDugon == Dugon.White)
+        {
+            Subject.AddOption("Green Dugon", "green_dugon_1");
+            return;
         }
     }
     

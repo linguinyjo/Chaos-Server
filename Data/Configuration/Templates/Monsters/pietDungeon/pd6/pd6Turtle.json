@@ -1,0 +1,31 @@
+{
+    "assailIntervalMs": 1500,
+    "expReward": 1444,
+    "moveIntervalMs": 1500,
+    "aggroRange": 10,
+    "name": "Turtle",
+    "lootTableKeys": ["pdTurtles"],
+    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptVars": {},
+    "skillIntervalMs": 1500,
+    "skillTemplateKeys": ["Assail"],
+    "spellIntervalMs": 15000,
+    "spellTemplateKeys": ["sal", "athar", "creag", "srad", "cradh"],
+    "sprite": 100,
+    "statSheet": {
+        "level": 44,
+        "ac": 25,
+        "maximumHp": 3900,
+        "maximumMp": 1000,
+        "physicalAttack": 55,
+        "magicAttack": 70,
+        "con": 30,
+        "dex": 4,
+        "int": 35,
+        "str": 35,
+        "wis": 5
+    },
+    "templateKey": "pd6Turtle",
+    "type": "Normal",
+    "wanderIntervalMs": 1500
+}

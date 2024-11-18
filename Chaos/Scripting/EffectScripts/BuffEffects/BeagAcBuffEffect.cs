@@ -24,7 +24,7 @@ public sealed class BeagAcBuffEffect : EffectBase,
     /// <inheritdoc />
     public List<string> ConflictingEffectNames { get; init; } =
         [
-            "Armachd",
+            "beag armor",
         ];
 
     /// <inheritdoc />
@@ -55,7 +55,7 @@ public sealed class BeagAcBuffEffect : EffectBase,
     public override byte Icon { get; }
 
     /// <inheritdoc />
-    public override string Name => "Kelberoth Stance";
+    public override string Name => "beag armor";
     
     private int AcBuff => 5;
 

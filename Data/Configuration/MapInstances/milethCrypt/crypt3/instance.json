@@ -5,5 +5,6 @@
     "name": "Crypt 3",
     "scriptKeys": [],
     "templateKey": "5",
-    "autoDayNightCycle": false
+    "autoDayNightCycle": false,
+    "MinimumLevel": 11
 }

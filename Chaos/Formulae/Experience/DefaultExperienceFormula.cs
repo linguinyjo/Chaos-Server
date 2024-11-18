@@ -58,7 +58,7 @@ public class DefaultExperienceFormula : IExperienceFormula
         
         switch (levelDifference)
         {
-            case <= 6:
+            case <= 5:
             {
                 // Use existing logic for level differences of 7 or less
                 var upperBound = LevelRangeFormulae.Default.GetUpperBound(highestPlayerLevel);

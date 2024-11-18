@@ -8,6 +8,7 @@ namespace Chaos.Scripting.QuestScripts.Dugons.WhiteDugonScripts;
 public class IncrementWhiteDugonScript:  DialogScriptBase
 {
     private readonly IDialogFactory DialogFactory;
+    private readonly WhiteDugonQuestHelper WhiteDugonQuestHelper = new();
     
     /// <inheritdoc />
     public IncrementWhiteDugonScript(Dialog subject, IDialogFactory dialogFactory)
@@ -21,7 +22,7 @@ public class IncrementWhiteDugonScript:  DialogScriptBase
 
     public override void OnDisplayed(Aisling source)
     {
-       WhiteDugonQuestHelper.IncrementQuestStage(source);
+        WhiteDugonQuestHelper.IncrementQuestStage(source);
     }
 
     public override void OnNext(Aisling source, byte? optionIndex = null) {}

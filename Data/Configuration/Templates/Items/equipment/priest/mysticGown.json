@@ -1,0 +1,29 @@
+{
+    "buyCost": 7500,
+    "category": "Armor F",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 10,
+    "equipmentType": "Armor",
+    "gender": "Female",
+    "maxDurability": 5000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -13,
+        "maximumMp": 150
+    },
+    "class": "priest",
+    "pantsColor": "Black",
+    "level": 11,
+    "levelCircle": 2,
+    "sellValue": 3750,
+    "weight": 4,
+    "description": "Class: Female Priest\nLevel: 11\nAc -13\n150 Mana",
+    "name": "Mystic Gown",
+    "panelSprite": 124,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "mysticGown"
+}

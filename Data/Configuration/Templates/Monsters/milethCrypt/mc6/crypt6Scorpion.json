@@ -4,7 +4,7 @@
     "moveIntervalMs": 1300,
     "aggroRange": 10,
     "name": "Scorpion",
-    "lootTableKeys": ["crypt6Scorpions"],
+    "lootTableKeys": ["cryptScorpions"],
     "scriptKeys": ["default", "setMonsterElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,

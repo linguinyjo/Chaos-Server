@@ -1,0 +1,9 @@
+{
+  "key": "pdBrawlfish",
+  "lootDrops": [
+    {
+      "dropChance": 0.08,
+      "itemTemplateKey": "brawlfishScale"
+    }
+  ]
+}

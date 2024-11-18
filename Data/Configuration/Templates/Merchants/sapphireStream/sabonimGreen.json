@@ -4,14 +4,14 @@
     "name": "Sabonim",
     "restockIntervalHrs": 1,
     "restockPCt": 100,
-    "scriptKeys": ["showdialog", "defaultBehaviors", "WhiteDugonVerbal"],
+    "scriptKeys": ["showdialog", "defaultBehaviors"],
     "scriptVars": {
         "showdialog": {
             "dialogKey": "sabonim_initial"
         }
     },
     "skillsToTeach": [],
-    "spellsToTeach": [],
+    "spellsToTeach": ["innerFire"],
     "sprite": 19,
     "templateKey": "sabonimGreen"
 }

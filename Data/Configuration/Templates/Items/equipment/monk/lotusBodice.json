@@ -1,0 +1,28 @@
+{
+    "buyCost": 7500,
+    "category": "Armor F",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 8,
+    "equipmentType": "Armor",
+    "gender": "Female",
+    "maxDurability": 10000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -14
+    },
+    "class": "monk",
+    "pantsColor": "Default",
+    "level": 11,
+    "levelCircle": 2,
+    "sellValue": 3750,
+    "weight": 5,
+    "description": "Class: Female Monk\nLevel: 11\nAc -14",
+    "name": "Lotus Bodice",
+    "panelSprite": 122,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "lotusBodice"
+}

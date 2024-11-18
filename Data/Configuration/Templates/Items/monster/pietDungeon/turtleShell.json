@@ -1,0 +1,15 @@
+{
+  "buyCost": 4000,
+  "category": "monster",
+  "color": "Default",
+  "isModifiable": false,
+  "maxStacks": 1,
+  "sellValue": 2000,
+  "weight": 1,
+  "description": "",
+  "name": "Turtle Shell",
+  "panelSprite": 568,
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "turtleShell"
+}

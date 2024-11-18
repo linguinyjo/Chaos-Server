@@ -1,0 +1,62 @@
+[
+  {
+    "scriptKeys": ["showWorldMap"],
+    "scriptVars": {
+      "showWorldMap": {
+        "worldMapKey": "field007"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(19, 12)"
+  },
+  {
+    "scriptKeys": ["showWorldMap"],
+    "scriptVars": {
+      "showWorldMap": {
+        "worldMapKey": "field007"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(19, 11)"
+  },
+  {
+    "scriptKeys": ["showWorldMap"],
+    "scriptVars": {
+      "showWorldMap": {
+        "worldMapKey": "field007"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(19, 10)"
+  },
+  {
+    "scriptKeys": ["showWorldMap"],
+    "scriptVars": {
+      "showWorldMap": {
+        "worldMapKey": "field007"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(19, 9)"
+  },
+  {
+    "scriptKeys": ["showWorldMap"],
+    "scriptVars": {
+      "showWorldMap": {
+        "worldMapKey": "field007"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(19, 8)"
+  },
+  {
+    "scriptKeys": ["showWorldMap"],
+    "scriptVars": {
+      "showWorldMap": {
+        "worldMapKey": "field007"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(19, 7)"
+  }
+]

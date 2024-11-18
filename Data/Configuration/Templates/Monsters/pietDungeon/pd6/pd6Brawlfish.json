@@ -1,0 +1,31 @@
+{
+    "assailIntervalMs": 1500,
+    "expReward": 1561,
+    "moveIntervalMs": 1500,
+    "aggroRange": 10,
+    "name": "Brawlfish",
+    "lootTableKeys": ["pdBrawlfish"],
+    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptVars": {},
+    "skillIntervalMs": 1500,
+    "skillTemplateKeys": ["Assail"],
+    "spellIntervalMs": 15000,
+    "spellTemplateKeys": ["sal", "athar", "creag", "srad", "cradh"],
+    "sprite": 98,
+    "statSheet": {
+        "level": 45,
+        "ac": 25,
+        "maximumHp": 4200,
+        "maximumMp": 1000,
+        "physicalAttack": 63,
+        "magicAttack": 70,
+        "con": 20,
+        "dex": 1,
+        "int": 35,
+        "str": 35,
+        "wis": 1
+    },
+    "templateKey": "pd6Brawlfish",
+    "type": "Normal",
+    "wanderIntervalMs": 1500
+}

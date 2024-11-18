@@ -1,0 +1,16 @@
+[
+  {
+    "blackList": [],
+    "direction": "Right",
+    "extraScriptKeys": [],
+    "merchantTemplateKey": "octavio",
+    "spawnPoint": "(3, 7)"
+  },
+  {
+    "blackList": [],
+    "direction": "Down",
+    "extraScriptKeys": [],
+    "merchantTemplateKey": "giotto",
+    "spawnPoint": "(6, 2)"
+  }
+]

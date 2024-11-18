@@ -1,0 +1,15 @@
+{
+  "buyCost": 8500,
+  "category": "monster",
+  "color": "Default",
+  "isModifiable": false,
+  "maxStacks": 1,
+  "sellValue": 4250,
+  "weight": 1,
+  "description": "",
+  "name": "Brawlfish Scale",
+  "panelSprite": 573,
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "brawlfishScale"
+}

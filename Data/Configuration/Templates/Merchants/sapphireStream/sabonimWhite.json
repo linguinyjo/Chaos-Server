@@ -4,7 +4,7 @@
     "name": "Sabonim",
     "restockIntervalHrs": 1,
     "restockPCt": 100,
-    "scriptKeys": ["showdialog", "defaultBehaviors", "WhiteDugonVerbal"],
+    "scriptKeys": ["showdialog", "defaultBehaviors"],
     "scriptVars": {
         "showdialog": {
             "dialogKey": "sabonim_initial"

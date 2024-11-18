@@ -1,3 +1,32 @@
 [
-
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 600,
+    "intervalVariancePct": 5,
+    "extraLootTableKeys": [],
+    "maxAmount": 3,
+    "maxPerSpawn": 3,
+    "monsterTemplateKey": "pd3Frog"
+  },
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 600,
+    "intervalVariancePct": 5,
+    "extraLootTableKeys": [],
+    "maxAmount": 3,
+    "maxPerSpawn": 3,
+    "monsterTemplateKey": "pd3Crab"
+  },
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 600,
+    "intervalVariancePct": 5,
+    "extraLootTableKeys": [],
+    "maxAmount": 3,
+    "maxPerSpawn": 3,
+    "monsterTemplateKey": "pd3Anemone"
+  }
 ]

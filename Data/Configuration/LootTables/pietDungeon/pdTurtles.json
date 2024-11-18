@@ -1,0 +1,9 @@
+{
+  "key": "pdTurtles",
+  "lootDrops": [
+    {
+      "dropChance": 0.15,
+      "itemTemplateKey": "turtleShell"
+    }
+  ]
+}

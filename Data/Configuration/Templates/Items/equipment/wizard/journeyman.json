@@ -1,11 +1,11 @@
 {
     "buyCost": 7500,
-    "category": "Armor",
-    "color": "Blue",
+    "category": "Armor M",
+    "color": "Default",
     "isDyable": true,
     "displaySprite": 11,
     "equipmentType": "Armor",
-    "gender": "Unisex",
+    "gender": "Male",
     "maxDurability": 5000,
     "maxStacks": 1,
     "modifiers": {
@@ -18,7 +18,7 @@
     "levelCircle": 2,
     "sellValue": 3750,
     "weight": 6,
-    "description": "Class: Wizard\nLevel: 11\nAc -9",
+    "description": "Class: Male Wizard\nLevel: 11\nAc -9, 150 Mana",
     "name": "Journeyman",
     "panelSprite": 106,
     "scriptKeys": ["Equipment"],

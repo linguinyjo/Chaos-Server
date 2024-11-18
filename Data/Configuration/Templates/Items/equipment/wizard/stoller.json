@@ -1,0 +1,29 @@
+{
+    "buyCost": 7500,
+    "category": "Armor F",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 16,
+    "equipmentType": "Armor",
+    "gender": "Female",
+    "maxDurability": 5000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -12,
+        "maximumMp": 300
+    },
+    "class": "wizard",
+    "pantsColor": "Black",
+    "level": 41,
+    "levelCircle": 3,
+    "sellValue": 3750,
+    "weight": 6,
+    "description": "Class: Female Wizard\nLevel: 41\nAc -12, 300 Mana",
+    "name": "Stoller",
+    "panelSprite": 130,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "stoller"
+}

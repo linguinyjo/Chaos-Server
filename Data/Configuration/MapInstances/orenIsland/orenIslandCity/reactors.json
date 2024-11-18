@@ -1,0 +1,52 @@
+[
+  {
+    "scriptKeys": ["showWorldMap"],
+    "scriptVars": {
+      "showWorldMap": {
+        "worldMapKey": "field007"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(58, 173)"
+  },
+  {
+    "scriptKeys": ["showWorldMap"],
+    "scriptVars": {
+      "showWorldMap": {
+        "worldMapKey": "field007"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(57, 173)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "orenIslandMagicShop:(18, 11)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(33, 126)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "orenIslandBank:(18, 10)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(76, 91)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "octaviosArmory:(9, 17)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(82, 77)"
+  }
+]

@@ -1,0 +1,61 @@
+{
+  "itemsForSale": [
+    {
+      "itemTemplateKey": "earthGarb",
+      "stock": 100
+    },
+    {
+      "itemTemplateKey": "moonBodice",
+      "stock": 100
+    },
+    {
+      "itemTemplateKey": "Stoller",
+      "stock": 100
+    },
+    {
+      "itemTemplateKey": "Lorum",
+      "stock": 100
+    },
+    {
+      "itemTemplateKey": "Elle",
+      "stock": 100
+    },
+    {
+      "itemTemplateKey": "Mantle",
+      "stock": 100
+    },
+    {
+      "itemTemplateKey": "KasmaniumArmor",
+      "stock": 100
+    },
+    {
+      "itemTemplateKey": "KasmaniumHauberk",
+      "stock": 100
+    }
+  ],
+  "itemsToBuy": [
+    "shirt",
+    "woodenShield", "leatherShield", "bronzeShield",
+    "boots", "greyBoots", "shagreenBoots",
+    "leatherTunic", "jupe", "dobok", "culotte", "leatherBliaut", "Cuirass", "Lorica", "Cotehardie", "Mantle", "Elle", "Lorum", "Stoller", "moonBodice", "earthGarb",
+    "leatherGauntlet", "leatherBracer", "leatherEmeraldGauntlet","leatherHeartstoneGauntlet", "leatherRubyGauntlet", "leatherSapphireGauntlet",
+    "leatherGreaves", "reinforcedLeatherGreaves",
+    "windBelt", "fireBelt", "earthBelt", "seaBelt", "hybrasylBelt", "leatherBelt", "mythrilBelt",
+    "boneNecklace", "earthNecklace", "fireNecklace", "pearlChainNecklace", "phoenixNecklace", "seaNecklace", "windNecklace",
+    "smallSpinelRing", "smallEmeraldRing", "emeraldRing", "spinelRing", "redJadeRing", "amethystRing",
+    "silverEarrings", "goldEarrings", "rubyEarrings", "coralEarrings", "berylEarrings"],
+  "name": "Octavio",
+  "scriptKeys": [
+    "showdialog",
+    "defaultBehaviors"
+  ],
+  "scriptVars": {
+    "showdialog": {
+      "dialogKey": "generic_smith_shop_initial"
+    }
+  },
+  "skillsToTeach": [],
+  "spellsToTeach": [],
+  "sprite": 34,
+  "templateKey": "octavio"
+}

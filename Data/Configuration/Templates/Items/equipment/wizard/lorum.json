@@ -1,0 +1,29 @@
+{
+    "buyCost": 7500,
+    "category": "Armor M",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 16,
+    "equipmentType": "Armor",
+    "gender": "Male",
+    "maxDurability": 5000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -12,
+        "maximumMp": 300
+    },
+    "class": "wizard",
+    "pantsColor": "Black",
+    "level": 41,
+    "levelCircle": 3,
+    "sellValue": 3750,
+    "weight": 6,
+    "description": "Class: Male Wizard\nLevel: 41\nAc -12, 300 Mana",
+    "name": "Lorum",
+    "panelSprite": 111,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "Lorum"
+}
