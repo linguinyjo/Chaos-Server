@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "close",
+  "scriptKeys": ["grimlockAllianceQuest"],
+  "scriptVars": {},
+  "templateKey": "grimlock_alliance_buff",
+  "text": "Here. Receive the Grimlocks Blessing. It will grant you increased power in the heat of battle. Use it and slay many goblins, surface dweller!",
+  "type": "Normal"
+}

@@ -19,7 +19,7 @@
         "prerequisiteSpells": []
     },
     "description": "A third assail.",
-    "level": 11,
+    "level": 21,
     "levelsUp": true,
     "name": "Clobber",
     "class": "warrior",

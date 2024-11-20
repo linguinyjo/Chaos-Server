@@ -1,13 +1,10 @@
 using Chaos.Common.Definitions;
 using Chaos.Models.Data;
-using Chaos.Models.World.Abstractions;
-using Chaos.Scripting.Components.EffectComponents;
-using Chaos.Scripting.Components.Execution;
 using Chaos.Scripting.EffectScripts.Abstractions;
 using Chaos.Time;
 using Chaos.Time.Abstractions;
 
-namespace Chaos.Scripting.EffectScripts;
+namespace Chaos.Scripting.EffectScripts.PoisonEffects;
 
 /** Percent based damage effect */
 public class PuinseinEffect : ContinuousAnimationEffectBase

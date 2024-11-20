@@ -17,7 +17,7 @@
   "spellCategory": "Heal",
   "class": "Priest",
   "description": "Applies a moderate heal to your group",
-  "level": 41,
+  "level": 21,
   "name": "ioc comlha",
   "panelSprite": 33,
   "scriptKeys": [

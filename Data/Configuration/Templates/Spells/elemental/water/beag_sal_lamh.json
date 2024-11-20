@@ -18,6 +18,7 @@
     "level": 1,
     "castLines": 3,
     "name": "beag sal lamh",
+    "spellCategory": "Damage",
     "panelSprite": 63,
     "scriptKeys": ["damage", "levelup"],
     "scriptVars": {
@@ -29,7 +30,6 @@
             "damageStat": "int",
             "sound": 167,
             "manaCost": 75,
-            "spellCategory": "Damage",
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "minSoundIntervalMs": 900,
             "baseDamage": 15,

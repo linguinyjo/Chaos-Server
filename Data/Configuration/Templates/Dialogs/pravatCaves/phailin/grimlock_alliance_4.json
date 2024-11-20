@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "close",
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "grimlock_alliance_4",
+  "text": "Good. Bring me {=s10 red gemstones{=a from their wretched corpses. But know this, failure means more than just a refused alliance. The Grimlocks do not forget those who waste our time.",
+  "type": "Normal"
+}

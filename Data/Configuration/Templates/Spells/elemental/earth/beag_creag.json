@@ -20,6 +20,7 @@
     "description": "A weak spell that deals earth damage.",
     "level": 1,
     "name": "beag creag",
+    "spellCategory": "Damage",
     "panelSprite": 57,
     "scriptKeys": ["damage", "levelup"],
     "scriptVars": {
@@ -30,7 +31,6 @@
             "element": "earth",
             "damageStat": "int",
             "manaCost": 30,
-            "spellCategory": "Damage",
             "sound": 167,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "minSoundIntervalMs": 900,

@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "close",
+  "scriptKeys": ["goblinAllianceQuest"],
+  "scriptVars": {},
+  "templateKey": "goblin_alliance_gemstones_1",
+  "text": "You return empty handed? Dont waste time...",
+  "type": "Normal"
+}

@@ -1,0 +1,32 @@
+{
+    "assailIntervalMs": 1500,
+    "expReward": 3352,
+    "moveIntervalMs": 1200,
+    "maxGoldDrop": 600,
+    "minGoldDrop": 350,
+    "name": "Grimlock Warrior",
+    "lootTableKeys": ["pravatGrimlockWarriors"],
+    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptVars": {},
+    "skillIntervalMs": 1500,
+    "skillTemplateKeys": ["Assail"],
+    "spellIntervalMs": 12000,
+    "spellTemplateKeys": ["sal", "athar", "creag", "srad", "cradh", "puinsein"],
+    "sprite": 9,
+    "statSheet": {
+        "level": 37,
+        "ac": 35,
+        "maximumHp": 4900,
+        "maximumMp": 1000,
+        "physicalAttack": 80,
+        "magicAttack": 100,
+        "con": 12,
+        "dex": 12,
+        "int": 20,
+        "str": 42,
+        "wis": 12
+    },
+    "templateKey": "testMonster",
+    "type": "Normal",
+    "wanderIntervalMs": 1500
+}

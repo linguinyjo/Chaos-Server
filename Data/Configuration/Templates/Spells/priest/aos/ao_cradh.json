@@ -16,7 +16,7 @@
   "spellType": "Targeted",
   "class": "Priest",
   "description": "Removes up to cradh effect",
-  "level": 41,
+  "level": 11,
   "name": "ao cradh",
   "panelSprite": 79,
   "scriptKeys": [

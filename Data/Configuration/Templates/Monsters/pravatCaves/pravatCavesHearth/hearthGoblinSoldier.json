@@ -7,7 +7,7 @@
     "minGoldDrop": 300,
     "name": "Goblin Soldier",
     "lootTableKeys": ["pravatGoblinSoldiers"],
-    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptKeys": ["default", "setMonsterElement", "GrimlockAllianceKill"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],

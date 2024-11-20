@@ -18,6 +18,7 @@
     "description": "A weak spell that deals wind damage.",
     "level": 1,
     "name": "beag athar",
+    "spellCategory": "Damage",
     "panelSprite": 43,
     "scriptKeys": ["damage", "levelup"],
     "scriptVars": {
@@ -26,7 +27,6 @@
             "animatePoints": true,
             "range": 12,
             "manaCost": 30,
-            "spellCategory": "Damage",
             "element": "wind",
             "damageStat": "int",
             "sound": 167,

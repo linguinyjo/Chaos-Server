@@ -63,5 +63,21 @@
         "qualifyingCircles": ["two", "three"],
         "id": "generalsOfDarkness",
         "result": "Completed"
+    },
+    {
+        "title": "Alliance with the grimlocks",
+        "summary": "Speak with Phailin\nLevel requirement: 21-50\nYou may pick only one alliance",
+        "rewards": "Experience and buff",
+        "qualifyingCircles": ["two", "three"],
+        "id": "grimlockAlliance",
+        "result": "Completed"
+    },
+    {
+        "title": "Alliance with the goblins",
+        "summary": "Speak with Phailin\nLevel requirement: 21-50\nYou may pick only one alliance",
+        "rewards": "Experience and buff",
+        "qualifyingCircles": ["two", "three"],
+        "id": "goblinAlliance",
+        "result": "Completed"
     }
 ]

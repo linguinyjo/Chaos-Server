@@ -3,12 +3,12 @@ using Chaos.Scripting.EffectScripts.Abstractions;
 using Chaos.Time;
 using Chaos.Time.Abstractions;
 
-namespace Chaos.Scripting.EffectScripts.cc;
+namespace Chaos.Scripting.EffectScripts.CcEffects;
 
 public class PramhEffect : ContinuousAnimationEffectBase
 {
     /// <inheritdoc />
-    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMilliseconds(14000);
+    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMilliseconds(12000);
 
     /// <inheritdoc />
     protected override Animation Animation { get; } = new()

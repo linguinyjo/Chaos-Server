@@ -1,0 +1,13 @@
+{
+  "options": [
+    {
+      "dialogKey": "goblin_alliance_2",
+      "optionText": "I've heard tales of the Goblin Kingdom's ingenuity"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "goblin_alliance_1",
+  "text": "An alliance? Not many surface folk see our... potential. Most just see nasty, little goblins. But you... you see opportunity. I like that",
+  "type": "Menu"
+}

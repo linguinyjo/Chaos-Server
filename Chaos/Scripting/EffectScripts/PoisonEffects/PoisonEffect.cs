@@ -44,7 +44,6 @@ public class PoisonEffect : ContinuousAnimationEffectBase,
     /// <inheritdoc />
     protected override void OnIntervalElapsed()
     {
-
         if (Subject.StatSheet.CurrentHp <= DamagePerTick)
             return;
 

@@ -16,7 +16,7 @@
   "spellType": "Targeted",
   "class": "Priest",
   "description": "Removes pramh effect",
-  "level": 41,
+  "level": 11,
   "name": "ao pramh",
   "panelSprite": 201,
   "scriptKeys": [

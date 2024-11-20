@@ -1,0 +1,13 @@
+{
+  "options": [
+    {
+      "dialogKey": "goblin_alliance_4",
+      "optionText": "Consider it done"
+    }
+  ],
+  "scriptKeys": ["goblinAllianceQuest"],
+  "scriptVars": {},
+  "templateKey": "goblin_alliance_3",
+  "text": "They hoard our birthright! These caves were OURS first! I need you to slay them and tear from their lifeless bodies the red gemstones which have been stolen from us.",
+  "type": "Menu"
+}

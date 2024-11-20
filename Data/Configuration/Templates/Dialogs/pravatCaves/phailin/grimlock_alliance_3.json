@@ -1,0 +1,13 @@
+{
+  "options": [
+    {
+      "dialogKey": "grimlock_alliance_4",
+      "optionText": "Consider it done"
+    }
+  ],
+  "scriptKeys": ["GrimlockAllianceQuest"],
+  "scriptVars": {},
+  "templateKey": "grimlock_alliance_3",
+  "text": "The tunnels grow restless. Goblins infest our ancient hunting grounds like vermin. They steal our gemstones and pollute our waters with their filth. Thin their numbers and return to me with their stolen gemstones... then we can speak of an alliance.",
+  "type": "Menu"
+}

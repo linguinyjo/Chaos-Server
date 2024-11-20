@@ -6,7 +6,7 @@
     "scriptKeys": ["showdialog", "defaultBehaviors"],
     "scriptVars": {
         "showdialog": {
-            "dialogKey": "bank_tester_initial"
+            "dialogKey": "phailin_initial"
         }
     },
     "skillsToTeach": [],

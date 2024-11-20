@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "close",
+  "scriptKeys": ["GrimlockAllianceQuest"],
+  "scriptVars": {},
+  "templateKey": "grimlock_alliance_gemstones_1",
+  "text": "You return empty-handed? Perhaps I was wrong about you. Leave, before I reconsider allowing you to do so.",
+  "type": "Normal"
+}

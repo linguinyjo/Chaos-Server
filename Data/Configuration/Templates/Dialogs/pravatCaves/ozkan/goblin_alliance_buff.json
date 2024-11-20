@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "close",
+  "scriptKeys": ["goblinAllianceQuest"],
+  "scriptVars": {},
+  "templateKey": "goblin_alliance_buff",
+  "text": "I cast on you the Goblins Blessing. It will grant you increased regeneration in your battle with those grimlock scum...",
+  "type": "Normal"
+}

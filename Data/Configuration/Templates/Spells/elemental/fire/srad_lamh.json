@@ -18,6 +18,7 @@
     "level": 11,
     "castLines": 3,
     "name": "srad lamh",
+    "spellCategory": "Damage",
     "panelSprite": 60,
     "scriptKeys": ["damage", "levelup"],
     "scriptVars": {
@@ -29,7 +30,6 @@
             "damageStat": "int",
             "sound": 167,
             "manaCost": 225,
-            "spellCategory": "Damage",
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "minSoundIntervalMs": 900,
             "baseDamage": 45,

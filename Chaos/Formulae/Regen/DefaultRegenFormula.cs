@@ -11,8 +11,8 @@ public sealed class DefaultRegenFormula : IRegenFormula
     private const decimal BaseHpRegenPercent = 10;
     private const decimal MaxRegenPercent = 20;
     private const int BaseInterval = 18;
-    private const int MinInterval = 6;
-    private const int MaxRegenStat = 25;
+    private const int MinInterval = 5;
+    private const int MaxRegenStat = 30;
     
     /// <inheritdoc />
     public int CalculateHealthRegen(Creature creature)

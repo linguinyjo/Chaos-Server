@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "close",
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "goblin_alliance_4",
+  "text": "Good. Now go fetch me {=s10 red gemstones{=a from those filthy grimlock scum.",
+  "type": "Normal"
+}

@@ -17,7 +17,7 @@ public sealed class DracoStanceEffect : IntervalEffectBase
     public override byte Icon => 146;
 
     /// <inheritdoc />
-    public override string Name => "Regeneration";
+    public override string Name => "Draco stance";
 
     /// <inheritdoc />
     protected override void OnIntervalElapsed()

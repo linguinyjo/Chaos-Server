@@ -3,11 +3,11 @@
     "itemRequirements": [],
     "requiredGold": 25000,
     "requiredStats": {
-      "str": 10,
-      "int": 25,
+      "str": 8,
+      "int": 33,
       "wis": 20,
-      "con": 10,
-      "dex": 10
+      "con": 8,
+      "dex": 8
     },
     "prerequisiteSkills": [],
     "prerequisiteSpells": []
@@ -15,7 +15,7 @@
   "spellType": "Targeted",
   "class": "Wizard",
   "description": "Applies a curse effect to your target reducing their AC.",
-  "level": 11,
+  "level": 21,
   "name": "cradh",
   "panelSprite": 82,
   "scriptKeys": [
