@@ -22,6 +22,7 @@ public class GoblinAllianceQuestScript: DialogScriptBase
     /// <inheritdoc />
     public override void OnDisplaying(Aisling source)
     {
+        if (source.StatSheet.Level >= 50) return;
         var questStatus = GoblinAllianceQuestHelper.GetQuestStatus(source);
         switch (questStatus)
         {

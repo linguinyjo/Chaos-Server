@@ -11,6 +11,7 @@ public sealed class DefaultRegenFormula : IRegenFormula
     private const decimal BaseHpRegenPercent = 10;
     private const decimal MaxRegenPercent = 20;
     private const int BaseInterval = 18;
+    // Achievable regen from items should not exceed 28 so that the min interval is only possible with bard songs
     private const int MinInterval = 5;
     private const int MaxRegenStat = 30;
     
@@ -31,13 +32,15 @@ public sealed class DefaultRegenFormula : IRegenFormula
         return MathEx.GetPercentOf<int>((int)creature.StatSheet.EffectiveMaximumHp, percentToRegenerate);
     }
 
-    /// <inheritdoc />
     public int CalculateIntervalSecs(Creature creature)
     {
         // On char creation this gets called before the statsheet is created (I think)
         if (creature.StatSheet == null) return BaseInterval; 
         if (creature.StatSheet.EffectiveRegen <= 0) return BaseInterval;
-        var interval = BaseInterval - (creature.StatSheet.EffectiveRegen * (BaseInterval - MinInterval) / MaxRegenStat);
+        
+        var regenFactor = Math.Pow(creature.StatSheet.EffectiveRegen / (double)MaxRegenStat, 0.6);
+        var interval = (int)Math.Round(BaseInterval - (regenFactor * (BaseInterval - MinInterval)));
+    
         return Math.Max(interval, MinInterval);
     }
 

@@ -35,9 +35,9 @@ public class DefaultExperienceFormula : IExperienceFormula
         => group.Count switch
         {
             1 => 0,
-            2 => 0.10m,
-            3 => 0.20m,
-            4 => 0.35m,
+            2 => 0.15m,
+            3 => 0.25m,
+            4 => 0.40m,
             5 => 0.50m,
             6 => 0.60m,
             7 => 0.75m,

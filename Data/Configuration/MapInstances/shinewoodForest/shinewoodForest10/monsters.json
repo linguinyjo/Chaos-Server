@@ -5,9 +5,9 @@
     "intervalSecs": 420,
     "intervalVariancePct": 5,
     "extraLootTableKeys": [],
-    "maxAmount": 50,
-    "maxPerSpawn": 50,
-    "monsterTemplateKey": "sw5Bee"
+    "maxAmount": 12,
+    "maxPerSpawn": 12,
+    "monsterTemplateKey": "sw7Viper"
   },
   {
     "blackList": [],
@@ -15,9 +15,9 @@
     "intervalSecs": 420,
     "intervalVariancePct": 5,
     "extraLootTableKeys": [],
-    "maxAmount": 35,
-    "maxPerSpawn": 40,
-    "monsterTemplateKey": "sw5Mantis"
+    "maxAmount": 8,
+    "maxPerSpawn": 8,
+    "monsterTemplateKey": "sw7Mantis"
   },
   {
     "blackList": [],
@@ -25,8 +25,8 @@
     "intervalSecs": 420,
     "intervalVariancePct": 5,
     "extraLootTableKeys": [],
-    "maxAmount": 50,
-    "maxPerSpawn": 40,
-    "monsterTemplateKey": "sw5Viper"
+    "maxAmount": 8,
+    "maxPerSpawn": 8,
+    "monsterTemplateKey": "sw7Centipede"
   }
 ]

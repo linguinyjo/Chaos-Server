@@ -154,5 +154,37 @@
         },
         "shouldBlockPathfinding": true,
         "source": "(45, 0)"
+    },
+
+    
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest7:(1, 34)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(99, 22)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest7:(1, 35)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(99, 23)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest7:(1, 36)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(99, 24)"
     }
 ]

@@ -1,0 +1,9 @@
+{
+  "key": "sw7Vipers",
+  "lootDrops": [
+    {
+      "dropChance": 0.15,
+      "itemTemplateKey": "centepedeGland"
+    }
+  ]
+}

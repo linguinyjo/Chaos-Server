@@ -2,31 +2,31 @@
   {
     "blackList": [],
     "extraScriptKeys": [],
-    "intervalSecs": 420,
+    "intervalSecs": 600,
     "intervalVariancePct": 5,
     "extraLootTableKeys": [],
-    "maxAmount": 50,
-    "maxPerSpawn": 50,
-    "monsterTemplateKey": "sw5Bee"
+    "maxAmount": 10,
+    "maxPerSpawn": 10,
+    "monsterTemplateKey": "karl1Glupe"
   },
   {
     "blackList": [],
     "extraScriptKeys": [],
-    "intervalSecs": 420,
+    "intervalSecs": 600,
     "intervalVariancePct": 5,
     "extraLootTableKeys": [],
-    "maxAmount": 35,
-    "maxPerSpawn": 40,
-    "monsterTemplateKey": "sw5Mantis"
+    "maxAmount": 8,
+    "maxPerSpawn": 8,
+    "monsterTemplateKey": "karl1Kraken"
   },
   {
     "blackList": [],
     "extraScriptKeys": [],
-    "intervalSecs": 420,
+    "intervalSecs": 600,
     "intervalVariancePct": 5,
     "extraLootTableKeys": [],
-    "maxAmount": 50,
-    "maxPerSpawn": 40,
-    "monsterTemplateKey": "sw5Viper"
+    "maxAmount": 8,
+    "maxPerSpawn": 8,
+    "monsterTemplateKey": "karl1Turtle"
   }
 ]

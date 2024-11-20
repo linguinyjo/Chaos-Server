@@ -1,0 +1,9 @@
+{
+  "key": "sw7Mantis",
+  "lootDrops": [
+    {
+      "dropChance": 0.25,
+      "itemTemplateKey": "mantisEye"
+    }
+  ]
+}

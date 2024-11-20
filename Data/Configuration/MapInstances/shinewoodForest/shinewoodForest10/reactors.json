@@ -1,0 +1,64 @@
+[
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest9:(26, 1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(28, 49)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest9:(27, 1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(29, 49)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest9:(28, 1)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(30, 49)"
+    },
+
+
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest11:(37, 98)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(45, 0)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest11:(38, 98)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(46, 0)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "shinewoodForest11:(39, 98)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(47, 0)"
+    }
+]

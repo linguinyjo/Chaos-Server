@@ -22,6 +22,7 @@ public class GrimlockAllianceQuestScript: DialogScriptBase
     /// <inheritdoc />
     public override void OnDisplaying(Aisling source)
     {
+        if (source.StatSheet.Level >= 50) return;
         var questStatus = GrimlockAllianceQuestHelper.GetQuestStatus(source);
         switch (questStatus)
         {

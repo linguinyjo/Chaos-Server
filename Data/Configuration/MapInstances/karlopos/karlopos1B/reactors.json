@@ -1,0 +1,44 @@
+[
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "karloposIsland:(1, 32)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(49, 18)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "karloposIsland:(1, 33)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(49, 19)"
+  },
+
+
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "karlopos1A:(48, 13)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(0, 10)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "karlopos1A:(48, 14)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(0, 11)"
+  }
+]

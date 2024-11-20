@@ -18,5 +18,28 @@
     },
     "shouldBlockPathfinding": true,
     "source": "(42, 42)"
+  },
+  
+  
+  
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "karlopos1B:(48, 18)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(0, 32)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "karlopos1B:(48, 19)"
+      }
+    },
+    "shouldBlockPathfinding": false,
+    "source": "(0, 33)"
   }
 ]

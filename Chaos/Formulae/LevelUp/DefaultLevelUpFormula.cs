@@ -38,10 +38,10 @@ public class DefaultLevelUpFormula : ILevelUpFormula
         var level = aisling.UserStatSheet.Level;
         double divisionFactor = level switch
         {
-            >= 1 and <= 50 => 6,
-            >= 51 and <= 71 => 5,
-            >= 72 and <= 96 => 4,
-            >= 97 and <= 99 => 3,
+            >= 1 and <= 20 => 6,
+            >= 21 and <= 30 => 5,
+            >= 31 and <= 40 => 4.5,
+            >= 41 and <= 99 => 4,
             _ => 1
         };
         return Convert.ToInt32((Math.Pow(level, 2.5) * 200) / divisionFactor);    

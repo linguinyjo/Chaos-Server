@@ -1,0 +1,13 @@
+{
+  "key": "sw7Vipers",
+  "lootDrops": [
+    {
+      "dropChance": 0.10,
+      "itemTemplateKey": "vipersGland"
+    },
+    {
+      "dropChance": 0.20,
+      "itemTemplateKey": "vipersEgg"
+    }
+  ]
+}

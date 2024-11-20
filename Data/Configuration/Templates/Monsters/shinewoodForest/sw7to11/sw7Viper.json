@@ -1,0 +1,31 @@
+{
+    "assailIntervalMs": 1500,
+    "expReward": 3320,
+    "moveIntervalMs": 1500,
+    "aggroRange": 14,
+    "name": "Viper",
+    "lootTableKeys": ["sw7Vipers"],
+    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptVars": {},
+    "skillIntervalMs": 1500,
+    "skillTemplateKeys": ["Assail"],
+    "spellIntervalMs": 15000,
+    "spellTemplateKeys": ["sal", "athar", "creag", "srad", "cradh"],
+    "sprite": 270,
+    "statSheet": {
+        "level": 45,
+        "ac": 21,
+        "maximumHp": 5800,
+        "maximumMp": 4000,
+        "physicalAttack": 98,
+        "magicAttack": 120,
+        "con": 18,
+        "dex": 24,
+        "int": 38,
+        "str": 43,
+        "wis": 20
+    },
+    "templateKey": "sw7Viper",
+    "type": "Normal",
+    "wanderIntervalMs": 2000
+}
