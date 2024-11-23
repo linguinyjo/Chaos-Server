@@ -1,0 +1,18 @@
+{
+  "itemsForSale": [],
+  "itemsToBuy": [],
+  "name": "Aurel",
+  "scriptKeys": [
+    "showdialog",
+    "defaultBehaviors"
+  ],
+  "scriptVars": {
+    "showdialog": {
+      "dialogKey": ""
+    }
+  },
+  "skillsToTeach": [],
+  "spellsToTeach": [],
+  "sprite": 43,
+  "templateKey": "aurel"
+}

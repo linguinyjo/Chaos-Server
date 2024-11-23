@@ -1,0 +1,22 @@
+[
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "tagorVillage:(17, 45)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(11, 9)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "tagorVillage:(17, 45)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(11, 8)"
+  }
+]

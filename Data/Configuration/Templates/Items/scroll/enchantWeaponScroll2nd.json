@@ -7,7 +7,7 @@
   "sellValue": 500,
   "weight": 1,
   "description": "A magical scroll for enchanting weapons of the second circle",
-  "name": "Enchant Weapon Scroll (2nd)",
+  "name": "Enchant Weapon Scroll",
   "panelSprite": 3298,
   "levelCircle": 2,
   "scriptKeys": [

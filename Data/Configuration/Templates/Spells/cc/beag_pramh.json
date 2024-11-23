@@ -18,6 +18,7 @@
   "description": "",
   "level": 11,
   "name": "beag pramh",
+  "spellCategory": "Debuff",
   "panelSprite": 90,
   "scriptKeys": [
     "applyEffect"

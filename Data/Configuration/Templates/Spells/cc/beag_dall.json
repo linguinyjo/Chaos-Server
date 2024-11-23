@@ -18,6 +18,7 @@
   "description": "",
   "level": 11,
   "name": "beag dall",
+  "spellCategory": "Debuff",
   "panelSprite": 3,
   "scriptKeys": [
     "applyEffect"

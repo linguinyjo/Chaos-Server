@@ -2,13 +2,13 @@
   {
     "blackList": [],
     "extraScriptKeys": [],
-    "intervalSecs": 30,
-    "intervalVariancePct": 50,
+    "intervalSecs": 20,
+    "intervalVariancePct": 0,
     "extraLootTableKeys": [
       
     ],
-    "maxAmount": 10,
-    "maxPerSpawn": 10,
-    "monsterTemplateKey": "testMonster"
+    "maxAmount": 1,
+    "maxPerSpawn": 1,
+    "monsterTemplateKey": "crypt9Mimic"
   }
 ]

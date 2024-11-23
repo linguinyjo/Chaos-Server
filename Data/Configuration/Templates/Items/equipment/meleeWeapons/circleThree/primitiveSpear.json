@@ -1,0 +1,28 @@
+{
+    "buyCost": 400000,
+    "category": "Sword",
+    "color": "Default",
+    "displaySprite": 83,
+    "equipmentType": "Weapon",
+    "gender": "Unisex",
+    "isModifiable": true,
+    "maxDurability": 30000,
+    "maxStacks": 1,
+    "level": 41,
+    "levelCircle": 3,
+    "class": "warrior",
+    "modifiers": {
+        "physicalAttack": 116,
+        "maximumMp": -1500
+    },
+    "sellValue": 200000,
+    "weight": 11,
+    "description": "Class: Warrior\nLevel: 41\nP.Atk 116",
+    "name": "Primitive Spear",
+    "panelSprite": 1095,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "primitiveSpear"
+}

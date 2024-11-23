@@ -1,0 +1,28 @@
+{
+    "buyCost": 600000,
+    "category": "Sword",
+    "color": "Default",
+    "displaySprite": 15,
+    "equipmentType": "Weapon",
+    "gender": "Unisex",
+    "isModifiable": true,
+    "maxDurability": 30000,
+    "maxStacks": 1,
+    "level": 41,
+    "levelCircle": 3,
+    "class": "warrior",
+    "modifiers": {
+        "physicalAttack": 142,
+        "maximumMp": -2000
+    },
+    "sellValue": 300000,
+    "weight": 18,
+    "description": "Class: Warrior\nLevel: 41\nP.Atk 142",
+    "name": "Long Sword",
+    "panelSprite": 174,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "longSword"
+}

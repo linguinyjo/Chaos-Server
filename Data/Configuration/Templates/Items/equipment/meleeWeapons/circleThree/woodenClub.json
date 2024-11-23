@@ -1,0 +1,28 @@
+{
+    "buyCost": 500000,
+    "category": "Sword",
+    "color": "Default",
+    "displaySprite": 34,
+    "equipmentType": "Weapon",
+    "gender": "Unisex",
+    "isModifiable": true,
+    "maxDurability": 30000,
+    "maxStacks": 1,
+    "level": 41,
+    "levelCircle": 3,
+    "class": "warrior",
+    "modifiers": {
+        "physicalAttack": 130,
+        "maximumMp": -1500
+    },
+    "sellValue": 250000,
+    "weight": 13,
+    "description": "Class: Warrior\nLevel: 41\nP.Atk 130",
+    "name": "Wooden Club",
+    "panelSprite": 506,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "woodenClub"
+}

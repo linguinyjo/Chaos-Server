@@ -1,0 +1,28 @@
+{
+    "buyCost": 250000,
+    "category": "Sword",
+    "color": "Default",
+    "displaySprite": 14,
+    "equipmentType": "Weapon",
+    "gender": "Unisex",
+    "isModifiable": true,
+    "maxDurability": 30000,
+    "maxStacks": 1,
+    "level": 41,
+    "levelCircle": 3,
+    "class": "warrior",
+    "modifiers": {
+        "physicalAttack": 80,
+        "maximumMp": -1500
+    },
+    "sellValue": 125000,
+    "weight": 14,
+    "description": "Class: Warrior\nLevel: 41\nP.Atk 80",
+    "name": "Bramble",
+    "panelSprite": 173,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "bramble"
+}

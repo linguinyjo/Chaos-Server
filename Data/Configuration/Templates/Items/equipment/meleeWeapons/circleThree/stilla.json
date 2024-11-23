@@ -1,0 +1,28 @@
+{
+    "buyCost": 700000,
+    "category": "Sword",
+    "color": "Default",
+    "displaySprite": 17,
+    "equipmentType": "Weapon",
+    "gender": "Unisex",
+    "isModifiable": true,
+    "maxDurability": 30000,
+    "maxStacks": 1,
+    "level": 41,
+    "levelCircle": 3,
+    "class": "warrior",
+    "modifiers": {
+        "physicalAttack": 160,
+        "maximumMp": -2000
+    },
+    "sellValue": 350000,
+    "weight": 18,
+    "description": "Class: Warrior\nLevel: 41\nP.Atk 160",
+    "name": "Stilla",
+    "panelSprite": 176,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "stilla"
+}

@@ -1,0 +1,28 @@
+{
+    "buyCost": 450000,
+    "category": "Sword",
+    "color": "Default",
+    "displaySprite": 13,
+    "equipmentType": "Weapon",
+    "gender": "Unisex",
+    "isModifiable": true,
+    "maxDurability": 30000,
+    "maxStacks": 1,
+    "level": 41,
+    "levelCircle": 3,
+    "class": "warrior",
+    "modifiers": {
+        "physicalAttack": 96,
+        "maximumMp": -1500
+    },
+    "sellValue": 75000,
+    "weight": 18,
+    "description": "Class: Warrior\nLevel: 41\nP.Atk 96",
+    "name": "Black Death",
+    "panelSprite": 172,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "blackDeath"
+}

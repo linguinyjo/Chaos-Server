@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "scribe_shops",
+      "optionText": "Shops"
+    },
+    {
+      "dialogKey": "scribe_trainer",
+      "optionText": "Trainers"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "scribe_tell_me_more",
+  "text": "Certainly, what would you like more information about?",
+  "type": "Menu"
+}

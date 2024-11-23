@@ -6,19 +6,19 @@
             "itemTemplateKey": "enchantWeaponScroll2nd"
         },
         {
-            "dropChance": 0.008,
+            "dropChance": 0.007,
             "itemTemplateKey": "reinforcedLeatherGreaves"
         },
         {
-            "dropChance": 0.008,
+            "dropChance": 0.007,
             "itemTemplateKey": "pearlChainNecklace"
         },
         {
-            "dropChance": 0.006,
+            "dropChance": 0.004,
             "itemTemplateKey": "holyKronos"
         },
         {
-            "dropChance": 0.006,
+            "dropChance": 0.004,
             "itemTemplateKey": "magusKronos"
         }
     ]

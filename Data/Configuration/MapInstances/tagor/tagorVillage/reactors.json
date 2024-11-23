@@ -1,0 +1,107 @@
+[
+  {
+    "scriptKeys": ["showWorldMap"],
+    "scriptVars": {
+      "showWorldMap": {
+        "worldMapKey": "field003"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(21, 99)"
+  },    
+  {
+  "scriptKeys": ["showWorldMap"],
+  "scriptVars": {
+    "showWorldMap": {
+      "worldMapKey": "field003"
+    }
+  },
+  "shouldBlockPathfinding": true,
+    "source": "(22, 99)"
+  },    
+  {
+    "scriptKeys": ["showWorldMap"],
+    "scriptVars": {
+      "showWorldMap": {
+        "worldMapKey": "field003"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(23, 99)"
+  },
+
+
+
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "tagorInn:(6, 12)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(40, 50)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "tagorStorage:(7, 12)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(11, 32)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "tagorMagicShop:(6, 13)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(31, 38)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "tagorMagicShop:(7, 13)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(32, 38)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "tagorChurch:(8, 23)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(65, 29)"
+  },
+
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "warriorFoyer:(6, 11)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(64, 76)"
+  },
+
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "tagorTailor:(10, 9)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(16, 45)"
+  }
+]

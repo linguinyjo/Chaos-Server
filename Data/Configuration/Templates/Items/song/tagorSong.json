@@ -1,0 +1,21 @@
+{
+  "buyCost": 500,
+  "category": "misc",
+  "color": "Default",
+  "isModifiable": false,
+  "maxStacks": 25,
+  "sellValue": 250,
+  "weight": 1,
+  "description": "Ports to Tagor",
+  "name": "Tagor Song",
+  "panelSprite": 3,
+  "scriptKeys": [
+    "song"
+  ],
+  "scriptVars": {
+    "song": {
+      "destination": "tagorInn:(5, 10)"
+    }
+  },
+  "templateKey": "tagorSong"
+}

@@ -10,12 +10,16 @@
             "itemTemplateKey": "mythrilBelt"
         },
         {
-            "dropChance": 0.009,
+            "dropChance": 0.007,
             "itemTemplateKey": "shagreenBoots"
         },
         {
-            "dropChance": 0.008,
+            "dropChance": 0.007,
             "itemTemplateKey": "bronzeShield"
+        },
+        {
+            "dropChance": 0.003,
+            "itemTemplateKey": "hatchet"
         }
     ]
 }

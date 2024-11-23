@@ -18,7 +18,7 @@
         }
     ],
     "itemsToBuy": ["woodenShield", "stick", "dirk", "eppe", "louresSabre", "claidheamh", "broadSword","battleSword", 
-        "masquerade","templar"],
+        "masquerade","templar", "blackDeath", "bramble", "primitiveSpear", "woodenClub", "stilla", "longSword"],
     "name": "Callough",
     "restockIntervalHrs": 1,
     "restockPCt": 100,

@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 4120,
+    "expReward": 4620,
     "moveIntervalMs": 1200,
     "aggroRange": 14,
     "name": "Turtle",

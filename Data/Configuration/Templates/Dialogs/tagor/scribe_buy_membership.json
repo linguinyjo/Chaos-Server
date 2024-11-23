@@ -1,0 +1,25 @@
+{
+  "options": [
+    {
+      "dialogKey": "scribe_tell_me_more",
+      "optionText": "1 Day for 50000"
+    },
+    {
+      "dialogKey": "scribe_buy_membership",
+      "optionText": "1 week for 100000"
+    },
+    {
+      "dialogKey": "scribe_buy_membership",
+      "optionText": "1 month for 150000"
+    },
+    {
+      "dialogKey": "top",
+      "optionText": "Nevermind"
+    }
+  ],
+  "scriptKeys": ["scribe"],
+  "scriptVars": {},
+  "templateKey": "scribe_buy_membership",
+  "text": "What kind of membership plan would you like to purchase?",
+  "type": "Menu"
+}

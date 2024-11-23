@@ -18,7 +18,7 @@
         "prerequisiteSkills": [],
         "prerequisiteSpells": []
     },
-    "description": "A third assail.",
+    "description": "A third assail",
     "level": 21,
     "levelsUp": true,
     "name": "Clobber",

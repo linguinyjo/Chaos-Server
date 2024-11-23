@@ -26,7 +26,7 @@ public class RelationshipBehavior
             {
                 Aisling other  => IsFriendlyTo(monster, other),
                 Merchant other => IsFriendlyTo(monster, other),
-                Monster other  => IsFriendlyTo(monster, other),
+                Monster other  => IsFriendlyTo(monster, other), //TODO to allow enchant change this
                 _              => throw new ArgumentOutOfRangeException(nameof(target))
             },
             _ => throw new ArgumentOutOfRangeException(nameof(source))
@@ -86,7 +86,7 @@ public class RelationshipBehavior
             },
             Monster monster => target switch
             {
-                Aisling other  => IsHostileTo(monster, other),
+                Aisling other  => IsHostileTo(monster, other),  //TODO to allow enchant change this
                 Merchant other => IsHostileTo(monster, other),
                 Monster other  => IsHostileTo(monster, other),
                 _              => throw new ArgumentOutOfRangeException(nameof(target))

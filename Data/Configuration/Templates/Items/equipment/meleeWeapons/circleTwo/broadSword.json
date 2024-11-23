@@ -17,7 +17,7 @@
     },
     "sellValue": 17500,
     "weight": 9,
-    "description": "Class: All\nLevel: 1\nP.Atk 40",
+    "description": "Class: warrior\nLevel: 11\nP.Atk 40",
     "name": "Broad Sword",
     "panelSprite": 90,
     "scriptKeys": ["Equipment"],

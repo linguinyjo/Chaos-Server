@@ -1,8 +1,6 @@
 [
   {
-    "scriptKeys": [
-      "warp"
-    ],
+    "scriptKeys": ["warp"],
     "scriptVars": {
       "warp": {
         "destination": "test2:(51, 50)"

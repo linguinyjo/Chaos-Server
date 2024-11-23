@@ -1,0 +1,50 @@
+{
+    "itemsForSale": [
+        {
+            "itemTemplateKey": "cowl",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "galuchatCoat",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "gorgetGown",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "mysticGown",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "dobok",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "earthBodice",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "culotte",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "lotusBodice",
+            "stock": 100
+        }
+    ],
+    "itemsToBuy": ["cowl", "galuchatCoat", "dobok", "earthBodice","gorgetGown","mysticGown","lotusBodice", "culotte"],
+    "name": "Brady",
+    "restockIntervalHrs": 1,
+    "restockPCt": 100,
+    "scriptKeys": ["showdialog", "verbalShop", "defaultBehaviors"],
+    "scriptVars": {
+        "showdialog": {
+            "dialogKey": "shop_tester_initial"
+        }
+    },
+    "skillsToTeach": [],
+    "spellsToTeach": [],
+    "sprite": 56,
+    "templateKey": "brady"
+}

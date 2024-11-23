@@ -4,5 +4,6 @@
     "name": "Pravat Prole Ground",
     "scriptKeys": [],
     "templateKey": "3054",
-    "autoDayNightCycle": true
+    "autoDayNightCycle": true,
+    "MinimumLevel": 21
 }

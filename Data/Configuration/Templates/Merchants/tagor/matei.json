@@ -1,0 +1,31 @@
+{
+  "itemsForSale": [
+    {
+      "itemTemplateKey": "beagIocDeum",
+      "stock": 999
+    },
+    {
+      "itemTemplateKey": "beagSpioradDeum",
+      "stock": 999
+    },
+    {
+      "itemTemplateKey": "Komadium",
+      "stock": 999
+    }
+  ],
+  "itemsToBuy": [],
+  "name": "Matei",
+  "scriptKeys": [
+    "showdialog",
+    "defaultBehaviors"
+  ],
+  "scriptVars": {
+    "showdialog": {
+      "dialogKey": "cian_initial"
+    }
+  },
+  "skillsToTeach": [],
+  "spellsToTeach": [],
+  "sprite": 35,
+  "templateKey": "matei"
+}

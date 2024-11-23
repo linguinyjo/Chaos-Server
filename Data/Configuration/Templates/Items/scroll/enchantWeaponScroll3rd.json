@@ -1,0 +1,22 @@
+{
+  "buyCost": 100,
+  "category": "misc",
+  "color": "Default",
+  "isModifiable": false,
+  "maxStacks": 1,
+  "sellValue": 500,
+  "weight": 1,
+  "description": "A magical scroll for enchanting weapons of the third circle",
+  "name": "Enchant Weapon Scroll",
+  "panelSprite": 3299,
+  "levelCircle": 3,
+  "scriptKeys": [
+    "enchant"
+  ],
+  "scriptVars": {
+    "enchant": {
+      "filter": "selfOnly, aliveOnly"
+    }
+  },
+  "templateKey": "enchantWeaponScroll3rd"
+}

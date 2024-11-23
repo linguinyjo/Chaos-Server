@@ -14,11 +14,11 @@
             "itemTemplateKey": "pearlChainNecklace"
         },
         {
-            "dropChance": 0.006,
+            "dropChance": 0.004,
             "itemTemplateKey": "holyKronos"
         },
         {
-            "dropChance": 0.006,
+            "dropChance": 0.004,
             "itemTemplateKey": "magusKronos"
         }
     ]

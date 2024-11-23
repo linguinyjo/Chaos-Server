@@ -1,0 +1,15 @@
+{
+  "buyCost": 2750,
+  "category": "monster",
+  "color": "Default",
+  "isModifiable": false,
+  "maxStacks": 1,
+  "sellValue": 1375,
+  "weight": 1,
+  "description": "",
+  "name": "Crab's Shell",
+  "panelSprite": 319,
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "crabShell"
+}

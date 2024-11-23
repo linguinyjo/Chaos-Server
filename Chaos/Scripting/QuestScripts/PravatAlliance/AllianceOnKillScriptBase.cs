@@ -69,7 +69,7 @@ public abstract class AllianceKillScriptBase : MonsterScriptBase
 
         // 10% chance of giving the item to the player 
         var random = new Random();
-        if (random.Next(0, 100) >= 90) return;
+        if (random.Next(0, 100) >= 10) return;
 
         // Prevent exceeding 10 gemstones
         if (aisling.Inventory.HasCountByTemplateKey("redGemstone", 10)) return;

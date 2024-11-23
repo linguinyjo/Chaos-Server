@@ -7,6 +7,8 @@ using Chaos.Scripting.Abstractions;
 using Chaos.Scripting.Components.Abstractions;
 using Chaos.Scripting.Components.Execution;
 using Chaos.Scripting.FunctionalScripts.Abstractions;
+using Chaos.Scripting.MonsterScripts;
+using Chaos.Scripting.MonsterScripts.Abstractions;
 
 namespace Chaos.Scripting.Components.AbilityComponents;
 
@@ -52,7 +54,6 @@ public struct DamageAbilityComponent : IComponent
             
             // TODO this probably belongs in its own functional script
             ApplyDurabilityLoss(target);
-
             if (sleepEffect != null) target.Effects.Dispel(sleepEffect);
         }
     }

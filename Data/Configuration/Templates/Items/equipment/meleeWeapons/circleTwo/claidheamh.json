@@ -17,7 +17,7 @@
     "sellValue": 7500,
     "class": "warrior",
     "weight": 8,
-    "description": "Class: All\nLevel: 1\nP.Atk 32",
+    "description": "Class: warrior\nLevel: 11\nP.Atk 32",
     "name": "claidheamh",
     "panelSprite": 89,
     "scriptKeys": ["Equipment"],

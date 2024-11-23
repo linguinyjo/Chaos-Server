@@ -1,0 +1,28 @@
+{
+  "itemsForSale": [
+    {
+      "itemTemplateKey": "bramble",
+      "stock": 100
+    },
+    {
+      "itemTemplateKey": "blackDeath",
+      "stock": 100
+    }
+  ],
+  "itemsToBuy": ["woodenShield", "stick", "dirk", "eppe", "louresSabre", "claidheamh", "broadSword","battleSword",
+    "masquerade","templar", "blackDeath", "bramble", "primitiveSpear", "woodenClub", "stilla", "longSword"],
+  "name": "Shay",
+  "scriptKeys": [
+    "showdialog",
+    "defaultBehaviors"
+  ],
+  "scriptVars": {
+    "showdialog": {
+      "dialogKey": "generic_smith_shop_initial"
+    }
+  },
+  "skillsToTeach": [],
+  "spellsToTeach": [],
+  "sprite": 249,
+  "templateKey": "shay"
+}

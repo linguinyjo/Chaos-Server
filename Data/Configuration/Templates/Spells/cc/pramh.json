@@ -18,6 +18,7 @@
   "description": "",
   "level": 41,
   "name": "pramh",
+  "spellCategory": "Debuff",
   "panelSprite": 90,
   "scriptKeys": [
     "applyEffect"

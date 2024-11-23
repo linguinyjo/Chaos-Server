@@ -6,7 +6,7 @@
         "destination": "karloposIsland:(1, 32)"
       }
     },
-    "shouldBlockPathfinding": false,
+    "shouldBlockPathfinding": true,
     "source": "(49, 18)"
   },
   {
@@ -16,7 +16,7 @@
         "destination": "karloposIsland:(1, 33)"
       }
     },
-    "shouldBlockPathfinding": false,
+    "shouldBlockPathfinding": true,
     "source": "(49, 19)"
   },
 
@@ -28,7 +28,7 @@
         "destination": "karlopos1A:(48, 13)"
       }
     },
-    "shouldBlockPathfinding": false,
+    "shouldBlockPathfinding": true,
     "source": "(0, 10)"
   },
   {
@@ -38,7 +38,7 @@
         "destination": "karlopos1A:(48, 14)"
       }
     },
-    "shouldBlockPathfinding": false,
+    "shouldBlockPathfinding": true,
     "source": "(0, 11)"
   }
 ]

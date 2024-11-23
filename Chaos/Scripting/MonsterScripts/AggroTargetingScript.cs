@@ -82,6 +82,7 @@ public class AggroTargetingScript : MonsterScriptBase
         //if blind, we can only target things within 1 space
         var range = isBlind ? 1 : AggroRange;
 
+        //TODO to allow enchant change this to monster from Aisling
         //if we failed to get a target via aggroList, grab the closest aisling within aggro range
         Target ??= Map.GetEntitiesWithinRange<Aisling>(Subject, range)
                       .ThatAreVisibleTo(Subject)

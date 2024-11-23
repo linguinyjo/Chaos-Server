@@ -1,0 +1,15 @@
+{
+  "itemsForSale": [],
+  "itemsToBuy": [],
+  "name": "Colan",
+  "scriptKeys": ["showdialog", "defaultBehaviors"],
+  "scriptVars": {
+    "showdialog": {
+      "dialogKey": ""
+    }
+  },
+  "skillsToTeach": ["powerStrike"],
+  "spellsToTeach": [],
+  "sprite": 93,
+  "templateKey": "colan"
+}

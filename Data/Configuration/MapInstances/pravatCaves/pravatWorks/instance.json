@@ -4,5 +4,6 @@
     "name": "Pravat Works",
     "scriptKeys": [],
     "templateKey": "3057",
-    "autoDayNightCycle": true
+    "autoDayNightCycle": true,
+    "MinimumLevel": 21
 }

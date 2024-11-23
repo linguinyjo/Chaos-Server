@@ -15,7 +15,7 @@
   },
   "spellType": "Targeted",
   "class": "Priest",
-  "description": "Applies a small heal effect to your target.",
+  "description": "Cure up to beag cradh",
   "level": 1,
   "name": "ao beag cradh",
   "panelSprite": 23,

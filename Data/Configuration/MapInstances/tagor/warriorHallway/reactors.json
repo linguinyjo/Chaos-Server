@@ -1,0 +1,66 @@
+[
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "warriorHallway2:(2, 3)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(6, 3)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "warriorHallway2:(2, 4)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(6, 4)"
+  },
+
+
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "warriorTrainingBarrack:(2, 5)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(6, 10)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "warriorTrainingBarrack:(2, 5)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(6, 11)"
+  },
+
+
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "warriorFoyer:(8, 2)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(3, 15)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "warriorFoyer:(8, 2)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(4, 15)"
+  }
+]

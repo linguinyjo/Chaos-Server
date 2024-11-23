@@ -36,6 +36,7 @@ public class DefaultLevelUpFormula : ILevelUpFormula
     public virtual int CalculateTnl(Aisling aisling)
     {
         var level = aisling.UserStatSheet.Level;
+        return 1;
         double divisionFactor = level switch
         {
             >= 1 and <= 20 => 6,

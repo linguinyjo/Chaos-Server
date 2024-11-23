@@ -1,0 +1,46 @@
+{
+    "isAssail": true,
+    "learningRequirements": {
+        "itemRequirements": [
+            {
+                "amountRequired": 1,
+                "itemTemplateKey": "bramble"
+            }
+        ],
+        "requiredGold": 100000,
+        "requiredStats": {
+            "con": 32,
+            "dex": 12,
+            "int": 3,
+            "str": 48,
+            "wis": 3
+        },
+        "prerequisiteSkills": [],
+        "prerequisiteSpells": []
+    },
+    "description": "A fourth assail",
+    "level": 41,
+    "levelsUp": true,
+    "name": "Wallop",
+    "class": "warrior",
+    "panelSprite": 0,
+    "scriptKeys": ["damage", "levelup"],
+    "scriptVars": {
+        "damage": {
+            "bodyAnimation": "assail",
+            "damageStat": "str",
+            "range": 1,
+            "shape": "front",
+            "excludeSourcePoint": true,
+            "damageStatMultiplier": 0.50,
+            "baseDamage": 3,
+            "PAtkMultiplier": -80,
+            "filter": "hostileOnly, aliveOnly, othersOnly"
+        },
+        "levelUp": {
+            "rate": "medium",
+            "filter": "hostileOnly, aliveOnly, othersOnly"
+        }
+    },
+    "templateKey": "wallop"
+}

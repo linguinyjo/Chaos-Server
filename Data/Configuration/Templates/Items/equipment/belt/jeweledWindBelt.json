@@ -1,0 +1,30 @@
+{
+    "buyCost": 75000,
+    "category": "Belt",
+    "color": "Forest",
+    "displaySprite": 244,
+    "equipmentType": "Belt",
+    "gender": "Unisex",
+    "isModifiable": false,
+    "maxDurability": 10000,
+    "maxStacks": 1,
+    "modifiers": {},
+    "level": 41,
+    "levelCircle": 3,
+    "sellValue": 37500,
+    "weight": 1,
+    "description": "Class: All\nLevel: 41\nWind defense",
+    "name": "Jeweled Wind Belt",
+    "panelSprite": 244,
+    "scriptKeys": ["Equipment", "setelement"],
+    "scriptVars": {
+        "equipment": {
+            "wis": 1,
+            "con": 1
+        },
+        "setelement": {
+            "defenseElement": "wind"
+        }
+    },
+    "templateKey": "jeweledWindBelt"
+}

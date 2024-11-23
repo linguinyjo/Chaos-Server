@@ -48,13 +48,14 @@ public class DefaultExperienceFormula : IExperienceFormula
     // ReSharper disable once ParameterTypeCanBeEnumerable.Global
     protected virtual decimal GetMonsterLevelDifferenceDeductions(ICollection<Aisling> group, Monster monster)
     {
+        // Dont apply any deductions to monster level 80+
+        if (monster.StatSheet.Level > 80) return 0;
         var highestPlayerLevel = group.Max(p => p.StatSheet.Level);
         var monsterLevel = monster.StatSheet.Level;
         var levelDifference = highestPlayerLevel - monsterLevel;
 
-        if (levelDifference <= 0)
-            // If highest level player is a lower level than the moster dont apply any deductions
-            return 0;
+        // If highest level player is a lower level than the moster dont apply any deductions
+        if (levelDifference <= 0) return 0;
         
         switch (levelDifference)
         {

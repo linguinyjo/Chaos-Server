@@ -6,7 +6,7 @@
         "destination": "karlopos1B:(1, 10)"
       }
     },
-    "shouldBlockPathfinding": false,
+    "shouldBlockPathfinding": true,
     "source": "(49, 13)"
   },
   {
@@ -16,7 +16,7 @@
         "destination": "karlopos1B:(1, 11)"
       }
     },
-    "shouldBlockPathfinding": false,
+    "shouldBlockPathfinding": true,
     "source": "(49, 14)"
   }
 ]

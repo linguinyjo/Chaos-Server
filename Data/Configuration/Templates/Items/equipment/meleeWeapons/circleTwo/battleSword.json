@@ -17,7 +17,7 @@
     },
     "sellValue": 25000,
     "weight": 10,
-    "description": "Class: All\nLevel: 1\nP.Atk 48",
+    "description": "Class: warrior\nLevel: 11\nP.Atk 48",
     "name": "Battle Sword",
     "panelSprite": 171,
     "scriptKeys": ["Equipment"],

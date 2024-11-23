@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "scribe_tell_me_more",
+      "optionText": "Tell me more about this place"
+    },
+    {
+      "dialogKey": "scribe_buy_membership",
+      "optionText": "Buy membership"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "scribe_initial",
+  "text": "Welcome to the warrior training grounds, what can I do for you?",
+  "type": "Menu"
+}

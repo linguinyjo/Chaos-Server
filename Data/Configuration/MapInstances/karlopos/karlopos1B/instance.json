@@ -4,5 +4,7 @@
     "name": "karlopos 1B",
     "scriptKeys": [],
     "templateKey": "4722",
-    "autoDayNightCycle": true
+    "autoDayNightCycle": true,
+    "MinimumLevel": 41,
+    "MaximumLevel": 71
 }
