@@ -1,0 +1,28 @@
+{
+    "buyCost": 100000,
+    "category": "Gauntlet",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 1800,
+    "equipmentType": "Gauntlet",
+    "gender": "Unisex",
+    "maxDurability": 25000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -2,
+        "wis": 1
+    },
+    "class": "peasant",
+    "level": 41,
+    "levelCircle": 3,
+    "sellValue": 50000,
+    "weight": 3,
+    "description": "Class: All\nLevel: 41\nAc -2, Wis 1",
+    "name": "Iron Sapphire Gauntlet",
+    "panelSprite": 1800,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "ironSapphireGauntlet"
+}

@@ -1,0 +1,28 @@
+{
+    "buyCost": 150000,
+    "category": "Shield",
+    "color": "Forest",
+    "displaySprite": 2,
+    "equipmentType": "Shield",
+    "gender": "Unisex",
+    "isModifiable": true,
+    "maxDurability": 45000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -13,
+        "maximumMp": -1500,
+        "magicResistance": 10
+    },
+    "level": 41,
+    "levelCircle": 3,
+    "sellValue": 75000,
+    "weight": 10,
+    "description": "Class: All\nLevel: 41\nAc -13, MR 10%",
+    "name": "Mythril Shield",
+    "panelSprite": 93,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "mythrilShield"
+}

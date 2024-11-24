@@ -1,28 +1,28 @@
 {
-    "buyCost": 50000,
+    "buyCost": 100000,
     "category": "Shield",
     "color": "Forest",
-    "displaySprite": 6,
+    "displaySprite": 7,
     "equipmentType": "Shield",
     "gender": "Unisex",
     "isModifiable": true,
     "maxDurability": 45000,
     "maxStacks": 1,
     "modifiers": {
-        "ac": -8,
-        "maximumMp": -1250,
+        "ac": -10,
+        "maximumMp": -1500,
         "magicResistance": 10
     },
-    "level": 11,
-    "levelCircle": 2,
-    "sellValue": 25000,
-    "weight": 12,
-    "description": "Class: All\nLevel: 11\nAc -8, MR 10%",
-    "name": "Bronze Shield",
-    "panelSprite": 189,
+    "level": 41,
+    "levelCircle": 3,
+    "sellValue": 50000,
+    "weight": 17,
+    "description": "Class: All\nLevel: 41\nAc -10, MR 10%",
+    "name": "Iron Shield",
+    "panelSprite": 190,
     "scriptKeys": ["Equipment"],
     "scriptVars": {
         "equipment": {}
     },
-    "templateKey": "bronzeShield"
+    "templateKey": "ironShield"
 }

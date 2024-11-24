@@ -1,0 +1,29 @@
+{
+    "buyCost": 75000,
+    "category": "Greaves",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 250,
+    "equipmentType": "Greaves",
+    "gender": "Unisex",
+    "maxDurability": 20000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -4,
+        "maximumMp": -1000
+    },
+    "class": "peasant",
+    "pantsColor": "Black",
+    "level": 41,
+    "levelCircle": 3,
+    "sellValue": 37500,
+    "weight": 4,
+    "description": "Class: All\nLevel: 41\nAc -4",
+    "name": "Iron Greaves",
+    "panelSprite": 250,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "ironGreaves"
+}

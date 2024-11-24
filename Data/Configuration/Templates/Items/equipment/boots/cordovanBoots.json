@@ -1,0 +1,27 @@
+{
+    "buyCost": 75000,
+    "category": "Boots",
+    "color": "Brown",
+    "isDyable": true,
+    "displaySprite": 11,
+    "equipmentType": "Boots",
+    "gender": "Unisex",
+    "maxDurability": 10000,
+    "maxStacks": 1,
+    "modifiers": {
+        "dex": 3
+    },
+    "level": 41,
+    "levelCircle": 3,
+    "notMonk": true,
+    "sellValue": 37500,
+    "weight": 2,
+    "description": "Class: All except monk\nLevel: 41\nDex 3",
+    "name": "Cordovan Boots",
+    "panelSprite": 1780,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "CordovanBoots"
+}

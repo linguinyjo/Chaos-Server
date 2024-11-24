@@ -1,0 +1,32 @@
+{
+    "buyCost": 200000,
+    "category": "Staff",
+    "color": "Forest",
+    "displaySprite": 26,
+    "equipmentType": "Weapon",
+    "gender": "Unisex",
+    "isModifiable": true,
+    "maxDurability": 5000,
+    "maxStacks": 1,
+    "level": 41,
+    "levelCircle": 3,
+    "modifiers": {
+        "magicAttack": 146,
+        "wis": 2,
+        "maximumMp": 350,
+        "regen": 3
+    },
+    "sellValue": 100000,
+    "weight": 3,
+    "description": "Class: Priest, Wizard, Druid\nLevel: 41\nMagic Attack 146, Wis 2, Mana 350, Regen 3\nHealing spells -1 lines",
+    "name": "Holy Diana",
+    "panelSprite": 185,
+    "scriptKeys": ["Equipment", "EquipStaff"],
+    "scriptVars": {
+        "equipment": {},
+        "equipStaff": {
+            "spellCategory": "Heal"
+        }
+    },
+    "templateKey": "holyDiana"
+}

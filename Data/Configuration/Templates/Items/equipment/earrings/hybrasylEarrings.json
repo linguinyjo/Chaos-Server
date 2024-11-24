@@ -1,0 +1,28 @@
+{
+    "buyCost": 75000,
+    "category": "Earrings",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 1845,
+    "equipmentType": "Earrings",
+    "gender": "Unisex",
+    "maxDurability": 15000,
+    "maxStacks": 1,
+    "modifiers": {
+        "maximumHp": 300,
+        "maximumMp": 200
+    },
+    "level": 41,
+    "levelCircle": 3,
+    "pantsColor": "Black",
+    "sellValue": 37500,
+    "weight": 1,
+    "description": "Class: All\nLevel: 41\nHp 300, Mp 200",
+    "name": "Hy-brasy Earrings",
+    "panelSprite": 1845,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "hybrasyEarrings"
+}

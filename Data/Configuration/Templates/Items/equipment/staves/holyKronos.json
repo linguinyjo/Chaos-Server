@@ -17,7 +17,7 @@
     },
     "sellValue": 50000,
     "weight": 3,
-    "description": "Class: Priest, Wizard, Druid\nLevel: 11\nMagic Attack 42, Wis 2, Mana 250, Healing spells -1 lines",
+    "description": "Class: Priest, Wizard, Druid\nLevel: 11\nMagic Attack 72, Wis 2, Mana 250, Healing spells -1 lines",
     "name": "Holy Kronos",
     "panelSprite": 183,
     "scriptKeys": ["Equipment", "EquipStaff"],

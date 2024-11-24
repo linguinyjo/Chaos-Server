@@ -1,0 +1,29 @@
+{
+    "buyCost": 75000,
+    "category": "Gauntlet",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 249,
+    "equipmentType": "Gauntlet",
+    "gender": "Unisex",
+    "maxDurability": 250000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -2,
+        "maximumMp": -500
+    },
+    "class": "peasant",
+    "pantsColor": "Black",
+    "level": 41,
+    "levelCircle": 3,
+    "sellValue": 37500,
+    "weight": 3,
+    "description": "Class: All\nLevel: 41\nAc -2",
+    "name": "Iron Gauntlet",
+    "panelSprite": 249,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "ironGauntlet"
+}

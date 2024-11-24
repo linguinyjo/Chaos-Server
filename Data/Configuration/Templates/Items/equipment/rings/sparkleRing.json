@@ -1,0 +1,33 @@
+{
+    "buyCost": 150000,
+    "category": "Ring",
+    "color": "Default",
+    "isDyable": false,
+    "displaySprite": 1358,
+    "equipmentType": "Ring",
+    "gender": "Unisex",
+    "maxDurability": 5000,
+    "maxStacks": 1,
+    "modifiers": {
+        "maximumHp": 300,
+        "maximumMp": 150,
+        "str": 1,
+        "int": 1,
+        "wis": 1,
+        "con": 1,
+        "dex": 1
+    },
+    "class": "peasant",
+    "level": 41,
+    "levelCircle": 3,
+    "sellValue": 75000,
+    "weight": 1,
+    "description": "Class: All\nLevel: 41\nHp 300, Mp 150\n+1 to all stats",
+    "name": "Sparkle Ring",
+    "panelSprite": 1358,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "sparkleRing"
+}

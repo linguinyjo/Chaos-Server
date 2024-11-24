@@ -2,26 +2,26 @@
     "buyCost": 75000,
     "category": "Belt",
     "color": "Forest",
-    "displaySprite": 244,
+    "displaySprite": 1892,
     "equipmentType": "Belt",
     "gender": "Unisex",
     "isModifiable": false,
     "maxDurability": 10000,
     "maxStacks": 1,
-    "modifiers": {},
+    "modifiers": {
+        "wis": 1,
+        "con": 1
+    },
     "level": 41,
     "levelCircle": 3,
     "sellValue": 37500,
     "weight": 1,
     "description": "Class: All\nLevel: 41\nFire defense",
     "name": "Jeweled Fire Belt",
-    "panelSprite": 244,
+    "panelSprite": 1892,
     "scriptKeys": ["Equipment", "setelement"],
     "scriptVars": {
-        "equipment": {
-            "wis": 1,
-            "con": 1
-        },
+        "equipment": {},
         "setelement": {
             "defenseElement": "fire"
         }

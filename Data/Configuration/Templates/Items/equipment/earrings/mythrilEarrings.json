@@ -1,0 +1,28 @@
+{
+    "buyCost": 75000,
+    "category": "Earrings",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 1846,
+    "equipmentType": "Earrings",
+    "gender": "Unisex",
+    "maxDurability": 15000,
+    "maxStacks": 1,
+    "modifiers": {
+        "maximumHp": 200,
+        "maximumMp": 300
+    },
+    "level": 41,
+    "levelCircle": 3,
+    "pantsColor": "Black",
+    "sellValue": 37500,
+    "weight": 1,
+    "description": "Class: All\nLevel: 41\nHp 200, Mp 300",
+    "name": "Mythril Earrings",
+    "panelSprite": 1846,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "mythrilEarrings"
+}

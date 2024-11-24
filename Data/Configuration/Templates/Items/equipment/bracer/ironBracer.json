@@ -1,0 +1,30 @@
+{
+    "buyCost": 15000,
+    "category": "Bracer",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 248,
+    "equipmentType": "Gauntlet",
+    "gender": "Unisex",
+    "maxDurability": 10000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -2,
+        "con": 1,
+        "dex": 1
+    },
+    "class": "monk",
+    "pantsColor": "Black",
+    "level": 41,
+    "levelCircle": 3,
+    "sellValue": 7500,
+    "weight": 2,
+    "description": "Class: Monk\nLevel: 11\nAc -2, Con 1, Dex 1",
+    "name": "Iron Bracer",
+    "panelSprite": 248,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "ironBracer"
+}

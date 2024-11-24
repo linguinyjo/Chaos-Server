@@ -1,0 +1,29 @@
+{
+    "buyCost": 120000,
+    "category": "Boots",
+    "color": "Green",
+    "isDyable": true,
+    "displaySprite": 11,
+    "equipmentType": "Boots",
+    "gender": "Unisex",
+    "maxDurability": 5000,
+    "maxStacks": 1,
+    "modifiers": {
+        "int": 1,
+        "wis": 1,
+        "regen": 1
+    },
+    "level": 41,
+    "levelCircle": 3,
+    "notMonk": true,
+    "sellValue": 60000,
+    "weight": 1,
+    "description": "Class: All except monk\nLevel: 41\nInt 1, Wis 1, Regen 1",
+    "name": "Silk Boots",
+    "panelSprite": 1780,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "silkBoots"
+}

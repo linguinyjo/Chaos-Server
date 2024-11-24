@@ -1,26 +1,27 @@
 {
-    "buyCost": 100000,
+    "buyCost": 200000,
     "category": "Staff",
     "color": "Forest",
-    "displaySprite": 24,
+    "displaySprite": 26,
     "equipmentType": "Weapon",
     "gender": "Unisex",
     "isModifiable": true,
-    "maxDurability": 3000,
+    "maxDurability": 5000,
     "maxStacks": 1,
-    "level": 11,
-    "levelCircle": 2,
+    "level": 41,
+    "levelCircle": 3,
     "class": "peasant",
     "modifiers": {
-        "magicAttack": 72,
+        "magicAttack": 146,
         "int": 2,
-        "maximumMp": 250
+        "maximumMp": 350,
+        "dmg": 5
     },
-    "sellValue": 50000,
+    "sellValue": 100000,
     "weight": 3,
-    "description": "Class: Peasant\nLevel: 11\nMagic Attack 72, Wis 2, Mana 200, Elemental spells -1 lines",
-    "name": "Magus Kronos",
-    "panelSprite": 183,
+    "description": "Class: Peasant Level: 41\nMagic Attack 146, Int 2, Mana 350, Dmg 5\nElemental spells -1 lines",
+    "name": "Magus Diana",
+    "panelSprite": 185,
     "scriptKeys": ["Equipment", "EquipStaff"],
     "scriptVars": {
         "equipment": {},
@@ -28,5 +29,5 @@
             "spellCategory": "Damage"
         }
     },
-    "templateKey": "magusKronos"
+    "templateKey": "magusDiana"
 }

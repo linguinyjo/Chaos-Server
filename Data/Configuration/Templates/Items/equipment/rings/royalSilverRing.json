@@ -1,0 +1,29 @@
+{
+    "buyCost": 150000,
+    "category": "Ring",
+    "color": "Default",
+    "isDyable": false,
+    "displaySprite": 1827,
+    "equipmentType": "Ring",
+    "gender": "Unisex",
+    "maxDurability": 30000,
+    "maxStacks": 1,
+    "modifiers": {
+        "maximumHp": 350,
+        "maximumMp": 150,
+        "magicResistance": 10
+    },
+    "class": "peasant",
+    "level": 41,
+    "levelCircle": 3,
+    "sellValue": 75000,
+    "weight": 1,
+    "description": "Class: All\nLevel: 41\nHp 350, Mp 150\nMR 10%",
+    "name": "Royal Silver Ring",
+    "panelSprite": 1827,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "royalSilverRing"
+}
