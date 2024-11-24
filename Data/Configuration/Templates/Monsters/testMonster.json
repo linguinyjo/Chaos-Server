@@ -1,7 +1,7 @@
 {
     "assailIntervalMs": 1500,
     "expReward": 3352,
-    "moveIntervalMs": 1200,
+    "moveIntervalMs": 221200,
     "maxGoldDrop": 600,
     "minGoldDrop": 350,
     "name": "Grimlock Warrior",
@@ -10,7 +10,7 @@
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],
-    "spellIntervalMs": 12000,
+    "spellIntervalMs": 2212000,
     "spellTemplateKeys": ["sal", "athar", "creag", "srad", "cradh", "puinsein"],
     "sprite": 9,
     "statSheet": {
@@ -24,9 +24,10 @@
         "dex": 12,
         "int": 20,
         "str": 42,
-        "wis": 12
+        "wis": 12,
+        "magicResistance": 20
     },
     "templateKey": "testMonster",
     "type": "Normal",
-    "wanderIntervalMs": 1500
+    "wanderIntervalMs": 1500222
 }

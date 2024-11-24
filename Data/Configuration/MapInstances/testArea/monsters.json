@@ -9,6 +9,6 @@
     ],
     "maxAmount": 1,
     "maxPerSpawn": 1,
-    "monsterTemplateKey": "crypt9Mimic"
+    "monsterTemplateKey": "testMonster"
   }
 ]

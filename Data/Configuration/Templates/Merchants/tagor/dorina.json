@@ -1,7 +1,7 @@
 {
   "itemsForSale": [
       {
-        "itemTemplateKey": "suomiSong",
+        "itemTemplateKey": "tagorSong",
         "stock": 999
       }
   ],

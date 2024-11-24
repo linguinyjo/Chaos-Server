@@ -25,7 +25,7 @@
     "scriptVars": {
         "equipment": {},
         "equipStaff": {
-            "spellCategory": "Cc"
+            "spellCategory": "Debuff"
         }
     },
     "templateKey": "magusApollo"
