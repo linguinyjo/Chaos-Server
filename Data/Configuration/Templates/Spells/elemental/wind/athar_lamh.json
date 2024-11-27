@@ -8,15 +8,16 @@
             "con": 3,
             "dex": 24
         },
-        "requiredGold": 25000,
+        "requiredGold": 20000,
         "prerequisiteSkills": [],
         "prerequisiteSpells": []
     },
     "spellType": "NoTarget",
     "class": "Wizard",
     "description": "Attacks all enemies with wind",
-    "level": 11,
+    "level": 21,
     "castLines": 3,
+    "levelsUp": true,
     "name": "athar lamh",
     "spellCategory": "Damage",
     "panelSprite": 66,

@@ -754,6 +754,7 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
         Gold = @new;
 
         Client.SendAttributes(StatUpdateType.ExpGold);
+        SendOrangeBarMessage($"You received {amount} gold");
 
         return true;
     }

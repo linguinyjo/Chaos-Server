@@ -2,7 +2,7 @@
   "castLines": 1,
   "learningRequirements": {
     "itemRequirements": [],
-    "requiredGold": 2500,
+    "requiredGold": 10000,
     "requiredStats": {
       "con": 3,
       "dex": 3,
@@ -18,7 +18,7 @@
   "description": "Removes pramh effect",
   "level": 11,
   "name": "ao pramh",
-  "panelSprite": 201,
+  "panelSprite": 90,
   "scriptKeys": [
     "removeEffect"
   ],

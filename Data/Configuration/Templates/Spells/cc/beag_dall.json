@@ -1,22 +1,7 @@
 {
-  "learningRequirements": {
-    "itemRequirements": [],
-    "requiredGold": 10000,
-    "requiredStats": {
-      "con": 3,
-      "dex": 7,
-      "int": 18,
-      "str": 4,
-      "wis": 13
-    },
-    "prerequisiteSkills": [],
-    "prerequisiteSpells": []
-  },
   "spellType": "Targeted",
   "castLines": 3,
-  "class": "Wizard",
   "description": "",
-  "level": 11,
   "name": "beag dall",
   "spellCategory": "Debuff",
   "panelSprite": 3,

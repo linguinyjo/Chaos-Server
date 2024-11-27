@@ -1,5 +1,5 @@
 {
-    "buyCost": 12000,
+    "buyCost": 6000,
     "category": "Staff",
     "color": "Forest",
     "displaySprite": 151,
@@ -15,7 +15,7 @@
         "magicAttack": 18,
         "maximumMp": 100
     },
-    "sellValue": 6000,
+    "sellValue": 3000,
     "weight": 2,
     "description": "Class: Peasant\nLevel: 1\nMagic Attack 18, Mana 100",
     "name": "Magic Rod",

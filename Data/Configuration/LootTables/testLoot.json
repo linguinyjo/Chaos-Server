@@ -1,0 +1,13 @@
+{
+  "key": "testLoot",
+  "lootDrops": [
+    {
+      "dropChance": 0.50,
+      "itemTemplateKey": "leatherBelt"
+    },
+    {
+      "dropChance": 0.50,
+      "itemTemplateKey": "boneNecklace"
+    }
+  ]
+}

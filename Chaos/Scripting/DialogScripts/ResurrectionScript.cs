@@ -20,8 +20,8 @@ public class ResurrectionScript : DialogScriptBase
     /// <inheritdoc />
     public override void OnNext(Aisling source, byte? optionIndex = null)
     {
-        var mapInstance = SimpleCache.Get<MapInstance>("testtown");
-        var destination = new Location("testtown", 1, 13);
+        var mapInstance = SimpleCache.Get<MapInstance>("milethInn");
+        var destination = new Location("milethInn", 5, 10);
         source.IsDead = false;
         source.StatSheet.SetHp(1);
         source.TraverseMap(mapInstance, destination);

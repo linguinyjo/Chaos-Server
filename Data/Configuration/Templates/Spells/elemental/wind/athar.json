@@ -8,7 +8,7 @@
             "con": 3,
             "dex": 20
         },
-        "requiredGold": 10000,
+        "requiredGold": 5000,
         "prerequisiteSkills": [],
         "prerequisiteSpells": []
     },
@@ -17,6 +17,7 @@
     "description": "Deals moderate wind damage to target",
     "level": 11,
     "castLines": 3,
+    "levelsUp": true,
     "name": "athar",
     "spellCategory": "Damage",
     "panelSprite": 43,

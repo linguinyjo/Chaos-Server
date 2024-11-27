@@ -14,7 +14,7 @@
       "itemTemplateKey": "spinelRing"
     },
     {
-      "dropChance": 0.008,
+      "dropChance": 0.006,
       "itemTemplateKey": "leatherSaphireGauntlet"
     },
     {
@@ -26,7 +26,7 @@
       "itemTemplateKey": "leatherBelt"
     },
     {
-      "dropChance": 0.01,
+      "dropChance": 0.008,
       "itemTemplateKey": "leatherShield"
     }
   ]

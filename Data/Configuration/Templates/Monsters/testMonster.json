@@ -5,7 +5,7 @@
     "maxGoldDrop": 600,
     "minGoldDrop": 350,
     "name": "Grimlock Warrior",
-    "lootTableKeys": ["pravatGrimlockWarriors"],
+    "lootTableKeys": ["testLoot"],
     "scriptKeys": ["default", "setMonsterElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
@@ -16,7 +16,7 @@
     "statSheet": {
         "level": 37,
         "ac": 35,
-        "maximumHp": 4900,
+        "maximumHp": 500,
         "maximumMp": 1000,
         "physicalAttack": 80,
         "magicAttack": 100,

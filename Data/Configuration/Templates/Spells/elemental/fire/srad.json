@@ -8,7 +8,7 @@
             "con": 6,
             "dex": 3
         },
-        "requiredGold": 10000,
+        "requiredGold": 5000,
         "prerequisiteSkills": [],
         "prerequisiteSpells": []
     },
@@ -17,6 +17,7 @@
     "description": "Deals moderate fire damage to target",
     "level": 11,
     "castLines": 3,
+    "levelsUp": true,
     "name": "srad",
     "spellCategory": "Damage",
     "panelSprite": 46,

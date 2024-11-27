@@ -18,8 +18,8 @@
     },
     {
         "title": "Spare a stick",
-        "summary": "Speak to ",
-        "rewards": "Stick and experience",
+        "summary": "Speak to Callough",
+        "rewards": "Stick and wooden shield",
         "qualifyingCircles": ["one", "two", "three", "four"],
         "id": "spareAStick",
         "result": "Completed"

@@ -28,6 +28,9 @@ public class VorlofScript:  DialogScriptBase
             case TrainingQuestStatus.CompletedDarsRequest:
                 Subject.AddOption("That was easy!", "vorlof_completed_dars_request");
                 break;
+            case TrainingQuestStatus.FromDarToVorlof:
+                Subject.AddOption("Training quest", "vorlof_go_and_speak_to_torrance");
+                break;
             case TrainingQuestStatus.CompletedTorrencesRequest:
                 Subject.AddOption("Training quest", "vorlof_completed_torrances_request");
                 break;

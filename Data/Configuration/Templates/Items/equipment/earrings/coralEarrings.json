@@ -1,5 +1,5 @@
 {
-    "buyCost": 25000,
+    "buyCost": 15000,
     "category": "Earrings",
     "color": "Default",
     "isDyable": true,
@@ -14,7 +14,7 @@
     "level": 11,
     "levelCircle": 11,
     "pantsColor": "Black",
-    "sellValue": 12500,
+    "sellValue": 7500,
     "weight": 1,
     "description": "Class: All\nLevel: 11\nInt 2",
     "name": "Coral Earrings",

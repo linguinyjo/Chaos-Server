@@ -7,7 +7,7 @@
                 "itemTemplateKey": "bramble"
             }
         ],
-        "requiredGold": 100000,
+        "requiredGold": 75000,
         "requiredStats": {
             "con": 32,
             "dex": 12,

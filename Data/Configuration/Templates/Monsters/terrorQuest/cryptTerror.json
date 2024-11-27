@@ -2,7 +2,7 @@
     "assailIntervalMs": 1200,
     "expReward": 4000,
     "moveIntervalMs": 1200,
-    "aggroRange": 10,
+    "aggroRange": 14,
     "name": "Crypt Terror",
     "lootTableKeys": [],
     "scriptKeys": ["default", "setMonsterElement", "terrorOnKill"],

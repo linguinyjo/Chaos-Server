@@ -18,6 +18,7 @@
     "level": 1,
     "castLines": 3,
     "name": "beag sal",
+    "levelsUp": true,
     "spellCategory": "Damage",
     "panelSprite": 46,
     "scriptKeys": ["damage", "levelup"],

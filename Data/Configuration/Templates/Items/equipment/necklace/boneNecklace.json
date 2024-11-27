@@ -1,5 +1,5 @@
 {
-    "buyCost": 60000,
+    "buyCost": 40000,
     "category": "Necklace",
     "color": "Forest",
     "displaySprite": 201,
@@ -14,12 +14,12 @@
     },
     "level": 11,
     "levelCircle": 2,
-    "sellValue": 30000,
+    "sellValue": 20000,
     "weight": 1,
     "description": "Class: All\nLevel: 11\nDmg 5, 200 Hp",
     "name": "Bone Necklace",
     "panelSprite": 201,
-    "scriptKeys": ["Equipment"],
+    "scriptKeys": ["Equipment", "SetRandomOffenseElement"],
     "scriptVars": {
         "equipment": {}
     },

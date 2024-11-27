@@ -19,7 +19,7 @@
     "description": "Class: All\nLevel: 11\nRegen 3, Wis 1",
     "name": "Leather Belt",
     "panelSprite": 235,
-    "scriptKeys": ["Equipment"],
+    "scriptKeys": ["Equipment", "SetRandomDefenseElement"],
     "scriptVars": {
         "equipment": {}
     },

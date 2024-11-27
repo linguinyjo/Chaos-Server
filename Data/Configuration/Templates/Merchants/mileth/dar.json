@@ -18,7 +18,12 @@
   },
   "skillsToTeach": [],
   "spellsToTeach": [
-    "beag_srad", "beag_sal", "beag_creag", "beag_athar"
+    "beag_srad", "srad", "beag_srad_lamh", "srad_lamh",
+    "beag_sal", "sal", "beag_sal_lamh", "sal_lamh",
+    "beag_creag", "creag", "beag_creag_lamh", "creag_lamh",
+    "beag_athar", "athar", "beag_athar_lamh", "athar_lamh",
+    "beag_cradh", "cradh", 
+    "beag_pramh"
   ],
   "sprite": 37,
   "templateKey": "dar"

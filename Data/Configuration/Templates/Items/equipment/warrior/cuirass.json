@@ -1,5 +1,5 @@
 {
-    "buyCost": 25000,
+    "buyCost": 4500,
     "category": "Armor F",
     "color": "Default",
     "isDyable": true,
@@ -9,16 +9,15 @@
     "maxDurability": 25000,
     "maxStacks": 1,
     "modifiers": {
-        "ac": -24,
-        "dex": -1
+        "ac": -17
     },
     "class": "warrior",
-    "pantsColor": "Black",
-    "level": 26,
+    "pantsColor": "Default",
+    "level": 11,
     "levelCircle": 2,
-    "sellValue": 12500,
+    "sellValue": 2250,
     "weight": 14,
-    "description": "Class: Female Warrior\nLevel: 26\nAc -24\nDex -1",
+    "description": "Class: Female Warrior\nLevel: 11\nAc -17",
     "name": "Cuirass",
     "panelSprite": 121,
     "scriptKeys": ["Equipment"],

@@ -2,7 +2,7 @@
     "assailIntervalMs": 1500,
     "expReward": 873,
     "moveIntervalMs": 1500,
-    "aggroRange": 10,
+    "aggroRange": 12,
     "name": "Viper",
     "lootTableKeys": ["sw5Vipers"],
     "scriptKeys": ["default", "setMonsterElement"],

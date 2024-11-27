@@ -1,0 +1,46 @@
+{
+  "itemsForSale": [
+    {
+      "itemTemplateKey": "jadeRing",
+      "stock": 100
+    },
+    {
+      "itemTemplateKey": "sparkleRing",
+      "stock": 100
+    },
+    {
+      "itemTemplateKey": "kannaWindNecklace",
+      "stock": 100
+    },
+    {
+      "itemTemplateKey": "kannaSeaNecklace",
+      "stock": 100
+    },
+    {
+      "itemTemplateKey": "kannaEarthNecklace",
+      "stock": 100
+    },
+    {
+      "itemTemplateKey": "kannaFireNecklace",
+      "stock": 100
+    }
+  ],
+  "itemsToBuy": [
+    "boneNecklace", "earthNecklace", "fireNecklace", "pearlChainNecklace", "phoenixNecklace", "seaNecklace", "windNecklace",
+    "smallSpinelRing", "smallEmeraldRing", "emeraldRing", "spinelRing", "redJadeRing", "amethystRing",
+    "silverEarrings", "goldEarrings", "rubyEarrings", "coralEarrings", "berylEarrings"],
+  "name": "Alane",
+  "scriptKeys": [
+    "showdialog",
+    "defaultBehaviors"
+  ],
+  "scriptVars": {
+    "showdialog": {
+      "dialogKey": "shop_tester_initial"
+    }
+  },
+  "skillsToTeach": [],
+  "spellsToTeach": [],
+  "sprite": 247,
+  "templateKey": "alane"
+}

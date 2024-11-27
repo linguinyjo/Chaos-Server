@@ -1,5 +1,5 @@
 {
-    "buyCost": 8000,
+    "buyCost": 7500,
     "category": "Earrings",
     "color": "Default",
     "isDyable": true,
@@ -14,7 +14,7 @@
     "level": 1,
     "levelCircle": 1,
     "pantsColor": "Black",
-    "sellValue": 4000,
+    "sellValue": 3750,
     "weight": 1,
     "description": "Class: All\nLevel: 1\nInt 1",
     "name": "Beryl Earrings",

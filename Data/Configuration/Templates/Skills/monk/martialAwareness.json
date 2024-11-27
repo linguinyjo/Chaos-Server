@@ -2,13 +2,13 @@
     "isAssail": false,
     "learningRequirements": {
         "itemRequirements": [],
-        "requiredGold": 10000,
+        "requiredGold": 5000,
         "requiredStats": {
             "con": 3,
             "dex": 6,
             "int": 7,
             "str": 3,
-            "wis": 11
+            "wis": 10
         },
         "prerequisiteSkills": [],
         "prerequisiteSpells": []

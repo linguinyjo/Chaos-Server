@@ -17,6 +17,7 @@
     "description": "Attacks all enemies with weak wind",
     "level": 1,
     "castLines": 3,
+    "levelsUp": true,
     "name": "beag athar lamh",
     "spellCategory": "Damage",
     "panelSprite": 63,

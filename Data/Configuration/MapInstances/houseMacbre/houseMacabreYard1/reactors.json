@@ -48,5 +48,37 @@
     },
     "shouldBlockPathfinding": true,
     "source": "(60, 99)"
+  },
+
+
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "houseMacabreYard4:(1, 41)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(99, 41)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "houseMacabreYard4:(1, 42)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(99, 42)"
+  },
+  {
+    "scriptKeys": ["warp"],
+    "scriptVars": {
+      "warp": {
+        "destination": "houseMacabreYard4:(1, 43)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(99, 43)"
   }
 ]

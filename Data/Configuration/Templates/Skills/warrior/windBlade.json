@@ -5,9 +5,9 @@
         "requiredGold": 10000,
         "requiredStats": {
             "con": 5,
-            "dex": 16,
+            "dex": 8,
             "int": 3,
-            "str": 8,
+            "str": 24,
             "wis": 3
         },
         "prerequisiteSkills": [],

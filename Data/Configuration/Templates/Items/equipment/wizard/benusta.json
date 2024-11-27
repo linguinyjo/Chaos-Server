@@ -1,5 +1,5 @@
 {
-    "buyCost": 7500,
+    "buyCost": 4500,
     "category": "Armor F",
     "color": "Default",
     "isDyable": true,
@@ -16,7 +16,7 @@
     "pantsColor": "Black",
     "level": 11,
     "levelCircle": 2,
-    "sellValue": 3750,
+    "sellValue": 2250,
     "weight": 6,
     "description": "Class: Female Wizard\nLevel: 11\nAc -9, 150 Mana",
     "name": "Benusta",

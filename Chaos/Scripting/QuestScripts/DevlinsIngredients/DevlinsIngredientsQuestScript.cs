@@ -48,7 +48,7 @@ public class DevlinsIngredientsQuestScript:  DialogScriptBase
         if (hasWax)
         {
             var newDialog = CreateDialog(
-                text: "Well done! You've successfully gathered the {=sRaw Wax{=a. I can sense its magical properties. Now, I desperately need a {=sCentipede Gland{=a for my research. You should be able to find one from the crypt in town.",
+                text: "Well done! Next thing I need is a {=sCentipede Gland{=a. You should be able to find one from the crypt in town. Hurry along now.",
                 nextKey: "Close"
             );
             newDialog.Display(source);

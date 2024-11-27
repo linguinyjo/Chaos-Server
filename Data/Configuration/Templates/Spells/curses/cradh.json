@@ -1,7 +1,7 @@
 {
   "learningRequirements": {
     "itemRequirements": [],
-    "requiredGold": 25000,
+    "requiredGold": 20000,
     "requiredStats": {
       "str": 8,
       "int": 33,
@@ -16,6 +16,7 @@
   "class": "Wizard",
   "description": "Applies a curse effect to your target reducing their AC.",
   "level": 21,
+  "castLines": 2,
   "name": "cradh",
   "panelSprite": 82,
   "scriptKeys": [

@@ -16,6 +16,7 @@
   "class": "Wizard",
   "description": "Applies a minor curse effect to your target reducing their AC.",
   "level": 11,
+  "castLines": 2,
   "name": "beag cradh",
   "panelSprite": 5,
   "scriptKeys": [

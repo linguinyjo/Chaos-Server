@@ -17,6 +17,7 @@
     "description": "Attacks all enemies with weak water",
     "level": 1,
     "castLines": 3,
+    "levelsUp": true,
     "name": "beag sal lamh",
     "spellCategory": "Damage",
     "panelSprite": 63,

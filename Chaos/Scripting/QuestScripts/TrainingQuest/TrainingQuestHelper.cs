@@ -1,5 +1,7 @@
 using Chaos.Common.Definitions;
+using Chaos.Models.Legend;
 using Chaos.Models.World;
+using Chaos.Time;
 
 namespace Chaos.Scripting.QuestScripts.TrainingQuest;
 
@@ -33,6 +35,21 @@ public static class TrainingQuestHelper
     public static void StartQuest(Aisling player)
     {
         player.Trackers.Enums.Set(TrainingQuestStatus.SpokenToRiona);
+    }
+    
+    public static void CompleteQuest(Aisling player)
+    {
+        player.Trackers.Enums.Set(TrainingQuestStatus.Completed);
+        player.GiveExperience(500);
+        player.TryGiveGold(5000);
+        var legendMark = new LegendMark(
+            "Completed Vorlof's training",
+            "TrainingQuest",
+            MarkIcon.Victory,
+            MarkColor.White,
+            1,
+            GameTime.Now);
+        player.Legend.AddUnique(legendMark);
     }
 }
 

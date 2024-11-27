@@ -2,7 +2,7 @@
   "castLines": 2,
   "learningRequirements": {
     "itemRequirements": [],
-    "requiredGold": 25000,
+    "requiredGold": 20000,
     "requiredStats": {
       "con": 20,
       "dex": 3,

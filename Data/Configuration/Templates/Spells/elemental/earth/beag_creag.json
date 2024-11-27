@@ -17,6 +17,7 @@
     "spellType": "Targeted",
     "class": "Wizard",
     "castLines": 3,
+    "levelsUp": true,
     "description": "A weak spell that deals earth damage.",
     "level": 1,
     "name": "beag creag",

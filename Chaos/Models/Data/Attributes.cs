@@ -124,7 +124,6 @@ public record Attributes : Stats
         Interlocked.Add(ref _physicalAttack, other.PhysicalAttack);
         Interlocked.Add(ref _magicAttack, other.MagicAttack);    
         Interlocked.Add(ref _regen, other.Regen);        
-
     }
 
     public virtual void Subtract(Attributes other)

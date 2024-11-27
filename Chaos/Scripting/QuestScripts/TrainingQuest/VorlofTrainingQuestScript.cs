@@ -40,16 +40,8 @@ public class VorlofTrainingQuestScript:  DialogScriptBase
             }
             case TrainingQuestStatus.CompletedTorrencesRequest:
             {
-                TrainingQuestHelper.IncrementQuestStage(source);
-                source.GiveExperience(500);
-                var legendMark = new LegendMark(
-                    "Completed Vorlof's training",
-                    "TrainingQuest",
-                    MarkIcon.Victory,
-                    MarkColor.White,
-                    1,
-                    GameTime.Now);
-                source.Legend.AddUnique(legendMark);
+                TrainingQuestHelper.CompleteQuest(source);
+                
                 break;
             }
         }

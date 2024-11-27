@@ -8,15 +8,16 @@
             "con": 7,
             "dex": 3
         },
-        "requiredGold": 25000,
+        "requiredGold": 20000,
         "prerequisiteSkills": [],
         "prerequisiteSpells": []
     },
     "spellType": "NoTarget",
     "class": "Wizard",
     "description": "Attacks all enemies with earth",
-    "level": 11,
+    "level": 21,
     "castLines": 3,
+    "levelsUp": true,
     "name": "creag lamh",
     "spellCategory": "Damage",
     "panelSprite": 69,

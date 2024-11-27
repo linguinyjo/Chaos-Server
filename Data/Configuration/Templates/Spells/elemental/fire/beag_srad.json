@@ -17,9 +17,10 @@
     "description": "A weak spell that deals fire damage.",
     "level": 1,
     "castLines": 3,
-    "name": "Beag Srad",
+    "name": "beag srad",
     "spellCategory": "Damage",
     "panelSprite": 40,
+    "levelsUp": true,
     "scriptKeys": ["damage", "levelup"],
     "scriptVars": {
         "damage": {

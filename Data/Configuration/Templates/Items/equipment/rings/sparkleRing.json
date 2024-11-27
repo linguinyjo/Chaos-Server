@@ -1,5 +1,5 @@
 {
-    "buyCost": 150000,
+    "buyCost": 3500000,
     "category": "Ring",
     "color": "Default",
     "isDyable": false,
@@ -20,7 +20,7 @@
     "class": "peasant",
     "level": 41,
     "levelCircle": 3,
-    "sellValue": 75000,
+    "sellValue": 1250000,
     "weight": 1,
     "description": "Class: All\nLevel: 41\nHp 300, Mp 150\n+1 to all stats",
     "name": "Sparkle Ring",

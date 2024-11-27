@@ -1,5 +1,5 @@
 {
-    "buyCost": 75000,
+    "buyCost": 35000,
     "category": "Staff",
     "color": "Default",
     "displaySprite": 60,
@@ -16,7 +16,7 @@
         "int": 2,
         "maximumMp": 250
     },
-    "sellValue": 37500,
+    "sellValue": 17500,
     "weight": 3,
     "description": "Class: Peasant\nLevel: 11\nMagic Attack 24, Elemental spells -1 lines",
     "name": "Magus Luathus",

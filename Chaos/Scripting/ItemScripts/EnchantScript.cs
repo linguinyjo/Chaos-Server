@@ -15,7 +15,6 @@ public class EnchantScript : ConfigurableItemScriptBase,
                                         ConsumableAbilityComponent.IConsumableComponentOptions,
                                         EnchantWeaponComponent.IEnchantWeaponComponentOptions
 {
-    // private readonly Item Item;
     
     /// <inheritdoc />
     public EnchantScript(Item subject)
@@ -36,7 +35,6 @@ public class EnchantScript : ConfigurableItemScriptBase,
             ?.ExecuteAndCheck<EnchantWeaponComponent>()
             ?.Execute<ConsumableAbilityComponent>();
     }
-
 
     #region ScriptVars
     /// <inheritdoc />

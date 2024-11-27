@@ -9,6 +9,10 @@ using Chaos.MetaData;
 using Chaos.Networking.Abstractions;
 using Chaos.Scripting.Components.AbilityComponents;
 using Chaos.Scripting.ItemScripts.Enchantments;
+using Chaos.Scripting.ItemScripts.Enchantments.EarthScripts;
+using Chaos.Scripting.ItemScripts.Enchantments.FireScripts;
+using Chaos.Scripting.ItemScripts.Enchantments.SeaScripts;
+using Chaos.Scripting.ItemScripts.Enchantments.WindScripts;
 using Chaos.Services.Servers.Options;
 using Chaos.Services.Storage.Options;
 using Chaos.Utilities;
@@ -80,7 +84,7 @@ public sealed class OptionsConfigurer(IStagingDirectory stagingDirectory, IChann
                                    });
                 }));
 
-        //add more mutators here
+        // Weapon enchant mutators
         options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantWeapon1Script.Mutate));
         options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantWeapon2Script.Mutate));
         options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantWeapon3Script.Mutate));
@@ -97,6 +101,19 @@ public sealed class OptionsConfigurer(IStagingDirectory stagingDirectory, IChann
         options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantWeapon14Script.Mutate));
         options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantWeapon15Script.Mutate));
         options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantWeapon16Script.Mutate));
+        
+        // Element enchant mutators
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EarthDefensePrefixScript.Mutate));
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EarthOffensePrefixScript.Mutate));
+        
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(FireDefensePrefixScript.Mutate));
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(FireOffensePrefixScript.Mutate));
+
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(SeaOffensePrefixScript.Mutate));
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(SeaDefensePrefixScript.Mutate));
+
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(WindOffensePrefixScript.Mutate));
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(WindDefensePrefixScript.Mutate));
     }
 
     /// <inheritdoc />
