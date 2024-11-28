@@ -14,7 +14,7 @@
     },
     "spellType": "Targeted",
     "class": "Wizard",
-    "description": "Deals moderate earth damage to target",
+    "description": "Deals moderate earth damage to target.\n\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
     "level": 11,
     "castLines": 3,
     "levelsUp": true,

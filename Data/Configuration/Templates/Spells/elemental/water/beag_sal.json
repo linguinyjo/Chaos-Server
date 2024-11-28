@@ -14,7 +14,7 @@
     },
     "spellType": "Targeted",
     "class": "Wizard",
-    "description": "A weak spell that deals water damage.",
+    "description": "A weak spell that deals water damage.\n\nGold required: 1000\nItems required: \nLocation: Mileth Black Magic Master",
     "level": 1,
     "castLines": 3,
     "name": "beag sal",

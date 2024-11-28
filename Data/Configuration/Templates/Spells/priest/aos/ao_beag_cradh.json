@@ -2,7 +2,7 @@
   "castLines": 1,
   "learningRequirements": {
     "itemRequirements": [],
-    "requiredGold": 2500,
+    "requiredGold": 1000,
     "requiredStats": {
       "con": 3,
       "dex": 3,
@@ -15,7 +15,7 @@
   },
   "spellType": "Targeted",
   "class": "Priest",
-  "description": "Cure up to beag cradh",
+  "description": "Cure up to beag cradh.\n\nGold required: 1000\nItems required: \nLocation: Mileth White Magic Master",
   "level": 1,
   "name": "ao beag cradh",
   "panelSprite": 23,

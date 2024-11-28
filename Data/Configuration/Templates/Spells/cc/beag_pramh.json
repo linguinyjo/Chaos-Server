@@ -15,7 +15,7 @@
   "spellType": "Targeted",
   "castLines": 3,
   "class": "Wizard",
-  "description": "",
+  "description": "Puts the enemy to sleep for 8 seconds. The skill/spell that breaks it deals double damage. \n\nGold required: 1000\nItems required: \nLocation: Mileth Black Magic Master",
   "level": 11,
   "name": "beag pramh",
   "spellCategory": "Debuff",

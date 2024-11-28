@@ -15,7 +15,7 @@
   },
   "spellType": "NoTarget",
   "class": "Monk",
-  "description": "Applies a small heal to self",
+  "description": "Applies a small heal to self.\n\nGold required: 5000\nItems required: \nLocation: Sapphire Stream, white dugon",
   "level": 1,
   "name": "Gentle Touch",
   "panelSprite": 120,

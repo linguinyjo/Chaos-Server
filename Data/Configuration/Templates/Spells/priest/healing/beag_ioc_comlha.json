@@ -16,7 +16,7 @@
   "spellType": "NoTarget",
   "spellCategory": "Heal",
   "class": "Priest",
-  "description": "Applies a small heal to your group",
+  "description": "Applies a small heal to your group.\n\nGold required: 5000\nItems required: \nLocation: Mileth White Magic Master",
   "level": 11,
   "name": "beag ioc comlha",
   "panelSprite": 32,

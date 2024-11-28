@@ -14,7 +14,7 @@
     },
     "spellType": "NoTarget",
     "class": "Wizard",
-    "description": "Attacks all enemies with earth",
+    "description": "Attacks all enemies with earth.\n\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
     "level": 21,
     "castLines": 3,
     "levelsUp": true,

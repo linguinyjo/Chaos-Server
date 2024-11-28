@@ -2,7 +2,7 @@
   "castLines": 1,
   "learningRequirements": {
     "itemRequirements": [],
-    "requiredGold": 10000,
+    "requiredGold": 5000,
     "requiredStats": {
       "con": 3,
       "dex": 3,
@@ -15,7 +15,7 @@
   },
   "spellType": "Targeted",
   "class": "Priest",
-  "description": "A small increase to physical attack",
+  "description": "A small increase to physical attack.\n\nGold required: 5000\nItems required: \nLocation: Mileth White Magic Master",
   "level": 11,
   "name": "fas deireas",
   "panelSprite": 52,

@@ -2,7 +2,7 @@
   "castLines": 2,
   "learningRequirements": {
     "itemRequirements": [],
-    "requiredGold": 10000,
+    "requiredGold": 5000,
     "requiredStats": {
       "con": 3,
       "dex": 3,
@@ -17,7 +17,7 @@
   "spellType": "Targeted",
   "spellCategory": "Heal",
   "class": "Priest",
-  "description": "Applies a moderate heal to your target",
+  "description": "Applies a moderate heal to your target.\n\nGold required: 5000\nItems required: \nLocation: Mileth White Magic Master",
   "level": 11,
   "name": "ioc",
   "panelSprite": 29,

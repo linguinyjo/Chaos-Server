@@ -14,7 +14,7 @@
     },
     "spellType": "NoTarget",
     "class": "Wizard",
-    "description": "Attacks all enemies with weak water",
+    "description": "Attacks all enemies with weak water.\n\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
     "level": 1,
     "castLines": 3,
     "levelsUp": true,

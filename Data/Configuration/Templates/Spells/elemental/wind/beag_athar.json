@@ -15,7 +15,7 @@
     "spellType": "Targeted",
     "castLines": 3,
     "class": "Wizard",
-    "description": "A weak spell that deals wind damage.",
+    "description": "A weak spell that deals wind damage.\n\nGold required: 1000\nItems required: \nLocation: Mileth Black Magic Master",
     "level": 1,
     "name": "beag athar",
     "levelsUp": true,

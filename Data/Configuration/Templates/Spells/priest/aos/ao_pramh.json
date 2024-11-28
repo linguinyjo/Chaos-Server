@@ -15,7 +15,7 @@
   },
   "spellType": "Targeted",
   "class": "Priest",
-  "description": "Removes pramh effect",
+  "description": "Removes pramh effect.\n\nGold required: 10000\nItems required: \nLocation: Mileth White Magic Master",
   "level": 11,
   "name": "ao pramh",
   "panelSprite": 90,

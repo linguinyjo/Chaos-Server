@@ -13,7 +13,7 @@
         "prerequisiteSkills": [],
         "prerequisiteSpells": []
     },
-    "description": "A powerful strike in the direction your facing",
+    "description": "A powerful strike in the direction your facing.\n\nGold required: 5000\nItems required: \nLocation: Mileth Combat Skill Master",
     "level": 11,
     "levelsUp": true,
     "name": "High Kick",

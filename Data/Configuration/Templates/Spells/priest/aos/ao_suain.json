@@ -15,7 +15,7 @@
   },
   "spellType": "Targeted",
   "class": "Priest",
-  "description": "Removes suain effect",
+  "description": "Removes suain effect.\n\nGold required: 75000\nItems required: \nLocation: Mileth White Magic Master",
   "level": 41,
   "name": "ao suain",
   "panelSprite": 51,

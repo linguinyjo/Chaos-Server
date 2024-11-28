@@ -18,7 +18,7 @@
     "class": "Wizard",
     "castLines": 3,
     "levelsUp": true,
-    "description": "A weak spell that deals earth damage.",
+    "description": "A weak spell that deals earth damage.\n\nGold required: 1000\nItems required: \nLocation: Mileth Black Magic Master",
     "level": 1,
     "name": "beag creag",
     "spellCategory": "Damage",

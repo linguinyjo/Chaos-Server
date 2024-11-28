@@ -13,7 +13,7 @@
         "prerequisiteSkills": [],
         "prerequisiteSpells": []
     },
-    "description": "Identifies the attributes of the creature infront of you.",
+    "description": "Identifies the attributes of the creature infront of you.\n\nGold required: 5000\nItems required: \nLocation: Mileth Special Skill Master",
     "level": 11,
     "levelsUp": true,
     "name": "martial awareness",

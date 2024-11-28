@@ -15,7 +15,7 @@
   },
   "spellType": "Targeted",
   "class": "Priest",
-  "description": "Removes blind effect",
+  "description": "Removes blind effect.\n\nGold required: 10000\nItems required: \nLocation: Mileth White Magic Master",
   "level": 11,
   "name": "ao dall",
   "panelSprite": 25,

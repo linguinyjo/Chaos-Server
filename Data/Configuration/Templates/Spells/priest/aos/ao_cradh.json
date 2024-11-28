@@ -15,7 +15,7 @@
   },
   "spellType": "Targeted",
   "class": "Priest",
-  "description": "Removes up to cradh effect",
+  "description": "Removes up to cradh effect.\n\nGold required: 10000\nItems required: \nLocation: Mileth White Magic Master",
   "level": 11,
   "name": "ao cradh",
   "panelSprite": 79,

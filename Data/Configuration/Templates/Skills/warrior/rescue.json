@@ -1,7 +1,7 @@
 {
     "isAssail": false,
-    "learningRequirements": {
-        "itemRequirements": [],
+    "learningrequirements": {
+        "itemrequirements": [],
         "requiredGold": 5000,
         "requiredStats": {
             "con": 10,
@@ -13,7 +13,7 @@
         "prerequisiteSkills": [],
         "prerequisiteSpells": []
     },
-    "description": "Causes the target creature attack you. If performed on a skulling player it will prevent death.",
+    "description": "Causes the target creature attack you. If performed on a skulling player it will prevent death.\n\nGold required: 5000\nItems required: \nLocation: Mileth Combat Skill Master",
     "level": 11,
     "levelsUp": true,
     "name": "Rescue",

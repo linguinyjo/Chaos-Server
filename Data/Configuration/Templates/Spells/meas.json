@@ -1,0 +1,27 @@
+{
+  "learningRequirements": {
+    "itemRequirements": [],
+    "requiredGold": 1000,
+    "requiredStats": {
+      "con": 3,
+      "dex": 3,
+      "int": 3,
+      "str": 3,
+      "wis": 3
+    },
+    "prerequisiteSkills": [],
+    "prerequisiteSpells": []
+  },
+  "prompt": "",
+  "spellType": "NoTarget",
+  "class": "Peasant",
+  "description": "Identifies the item in your first inventory slot.\n\nGold required: 1000\nItems required: \nLocation: Mileth White Magic Master",
+  "level": 1,
+  "name": "Meas",
+  "panelSprite": 56,
+  "scriptKeys": [
+    "Identify"
+  ],
+  "scriptVars": {},
+  "templateKey": "meas"
+}

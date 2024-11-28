@@ -15,7 +15,7 @@
   },
   "spellType": "NoTarget",
   "class": "Priest",
-  "description": "Applies a small heal to self",
+  "description": "Applies a small heal to self.\n\nGold required: 1000\nItems required: \nLocation: Mileth White Magic Master",
   "level": 1,
   "name": "beag ioc fein",
   "panelSprite": 21,

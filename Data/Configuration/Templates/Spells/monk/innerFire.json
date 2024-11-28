@@ -15,7 +15,7 @@
   },
   "spellType": "NoTarget",
   "class": "Monk",
-  "description": "Improves regeneration",
+  "description": "Improves regeneration.\n\nGold required: 20000\nItems required: \nLocation: Sapphire Stream, blue dugon",
   "level": 1,
   "name": "inner fire",
   "panelSprite": 126,
