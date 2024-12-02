@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1300,
-    "expReward": 1000,
+    "expReward": 5000,
     "moveIntervalMs": 1200,
     "aggroRange": 14,
     "name": "Garden Terror",

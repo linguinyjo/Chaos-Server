@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1200,
-    "expReward": 2000,
+    "expReward": 10000,
     "moveIntervalMs": 1200,
     "aggroRange": 14,
     "name": "Night Terror",

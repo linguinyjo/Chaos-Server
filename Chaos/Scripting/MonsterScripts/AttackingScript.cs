@@ -1,5 +1,6 @@
 using Chaos.Common.Utilities;
 using Chaos.Extensions.Geometry;
+using Chaos.Models.Panel;
 using Chaos.Models.World;
 using Chaos.Scripting.MonsterScripts.Abstractions;
 
@@ -40,13 +41,13 @@ public class AttackingScript : MonsterScriptBase
 
         if (ShouldUseSkill)
         {
-            var skill = Skills.Where(skill => Subject.CanUse(skill, out _))
-                              .PickRandomWeightedSingleOrDefault(7);
-
+            var skill = Skills.Where(skill => Subject
+                .CanUse(skill, out _))
+                .PickRandomWeightedSingle(1);
             if (skill is not null)
                 attacked |= Subject.TryUseSkill(skill);
         }
-
+        
         if (attacked)
         {
             Subject.WanderTimer.Reset();

@@ -19,7 +19,7 @@
     },
     "class": "Monk",
     "cooldownMs": 15000,
-    "description": "Teleports the user behind the target, or around the target is behind is occupied.",
+    "description": "Teleports the user behind the target, or around the target if behind is occupied.",
     "level": 10,
     "name": "Ambush",
     "panelSprite": 42,

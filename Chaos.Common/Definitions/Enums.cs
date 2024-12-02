@@ -706,10 +706,15 @@ public enum AdvClass : byte
 {
     None = 0,
     Gladiator = 1,
-    Druid = 2,
-    Archer = 3,
-    Bard = 4,
-    Summoner = 5
+    Champion = 2,
+    Druid = 3,
+    Brawler = 4,
+    Bard = 5,
+    Bishop = 6,
+    Elementalist = 7,
+    Enchanter = 8,
+    Archer = 9,
+    Assassin = 10
 }
 
 /// <summary>

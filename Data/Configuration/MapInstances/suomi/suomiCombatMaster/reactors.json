@@ -3,7 +3,7 @@
         "scriptKeys": ["warp"],
         "scriptVars": {
             "warp": {
-                "destination": "milethVillage:(73, 80)"
+                "destination": "suomiVillage:(71, 81)"
             }
         },
         "shouldBlockPathfinding": false,
@@ -13,20 +13,10 @@
         "scriptKeys": ["warp"],
         "scriptVars": {
             "warp": {
-                "destination": "milethVillage:(73, 80)"
+                "destination": "suomiVillage:(71, 81)"
             }
         },
         "shouldBlockPathfinding": false,
         "source": "(8, 14)"
-    },
-    {
-        "scriptKeys": ["warp"],
-        "scriptVars": {
-            "warp": {
-                "destination": "milethWhiteMagicMaster:(7, 13)"
-            }
-        },
-        "shouldBlockPathfinding": false,
-        "source": "(12, 0)"
     }
 ]

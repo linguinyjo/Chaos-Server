@@ -1,0 +1,32 @@
+{
+    "isAssail": false,
+    "description": "",
+    "level": 1,
+    "levelsUp": false,
+    "name": "Pounce",
+    "panelSprite": 73,
+    "cooldownMs": 8000,
+    "scriptKeys": ["pounce", "applyEffect"],
+    "scriptVars": {
+        "pounce": {
+            "bodyAnimation": 1,
+            "sound": 45,
+            "damageStat": "str",
+            "range": 1,
+            "shape": "front",
+            "excludeSourcePoint": true,
+            "damageStatMultiplier": 1,
+            "baseDamage": 20,
+            "filter": "hostileOnly, aliveOnly, othersOnly",
+            "PAtkMultiplier": 0
+        },
+        "applyEffect": {
+            "excludeSourcePoint": true,
+            "range": 1,
+            "shape": "front",
+            "effectKey": "suain",
+            "filter": "hostileOnly, aliveOnly, othersOnly"
+        }
+    },
+    "templateKey": "pounce"
+}

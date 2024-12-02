@@ -84,14 +84,30 @@ public class AggroTargetingScript : MonsterScriptBase
 
         //TODO to allow enchant change this to monster from Aisling
         //if we failed to get a target via aggroList, grab the closest aisling within aggro range
-        Target ??= Map.GetEntitiesWithinRange<Aisling>(Subject, range)
-                      .ThatAreVisibleTo(Subject)
-                      .Where(
-                          obj => !obj.Equals(Subject)
-                                 && obj.IsAlive
-                                 && Subject.ApproachTime.TryGetValue(obj, out var time)
-                                 && ((DateTime.UtcNow - time).TotalSeconds >= 1.5))
-                      .ClosestOrDefault(Subject);
+        if (Subject.IsEnchanted())
+        {
+            Target ??= Map.GetEntitiesWithinRange<Monster>(Subject, range)
+                .ThatAreVisibleTo(Subject)
+                .Where(
+                    obj => !obj.Equals(Subject)
+                           && obj.IsAlive
+                           && Subject.ApproachTime.TryGetValue(obj, out var time)
+                           && ((DateTime.UtcNow - time).TotalSeconds >= 1.5))
+                .ClosestOrDefault(Subject);
+        }
+        else
+        {
+            Target ??= Map.GetEntitiesWithinRange<Aisling>(Subject, range)
+                .ThatAreVisibleTo(Subject)
+                .Where(
+                    obj => !obj.Equals(Subject)
+                           && obj.IsAlive
+                           && Subject.ApproachTime.TryGetValue(obj, out var time)
+                           && ((DateTime.UtcNow - time).TotalSeconds >= 1.5))
+                .ClosestOrDefault(Subject);
+        }
+
+      
 
         //since we grabbed a new target, give them some initial aggro so we stick to them
         if (Target != null)

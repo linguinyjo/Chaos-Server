@@ -72,6 +72,9 @@ public class ApplyEffectScript : ConfigurableSpellScriptBase,
 
     /// <inheritdoc />
     public IEffectFactory EffectFactory { get; init; }
+    
+    /// <inheritdoc />
+    public Creature? Source { get; init; }
 
     /// <inheritdoc />
     public int? ManaCost { get; init; }

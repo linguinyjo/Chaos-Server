@@ -45,24 +45,20 @@ public class SkulledEffect(ISimpleCache simpleCache) : ContinuousAnimationEffect
     {
         if (AislingSubject == null) return; 
         AislingSubject.IsDead = true;
-        var currentPosition = AislingSubject.Trackers.LastPosition;
-        if (currentPosition != null)
-        {
-            AislingSubject.TryDrop(currentPosition, AislingSubject.Equipment, out var equipmentToDrop);
-            if (equipmentToDrop != null)
-                foreach (var groundItem in equipmentToDrop)
-                {
-                    AislingSubject.Equipment.RemoveByTemplateKey(groundItem.Item.Template.TemplateKey);
-                }
-            AislingSubject.TryDrop(currentPosition, AislingSubject.Inventory, out var itemsToDrop);
-            AislingSubject.TryDropGold(currentPosition, AislingSubject.Gold, out _);
-            if (itemsToDrop != null)
-                foreach (var groundItem in itemsToDrop)
-                {
-                    AislingSubject.Inventory.RemoveByTemplateKey(groundItem.Item.Template.TemplateKey);
-                }
-        }
-        
+        var currentPosition = new Location(AislingSubject.MapInstance.Name,AislingSubject.X, AislingSubject.Y);
+        AislingSubject.TryDrop(currentPosition, AislingSubject.Equipment, out var equipmentToDrop);
+        if (equipmentToDrop != null)
+            foreach (var groundItem in equipmentToDrop)
+            {
+                AislingSubject.Equipment.RemoveByTemplateKey(groundItem.Item.Template.TemplateKey);
+            }
+        AislingSubject.TryDrop(currentPosition, AislingSubject.Inventory, out var itemsToDrop);
+        AislingSubject.TryDropGold(currentPosition, AislingSubject.Gold, out _);
+        if (itemsToDrop != null)
+            foreach (var groundItem in itemsToDrop)
+            {
+                AislingSubject.Inventory.RemoveByTemplateKey(groundItem.Item.Template.TemplateKey);
+            }
         var mapInstance = simpleCache.Get<MapInstance>("cthonicRoom2");
         var destination = new Location("cthonicRoom2",10, 10);
         AislingSubject.TraverseMap(mapInstance, destination);

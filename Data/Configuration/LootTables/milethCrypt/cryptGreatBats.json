@@ -2,7 +2,7 @@
   "key": "crypt6GreatBats",
   "lootDrops": [
     {
-      "dropChance": 0.15,
+      "dropChance": 0.20,
       "itemTemplateKey": "greatBatWing"
     },
     {

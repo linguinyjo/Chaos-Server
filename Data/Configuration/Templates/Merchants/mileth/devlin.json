@@ -12,9 +12,10 @@
     },
     "skillsToTeach": [],
     "spellsToTeach": [
+        "meas",
         "beag_ioc", "ioc",
         "beag_ioc_comlha", "ioc_comlha",
-        "ao_beag_cradh", "ao_cradh", "ao_puinsein", "ao_dall",
+        "ao_beag_cradh", "ao_cradh", "ao_puinsein", "ao_dall", "ao_pramh",
         "armachd", "fas_deireas",
         "gentleTouch"
     ],

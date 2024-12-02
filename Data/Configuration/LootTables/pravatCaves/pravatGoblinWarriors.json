@@ -16,6 +16,10 @@
         {
             "dropChance": 0.004,
             "itemTemplateKey": "magusApollo"
+        },
+        {
+            "dropChance": 0.06,
+            "itemTemplateKey": "reinforcedLeatherGreaves"
         }
     ]
 }

@@ -20,6 +20,14 @@
         {
             "dropChance": 0.004,
             "itemTemplateKey": "magusKronos"
+        },
+        {
+            "dropChance": 0.006,
+            "itemTemplateKey": "hybrasylBelt"
+        },
+        {
+            "dropChance": 0.006,
+            "itemTemplateKey": "mythrilBelt"
         }
     ]
 }

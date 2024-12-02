@@ -28,7 +28,7 @@
     "scriptKeys": ["showdialog", "verbalShop", "defaultBehaviors"],
     "scriptVars": {
         "showdialog": {
-            "dialogKey": "vidar_initial"
+            "dialogKey": "generic_smith_shop_initial"
         }
     },
     "skillsToTeach": [],

@@ -2,7 +2,7 @@
   "key": "crypt6Scorpions",
   "lootDrops": [
     {
-      "dropChance": 0.15,
+      "dropChance": 0.20,
       "itemTemplateKey": "scorpionSting"
     },
     {

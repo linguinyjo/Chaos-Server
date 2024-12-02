@@ -9,7 +9,6 @@ public class DefaultExperienceFormula : IExperienceFormula
     /// <inheritdoc />
     public long Calculate(Creature killedCreature, params Aisling[] aislings)
     {
-        var rateMultiplier = 3.00;
         switch (killedCreature)
         {
             case Aisling:
@@ -27,8 +26,7 @@ public class DefaultExperienceFormula : IExperienceFormula
                 var groupMultiplier = Math.Max(0, 1 - (groupSizeDeductions + partyLevelDifferenceDeductions));
                 var monsterLevelMultiplier = Math.Max(0, 1 - monsterLevelDeductions);
 
-                var expPoints = Convert.ToInt64(monster.Experience * groupMultiplier * monsterLevelMultiplier);
-                return Convert.ToInt64(expPoints * rateMultiplier);
+                return Convert.ToInt64(monster.Experience * groupMultiplier * monsterLevelMultiplier);
         }
         return 0;
     }

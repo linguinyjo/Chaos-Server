@@ -2,7 +2,7 @@
   "castLines": 1,
   "learningRequirements": {
     "itemRequirements": [],
-    "requiredGold": 10000,
+    "requiredGold": 1000,
     "requiredStats": {
       "con": 3,
       "dex": 3,
@@ -14,11 +14,11 @@
     "prerequisiteSpells": []
   },
   "spellType": "Targeted",
-  "class": "Priest",
-  "description": "Removes up to cradh effect.\n\nGold required: 10000\nItems required: \nLocation: Mileth White Magic Master",
-  "level": 11,
-  "name": "ao cradh",
-  "panelSprite": 79,
+  "class": "Wizard",
+  "description": "Remove beag seun effect\n\nGold required: 1000\nItems required: \nLocation: Mileth White Magic Master",
+  "level": 1,
+  "name": "ao beag seun",
+  "panelSprite": 23,
   "scriptKeys": [
     "removeEffect"
   ],
@@ -26,15 +26,15 @@
     "removeEffect": {
       "bodyAnimation": "priestCast",
       "animation": {
-        "targetAnimation": 38,
+        "targetAnimation": 39,
         "animationSpeed": 150
       },
-      "manaCost": 50,
+      "manaCost": 30,
       "sound": 8,
       "range": 8,
-      "effectKey": "cradh, beagcradh",
+      "effectKey": "beagseun",
       "filter": "aliveOnly"
     }
   },
-  "templateKey": "ao_cradh"
+  "templateKey": "ao_beag_seun"
 }

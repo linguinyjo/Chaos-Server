@@ -1,10 +1,10 @@
 {
-  "buyCost": 5000,
+  "buyCost": 2000,
   "category": "potion",
   "color": "Default",
   "isModifiable": true,
-  "maxStacks": 6,
-  "sellValue": 5000,
+  "maxStacks": 12,
+  "sellValue": 1000,
   "weight": 1,
   "description": "Revives a skulled player",
   "name": "komadium",

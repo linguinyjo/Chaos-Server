@@ -5,8 +5,8 @@
     "intervalSecs": 420,
     "intervalVariancePct": 5,
     "extraLootTableKeys": [],
-    "maxAmount": 40,
-    "maxPerSpawn": 40,
+    "maxAmount": 50,
+    "maxPerSpawn": 50,
     "monsterTemplateKey": "sw2Viper"
   },
   {
@@ -15,8 +15,8 @@
     "intervalSecs": 420,
     "intervalVariancePct": 5,
     "extraLootTableKeys": [],
-    "maxAmount": 50,
-    "maxPerSpawn": 50,
+    "maxAmount": 60,
+    "maxPerSpawn": 60,
     "monsterTemplateKey": "sw2Bee"
   },
   {

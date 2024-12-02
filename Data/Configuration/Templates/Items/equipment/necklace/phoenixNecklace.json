@@ -16,10 +16,10 @@
     "levelCircle": 2,
     "sellValue": 20000,
     "weight": 1,
-    "description": "Class: All\nLevel: 11\nRegen 3, Con 1",
+    "description": "Class: All\nLevel: 11\nRegen 3, Con 1, Random offensive element",
     "name": "Phoenix Necklace",
     "panelSprite": 1714,
-    "scriptKeys": ["Equipment"],
+    "scriptKeys": ["Equipment", "SetRandomOffenseElement"],
     "scriptVars": {
         "equipment": {}
     },

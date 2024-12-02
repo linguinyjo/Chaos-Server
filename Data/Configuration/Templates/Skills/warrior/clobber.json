@@ -9,8 +9,8 @@
         ],
         "requiredGold": 10000,
         "requiredStats": {
-            "con": 10,
-            "dex": 18,
+            "con": 14,
+            "dex": 8,
             "int": 3,
             "str": 34,
             "wis": 3

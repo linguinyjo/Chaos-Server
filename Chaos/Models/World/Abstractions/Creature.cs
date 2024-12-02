@@ -28,6 +28,7 @@ public abstract class Creature : NamedEntity, IAffected, IScripted<ICreatureScri
 {
     public readonly string[] SleepEffects = ["beag pramh", "pramh", "mor pramh", "ard pramh"];
     public readonly string[] FrozenEffects = ["suain"];
+    public readonly string[] EnchantedEffects = ["beag seun"];
     
     public Direction Direction { get; set; }
     public IEffectsBar Effects { get; protected set; }
@@ -67,11 +68,10 @@ public abstract class Creature : NamedEntity, IAffected, IScripted<ICreatureScri
         return false;
     }
     
-    public bool IsFrozen()
-    {
-        return FrozenEffects.Any(effect => Effects.Contains(effect));
-    }
+    public bool IsFrozen() => FrozenEffects.Any(effect => Effects.Contains(effect));
     
+    public bool IsEnchanted() => EnchantedEffects.Any(effect => Effects.Contains(effect));
+
     public bool IsSkulled() => Effects.Contains("skulled");
     
     protected Creature(

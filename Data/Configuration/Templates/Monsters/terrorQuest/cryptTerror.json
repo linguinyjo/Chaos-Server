@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1200,
-    "expReward": 4000,
+    "expReward": 15000,
     "moveIntervalMs": 1200,
     "aggroRange": 14,
     "name": "Crypt Terror",

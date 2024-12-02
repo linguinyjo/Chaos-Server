@@ -29,6 +29,7 @@ public sealed class HideEffect : EffectBase
     public override void OnTerminated()
     {
         Subject.SetVisibility(VisibilityType.Normal);
+        if (AislingSubject == null) return;
         foreach (var spell in AislingSubject.SpellBook.Where(s => s.Template.SpellCategory == SpellCategory.Hide))
         {
             spell.BeginCooldown(AislingSubject, TemporaryCooldown);
@@ -39,13 +40,8 @@ public sealed class HideEffect : EffectBase
     /// <inheritdoc />
     public override bool ShouldApply(Creature source, Creature target)
     {
-        if (target.Visibility is not VisibilityType.Normal)
-        {
-            AislingSubject?.SendOrangeBarMessage("You are already hidden.");
-
-            return false;
-        }
-
-        return base.ShouldApply(source, target);
+        if (target.Visibility is VisibilityType.Normal) return base.ShouldApply(source, target);
+        AislingSubject?.SendOrangeBarMessage("You are already hidden.");
+        return false;
     }
 }

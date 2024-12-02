@@ -7,6 +7,14 @@
     {
       "dialogKey": "generic_forgetskill_initial",
       "optionText": "Forget Skill"
+    },
+    {
+      "dialogKey": "generic_learnspell_initial",
+      "optionText": "Learn Spell"
+    },
+    {
+      "dialogKey": "generic_forgetspell_initial",
+      "optionText": "Forget Spell"
     }
   ],
   "scriptKeys": [],

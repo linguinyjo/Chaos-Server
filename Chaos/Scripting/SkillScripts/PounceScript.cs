@@ -1,7 +1,5 @@
 using Chaos.Common.Definitions;
 using Chaos.Definitions;
-using Chaos.Formulae;
-using Chaos.Formulae.Damage;
 using Chaos.Models.Data;
 using Chaos.Models.Panel;
 using Chaos.Models.World;
@@ -15,16 +13,14 @@ using Chaos.Scripting.SkillScripts.Abstractions;
 
 namespace Chaos.Scripting.SkillScripts;
 
-public class DamageSelfScript : ConfigurableSkillScriptBase,
-                            GenericAbilityComponent<Creature>.IAbilityComponentOptions,
-                            DamageSelfAbilityComponent.IDamageSelfComponentOptions
+public class PounceScript : ConfigurableSkillScriptBase,
+                            GenericAbilityComponent<Creature>.IAbilityComponentOptions
+    
 {
     /// <inheritdoc />
-    public DamageSelfScript(Skill subject)
+    public PounceScript(Skill subject)
         : base(subject)
     {
-        ApplyDamageScript = ApplyAttackDamageScript.Create();
-        ApplyDamageScript.DamageFormula = DamageFormulae.PureDamage;
         SourceScript = this;
     }
 
@@ -32,8 +28,10 @@ public class DamageSelfScript : ConfigurableSkillScriptBase,
     public override void OnUse(ActivationContext context)
     {
         new ComponentExecutor(context).WithOptions(this)
-            .Execute<DamageSelfAbilityComponent>();
+            .ExecuteAndCheck<GenericAbilityComponent<Creature>>()
+            ?.Execute<PounceAbilityComponent>();
     }
+    
     #region ScriptVars
     /// <inheritdoc />
     public AoeShape Shape { get; init; }
@@ -59,6 +57,8 @@ public class DamageSelfScript : ConfigurableSkillScriptBase,
     /// <inheritdoc />
     public BodyAnimation BodyAnimation { get; init; }
 
+    public IScript SourceScript { get; init; }
+
     /// <inheritdoc />
     public ushort? AnimationSpeed { get; init; }
 
@@ -67,22 +67,8 @@ public class DamageSelfScript : ConfigurableSkillScriptBase,
 
     /// <inheritdoc />
     public bool AnimatePoints { get; init; }
-
-    public IApplyDamageScript ApplyDamageScript { get; init; }
-
-    /// <inheritdoc />
-    public int? BaseDamage { get; init; }
-
-    /// <inheritdoc />
-    public Stat? DamageStat { get; init; }
-
-    /// <inheritdoc />
-    public decimal? DamageStatMultiplier { get; init; }
-
-    /// <inheritdoc />
-    public decimal? PctHpDamage { get; init; }
-
-    public IScript SourceScript { get; init; }
+    
+    // public IScript SourceScript { get; init; }
 
     /// <inheritdoc />
     public int? ManaCost { get; init; }
@@ -92,8 +78,9 @@ public class DamageSelfScript : ConfigurableSkillScriptBase,
 
     /// <inheritdoc />
     public bool ShouldNotBreakHide { get; init; }
-
+    
     /// <inheritdoc />
     public bool CanResist { get; init; }
+    
     #endregion
 }

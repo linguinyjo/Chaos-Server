@@ -1,9 +1,10 @@
 using Chaos.Models.Data;
+using Chaos.Models.World.Abstractions;
 using Chaos.Scripting.EffectScripts.Abstractions;
 using Chaos.Time;
 using Chaos.Time.Abstractions;
 
-namespace Chaos.Scripting.EffectScripts.cc;
+namespace Chaos.Scripting.EffectScripts.CcEffects;
 
 public class SuainEffect : ContinuousAnimationEffectBase
 {
@@ -35,5 +36,10 @@ public class SuainEffect : ContinuousAnimationEffectBase
     protected override void OnIntervalElapsed()
     {
         AislingSubject?.Client.SendSound(Sound, false); 
+    }
+
+    public override bool ShouldApply(Creature source, Creature target)
+    {
+        return !target.Effects.Contains("suain");
     }
 }

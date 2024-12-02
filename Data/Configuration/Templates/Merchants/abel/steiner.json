@@ -46,7 +46,7 @@
     "scriptKeys": ["showdialog", "verbalShop", "defaultBehaviors"],
     "scriptVars": {
         "showdialog": {
-            "dialogKey": "steiner_initial"
+            "dialogKey": "generic_smith_shop_initial"
         }
     },
     "skillsToTeach": [],
