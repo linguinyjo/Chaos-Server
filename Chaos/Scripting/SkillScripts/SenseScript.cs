@@ -13,8 +13,13 @@ using Chaos.Scripting.SkillScripts.Abstractions;
 namespace Chaos.Scripting.SkillScripts;
 
 public class SenseScript : ConfigurableSkillScriptBase,
-                            GenericAbilityComponent<Creature>.IAbilityComponentOptions
+                            GenericAbilityComponent<Creature>.IAbilityComponentOptions,
+                            AbilityLevellingAbilityComponent.IAbilityLevellingComponentOptions
 {
+    
+    public string? AbilityTemplateKey { get; init; }
+    public bool? IsSpell { get; init; }
+    
     /// <inheritdoc />
     public SenseScript(Skill subject)
         : base(subject)
@@ -27,7 +32,8 @@ public class SenseScript : ConfigurableSkillScriptBase,
     {
         new ComponentExecutor(context).WithOptions(this)
             .ExecuteAndCheck<GenericAbilityComponent<Creature>>()
-            ?.Execute<SenseAbilityComponent>();
+            ?.Execute<AbilityLevellingAbilityComponent>()
+            .Execute<SenseAbilityComponent>();
     }
     
     #region ScriptVars
@@ -74,8 +80,9 @@ public class SenseScript : ConfigurableSkillScriptBase,
 
     /// <inheritdoc />
     public bool ShouldNotBreakHide { get; init; }
-    
     /// <inheritdoc />
     public bool CanResist { get; init; }
+    /// <inheritdoc />
+    public AbilityLevellingRate? LevelUpRate { get; init; }
     #endregion
 }

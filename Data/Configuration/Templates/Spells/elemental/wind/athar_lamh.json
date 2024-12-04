@@ -21,7 +21,7 @@
     "name": "athar lamh",
     "spellCategory": "Damage",
     "panelSprite": 66,
-    "scriptKeys": ["damage", "levelup"],
+    "scriptKeys": ["damage"],
     "scriptVars": {
         "damage": {
             "shape": "allAround",
@@ -40,11 +40,8 @@
                 "animationSpeed": 150
             },
             "useMatk": true,
-            "canResist": true
-        },
-        "levelUp": {
-            "rate": "veryfast",
-            "filter": "hostileOnly, aliveOnly, othersOnly"
+            "canResist": true,
+            "levelUpRate": "veryfast"
         }
     },
     "templateKey": "athar_lamh"

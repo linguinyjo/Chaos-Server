@@ -1,18 +1,13 @@
 {
     "learningRequirements": {
-        "itemRequirements": [
-            {
-                "amountRequired": 20,
-                "itemTemplateKey": "apple"
-            }
-        ],
+        "itemRequirements": [],
         "requiredGold": 5000,
         "requiredStats": {
-            "con": 1,
-            "dex": 2,
-            "int": 1,
-            "str": 1,
-            "wis": 1
+            "con": 3,
+            "dex": 3,
+            "int": 3,
+            "str": 3,
+            "wis": 3
         },
         "prerequisiteSkills": [],
         "prerequisiteSpells": []
@@ -20,7 +15,7 @@
     "class": "Monk",
     "cooldownMs": 15000,
     "description": "Teleports the user behind the target, or around the target if behind is occupied.",
-    "level": 10,
+    "level": 11,
     "name": "Ambush",
     "panelSprite": 42,
     "scriptKeys": ["ambush"],

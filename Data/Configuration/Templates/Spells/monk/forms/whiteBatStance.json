@@ -1,7 +1,20 @@
 {
     "isAssail": false,
+    "learningRequirements": {
+        "itemRequirements": [],
+        "requiredGold": 50000,
+        "requiredStats": {
+            "str": 12,
+            "int": 10,
+            "wis": 8,
+            "con": 4,
+            "dex": 18
+        },
+        "prerequisiteSkills": [],
+        "prerequisiteSpells": []
+    },
     "description": "Hides the player",
-    "level": 11,
+    "level": 21,
     "levelsUp": true,
     "name": "White Bat Stance",
     "spellType": "NoTarget",
@@ -19,7 +32,8 @@
                 "animationSpeed": 150
             },
             "manaCost": 500,
-            "filter": "selfOnly, aliveOnly"
+            "filter": "selfOnly, aliveOnly",
+            "levelUpRate": "veryfast"
         }
     },
     "templateKey": "whiteBatStance"

@@ -16,12 +16,10 @@
   "spellType": "NoTarget",
   "class": "Monk",
   "description": "Improves regeneration.\n\nGold required: 20000\nItems required: \nLocation: Sapphire Stream, blue dugon",
-  "level": 1,
+  "level": 22,
   "name": "inner fire",
   "panelSprite": 126,
-  "scriptKeys": [
-    "applyEffect"
-  ],
+  "scriptKeys": ["applyEffect"],
   "scriptVars": {
     "applyEffect": {
       "bodyAnimation": "priestCast",
@@ -32,7 +30,8 @@
       "sound": 30,
       "manaCost": 150,
       "effectKey": "regenBuff",
-      "filter": "aliveOnly"
+      "filter": "aliveOnly",
+      "levelUpRate": "veryfast"
     }
   },
   "templateKey": "innerFire"

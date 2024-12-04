@@ -1,4 +1,5 @@
 using Chaos.Models.Menu;
+using Chaos.Scripting.DialogScripts.MonkFormScripts;
 using Chaos.Services.Factories.Abstractions;
 
 namespace Chaos.Scripting.DialogScripts.suomiScripts;
@@ -19,5 +20,5 @@ public class LearnWhiteBatFormScript : MonkFormScriptBase
     protected override byte RequiredInt => 10;
     protected override byte RequiredWis => 8;
     protected override byte RequiredCon => 4;
-    protected override byte RequiredDex => 22;
+    protected override byte RequiredDex => 18;
 }

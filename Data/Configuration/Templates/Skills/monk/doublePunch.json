@@ -5,7 +5,7 @@
         "requiredGold": 5000,
         "requiredStats": {
             "con": 12,
-            "dex": 4,
+            "dex": 8,
             "int": 3,
             "str": 14,
             "wis": 3
@@ -19,7 +19,7 @@
     "name": "Double Punch",
     "class": "monk",
     "panelSprite": 4,
-    "scriptKeys": ["damage", "levelup"],
+    "scriptKeys": ["damage"],
     "scriptVars": {
         "damage": {
             "bodyAnimation": "punch",
@@ -31,11 +31,8 @@
             "baseDamage": 15,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "PAtkMultiplier": -80,
-            "fistBonus": 30
-        },
-        "levelUp": {
-            "rate": "fast",
-            "filter": "hostileOnly, aliveOnly, othersOnly"
+            "fistBonus": 30,
+            "levelUpRate": "fast"
         }
     },
     "templateKey": "doublePunch"

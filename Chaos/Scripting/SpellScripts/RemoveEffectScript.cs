@@ -13,7 +13,8 @@ namespace Chaos.Scripting.SpellScripts;
 [SuppressMessage("ReSharper", "AutoPropertyCanBeMadeGetOnly.Global")]
 public class RemoveEffectScript : ConfigurableSpellScriptBase,
                                  GenericAbilityComponent<Creature>.IAbilityComponentOptions,
-                                 RemoveEffectAbilityComponent.IRemoveEffectComponentOptions
+                                 RemoveEffectAbilityComponent.IRemoveEffectComponentOptions,
+                                 AbilityLevellingAbilityComponent.IAbilityLevellingComponentOptions
 {
     /// <inheritdoc />
     public RemoveEffectScript(Spell subject, IEffectFactory effectFactory)
@@ -24,7 +25,8 @@ public class RemoveEffectScript : ConfigurableSpellScriptBase,
     public override void OnUse(SpellContext context)
         => new ComponentExecutor(context).WithOptions(this)
                                          .ExecuteAndCheck<GenericAbilityComponent<Creature>>()
-                                         ?.Execute<RemoveEffectAbilityComponent>();
+                                         ?.Execute<AbilityLevellingAbilityComponent>()
+                                         .Execute<RemoveEffectAbilityComponent>();
 
     #region ScriptVars
     /// <inheritdoc />
@@ -73,6 +75,11 @@ public class RemoveEffectScript : ConfigurableSpellScriptBase,
 
     /// <inheritdoc />
     public decimal PctManaCost { get; init; }
+    /// <inheritdoc />
+    public AbilityLevellingRate? LevelUpRate { get; init; }
     public bool CanResist { get; init; }
     #endregion
+
+    public string? AbilityTemplateKey { get; init; }
+    public bool? IsSpell { get; init; }
 }

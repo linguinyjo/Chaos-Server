@@ -20,9 +20,7 @@
   "level": 11,
   "name": "beag ioc comlha",
   "panelSprite": 32,
-  "scriptKeys": [
-    "heal", "levelup"
-  ],
+  "scriptKeys": ["heal"],
   "scriptVars": {
     "heal": {
       "bodyAnimation": "priestCast",
@@ -38,10 +36,8 @@
       "healStat": "wis",
       "magicAttackMultiplier": 1,
       "range": 8,
-      "filter": "friendlyOnly, aliveOnly"
-    },
-    "levelUp": {
-      "rate": "veryfast"
+      "filter": "friendlyOnly, aliveOnly",
+      "levelUpRate": "veryfast"
     }
   },
   "templateKey": "beag_ioc_comlha"

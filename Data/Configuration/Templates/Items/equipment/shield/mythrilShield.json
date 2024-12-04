@@ -7,6 +7,7 @@
     "gender": "Unisex",
     "isModifiable": true,
     "maxDurability": 45000,
+    "class": "warrior",
     "maxStacks": 1,
     "modifiers": {
         "ac": -13,
@@ -17,7 +18,7 @@
     "levelCircle": 3,
     "sellValue": 75000,
     "weight": 10,
-    "description": "Class: All\nLevel: 41\nAc -13, MR 10%",
+    "description": "Class: Warrior\nLevel: 41\nAc -13, MR 10%",
     "name": "Mythril Shield",
     "panelSprite": 93,
     "scriptKeys": ["Equipment"],

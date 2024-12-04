@@ -116,7 +116,7 @@ public class TrapScript : ConfigurableReactorTileScriptBase,
     /// <inheritdoc />
     public int? FistBonus { get; init; }
 
-    public string AbilityTemplateKey { get; init; }
+    public string? AbilityTemplateKey { get; init; }
     public bool? IsSpell { get; init; }
     public Element? Element { get; init; }
     public int? DurationSecs { get; init; }

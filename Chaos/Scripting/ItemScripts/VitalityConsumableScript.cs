@@ -133,8 +133,7 @@ public class VitalityConsumableScript : ConfigurableItemScriptBase,
     public bool? UseMatk { get; init; }
     /// <inheritdoc />
     public int? FistBonus { get; init; }
-
-    public string AbilityTemplateKey { get; init; }
+    public string? AbilityTemplateKey { get; init; }
     public bool? IsSpell { get; init; }
 
     /// <inheritdoc />

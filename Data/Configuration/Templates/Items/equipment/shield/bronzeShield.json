@@ -6,6 +6,7 @@
     "equipmentType": "Shield",
     "gender": "Unisex",
     "isModifiable": true,
+    "class": "warrior",
     "maxDurability": 45000,
     "maxStacks": 1,
     "modifiers": {
@@ -17,7 +18,7 @@
     "levelCircle": 2,
     "sellValue": 15000,
     "weight": 12,
-    "description": "Class: All\nLevel: 11\nAc -8, MR 10%",
+    "description": "Class: Warrior\nLevel: 11\nAc -8, MR 10%",
     "name": "Bronze Shield",
     "panelSprite": 189,
     "scriptKeys": ["Equipment"],

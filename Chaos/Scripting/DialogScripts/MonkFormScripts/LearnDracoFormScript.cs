@@ -1,7 +1,8 @@
 using Chaos.Models.Menu;
+using Chaos.Scripting.DialogScripts.suomiScripts;
 using Chaos.Services.Factories.Abstractions;
 
-namespace Chaos.Scripting.DialogScripts.suomiScripts;
+namespace Chaos.Scripting.DialogScripts.MonkFormScripts;
 
 public class LearnDracoFormScript : MonkFormScriptBase
 {

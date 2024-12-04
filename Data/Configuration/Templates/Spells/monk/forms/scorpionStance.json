@@ -1,7 +1,20 @@
 {
     "isAssail": false,
-    "description": "Reduces AC and immunity to poison effect",
-    "level": 11,
+    "learningRequirements": {
+        "itemRequirements": [],
+        "requiredGold": 50000,
+        "requiredStats": {
+            "str": 18,
+            "int": 6,
+            "wis": 8,
+            "con": 22,
+            "dex": 11
+        },
+        "prerequisiteSkills": [],
+        "prerequisiteSpells": []
+    },
+    "description": "Reduces AC and gives immunity to poison effects",
+    "level": 21,
     "levelsUp": true,
     "name": "Scorpion Stance",
     "class": "monk",
@@ -21,7 +34,8 @@
                 "animationSpeed": 150
             },
             "manaCost": 250,
-            "filter": "selfOnly, aliveOnly"
+            "filter": "selfOnly, aliveOnly",
+            "levelUpRate": "veryfast"
         },
         "removeEffect": {
             "excludeSourcePoint": false,

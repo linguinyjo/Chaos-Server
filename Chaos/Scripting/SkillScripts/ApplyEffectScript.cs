@@ -13,7 +13,8 @@ namespace Chaos.Scripting.SkillScripts;
 
 public class ApplyEffectScript : ConfigurableSkillScriptBase,
                             GenericAbilityComponent<Creature>.IAbilityComponentOptions,
-                            ApplyEffectAbilityComponent.IApplyEffectComponentOptions
+                            ApplyEffectAbilityComponent.IApplyEffectComponentOptions,
+                            AbilityLevellingAbilityComponent.IAbilityLevellingComponentOptions
 {
     
     /// <inheritdoc />
@@ -22,6 +23,7 @@ public class ApplyEffectScript : ConfigurableSkillScriptBase,
     {
         SourceScript = this;
         EffectFactory = effectFactory;
+        AbilityTemplateKey = subject.Template.TemplateKey;
     }
 
     /// <inheritdoc />
@@ -29,7 +31,8 @@ public class ApplyEffectScript : ConfigurableSkillScriptBase,
     {
         new ComponentExecutor(context).WithOptions(this)
             .ExecuteAndCheck<GenericAbilityComponent<Creature>>()
-            ?.Execute<ApplyEffectAbilityComponent>();
+            ?.Execute<AbilityLevellingAbilityComponent>()
+            .Execute<ApplyEffectAbilityComponent>();
     }
     
     #region ScriptVars
@@ -77,5 +80,10 @@ public class ApplyEffectScript : ConfigurableSkillScriptBase,
     public IEffectFactory EffectFactory { get; init; }
     /// <inheritdoc />
     public string? EffectKey { get; init; }
+    /// <inheritdoc />
+    public AbilityLevellingRate? LevelUpRate { get; init; }
     #endregion
+
+    public string? AbilityTemplateKey { get; init; }
+    public bool? IsSpell { get; init; }
 }

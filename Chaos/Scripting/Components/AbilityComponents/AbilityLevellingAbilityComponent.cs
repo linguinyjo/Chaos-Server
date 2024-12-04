@@ -1,5 +1,6 @@
 using Chaos.Models.Data;
 using Chaos.Models.World;
+using Chaos.Models.World.Abstractions;
 using Chaos.Scripting.Components.Abstractions;
 using Chaos.Scripting.Components.Execution;
 
@@ -10,34 +11,37 @@ public struct AbilityLevellingAbilityComponent : IComponent
     /// <inheritdoc />
     public void Execute(ActivationContext context, ComponentVars vars)
     {
+        if (vars.GetTargets<Creature>().Count == 0) return;
         var options = vars.GetOptions<IAbilityLevellingComponentOptions>();
+        if (options.AbilityTemplateKey == null) return;
+        if (options.LevelUpRate == null) return;
         var aisling = context.SourceAisling;
         if (aisling == null) return;
-        if (options.IsSpell) UpdateSpellCount(aisling, options);
-        else UpdateSkillCount(aisling, options);
+        if (options.IsSpell == true) UpdateSpellCount(aisling, options.AbilityTemplateKey, options.LevelUpRate.Value);
+        else UpdateSkillCount(aisling, options.AbilityTemplateKey, options.LevelUpRate.Value);
     }
 
-    private static void UpdateSkillCount(Aisling aisling, IAbilityLevellingComponentOptions options)
+    private static void UpdateSkillCount(Aisling aisling, string abilityTemplateKey, AbilityLevellingRate levelUpRate)
     {
-        if (!aisling.SkillBook.TryGetObjectByTemplateKey(options.AbilityTemplateKey, out var skill) ||
+        if (!aisling.SkillBook.TryGetObjectByTemplateKey(abilityTemplateKey, out var skill) ||
             skill.Level >= skill.MaxLevel) return;
-        var currentUses = IncrementCounter(aisling, options.AbilityTemplateKey);
-        var requiredUses = SkillLevellingConfig.GetSkillRequiredUses(skill.Level, options.Rate, skill.Template.IsAssail);
+        var currentUses = IncrementCounter(aisling, abilityTemplateKey);
+        var requiredUses = SkillLevellingConfig.GetSkillRequiredUses(skill.Level, levelUpRate, skill.Template.IsAssail);
         if (currentUses < requiredUses) return;
         aisling.SkillBook.Update(skill.Slot, lSkill => lSkill.Level = (byte)(lSkill.Level + 1));
-        ResetCounter(aisling, options.AbilityTemplateKey);
+        ResetCounter(aisling,abilityTemplateKey);
         aisling.SendOrangeBarMessage($"{skill.Template.Name} has improved");
     }
     
-    private static void UpdateSpellCount(Aisling aisling, IAbilityLevellingComponentOptions options)
+    private static void UpdateSpellCount(Aisling aisling, string abilityTemplateKey, AbilityLevellingRate levelUpRate)
     {
-        if (!aisling.SpellBook.TryGetObjectByTemplateKey(options.AbilityTemplateKey, out var spell) ||
+        if (!aisling.SpellBook.TryGetObjectByTemplateKey(abilityTemplateKey, out var spell) ||
             spell.Level >= spell.MaxLevel) return;
-        var currentUses = IncrementCounter(aisling, options.AbilityTemplateKey);
-        var requiredUses = SkillLevellingConfig.GetSpellRequiredUses(spell.Level, options.Rate);
+        var currentUses = IncrementCounter(aisling, abilityTemplateKey);
+        var requiredUses = SkillLevellingConfig.GetSpellRequiredUses(spell.Level, levelUpRate);
         if (currentUses < requiredUses) return;
         aisling.SpellBook.Update(spell.Slot, lSpell => lSpell.Level = (byte)(lSpell.Level + 1));
-        ResetCounter(aisling, options.AbilityTemplateKey);
+        ResetCounter(aisling, abilityTemplateKey);
         aisling.SendOrangeBarMessage($"{spell.Template.Name} has improved");
     }
 
@@ -45,6 +49,7 @@ public struct AbilityLevellingAbilityComponent : IComponent
     {
         aisling.Trackers.Counters.AddOrIncrement(abilityTemplateKey);
         aisling.Trackers.Counters.TryGetValue(abilityTemplateKey, out var value);
+        Console.WriteLine($"Updating {abilityTemplateKey} to {value}");
         return value;
     }
     
@@ -55,9 +60,9 @@ public struct AbilityLevellingAbilityComponent : IComponent
         
     public interface IAbilityLevellingComponentOptions
     {
-        AbilityLevellingRate Rate { get; init; }
-        string AbilityTemplateKey { get; init; }
-        bool IsSpell { get; init; }
+        AbilityLevellingRate? LevelUpRate { get; init; }
+        string? AbilityTemplateKey { get; init; }
+        bool? IsSpell { get; init; }
     }
 }
 

@@ -6,7 +6,7 @@ using Chaos.Scripting.Components.Execution;
 
 namespace Chaos.Scripting.Components.AbilityComponents;
 
-public struct ManaCostAbilityComponent : IConditionalComponent
+public struct  ManaCostAbilityComponent : IConditionalComponent
 {
     /// <inheritdoc />
     public bool Execute(ActivationContext context, ComponentVars vars)

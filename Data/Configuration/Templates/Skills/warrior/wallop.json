@@ -24,7 +24,7 @@
     "name": "Wallop",
     "class": "warrior",
     "panelSprite": 0,
-    "scriptKeys": ["damage", "levelup"],
+    "scriptKeys": ["damage"],
     "scriptVars": {
         "damage": {
             "bodyAnimation": "assail",
@@ -35,11 +35,8 @@
             "damageStatMultiplier": 0.50,
             "baseDamage": 3,
             "PAtkMultiplier": -80,
-            "filter": "hostileOnly, aliveOnly, othersOnly"
-        },
-        "levelUp": {
-            "rate": "medium",
-            "filter": "hostileOnly, aliveOnly, othersOnly"
+            "filter": "hostileOnly, aliveOnly, othersOnly",
+            "levelUpRate": "medium"
         }
     },
     "templateKey": "wallop"

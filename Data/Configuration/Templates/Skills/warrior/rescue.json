@@ -20,7 +20,7 @@
     "class": "warrior",
     "panelSprite": 13,
     "cooldownMs": 60000,
-    "scriptKeys": ["taunt", "removeEffect", "levelup"],
+    "scriptKeys": ["taunt", "removeEffect"],
     "scriptVars": {
         "taunt": {
             "excludeSourcePoint": true,
@@ -30,7 +30,8 @@
             "shape": "front",
             "filter": "hostileOnly, aliveOnly",
             "canResist": false,
-            "enmity": 250
+            "enmity": 250,
+            "levelUpRate": "veryfast"
         },
         "removeEffect": {
             "excludeSourcePoint": true,
@@ -42,10 +43,6 @@
                 "animationSpeed": 150
             },
             "filter": "AislingsOnly"
-        },
-        "levelUp": {
-            "rate": "fast",
-            "filter": "hostileOnly, aliveOnly, othersOnly"
         }
     },
     "templateKey": "rescue"

@@ -18,7 +18,8 @@ namespace Chaos.Scripting.SpellScripts;
 public class CascadingDamageScript : ConfigurableSpellScriptBase,
                                      GenericAbilityComponent<Creature>.IAbilityComponentOptions,
                                      DamageAbilityComponent.IDamageComponentOptions,
-                                     CascadingAbilityComponent<CascadingDamageTileScript>.ICascadingComponentOptions
+                                     CascadingAbilityComponent<CascadingDamageTileScript>.ICascadingComponentOptions,
+                                     AbilityLevellingAbilityComponent.IAbilityLevellingComponentOptions
 {
     /// <inheritdoc />
     public CascadingDamageScript(Spell subject, IReactorTileFactory reactorTileFactory)
@@ -36,7 +37,8 @@ public class CascadingDamageScript : ConfigurableSpellScriptBase,
     public override void OnUse(SpellContext context)
         => new ComponentExecutor(context).WithOptions(this)
                                          .ExecuteAndCheck<GenericAbilityComponent<Creature>>()
-                                         ?.Execute<DamageAbilityComponent>()
+                                         ?.Execute<AbilityLevellingAbilityComponent>()
+                                         .Execute<DamageAbilityComponent>()
                                          .Execute<CascadingAbilityComponent<CascadingDamageTileScript>>();
 
     #region ScriptVars
@@ -91,8 +93,8 @@ public class CascadingDamageScript : ConfigurableSpellScriptBase,
     public bool? UseMatk { get; init; }
     /// <inheritdoc />
     public int? FistBonus { get; init; }
-
-    public string AbilityTemplateKey { get; init; }
+    /// <inheritdoc />
+    public AbilityLevellingRate Rate { get; init; }
     public bool? IsSpell { get; init; }
 
     /// <inheritdoc />
@@ -118,9 +120,12 @@ public class CascadingDamageScript : ConfigurableSpellScriptBase,
 
     /// <inheritdoc />
     public decimal PctManaCost { get; init; }
-
+    /// <inheritdoc />
+    public AbilityLevellingRate? LevelUpRate { get; init; }
     /// <inheritdoc />
     public bool ShouldNotBreakHide { get; init; }
     public bool CanResist { get; init; }
+    public string? AbilityTemplateKey { get; init; }
     #endregion
+
 }

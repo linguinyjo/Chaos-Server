@@ -1,13 +1,26 @@
 {
     "isAssail": false,
+    "learningRequirements": {
+        "itemRequirements": [],
+        "requiredGold": 0,
+        "requiredStats": {
+            "str": 18,
+            "int": 6,
+            "wis": 8,
+            "con": 22,
+            "dex": 11
+        },
+        "prerequisiteSkills": [],
+        "prerequisiteSpells": []
+    },
     "description": "A powerful punch which inflicts poison effect on the target",
-    "level": 11,
+    "level": 21,
     "levelsUp": true,
     "name": "Poison Punch",
     "class": "monk",
     "panelSprite": 4,
     "cooldownMs": 18000,
-    "scriptKeys": ["damage", "applyEffect", "levelup"],
+    "scriptKeys": ["damage", "applyEffect"],
     "scriptVars": {
         "damage": {
             "bodyAnimation": "punch",
@@ -30,10 +43,8 @@
                 "targetAnimation": 196,
                 "animationSpeed": 150
             },
-            "filter": "hostileOnly, aliveOnly"
-        },
-        "levelUp": {
-            "rate": "fast"
+            "filter": "hostileOnly, aliveOnly",
+            "levelUpRate": "fast"
         }
     },
     "templateKey": "poisonPunch"

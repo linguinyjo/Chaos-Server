@@ -78,9 +78,9 @@ public struct HealAbilityComponent : IComponent
         return finalHeal;
     }
     
-    private static decimal CalculateAbilityHealMultiplier(Aisling? aisling, string abilityTemplateKey)
+    private static decimal CalculateAbilityHealMultiplier(Aisling? aisling, string? abilityTemplateKey)
     {
-        if (aisling == null) return 0;  
+        if (aisling == null || abilityTemplateKey == null) return 0;  
         var level = aisling.SpellBook.TryGetObjectByTemplateKey(abilityTemplateKey, out var spell) 
             ? spell.Level : (byte)0;
         return (decimal)(1.0f + (level / 100f) * 0.2f);
@@ -95,6 +95,6 @@ public struct HealAbilityComponent : IComponent
         decimal? MagicAttackMultiplier { get; init; }
         decimal? PctHpHeal { get; init; }
         IScript SourceScript { get; init; }
-        string AbilityTemplateKey { get; init; }
+        string? AbilityTemplateKey { get; init; }
     }
 }

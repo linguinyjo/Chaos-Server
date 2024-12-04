@@ -19,7 +19,7 @@
     "name": "Assault",
     "class": "warrior",
     "panelSprite": 1,
-    "scriptKeys": ["damage", "levelUp"],
+    "scriptKeys": ["damage"],
     "scriptVars": {
         "damage": {
             "bodyAnimation": "assail",
@@ -30,11 +30,8 @@
             "damageStatMultiplier": 0.50,
             "baseDamage": 3,
             "PAtkMultiplier": -80,
-            "filter": "hostileOnly, aliveOnly, othersOnly"
-        },
-        "levelUp": {
-            "rate": "fast",
-            "filter": "hostileOnly, aliveOnly, othersOnly"
+            "filter": "hostileOnly, aliveOnly, othersOnly",
+            "levelUpRate": "fast"
         }
     },
     "templateKey": "assault"

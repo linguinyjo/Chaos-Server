@@ -20,9 +20,7 @@
   "level": 21,
   "name": "ioc comlha",
   "panelSprite": 33,
-  "scriptKeys": [
-    "heal", "levelup"
-  ],
+  "scriptKeys": ["heal"],
   "scriptVars": {
     "heal": {
       "bodyAnimation": "priestCast",
@@ -38,10 +36,8 @@
       "healStat": "wis",
       "magicAttackMultiplier": 2,
       "range": 8,
-      "filter": "friendlyOnly, aliveOnly"
-    },
-    "levelUp": {
-      "rate": "fast"
+      "filter": "friendlyOnly, aliveOnly",
+      "levelUpRate": "fast"
     }
   },
   "templateKey": "ioc_comlha"

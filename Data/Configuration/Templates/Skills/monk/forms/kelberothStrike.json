@@ -1,13 +1,26 @@
 {
     "isAssail": false,
+    "learningRequirements": {
+        "itemRequirements": [],
+        "requiredGold": 0,
+        "requiredStats": {
+            "str": 30,
+            "int": 4,
+            "wis": 4,
+            "con": 16,
+            "dex": 6
+        },
+        "prerequisiteSkills": [],
+        "prerequisiteSpells": []
+    },
     "description": "Sacrifice your health to deal severe damage",
-    "level": 11,
+    "level": 21,
     "levelsUp": true,
     "name": "Kelberoth Strike",
     "class": "monk",
     "panelSprite": 36,
     "cooldownMs": 32000,
-    "scriptKeys": ["damage", "damageSelf", "levelup"],
+    "scriptKeys": ["damage", "damageSelf"],
     "scriptVars": {
         "damage": {
             "bodyAnimation": "punch",
@@ -20,14 +33,12 @@
             "shape": "front",
             "excludeSourcePoint": true,
             "pctHpDamage": 15,
-            "filter": "hostileOnly, aliveOnly, othersOnly"
+            "filter": "hostileOnly, aliveOnly, othersOnly",
+            "levelUpRate": "fast"
         },
         "damageSelf": {
             "pctHpDamage": 75,
             "filter": "selfOnly, aliveOnly"
-        },
-        "levelUp": {
-            "rate": "fast"
         }
     },
     "templateKey": "kelberothStrike"

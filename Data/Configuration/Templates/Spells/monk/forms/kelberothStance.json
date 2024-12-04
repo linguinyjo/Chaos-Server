@@ -1,7 +1,20 @@
 {
     "isAssail": false,
+    "learningRequirements": {
+        "itemRequirements": [],
+        "requiredGold": 50000,
+        "requiredStats": {
+            "str": 30,
+            "int": 4,
+            "wis": 4,
+            "con": 16,
+            "dex": 6
+        },
+        "prerequisiteSkills": [],
+        "prerequisiteSpells": []
+    },
     "description": "A strength and damage buff",
-    "level": 11,
+    "level": 21,
     "levelsUp": true,
     "name": "Kelberoth Stance",
     "class": "monk",
@@ -21,7 +34,9 @@
                 "animationSpeed": 150
             },
             "manaCost": 250,
-            "filter": "selfOnly, aliveOnly"}
+            "filter": "selfOnly, aliveOnly",
+            "levelUpRate": "veryfast"
+        }
     },
     "templateKey": "kelberothStance"
 }

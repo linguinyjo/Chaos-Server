@@ -1,13 +1,26 @@
 {
     "isAssail": false,
+    "learningRequirements": {
+        "itemRequirements": [],
+        "requiredGold": 0,
+        "requiredStats": {
+            "str": 12,
+            "int": 10,
+            "wis": 8,
+            "con": 4,
+            "dex": 18
+        },
+        "prerequisiteSkills": [],
+        "prerequisiteSpells": []
+    },
     "description": "Inflicts blind to targets in a line",
-    "level": 11,
+    "level": 21,
     "levelsUp": true,
     "name": "Dark Spear",
     "class": "monk",
     "panelSprite": 4,
     "cooldownMs": 24000,
-    "scriptKeys": ["applyEffect", "levelup"],
+    "scriptKeys": ["applyEffect"],
     "scriptVars": {
         "applyEffect": {
             "bodyAnimation": "punch",
@@ -20,10 +33,8 @@
                 "targetAnimation": 57,
                 "animationSpeed": 150
             },
-            "filter": "hostileOnly, aliveOnly"
-        },
-        "levelUp": {
-            "rate": "fast"
+            "filter": "hostileOnly, aliveOnly",
+            "levelUpRate": "fast"
         }
     },
     "templateKey": "darkSpear"

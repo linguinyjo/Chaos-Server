@@ -2,6 +2,7 @@ using Chaos.Common.Definitions;
 using Chaos.Models.Menu;
 using Chaos.Models.World;
 using Chaos.Scripting.DialogScripts.Abstractions;
+using Chaos.Scripting.DialogScripts.MonkFormScripts;
 using Chaos.Services.Factories.Abstractions;
 
 namespace Chaos.Scripting.DialogScripts.suomiScripts;

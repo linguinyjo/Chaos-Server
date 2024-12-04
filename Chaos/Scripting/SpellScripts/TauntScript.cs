@@ -16,7 +16,8 @@ namespace Chaos.Scripting.SpellScripts;
 public class TauntScript : ConfigurableSpellScriptBase,
                             GenericAbilityComponent<Monster>.IAbilityComponentOptions,
                             DamageAbilityComponent.IDamageComponentOptions,
-                            TauntAbilityComponent.ITauntComponentOptions
+                            TauntAbilityComponent.ITauntComponentOptions,
+                            AbilityLevellingAbilityComponent.IAbilityLevellingComponentOptions
 {
     /// <inheritdoc />
     public TauntScript(Spell subject)
@@ -31,7 +32,8 @@ public class TauntScript : ConfigurableSpellScriptBase,
     public override void OnUse(SpellContext context)
         => new ComponentExecutor(context).WithOptions(this)
                                          .ExecuteAndCheck<GenericAbilityComponent<Monster>>()
-                                         ?.Execute<TauntAbilityComponent>();
+                                         ?.Execute<AbilityLevellingAbilityComponent>()
+                                         .Execute<TauntAbilityComponent>();
 
     #region ScriptVars
     /// <inheritdoc />
@@ -101,8 +103,9 @@ public class TauntScript : ConfigurableSpellScriptBase,
 
     /// <inheritdoc />
     public int? FistBonus { get; init; }
-
-    public string AbilityTemplateKey { get; init; }
+    /// <inheritdoc />
+    public AbilityLevellingRate? LevelUpRate { get; init; }
+    public string? AbilityTemplateKey { get; init; }
     public bool? IsSpell { get; init; }
 
     /// <inheritdoc />

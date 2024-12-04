@@ -13,8 +13,12 @@ namespace Chaos.Scripting.SkillScripts;
 
 public class RemoveEffectScript : ConfigurableSkillScriptBase,
                             GenericAbilityComponent<Creature>.IAbilityComponentOptions,
-                            RemoveEffectAbilityComponent.IRemoveEffectComponentOptions
+                            RemoveEffectAbilityComponent.IRemoveEffectComponentOptions,
+                            AbilityLevellingAbilityComponent.IAbilityLevellingComponentOptions
 {
+    
+    public string? AbilityTemplateKey { get; init; }
+    public bool? IsSpell { get; init; }
     
     /// <inheritdoc />
     public RemoveEffectScript(Skill subject, IEffectFactory effectFactory)
@@ -29,7 +33,8 @@ public class RemoveEffectScript : ConfigurableSkillScriptBase,
     {
         new ComponentExecutor(context).WithOptions(this)
             .ExecuteAndCheck<GenericAbilityComponent<Creature>>()
-            ?.Execute<RemoveEffectAbilityComponent>();
+            ?.Execute<AbilityLevellingAbilityComponent>()
+            .Execute<RemoveEffectAbilityComponent>();
     }
     
     #region ScriptVars
@@ -76,7 +81,8 @@ public class RemoveEffectScript : ConfigurableSkillScriptBase,
 
     /// <inheritdoc />
     public bool ShouldNotBreakHide { get; init; }
-
+    /// <inheritdoc />
+    public AbilityLevellingRate? LevelUpRate { get; init; }
     /// <inheritdoc />
     public bool CanResist { get; init; }
     public IEffectFactory EffectFactory { get; init; }

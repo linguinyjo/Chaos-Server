@@ -21,7 +21,7 @@
   "level": 1,
   "name": "beag ioc",
   "panelSprite": 28,
-  "scriptKeys": ["heal", "levelUp"],
+  "scriptKeys": ["heal"],
   "scriptVars": {
     "heal": {
       "bodyAnimation": "priestCast",
@@ -36,10 +36,8 @@
       "healStat": "wis",
       "magicAttackMultiplier": 1,
       "range": 8,
-      "filter": "friendlyOnly, aliveOnly"
-    },
-    "levelUp": {
-      "rate": "veryfast"
+      "filter": "friendlyOnly, aliveOnly",
+      "levelUpRate": "veryfast"
     }
   },
   "templateKey": "beag_ioc"

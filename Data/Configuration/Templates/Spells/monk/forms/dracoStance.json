@@ -1,7 +1,20 @@
 {
     "isAssail": false,
+    "learningRequirements": {
+        "itemRequirements": [],
+        "requiredGold": 50000,
+        "requiredStats": {
+            "str": 12,
+            "int": 4,
+            "wis": 8,
+            "con": 28,
+            "dex": 8
+        },
+        "prerequisiteSkills": [],
+        "prerequisiteSpells": []
+    },
     "description": "Applies rapid regeneration to self",
-    "level": 11,
+    "level": 21,
     "levelsUp": true,
     "name": "Draco Stance",
     "class": "monk",
@@ -19,7 +32,8 @@
                 "targetAnimation": 6,
                 "animationSpeed": 150
             },
-            "manaCost": 450
+            "manaCost": 450,
+            "levelUpRate": "veryfast"
         }
     },
     "spellType": "NoTarget",

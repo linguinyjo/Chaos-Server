@@ -19,13 +19,7 @@ public class RemoveEffectConsumableScript : ConfigurableItemScriptBase,
                                         GenericAbilityComponent<Aisling>.IAbilityComponentOptions,
                                         RemoveEffectAbilityComponent.IRemoveEffectComponentOptions,
                                         ConsumableAbilityComponent.IConsumableComponentOptions
-
 {
-    
-    public Item Item { get; init; }
-    public IEffectFactory EffectFactory { get; init; }
-    public string? EffectKey { get; init; }
-    
     /// <inheritdoc />
     public RemoveEffectConsumableScript(Item subject, IEffectFactory effectFactory)
         : base(subject)
@@ -86,10 +80,12 @@ public class RemoveEffectConsumableScript : ConfigurableItemScriptBase,
     /// <inheritdoc />
     public bool ShouldNotBreakHide { get; init; }
     public IScript SourceScript { get; init; }
-    
     /// <inheritdoc />
     public string ItemName { get; init; }
-    
+    /// <inheritdoc />
     public bool CanResist { get; init; }
+    public Item Item { get; init; }
+    public IEffectFactory EffectFactory { get; init; }
+    public string? EffectKey { get; init; }
     #endregion
 }

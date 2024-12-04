@@ -3,7 +3,7 @@
   "category": "monster",
   "color": "Default",
   "isModifiable": false,
-  "maxStacks": 1,
+  "maxStacks": 50,
   "sellValue": 450,
   "weight": 1,
   "description": "The eye of a mantis",

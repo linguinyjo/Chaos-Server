@@ -15,10 +15,8 @@ namespace Chaos.Scripting.SkillScripts;
 
 public class TauntScript : ConfigurableSkillScriptBase,
                             GenericAbilityComponent<Creature>.IAbilityComponentOptions,
-                            TauntAbilityComponent.ITauntComponentOptions
-
-                            
-    
+                            TauntAbilityComponent.ITauntComponentOptions,
+                            AbilityLevellingAbilityComponent.IAbilityLevellingComponentOptions
 {
     /// <inheritdoc />
     public TauntScript(Skill subject)
@@ -32,7 +30,8 @@ public class TauntScript : ConfigurableSkillScriptBase,
     {
         new ComponentExecutor(context).WithOptions(this)
             .ExecuteAndCheck<GenericAbilityComponent<Creature>>()
-            ?.Execute<TauntAbilityComponent>();
+            ?.Execute<AbilityLevellingAbilityComponent>()
+            .Execute<TauntAbilityComponent>();
     }
     #region ScriptVars
     /// <inheritdoc />
@@ -83,5 +82,11 @@ public class TauntScript : ConfigurableSkillScriptBase,
     public bool CanResist { get; init; }
     /// <inheritdoc />
     public int Enmity { get; init; }
+    /// <inheritdoc />
+    public AbilityLevellingRate? LevelUpRate { get; init; }
+
     #endregion
+
+    public string? AbilityTemplateKey { get; init; }
+    public bool? IsSpell { get; init; }
 }

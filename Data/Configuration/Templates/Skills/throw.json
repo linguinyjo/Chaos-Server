@@ -1,26 +1,21 @@
 {
     "learningRequirements": {
-        "itemRequirements": [
-            {
-                "amountRequired": 20,
-                "itemTemplateKey": "apple"
-            }
-        ],
-        "requiredGold": 5000,
+        "itemRequirements": [],
+        "requiredGold": 25000,
         "requiredStats": {
-            "con": 1,
-            "dex": 2,
-            "int": 1,
-            "str": 1,
-            "wis": 1
+            "con": 3,
+            "dex": 3,
+            "int": 3,
+            "str": 3,
+            "wis": 3
         },
         "prerequisiteSkills": [],
         "prerequisiteSpells": []
     },
-    "class": "Monk",
+    "class": "Peasant",
     "cooldownMs": 15000,
     "description": "Throws the target 1 or 2 spaces.",
-    "level": 10,
+    "level": 11,
     "name": "Throw",
     "panelSprite": 42,
     "scriptKeys": ["throw"],

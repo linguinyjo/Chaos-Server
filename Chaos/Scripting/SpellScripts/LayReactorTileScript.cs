@@ -14,13 +14,15 @@ public class LayReactorTileScript(Spell subject, IReactorTileFactory reactorTile
                                                                                            GenericAbilityComponent<MapEntity>.
                                                                                            IAbilityComponentOptions,
                                                                                            LayReactorAbilityComponent.
-                                                                                           ILayReactorComponentOptions
+                                                                                           ILayReactorComponentOptions,
+                                                                                           AbilityLevellingAbilityComponent.IAbilityLevellingComponentOptions
 {
     /// <inheritdoc />
     public override void OnUse(SpellContext context)
         => new ComponentExecutor(context).WithOptions(this)
                                          .ExecuteAndCheck<GenericAbilityComponent<MapEntity>>()
-                                         ?.Execute<LayReactorAbilityComponent>();
+                                         ?.Execute<AbilityLevellingAbilityComponent>()
+                                         .Execute<LayReactorAbilityComponent>();
 
     #region ScriptVars
     /// <inheritdoc />
@@ -67,10 +69,14 @@ public class LayReactorTileScript(Spell subject, IReactorTileFactory reactorTile
 
     /// <inheritdoc />
     public int? ManaCost { get; init; }
-
+    /// <inheritdoc />
+    public AbilityLevellingRate? LevelUpRate { get; init; }
     /// <inheritdoc />
     public decimal PctManaCost { get; init; }
     public bool CanResist { get; init; }
 
     #endregion
+
+    public string? AbilityTemplateKey { get; init; }
+    public bool? IsSpell { get; init; }
 }

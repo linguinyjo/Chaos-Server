@@ -21,7 +21,7 @@
     "levelsUp": true,
     "spellCategory": "Damage",
     "panelSprite": 43,
-    "scriptKeys": ["damage", "levelup"],
+    "scriptKeys": ["damage"],
     "scriptVars": {
         "damage": {
             "bodyAnimation": "wizardCast",
@@ -40,11 +40,8 @@
                 "animationSpeed": 100
             },
             "useMatk": true,
-            "canResist": true
-        },
-        "levelUp": {
-            "rate": "veryfast",
-            "filter": "hostileOnly, aliveOnly, othersOnly"
+            "canResist": true,
+            "levelUpRate": "veryfast"
         }
     },
     "templateKey": "beag_athar"

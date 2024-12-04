@@ -16,12 +16,10 @@
   "spellType": "NoTarget",
   "class": "Monk",
   "description": "Applies a small heal to self.\n\nGold required: 5000\nItems required: \nLocation: Sapphire Stream, white dugon",
-  "level": 1,
+  "level": 11,
   "name": "Gentle Touch",
   "panelSprite": 120,
-  "scriptKeys": [
-    "heal", "levelup"
-  ],
+  "scriptKeys": ["heal"],
   "scriptVars": {
     "heal": {
       "bodyAnimation": "priestCast",
@@ -36,10 +34,8 @@
       "baseHeal": 150,
       "healStat": "wis",
       "range": 1,
-      "filter": "aliveOnly, friendlyOnly"
-    },
-    "levelUp": {
-      "rate": "fast"
+      "filter": "aliveOnly, friendlyOnly",
+      "levelUpRate": "fast"
     }
   },
   "templateKey": "gentleTouch"

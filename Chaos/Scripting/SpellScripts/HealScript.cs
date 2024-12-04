@@ -13,7 +13,8 @@ namespace Chaos.Scripting.SpellScripts;
 
 public class HealScript : ConfigurableSpellScriptBase,
                           GenericAbilityComponent<Creature>.IAbilityComponentOptions,
-                          HealAbilityComponent.IHealComponentOptions
+                          HealAbilityComponent.IHealComponentOptions,
+                          AbilityLevellingAbilityComponent.IAbilityLevellingComponentOptions
 {
     /// <inheritdoc />
     public HealScript(Spell subject)
@@ -22,13 +23,15 @@ public class HealScript : ConfigurableSpellScriptBase,
         ApplyHealScript = FunctionalScripts.ApplyHealing.ApplyHealScript.Create();
         SourceScript = this;
         AbilityTemplateKey = subject.Template.TemplateKey;
+        IsSpell = true;
     }
 
     /// <inheritdoc />
     public override void OnUse(SpellContext context)
         => new ComponentExecutor(context).WithOptions(this)
                                          .ExecuteAndCheck<GenericAbilityComponent<Creature>>()
-                                         ?.Execute<HealAbilityComponent>();
+                                         ?.Execute<AbilityLevellingAbilityComponent>()
+                                         .Execute<HealAbilityComponent>();
 
     #region ScriptVars
     /// <inheritdoc />
@@ -84,17 +87,17 @@ public class HealScript : ConfigurableSpellScriptBase,
 
     /// <inheritdoc />
     public decimal? PctHpHeal { get; init; }
-
     /// <inheritdoc />
     public IScript SourceScript { get; init; }
-
-    public string AbilityTemplateKey { get; init; }
-
+    /// <inheritdoc />
+    public AbilityLevellingRate? LevelUpRate { get; init; }
     /// <inheritdoc />
     public int? ManaCost { get; init; }
-
     /// <inheritdoc />
     public decimal PctManaCost { get; init; }
+    /// <inheritdoc />
     public bool CanResist { get; init; }
+    public string? AbilityTemplateKey { get; init; }
+    public bool? IsSpell { get; init; }
     #endregion
 }

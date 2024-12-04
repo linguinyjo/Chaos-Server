@@ -17,6 +17,10 @@ public class PounceScript : ConfigurableSkillScriptBase,
                             GenericAbilityComponent<Creature>.IAbilityComponentOptions
     
 {
+    
+    public string? AbilityTemplateKey { get; init; }
+    public bool? IsSpell { get; init; }
+    
     /// <inheritdoc />
     public PounceScript(Skill subject)
         : base(subject)
@@ -81,6 +85,5 @@ public class PounceScript : ConfigurableSkillScriptBase,
     
     /// <inheritdoc />
     public bool CanResist { get; init; }
-    
     #endregion
 }

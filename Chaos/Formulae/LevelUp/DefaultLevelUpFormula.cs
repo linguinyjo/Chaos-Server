@@ -41,11 +41,10 @@ public class DefaultLevelUpFormula : ILevelUpFormula
             >= 1 and <= 11 => 8,
             >= 12 and <= 15 => 7,
             >= 16 and <= 21 => 6,
-            >= 22 and <= 23 => 5.6,
-            >= 24 and <= 25 => 5.3,
-            >= 26 and <= 31 => 5,
-            >= 31 and <= 41 => 4.5,
-            >= 42 and <= 51 => 4,
+            >= 22 and <= 28 => 5.6,
+            >= 29 and <= 33 => 5.3,
+            >= 34 and <= 41 => 5,
+            >= 42 and <= 51 => 4.5,
             >= 52 and <= 99 => 3,
             _ => 1
         };

@@ -1,5 +1,11 @@
+using Chaos.Common.Definitions;
+using Chaos.Models.Data;
+using Chaos.Models.World.Abstractions;
 using Chaos.Scripting.Abstractions.Tests.Mocks;
+using Chaos.Scripting.Components.AbilityComponents;
+using Chaos.Scripting.SpellScripts;
 using FluentAssertions;
+using Moq;
 using Xunit;
 
 namespace Chaos.Scripting.Abstractions.Tests;

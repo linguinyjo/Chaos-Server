@@ -21,9 +21,7 @@
   "level": 11,
   "name": "ioc",
   "panelSprite": 29,
-  "scriptKeys": [
-    "heal", "levelup"
-  ],
+  "scriptKeys": ["heal"],
   "scriptVars": {
     "heal": {
       "bodyAnimation": "priestCast",
@@ -38,10 +36,8 @@
       "healStat": "wis",
       "magicAttackMultiplier": 1.5,
       "range": 8,
-      "filter": "friendlyOnly, aliveOnly"
-    },
-    "levelUp": {
-      "rate": "veryfast"
+      "filter": "friendlyOnly, aliveOnly",
+      "levelUpRate": "veryfast"
     }
   },
   "templateKey": "ioc"

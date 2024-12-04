@@ -15,7 +15,8 @@ namespace Chaos.Scripting.SkillScripts;
 
 public class DamageScript : ConfigurableSkillScriptBase,
                             GenericAbilityComponent<Creature>.IAbilityComponentOptions,
-                            DamageAbilityComponent.IDamageComponentOptions
+                            DamageAbilityComponent.IDamageComponentOptions,
+                            AbilityLevellingAbilityComponent.IAbilityLevellingComponentOptions
 {
     /// <inheritdoc />
     public DamageScript(Skill subject)
@@ -32,8 +33,10 @@ public class DamageScript : ConfigurableSkillScriptBase,
     {
         new ComponentExecutor(context).WithOptions(this)
             .ExecuteAndCheck<GenericAbilityComponent<Creature>>()
-            ?.Execute<DamageAbilityComponent>();
+            ?.Execute<AbilityLevellingAbilityComponent>()
+            .Execute<DamageAbilityComponent>();
     }
+    
     #region ScriptVars
     /// <inheritdoc />
     public AoeShape Shape { get; init; }
@@ -107,9 +110,10 @@ public class DamageScript : ConfigurableSkillScriptBase,
 
     /// <inheritdoc />
     public bool CanResist { get; init; }
-    
-    public string AbilityTemplateKey { get; init; }
-    public bool? IsSpell { get; init; }
 
+    /// <inheritdoc />
+    public AbilityLevellingRate? LevelUpRate { get; init; }
+    public string? AbilityTemplateKey { get; init; }
+    public bool? IsSpell { get; init; }
     #endregion
 }

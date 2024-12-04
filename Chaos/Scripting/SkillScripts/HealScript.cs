@@ -13,21 +13,26 @@ namespace Chaos.Scripting.SkillScripts;
 
 public class HealScript : ConfigurableSkillScriptBase,
                           GenericAbilityComponent<Creature>.IAbilityComponentOptions,
-                          HealAbilityComponent.IHealComponentOptions
+                          HealAbilityComponent.IHealComponentOptions,
+                          AbilityLevellingAbilityComponent.IAbilityLevellingComponentOptions
 {
+    public bool? IsSpell { get; init; }
+    
     public HealScript(Skill subject)
         : base(subject)
     {
         ApplyHealScript = FunctionalScripts.ApplyHealing.ApplyHealScript.Create();
         SourceScript = this;
         AbilityTemplateKey = subject.Template.TemplateKey;
+        IsSpell = true;
     }
 
     /// <inheritdoc />
     public override void OnUse(ActivationContext context)
         => new ComponentExecutor(context).WithOptions(this)
                                          .ExecuteAndCheck<GenericAbilityComponent<Creature>>()
-                                         ?.Execute<HealAbilityComponent>();
+                                         ?.Execute<AbilityLevellingAbilityComponent>()
+                                         .Execute<HealAbilityComponent>();
 
     #region ScriptVars
     /// <inheritdoc />
@@ -83,15 +88,13 @@ public class HealScript : ConfigurableSkillScriptBase,
 
     /// <inheritdoc />
     public IScript SourceScript { get; init; }
-
-    public string AbilityTemplateKey { get; init; }
-
+    /// <inheritdoc />
+    public AbilityLevellingRate? LevelUpRate { get; init; }
+    public string? AbilityTemplateKey { get; init; }
     /// <inheritdoc />
     public int? ManaCost { get; init; }
-
     /// <inheritdoc />
     public decimal PctManaCost { get; init; }
-
     /// <inheritdoc />
     public bool ShouldNotBreakHide { get; init; }
     public bool CanResist { get; init; }

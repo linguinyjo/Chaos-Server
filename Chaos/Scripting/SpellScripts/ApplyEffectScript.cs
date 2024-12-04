@@ -14,18 +14,24 @@ namespace Chaos.Scripting.SpellScripts;
 [SuppressMessage("ReSharper", "AutoPropertyCanBeMadeGetOnly.Global")]
 public class ApplyEffectScript : ConfigurableSpellScriptBase,
                                  GenericAbilityComponent<Creature>.IAbilityComponentOptions,
-                                 ApplyEffectAbilityComponent.IApplyEffectComponentOptions
+                                 ApplyEffectAbilityComponent.IApplyEffectComponentOptions,
+                                 AbilityLevellingAbilityComponent.IAbilityLevellingComponentOptions
 {
     /// <inheritdoc />
     public ApplyEffectScript(Spell subject, IEffectFactory effectFactory)
         : base(subject)
-        => EffectFactory = effectFactory;
+    {
+        EffectFactory = effectFactory;
+        AbilityTemplateKey = subject.Template.TemplateKey;
+    }
+     
 
     /// <inheritdoc />
     public override void OnUse(SpellContext context)
         => new ComponentExecutor(context).WithOptions(this)
                                          .ExecuteAndCheck<GenericAbilityComponent<Creature>>()
-                                         ?.Execute<ApplyEffectAbilityComponent>();
+                                         ?.Execute<AbilityLevellingAbilityComponent>()
+                                         .Execute<ApplyEffectAbilityComponent>();
 
     #region ScriptVars
     /// <inheritdoc />
@@ -72,17 +78,21 @@ public class ApplyEffectScript : ConfigurableSpellScriptBase,
 
     /// <inheritdoc />
     public IEffectFactory EffectFactory { get; init; }
-    
-    /// <inheritdoc />
-    public Creature? Source { get; init; }
 
     /// <inheritdoc />
     public int? ManaCost { get; init; }
 
     /// <inheritdoc />
     public decimal PctManaCost { get; init; }
+    
+    /// <inheritdoc />
+    public AbilityLevellingRate? LevelUpRate { get; init; }
 
+    /// <inheritdoc />
     public bool CanResist { get; init; }
 
     #endregion
+
+    public string? AbilityTemplateKey { get; init; }
+    public bool? IsSpell { get; init; }
 }

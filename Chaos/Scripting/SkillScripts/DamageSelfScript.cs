@@ -34,6 +34,7 @@ public class DamageSelfScript : ConfigurableSkillScriptBase,
         new ComponentExecutor(context).WithOptions(this)
             .Execute<DamageSelfAbilityComponent>();
     }
+    
     #region ScriptVars
     /// <inheritdoc />
     public AoeShape Shape { get; init; }

@@ -21,7 +21,7 @@
     "name": "athar",
     "spellCategory": "Damage",
     "panelSprite": 43,
-    "scriptKeys": ["damage", "levelup"],
+    "scriptKeys": ["damage"],
     "scriptVars": {
         "damage": {
             "bodyAnimation": "wizardCast",
@@ -40,11 +40,8 @@
                 "animationSpeed": 150
             },
             "useMatk": true,
-            "canResist": true
-        },
-        "levelUp": {
-            "rate": "fast",
-            "filter": "hostileOnly, aliveOnly, othersOnly"
+            "canResist": true,
+            "levelUpRate": "fast"
         }
     },
     "templateKey": "athar"

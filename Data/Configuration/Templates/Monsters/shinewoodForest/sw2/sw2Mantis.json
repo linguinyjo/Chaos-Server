@@ -1,7 +1,7 @@
 {
     "assailIntervalMs": 1500,
     "aggroRange": 12,
-    "expReward": 171,
+    "expReward": 170,
     "moveIntervalMs": 1300,
     "name": "Mantis",
     "lootTableKeys": ["sw2Mantis"],
