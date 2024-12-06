@@ -19,9 +19,29 @@
         {
             "itemTemplateKey": "battleSword",
             "stock": 100
+        },
+        {
+            "itemTemplateKey": "battleSword",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "battleSword",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "snowDagger",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "centerDagger",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "curvedDagger",
+            "stock": 100
         }
     ],
-    "itemsToBuy": ["stick", "dirk", "eppe", "louresSabre", "claidheamh", "broadSword","battleSword","masquerade","templar"],
+    "itemsToBuy": ["stick", "dirk", "eppe", "louresSabre", "claidheamh", "broadSword","battleSword","masquerade","templar","snowDagger","centerDagger","curvedDagger"],
     "name": "Marlon",
     "restockIntervalHrs": 1,
     "restockPCt": 100,

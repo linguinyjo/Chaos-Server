@@ -1,5 +1,5 @@
 {
-    "buyCost": 25000,
+    "buyCost": 75000,
     "category": "Armor F",
     "color": "Default",
     "isDyable": true,
@@ -16,7 +16,7 @@
     "pantsColor": "Black",
     "level": 41,
     "levelCircle": 3,
-    "sellValue": 12500,
+    "sellValue": 37500,
     "weight": 25,
     "description": "Class: Female Warrior\nLevel: 41\nAc -30\nDex -2",
     "name": "Kasmanium Hauberk",

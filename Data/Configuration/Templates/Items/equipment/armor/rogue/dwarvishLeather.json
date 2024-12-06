@@ -1,0 +1,28 @@
+{
+    "buyCost": 4500,
+    "category": "Armor M",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 9,
+    "equipmentType": "Armor",
+    "gender": "Male",
+    "maxDurability": 8000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -20
+    },
+    "class": "rogue",
+    "pantsColor": "default",
+    "level": 11,
+    "levelCircle": 2,
+    "sellValue": 2250,
+    "weight": 6,
+    "description": "Class: Male Rogue\nLevel: 11\nAc -20",
+    "name": "Dwarvish Leather",
+    "panelSprite": 104,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "dwarvishLeather"
+}

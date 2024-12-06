@@ -14,11 +14,11 @@
             "itemTemplateKey": "pearlChainNecklace"
         },
         {
-            "dropChance": 0.004,
+            "dropChance": 0.006,
             "itemTemplateKey": "holyKronos"
         },
         {
-            "dropChance": 0.004,
+            "dropChance": 0.006,
             "itemTemplateKey": "magusKronos"
         },
         {
@@ -28,6 +28,14 @@
         {
             "dropChance": 0.006,
             "itemTemplateKey": "mythrilBelt"
+        },
+        {
+            "dropChance": 0.006,
+            "itemTemplateKey": "moonDagger"
+        },
+        {
+            "dropChance": 0.006,
+            "itemTemplateKey": "moonSecret"
         }
     ]
 }

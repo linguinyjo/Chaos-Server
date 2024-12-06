@@ -1,0 +1,28 @@
+{
+    "buyCost": 4500,
+    "category": "Armor F",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 9,
+    "equipmentType": "Armor",
+    "gender": "Female",
+    "maxDurability": 8000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -20
+    },
+    "class": "rogue",
+    "pantsColor": "default",
+    "level": 11,
+    "levelCircle": 2,
+    "sellValue": 2250,
+    "weight": 6,
+    "description": "Class: Female Rogue\nLevel: 11\nAc -20",
+    "name": "Brigandine",
+    "panelSprite": 123,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "brigandine"
+}

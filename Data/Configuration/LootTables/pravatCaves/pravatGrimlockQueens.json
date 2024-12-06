@@ -36,6 +36,14 @@
         {
             "dropChance": 0.20,
             "itemTemplateKey": "magusApollo"
+        },
+        {
+            "dropChance": 0.20,
+            "itemTemplateKey": "moonDagger"
+        },
+        {
+            "dropChance": 0.20,
+            "itemTemplateKey": "moonSecret"
         }
     ]
 }

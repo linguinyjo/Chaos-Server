@@ -1,0 +1,27 @@
+{
+    "buyCost": 60000,
+    "category": "Dagger",
+    "color": "Default",
+    "displaySprite": 31,
+    "equipmentType": "Weapon",
+    "gender": "Unisex",
+    "isModifiable": true,
+    "maxDurability": 12000,
+    "maxStacks": 1,
+    "level": 11,
+    "levelCircle": 2,
+    "class": "rogue",
+    "modifiers": {
+        "physicalAttack": 46
+    },
+    "sellValue": 30000,
+    "weight": 3,
+    "description": "Class: rogue\nLevel: 11\nP.Atk 46",
+    "name": "Blossom Dagger",
+    "panelSprite": 251,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "blossomDagger"
+}

@@ -1,0 +1,28 @@
+{
+    "buyCost": 75000,
+    "category": "Armor M",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 8,
+    "equipmentType": "Armor",
+    "gender": "Male",
+    "maxDurability": 10000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -29
+    },
+    "class": "monk",
+    "pantsColor": "Default",
+    "level": 41,
+    "levelCircle": 3,
+    "sellValue": 37500,
+    "weight": 8,
+    "description": "Class: Male Monk\nLevel: 41\nAc -29",
+    "name": "Earth Garb",
+    "panelSprite": 103,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "earthGarb"
+}

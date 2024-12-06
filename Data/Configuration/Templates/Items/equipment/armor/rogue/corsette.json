@@ -1,0 +1,28 @@
+{
+    "buyCost": 75000,
+    "category": "Armor F",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 14,
+    "equipmentType": "Armor",
+    "gender": "Female",
+    "maxDurability": 10000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -30
+    },
+    "class": "rogue",
+    "pantsColor": "default",
+    "level": 41,
+    "levelCircle": 3,
+    "sellValue": 37500,
+    "weight": 6,
+    "description": "Class: Female Rogue\nLevel: 41\nAc -30",
+    "name": "Corsette",
+    "panelSprite": 128,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "corsette"
+}

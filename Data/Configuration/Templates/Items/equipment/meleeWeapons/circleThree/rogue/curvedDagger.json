@@ -1,0 +1,27 @@
+{
+    "buyCost": 150000,
+    "category": "Dagger",
+    "color": "Default",
+    "displaySprite": 46,
+    "equipmentType": "Weapon",
+    "gender": "Unisex",
+    "isModifiable": true,
+    "maxDurability": 15000,
+    "maxStacks": 1,
+    "level": 41,
+    "levelCircle": 3,
+    "class": "rogue",
+    "modifiers": {
+        "physicalAttack": 76
+    },
+    "sellValue": 75000,
+    "weight": 3,
+    "description": "Class: rogue\nLevel: 41\nP.Atk 76",
+    "name": "Curved Dagger",
+    "panelSprite": 518,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "curvedDagger"
+}

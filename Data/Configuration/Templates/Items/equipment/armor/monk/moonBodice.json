@@ -1,5 +1,5 @@
 {
-    "buyCost": 7500,
+    "buyCost": 75000,
     "category": "Armor F",
     "color": "Default",
     "isDyable": true,
@@ -15,7 +15,7 @@
     "pantsColor": "Default",
     "level": 41,
     "levelCircle": 3,
-    "sellValue": 3750,
+    "sellValue": 37500,
     "weight": 8,
     "description": "Class: Female Monk\nLevel: 41\nAc -29",
     "name": "Moon Bodice",

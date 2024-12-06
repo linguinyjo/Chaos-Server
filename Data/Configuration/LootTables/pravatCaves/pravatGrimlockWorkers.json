@@ -20,6 +20,14 @@
         {
             "dropChance": 0.003,
             "itemTemplateKey": "hatchet"
+        },
+        {
+            "dropChance": 0.003,
+            "itemTemplateKey": "moonDagger"
+        },
+        {
+            "dropChance": 0.003,
+            "itemTemplateKey": "moonSecret"
         }
     ]
 }

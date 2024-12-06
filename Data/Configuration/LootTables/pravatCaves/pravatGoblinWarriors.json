@@ -6,15 +6,15 @@
             "itemTemplateKey": "enchantWeaponScroll2nd"
         },
         {
-            "dropChance": 0.005,
+            "dropChance": 0.006,
             "itemTemplateKey": "templar"
         },
         {
-            "dropChance": 0.004,
+            "dropChance": 0.006,
             "itemTemplateKey": "masquerade"
         },
         {
-            "dropChance": 0.004,
+            "dropChance": 0.006,
             "itemTemplateKey": "magusApollo"
         },
         {

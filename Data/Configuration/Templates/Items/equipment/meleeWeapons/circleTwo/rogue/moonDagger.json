@@ -1,0 +1,27 @@
+{
+    "buyCost": 80000,
+    "category": "Dagger",
+    "color": "Default",
+    "displaySprite": 31,
+    "equipmentType": "Weapon",
+    "gender": "Unisex",
+    "isModifiable": true,
+    "maxDurability": 15000,
+    "maxStacks": 1,
+    "level": 11,
+    "levelCircle": 2,
+    "class": "rogue",
+    "modifiers": {
+        "physicalAttack": 57
+    },
+    "sellValue": 40000,
+    "weight": 4,
+    "description": "Class: rogue\nLevel: 11\nP.Atk 57",
+    "name": "Moon Dagger",
+    "panelSprite": 255,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "moonDagger"
+}

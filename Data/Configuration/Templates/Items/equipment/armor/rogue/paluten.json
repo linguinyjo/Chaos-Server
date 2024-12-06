@@ -1,28 +1,28 @@
 {
-    "buyCost": 7500,
+    "buyCost": 75000,
     "category": "Armor M",
     "color": "Default",
     "isDyable": true,
-    "displaySprite": 8,
+    "displaySprite": 14,
     "equipmentType": "Armor",
     "gender": "Male",
     "maxDurability": 10000,
     "maxStacks": 1,
     "modifiers": {
-        "ac": -29
+        "ac": -30
     },
-    "class": "monk",
-    "pantsColor": "Default",
+    "class": "rogue",
+    "pantsColor": "default",
     "level": 41,
     "levelCircle": 3,
-    "sellValue": 3750,
-    "weight": 8,
-    "description": "Class: Male Monk\nLevel: 41\nAc -29",
-    "name": "Earth Garb",
-    "panelSprite": 103,
+    "sellValue": 37500,
+    "weight": 6,
+    "description": "Class: Male Rogue\nLevel: 41\nAc -30",
+    "name": "Paluten",
+    "panelSprite": 109,
     "scriptKeys": ["Equipment"],
     "scriptVars": {
         "equipment": {}
     },
-    "templateKey": "earthGarb"
+    "templateKey": "paluten"
 }

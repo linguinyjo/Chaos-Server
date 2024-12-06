@@ -9,11 +9,16 @@
             "stock": 100
         },
         {
-            "itemTemplateKey": "eppe",
+            "itemTemplateKey": "snowSecret",
+            "stock": 100
+        },
+        {
+            "itemTemplateKey": "centerSecret",
             "stock": 100
         }
     ],
-    "itemsToBuy": ["woodenShield", "stick", "dirk", "eppe", "louresSabre", "claidheamh", "broadSword","battleSword","masquerade","templar"],
+    "itemsToBuy": ["woodenShield", "stick", "dirk", "eppe", "louresSabre", "claidheamh", "broadSword","battleSword",
+        "masquerade","templar","snowSecret","centerSecret"],
     "name": "Torbjorn",
     "restockIntervalHrs": 1,
     "restockPCt": 100,
