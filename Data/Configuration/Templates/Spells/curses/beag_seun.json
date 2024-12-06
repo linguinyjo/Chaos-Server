@@ -16,7 +16,8 @@
   "class": "Wizard",
   "description": "Enchants a monster to fight for you.\n\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
   "level": 11,
-  "castLines": 2,
+  "castLines": 4,
+  "spellCategory": "Debuff",
   "name": "beag seun",
   "panelSprite": 20,
   "scriptKeys": [

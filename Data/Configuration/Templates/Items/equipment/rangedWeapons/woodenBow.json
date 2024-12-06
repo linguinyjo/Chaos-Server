@@ -1,0 +1,27 @@
+{
+    "buyCost": 12000,
+    "category": "Bow",
+    "color": "Default",
+    "displaySprite": 134,
+    "equipmentType": "Weapon",
+    "gender": "Unisex",
+    "isModifiable": true,
+    "maxDurability": 6000,
+    "maxStacks": 1,
+    "level": 11,
+    "levelCircle": 2,
+    "modifiers": {
+        "physicalAttack": 24
+    },
+    "sellValue": 7500,
+    "class": "rogue",
+    "weight": 3,
+    "description": "Class: rogue\nLevel: 11\nP.Atk 24",
+    "name": "Wooden Bow",
+    "panelSprite": 1775,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "woodenBow"
+}

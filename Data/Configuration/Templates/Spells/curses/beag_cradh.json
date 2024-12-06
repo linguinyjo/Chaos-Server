@@ -18,6 +18,7 @@
   "level": 11,
   "castLines": 2,
   "name": "beag cradh",
+  "spellCategory": "Debuff",
   "panelSprite": 5,
   "scriptKeys": [
     "applyEffect"

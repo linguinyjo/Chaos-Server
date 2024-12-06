@@ -1,0 +1,21 @@
+{
+  "scriptKeys": ["trap"],
+  "scriptVars": {
+    "trap": {
+      "durationSecs": 300,
+      "animation": {
+        "animationSpeed": 25,
+        "targetAnimation": 42
+      },
+      "animatePoints": true,
+      "sound": 1,
+      "range": 0,
+      "singleTarget": true,
+      "shape": "none",
+      "maxTriggers": 1,
+      "effectKey": "beagDall",
+      "filter": "hostileOnly, aliveOnly, othersOnly"
+    }
+  },
+  "templateKey": "blind_trap"
+}

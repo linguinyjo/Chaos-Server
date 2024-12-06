@@ -50,7 +50,7 @@ public class RionaTrainingQuestScript:  DialogScriptBase
                 Dialog.DialogSource,
                 DialogFactory,
                 ChaosDialogType.Normal,
-                "I've done for you all I can. Go now and speak to Vorlof. He'll know what to do with you.")
+                "I've done for you all I can. Go now and speak to Vorlof. You can find his house south of here, right next to the weapon smith. He'll know what to do with you...")
             {
                 NextDialogKey = "Close"
             };

@@ -29,13 +29,12 @@ public class DamageScript : ConfigurableSkillScriptBase,
     }
 
     /// <inheritdoc />
-    public override void OnUse(ActivationContext context)
-    {
+    public override void OnUse(ActivationContext context) =>
         new ComponentExecutor(context).WithOptions(this)
             .ExecuteAndCheck<GenericAbilityComponent<Creature>>()
             ?.Execute<AbilityLevellingAbilityComponent>()
             .Execute<DamageAbilityComponent>();
-    }
+    
     
     #region ScriptVars
     /// <inheritdoc />

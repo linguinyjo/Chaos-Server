@@ -1,0 +1,28 @@
+{
+    "isAssail": true,
+    "description": "A basic attack that deals a small amount of damage to an enemy immediately in front of you.",
+    "level": 11,
+    "levelsUp": true,
+    "name": "throw surigum",
+    "class": "rogue",
+    "panelSprite": 1,
+    "scriptKeys": ["throwSurigum"],
+    "scriptVars": {
+        "throwSurigum": {
+            "bodyAnimation": "assail",
+            "sound": 9,
+            "damageStat": "dex",
+            "range": 3,
+            "shape": "front",
+            "excludeSourcePoint": true,
+            "singleTarget": true,
+            "damageStatMultiplier": 1,
+            "baseDamage": 3,
+            "filter": "hostileOnly, aliveOnly, othersOnly",
+            "PAtkMultiplier": 0,
+            "levelUpRate": "fast",
+            "WeaponCategory": "Secret"
+        }
+    },
+    "templateKey": "throw_surigum"
+}

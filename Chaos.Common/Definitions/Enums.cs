@@ -707,13 +707,13 @@ public enum AdvClass : byte
     None = 0,
     Gladiator = 1,
     Champion = 2,
-    Druid = 3,
+    Archer = 3,
     Brawler = 4,
     Bard = 5,
     Bishop = 6,
     Elementalist = 7,
     Enchanter = 8,
-    Archer = 9,
+    Druid = 9,
     Assassin = 10
 }
 

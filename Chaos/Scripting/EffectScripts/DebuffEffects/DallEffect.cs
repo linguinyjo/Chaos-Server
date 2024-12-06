@@ -4,7 +4,7 @@ using Chaos.Scripting.EffectScripts.Abstractions;
 using Chaos.Time;
 using Chaos.Time.Abstractions;
 
-namespace Chaos.Scripting.EffectScripts.cc;
+namespace Chaos.Scripting.EffectScripts.DebuffEffects;
 
 public class DallEffect : ContinuousAnimationEffectBase
 {
@@ -34,13 +34,13 @@ public class DallEffect : ContinuousAnimationEffectBase
     
     public override void OnApplied()
     {
-        AislingSubject?.SetVision(VisionType.TrueBlind);
+        Subject.SetVision(VisionType.TrueBlind);
         base.OnApplied();
     }
 
     public override void OnTerminated()
     {
-        AislingSubject?.SetVision(VisionType.Normal);
+        Subject.SetVision(VisionType.Normal);
         base.OnTerminated();
     }
 

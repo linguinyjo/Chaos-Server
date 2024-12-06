@@ -1,0 +1,15 @@
+{
+  "nextDialogKey": "close",
+  "options": [],
+  "scriptKeys": [
+    "firstClassChange"
+  ],
+  "scriptVars": {
+    "firstClassChange": {
+      "class": 2
+    }
+  },
+  "templateKey": "rogue_class_change",
+  "text": "Fate has marked you for this calling. Go forth, and let your steps be silent, your blade true. When you have mastered this, return to me, and I may reveal the deepest mysteries of our craft.",
+  "type": "Normal"
+}

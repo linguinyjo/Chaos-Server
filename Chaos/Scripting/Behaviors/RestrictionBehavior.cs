@@ -6,10 +6,13 @@ namespace Chaos.Scripting.Behaviors;
 
 public class RestrictionBehavior
 {
-    private readonly List<string> _playerNoMoveConditions = ["skulled", "beagpramh", "pramh", "morpramh", "ardpramh", "suain"];
+    private readonly List<string> _playerNoMoveConditions = ["skulled", "beagpramh", "pramh", "morpramh", "ardpramh", 
+        "suain"];
     private readonly List<string> _monsterNoMoveConditions = ["skulled", "beagpramh", "pramh", "morpramh", "ardpramh", "suain",
         "beagdall", "dall", "mordall", "arddall"];
-    
+    private readonly List<string> _monsterNoTurnConditions = ["skulled", "beagpramh", "pramh", "morpramh", "ardpramh", 
+        "suain"];
+
     public virtual bool CanMove(Creature creature)
     {
         if (creature is Aisling)
@@ -27,7 +30,7 @@ public class RestrictionBehavior
         {
             return !_playerNoMoveConditions.Any(condition => creature.Effects.Contains(condition));
         }
-        return !_monsterNoMoveConditions.Any(condition => creature.Effects.Contains(condition));
+        return !_monsterNoTurnConditions.Any(condition => creature.Effects.Contains(condition));
     }
 
     public virtual bool CanUseItem(Aisling aisling, Item item) => aisling.IsAlive;

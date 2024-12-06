@@ -1,8 +1,8 @@
 {
-  "nextDialogKey": "Close",
+  "nextDialogKey": "vorlof_yes_b",
   "scriptKeys": ["vorlofTrainingQuest"],
   "scriptVars": {},
   "templateKey": "vorlof_yes",
-  "text": "Very well, to begin go and talk to Dar, our resident black magic master. Return to me only when you have done as he asks. Oh, I almost forgot - go and speak to Callough in the weapon shop. He should be help you get started with some basic equipment.",
+  "text": "Very well, to begin go and talk to Dar, Mileth's black magic master. Return to me only when you have done as he asks.",
   "type": "Normal"
 }

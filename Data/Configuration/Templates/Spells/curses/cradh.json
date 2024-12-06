@@ -18,6 +18,7 @@
   "level": 21,
   "castLines": 2,
   "name": "cradh",
+  "spellCategory": "Debuff",
   "panelSprite": 82,
   "scriptKeys": [
     "applyEffect"

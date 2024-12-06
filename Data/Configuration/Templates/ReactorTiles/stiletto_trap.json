@@ -1,0 +1,23 @@
+{
+  "scriptKeys": ["trap"],
+  "scriptVars": {
+    "trap": {
+      "durationSecs": 300,
+      "animation": {
+        "animationSpeed": 25,
+        "targetAnimation": 42
+      },
+      "animatePoints": true,
+      "sound": 1,
+      "mustHaveTargets": true,
+      "range": 0,
+      "singleTarget": true,
+      "excludeSourcePoint": false,
+      "shape": "none",
+      "maxTriggers": 1,
+      "baseDamage": 90,
+      "filter": "hostileOnly, aliveOnly, othersOnly"
+    }
+  },
+  "templateKey": "stiletto_trap"
+}

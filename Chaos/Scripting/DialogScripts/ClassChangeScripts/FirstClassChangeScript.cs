@@ -48,10 +48,10 @@ public class FirstClassChangeScript : ConfigurableDialogScriptBase
     {
         var baseClass = (BaseClass)Class;
         source.UserStatSheet.SetBaseClass(baseClass);
-        if (baseClass is BaseClass.Monk)
-        {
-            HandleMonkClassChange(source);
-        }
+        if (baseClass == BaseClass.Monk)
+            AddClassSpecificAssail(source, "monkAssail");
+        else if (baseClass == BaseClass.Rogue) 
+            AddClassSpecificAssail(source, "rogueAssail");
 
         var legendMark = new LegendMark(
             $"Became a {baseClass}",
@@ -65,11 +65,11 @@ public class FirstClassChangeScript : ConfigurableDialogScriptBase
         source.Client.SendSound(SOUND, false); 
     }
 
-    private void HandleMonkClassChange(Aisling source)
+    private void AddClassSpecificAssail(Aisling source, string assail)
     {
         var isRemoved = source.SkillBook.TryGetRemove("assail", out var removedAssail);
         if (!isRemoved) return;
-        var skill = SkillFactory.Create("monkAssail");
+        var skill = SkillFactory.Create(assail);
         if (removedAssail != null) source.SkillBook.TryAdd(removedAssail.Slot, skill);
     }
 

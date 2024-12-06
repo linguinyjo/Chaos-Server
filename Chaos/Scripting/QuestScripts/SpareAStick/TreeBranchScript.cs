@@ -25,12 +25,10 @@ public class TreeBranchScript :  ReactorTileScriptBase
         var questStatus = SpareAStickQuestHelper.GetQuestStatus(aisling);
         if (questStatus != SpareAStickQuestStatus.Started) return;
         
-        // Generate random number between 0 and 100
         var random = new Random();
         var chance = random.Next(1, 101);
     
-        // 5% chance (if number is 1-5)
-        if (chance > 15) return;
+        if (chance > 20) return;
         var item = ItemFactory.Create("treeBranch");
         aisling.Inventory.TryAddToNextSlot(item);
     }

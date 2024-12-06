@@ -11,7 +11,7 @@
     "scriptKeys": ["default"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
-    "skillTemplateKeys": ["assail"],
+    "skillTemplateKeys": [],
     "spellIntervalMs": 5000,
     "spellTemplateKeys": [],
     "sprite": 9,

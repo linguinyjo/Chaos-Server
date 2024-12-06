@@ -103,7 +103,7 @@ public class TrapScript : ConfigurableReactorTileScriptBase,
     public byte? Sound { get; init; }
     public bool AnimatePoints { get; init; }
     public bool MustHaveTargets { get; init; } = true;
-    public bool ExcludeSourcePoint { get; init; } = true;
+    public bool ExcludeSourcePoint { get; init; }
     public int? BaseDamage { get; init; }
     public Stat? DamageStat { get; init; }
     public decimal? DamageStatMultiplier { get; init; }

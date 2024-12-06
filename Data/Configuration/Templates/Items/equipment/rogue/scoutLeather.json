@@ -1,0 +1,28 @@
+{
+    "buyCost": 1500,
+    "category": "Armor M",
+    "color": "Default",
+    "isDyable": true,
+    "displaySprite": 4,
+    "equipmentType": "Armor",
+    "gender": "Male",
+    "maxDurability": 5000,
+    "maxStacks": 1,
+    "modifiers": {
+        "ac": -10
+    },
+    "class": "rogue",
+    "pantsColor": "default",
+    "level": 1,
+    "levelCircle": 1,
+    "sellValue": 750,
+    "weight": 4,
+    "description": "Class: Male Rogue\nLevel: 1\nAc -10",
+    "name": "Scout Leather",
+    "panelSprite": 99,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "scoutLeather"
+}

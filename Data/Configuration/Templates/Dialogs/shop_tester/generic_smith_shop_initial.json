@@ -9,11 +9,11 @@
       "optionText": "Sell"
     },
     {
-      "dialogKey": "generic_sellshop_initial",
+      "dialogKey": "generic_repairShop_initial",
       "optionText": "Repair Item"
     },
     {
-      "dialogKey": "generic_sellshop_initial",
+      "dialogKey": "generic_repairAllShop_initial",
       "optionText": "Repair All"
     }
   ],

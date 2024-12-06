@@ -10,8 +10,8 @@
             "dialogKey": "keallach_initial"
         }
     },
-    "skillsToTeach": ["martialAwareness"],
-    "spellsToTeach": ["taunt"],
+    "skillsToTeach": ["martialAwareness", "ambush", "throw", "throw_surigum"],
+    "spellsToTeach": ["taunt", "lay_needle_trap"],
     "sprite": 94,
     "templateKey": "daithi"
 }
