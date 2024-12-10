@@ -2,39 +2,40 @@
     "isAssail": false,
     "learningrequirements": {
         "itemrequirements": [],
-        "requiredGold": 1000,
+        "requiredGold": 5000,
         "requiredStats": {
             "con": 3,
-            "dex": 4,
+            "dex": 12,
             "int": 3,
-            "str": 11,
+            "str": 18,
             "wis": 3
         },
         "prerequisiteSkills": [],
         "prerequisiteSpells": []
     },
-    "description": "A powerful strike in the direction your facing.\n\nGold required: 1000\nItems required: \nLocation: Mileth Combat Skill Master",
-    "level": 1,
+    "description": "A damage skill which requires a dagger to be equipped.\n\nGold required: 5000\nItems required: \nLocation: Mileth Special Skill Master",
+    "level": 11,
     "levelsUp": true,
-    "name": "Power Shot",
+    "name": "Stab and Twist",
     "class": "rogue",
     "panelSprite": 73,
-    "cooldownMs": 15000,
+    "cooldownMs": 8000,
     "scriptKeys": ["damage"],
     "scriptVars": {
         "damage": {
-            "bodyAnimation": "bowShot",
+            "bodyAnimation": 134,
             "sound": 45,
-            "damageStat": "str",
-            "range": 4,
+            "damageStat": "dex",
+            "range": 1,
             "shape": "front",
             "excludeSourcePoint": true,
             "damageStatMultiplier": 1,
-            "baseDamage": 20,
+            "baseDamage": 30,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "PAtkMultiplier": 0,
-            "levelUpRate": "veryfast"
+            "levelUpRate": "fast",
+            "WeaponCategory": "Dagger"
         }
     },
-    "templateKey": "power_shot"
+    "templateKey": "stabAndTwist"
 }

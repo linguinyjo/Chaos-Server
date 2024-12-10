@@ -64,7 +64,7 @@ public class BeagCradhEffect : EffectBase,
     /// <inheritdoc />
     public override string Name => "Beag Cradh";
 
-    private int AcDeduction { get; init; } = 10;
+    private int AcDeduction { get; init; } = 15;
 
     public override void OnTerminated()
     {

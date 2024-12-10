@@ -3,10 +3,10 @@
     "itemRequirements": [],
     "requiredGold": 5000,
     "requiredStats": {
-      "con": 15,
+      "con": 5,
       "dex": 3,
-      "int": 3,
-      "str": 8,
+      "int": 5,
+      "str": 5,
       "wis": 3
     },
     "prerequisiteSkills": [],
@@ -32,5 +32,5 @@
       "enmity": 250
     }
   },
-  "templateKey": "taunt"
+  "templateKey": "warriorTaunt"
 }

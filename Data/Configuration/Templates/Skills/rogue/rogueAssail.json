@@ -9,7 +9,7 @@
     "scriptKeys": ["RogueAssail"],
     "scriptVars": {
         "RogueAssail": {
-            "bodyAnimation": 142,
+            "bodyAnimation": "assail",
             "sound": 1,
             "damageStat": "str",
             "range": 1,

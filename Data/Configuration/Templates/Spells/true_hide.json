@@ -1,24 +1,5 @@
 {
-  "learningRequirements": {
-    "itemRequirements": [
-      {
-        "amountRequired": 1,
-        "itemTemplateKey": "apple"
-      }
-    ],
-    "requiredGold": 10000,
-    "requiredStats": {
-      "con": 1,
-      "dex": 10,
-      "int": 1,
-      "str": 1,
-      "wis": 2
-    },
-    "prerequisiteSkills": [],
-    "prerequisiteSpells": []
-  },
   "spellType": "NoTarget",
-  "class": "Rogue",
   "description": "Shrouds you in darkness, hiding you from sight",
   "level": 35,
   "name": "True Hide",

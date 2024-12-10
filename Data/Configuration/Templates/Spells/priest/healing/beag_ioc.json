@@ -29,7 +29,7 @@
         "targetAnimation": 4,
         "animationSpeed": 150
       },
-      "healStatMultiplier": 1,
+      "healStatMultiplier": 2,
       "manaCost": 30,
       "sound": 8,
       "baseHeal": 150,

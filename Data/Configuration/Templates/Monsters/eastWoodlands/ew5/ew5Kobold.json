@@ -20,7 +20,7 @@
         "maximumHp": 2100,
         "maximumMp": 1000,
         "physicalAttack": 39,
-        "magicAttack": 45,
+        "magicAttack": 30,
         "con": 4,
         "dex": 1,
         "int": 20,

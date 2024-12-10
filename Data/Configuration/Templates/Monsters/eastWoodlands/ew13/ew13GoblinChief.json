@@ -23,7 +23,7 @@
         "ac": -10,
         "maximumHp": 24500,
         "maximumMp": 5000,
-        "physicalAttack": 150,
+        "physicalAttack": 120,
         "magicAttack": 120,
         "con": 4,
         "dex": 1,

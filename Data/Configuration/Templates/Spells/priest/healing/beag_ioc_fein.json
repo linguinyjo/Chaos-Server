@@ -6,15 +6,15 @@
     "requiredStats": {
       "con": 3,
       "dex": 3,
-      "int": 4,
+      "int": 3,
       "str": 3,
-      "wis": 8
+      "wis": 3
     },
     "prerequisiteSkills": [],
     "prerequisiteSpells": []
   },
   "spellType": "NoTarget",
-  "class": "Priest",
+  "class": "Peasant",
   "description": "Applies a small heal to self.\n\nGold required: 1000\nItems required: \nLocation: Mileth White Magic Master",
   "level": 1,
   "name": "beag ioc fein",

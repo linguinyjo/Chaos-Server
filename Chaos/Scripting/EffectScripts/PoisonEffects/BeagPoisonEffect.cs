@@ -39,7 +39,7 @@ public class BeagPoisonEffect : ContinuousAnimationEffectBase,
     /// <inheritdoc />
     public override string Name => "beag poison";
 
-    private const int DamagePerTick = 20;
+    private const int DamagePerTick = 30;
     
     /// <inheritdoc />
     protected override void OnIntervalElapsed()

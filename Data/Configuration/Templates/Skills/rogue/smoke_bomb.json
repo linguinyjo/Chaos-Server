@@ -1,0 +1,42 @@
+{
+    "learningRequirements": {
+        "itemRequirements": [],
+        "requiredStats": {
+            "str": 10,
+            "int": 3,
+            "wis": 3,
+            "con": 3,
+            "dex": 16
+        },
+        "requiredGold": 5000,
+        "prerequisiteSkills": [],
+        "prerequisiteSpells": []
+    },
+    "spellType": "NoTarget",
+    "class": "rogue",
+    "cooldownMs": 3000,
+    "description": "Blinds all nearby enemies for a short duration\n\nGold required: 5000\nItems required: \nLocation: Mileth Special Skill Master",
+    "level": 11,
+    "levelsUp": true,
+    "name": "smoke bomb",
+    "panelSprite": 24,
+    "scriptKeys": ["applyEffect"],
+    "scriptVars": {
+        "applyEffect": {
+            "shape": "allAround",
+            "bodyAnimation": "assail",
+            "range": 3,
+            "sound": 28,
+            "minSoundIntervalMs": 900,
+            "manaCost": 1,
+            "effectKey": "dall",
+            "filter": "hostileOnly, aliveOnly, othersOnly",
+            "animation": {
+                "targetAnimation": 57,
+                "animationSpeed": 150
+            },
+            "levelUpRate": "veryfast"
+        }
+    },
+    "templateKey": "smoke_bomb"
+}

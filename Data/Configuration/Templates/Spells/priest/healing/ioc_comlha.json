@@ -19,6 +19,7 @@
   "description": "Applies a moderate heal to your group.\n\nGold required: 20000\nItems required: \nLocation: Mileth White Magic Master",
   "level": 21,
   "name": "ioc comlha",
+  "coolDown": 5000,
   "panelSprite": 33,
   "scriptKeys": ["heal"],
   "scriptVars": {
@@ -29,12 +30,12 @@
         "animationSpeed": 150
       },
       "shape": "allAround",
-      "healStatMultiplier": 2,
+      "healStatMultiplier": 3,
       "manaCost": 200,
       "sound": 8,
-      "baseHeal": 300,
+      "baseHeal": 400,
       "healStat": "wis",
-      "magicAttackMultiplier": 2,
+      "magicAttackMultiplier": 3,
       "range": 8,
       "filter": "friendlyOnly, aliveOnly, AislingsOnly, GroupOnly",
       "levelUpRate": "fast"

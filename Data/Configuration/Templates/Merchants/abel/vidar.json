@@ -19,14 +19,6 @@
         {
             "itemTemplateKey": "battleSword",
             "stock": 100
-        },
-        {
-            "itemTemplateKey": "blackDeath",
-            "stock": 100
-        },
-        {
-            "itemTemplateKey": "bramble",
-            "stock": 100
         }
     ],
     "itemsToBuy": ["stick", "dirk", "eppe", "louresSabre", "claidheamh", "broadSword","battleSword","masquerade",

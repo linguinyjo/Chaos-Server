@@ -2,7 +2,7 @@
   "learningRequirements": {
     "itemRequirements": [
     ],
-    "requiredGold": 5000,
+    "requiredGold": 20000,
     "requiredStats": {
       "str": 10,
       "int": 12,
@@ -17,8 +17,8 @@
   "prompt": "",
   "spellType": "NoTarget",
   "class": "Rogue",
-  "description":  "Drops a trap that blinds the target for a short duration\n\nGold required: 25000\nLocation: Mileth Special Skill Master", 
-  "level": 41,
+  "description":  "Drops a trap that blinds the target for a medium duration.\n\nGold required: 20000\nLocation: Mileth Special Skill Master", 
+  "level": 21,
   "name": "blind snare",
   "panelSprite": 17,
   "scriptKeys": [

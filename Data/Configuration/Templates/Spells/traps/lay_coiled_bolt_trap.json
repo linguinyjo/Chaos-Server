@@ -1,0 +1,34 @@
+{
+  "learningRequirements": {
+    "itemRequirements": [
+    ],
+    "requiredGold": 20000,
+    "requiredStats": {
+      "con": 10,
+      "dex": 18,
+      "int": 6,
+      "str": 20,
+      "wis": 3
+    },
+    "prerequisiteSkills": [],
+    "prerequisiteSpells": []
+  },
+  "castLines": 3,
+  "prompt": "",
+  "spellType": "NoTarget",
+  "class": "Rogue",
+  "description":  "Drops a trap that damages the enemy that steps on it.\n\nGold required: 20000\nLocation: Mileth Special Skill Master", 
+  "level": 21,
+  "name": "coiled bolt trap",
+  "panelSprite": 16,
+  "scriptKeys": [
+    "layReactorTile"
+  ],
+  "scriptVars": {
+    "layReactorTile": {
+      "reactorTileTemplateKey": "coiled_bolt_trap",
+      "manaCost": 100
+    }
+  },
+  "templateKey": "lay_coiled_bolt_trap"
+}

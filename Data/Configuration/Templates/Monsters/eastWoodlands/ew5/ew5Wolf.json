@@ -9,7 +9,7 @@
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],
-    "spellIntervalMs": 20000,
+    "spellIntervalMs": 2000,
     "spellTemplateKeys": ["beag_sal", "beag_athar", "beag_creag", "beag_srad", "beag_cradh"],
     "sprite": 2,
     "statSheet": {
@@ -18,7 +18,7 @@
         "maximumHp": 2100,
         "maximumMp": 1000,
         "physicalAttack": 38,
-        "magicAttack": 45,
+        "magicAttack": 30,
         "con": 4,
         "dex": 1,
         "int": 20,

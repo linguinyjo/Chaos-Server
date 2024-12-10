@@ -10,8 +10,14 @@
             "dialogKey": "keallach_initial"
         }
     },
-    "skillsToTeach": ["martialAwareness", "ambush", "throw", "throw_surigum"],
-    "spellsToTeach": ["taunt", "lay_needle_trap"],
+    "skillsToTeach": ["martialAwareness", "studyCreature", "ambush", "throw", "throw_surigum", "stabAndTwist"],
+    "spellsToTeach": [
+        "rogueTaunt", "warriorTaunt", "monkTaunt", "hide",
+        "lay_needle_trap", "lay_stiletto_trap", "lay_coiled_bolt_trap", "lay_bolt_trap",
+        "lay_blind_trap", "lay_blind_snare",
+        "lay_poison_trap", "lay_poison_snare",  
+        "lay_sleep_trap"
+    ],
     "sprite": 94,
     "templateKey": "daithi"
 }

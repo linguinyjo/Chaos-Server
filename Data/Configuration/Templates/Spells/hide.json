@@ -1,26 +1,21 @@
 {
   "learningRequirements": {
-    "itemRequirements": [
-      {
-        "amountRequired": 1,
-        "itemTemplateKey": "apple"
-      }
-    ],
+    "itemRequirements": [],
     "requiredGold": 10000,
     "requiredStats": {
-      "con": 1,
-      "dex": 5,
-      "int": 1,
-      "str": 1,
-      "wis": 2
+      "con": 6,
+      "dex": 28,
+      "int": 12,
+      "str": 6,
+      "wis": 10
     },
     "prerequisiteSkills": [],
     "prerequisiteSpells": []
   },
   "spellType": "NoTarget",
   "class": "Rogue",
-  "description": "Shrouds you in darkness, hiding you from sight",
-  "level": 15,
+  "description": "Temporarily makes the caster Invisible",
+  "level": 21,
   "name": "Hide",
   "panelSprite": 10,
   "scriptKeys": [

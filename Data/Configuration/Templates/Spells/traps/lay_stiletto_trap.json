@@ -17,8 +17,8 @@
   "prompt": "",
   "spellType": "NoTarget",
   "class": "Rogue",
-  "description":  "Drops a trap that damages the enemy that steps on it\n\nGold required: 5000\nLocation: Mileth Special Skill Master", 
-  "level": 1,
+  "description":  "Drops a trap that damages the enemy that steps on it.\n\nGold required: 5000\nLocation: Mileth Special Skill Master", 
+  "level": 11,
   "name": "stiletto trap",
   "panelSprite": 16,
   "scriptKeys": [

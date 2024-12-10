@@ -29,12 +29,12 @@ public class DefaultExperienceDistributionScript(ILogger<DefaultExperienceDistri
     /// <inheritdoc />
     public virtual void DistributeExperience(Creature killedCreature, params Aisling[] aislings)
     {
-        var rateMultiplier = 3; // TODO temporary exp boost
+        //var rateMultiplier = 3; // TODO temporary exp boost
         var exp = ExperienceFormula.Calculate(killedCreature, aislings);
         foreach (var aisling in aislings)
             if (aisling.UserStatSheet.Level > 11)
             {
-                GiveExp(aisling, exp * rateMultiplier); 
+                GiveExp(aisling, exp); 
             }
             else
             {

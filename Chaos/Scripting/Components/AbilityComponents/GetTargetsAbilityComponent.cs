@@ -41,11 +41,7 @@ public struct GetTargetsAbilityComponent<TEntity> : IConditionalComponent where 
             if (context.TargetCreature is TEntity entity && targetEntities.Contains(entity))
                 targetEntities = [entity];
             else
-                targetEntities =
-                [
-                    targetEntities.OrderBy(e => e.Creation)
-                                  .First()
-                ];
+                targetEntities = [ targetEntities.First() ];
         }
 
         vars.SetPoints(targetPoints);

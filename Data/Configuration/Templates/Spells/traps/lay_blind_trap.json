@@ -17,7 +17,7 @@
   "prompt": "",
   "spellType": "NoTarget",
   "class": "Rogue",
-  "description":  "Drops a trap that blinds the target for a short duration\n\nGold required: 5000\nLocation: Mileth Special Skill Master", 
+  "description":  "Drops a trap that blinds the target for a short duration.\n\nGold required: 5000\nLocation: Mileth Special Skill Master", 
   "level": 11,
   "name": "blind trap",
   "panelSprite": 17,

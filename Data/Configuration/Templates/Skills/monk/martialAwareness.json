@@ -25,6 +25,7 @@
         "sense": {
             "range": 4,
             "shape": "front",
+            "singleTarget": true,
             "excludeSourcePoint": true,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "levelUpRate": "veryfast"

@@ -34,7 +34,7 @@
             "shape": "front",
             "singleTarget": false,
             "excludeSourcePoint": true,
-            "damageStatMultiplier": 1,
+            "damageStatMultiplier": 3,
             "baseDamage": 50,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "PAtkMultiplier": 0,

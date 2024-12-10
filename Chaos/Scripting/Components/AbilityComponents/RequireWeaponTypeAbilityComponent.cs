@@ -12,6 +12,7 @@ public struct  RequireWeaponTypeAbilityComponent : IConditionalComponent
     public bool Execute(ActivationContext context, ComponentVars vars)
     {
         var options = vars.GetOptions<IRequireWeaponTypeComponentOptions>();
+        if (options.WeaponCategory == null) return true;
         var weapon = context.SourceAisling?.Equipment[EquipmentSlot.Weapon];
         return weapon?.Template.Category == options.WeaponCategory;
     }

@@ -15,7 +15,7 @@
       "excludeSourcePoint": false,
       "shape": "none",
       "maxTriggers": 1,
-      "baseDamage": 90,
+      "baseDamage": 150,
       "filter": "hostileOnly, aliveOnly, othersOnly"
     }
   },

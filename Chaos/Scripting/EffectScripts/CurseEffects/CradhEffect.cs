@@ -65,7 +65,7 @@ public class CradhEffect : EffectBase,
     public override string Name => "Cradh";
 
 
-    private int AcDeduction { get; init; } = 20;
+    private int AcDeduction { get; init; } = 25;
 
     public override void OnTerminated()
     {

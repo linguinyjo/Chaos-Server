@@ -39,7 +39,7 @@ public class PoisonEffect : ContinuousAnimationEffectBase,
     /// <inheritdoc />
     public override string Name => "poison";
 
-    private const int DamagePerTick = 50;
+    private const int DamagePerTick = 60;
 
     /// <inheritdoc />
     protected override void OnIntervalElapsed()

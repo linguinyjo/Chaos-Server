@@ -29,6 +29,7 @@ public struct SenseAbilityComponent : IComponent
             {
                 FormatText(new string(' ', 14 ) + "Study Creature", MessageColor.Orange),
                 "\n",
+                $"Name: {target.Name}",
                 FormatTwoColumns("Level", $"{target.StatSheet.Level}", "Magic Resistance", $"{target.StatSheet.EffectiveMagicResistance}"),
                 FormatTwoColumns("Current Health", $"{target.StatSheet.CurrentHp}", "Current Mana", $"{target.StatSheet.CurrentMp}"),
                 FormatTwoColumns(

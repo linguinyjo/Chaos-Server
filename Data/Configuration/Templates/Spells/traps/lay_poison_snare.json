@@ -1,0 +1,32 @@
+{
+  "learningRequirements": {
+    "itemRequirements": [
+    ],
+    "requiredGold": 10000,
+    "requiredStats": {
+      "str": 8,
+      "int": 8,
+      "wis": 7,
+      "con": 10,
+      "dex": 13
+    },
+    "prerequisiteSkills": [],
+    "prerequisiteSpells": []
+  },
+  "castLines": 2,
+  "prompt": "",
+  "spellType": "NoTarget",
+  "class": "Rogue",
+  "description":  "Drops a trap that applies a weak poison to the target for a short duration.\n\nGold required: 10000\nLocation: Mileth Special Skill Master", 
+  "level": 21,
+  "name": "poison snare",
+  "panelSprite": 35,
+  "scriptKeys": ["layReactorTile"],
+  "scriptVars": {
+    "layReactorTile": {
+      "reactorTileTemplateKey": "poison_snare",
+      "manaCost": 75
+    }
+  },
+  "templateKey": "lay_poison_snare"
+}

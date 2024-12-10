@@ -1,0 +1,34 @@
+{
+  "learningRequirements": {
+    "itemRequirements": [
+    ],
+    "requiredGold": 5000,
+    "requiredStats": {
+      "str": 6,
+      "int": 7,
+      "wis": 8,
+      "con": 6,
+      "dex": 12
+    },
+    "prerequisiteSkills": [],
+    "prerequisiteSpells": []
+  },
+  "castLines": 2,
+  "prompt": "",
+  "spellType": "NoTarget",
+  "class": "Rogue",
+  "description":  "Drops a trap that applies a weak poison to the target for a short duration.\n\nGold required: 5000\nLocation: Mileth Special Skill Master", 
+  "level": 11,
+  "name": "poison trap",
+  "panelSprite": 35,
+  "scriptKeys": [
+    "layReactorTile"
+  ],
+  "scriptVars": {
+    "layReactorTile": {
+      "reactorTileTemplateKey": "poison_trap",
+      "manaCost": 30
+    }
+  },
+  "templateKey": "lay_poison_trap"
+}

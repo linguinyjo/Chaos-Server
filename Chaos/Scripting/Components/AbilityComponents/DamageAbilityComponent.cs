@@ -62,8 +62,8 @@ public struct DamageAbilityComponent : IComponent
         var finalDamage = components.BaseDamage ?? 0;
         finalDamage = CalculateHpDamage(source, finalDamage, components);
         finalDamage = ApplyStatDamage(source, finalDamage, components);
-        finalDamage = ApplyAbilityMultiplier(finalDamage, abilityDamageMultiplier);
         finalDamage = ApplyWeaponDamage(source, finalDamage, components);
+        finalDamage = ApplyAbilityMultiplier(finalDamage, abilityDamageMultiplier);
         finalDamage = ApplyDamageModifier(source, finalDamage);
         finalDamage = ApplyDirectionalDamage(source, target, components, finalDamage);
 
@@ -114,19 +114,27 @@ public struct DamageAbilityComponent : IComponent
     /// </summary>
     private static int ApplyWeaponDamage(Creature source, int currentDamage, IDamageComponentOptions components)
     {
+        decimal statMultiplier = 1;
+        if (components.DamageStat != null)
+        {
+            var stat = source.StatSheet.GetEffectiveStat(components.DamageStat.Value);
+            statMultiplier = 1 + (stat * 0.005m);
+        }
+
         // Apply physical attack bonus
         if (components.PAtkMultiplier.HasValue)
         {
             var multiplier = 1 + (components.PAtkMultiplier.Value / 100);
-            var weaponDamageBonus = Convert.ToInt32(
-                source.StatSheet.EffectivePhysicalAttack * multiplier);
-            currentDamage += weaponDamageBonus;
+            var weaponDamageBonus = Convert.ToInt32(source.StatSheet.EffectivePhysicalAttack * multiplier );
+           
+            currentDamage += Convert.ToInt32(weaponDamageBonus * statMultiplier);
+            
         }
 
         // Apply magic attack if specified
         if (components.UseMatk.HasValue)
         {
-            currentDamage += source.StatSheet.EffectiveMagicAttack;
+            currentDamage += Convert.ToInt32(source.StatSheet.EffectiveMagicAttack * statMultiplier);
         }
 
         // Apply fist bonus for unarmed Aisling
@@ -134,7 +142,7 @@ public struct DamageAbilityComponent : IComponent
             components.FistBonus.HasValue && 
             aisling.Equipment[EquipmentSlot.Weapon] == null)
         {
-            currentDamage += components.FistBonus.Value;
+            currentDamage += Convert.ToInt32( components.FistBonus.Value * statMultiplier);
         }
 
         return currentDamage;

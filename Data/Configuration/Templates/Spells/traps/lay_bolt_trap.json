@@ -1,0 +1,34 @@
+{
+  "learningRequirements": {
+    "itemRequirements": [
+    ],
+    "requiredGold": 50000,
+    "requiredStats": {
+      "con": 15,
+      "dex": 25,
+      "int": 6,
+      "str": 30,
+      "wis": 3
+    },
+    "prerequisiteSkills": [],
+    "prerequisiteSpells": []
+  },
+  "castLines": 3,
+  "prompt": "",
+  "spellType": "NoTarget",
+  "class": "Rogue",
+  "description":  "Drops a trap that damages the enemy that steps on it.\n\nGold required: 50000\nLocation: Mileth Special Skill Master", 
+  "level": 41,
+  "name": "bolt trap",
+  "panelSprite": 16,
+  "scriptKeys": [
+    "layReactorTile"
+  ],
+  "scriptVars": {
+    "layReactorTile": {
+      "reactorTileTemplateKey": "bolt_trap",
+      "manaCost": 200
+    }
+  },
+  "templateKey": "lay_bolt_trap"
+}

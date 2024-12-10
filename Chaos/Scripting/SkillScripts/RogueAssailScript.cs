@@ -36,9 +36,6 @@ public class RogueAssailScript : ConfigurableSkillScriptBase,
             ?.Execute<AbilityLevellingAbilityComponent>()
             .Execute<DamageAbilityComponent>();
     }
-
-  
-    
     
     #region ScriptVars
     /// <inheritdoc />
