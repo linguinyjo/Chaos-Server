@@ -6,9 +6,9 @@
     "requiredStats": {
       "con": 6,
       "dex": 6,
-      "int": 44,
+      "int": 22,
       "str": 6,
-      "wis": 38
+      "wis": 48
     },
     "prerequisiteSkills": [],
     "prerequisiteSpells": []

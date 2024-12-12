@@ -39,12 +39,13 @@ public class DefaultLevelUpFormula : ILevelUpFormula
         var divisionFactor = level switch
         {
             >= 1 and <= 11 => 8,
-            >= 12 and <= 15 => 7,
-            >= 16 and <= 21 => 6.5,
-            >= 22 and <= 28 => 6.2,
-            >= 29 and <= 33 => 5.8,
-            >= 34 and <= 41 => 5.5,
-            >= 42 and <= 51 => 5,
+            >= 12 and <= 21 => 7,
+            >= 22 and <= 25 => 6.7,
+            >= 26 and <= 28 => 6.4,
+            >= 29 and <= 32 => 6.1,
+            >= 33 and <= 35 => 5.8,
+            >= 36 and <= 41 => 5.5,
+            >= 42 and <= 51 => 5.2,
             >= 52 and <= 99 => 3,
             _ => 1
         };

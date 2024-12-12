@@ -5,5 +5,6 @@
     "name": "ShinewoodForest 3",
     "scriptKeys": [],
     "templateKey": "564",
-    "autoDayNightCycle": true
+    "autoDayNightCycle": true,
+    "MinimumLevel": 6
 }

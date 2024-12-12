@@ -24,7 +24,7 @@ public class DarTrainingQuestScript:  DialogScriptBase
         var trainingQuestStatus = TrainingQuestHelper.GetQuestStatus(source);
         if (trainingQuestStatus is not TrainingQuestStatus.SpokenToDar) return;
         // already on this part of the quest, so check to see if player has mould
-        var hasMould = source.Inventory.HasCount("mold", 3);
+        var hasMould = source.Inventory.HasCount("mold", 1);
         if (hasMould)
         {
             Dialog.Reply(
@@ -32,7 +32,7 @@ public class DarTrainingQuestScript:  DialogScriptBase
                 "Well, well... You've actually managed to collect the mold. I must admit, I'm mildly impressed. Perhaps there's a flicker of potential in you after all. Go back and tell Vorlof that you have succeeded in doing as I have asked.",
                 "Close"
                 );
-            source.Inventory.RemoveQuantity("mold", 3);
+            source.Inventory.RemoveQuantity("mold", 1);
             source.GiveExperience(350);
             TrainingQuestHelper.IncrementQuestStage(source);
         }

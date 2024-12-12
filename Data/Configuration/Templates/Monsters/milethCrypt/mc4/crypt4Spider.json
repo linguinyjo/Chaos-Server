@@ -14,7 +14,7 @@
     "statSheet": {
         "level": 21,
         "ac": 75,
-        "maximumHp": 1150,
+        "maximumHp": 1350,
         "maximumMp": 1000,
         "physicalAttack": 20,
         "magicAttack": 20,

@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "",
+      "optionText": "Yes please"
+    },
+    {
+      "dialogKey": "close",
+      "optionText": "No thanks"
+    }
+  ],
+  "scriptKeys": ["removeEnchants"],
+  "scriptVars": {},
+  "templateKey": "generic_remove_enchants",
+  "text": "Do you want me to remove any enchantments from the item in your first inventory slot? I can do this for you free of charge.",
+  "type": "Menu"
+}

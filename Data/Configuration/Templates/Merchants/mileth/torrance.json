@@ -42,7 +42,6 @@
         }
     ],
     "itemsToBuy": [
-        "apple",
         "shirt",
         "woodenShield", "leatherShield", "bronzeShield",
         "boots", "greyBoots", "shagreenBoots",
@@ -52,7 +51,8 @@
         "windBelt", "fireBelt", "earthBelt", "seaBelt", "hybrasylBelt", "leatherBelt", "mythrilBelt",
         "boneNecklace", "earthNecklace", "fireNecklace", "pearlChainNecklace", "phoenixNecklace", "seaNecklace", "windNecklace",
         "smallSpinelRing", "smallEmeraldRing", "emeraldRing", "spinelRing", "redJadeRing", "amethystRing",
-        "silverEarrings", "goldEarrings", "rubyEarrings", "coralEarrings", "berylEarrings"],
+        "silverEarrings", "goldEarrings", "rubyEarrings", "coralEarrings", "berylEarrings"
+    ],
     "restockIntervalHrs": 1,
     "restockPCt": 100,
     "scriptKeys": ["showdialog", "verbalShop", "defaultBehaviors"],

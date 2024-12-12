@@ -19,7 +19,7 @@
     "description": "Class: All\nLevel: 11\nRegen 3, Wis 1, Random offensive element",
     "name": "Pearl Chain Necklace",
     "panelSprite": 1551,
-    "scriptKeys": ["Equipment", "SetRandomOffenseElement"],
+    "scriptKeys": ["Equipment"],
     "scriptVars": {
         "equipment": {}
     },

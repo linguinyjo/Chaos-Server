@@ -19,7 +19,7 @@
     "sellValue": 22500,
     "weight": 2,
     "description": "Class: All\nLevel: 11\nAc -2\nWis 1",
-    "name": "Leather Greaves",
+    "name": "Reinforced Leather Greaves",
     "panelSprite": 1856,
     "scriptKeys": ["Equipment"],
     "scriptVars": {

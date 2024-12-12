@@ -9,8 +9,27 @@
             "stock": 100
         }
     ],
-    "itemsToBuy": ["shirt","woodenShield", "stick", "boots", "leatherTunic", "leatherGauntlet", "leatherGreaves", 
-        "silverEarrings", "goldEarrings", "coralEarrings", "rubyEarrings","spinelRing","emeraldRing"],
+    "itemsToBuy": [
+        "shirt",
+        "woodenShield", "leatherShield", "bronzeShield",
+        "boots", "greyBoots", "shagreenBoots",
+        "leatherTunic", "jupe", "dobok", "culotte", "leatherBliaut", "Cuirass", "Lorica", "Cotehardie",
+        "leatherGauntlet", "leatherBracer", "leatherEmeraldGauntlet","leatherHeartstoneGauntlet", "leatherRubyGauntlet", "leatherSapphireGauntlet",
+        "leatherGreaves", "reinforcedLeatherGreaves",
+
+        "windBelt", "fireBelt", "earthBelt", "seaBelt",
+        "windHybrasylBelt", "fireHybrasylBelt", "earthHybrasylBelt", "seaHybrasylBelt",
+        "windLeatherBelt", "fireLeatherBelt", "earthLeatherBelt", "seaLeatherBelt",
+        "windMythrilBelt", "fireMythrilBelt", "earthMythrilBelt", "seaMythrilBelt",
+
+        "windBoneNecklace", "fireBoneNecklace", "earthBoneNecklace", "seaBoneNecklace",
+        "windPhoenixNecklace", "firePhoenixNecklace", "earthPhoenixNecklace", "seaPhoenixNecklace",
+
+        "earthNecklace", "fireNecklace",  "seaNecklace", "windNecklace", "pearlChainNecklace",
+
+        "smallSpinelRing", "smallEmeraldRing", "emeraldRing", "spinelRing", "redJadeRing", "amethystRing",
+        "silverEarrings", "goldEarrings", "rubyEarrings", "coralEarrings", "berylEarrings"
+    ],
     "name": "Alexios",
     "restockIntervalHrs": 1,
     "restockPCt": 100,

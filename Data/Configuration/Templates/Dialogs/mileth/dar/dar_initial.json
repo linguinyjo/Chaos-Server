@@ -15,6 +15,10 @@
     {
       "dialogKey": "generic_forgetspell_initial",
       "optionText": "Forget Spell"
+    },
+    {
+      "dialogKey": "generic_remove_enchants",
+      "optionText": "Remove Enchants"
     }
   ],
   "scriptKeys": ["dar"],

@@ -35,13 +35,13 @@ public class DefaultExperienceFormula : IExperienceFormula
         => group.Count switch
         {
             1 => 0,
-            2 => 0.15m,
-            3 => 0.25m,
-            4 => 0.40m,
+            2 => 0.30m,
+            3 => 0.40m,
+            4 => 0.45m,
             5 => 0.50m,
             6 => 0.60m,
-            7 => 0.75m,
-            8 => 0.90m,
+            7 => 0.70m,
+            8 => 0.80m,
             _ => 0.95m
         };
 
@@ -80,7 +80,7 @@ public class DefaultExperienceFormula : IExperienceFormula
                 // 50% reduction for 7 levels higher
                 return 0.50m;
             default:
-                // For 10 or more levels difference, we'll return a special value
+                // For 8 or more levels difference, we'll return a special value
                 // to indicate that the exp should be set to 1
                 return decimal.MaxValue;
         }

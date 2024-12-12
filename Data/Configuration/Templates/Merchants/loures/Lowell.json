@@ -31,7 +31,8 @@
         "windBelt", "fireBelt", "earthBelt", "seaBelt", "hybrasylBelt", "leatherBelt", "mythrilBelt",
         "boneNecklace", "earthNecklace", "fireNecklace", "pearlChainNecklace", "phoenixNecklace", "seaNecklace", "windNecklace",
         "smallSpinelRing", "smallEmeraldRing", "emeraldRing", "spinelRing", "redJadeRing", "amethystRing",
-        "silverEarrings", "goldEarrings", "rubyEarrings", "coralEarrings", "berylEarrings"],
+        "silverEarrings", "goldEarrings", "rubyEarrings", "coralEarrings", "berylEarrings"
+    ],
     "name": "Lowell",
     "restockIntervalHrs": 1,
     "restockPCt": 100,

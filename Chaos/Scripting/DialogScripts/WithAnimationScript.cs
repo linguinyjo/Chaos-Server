@@ -9,6 +9,7 @@ using Chaos.Storage.Abstractions;
 
 namespace Chaos.Scripting.DialogScripts;
 
+//TODO not sure why i made this, is it being used?
 public class WithAnimationScript : DialogScriptBase
 {
     private readonly ISimpleCache SimpleCache;

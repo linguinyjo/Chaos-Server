@@ -2,13 +2,13 @@
   "castLines": 1,
   "learningRequirements": {
     "itemRequirements": [],
-    "requiredGold": 10000,
+    "requiredGold": 5000,
     "requiredStats": {
       "con": 3,
-      "dex": 12,
+      "dex": 5,
       "int": 18,
       "str": 3,
-      "wis": 22
+      "wis": 28
     },
     "prerequisiteSkills": [],
     "prerequisiteSpells": []
