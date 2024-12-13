@@ -12,7 +12,7 @@ public abstract class MonkFormScriptBase : DialogScriptBase
     protected readonly Dialog Dialog;
     protected readonly ISkillFactory SkillFactory;
     protected readonly ISpellFactory SpellFactory;
-    private const int GoldRequiremnent = 50000;
+    private const int GoldRequiremnent = 100000;
     
     protected MonkFormScriptBase(
         Dialog subject,

@@ -2,7 +2,7 @@
     "isAssail": false,
     "learningrequirements": {
         "itemrequirements": [],
-        "requiredGold": 10000,
+        "requiredGold": 50000,
         "requiredStats": {
             "con": 5,
             "dex": 8,
@@ -13,7 +13,7 @@
         "prerequisiteSkills": [],
         "prerequisiteSpells": []
     },
-    "description": "Deals minor damage to enemies infront of you. (3 tile range).\n\nGold required: 10000\nItems required: \nLocation: Mileth Combat Skill Master",
+    "description": "Deals minor damage to enemies infront of you. (3 tile range).\n\nGold required: 50000\nItems required: \nLocation: Mileth Combat Skill Master",
     "level": 21,
     "levelsUp": true,
     "name": "Windblade",

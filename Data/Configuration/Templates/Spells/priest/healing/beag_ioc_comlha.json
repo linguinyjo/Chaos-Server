@@ -13,6 +13,7 @@
     "prerequisiteSkills": [],
     "prerequisiteSpells": []
   },
+  "coolDown": 5000,
   "spellType": "NoTarget",
   "spellCategory": "Heal",
   "class": "Priest",

@@ -307,7 +307,7 @@ public static class ComplexActionHelper
     {
         if(item.CurrentDurability == null || item.Template.MaxDurability == null) return null;
         return (int)Math.Round((item.Template.BuyCost * (
-            1 - ((decimal)item.CurrentDurability.Value / item.Template.MaxDurability.Value)) * 0.1m));
+            1 - ((decimal)item.CurrentDurability.Value / item.Template.MaxDurability.Value)) * 0.20m));
     }
     
     public static int? CalculateAllRepairCost(Aisling source)
@@ -318,7 +318,7 @@ public static class ComplexActionHelper
             .Where(item => item.CurrentDurability < item.Template.MaxDurability);
         return damagedInventoryItems
             .Concat(damagedEquipment)
-            .Select(ComplexActionHelper.CalculateItemRepairCost)
+            .Select(CalculateItemRepairCost)
             .Sum(itemRepairCost => itemRepairCost ?? 0);
     }
 

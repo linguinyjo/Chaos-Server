@@ -2,7 +2,7 @@
   "learningRequirements": {
     "itemRequirements": [
     ],
-    "requiredGold": 10000,
+    "requiredGold": 50000,
     "requiredStats": {
       "str": 6,
       "int": 7,
@@ -17,7 +17,7 @@
   "prompt": "",
   "spellType": "NoTarget",
   "class": "Rogue",
-  "description":  "Drops a trap that puts the target to sleep for a short duration.\n\nGold required: 10000\nLocation: Mileth Special Skill Master", 
+  "description":  "Drops a trap that puts the target to sleep for a short duration.\n\nGold required: 50000\nLocation: Mileth Special Skill Master", 
   "level": 21,
   "name": "sleep trap",
   "panelSprite": 50,

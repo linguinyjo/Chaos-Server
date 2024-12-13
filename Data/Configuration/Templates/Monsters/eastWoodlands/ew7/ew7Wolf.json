@@ -4,7 +4,7 @@
     "aggroRange": 12,
     "moveIntervalMs": 1500,
     "name": "Wolf",
-    "lootTableKeys": ["ew7Wolfs"],
+    "lootTableKeys": ["ew6Wolfs"],
     "scriptKeys": ["default", "setMonsterElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,

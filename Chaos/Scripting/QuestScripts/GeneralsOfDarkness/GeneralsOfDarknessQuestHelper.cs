@@ -15,7 +15,6 @@ public static class GeneralsOfDarknessQuestHelper
     public static bool IsQuestAvailable(Aisling player) =>
         player.UserStatSheet.Level is >= 21 and < 50 && GetQuestStatus(player) == GeneralsOfDarknessQuestStatus.None;
     
-
     public static void StartQuest(Aisling player)
     {
         player.Trackers.Enums.Set(GeneralsOfDarknessQuestStatus.Started);

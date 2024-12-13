@@ -1,7 +1,7 @@
 {
   "learningRequirements": {
     "itemRequirements": [],
-    "requiredGold": 10000,
+    "requiredGold": 50000,
     "requiredStats": {
       "con": 6,
       "dex": 28,
@@ -14,7 +14,7 @@
   },
   "spellType": "NoTarget",
   "class": "Rogue",
-  "description": "Temporarily makes the caster Invisible",
+  "description": "Temporarily makes the caster Invisible.\n\nGold required: 50000\nLocation: Mileth Special Skill Master", 
   "level": 21,
   "name": "Hide",
   "panelSprite": 10,

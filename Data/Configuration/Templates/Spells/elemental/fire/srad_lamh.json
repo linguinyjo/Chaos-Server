@@ -8,13 +8,13 @@
             "con": 7,
             "dex": 3
         },
-        "requiredGold": 20000,
+        "requiredGold": 50000,
         "prerequisiteSkills": [],
         "prerequisiteSpells": []
     },
     "spellType": "NoTarget",
     "class": "Wizard",
-    "description": "Attacks all enemies with fire.\n\nGold required: 20000\nItems required: \nLocation: Mileth Black Magic Master",
+    "description": "Attacks all enemies with fire.\n\nGold required: 50000\nItems required: \nLocation: Mileth Black Magic Master",
     "level": 21,
     "castLines": 3,
     "levelsUp": true,

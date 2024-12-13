@@ -6,7 +6,7 @@
     "maxGoldDrop": 400,
     "minGoldDrop": 200,
     "name": "Kobold",
-    "lootTableKeys": ["ew8Kobolds"],
+    "lootTableKeys": ["ew6Kobolds"],
     "scriptKeys": ["default", "setMonsterElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,

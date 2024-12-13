@@ -11,7 +11,7 @@
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],
-    "spellIntervalMs": 20000,
+    "spellIntervalMs": 15000,
     "spellTemplateKeys": ["sal", "athar", "creag", "srad", "cradh", "puinsein"],
     "sprite": 17,
     "statSheet": {

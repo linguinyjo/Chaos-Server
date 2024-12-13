@@ -2,7 +2,7 @@
   "castLines": 1,
   "learningRequirements": {
     "itemRequirements": [],
-    "requiredGold": 10000,
+    "requiredGold": 5000,
     "requiredStats": {
       "con": 3,
       "dex": 3,
@@ -15,7 +15,7 @@
   },
   "spellType": "Targeted",
   "class": "Priest",
-  "description": "Removes up to cradh effect.\n\nGold required: 10000\nItems required: \nLocation: Mileth White Magic Master",
+  "description": "Removes up to cradh effect.\n\nGold required: 5000\nItems required: \nLocation: Mileth White Magic Master",
   "level": 11,
   "name": "ao cradh",
   "panelSprite": 79,

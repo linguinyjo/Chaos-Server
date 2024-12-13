@@ -7,7 +7,7 @@
                 "itemTemplateKey": "battleSword"
             }
         ],
-        "requiredGold": 10000,
+        "requiredGold": 50000,
         "requiredStats": {
             "con": 14,
             "dex": 8,
@@ -18,7 +18,7 @@
         "prerequisiteSkills": [],
         "prerequisiteSpells": []
     },
-    "description": "A third assail.\n\nGold required: 10000\nItems required: Battle Sword \nLocation: Mileth Combat Skill Master",
+    "description": "A third assail.\n\nGold required: 50000\nItems required: Battle Sword \nLocation: Mileth Combat Skill Master",
     "level": 21,
     "levelsUp": true,
     "name": "Clobber",

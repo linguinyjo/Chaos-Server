@@ -35,6 +35,7 @@ public class TerrorQuestScript:  DialogScriptBase
             
             case TerrorQuestStatus.GardenSlain:
                 TerrorQuestHelper.IncrementQuestStage(source);
+                source.GiveExperience(25000);
                 break;
             
             case TerrorQuestStatus.GardenCompleted or TerrorQuestStatus.AlleyStarted:
@@ -50,6 +51,7 @@ public class TerrorQuestScript:  DialogScriptBase
             
             case TerrorQuestStatus.AlleySlain:
                 TerrorQuestHelper.IncrementQuestStage(source);
+                source.GiveExperience(50000);
                 break;
             
             case TerrorQuestStatus.AlleyCompleted or TerrorQuestStatus.CryptStarted:

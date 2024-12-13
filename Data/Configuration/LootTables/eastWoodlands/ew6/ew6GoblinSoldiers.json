@@ -18,12 +18,20 @@
       "itemTemplateKey": "hybrasylBelt"
     },
     {
+      "dropChance": 0.006,
+      "itemTemplateKey": "shagreenBoots"
+    },
+    {
       "dropChance": 0.005,
       "itemTemplateKey": "battleSword"
     },
     {
-      "dropChance": 0.003,
+      "dropChance": 0.004,
       "itemTemplateKey": "templar"
+    },
+    {
+      "dropChance": 0.002,
+      "itemTemplateKey": "masquerade"
     }
   ]
 }

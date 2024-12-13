@@ -12,7 +12,7 @@ namespace Chaos.Scripting.EffectScripts;
 
 public class SkulledEffect(ISimpleCache simpleCache) : ContinuousAnimationEffectBase
 {
-    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMilliseconds(15000);
+    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMilliseconds(20000);
 
     /// <inheritdoc />
     protected override Animation Animation { get; } = new()

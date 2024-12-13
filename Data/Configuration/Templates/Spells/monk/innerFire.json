@@ -2,7 +2,7 @@
   "castLines": 2,
   "learningRequirements": {
     "itemRequirements": [],
-    "requiredGold": 20000,
+    "requiredGold": 50000,
     "requiredStats": {
       "con": 20,
       "dex": 3,
@@ -15,7 +15,7 @@
   },
   "spellType": "NoTarget",
   "class": "Monk",
-  "description": "Improves regeneration.\n\nGold required: 20000\nItems required: \nLocation: Sapphire Stream, blue dugon",
+  "description": "Improves regeneration.\n\nGold required: 50000\nItems required: \nLocation: Sapphire Stream, blue dugon",
   "level": 22,
   "name": "inner fire",
   "panelSprite": 126,

@@ -1,7 +1,7 @@
 {
   "learningRequirements": {
     "itemRequirements": [],
-    "requiredGold": 20000,
+    "requiredGold": 50000,
     "requiredStats": {
       "str": 8,
       "int": 33,
@@ -14,7 +14,7 @@
   },
   "spellType": "Targeted",
   "class": "Wizard",
-  "description": "Applies a curse effect to your target reducing their AC.\n\nGold required: 20000\nItems required: \nLocation: Mileth Black Magic Master",
+  "description": "Applies a curse effect to your target reducing their AC.\n\nGold required: 50000\nItems required: \nLocation: Mileth Black Magic Master",
   "level": 21,
   "castLines": 2,
   "name": "cradh",

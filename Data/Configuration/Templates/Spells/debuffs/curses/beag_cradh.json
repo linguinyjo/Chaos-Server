@@ -1,7 +1,7 @@
 {
   "learningRequirements": {
     "itemRequirements": [],
-    "requiredGold": 5000,
+    "requiredGold": 1000,
     "requiredStats": {
       "str": 3,
       "int": 7,
@@ -14,7 +14,7 @@
   },
   "spellType": "Targeted",
   "class": "Wizard",
-  "description": "Applies a minor curse effect to your target reducing their AC.\n\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
+  "description": "Applies a minor curse effect to your target reducing their AC.\n\nGold required: 1000\nItems required: \nLocation: Mileth Black Magic Master",
   "level": 11,
   "castLines": 2,
   "name": "beag cradh",

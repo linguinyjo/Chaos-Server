@@ -23,10 +23,6 @@
     },
     {
       "dropChance": 0.005,
-      "itemTemplateKey": "battleSword"
-    },
-    {
-      "dropChance": 0.005,
       "itemTemplateKey": "holyKronos"
     },
     {
