@@ -19,7 +19,7 @@
   "description": "Applies a moderate heal to your group.\n\nGold required: 50000\nItems required: \nLocation: Mileth White Magic Master",
   "level": 21,
   "name": "ioc comlha",
-  "coolDown": 5000,
+  "cooldownMs": 5000,
   "panelSprite": 33,
   "scriptKeys": ["heal"],
   "scriptVars": {

@@ -4,7 +4,7 @@
     "aggroRange": 12,
     "moveIntervalMs": 1500,
     "maxGoldDrop": 300,
-    "minGoldDrop": 200,
+    "minGoldDrop": 150,
     "name": "Kobold",
     "lootTableKeys": ["ew6Kobolds"],
     "scriptKeys": ["default", "setMonsterElement"],

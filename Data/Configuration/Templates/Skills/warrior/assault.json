@@ -32,7 +32,7 @@
             "baseDamage": 3,
             "PAtkMultiplier": -80,
             "filter": "hostileOnly, aliveOnly, othersOnly",
-            "levelUpRate": "fast"
+            "levelUpRate": "medium"
         }
     },
     "templateKey": "assault"

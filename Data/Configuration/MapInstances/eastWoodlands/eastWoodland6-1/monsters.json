@@ -5,8 +5,8 @@
     "intervalSecs": 480,
     "intervalVariancePct": 5,
     "extraLootTableKeys": [],
-    "maxAmount": 10,
-    "maxPerSpawn": 10,
+    "maxAmount": 8,
+    "maxPerSpawn": 8,
     "monsterTemplateKey": "ew6GoblinSoldier"
   },
   {
@@ -25,8 +25,8 @@
     "intervalSecs": 480,
     "intervalVariancePct": 5,
     "extraLootTableKeys": [],
-    "maxAmount": 10,
-    "maxPerSpawn": 10,
+    "maxAmount": 8,
+    "maxPerSpawn": 8,
     "monsterTemplateKey": "ew6Kobold"
   }
 ]

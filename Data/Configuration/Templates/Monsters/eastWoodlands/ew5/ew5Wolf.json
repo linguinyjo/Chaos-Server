@@ -9,7 +9,7 @@
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],
-    "spellIntervalMs": 2000,
+    "spellIntervalMs": 20000,
     "spellTemplateKeys": ["beag_sal", "beag_athar", "beag_creag", "beag_srad", "beag_cradh"],
     "sprite": 2,
     "statSheet": {

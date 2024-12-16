@@ -14,7 +14,7 @@
         "prerequisiteSpells": []
     },
     "description": "A powerful strike in the direction your facing.\n\nGold required: 1000\nItems required: \nLocation: Mileth Combat Skill Master",
-    "level": 139,
+    "level": 1,
     "levelsUp": true,
     "name": "Kick",
     "class": "monk",
