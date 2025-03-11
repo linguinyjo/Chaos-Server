@@ -12,12 +12,12 @@
     "prerequisiteSkills": [],
     "prerequisiteSpells": []
   },
-  "spellType": "NoTarget",
-  "class": "Champion",
-  "description": "Applies an armor buff.\n\nGold required: 1000\nItems required: \nLocation: Mileth White Magic Master",
-  "level": 1,
-  "name": "aegis sphere 2",
-  "panelSprite": 94,
+  "class": "gladiator",
+  "description": "Take 20% more damage, but deal 10% more damage\n\nGold required: 50000\nItems required: \nLocation: ",
+  "level": 11,
+  "name": "frenzy 2",
+  "panelSprite": 135,
+  "cooldownMs": 10000,
   "scriptKeys": [
     "applyEffect"
   ],
@@ -25,14 +25,15 @@
     "applyEffect": {
       "bodyAnimation": "priestCast",
       "animation": {
-        "targetAnimation": 66,
+        "targetAnimation": 73,
         "animationSpeed": 150
       },
-      "sound": 30,
-      "manaCost": 75,
-      "effectKey": "aegisSphere2Buff",
-      "filter": "aliveOnly, selfOnly"
+      "sound": 5,
+      "manaCost": 0,
+      "effectKey": "frenzy2Buff",
+      "filter": "selfOnly, aliveOnly"
     }
   },
-  "templateKey": "aegis_sphere_2"
+  "spellType": "NoTarget",
+  "templateKey": "frenzy_2"
 }

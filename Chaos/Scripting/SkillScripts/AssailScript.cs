@@ -2,7 +2,6 @@ using Chaos.Common.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.Panel;
-using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
 using Chaos.Scripting.Abstractions;
 using Chaos.Scripting.Components.AbilityComponents;
@@ -13,13 +12,14 @@ using Chaos.Scripting.SkillScripts.Abstractions;
 
 namespace Chaos.Scripting.SkillScripts;
 
-public class RogueAssailScript : ConfigurableSkillScriptBase,
+public class AssailScript : ConfigurableSkillScriptBase,
                             DynamicAbilityComponent<Creature>.IDynamicAbilityComponentOptions,
                             DamageAbilityComponent.IDamageComponentOptions,
-                            AbilityLevellingAbilityComponent.IAbilityLevellingComponentOptions
+                            AbilityLevellingAbilityComponent.IAbilityLevellingComponentOptions,
+                            RequireWeaponTypeAbilityComponent.IRequireWeaponTypeComponentOptions
 {
     /// <inheritdoc />
-    public RogueAssailScript(Skill subject)
+    public AssailScript(Skill subject)
         : base(subject)
     {
         ApplyDamageScript = ApplyAttackDamageScript.Create();
@@ -32,7 +32,8 @@ public class RogueAssailScript : ConfigurableSkillScriptBase,
     public override void OnUse(ActivationContext context)
     {
         new ComponentExecutor(context).WithOptions(this)
-            .ExecuteAndCheck<DynamicAbilityComponent<Creature>>()
+            .ExecuteAndCheck<RequireWeaponTypeAbilityComponent>()
+            ?.ExecuteAndCheck<DynamicAbilityComponent<Creature>>()
             ?.Execute<AbilityLevellingAbilityComponent>()
             .Execute<DamageAbilityComponent>();
     }
@@ -113,7 +114,12 @@ public class RogueAssailScript : ConfigurableSkillScriptBase,
 
     /// <inheritdoc />
     public AbilityLevellingRate? LevelUpRate { get; init; }
+    
+    /// <inheritdoc />
+    public string? WeaponCategory { get; init; }
+    
     public string? AbilityTemplateKey { get; init; }
     public bool? IsSpell { get; init; }
     #endregion
+
 }

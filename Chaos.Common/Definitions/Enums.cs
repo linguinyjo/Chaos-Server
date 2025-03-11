@@ -769,6 +769,21 @@ public enum EquipmentType : byte
 }
 
 /// <summary>
+///     A byte representing the slot of a piece of equipment. Used in many places.
+/// </summary>
+public enum WeaponCategory : byte
+{
+    None = 0,
+    Sword = 1,
+    TwoHanded = 2,
+    Bow = 3,
+    Dagger = 4,
+    Claw = 5,
+    Staff = 6,
+    Harp = 7
+}
+
+/// <summary>
 ///     A byte representing the dugons available to monk.
 /// </summary>
 public enum Dugon

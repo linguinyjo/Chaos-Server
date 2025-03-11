@@ -24,9 +24,9 @@
     "name": "Clobber",
     "class": "warrior",
     "panelSprite": 0,
-    "scriptKeys": ["damage"],
+    "scriptKeys": ["assail"],
     "scriptVars": {
-        "damage": {
+        "assail": {
             "bodyAnimation": "assail",
             "sound": 1,
             "damageStat": "str",

@@ -13,27 +13,28 @@
         "prerequisiteSkills": [],
         "prerequisiteSpells": []
     },
-    "description": "A second assail.\n\nGold required: 5000\nItems required: \nLocation: Mileth Combat Skill Master",
+    "description": "Requires a two handed weapon\n\nGold required: 5000\nItems required: \nLocation: Mileth Combat Skill Master",
     "level": 11,
     "levelsUp": true,
-    "name": "Assault",
+    "name": "Two-Handed Attack",
     "class": "warrior",
-    "panelSprite": 1,
-    "scriptKeys": ["assail"],
+    "panelSprite": 17,
+    "scriptKeys": ["Assail"],
     "scriptVars": {
         "assail": {
-            "bodyAnimation": "assail",
+            "bodyAnimation": 129,
             "sound": 1,
             "damageStat": "str",
             "range": 1,
             "shape": "front",
             "excludeSourcePoint": true,
             "damageStatMultiplier": 0.25,
-            "baseDamage": 3,
+            "baseDamage": 5030,
             "PAtkMultiplier": -80,
             "filter": "hostileOnly, aliveOnly, othersOnly",
-            "levelUpRate": "medium"
+            "levelUpRate": "slow",
+            "weaponCategory": "twoHanded"
         }
     },
-    "templateKey": "assault"
+    "templateKey": "two_handed_attack"
 }

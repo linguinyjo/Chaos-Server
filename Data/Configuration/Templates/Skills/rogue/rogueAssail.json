@@ -6,9 +6,9 @@
     "name": "Assail",
     "class": "peasant",
     "panelSprite": 1,
-    "scriptKeys": ["RogueAssail"],
+    "scriptKeys": ["Assail"],
     "scriptVars": {
-        "RogueAssail": {
+        "Assail": {
             "bodyAnimation": "assail",
             "sound": 1,
             "damageStat": "str",

@@ -50,7 +50,7 @@ public sealed class Frenzy3BuffEffect : EffectBase,
     public byte? Sound { get; init; }
     
     /// <inheritdoc />
-    public override byte Icon { get; }
+    public override byte Icon => 135;
 
     /// <inheritdoc />
     public override string Name => "frenzy 3";

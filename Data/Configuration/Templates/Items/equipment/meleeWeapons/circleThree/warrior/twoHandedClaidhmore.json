@@ -1,0 +1,28 @@
+{
+    "buyCost": 400000,
+    "category": "TwoHanded",
+    "color": "Default",
+    "displaySprite": 16,
+    "equipmentType": "Weapon",
+    "gender": "Unisex",
+    "isModifiable": true,
+    "maxDurability": 30000,
+    "maxStacks": 1,
+    "level": 11,
+    "levelCircle": 1,
+    "class": "warrior",
+    "modifiers": {
+        "physicalAttack": 116,
+        "maximumMp": -1500
+    },
+    "sellValue": 200000,
+    "weight": 11,
+    "description": "Class: Warrior\nLevel: 41\nP.Atk 116",
+    "name": "Two-Handed Claidhmore",
+    "panelSprite": 175,
+    "scriptKeys": ["Equipment"],
+    "scriptVars": {
+        "equipment": {}
+    },
+    "templateKey": "twoHandedClaidhmore"
+}

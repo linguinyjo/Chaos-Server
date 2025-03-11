@@ -9,7 +9,7 @@ using Chaos.Scripting.EffectScripts.Abstractions;
 
 namespace Chaos.Scripting.EffectScripts.BuffEffects.Warrior;
 
-public sealed class Frenzy1BuffEffect : EffectBase,
+public sealed class Frenzy2BuffEffect : EffectBase,
     NonOverwritableEffectComponent.INonOverwritableEffectComponentOptions,
     GetTargetsAbilityComponent<Creature>.IGetTargetsComponentOptions,
     AnimationAbilityComponent.IAnimationComponentOptions,
@@ -23,7 +23,7 @@ public sealed class Frenzy1BuffEffect : EffectBase,
 
     /// <inheritdoc />
     public List<string> ConflictingEffectNames { get; init; } =
-        ["frenzy 2", "frenzy 3"];
+        ["frenzy 1", "frenzy 3"];
 
     /// <inheritdoc />
     protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(5);
@@ -50,13 +50,13 @@ public sealed class Frenzy1BuffEffect : EffectBase,
     public byte? Sound { get; init; }
     
     /// <inheritdoc />
-    public override byte Icon { get; }
+    public override byte Icon => 135;
 
     /// <inheritdoc />
-    public override string Name => "frenzy 1";
+    public override string Name => "frenzy 2";
     
-    private int AcDebuff => 20;
-    private int DmgBuff => 10;
+    private int AcDebuff => 40;
+    private int DmgBuff => 20;
 
     public override void OnTerminated()
     {

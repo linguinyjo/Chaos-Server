@@ -7,9 +7,9 @@ using Chaos.Scripting.Components.EffectComponents;
 using Chaos.Scripting.Components.Execution;
 using Chaos.Scripting.EffectScripts.Abstractions;
 
-namespace Chaos.Scripting.EffectScripts.BuffEffects.Warrior;
+namespace Chaos.Scripting.EffectScripts.BuffEffects.Warrior.Champion;
 
-public sealed class Frenzy2BuffEffect : EffectBase,
+public sealed class AegisSphere2BuffEffect : EffectBase,
     NonOverwritableEffectComponent.INonOverwritableEffectComponentOptions,
     GetTargetsAbilityComponent<Creature>.IGetTargetsComponentOptions,
     AnimationAbilityComponent.IAnimationComponentOptions,
@@ -23,7 +23,9 @@ public sealed class Frenzy2BuffEffect : EffectBase,
 
     /// <inheritdoc />
     public List<string> ConflictingEffectNames { get; init; } =
-        ["frenzy 1", "frenzy 3"];
+        [
+            "aegis sphere 1", "aegis sphere 3", "beag armor"
+        ];
 
     /// <inheritdoc />
     protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(5);
@@ -53,18 +55,13 @@ public sealed class Frenzy2BuffEffect : EffectBase,
     public override byte Icon { get; }
 
     /// <inheritdoc />
-    public override string Name => "frenzy 2";
+    public override string Name => "aegis sphere 2";
     
-    private int AcDebuff => 40;
-    private int DmgBuff => 20;
+    private int AcBuff => 20;
 
     public override void OnTerminated()
     {
-        Subject.StatSheet.SubtractBonus(new Attributes
-        {
-            Ac = AcDebuff,
-            Dmg = DmgBuff,
-        });
+        Subject.StatSheet.AddBonus(new Attributes { Ac = AcBuff });
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
     
@@ -76,11 +73,7 @@ public sealed class Frenzy2BuffEffect : EffectBase,
             ?.Execute<AnimationAbilityComponent>()
             .Execute<SoundAbilityComponent>();
             
-        Subject.StatSheet.AddBonus(new Attributes
-        {
-            Ac = AcDebuff,
-            Dmg = DmgBuff,
-        });
+        Subject.StatSheet.SubtractBonus(new Attributes { Ac = AcBuff });
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
 

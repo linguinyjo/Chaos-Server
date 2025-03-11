@@ -1,0 +1,45 @@
+{
+    "isAssail": false,
+    "learningRequirements": {
+        "itemRequirements": [],
+        "requiredGold": 0,
+        "requiredStats": {
+            "str": 30,
+            "int": 4,
+            "wis": 4,
+            "con": 16,
+            "dex": 6
+        },
+        "prerequisiteSkills": [],
+        "prerequisiteSpells": []
+    },
+    "description": "Sacrifice your health to deal severe damage",
+    "level": 71,
+    "levelsUp": true,
+    "name": "Crasher",
+    "class": "gladiator",
+    "panelSprite": 21,
+    "cooldownMs": 32000,
+    "scriptKeys": ["damage", "damageSelf"],
+    "scriptVars": {
+        "damage": {
+            "bodyAnimation": "assail",
+            "sound": 44,
+            "range": 1,
+            "animation": {
+                "targetAnimation": 50,
+                "animationSpeed": 150
+            },
+            "shape": "front",
+            "excludeSourcePoint": true,
+            "pctHpDamage": 30,
+            "filter": "hostileOnly, aliveOnly, othersOnly",
+            "levelUpRate": "fast"
+        },
+        "damageSelf": {
+            "pctHpDamage": 99,
+            "filter": "selfOnly, aliveOnly"
+        }
+    },
+    "templateKey": "crasher"
+}
