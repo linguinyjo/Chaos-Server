@@ -1,13 +1,23 @@
 {
-  "nextDialogKey": "close",
-  "options": [],
+  "options": [
+    {
+      "dialogKey": "gladiator_description",
+      "optionText": "Tell me more about the Gladiator"
+    },
+    {
+      "dialogKey": "champion_description",
+      "optionText": "Tell me more about the Champion"
+    },
+    {
+      "dialogKey": "neal_advanced_class_proceed",
+      "optionText": "I have made my decision"
+    }
+  ],
   "scriptKeys": [
    
   ],
-  "scriptVars": {
-   
-  },
+  "scriptVars": {},
   "templateKey": "neal_advanced_class",
-  "text": "So you are stronger now, you can become a gladiator or a champion",
-  "type": "Normal"
+  "text": "I see you are stronger now. You may dedicate yourself to the path of the Gladiator or the Champion. This choice is final, so make your choice with care.",
+  "type": "Menu"
 }

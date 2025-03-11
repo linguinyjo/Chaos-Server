@@ -45,13 +45,8 @@ public class SkulledEffect(ISimpleCache simpleCache) : ContinuousAnimationEffect
     {
         if (AislingSubject == null) return; 
         AislingSubject.IsDead = true;
-        var currentPosition = new Location(AislingSubject.MapInstance.Name,AislingSubject.X, AislingSubject.Y);
-        AislingSubject.TryDrop(currentPosition, AislingSubject.Equipment, out var equipmentToDrop);
-        if (equipmentToDrop != null)
-            foreach (var groundItem in equipmentToDrop)
-            {
-                AislingSubject.Equipment.RemoveByTemplateKey(groundItem.Item.Template.TemplateKey);
-            }
+        AislingSubject.TryDropAllEquipment();
+        var currentPosition = AislingSubject.GetCurrentLocation();
         AislingSubject.TryDrop(currentPosition, AislingSubject.Inventory, out var itemsToDrop);
         AislingSubject.TryDropGold(currentPosition, AislingSubject.Gold, out _);
         if (itemsToDrop != null)

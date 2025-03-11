@@ -91,13 +91,7 @@ public class DefaultExperienceFormula : IExperienceFormula
         var lowestMember = group.MinBy(p => p.StatSheet.Level)!;
         var highestMember = group.MaxBy(p => p.StatSheet.Level)!;
 
-        if (lowestMember.WithinLevelRange(highestMember))
-            return 0;
-
-        var lowerBound = LevelRangeFormulae.Default.GetLowerBound(highestMember.StatSheet.Level);
-        var stepSize = (highestMember.StatSheet.Level - lowerBound) / 2.0m;
-        var faultSize = lowerBound - lowestMember.StatSheet.Level;
-
-        return Math.Min(1, faultSize / stepSize * 0.25m);
+        // Full deduction if the level difference exceeds 19
+        return Math.Abs(highestMember.StatSheet.Level - lowestMember.StatSheet.Level) > 19 ? 1.0m : 0.0m;
     }
 }

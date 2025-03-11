@@ -13,7 +13,7 @@
         "prerequisiteSpells": []
     },
     "class": "Monk",
-    "cooldownMs": 15000,
+    "cooldownMs": 12000,
     "description": "Teleports the user behind the target, or around the target if behind is occupied.",
     "level": 11,
     "name": "Ambush",

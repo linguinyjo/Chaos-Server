@@ -1,25 +1,26 @@
 {
   "learningRequirements": {
     "itemRequirements": [],
-    "requiredGold": 5000,
+    "requiredGold": 50000,
     "requiredStats": {
-      "str": 3,
-      "int": 7,
-      "wis": 15,
-      "con": 3,
-      "dex": 3
+      "str": 4,
+      "int": 27,
+      "wis": 10,
+      "con": 6,
+      "dex": 5
     },
     "prerequisiteSkills": [],
     "prerequisiteSpells": []
   },
   "spellType": "Targeted",
-  "class": "Wizard",
-  "description": "Enchants a monster to fight for you.\n\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
+  "class": "enchanter",
+  "description": "Enchants a monster to fight for you.\n\nGold required: 50000\nItems required: \nLocation: Mileth Black Magic Master",
   "level": 11,
   "castLines": 4,
   "spellCategory": "Debuff",
   "name": "beag seun",
   "panelSprite": 20,
+  "cooldownMs": 60000,
   "scriptKeys": [
     "applyEffect"
   ],
@@ -28,7 +29,7 @@
       "manaCost": 30,
       "bodyAnimation": "priestcast",
       "effectKey": "beagseun",
-      "filter": "aliveOnly",
+      "filter": "hostileOnly, aliveOnly",
       "canResist": true
     }
   },

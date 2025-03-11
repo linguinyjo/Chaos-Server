@@ -24,7 +24,7 @@ public class FirstClassChangeScript : ConfigurableDialogScriptBase
     protected byte Class { get; init; }
     #endregion
 
-    private const byte SOUND = 29;
+    private const byte SOUND = 42;
 
     private Animation Animation { get; } = new()
     {
@@ -48,10 +48,15 @@ public class FirstClassChangeScript : ConfigurableDialogScriptBase
     {
         var baseClass = (BaseClass)Class;
         source.UserStatSheet.SetBaseClass(baseClass);
-        if (baseClass == BaseClass.Monk)
-            AddClassSpecificAssail(source, "monkAssail");
-        else if (baseClass == BaseClass.Rogue) 
-            AddClassSpecificAssail(source, "rogueAssail");
+        switch (baseClass)
+        {
+            case BaseClass.Monk:
+                AddClassSpecificAssail(source, "monkAssail");
+                break;
+            case BaseClass.Rogue:
+                AddClassSpecificAssail(source, "rogueAssail");
+                break;
+        }
 
         var legendMark = new LegendMark(
             $"Became a {baseClass}",
@@ -60,7 +65,7 @@ public class FirstClassChangeScript : ConfigurableDialogScriptBase
             MarkColor.White,
             1,
             GameTime.Now);
-        source.Legend.AddOrAccumulate(legendMark);
+        source.Legend.AddUnique(legendMark);
         source.Animate(Animation);
         source.Client.SendSound(SOUND, false); 
     }

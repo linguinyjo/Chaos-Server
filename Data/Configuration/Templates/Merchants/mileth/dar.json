@@ -23,7 +23,7 @@
     "beag_creag", "creag", "beag_creag_lamh", "creag_lamh",
     "beag_athar", "athar", "beag_athar_lamh", "athar_lamh",
     "beag_cradh", "cradh", 
-    "beag_pramh"
+    "beag_pramh", "beag_seun"
   ],
   "sprite": 37,
   "templateKey": "dar"

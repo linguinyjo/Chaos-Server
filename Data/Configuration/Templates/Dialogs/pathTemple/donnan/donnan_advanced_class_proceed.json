@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "select_druid",
+      "optionText": "I want to become a Druid"
+    },
+    {
+      "dialogKey": "select_brawler",
+      "optionText": "I want to become a Brawler"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "donnan_advanced_class_proceed",
+  "text": "Before continuing ensure you have removed all your equipment for this training is nothing short of brutal. Which class have you chosen?",
+  "type": "Menu"
+}

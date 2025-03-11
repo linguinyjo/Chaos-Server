@@ -1,0 +1,15 @@
+{
+  "nextDialogKey": "close",
+  "options": [],
+  "scriptKeys": [
+    "secondClassChange"
+  ],
+  "scriptVars": {
+    "secondClassChange": {
+      "class": 8
+    }
+  },
+  "templateKey": "select_enchanter",
+  "text": "Congratulations on becoming an Enchanter.",
+  "type": "Normal"
+}

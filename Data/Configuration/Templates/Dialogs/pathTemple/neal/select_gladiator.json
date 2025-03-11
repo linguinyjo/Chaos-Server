@@ -1,0 +1,15 @@
+{
+  "nextDialogKey": "close",
+  "options": [],
+  "scriptKeys": [
+    "secondClassChange"
+  ],
+  "scriptVars": {
+    "secondClassChange": {
+      "class": 1
+    }
+  },
+  "templateKey": "select_gladiator",
+  "text": "Congratulations on becoming a Gladiator.",
+  "type": "Normal"
+}

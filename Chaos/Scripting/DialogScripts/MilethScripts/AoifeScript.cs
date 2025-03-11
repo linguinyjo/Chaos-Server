@@ -34,8 +34,7 @@ public class AoifeScript:  DialogScriptBase
 
     private void HandleNonPeasantDisplay()
     {
-        // Maybe add some options here, e.g., where to hunt
-       
+        Subject.AddOption("I wish to enter the temple", "aoife_go_inside");
     }
 
     private void HandlePeasantDisplay(Aisling source)

@@ -1,6 +1,15 @@
 {
   "nextDialogKey": "close",
-  "options": [],
+  "options": [
+    {
+      "dialogKey": "assassin_description",
+      "optionText": "Tell me more about the Assassin"
+    },
+    {
+      "dialogKey": "keefe_advanced_class_proceed",
+      "optionText": "I have made my decision"
+    }
+  ],
   "scriptKeys": [
    
   ],
@@ -8,6 +17,6 @@
    
   },
   "templateKey": "keefe_advanced_class",
-  "text": "So you are stronger now, you can become an assassin or an archer",
+  "text": "So you are stronger now, you can become an assassin or an archer(not yet implemented)",
   "type": "Normal"
 }

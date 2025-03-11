@@ -17,7 +17,8 @@ public class DamageScript : ConfigurableSkillScriptBase,
                             GenericAbilityComponent<Creature>.IAbilityComponentOptions,
                             DamageAbilityComponent.IDamageComponentOptions,
                             AbilityLevellingAbilityComponent.IAbilityLevellingComponentOptions,
-                            RequireWeaponTypeAbilityComponent.IRequireWeaponTypeComponentOptions
+                            RequireWeaponTypeAbilityComponent.IRequireWeaponTypeComponentOptions,
+                            RequireShieldAbilityComponent.IRequireShieldComponentOptions
 {
     /// <inheritdoc />
     public DamageScript(Skill subject)
@@ -33,10 +34,10 @@ public class DamageScript : ConfigurableSkillScriptBase,
     public override void OnUse(ActivationContext context) =>
         new ComponentExecutor(context).WithOptions(this)
             .ExecuteAndCheck<RequireWeaponTypeAbilityComponent>()
+            ?.ExecuteAndCheck<RequireShieldAbilityComponent>()
             ?.ExecuteAndCheck<GenericAbilityComponent<Creature>>()
             ?.Execute<AbilityLevellingAbilityComponent>()
             .Execute<DamageAbilityComponent>();
-    
     
     #region ScriptVars
     /// <inheritdoc />
@@ -111,8 +112,10 @@ public class DamageScript : ConfigurableSkillScriptBase,
 
     /// <inheritdoc />
     public bool CanResist { get; init; }
-    /// <inheritdoc />
+    /// <inheritdoc /> // RequireWeaponType probably a better name for this
     public string? WeaponCategory { get; init; }
+    /// <inheritdoc />
+    public bool? RequireShield { get; init; }
     /// <inheritdoc />
     public AbilityLevellingRate? LevelUpRate { get; init; }
     public string? AbilityTemplateKey { get; init; }

@@ -1,6 +1,19 @@
 {
   "nextDialogKey": "close",
-  "options": [],
+  "options": [
+    {
+      "dialogKey": "bard_description",
+      "optionText": "Tell me more about the Bard"
+    },
+    {
+      "dialogKey": "bishop_description",
+      "optionText": "Tell me more about the Bishop"
+    },
+    {
+      "dialogKey": "erin_advanced_class_proceed",
+      "optionText": "I have made my decision"
+    }
+  ],
   "scriptKeys": [],
   "scriptVars": {},
   "templateKey": "erin_advanced_class",

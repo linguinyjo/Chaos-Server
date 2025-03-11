@@ -1,13 +1,22 @@
 {
   "nextDialogKey": "close",
-  "options": [],
-  "scriptKeys": [
-   
+  "options": [
+    {
+      "dialogKey": "enchanter_description",
+      "optionText": "Tell me more about the Enchanter"
+    },
+    {
+      "dialogKey": "elementalist_description",
+      "optionText": "Tell me more about the Elementalist"
+    },
+    {
+      "dialogKey": "logan_advanced_class_proceed",
+      "optionText": "I have made my decision"
+    }
   ],
-  "scriptVars": {
-   
-  },
+  "scriptKeys": [],
+  "scriptVars": {},
   "templateKey": "logan_advanced_class",
-  "text": "So you are stronger now, you can become a gladiator or a champion",
+  "text": "So you are stronger now, you can become an Enchanter or an Elementalist.",
   "type": "Normal"
 }

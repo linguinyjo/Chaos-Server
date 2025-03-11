@@ -1,0 +1,15 @@
+{
+  "nextDialogKey": "close",
+  "options": [],
+  "scriptKeys": [
+    "secondClassChange"
+  ],
+  "scriptVars": {
+    "secondClassChange": {
+      "class": 4
+    }
+  },
+  "templateKey": "select_brawler",
+  "text": "Congratulations on becoming a Brawler.",
+  "type": "Normal"
+}

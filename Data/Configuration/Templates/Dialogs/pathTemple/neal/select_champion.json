@@ -1,0 +1,15 @@
+{
+  "nextDialogKey": "close",
+  "options": [],
+  "scriptKeys": [
+    "secondClassChange"
+  ],
+  "scriptVars": {
+    "secondClassChange": {
+      "class": 2
+    }
+  },
+  "templateKey": "select_champion",
+  "text": "Congratulations on becoming a Champion.",
+  "type": "Normal"
+}

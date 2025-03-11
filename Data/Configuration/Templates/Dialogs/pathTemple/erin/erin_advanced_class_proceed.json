@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "select_bard",
+      "optionText": "I want to become a Bard"
+    },
+    {
+      "dialogKey": "select_bishop",
+      "optionText": "I want to become a Bishop"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "erin_advanced_class_proceed",
+  "text": "Before continuing ensure you have removed all your equipment for this training is nothing short of brutal. Which class have you chosen?",
+  "type": "Menu"
+}

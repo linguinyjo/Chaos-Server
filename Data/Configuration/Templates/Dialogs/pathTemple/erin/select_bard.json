@@ -1,0 +1,15 @@
+{
+  "nextDialogKey": "close",
+  "options": [],
+  "scriptKeys": [
+    "secondClassChange"
+  ],
+  "scriptVars": {
+    "secondClassChange": {
+      "class": 5
+    }
+  },
+  "templateKey": "select_bard",
+  "text": "Congratulations on becoming a Bard.",
+  "type": "Normal"
+}

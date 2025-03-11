@@ -1,0 +1,15 @@
+{
+  "nextDialogKey": "close",
+  "options": [],
+  "scriptKeys": [
+    "secondClassChange"
+  ],
+  "scriptVars": {
+    "secondClassChange": {
+      "class": 7
+    }
+  },
+  "templateKey": "select_elementalist",
+  "text": "Congratulations on becoming an Elementalist. ",
+  "type": "Normal"
+}

@@ -1,0 +1,15 @@
+{
+  "nextDialogKey": "close",
+  "options": [],
+  "scriptKeys": [
+    "secondClassChange"
+  ],
+  "scriptVars": {
+    "secondClassChange": {
+      "class": 9
+    }
+  },
+  "templateKey": "select_druid",
+  "text": "Congratulations on becoming a Druid.",
+  "type": "Normal"
+}

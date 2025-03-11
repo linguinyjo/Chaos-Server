@@ -57,7 +57,7 @@ public sealed class KelberothStanceEffect : EffectBase,
     /// <inheritdoc />
     public override string Name => "Kelberoth Stance";
     
-    private static int DamageBuff => 5;
+    private static int DamageBuff => 15;
     private static int StrengthBuff => 3;
 
     /// <inheritdoc />

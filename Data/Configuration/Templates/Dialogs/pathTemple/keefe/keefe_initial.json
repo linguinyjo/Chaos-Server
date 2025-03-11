@@ -1,15 +1,8 @@
 {
   "options": [
-    {
-      "dialogKey": "keefe_become_a_rogue",
-      "optionText": "I want to become a rogue"
-    },
-    {
-      "dialogKey": "keefe_rogue_info",
-      "optionText": "Tell me about the path of the rogue"
-    }
+
   ],
-  "scriptKeys": [],
+  "scriptKeys": ["keefe"],
   "scriptVars": {},
   "templateKey": "keefe_initial",
   "text": "Welcome, what secrets bring you to the art of subterfuge?",

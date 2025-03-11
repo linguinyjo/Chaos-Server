@@ -1,0 +1,39 @@
+{
+  "castLines": 1,
+  "learningRequirements": {
+    "itemRequirements": [],
+    "requiredGold": 1000,
+    "requiredStats": {
+      "con": 4,
+      "dex": 3,
+      "int": 6,
+      "str": 3,
+      "wis": 10
+    },
+    "prerequisiteSkills": [],
+    "prerequisiteSpells": []
+  },
+  "spellType": "NoTarget",
+  "class": "Champion",
+  "description": "Applies a small armor buff.\n\nGold required: 1000\nItems required: \nLocation: Mileth White Magic Master",
+  "level": 1,
+  "name": "aegis sphere 1",
+  "panelSprite": 94,
+  "scriptKeys": [
+    "applyEffect"
+  ],
+  "scriptVars": {
+    "applyEffect": {
+      "bodyAnimation": "priestCast",
+      "animation": {
+        "targetAnimation": 66,
+        "animationSpeed": 150
+      },
+      "sound": 30,
+      "manaCost": 75,
+      "effectKey": "aegisSphere1Buff",
+      "filter": "aliveOnly, selfOnly"
+    }
+  },
+  "templateKey": "aegis_sphere_1"
+}

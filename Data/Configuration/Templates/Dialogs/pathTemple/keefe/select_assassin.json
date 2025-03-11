@@ -1,0 +1,15 @@
+{
+  "nextDialogKey": "close",
+  "options": [],
+  "scriptKeys": [
+    "secondClassChange"
+  ],
+  "scriptVars": {
+    "secondClassChange": {
+      "class": 10
+    }
+  },
+  "templateKey": "select_assassin",
+  "text": "Congratulations on becoming an Assassin.",
+  "type": "Normal"
+}

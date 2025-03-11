@@ -15,9 +15,9 @@ public record Attributes : Stats
     protected int _maximumMp;
     protected int _skillDamagePct;
     protected int _spellDamagePct;
-    protected int _physicalAttack; // Weapon stat representing damage, a single value (do we really need weapon attack ranges?)
-    protected int _magicAttack; // Weapon stat representing damage for offensive spells, and bonus to heal amount - maybe should also have an impact on ability to land spells?
-    protected int _regen; // a stat which reduces the interval time between regen ticks - max of 15 regen which will result in base regen 20s --> 8s
+    protected int _physicalAttack; // Weapon stat representing damage, a single value 
+    protected int _magicAttack; // Weapon stat representing damage for offensive spells, and bonus to heal amount 
+    protected int _regen; // a stat which reduces the interval time between regen ticks - max of 15 regen which will result in base regen 20s --> 6s
     
     public int Ac
     {

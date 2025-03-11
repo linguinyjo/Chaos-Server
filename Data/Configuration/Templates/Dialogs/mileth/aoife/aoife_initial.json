@@ -1,9 +1,6 @@
 {
   "options": [
-    {
-      "dialogKey": "close",
-      "optionText": "Close"
-    }
+   
   ],
   "scriptKeys": ["aoife"],
   "scriptVars": {},

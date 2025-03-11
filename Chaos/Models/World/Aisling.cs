@@ -473,13 +473,13 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
     ///     </c>
     /// </returns>
     public bool HasClass(BaseClass @class)
-        => @class is BaseClass.Peasant
-           || UserStatSheet.BaseClass switch
-           {
-               //Diacht "is" all classes
-               BaseClass.Diacht => true,
-               _                => UserStatSheet.BaseClass == @class
-           };
+    {
+        return @class == BaseClass.Peasant
+               || UserStatSheet.BaseClass == BaseClass.Diacht  // Diacht includes all classes
+               || (UserStatSheet.BaseClass & @class) == @class; // Check if base class is included
+    }
+    
+    public bool HasOnlyPeasant() => UserStatSheet.BaseClass == BaseClass.Peasant;
 
     public bool Illuminates(VisibleEntity entity)
     {
@@ -657,6 +657,19 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
     }
 
     public override void ShowTo(Aisling aisling) => aisling.Client.SendDisplayAisling(this);
+
+    public Location GetCurrentLocation() => new(MapInstance.Name, X, Y);
+    
+    public void TryDropAllEquipment()
+    {
+        var currentPosition = new Location(MapInstance.Name, X, Y);
+        TryDrop(currentPosition, Equipment, out var equipmentToDrop);
+        if (equipmentToDrop == null) return;
+        foreach (var groundItem in equipmentToDrop)
+        {
+            Equipment.RemoveByTemplateKey(groundItem.Item.Template.TemplateKey);
+        }
+    }
 
     public bool TryDrop(
         IPoint point,

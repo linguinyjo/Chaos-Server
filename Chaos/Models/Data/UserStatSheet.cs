@@ -100,6 +100,25 @@ public sealed record UserStatSheet : StatSheet
             _advClass = AdvClass.None
         };
 
+    public void PerformClassAdvancement(AdvClass advClass, int stats)
+    {
+        SetAdvClass(advClass);
+        SetLevel(1); 
+        Str = 3;
+        Int = 3;
+        Wis = 3;
+        Con = 3;
+        Dex = 3;
+        _currentHp = 100;
+        _maximumHp = 100;
+        _currentMp = 50;
+        _maximumMp = 50;
+        _maxWeight = 40;
+        _ac = 100;
+        _toNextLevel = 50;
+        _unspentPoints = stats;
+    }
+
     public long AddTna(long amount)
     {
         var ret = Interlocked.Add(ref _toNextAbility, amount);

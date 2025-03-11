@@ -1,0 +1,39 @@
+{
+  "learningRequirements": {
+    "itemRequirements": [],
+    "requiredGold": 1000,
+    "requiredStats": {
+      "con": 4,
+      "dex": 3,
+      "int": 6,
+      "str": 3,
+      "wis": 10
+    },
+    "prerequisiteSkills": [],
+    "prerequisiteSpells": []
+  },
+  "class": "gladiator",
+  "description": "Take 20% more damage, but deal 10% more damage\n\nGold required: 50000\nItems required: \nLocation: ",
+  "level": 11,
+  "name": "frenzy 1",
+  "panelSprite": 135,
+  "cooldownMs": 10000,
+  "scriptKeys": [
+    "applyEffect"
+  ],
+  "scriptVars": {
+    "applyEffect": {
+      "bodyAnimation": "priestCast",
+      "animation": {
+        "targetAnimation": 73,
+        "animationSpeed": 150
+      },
+      "sound": 5,
+      "manaCost": 0,
+      "effectKey": "frenzy1Buff",
+      "filter": "selfOnly, aliveOnly"
+    }
+  },
+  "spellType": "NoTarget",
+  "templateKey": "frenzy_1"
+}

@@ -35,7 +35,7 @@ public class BeagSeunEffect : EffectBase,
         ];
 
     /// <inheritdoc />
-    protected override TimeSpan Duration { get; set; } = TimeSpan.FromSeconds(20);
+    protected override TimeSpan Duration { get; set; } = TimeSpan.FromSeconds(30);
 
     /// <inheritdoc />
     public bool ExcludeSourcePoint { get; init; }

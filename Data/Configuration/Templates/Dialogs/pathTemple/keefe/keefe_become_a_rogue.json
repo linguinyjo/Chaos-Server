@@ -1,16 +1,11 @@
 {
-  "options": [
-    {
-      "dialogKey": "keefe_class_change",
-      "optionText": "I am prepared"
-    },
-    {
-      "dialogKey": "Close",
-      "optionText": "I need more time"
+  "options": [],
+  "scriptKeys": ["firstClass"],
+  "scriptVars": {
+    "firstClass": {
+      "class": 2
     }
-  ],
-  "scriptKeys": ["monk"],
-  "scriptVars": {},
+  },
   "templateKey": "keefe_become_a_rogue",
   "text": "A sharp choice, aspiring rogue. The road ahead is treacherous, where survival depends on your ability to vanish, to manipulate, to strike with lethal precision. Are you prepared to transform yourself into a living weapon of shadow and strategy?",
   "type": "Menu"
