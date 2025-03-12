@@ -24,7 +24,7 @@ public sealed class AegisSphere1BuffEffect : EffectBase,
     /// <inheritdoc />
     public List<string> ConflictingEffectNames { get; init; } =
         [
-            "aegis sphere 2", "aegis sphere 3", "beag armor"
+            "aegis sphere 1", "aegis sphere 2", "aegis sphere 3", "beag armor"
         ];
 
     /// <inheritdoc />
@@ -68,11 +68,6 @@ public sealed class AegisSphere1BuffEffect : EffectBase,
     /// <inheritdoc />
     public override void OnApplied()
     {
-        new ComponentExecutor(Subject, Subject).WithOptions(this)
-            .ExecuteAndCheck<GetTargetsAbilityComponent<Creature>>()
-            ?.Execute<AnimationAbilityComponent>()
-            .Execute<SoundAbilityComponent>();
-            
         Subject.StatSheet.SubtractBonus(new Attributes { Ac = AcBuff });
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }

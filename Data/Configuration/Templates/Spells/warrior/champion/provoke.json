@@ -1,0 +1,36 @@
+{
+  "learningRequirements": {
+    "itemRequirements": [],
+    "requiredGold": 5000,
+    "requiredStats": {
+      "con": 5,
+      "dex": 3,
+      "int": 5,
+      "str": 5,
+      "wis": 3
+    },
+    "prerequisiteSkills": [],
+    "prerequisiteSpells": []
+  },
+  "spellType": "Targeted",
+  "class": "champion",
+  "castLines": 0,
+  "cooldownMs": 18000,
+  "description": "Attracts enemy attention.\n\nGold required: 5000\nItems required: \nLocation: Mileth Special Combat Master",
+  "level": 41,
+  "name": "Taunt",
+  "panelSprite": 14,
+  "scriptKeys": [
+    "taunt"
+  ],
+  "scriptVars": {
+    "taunt": {
+      "bodyAnimation": "priestcast",
+      "filter": "hostileOnly, aliveOnly, othersOnly",
+      "canResist": false,
+      "sound": 1,
+      "enmity": 1500
+    }
+  },
+  "templateKey": "provoke"
+}

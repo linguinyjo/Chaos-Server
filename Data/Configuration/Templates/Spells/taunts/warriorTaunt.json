@@ -15,7 +15,7 @@
   "spellType": "Targeted",
   "class": "Warrior",
   "castLines": 0,
-  "cooldownMs": 15000,
+  "cooldownMs": 30000,
   "description": "Attracts enemy attention.\n\nGold required: 5000\nItems required: \nLocation: Mileth Special Combat Master",
   "level": 11,
   "name": "Taunt",
@@ -26,7 +26,7 @@
   "scriptVars": {
     "taunt": {
       "bodyAnimation": "priestcast",
-      "filter": "aliveOnly",
+      "filter": "hostileOnly, aliveOnly, othersOnly",
       "canResist": false,
       "sound": 1,
       "enmity": 250

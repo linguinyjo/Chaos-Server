@@ -28,9 +28,9 @@
       "manaCost": 75,
       "bodyAnimation": "handsup",
       "range": 10,
-      "sound": 8,
+      "sound": 27,
       "effectKey": "beagPramh",
-      "filter": "hostileOnly, aliveOnly"
+      "filter": "hostileOnly, aliveOnly",
     }
   },
   "templateKey": "beag_pramh"

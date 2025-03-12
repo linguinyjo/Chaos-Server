@@ -42,6 +42,12 @@ public record StatSheet : Attributes
         get => _currentMp;
         init => _currentMp = value;
     }
+    
+    public int Barrier
+    {
+        get => _barrier;
+        init => _barrier = value;
+    }
 
     public Element DefenseElement
     {
@@ -246,6 +252,9 @@ public record StatSheet : Attributes
 
     public void AddHp(int amount)
         => InterlockedEx.SetValue(ref _currentHp, () => (int)Math.Clamp(_currentHp + amount, 0, EffectiveMaximumHp));
+    
+    public void AddBarrier(int amount)
+        => InterlockedEx.SetValue(ref _barrier, () => (int)Math.Clamp(_barrier + amount, 0, EffectiveMaximumHp));
 
     public void AddLevel(int amount = 1) => Interlocked.Add(ref _level, amount);
 
@@ -342,6 +351,17 @@ public record StatSheet : Attributes
         if (Interlocked.Add(ref _currentHp, -amount) < 0)
             _currentHp = 0;
     }
+    
+    public void SubtractBarrier(int amount)
+    {
+        if (Interlocked.Add(ref _barrier, -amount) < 0)
+            _barrier = 0;
+    }
+    
+    public void RemoveBarrier()
+    { 
+        _barrier = 0;
+    }
 
     public void SubtractLevel(int amount) => Interlocked.Add(ref _level, -amount);
 
@@ -435,6 +455,8 @@ public record StatSheet : Attributes
     protected int _level;
     protected Element _defenseElement;
     protected Element _offenseElement;
+    protected int _barrier;
+
     #endregion
 
     #region Mods

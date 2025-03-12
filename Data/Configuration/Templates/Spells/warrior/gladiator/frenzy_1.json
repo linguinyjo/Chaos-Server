@@ -17,7 +17,7 @@
   "level": 11,
   "name": "frenzy 1",
   "panelSprite": 135,
-  "cooldownMs": 10000,
+  "cooldownMs": 30000,
   "scriptKeys": [
     "applyEffect"
   ],

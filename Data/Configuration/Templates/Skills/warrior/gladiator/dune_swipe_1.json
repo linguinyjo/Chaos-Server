@@ -1,0 +1,40 @@
+{
+    "isAssail": false,
+    "learningRequirements": {
+        "itemRequirements": [],
+        "requiredGold": 0,
+        "requiredStats": {
+            "str": 12,
+            "int": 4,
+            "wis": 8,
+            "con": 28,
+            "dex": 8
+        },
+        "prerequisiteSkills": [],
+        "prerequisiteSpells": []
+    },
+    "description": "Deals Moderate damage to surrounding enemies",
+    "level": 71,
+    "levelsUp": true,
+    "name": "Dune Swipe 1",
+    "class": "gladiator",
+    "panelSprite": 74,
+    "cooldownMs": 18000,
+    "scriptKeys": ["damage"],
+    "scriptVars": {
+        "damage": {
+            "bodyAnimation": "assail",
+            "sound": 45,
+            "damageStat": "str",
+            "range": 1,
+            "shape": "allAround",
+            "excludeSourcePoint": true,
+            "damageStatMultiplier": 3,
+            "baseDamage": 50,
+            "filter": "hostileOnly, aliveOnly, othersOnly",
+            "PAtkMultiplier": 50,
+            "levelUpRate": "medium"
+        }
+    },
+    "templateKey": "dune_swipe_1"
+}

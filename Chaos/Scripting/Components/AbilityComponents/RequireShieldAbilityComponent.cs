@@ -14,7 +14,9 @@ public struct  RequireShieldAbilityComponent : IConditionalComponent
         var options = vars.GetOptions<IRequireShieldComponentOptions>();
         if (options.RequireShield is null or false) return true;
         var shield = context.SourceAisling?.Equipment[EquipmentSlot.Shield];
-        return shield != null;
+        if (shield != null) return true;
+        context.SourceAisling?.SendOrangeBarMessage("This ability requires a shield");
+        return false;
     }
 
     public interface IRequireShieldComponentOptions

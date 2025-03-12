@@ -1,0 +1,35 @@
+{
+  "learningRequirements": {
+    "itemRequirements": [],
+    "requiredGold": 1000,
+    "requiredStats": {
+      "con": 4,
+      "dex": 3,
+      "int": 6,
+      "str": 3,
+      "wis": 10
+    },
+    "prerequisiteSkills": [],
+    "prerequisiteSpells": []
+  },
+  "spellType": "NoTarget",
+  "class": "Champion",
+  "description": "Applies a small armor buff.\n\nGold required: 1000\nItems required: \nLocation: Mileth White Magic Master",
+  "level": 71,
+  "name": "aura of hate 2",
+  "panelSprite": 132,
+  "cooldownMs": 10000,
+  "scriptKeys": [
+    "applyEffect"
+  ],
+  "scriptVars": {
+    "applyEffect": {
+      "bodyAnimation": "priestCast",
+      "sound": 30,
+      "manaCost": 0,
+      "effectKey": "hateAura2",
+      "filter": "aliveOnly, selfOnly"
+    }
+  },
+  "templateKey": "aura_of_hate_2"
+}

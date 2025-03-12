@@ -14,7 +14,7 @@
         "prerequisiteSpells": []
     },
     "description": "A powerful strike in the direction your facing.\n\nGold required: 1000\nItems required: \nLocation: Mileth Combat Skill Master",
-    "level": 1,
+    "level": 41,
     "levelsUp": true,
     "name": "Strikedown 1",
     "class": "gladiator",
@@ -32,8 +32,8 @@
             "damageStatMultiplier": 5,
             "baseDamage": 30,
             "filter": "hostileOnly, aliveOnly, othersOnly",
-            "PAtkMultiplier": 25,
-            "levelUpRate": "veryfast"
+            "PAtkMultiplier": 50,
+            "levelUpRate": "medium"
         }
     },
     "templateKey": "strikedown_1"

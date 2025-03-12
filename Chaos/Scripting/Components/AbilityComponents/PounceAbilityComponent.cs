@@ -17,12 +17,46 @@ public struct PounceAbilityComponent : IComponent
     /// <inheritdoc />
     public void Execute(ActivationContext context, ComponentVars vars)
     {
-        // var options = vars.GetOptions<IPounceComponentOptions>();
+        var options = vars.GetOptions<IPounceComponentOptions>();
         var targets = vars.GetTargets<Creature>();
 
+        if (options.WithAmbush == false)
+        {
+            Charge(targets, context);
+        }
+        else
+        {
+            Pounce(targets, context, options.Distance);
+        }
+    }
+
+    private static void Charge(IReadOnlyCollection<Creature> targets, ActivationContext context)
+    {
+        foreach (var target in targets) 
+        {
+            // Get the direction from the target to the player
+            var directionToPlayer = target.DirectionalRelationTo(context.Source);
+
+            // Reverse the direction to get the front position
+            var frontOfTargetDirection = directionToPlayer.Reverse();
+            // Get the point directly in front of the target, in the direction of the player
+            var destinationPoint = target.DirectionalOffset(frontOfTargetDirection);
+
+            // Check if the point is walkable and not blocked
+            if (!context.TargetMap.IsWalkable(destinationPoint, context.Source.Type) ||
+                context.TargetMap.IsBlockingReactor(destinationPoint)) continue;
+           
+            context.Source.WarpTo(destinationPoint);
+            context.Source.Turn(context.Source.Direction); 
+            return; 
+        }
+    }
+
+    private static void Pounce(IReadOnlyCollection<Creature> targets, ActivationContext context, int? optionsDistance)
+    {
         foreach (var target in targets)
         {
-            var endPoint = context.Source.DirectionalOffset(context.Source.Direction, 3);
+            var endPoint = context.Source.DirectionalOffset(context.Source.Direction, optionsDistance ?? 3);
 
             var points = context.Source
                 .GetDirectPath(endPoint)
@@ -63,5 +97,11 @@ public struct PounceAbilityComponent : IComponent
                 }
             }
         }
+    }
+    
+    public interface IPounceComponentOptions
+    {
+        int? Distance { get; init; }
+        bool? WithAmbush { get; init; }
     }
 }

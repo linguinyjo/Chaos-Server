@@ -46,7 +46,7 @@ public class DubhBasEffect : EffectBase,
     public bool SingleTarget { get; init; }
 
     /// <inheritdoc />
-    public byte? Sound { get; init; } = 27;
+    public byte? Sound { get; init; }
 
     /// <inheritdoc />
     public override byte Icon => 177;
@@ -63,8 +63,6 @@ public class DubhBasEffect : EffectBase,
     /// <inheritdoc />
     public override void OnApplied()
     {
-        new ComponentExecutor(Subject, Subject).WithOptions(this)
-            .ExecuteAndCheck<GetTargetsAbilityComponent<Creature>>();
         AislingSubject?.SendOrangeBarMessage("You feel a darkness seeping through you veins");
     }
 

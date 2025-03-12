@@ -58,19 +58,14 @@ public sealed class RegenBuffEffect : EffectBase,
 
     public override void OnTerminated()
     {
-        Subject.StatSheet.AddBonus(new Attributes { Regen = RegenBuff });
+        Subject.StatSheet.SubtractBonus(new Attributes { Regen = RegenBuff });
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
     
     /// <inheritdoc />
     public override void OnApplied()
     {
-        new ComponentExecutor(Subject, Subject).WithOptions(this)
-            .ExecuteAndCheck<GetTargetsAbilityComponent<Creature>>()
-            ?.Execute<AnimationAbilityComponent>()
-            .Execute<SoundAbilityComponent>();
-            
-        Subject.StatSheet.SubtractBonus(new Attributes { Regen = RegenBuff });
+        Subject.StatSheet.AddBonus(new Attributes { Regen = RegenBuff });
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
 

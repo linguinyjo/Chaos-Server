@@ -1,0 +1,39 @@
+{
+    "isAssail": true,
+    "learningrequirements": {
+        "itemrequirements": [],
+        "requiredGold": 5000,
+        "requiredStats": {
+            "con": 10,
+            "dex": 3,
+            "int": 3,
+            "str": 14,
+            "wis": 3
+        },
+        "prerequisiteSkills": [],
+        "prerequisiteSpells": []
+    },
+    "description": "A Champion's 5th assail\n\nGold required: 5000\nItems required: \nLocation: Mileth Combat Skill Master",
+    "level": 41,
+    "levelsUp": true,
+    "name": "Pummel",
+    "class": "champion",
+    "panelSprite": 1,
+    "scriptKeys": ["damage"],
+    "scriptVars": {
+        "damage": {
+            "bodyAnimation": "assail",
+            "sound": 1,
+            "damageStat": "str",
+            "range": 1,
+            "shape": "front",
+            "excludeSourcePoint": true,
+            "damageStatMultiplier": 0.25,
+            "baseDamage": 3,
+            "PAtkMultiplier": -80,
+            "filter": "hostileOnly, aliveOnly, othersOnly",
+            "levelUpRate": "medium"
+        }
+    },
+    "templateKey": "pummel"
+}

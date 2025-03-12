@@ -15,9 +15,10 @@
   "spellType": "NoTarget",
   "class": "Champion",
   "description": "Applies a small armor buff.\n\nGold required: 1000\nItems required: \nLocation: Mileth White Magic Master",
-  "level": 1,
+  "level": 11,
   "name": "aegis sphere 1",
   "panelSprite": 94,
+  "cooldownMs": 10000,
   "scriptKeys": [
     "applyEffect"
   ],
@@ -29,7 +30,7 @@
         "animationSpeed": 150
       },
       "sound": 30,
-      "manaCost": 75,
+      "manaCost": 0,
       "effectKey": "aegisSphere1Buff",
       "filter": "aliveOnly, selfOnly"
     }

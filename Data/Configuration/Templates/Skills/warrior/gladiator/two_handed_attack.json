@@ -29,7 +29,7 @@
             "shape": "front",
             "excludeSourcePoint": true,
             "damageStatMultiplier": 0.25,
-            "baseDamage": 5030,
+            "baseDamage": 30,
             "PAtkMultiplier": -80,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "levelUpRate": "slow",

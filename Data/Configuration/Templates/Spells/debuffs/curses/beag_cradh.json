@@ -29,7 +29,12 @@
       "bodyAnimation": "priestcast",
       "effectKey": "beagcradh",
       "filter": "aliveOnly",
-      "canResist": true
+      "canResist": true,
+      "animation": {
+        "targetAnimation": 45,
+        "animationSpeed": 150
+      },
+      "sound": 27
     }
   },
   "templateKey": "beag_cradh"

@@ -23,7 +23,7 @@ public sealed class Frenzy3BuffEffect : EffectBase,
 
     /// <inheritdoc />
     public List<string> ConflictingEffectNames { get; init; } =
-        ["frenzy 1", "frenzy 2"];
+        ["frenzy 1", "frenzy 2", "frenzy 3"];
 
     /// <inheritdoc />
     protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(5);
@@ -71,11 +71,6 @@ public sealed class Frenzy3BuffEffect : EffectBase,
     /// <inheritdoc />
     public override void OnApplied()
     {
-        new ComponentExecutor(Subject, Subject).WithOptions(this)
-            .ExecuteAndCheck<GetTargetsAbilityComponent<Creature>>()
-            ?.Execute<AnimationAbilityComponent>()
-            .Execute<SoundAbilityComponent>();
-            
         Subject.StatSheet.AddBonus(new Attributes
         {
             Ac = AcDebuff,

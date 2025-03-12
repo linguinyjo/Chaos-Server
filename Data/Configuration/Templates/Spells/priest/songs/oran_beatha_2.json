@@ -1,0 +1,39 @@
+{
+  "learningRequirements": {
+    "itemRequirements": [],
+    "requiredGold": 5000,
+    "requiredStats": {
+      "con": 3,
+      "dex": 5,
+      "int": 18,
+      "str": 4,
+      "wis": 13
+    },
+    "prerequisiteSkills": [],
+    "prerequisiteSpells": []
+  },
+  "spellType": "NoTarget",
+  "castLines": 3,
+  "class": "Bard",
+  "description": "Puts the enemy to sleep for 8 seconds. The skill/spell that breaks it deals double damage. \n\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
+  "level": 71,
+  "levelsUp": true,
+  "name": "oran beatha 2",
+  "spellCategory": "Song",
+  "panelSprite": 146,
+  "scriptKeys": [
+    "applyEffect"
+  ],
+  "scriptVars": {
+    "applyEffect": {
+      "shape": "allAround",
+      "manaCost": 300,
+      "bodyAnimation": "PlayNotes",
+      "range": 8,
+      "sound": 34,
+      "effectKey": "OranBeatha2",
+      "filter": "friendlyOnly, aliveOnly, AislingsOnly, GroupOnly"
+    }
+  },
+  "templateKey": "oran_beatha_2"
+}

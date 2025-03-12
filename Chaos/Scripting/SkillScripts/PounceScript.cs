@@ -14,12 +14,10 @@ using Chaos.Scripting.SkillScripts.Abstractions;
 namespace Chaos.Scripting.SkillScripts;
 
 public class PounceScript : ConfigurableSkillScriptBase,
-                            GenericAbilityComponent<Creature>.IAbilityComponentOptions
+                            GenericAbilityComponent<Creature>.IAbilityComponentOptions,
+                            PounceAbilityComponent.IPounceComponentOptions
     
 {
-    
-    public string? AbilityTemplateKey { get; init; }
-    public bool? IsSpell { get; init; }
     
     /// <inheritdoc />
     public PounceScript(Skill subject)
@@ -85,5 +83,13 @@ public class PounceScript : ConfigurableSkillScriptBase,
     
     /// <inheritdoc />
     public bool CanResist { get; init; }
+    
+    /// <inheritdoc />
+    public int? Distance { get; init; }
+    
+    /// <inheritdoc />
+    public bool? WithAmbush { get; init; }
+
     #endregion
+   
 }

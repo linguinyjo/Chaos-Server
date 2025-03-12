@@ -1,0 +1,37 @@
+{
+    "isAssail": false,
+    "learningrequirements": {
+        "itemrequirements": [],
+        "requiredGold": 1000,
+        "requiredStats": {
+            "con": 3,
+            "dex": 4,
+            "int": 3,
+            "str": 11,
+            "wis": 3
+        },
+        "prerequisiteSkills": [],
+        "prerequisiteSpells": []
+    },
+    "description": "A powerful strike in the direction your facing.\n\nGold required: 1000\nItems required: \nLocation: Mileth Combat Skill Master",
+    "level": 41,
+    "levelsUp": true,
+    "name": "Beag Suain",
+    "class": "champion",
+    "panelSprite": 38,
+    "cooldownMs": 32000,
+    "scriptKeys": ["applyEffect"],
+    "scriptVars": {
+        "applyEffect": {
+            "bodyAnimation": 1,
+            "sound": 1,
+            "excludeSourcePoint": true,
+            "range": 1,
+            "shape": "front",
+            "effectKey": "beagSuain",
+            "filter": "hostileOnly, aliveOnly, othersOnly",
+            "effectDurationOverride": "00:00:03"
+        }
+    },
+    "templateKey": "beag_suain"
+}

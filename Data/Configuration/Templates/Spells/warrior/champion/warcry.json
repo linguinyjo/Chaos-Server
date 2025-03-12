@@ -1,0 +1,38 @@
+{
+  "learningRequirements": {
+    "itemRequirements": [],
+    "requiredGold": 5000,
+    "requiredStats": {
+      "con": 5,
+      "dex": 3,
+      "int": 5,
+      "str": 5,
+      "wis": 3
+    },
+    "prerequisiteSkills": [],
+    "prerequisiteSpells": []
+  },
+  "spellType": "NoTarget",
+  "class": "champion",
+  "castLines": 0,
+  "cooldownMs": 60000,
+  "description": "Attracts enemy attention.\n\nGold required: 5000\nItems required: \nLocation: Mileth Special Combat Master",
+  "level": 71,
+  "name": "warcary",
+  "panelSprite": 162,
+  "scriptKeys": [
+    "taunt"
+  ],
+  "scriptVars": {
+    "taunt": {
+      "bodyAnimation": "priestcast",
+      "filter": "hostileOnly, aliveOnly, othersOnly",
+      "canResist": false,
+      "sound": 1,
+      "enmity": 2500,
+      "shape": "allAround",
+      "range": 8
+    }
+  },
+  "templateKey": "warcry"
+}

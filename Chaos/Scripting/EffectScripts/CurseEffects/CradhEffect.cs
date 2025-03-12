@@ -19,11 +19,7 @@ public class CradhEffect : EffectBase,
     public bool AnimatePoints { get; init; }
 
     /// <inheritdoc />
-    public Animation? Animation { get; init; } = new()
-    {
-        TargetAnimation = 44,
-        AnimationSpeed = 100
-    };
+    public Animation? Animation { get; init; } 
 
     /// <inheritdoc />
     public List<string> ConflictingEffectNames { get; init; } =
@@ -56,7 +52,7 @@ public class CradhEffect : EffectBase,
     public bool SingleTarget { get; init; } = true;
 
     /// <inheritdoc />
-    public byte? Sound { get; init; } = 27;
+    public byte? Sound { get; init; }
 
     /// <inheritdoc />
     public override byte Icon => 82;
@@ -64,8 +60,7 @@ public class CradhEffect : EffectBase,
     /// <inheritdoc />
     public override string Name => "Cradh";
 
-
-    private int AcDeduction { get; init; } = 25;
+    private const int AcDeduction = 25;
 
     public override void OnTerminated()
     {
@@ -76,11 +71,6 @@ public class CradhEffect : EffectBase,
     /// <inheritdoc />
     public override void OnApplied()
     {
-        new ComponentExecutor(Subject, Subject).WithOptions(this)
-            .ExecuteAndCheck<GetTargetsAbilityComponent<Creature>>()
-            ?.Execute<AnimationAbilityComponent>()
-            .Execute<SoundAbilityComponent>();
-            
         Subject.StatSheet.SubtractBonus(new Attributes { Ac = -AcDeduction });
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }

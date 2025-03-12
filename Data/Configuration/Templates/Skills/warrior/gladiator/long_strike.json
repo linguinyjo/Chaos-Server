@@ -13,8 +13,8 @@
         "prerequisiteSkills": [],
         "prerequisiteSpells": []
     },
-    "description": "A second assail.\n\nGold required: 5000\nItems required: \nLocation: Mileth Combat Skill Master",
-    "level": 11,
+    "description": "A Gladiator's fifth assail.\n\nGold required: 5000\nItems required: \nLocation: Mileth Combat Skill Master",
+    "level": 41,
     "levelsUp": true,
     "name": "Long Strike",
     "class": "gladiator",

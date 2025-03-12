@@ -15,7 +15,7 @@
             "damageStat": "int",
             "manaCost": 50,
             "spellCategory": "Damage",
-            "sound": 26,
+            "sound": 27,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "minSoundIntervalMs": 900,
             "baseDamage": 200,

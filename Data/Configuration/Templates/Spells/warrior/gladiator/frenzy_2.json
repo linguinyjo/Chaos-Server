@@ -14,7 +14,7 @@
   },
   "class": "gladiator",
   "description": "Take 20% more damage, but deal 10% more damage\n\nGold required: 50000\nItems required: \nLocation: ",
-  "level": 11,
+  "level": 71,
   "name": "frenzy 2",
   "panelSprite": 135,
   "cooldownMs": 10000,

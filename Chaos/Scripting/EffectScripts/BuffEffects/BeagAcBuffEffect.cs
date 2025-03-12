@@ -57,23 +57,18 @@ public sealed class BeagAcBuffEffect : EffectBase,
     /// <inheritdoc />
     public override string Name => "beag armor";
     
-    private int AcBuff => 5;
+    private static int AcBuff => -5;
 
     public override void OnTerminated()
     {
-        Subject.StatSheet.AddBonus(new Attributes { Ac = AcBuff });
+        Subject.StatSheet.SubtractBonus(new Attributes { Ac = AcBuff });
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
     
     /// <inheritdoc />
     public override void OnApplied()
     {
-        new ComponentExecutor(Subject, Subject).WithOptions(this)
-            .ExecuteAndCheck<GetTargetsAbilityComponent<Creature>>()
-            ?.Execute<AnimationAbilityComponent>()
-            .Execute<SoundAbilityComponent>();
-            
-        Subject.StatSheet.SubtractBonus(new Attributes { Ac = AcBuff });
+        Subject.StatSheet.AddBonus(new Attributes { Ac = AcBuff });
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
 

@@ -11,9 +11,8 @@
     "scriptKeys": ["default"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
-    "skillTemplateKeys": [],
     "spellIntervalMs": 5000,
-    "spellTemplateKeys": [],
+    "skillTemplateKeys": ["Assail"],
     "sprite": 9,
     "statSheet": {
         "level": 37,
@@ -25,7 +24,7 @@
         "con": 12,
         "dex": 12,
         "int": 20,
-        "str": 42,
+        "str": 1,
         "wis": 12,
         "magicResistance": 20
     },

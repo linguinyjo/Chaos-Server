@@ -35,8 +35,23 @@ public class ApplyNonAttackDamageScript : ScriptBase, IApplyDamageScript
         switch (target)
         {
             case Aisling aisling:
-                aisling.StatSheet.SubtractHp(damage);
-                aisling.Client.SendAttributes(StatUpdateType.Vitality);
+                var barrier = aisling.StatSheet.Barrier; 
+
+                if (barrier > 0)
+                {
+                    var damageToBarrier = Math.Min(damage, barrier);
+                    aisling.StatSheet.SubtractBarrier(damageToBarrier);
+                    damage -= damageToBarrier;
+
+                    aisling.Client.SendAttributes(StatUpdateType.Full);
+                }
+
+                if (damage > 0)
+                {
+                    aisling.Effects.Dispel("solas");
+                    aisling.StatSheet.SubtractHp(damage);
+                    aisling.Client.SendAttributes(StatUpdateType.Vitality);
+                }
 
                 if (!aisling.IsAlive)
                     aisling.Script.OnDeath();

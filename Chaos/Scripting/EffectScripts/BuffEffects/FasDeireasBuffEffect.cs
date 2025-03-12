@@ -68,11 +68,6 @@ public sealed class FasDeireasBuffEffect : EffectBase,
     /// <inheritdoc />
     public override void OnApplied()
     {
-        new ComponentExecutor(Subject, Subject).WithOptions(this)
-            .ExecuteAndCheck<GetTargetsAbilityComponent<Creature>>()
-            ?.Execute<AnimationAbilityComponent>()
-            .Execute<SoundAbilityComponent>();
-            
         Subject.StatSheet.AddBonus(new Attributes { PhysicalAttack = PhysicalAttackBuff });
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
