@@ -102,6 +102,12 @@ public record StatSheet : Attributes
         get => _magicResistanceMod;
         init => _magicResistanceMod = value;
     }
+    
+    public int DamageReductionMod
+    {
+        get => _damageReductionMod;
+        init => _damageReductionMod = value;
+    }
 
     public int MaximumHpMod
     {
@@ -172,6 +178,8 @@ public record StatSheet : Attributes
     public byte EffectiveDex => (byte)Math.Clamp(Dex + DexMod, byte.MinValue, byte.MaxValue);
 
     public byte EffectiveDmg => (byte)Math.Clamp(Dmg + DmgMod, byte.MinValue, byte.MaxValue);
+    
+    public byte EffectiveDamageReduction => (byte)Math.Clamp(DamageReduction + DamageReductionMod, byte.MinValue, byte.MaxValue);
 
     public int EffectiveFlatSkillDamage => FlatSkillDamage + FlatSkillDamageMod;
 
@@ -226,6 +234,7 @@ public record StatSheet : Attributes
     {
         Interlocked.Add(ref _acMod, other.Ac);
         Interlocked.Add(ref _dmgMod, other.Dmg);
+        Interlocked.Add(ref _damageReductionMod, other.DamageReduction);
         Interlocked.Add(ref _hitMod, other.Hit);
         Interlocked.Add(ref _strMod, other.Str);
         Interlocked.Add(ref _intMod, other.Int);
@@ -322,6 +331,7 @@ public record StatSheet : Attributes
     {
         Interlocked.Add(ref _acMod, -other.Ac);
         Interlocked.Add(ref _dmgMod, -other.Dmg);
+        Interlocked.Add(ref _damageReductionMod, -other.DamageReduction);
         Interlocked.Add(ref _hitMod, -other.Hit);
         Interlocked.Add(ref _strMod, -other.Str);
         Interlocked.Add(ref _intMod, -other.Int);
@@ -470,6 +480,7 @@ public record StatSheet : Attributes
     protected int _strMod;
     protected int _wisMod;
     protected int _dmgMod;
+    protected int _damageReductionMod;
     protected int _hitMod;
     protected int _atkSpeedPctMod;
     protected int _flatSpellDamageMod;

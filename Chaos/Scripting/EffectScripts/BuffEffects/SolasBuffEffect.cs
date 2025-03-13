@@ -19,6 +19,8 @@ public sealed class SolasBuffEffect : EffectBase,
     AnimationAbilityComponent.IAnimationComponentOptions,
     SoundAbilityComponent.ISoundComponentOptions
 {
+    private Creature _source;
+
     /// <inheritdoc />
     public bool AnimatePoints { get; init; }
 
@@ -70,7 +72,7 @@ public sealed class SolasBuffEffect : EffectBase,
     /// <inheritdoc />
     public override void OnApplied()
     {
-        var barrierAmount = CalculateBarrierAmount(Subject.StatSheet.EffectiveWis, Subject.StatSheet.EffectiveMaximumHp);
+        var barrierAmount = CalculateBarrierAmount(_source.StatSheet.EffectiveWis, Subject.StatSheet.EffectiveMaximumHp);
         Subject.StatSheet.AddBarrier(barrierAmount);
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
@@ -81,7 +83,7 @@ public sealed class SolasBuffEffect : EffectBase,
         var execution = new ComponentExecutor(source, target)
             .WithOptions(this)
             .ExecuteAndCheck<NonOverwritableEffectComponent>();
-
+        _source = source;
         return execution is not null;
     }
     

@@ -30,7 +30,7 @@
             "element": "earth",
             "damageStat": "int",
             "manaCost": 30,
-            "sound": 167,
+            "sound": 76,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "minSoundIntervalMs": 900,
             "baseDamage": 75,

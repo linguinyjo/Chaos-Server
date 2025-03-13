@@ -29,7 +29,7 @@
             "range": 6,
             "element": "earth",
             "damageStat": "int",
-            "sound": 167,
+            "sound": 76,
             "manaCost": 0,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "minSoundIntervalMs": 900,

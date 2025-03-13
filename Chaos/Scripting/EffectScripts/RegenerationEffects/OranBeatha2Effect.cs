@@ -17,14 +17,19 @@ namespace Chaos.Scripting.EffectScripts.RegenerationEffects;
 ///  The healing power will be roughly half the equivalent level of ioc
 /// </summary>
 public sealed class OranBeatha2Effect : ContinuousAnimationEffectBase,
+                                        NonOverwritableEffectComponent.INonOverwritableEffectComponentOptions,
                                         HealAbilityComponent.IHealComponentOptions,
                                         GetTargetsAbilityComponent<Creature>.IGetTargetsComponentOptions
 {
-    public OranBeatha2Effect()
+    public OranBeatha2Effect(Creature source)
     {
+        _source = source;
         SourceScript = this;
         AbilityTemplateKey = Name;
     }
+    
+    private Creature _source;
+    public List<string> ConflictingEffectNames { get; init; } = ["oran_beatha_1", "oran_beatha_2" ];
 
     /// <inheritdoc />
     protected override TimeSpan Duration { get; set; } = TimeSpan.FromSeconds(8);
@@ -51,10 +56,19 @@ public sealed class OranBeatha2Effect : ContinuousAnimationEffectBase,
     /// <inheritdoc />
     protected override void OnIntervalElapsed()
     {
-        new ComponentExecutor(Subject, Subject)
+        new ComponentExecutor(_source, Subject)
             .WithOptions(this)
             .ExecuteAndCheck<GetTargetsAbilityComponent<Creature>>()
             ?.Execute<HealAbilityComponent>();
+    }
+    
+    public override bool ShouldApply(Creature source, Creature target)
+    {
+        _source = source; 
+        var execution = new ComponentExecutor(source, target)
+            .WithOptions(this)
+            .ExecuteAndCheck<NonOverwritableEffectComponent>();
+        return execution is not null;
     }
 
     public IApplyHealScript ApplyHealScript { get; init; } = FunctionalScripts.ApplyHealing.ApplyHealScript.Create();

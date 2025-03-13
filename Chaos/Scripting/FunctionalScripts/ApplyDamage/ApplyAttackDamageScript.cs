@@ -44,12 +44,16 @@ public class ApplyAttackDamageScript : ScriptBase, IApplyDamageScript
                     aisling.StatSheet.SubtractBarrier(damageToBarrier);
                     damage -= damageToBarrier;
 
+                    if (damage > 0)
+                    {
+                        aisling.Effects.Dispel("solas");
+                    }
                     aisling.Client.SendAttributes(StatUpdateType.Full);
                 }
 
                 if (damage > 0)
                 {
-                    aisling.Effects.Dispel("solas");
+                    
                     aisling.StatSheet.SubtractHp(damage);
                     aisling.Client.SendAttributes(StatUpdateType.Vitality);
                     aisling.ShowHealth();

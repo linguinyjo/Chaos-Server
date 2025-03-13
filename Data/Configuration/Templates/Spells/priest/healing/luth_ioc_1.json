@@ -20,7 +20,7 @@
   "description": "Applies a moderate heal to your target.\n\nGold required: 5000\nItems required: \nLocation: Mileth White Magic Master",
   "level": 11,
   "name": "luth ioc 1",
-  "panelSprite": 28,
+  "panelSprite": 107,
   "scriptKeys": ["heal"],
   "scriptVars": {
     "heal": {

@@ -23,7 +23,7 @@ public class HateAura1Effect : ContinuousAnimationEffectBase,
         ["Aura of Hate 1", "Aura of Hate 2"];
 
     /// <inheritdoc />
-    protected override Animation Animation { get; } = new Animation() {};
+    protected override Animation Animation { get; } = new();
     
     /// <inheritdoc />
     protected override IIntervalTimer AnimationInterval { get; } = new IntervalTimer(TimeSpan.FromMilliseconds(6000));

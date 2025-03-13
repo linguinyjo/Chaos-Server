@@ -29,7 +29,7 @@
       "manaCost": 75,
       "bodyAnimation": "PlayNotes",
       "range": 10,
-      "sound": 34,
+      "sound": 8,
       "effectKey": "beagPramh",
       "filter": "hostileOnly, aliveOnly"
     }

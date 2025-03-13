@@ -29,7 +29,7 @@
             "range": 6,
             "element": "water",
             "damageStat": "int",
-            "sound": 167,
+            "sound": 109,
             "manaCost": 225,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "minSoundIntervalMs": 900,

@@ -1,0 +1,43 @@
+{
+  "learningRequirements": {
+    "itemRequirements": [],
+    "requiredGold": 5000,
+    "requiredStats": {
+      "con": 3,
+      "dex": 5,
+      "int": 18,
+      "str": 4,
+      "wis": 13
+    },
+    "prerequisiteSkills": [],
+    "prerequisiteSpells": []
+  },
+  "spellType": "NoTarget",
+  "castLines": 3,
+  "class": "Bard",
+  "description": "Attack speed buff. \n\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
+  "level": 41,
+  "levelsUp": true,
+  "name": "oran luth 1",
+  "spellCategory": "Song",
+  "panelSprite": 148,
+  "scriptKeys": [
+    "applyEffect"
+  ],
+  "scriptVars": {
+    "applyEffect": {
+      "shape": "allAround",
+      "manaCost": 300,
+      "bodyAnimation": "PlayNotes",
+      "range": 8,
+      "sound": 37,
+      "animation": {
+        "targetAnimation": 189,
+        "animationSpeed": 100
+      },
+      "effectKey": "OranLuth1",
+      "filter": "friendlyOnly, aliveOnly, AislingsOnly, GroupOnly"
+    }
+  },
+  "templateKey": "oran_luth_1"
+}

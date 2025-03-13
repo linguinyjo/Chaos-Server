@@ -29,7 +29,7 @@
             "range": 6,
             "element": "fire",
             "damageStat": "int",
-            "sound": 167,
+            "sound": 79,
             "manaCost": 75,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "minSoundIntervalMs": 900,

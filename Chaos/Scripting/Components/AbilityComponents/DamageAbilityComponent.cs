@@ -66,7 +66,8 @@ public struct DamageAbilityComponent : IComponent
         finalDamage = ApplyAbilityMultiplier(finalDamage, abilityDamageMultiplier);
         finalDamage = ApplyDamageModifier(source, finalDamage);
         finalDamage = ApplyDirectionalDamage(source, target, components, finalDamage);
-
+        finalDamage = ApplyDamageReduction(target, finalDamage);
+        
         return finalDamage;
     }
     
@@ -173,6 +174,13 @@ public struct DamageAbilityComponent : IComponent
             return Convert.ToInt32(finalDamage * 1.25);
         }
         return finalDamage;
+    }
+    
+    private static int ApplyDamageReduction(Creature target, int finalDamage)
+    {
+        var dr = target.StatSheet.EffectiveDamageReduction;
+        if (dr == 0) return finalDamage;
+        return (int)(finalDamage * (1 - dr / 100m)); 
     }
     
     private static decimal CalculateAbilityDamageMultiplier(Aisling? aisling, string? abilityTemplateKey, bool? isSpell)

@@ -30,7 +30,7 @@
             "element": "wind",
             "damageStat": "int",
             "manaCost": 100,
-            "sound": 167,
+            "sound": 78,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "minSoundIntervalMs": 900,
             "baseDamage": 75,

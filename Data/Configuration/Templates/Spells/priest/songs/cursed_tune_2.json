@@ -1,0 +1,44 @@
+{
+  "learningRequirements": {
+    "itemRequirements": [],
+    "requiredGold": 5000,
+    "requiredStats": {
+      "con": 3,
+      "dex": 5,
+      "int": 18,
+      "str": 4,
+      "wis": 13
+    },
+    "prerequisiteSkills": [],
+    "prerequisiteSpells": []
+  },
+  "spellType": "Targeted",
+  "castLines": 3,
+  "class": "Bard",
+  "description": "TODO. Dot spell\n\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
+  "level": 71,
+  "name": "cursed tune 2",
+  "spellCategory": "Song",
+  "panelSprite": 141,
+  "levelsUp": true,
+  "scriptKeys": [
+    "applyEffect"
+  ],
+  "scriptVars": {
+    "applyEffect": {
+      "animatePoints": true,
+      "manaCost": 150,
+      "bodyAnimation": "PlayNotes",
+      "range": 8,
+      "sound": 35,
+      "animation": {
+        "targetAnimation": 76,
+        "animationSpeed": 100
+      },
+      "effectKey": "CursedTune2",
+      "filter": "hostileOnly, aliveOnly, othersOnly",
+      "levelUpRate": "veryfast"
+    }
+  },
+  "templateKey": "cursed_tune_2"
+}

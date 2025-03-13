@@ -9,7 +9,7 @@ using Chaos.Scripting.EffectScripts.Abstractions;
 
 namespace Chaos.Scripting.EffectScripts.BuffEffects;
 
-public sealed class RegenBuffEffect : EffectBase,
+public sealed class OranDionach1Effect : EffectBase,
     NonOverwritableEffectComponent.INonOverwritableEffectComponentOptions,
     GetTargetsAbilityComponent<Creature>.IGetTargetsComponentOptions,
     AnimationAbilityComponent.IAnimationComponentOptions,
@@ -22,10 +22,13 @@ public sealed class RegenBuffEffect : EffectBase,
     public Animation? Animation { get; init; } 
 
     /// <inheritdoc />
-    public List<string> ConflictingEffectNames { get; init; } = ["Inner Fire", "Regeneration"];
+    public List<string> ConflictingEffectNames { get; init; } =
+        [
+            "Oran Dionach 1", "Oran Dionach 2", "Oran Dionach 3"
+        ];
 
     /// <inheritdoc />
-    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(5);
+    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(3);
 
     /// <inheritdoc />
     public bool ExcludeSourcePoint { get; init; }
@@ -47,25 +50,25 @@ public sealed class RegenBuffEffect : EffectBase,
 
     /// <inheritdoc />
     public byte? Sound { get; init; }
-    
+
     /// <inheritdoc />
-    public override byte Icon => 126;
-    
+    public override byte Icon => 11;
+
     /// <inheritdoc />
-    public override string Name => "Regeneration";
+    public override string Name => "Oran Dionach 1";
     
-    private int RegenBuff => 5;
+    private static int DamageReductionBuff => 15;
 
     public override void OnTerminated()
     {
-        Subject.StatSheet.SubtractBonus(new Attributes { Regen = RegenBuff });
+        Subject.StatSheet.SubtractBonus(new Attributes { DamageReduction = DamageReductionBuff });
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
     
     /// <inheritdoc />
     public override void OnApplied()
     {
-        Subject.StatSheet.AddBonus(new Attributes { Regen = RegenBuff });
+        Subject.StatSheet.AddBonus(new Attributes { DamageReduction = DamageReductionBuff });
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
 

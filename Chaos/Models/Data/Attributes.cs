@@ -7,6 +7,7 @@ public record Attributes : Stats
     protected int _ac;
     protected int _atkSpeedPct;
     protected int _dmg; // 1% damage increase ?
+    protected int _damageReduction; // % damage reduction
     protected int _flatSkillDamage;
     protected int _flatSpellDamage;
     protected int _hit; // maybe rename this to spell hit or something
@@ -35,6 +36,12 @@ public record Attributes : Stats
     {
         get => _dmg;
         init => _dmg = value;
+    }
+    
+    public int DamageReduction
+    {
+        get => _damageReduction;
+        init => _damageReduction = value;
     }
 
     public int FlatSkillDamage
@@ -107,6 +114,7 @@ public record Attributes : Stats
     {
         Interlocked.Add(ref _ac, other.Ac);
         Interlocked.Add(ref _dmg, other.Dmg);
+        Interlocked.Add(ref _damageReduction, other.DamageReduction);
         Interlocked.Add(ref _hit, other.Hit);
         Interlocked.Add(ref _str, other.Str);
         Interlocked.Add(ref _int, other.Int);
@@ -130,6 +138,7 @@ public record Attributes : Stats
     {
         Interlocked.Add(ref _ac, -other.Ac);
         Interlocked.Add(ref _dmg, -other.Dmg);
+        Interlocked.Add(ref _damageReduction, -other.DamageReduction);
         Interlocked.Add(ref _hit, -other.Hit);
         Interlocked.Add(ref _str, -other.Str);
         Interlocked.Add(ref _int, -other.Int);

@@ -17,6 +17,7 @@ namespace Chaos.Scripting.EffectScripts.RegenerationEffects;
 ///  The healing power will be roughly half the equivalent level of ioc
 /// </summary>
 public sealed class OranBeatha1Effect : ContinuousAnimationEffectBase,
+                                        NonOverwritableEffectComponent.INonOverwritableEffectComponentOptions,
                                         HealAbilityComponent.IHealComponentOptions,
                                         GetTargetsAbilityComponent<Creature>.IGetTargetsComponentOptions
 {
@@ -25,9 +26,13 @@ public sealed class OranBeatha1Effect : ContinuousAnimationEffectBase,
         SourceScript = this;
         AbilityTemplateKey = "oran_beatha_1";
     }
+    
+    private Creature? _source;
+
+    public List<string> ConflictingEffectNames { get; init; } = ["oran_beatha_1", "oran_beatha_2" ];
 
     /// <inheritdoc />
-    protected override TimeSpan Duration { get; set; } = TimeSpan.FromSeconds(8);
+    protected override TimeSpan Duration { get; set; } = TimeSpan.FromSeconds(12);
 
     /// <inheritdoc />
     protected override Animation Animation { get; } = new()
@@ -51,10 +56,20 @@ public sealed class OranBeatha1Effect : ContinuousAnimationEffectBase,
     /// <inheritdoc />
     protected override void OnIntervalElapsed()
     {
-        new ComponentExecutor(Subject, Subject)
+        if (_source != null)
+            new ComponentExecutor(_source, Subject)
+                .WithOptions(this)
+                .ExecuteAndCheck<GetTargetsAbilityComponent<Creature>>()
+                ?.Execute<HealAbilityComponent>();
+    }
+    
+    public override bool ShouldApply(Creature source, Creature target)
+    {
+        _source = source; 
+        var execution = new ComponentExecutor(source, target)
             .WithOptions(this)
-            .ExecuteAndCheck<GetTargetsAbilityComponent<Creature>>()
-            ?.Execute<HealAbilityComponent>();
+            .ExecuteAndCheck<NonOverwritableEffectComponent>();
+        return execution is not null;
     }
 
     public IApplyHealScript ApplyHealScript { get; init; } = FunctionalScripts.ApplyHealing.ApplyHealScript.Create();
