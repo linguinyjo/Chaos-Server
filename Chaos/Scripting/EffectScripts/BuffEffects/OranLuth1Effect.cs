@@ -41,12 +41,4 @@ public sealed class OranLuth1Effect : EffectBase,
         Subject.StatSheet.AddBonus(new Attributes { AtkSpeedPct = AttackSpeedBuff });
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
-    
-    public override bool ShouldApply(Creature source, Creature target)
-    {
-        var execution = new ComponentExecutor(source, target)
-            .WithOptions(this)
-            .ExecuteAndCheck<NonOverwritableEffectComponent>();
-        return execution is not null;
-    }
 }

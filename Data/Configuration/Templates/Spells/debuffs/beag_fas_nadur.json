@@ -14,26 +14,24 @@
   },
   "spellType": "Targeted",
   "castLines": 3,
-  "description": "",
-  "name": "beag dall",
+  "class": "Wizard",
+  "description": "15% ele multiplier \n\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
+  "level": 11,
+  "name": "beag fas nadur",
   "spellCategory": "Debuff",
-  "panelSprite": 3,
+  "panelSprite": 119,
   "scriptKeys": [
     "applyEffect"
   ],
   "scriptVars": {
     "applyEffect": {
-      "manaCost": 100,
+      "manaCost": 75,
       "bodyAnimation": "handsup",
       "range": 10,
-      "sound": 8,
-      "effectKey": "beagDall",
+      "sound": 27,
+      "effectKey": "beagPramh",
       "filter": "hostileOnly, aliveOnly",
-      "animation": {
-        "targetAnimation": 57,
-        "animationSpeed": 100
-      }
     }
   },
-  "templateKey": "beag_dall"
+  "templateKey": "beag_fas_nadur"
 }

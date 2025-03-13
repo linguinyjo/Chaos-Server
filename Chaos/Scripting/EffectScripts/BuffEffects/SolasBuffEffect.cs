@@ -4,7 +4,6 @@ using Chaos.Models.Data;
 using Chaos.Models.World.Abstractions;
 using Chaos.Scripting.Components.AbilityComponents;
 using Chaos.Scripting.Components.EffectComponents;
-using Chaos.Scripting.Components.Execution;
 using Chaos.Scripting.EffectScripts.Abstractions;
 
 namespace Chaos.Scripting.EffectScripts.BuffEffects;
@@ -80,11 +79,8 @@ public sealed class SolasBuffEffect : EffectBase,
     /// <inheritdoc />
     public override bool ShouldApply(Creature source, Creature target)
     {
-        var execution = new ComponentExecutor(source, target)
-            .WithOptions(this)
-            .ExecuteAndCheck<NonOverwritableEffectComponent>();
         _source = source;
-        return execution is not null;
+        return base.ShouldApply(source, target);
     }
     
     private static int CalculateBarrierAmount(int wisdom, uint maxHp)

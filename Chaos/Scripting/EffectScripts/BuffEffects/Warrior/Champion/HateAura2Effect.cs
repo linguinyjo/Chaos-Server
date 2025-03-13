@@ -54,7 +54,7 @@ public class HateAura2Effect : ContinuousAnimationEffectBase,
     {
         _source = source;  
         _target = target; 
-        return true;
+        return base.ShouldApply(source, target);
     }
 
     public bool ExcludeSourcePoint { get; init; } = true;

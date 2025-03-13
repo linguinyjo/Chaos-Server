@@ -103,6 +103,12 @@ public record StatSheet : Attributes
         init => _magicResistanceMod = value;
     }
     
+    public int ElementalMultiplierMod
+    {
+        get => _elementalMultiplierMod;
+        init => _elementalMultiplierMod = value;
+    }
+    
     public int DamageReductionMod
     {
         get => _damageReductionMod;
@@ -191,6 +197,8 @@ public record StatSheet : Attributes
 
     public byte EffectiveMagicResistance => (byte)Math.Clamp(MagicResistance + MagicResistanceMod, byte.MinValue, byte.MaxValue);
 
+    public byte EffectiveElementalMultiplier => (byte)Math.Clamp(ElementalMultiplier + ElementalMultiplierMod, byte.MinValue, byte.MaxValue);
+
     public uint EffectiveMaximumHp => (uint)Math.Max(MaximumHp + MaximumHpMod, 1);
 
     public uint EffectiveMaximumMp => (uint)Math.Max(MaximumMp + MaximumMpMod, 1);
@@ -242,6 +250,7 @@ public record StatSheet : Attributes
         Interlocked.Add(ref _conMod, other.Con);
         Interlocked.Add(ref _dexMod, other.Dex);
         Interlocked.Add(ref _magicResistanceMod, other.MagicResistance);
+        Interlocked.Add(ref _elementalMultiplierMod, other.ElementalMultiplier);
         Interlocked.Add(ref _maximumHpMod, other.MaximumHp);
         Interlocked.Add(ref _maximumMpMod, other.MaximumMp);
         Interlocked.Add(ref _atkSpeedPctMod, other.AtkSpeedPct);
@@ -339,6 +348,7 @@ public record StatSheet : Attributes
         Interlocked.Add(ref _conMod, -other.Con);
         Interlocked.Add(ref _dexMod, -other.Dex);
         Interlocked.Add(ref _magicResistanceMod, -other.MagicResistance);
+        Interlocked.Add(ref _elementalMultiplierMod, -other.ElementalMultiplier);
         Interlocked.Add(ref _maximumHpMod, -other.MaximumHp);
         Interlocked.Add(ref _maximumMpMod, -other.MaximumMp);
         Interlocked.Add(ref _atkSpeedPctMod, -other.AtkSpeedPct);
@@ -475,6 +485,7 @@ public record StatSheet : Attributes
     protected int _dexMod;
     protected int _intMod;
     protected int _magicResistanceMod;
+    protected int _elementalMultiplierMod;
     protected int _maximumHpMod;
     protected int _maximumMpMod;
     protected int _strMod;

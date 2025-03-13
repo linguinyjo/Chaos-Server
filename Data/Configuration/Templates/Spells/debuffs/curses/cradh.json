@@ -31,7 +31,7 @@
       "filter": "aliveOnly",
       "canResist": true,
       "animation": {
-        "targetAnimation": 73,
+        "targetAnimation": 44,
         "animationSpeed": 150
       },
       "sound": 5

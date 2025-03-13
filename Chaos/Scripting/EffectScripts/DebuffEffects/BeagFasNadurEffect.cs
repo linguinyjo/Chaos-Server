@@ -5,10 +5,10 @@ using Chaos.Time.Abstractions;
 
 namespace Chaos.Scripting.EffectScripts.DebuffEffects;
 
-public class PramhEffect : ContinuousAnimationEffectBase
+public class BeagFasNadurEffect : ContinuousAnimationEffectBase
 {
     /// <inheritdoc />
-    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMilliseconds(12000);
+    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMilliseconds(8000);
 
     /// <inheritdoc />
     protected override Animation Animation { get; } = new()
@@ -29,7 +29,7 @@ public class PramhEffect : ContinuousAnimationEffectBase
     private const byte Sound = 8;
 
     /// <inheritdoc />
-    public override string Name => "pramh";
+    public override string Name => "beag fas nadur";
 
     /// <inheritdoc />
     protected override void OnIntervalElapsed()

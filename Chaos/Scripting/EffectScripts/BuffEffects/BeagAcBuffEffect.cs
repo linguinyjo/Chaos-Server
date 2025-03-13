@@ -71,14 +71,4 @@ public sealed class BeagAcBuffEffect : EffectBase,
         Subject.StatSheet.AddBonus(new Attributes { Ac = AcBuff });
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
-
-    /// <inheritdoc />
-    public override bool ShouldApply(Creature source, Creature target)
-    {
-        var execution = new ComponentExecutor(source, target)
-            .WithOptions(this)
-            .ExecuteAndCheck<NonOverwritableEffectComponent>();
-
-        return execution is not null;
-    }
 }

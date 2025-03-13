@@ -12,6 +12,7 @@ public record Attributes : Stats
     protected int _flatSpellDamage;
     protected int _hit; // maybe rename this to spell hit or something
     protected int _magicResistance;
+    protected int _elementalMultiplier; // applies a multiplier for things like fas 
     protected int _maximumHp;
     protected int _maximumMp;
     protected int _skillDamagePct;
@@ -66,6 +67,12 @@ public record Attributes : Stats
     {
         get => _magicResistance;
         init => _magicResistance = value;
+    }
+    
+    public int ElementalMultiplier
+    {
+        get => _elementalMultiplier;
+        init => _elementalMultiplier = value;
     }
 
     public int MaximumHp
@@ -122,6 +129,7 @@ public record Attributes : Stats
         Interlocked.Add(ref _con, other.Con);
         Interlocked.Add(ref _dex, other.Dex);
         Interlocked.Add(ref _magicResistance, other.MagicResistance);
+        Interlocked.Add(ref _elementalMultiplier, other.ElementalMultiplier);
         Interlocked.Add(ref _maximumHp, other.MaximumHp);
         Interlocked.Add(ref _maximumMp, other.MaximumMp);
         Interlocked.Add(ref _atkSpeedPct, other.AtkSpeedPct);
@@ -146,6 +154,7 @@ public record Attributes : Stats
         Interlocked.Add(ref _con, -other.Con);
         Interlocked.Add(ref _dex, -other.Dex);
         Interlocked.Add(ref _magicResistance, -other.MagicResistance);
+        Interlocked.Add(ref _elementalMultiplier, -other.ElementalMultiplier);
         Interlocked.Add(ref _maximumHp, -other.MaximumHp);
         Interlocked.Add(ref _maximumMp, -other.MaximumMp);
         Interlocked.Add(ref _atkSpeedPct, -other.AtkSpeedPct);

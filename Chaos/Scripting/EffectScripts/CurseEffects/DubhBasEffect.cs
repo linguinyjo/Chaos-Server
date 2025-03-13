@@ -69,10 +69,6 @@ public class DubhBasEffect : EffectBase,
     /// <inheritdoc />
     public override bool ShouldApply(Creature source, Creature target)
     {
-        if (AislingSubject?.Equipment.ContainsByTemplateKey("silverFurTarp") == true) return false;
-        var execution = new ComponentExecutor(source, target).WithOptions(this)
-            .ExecuteAndCheck<NonOverwritableEffectComponent>();
-
-        return execution is not null;
+        return AislingSubject?.Equipment.ContainsByTemplateKey("silverFurTarp") != true && base.ShouldApply(source, target);
     }
 }

@@ -67,10 +67,7 @@ public sealed class CursedTune2Effect : ContinuousAnimationEffectBase,
     public override bool ShouldApply(Creature source, Creature target)
     {
         _source = source; 
-        var execution = new ComponentExecutor(source, target)
-            .WithOptions(this)
-            .ExecuteAndCheck<NonOverwritableEffectComponent>();
-        return execution is not null;
+        return base.ShouldApply(source, target);
     }
 
     public IApplyDamageScript ApplyDamageScript { get; init; }

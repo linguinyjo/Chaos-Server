@@ -37,9 +37,4 @@ public class SuainEffect : ContinuousAnimationEffectBase
     {
         AislingSubject?.Client.SendSound(Sound, false); 
     }
-
-    public override bool ShouldApply(Creature source, Creature target)
-    {
-        return !target.Effects.Contains("suain");
-    }
 }

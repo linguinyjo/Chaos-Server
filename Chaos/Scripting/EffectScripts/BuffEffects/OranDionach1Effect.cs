@@ -28,7 +28,7 @@ public sealed class OranDionach1Effect : EffectBase,
         ];
 
     /// <inheritdoc />
-    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(3);
+    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(2);
 
     /// <inheritdoc />
     public bool ExcludeSourcePoint { get; init; }
@@ -70,15 +70,5 @@ public sealed class OranDionach1Effect : EffectBase,
     {
         Subject.StatSheet.AddBonus(new Attributes { DamageReduction = DamageReductionBuff });
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
-    }
-
-    /// <inheritdoc />
-    public override bool ShouldApply(Creature source, Creature target)
-    {
-        var execution = new ComponentExecutor(source, target)
-            .WithOptions(this)
-            .ExecuteAndCheck<NonOverwritableEffectComponent>();
-
-        return execution is not null;
     }
 }
