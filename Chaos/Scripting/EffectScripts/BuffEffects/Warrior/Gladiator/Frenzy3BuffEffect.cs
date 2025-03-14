@@ -4,10 +4,9 @@ using Chaos.Models.Data;
 using Chaos.Models.World.Abstractions;
 using Chaos.Scripting.Components.AbilityComponents;
 using Chaos.Scripting.Components.EffectComponents;
-using Chaos.Scripting.Components.Execution;
 using Chaos.Scripting.EffectScripts.Abstractions;
 
-namespace Chaos.Scripting.EffectScripts.BuffEffects.Warrior;
+namespace Chaos.Scripting.EffectScripts.BuffEffects.Warrior.Gladiator;
 
 public sealed class Frenzy3BuffEffect : EffectBase,
     NonOverwritableEffectComponent.INonOverwritableEffectComponentOptions,
@@ -77,15 +76,5 @@ public sealed class Frenzy3BuffEffect : EffectBase,
             Dmg = DmgBuff,
         });
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
-    }
-
-    /// <inheritdoc />
-    public override bool ShouldApply(Creature source, Creature target)
-    {
-        var execution = new ComponentExecutor(source, target)
-            .WithOptions(this)
-            .ExecuteAndCheck<NonOverwritableEffectComponent>();
-
-        return execution is not null;
     }
 }

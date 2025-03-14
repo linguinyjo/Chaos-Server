@@ -9,66 +9,30 @@ using Chaos.Scripting.EffectScripts.Abstractions;
 
 namespace Chaos.Scripting.EffectScripts.BuffEffects;
 
-public sealed class BeagAcBuffEffect : EffectBase,
-    NonOverwritableEffectComponent.INonOverwritableEffectComponentOptions,
-    GetTargetsAbilityComponent<Creature>.IGetTargetsComponentOptions,
-    AnimationAbilityComponent.IAnimationComponentOptions,
-    SoundAbilityComponent.ISoundComponentOptions
+public sealed class BeagAcBuffEffect : EffectBase
+   
 {
-    /// <inheritdoc />
-    public bool AnimatePoints { get; init; }
-
-    /// <inheritdoc />
-    public Animation? Animation { get; init; } 
-
-    /// <inheritdoc />
-    public List<string> ConflictingEffectNames { get; init; } =
-        [
-            "beag armor",
-        ];
-
     /// <inheritdoc />
     protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(5);
 
     /// <inheritdoc />
-    public bool ExcludeSourcePoint { get; init; }
-
-    /// <inheritdoc />
-    public TargetFilter Filter { get; init; }
-
-    /// <inheritdoc />
-    public bool MustHaveTargets { get; init; }
-
-    /// <inheritdoc />
-    public int Range { get; init; }
-
-    /// <inheritdoc />
-    public AoeShape Shape { get; init; }
-
-    /// <inheritdoc />
-    public bool SingleTarget { get; init; } = true;
-
-    /// <inheritdoc />
-    public byte? Sound { get; init; }
-    
-    /// <inheritdoc />
-    public override byte Icon { get; }
+    public override byte Icon => 94;
 
     /// <inheritdoc />
     public override string Name => "beag armor";
     
-    private static int AcBuff => -5;
+    private static int AcBuff => 5;
 
     public override void OnTerminated()
     {
-        Subject.StatSheet.SubtractBonus(new Attributes { Ac = AcBuff });
+        Subject.StatSheet.AddBonus(new Attributes { Ac = AcBuff });
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
     
     /// <inheritdoc />
     public override void OnApplied()
     {
-        Subject.StatSheet.AddBonus(new Attributes { Ac = AcBuff });
+        Subject.StatSheet.SubtractBonus(new Attributes { Ac = AcBuff });
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
 }

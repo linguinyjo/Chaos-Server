@@ -1188,6 +1188,12 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
 
     public override void Walk(Direction direction, bool? ignoreBlockingReactors = null)
     {
+        var one = SpellBook.GetFirstSlotInPage(PageType.Page1);
+        Console.WriteLine(one);
+        var two = SpellBook.GetFirstSlotInPage(PageType.Page2);
+        Console.WriteLine(two);
+        var three = SpellBook.GetFirstSlotInPage(PageType.Page3);
+        Console.WriteLine(three);
         ignoreBlockingReactors ??= true;
 
         if (!Script.CanMove() || ((direction != Direction) && !Script.CanTurn()) || !ShouldWalk)

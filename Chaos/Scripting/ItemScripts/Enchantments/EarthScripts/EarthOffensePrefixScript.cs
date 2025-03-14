@@ -4,6 +4,7 @@ using Chaos.MetaData.ItemMetaData;
 using Chaos.Models.Panel;
 using Chaos.Models.Templates;
 using Chaos.Scripting.ItemScripts.Abstractions;
+using Chaos.Scripting.ItemScripts.ElementScripts;
 using Chaos.Scripting.ItemScripts.Enchantments.SeaScripts;
 
 namespace Chaos.Scripting.ItemScripts.Enchantments.EarthScripts;

@@ -2,11 +2,11 @@
     "learningRequirements": {
         "itemRequirements": [],
         "requiredStats": {
-            "con": 5,
-            "dex": 13,
+            "str": 17,
             "int": 7,
-            "str": 4,
-            "wis": 18
+            "wis": 3,
+            "con": 6,
+            "dex": 3
         },
         "requiredGold": 5000,
         "prerequisiteSkills": [],
@@ -14,35 +14,35 @@
     },
     "spellType": "Targeted",
     "class": "Wizard",
-    "description": "Deals moderate water damage to target.\n\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
-    "level": 11,
+    "description": "Deals moderate fire damage to target.\n\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
+    "level": 41,
     "castLines": 3,
-    "name": "sal",
     "levelsUp": true,
+    "name": "srad",
     "spellCategory": "Damage",
-    "panelSprite": 46,
+    "panelSprite": 41,
     "scriptKeys": ["damage"],
     "scriptVars": {
         "damage": {
             "bodyAnimation": "wizardCast",
             "animatePoints": true,
             "range": 12,
-            "element": "water",
+            "element": "fire",
             "damageStat": "int",
-            "manaCost": 100,
-            "sound": 24,
+            "manaCost": 150,
+            "sound": 79,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "minSoundIntervalMs": 900,
-            "baseDamage": 75,
-            "damageStatMultiplier": 3,
+            "baseDamage": 150,
+            "damageStatMultiplier": 5,
             "animation": {
-                "targetAnimation": 10,
+                "targetAnimation": 14,
                 "animationSpeed": 150
             },
             "useMatk": true,
             "canResist": true,
-            "levelUpRate": "fast"
+            "levelUpRate": "medium"
         }
     },
-    "templateKey": "sal"
+    "templateKey": "mor_srad"
 }

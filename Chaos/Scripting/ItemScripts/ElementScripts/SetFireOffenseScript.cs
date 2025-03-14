@@ -3,7 +3,7 @@ using Chaos.Models.Panel;
 using Chaos.Models.World;
 using Chaos.Scripting.ItemScripts.Abstractions;
 
-namespace Chaos.Scripting.ItemScripts.Enchantments.FireScripts;
+namespace Chaos.Scripting.ItemScripts.ElementScripts;
 
 public class SetFireOffenseScript : ItemScriptBase
 {

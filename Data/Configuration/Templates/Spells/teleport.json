@@ -1,0 +1,33 @@
+{
+    "learningRequirements": {
+        "itemRequirements": [],
+        "requiredStats": {
+            "con": 7,
+            "dex": 3,
+            "int": 4,
+            "str": 3,
+            "wis": 3
+        },
+        "requiredGold": 1000,
+        "prerequisiteSkills": [],
+        "prerequisiteSpells": [
+           
+        ]
+    },
+    "spellType": "NoTarget",
+    "class": "Elementalist",
+    "castLines": 8,
+    "levelsUp": false,
+    "description": "Teleports group to selected location\n\nGold required: 1000\nItems required: \nLocation: Mileth Black Magic Master",
+    "level": 71,
+    "name": "teleport",
+    "panelSprite": 182,
+    "scriptKeys": ["teleport"],
+    "scriptVars": {
+        "teleport": {
+            "dialogKey": "teleport_menu",
+            "PctManaCost": 100
+        }
+    },
+    "templateKey": "teleport"
+}

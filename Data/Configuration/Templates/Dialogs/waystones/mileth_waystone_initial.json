@@ -1,0 +1,12 @@
+{
+  "options": [],
+  "scriptKeys": ["waystone"],
+  "scriptVars": {
+    "waystone": {
+      "waystone": 1
+    }
+  },
+  "templateKey": "mileth_waystone_initial",
+  "text": "",
+  "type": "Menu"
+}

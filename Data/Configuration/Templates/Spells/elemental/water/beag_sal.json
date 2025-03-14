@@ -30,7 +30,7 @@
             "element": "water",
             "damageStat": "int",
             "manaCost": 30,
-            "sound": 109,
+            "sound": 24,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "minSoundIntervalMs": 900,
             "baseDamage": 30,

@@ -73,7 +73,7 @@ public sealed class CursedTune1Effect : ContinuousAnimationEffectBase,
     public int? BaseDamage { get; init; } = 50;
     public Stat? DamageStat { get; init; } = Stat.INT;
     public decimal? DamageStatMultiplier { get; init; } = 3;
-    public Element? Element { get; init; }
+    public Element? Element { get; init; } = Common.Definitions.Element.Earth;
     public decimal? PctHpDamage { get; init; }
     public IScript SourceScript { get; init; }
     public decimal? PAtkMultiplier { get; init; }

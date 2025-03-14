@@ -3,7 +3,7 @@ using Chaos.Models.Panel;
 using Chaos.Models.World;
 using Chaos.Scripting.ItemScripts.Abstractions;
 
-namespace Chaos.Scripting.ItemScripts.Enchantments.SeaScripts;
+namespace Chaos.Scripting.ItemScripts.ElementScripts;
 
 public class SetSeaDefenseScript : ItemScriptBase
 {

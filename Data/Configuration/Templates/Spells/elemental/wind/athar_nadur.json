@@ -13,29 +13,29 @@
     "prerequisiteSpells": []
   },
   "spellType": "Targeted",
-  "castLines": 3,
-  "class": "Wizard",
-  "description": "15% ele multiplier \n\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
-  "level": 11,
-  "name": "beag fas nadur",
+  "castLines": 4,
+  "class": "Elementalist",
+  "description": "Change monster defense element to wind\n\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
+  "level": 41,
+  "name": "athar nadur",
   "spellCategory": "Debuff",
   "panelSprite": 119,
   "scriptKeys": [
-    "applyEffect"
+    "setDefenseElement"
   ],
   "scriptVars": {
-    "applyEffect": {
-      "manaCost": 75,
+    "setDefenseElement": {
+      "manaCost": 150,
       "bodyAnimation": "handsup",
       "range": 10,
       "animation": {
-        "targetAnimation": 23,
+        "targetAnimation": 128,
         "animationSpeed": 150
       },
-      "sound": 20,
-      "effectKey": "beagFasNadur",
+      "sound": 23,
+      "element": "wind",
       "filter": "hostileOnly, aliveOnly"
     }
   },
-  "templateKey": "beag_fas_nadur"
+  "templateKey": "athar_nadur"
 }

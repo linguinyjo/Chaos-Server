@@ -16,8 +16,8 @@
   "castLines": 3,
   "class": "Wizard",
   "description": "15% ele multiplier \n\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
-  "level": 11,
-  "name": "beag fas nadur",
+  "level": 41,
+  "name": "fas nadur",
   "spellCategory": "Debuff",
   "panelSprite": 119,
   "scriptKeys": [
@@ -25,7 +25,7 @@
   ],
   "scriptVars": {
     "applyEffect": {
-      "manaCost": 75,
+      "manaCost": 150,
       "bodyAnimation": "handsup",
       "range": 10,
       "animation": {
@@ -33,9 +33,9 @@
         "animationSpeed": 150
       },
       "sound": 20,
-      "effectKey": "beagFasNadur",
+      "effectKey": "fasNadur",
       "filter": "hostileOnly, aliveOnly"
     }
   },
-  "templateKey": "beag_fas_nadur"
+  "templateKey": "fas_nadur"
 }

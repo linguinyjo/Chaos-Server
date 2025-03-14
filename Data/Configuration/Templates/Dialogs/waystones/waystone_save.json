@@ -1,0 +1,13 @@
+{
+  "contextual": true,
+  "options": [],
+  "scriptKeys": ["waystoneSave"],
+  "scriptVars": {
+    "waystoneSave": {
+      "waystone": 1
+    }
+  },
+  "templateKey": "waystone_save",
+  "text": "",
+  "type": "Normal"
+}

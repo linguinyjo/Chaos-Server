@@ -20,7 +20,7 @@
     "levelsUp": true,
     "name": "srad",
     "spellCategory": "Damage",
-    "panelSprite": 46,
+    "panelSprite": 40,
     "scriptKeys": ["damage"],
     "scriptVars": {
         "damage": {
@@ -29,7 +29,7 @@
             "range": 12,
             "element": "fire",
             "damageStat": "int",
-            "manaCost": 30,
+            "manaCost": 75,
             "sound": 79,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "minSoundIntervalMs": 900,

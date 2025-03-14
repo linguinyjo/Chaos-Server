@@ -1,0 +1,12 @@
+{
+  "options": [],
+  "scriptKeys": ["waystone"],
+  "scriptVars": {
+    "waystone": {
+      "waystone": 2
+    }
+  },
+  "templateKey": "piet_waystone_initial",
+  "text": "",
+  "type": "Menu"
+}

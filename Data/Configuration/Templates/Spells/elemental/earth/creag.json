@@ -20,7 +20,7 @@
     "levelsUp": true,
     "name": "creag",
     "spellCategory": "Damage",
-    "panelSprite": 46,
+    "panelSprite": 57,
     "scriptKeys": ["damage"],
     "scriptVars": {
         "damage": {
@@ -29,7 +29,7 @@
             "range": 12,
             "element": "earth",
             "damageStat": "int",
-            "manaCost": 30,
+            "manaCost": 75,
             "sound": 76,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "minSoundIntervalMs": 900,

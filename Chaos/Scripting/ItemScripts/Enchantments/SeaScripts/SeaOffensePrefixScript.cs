@@ -6,6 +6,7 @@ using Chaos.Models.Panel;
 using Chaos.Models.Templates;
 using Chaos.Models.World;
 using Chaos.Scripting.ItemScripts.Abstractions;
+using Chaos.Scripting.ItemScripts.ElementScripts;
 
 namespace Chaos.Scripting.ItemScripts.Enchantments.SeaScripts;
 

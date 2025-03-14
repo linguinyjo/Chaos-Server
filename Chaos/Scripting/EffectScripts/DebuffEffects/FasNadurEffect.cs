@@ -6,20 +6,18 @@ using Chaos.Time.Abstractions;
 
 namespace Chaos.Scripting.EffectScripts.DebuffEffects;
 
-public class BeagFasNadurEffect : EffectBase
+public class FasNadurEffect : EffectBase
 {
     /// <inheritdoc />
-    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(6000);
+    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(8000);
 
     /// <inheritdoc />
     public override byte Icon => 90;
     
-    private const byte Sound = 8;
-
     /// <inheritdoc />
-    public override string Name => "beag fas nadur";
+    public override string Name => "fas nadur";
 
-    private static int Multiplier => 15;
+    private static int Multiplier => 20;
 
     public override void OnTerminated()
     {

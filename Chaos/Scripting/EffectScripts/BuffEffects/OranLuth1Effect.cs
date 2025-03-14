@@ -19,7 +19,7 @@ public sealed class OranLuth1Effect : EffectBase,
     public List<string> ConflictingEffectNames { get; init; } = ["oran luth 1", "oran luth 2", "oran luth 3" ];
 
     /// <inheritdoc />
-    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(3);
+    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(2);
     
     /// <inheritdoc />
     public override byte Icon => 148;

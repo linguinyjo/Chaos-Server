@@ -30,6 +30,6 @@ public class ShowDialogScript : ConfigurableMerchantScriptBase, ShowDialogAbilit
     public IDialogFactory DialogFactory { get; init; }
 
     /// <inheritdoc />
-    public IDialogSourceEntity DialogSource { get; init; }
+    public IDialogSourceEntity? DialogSource { get; init; }
     #endregion
 }

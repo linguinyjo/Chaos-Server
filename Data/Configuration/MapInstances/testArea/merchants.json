@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "blackList": [],
+    "direction": "Right",
+    "extraScriptKeys": [],
+    "merchantTemplateKey": "mileth_waystone",
+    "spawnPoint": "(3, 4)"
+  },
+  {
+    "blackList": [],
+    "direction": "Right",
+    "extraScriptKeys": [],
+    "merchantTemplateKey": "piet_waystone",
+    "spawnPoint": "(3, 8)"
+  }
+]

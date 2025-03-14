@@ -22,7 +22,7 @@ public struct ShowDialogAbilityComponent : IComponent
             return;
 
         targetAisling.DialogHistory.Clear();
-        var dialog = options.DialogFactory.Create(options.DialogKey, options.DialogSource);
+        var dialog = options.DialogFactory.Create(options.DialogKey, options.DialogSource ?? targetAisling);
         dialog.Display(targetAisling);
     }
 
@@ -30,6 +30,6 @@ public struct ShowDialogAbilityComponent : IComponent
     {
         IDialogFactory DialogFactory { get; init; }
         string? DialogKey { get; init; }
-        IDialogSourceEntity DialogSource { get; init; }
+        IDialogSourceEntity? DialogSource { get; init; }
     }
 }
