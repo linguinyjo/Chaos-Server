@@ -12,7 +12,7 @@
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],
     "spellIntervalMs": 15000,
-    "spellTemplateKeys": ["sal", "athar", "creag", "srad", "cradh","puinsein"],
+    "spellTemplateKeys": ["sal", "athar", "creag", "srad", "cradh"],
     "sprite": 15,
     "statSheet": {
         "level": 34,

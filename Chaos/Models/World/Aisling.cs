@@ -1311,4 +1311,16 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
         });
         Client.SendSound(42, false);
     }
+
+    public bool HasShieldEquipped()
+    {
+       return Equipment[EquipmentSlot.Shield] != null;
+    }
+    
+    public bool HasTwoHandedWeaponEquipped()
+    {
+        return Equipment[EquipmentSlot.Weapon] is { Template.Category: var categoryStr } 
+               && Enum.TryParse<WeaponCategory>(categoryStr, true, out var category) 
+               && category == WeaponCategory.TwoHanded;
+    }
 }

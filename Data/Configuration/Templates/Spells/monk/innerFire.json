@@ -30,7 +30,7 @@
       "sound": 30,
       "manaCost": 150,
       "effectKey": "regenBuff",
-      "filter": "aliveOnly",
+      "filter": "selfOnly, aliveOnly",
       "levelUpRate": "veryfast"
     }
   },

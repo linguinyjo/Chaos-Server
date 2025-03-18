@@ -78,7 +78,7 @@ public class LearnSpellScript : DialogScriptBase
 
         var spellToLearn = SpellFactory.Create(spell.Template.TemplateKey);
 
-        var learnSpellResult = ComplexActionHelper.LearnSpell(source, spellToLearn);
+        var learnSpellResult = ComplexActionHelper.LearnSpell(source, spellToLearn, spellToLearn.Template.SpellCategory);
 
         switch (learnSpellResult)
         {

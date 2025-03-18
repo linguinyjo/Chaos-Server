@@ -21,6 +21,7 @@
     "description": "Teleports group to selected location\n\nGold required: 1000\nItems required: \nLocation: Mileth Black Magic Master",
     "level": 71,
     "name": "teleport",
+    "spellCategory": "misc",
     "panelSprite": 182,
     "scriptKeys": ["teleport"],
     "scriptVars": {

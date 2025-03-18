@@ -36,7 +36,7 @@
             "baseDamage": 150,
             "damageStatMultiplier": 5,
             "animation": {
-                "targetAnimation": 10,
+                "targetAnimation": 17,
                 "animationSpeed": 150
             },
             "useMatk": true,

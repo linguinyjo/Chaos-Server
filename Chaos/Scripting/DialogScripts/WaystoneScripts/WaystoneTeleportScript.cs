@@ -72,7 +72,10 @@ public class WaystoneTeleportScript: DialogScriptBase
                 return;
             }
 
-            _ = PerformTeleportAsync(source.Group, mapInstance, destination);
+            
+            var requiredMapId = source.Trackers.LastMapInstanceId;
+            
+            _ = PerformTeleportAsync(source.Group, mapInstance, destination, requiredMapId);
             
             Subject.Close(source);
         }
@@ -82,11 +85,14 @@ public class WaystoneTeleportScript: DialogScriptBase
         }
     }
     
-    private static async Task PerformTeleportAsync(IEnumerable<Aisling> aislings, MapInstance mapInstance, Location destination)
+    private static async Task PerformTeleportAsync(IEnumerable<Aisling> aislings, MapInstance mapInstance,
+        Location destination, string? requiredMapId)
     {
-        var enumerable = aislings as Aisling[] ?? aislings.ToArray();
-        var currentLocations = enumerable.Select(aisling => aisling.GetCurrentLocation()).ToList();
-        foreach (var aisling in enumerable)
+        
+        var aislingsToTeleport = aislings.Where(aisling => aisling.Trackers.LastMapInstanceId == requiredMapId).ToArray();
+        var currentLocations = aislingsToTeleport.Select(aisling => aisling.GetCurrentLocation()).ToList();
+        
+        foreach (var aisling in aislingsToTeleport)
         {
             aisling.Client.SendSound(47, false);
             var anim = new Animation
@@ -102,7 +108,7 @@ public class WaystoneTeleportScript: DialogScriptBase
 
         await Task.Delay(2000);
 
-        foreach (var aisling in enumerable)
+        foreach (var aisling in aislingsToTeleport)
         {
             aisling.TraverseMap(mapInstance, destination);
         }

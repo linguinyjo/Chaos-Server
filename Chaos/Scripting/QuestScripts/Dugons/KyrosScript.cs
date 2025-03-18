@@ -23,14 +23,17 @@ public class KyrosScript:  DialogScriptBase
         
         var currentDugon = source.Trackers.Enums.TryGetValue<Dugon>(out var status) ? status : Dugon.None;
 
-        if (currentDugon == Dugon.None) 
+        switch (currentDugon)
         {
-            Subject.AddOption("White Dugon", "white_dugon_1");
-            return;
-        } else if (currentDugon == Dugon.White)
-        {
-            Subject.AddOption("Green Dugon", "green_dugon_1");
-            return;
+            case Dugon.None:
+                Subject.AddOption("White Dugon", "white_dugon_1");
+                return;
+            case Dugon.White:
+                Subject.AddOption("Green Dugon", "green_dugon_1");
+                return;
+            case Dugon.Green:
+                Subject.AddOption("Blue Dugon", "blue_dugon_1");
+                return;
         }
     }
     

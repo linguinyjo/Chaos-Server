@@ -20,13 +20,18 @@
   "spellCategory": "Debuff",
   "name": "beag seun",
   "panelSprite": 20,
-  "cooldownMs": 60000,
+  "cooldownMs": 10000,
   "scriptKeys": [
     "applyEffect"
   ],
   "scriptVars": {
     "applyEffect": {
-      "manaCost": 30,
+      "manaCost": 75,
+      "sound": 94,
+      "animation": {
+        "targetAnimation": 36,
+        "animationSpeed": 150
+      },
       "bodyAnimation": "priestcast",
       "effectKey": "beagseun",
       "filter": "hostileOnly, aliveOnly",

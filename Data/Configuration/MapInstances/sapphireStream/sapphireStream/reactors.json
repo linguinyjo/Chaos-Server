@@ -52,5 +52,11 @@
     "scriptVars": {},
     "shouldBlockPathfinding": false,
     "source": "(15, 9)"
+  },
+  {
+    "scriptKeys": ["blueDugonMeditationTile"],
+    "scriptVars": {},
+    "shouldBlockPathfinding": false,
+    "source": "(9, 1)"
   }
 ]

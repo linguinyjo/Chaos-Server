@@ -10,7 +10,7 @@
             "dialogKey": "sabonim_initial"
         }
     },
-    "skillsToTeach": [],
+    "skillsToTeach": ["mantis_kick"],
     "spellsToTeach": [],
     "sprite": 19,
     "templateKey": "sabonimBlue"

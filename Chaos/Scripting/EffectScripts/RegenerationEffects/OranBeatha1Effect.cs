@@ -28,6 +28,7 @@ public sealed class OranBeatha1Effect : ContinuousAnimationEffectBase,
     }
     
     private Creature? _source;
+    private Creature _target;
 
     public List<string> ConflictingEffectNames { get; init; } = ["oran_beatha_1", "oran_beatha_2" ];
 
@@ -65,7 +66,8 @@ public sealed class OranBeatha1Effect : ContinuousAnimationEffectBase,
     
     public override bool ShouldApply(Creature source, Creature target)
     {
-        _source = source; 
+        _source = source;
+        _target = target;
         return base.ShouldApply(source, target);
     }
 
@@ -78,7 +80,7 @@ public sealed class OranBeatha1Effect : ContinuousAnimationEffectBase,
     public IScript SourceScript { get; init; } 
     public string? AbilityTemplateKey { get; init; }
     public bool ExcludeSourcePoint { get; init; }
-    public TargetFilter Filter { get; init; } = TargetFilter.SelfOnly;
+    public TargetFilter Filter { get; init; } = TargetFilter.GroupOnly;
     public bool MustHaveTargets { get; init; } = false;
     public int Range { get; init; }
     public AoeShape Shape { get; init; }

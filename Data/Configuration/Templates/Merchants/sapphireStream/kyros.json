@@ -4,7 +4,7 @@
     "name": "Kyros",
     "restockIntervalHrs": 1,
     "restockPCt": 100,
-    "scriptKeys": ["showdialog", "defaultBehaviors", "WhiteDugonVerbal", "GreenDugonVerbal"],
+    "scriptKeys": ["showdialog", "defaultBehaviors", "WhiteDugonVerbal", "GreenDugonVerbal", "BlueDugonVerbal"],
     "scriptVars": {
         "showdialog": {
             "dialogKey": "kyros_initial"

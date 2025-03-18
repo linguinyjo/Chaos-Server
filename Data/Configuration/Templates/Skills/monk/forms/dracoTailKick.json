@@ -24,12 +24,12 @@
     "scriptVars": {
         "damage": {
             "bodyAnimation": "Kick",
-            "sound": 53,
+            "sound": 56,
             "damageStat": "con",
             "range": 1,
             "shape": "allAround",
             "excludeSourcePoint": true,
-            "damageStatMultiplier": 3,
+            "damageStatMultiplier": 5,
             "baseDamage": 50,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "PAtkMultiplier": 50,

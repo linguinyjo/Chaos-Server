@@ -3,26 +3,28 @@
     "category": "monk",
     "color": "Default",
     "isDyable": false,
-    "displaySprite": 141,
+    "displaySprite": 143,
     "equipmentType": "Helmet",
     "gender": "Unisex",
     "maxDurability": 10000,
     "maxStacks": 1,
     "modifiers": {
-        "ac": -1
+        "ac": -1, 
+        "dex": 1,
+        "con": 1
     },
     "class": "monk",
     "pantsColor": "Default",
-    "level": 11,
+    "level": 44,
     "levelCircle": 2,
     "sellValue": 3750,
-    "weight": 5,
-    "description": "Class: Monk\nLevel: 11\nAc -1",
-    "name": "White Dugon",
-    "panelSprite": 537,
+    "weight": 1,
+    "description": "Class: Monk\nLevel: 44\nAc -1, Dex 2, Con 1",
+    "name": "Yellow Dugon",
+    "panelSprite": 539,
     "scriptKeys": ["Equipment"],
     "scriptVars": {
         "equipment": {}
     },
-    "templateKey": "whiteDugon"
+    "templateKey": "yellowDugon"
 }

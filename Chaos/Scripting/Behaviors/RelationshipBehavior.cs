@@ -57,13 +57,19 @@ public class RelationshipBehavior
         return false;
     }
 
-    protected virtual bool IsFriendlyTo(Aisling source, Monster target) => false;
+    protected virtual bool IsFriendlyTo(Aisling source, Monster target)
+    {
+        return target.IsEnchanted();   
+    }
 
     protected virtual bool IsFriendlyTo(Merchant source, Aisling target) => true;
 
     protected virtual bool IsFriendlyTo(Merchant source, Monster target) => false;
 
-    protected virtual bool IsFriendlyTo(Monster source, Aisling target) => false;
+    protected virtual bool IsFriendlyTo(Monster source, Aisling target)
+    {
+        return target.IsEnchanted();   
+    }
 
     protected virtual bool IsFriendlyTo(Monster source, Monster target)
     {
@@ -115,7 +121,7 @@ public class RelationshipBehavior
 
     protected virtual bool IsHostileTo(Aisling source, Merchant target) => false;
 
-    protected virtual bool IsHostileTo(Aisling source, Monster target) => true;
+    protected virtual bool IsHostileTo(Aisling source, Monster target) => !target.IsEnchanted();
 
     protected virtual bool IsHostileTo(Merchant source, Aisling target) => false;
 

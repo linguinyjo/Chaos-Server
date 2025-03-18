@@ -5,7 +5,7 @@
     "aggroRange": 10,
     "name": "Turtle",
     "lootTableKeys": ["pdTurtles"],
-    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptKeys": ["default", "setMonsterElement", "BlueDugonTurtleOnKill"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],

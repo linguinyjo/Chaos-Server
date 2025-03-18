@@ -1,0 +1,25 @@
+{
+  "options": [
+    {
+      "dialogKey": "close",
+      "optionText": "Hope"
+    },
+    {
+      "dialogKey": "close",
+      "optionText": "Depth"
+    },
+    {
+      "dialogKey": "close",
+      "optionText": "Clarity"
+    },
+    {
+      "dialogKey": "close",
+      "optionText": "Endurance"
+    }
+  ],
+  "scriptKeys": ["blueDugonMeditation"],
+  "scriptVars": {},
+  "templateKey": "blue_dugon_meditation_1",
+  "text": "A voice ripples through your thoughts:\n\n\"The river shapes the stone, relentless through the ages.\nIts quiet power ever persistent, driven by currents unseen.\"\n\nWhat guides the rivers journey?",
+  "type": "Menu"
+}

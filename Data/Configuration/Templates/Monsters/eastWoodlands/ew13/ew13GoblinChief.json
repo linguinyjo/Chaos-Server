@@ -14,7 +14,7 @@
         }
     },
     "skillIntervalMs": 1500,
-    "skillTemplateKeys": ["Assail", "Assault"],
+    "skillTemplateKeys": ["Assail", "Assault", "beag_suain"],
     "spellIntervalMs": 15000,
     "spellTemplateKeys": ["sal", "athar", "creag", "srad", "cradh"],
     "sprite": 18,

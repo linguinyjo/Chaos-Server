@@ -12,6 +12,7 @@
     "prerequisiteSkills": [],
     "prerequisiteSpells": []
   },
+  "castLines": 1,
   "spellType": "NoTarget",
   "class": "Champion",
   "description": "Applies a small armor buff.\n\nGold required: 1000\nItems required: \nLocation: Mileth White Magic Master",

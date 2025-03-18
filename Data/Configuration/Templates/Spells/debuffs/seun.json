@@ -1,0 +1,42 @@
+{
+  "learningRequirements": {
+    "itemRequirements": [],
+    "requiredGold": 50000,
+    "requiredStats": {
+      "str": 4,
+      "int": 27,
+      "wis": 10,
+      "con": 6,
+      "dex": 5
+    },
+    "prerequisiteSkills": [],
+    "prerequisiteSpells": []
+  },
+  "spellType": "Targeted",
+  "class": "enchanter",
+  "description": "Enchants a monster to fight for you.\n\nGold required: 50000\nItems required: \nLocation: Mileth Black Magic Master",
+  "level": 41,
+  "castLines": 4,
+  "spellCategory": "Debuff",
+  "name": "seun",
+  "panelSprite": 20,
+  "cooldownMs": 60000,
+  "scriptKeys": [
+    "applyEffect"
+  ],
+  "scriptVars": {
+    "applyEffect": {
+      "manaCost": 150,
+      "bodyAnimation": "priestcast",
+      "sound": 94,
+      "animation": {
+        "targetAnimation": 36,
+        "animationSpeed": 150
+      },
+      "effectKey": "seun",
+      "filter": "hostileOnly, aliveOnly",
+      "canResist": true
+    }
+  },
+  "templateKey": "seun"
+}

@@ -28,7 +28,7 @@ public abstract class Creature : NamedEntity, IAffected, IScripted<ICreatureScri
 {
     public readonly string[] SleepEffects = ["beag pramh", "pramh", "mor pramh", "ard pramh"];
     public readonly string[] FrozenEffects = ["suain"];
-    public readonly string[] EnchantedEffects = ["beag seun"];
+    public readonly string[] EnchantedEffects = ["beag seun", "seun", "mor seun", "ard seun"];
     
     public Direction Direction { get; set; }
     public IEffectsBar Effects { get; protected set; }

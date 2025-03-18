@@ -1,3 +1,4 @@
+using Chaos.Common.Definitions;
 using Chaos.Extensions.Common;
 using Chaos.Models.Abstractions;
 using Chaos.Models.Panel;
@@ -262,18 +263,21 @@ public static class ComplexActionHelper
         return LearnSkillResult.NoRoom;
     }
 
-    public static LearnSpellResult LearnSpell(Aisling source, Spell spell)
+    public static LearnSpellResult LearnSpell(Aisling source, Spell spell, SpellCategory? spellCategory)
     {
         ArgumentNullException.ThrowIfNull(source);
         ArgumentNullException.ThrowIfNull(spell);
-
         if (source.SpellBook.AvailableSlots == 0)
             return LearnSpellResult.NoRoom;
-
-        if (source.SpellBook.TryAddToNextSlot(spell))
-            return LearnSpellResult.Success;
-
-        return LearnSpellResult.NoRoom;
+        
+        if (spellCategory == SpellCategory.Misc)
+        {
+            return source.SpellBook.TryAddToNextSlot(PageType.Page3, spell) 
+                ? LearnSpellResult.Success : LearnSpellResult.NoRoom;
+        }
+        
+        return source.SpellBook.TryAddToNextSlot(spell) 
+            ? LearnSpellResult.Success : LearnSpellResult.NoRoom;
     }
 
     public static RemoveManyItemsResult RemoveManyItems(Aisling source, params (string ItemNameOrTemplateKey, int Amount)[] items)

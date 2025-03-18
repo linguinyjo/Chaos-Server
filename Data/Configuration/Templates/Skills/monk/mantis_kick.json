@@ -1,0 +1,40 @@
+{
+    "isAssail": false,
+    "learningRequirements": {
+        "itemRequirements": [],
+        "requiredGold": 5000,
+        "requiredStats": {
+            "con": 22,
+            "dex": 8,
+            "int": 3,
+            "str": 13,
+            "wis": 3
+        },
+        "prerequisiteSkills": [],
+        "prerequisiteSpells": []
+    },
+    "description": "A powerful kick in the direction your facing\n\nGold required: 5000\nItems required: \nLocation: Mileth Combat Skill Master",
+    "level": 33,
+    "levelsUp": true,
+    "name": "Mantis Kick",
+    "class": "monk",
+    "panelSprite": 57,
+    "cooldownMs": 13000,
+    "scriptKeys": ["damage"],
+    "scriptVars": {
+        "damage": {
+            "bodyAnimation": "Kick",
+            "sound": 55,
+            "damageStat": "con",
+            "range": 1,
+            "shape": "front",
+            "excludeSourcePoint": true,
+            "damageStatMultiplier": 5,
+            "baseDamage": 100,
+            "filter": "hostileOnly, aliveOnly, othersOnly",
+            "PAtkMultiplier": 50,
+            "levelUpRate": "medium"
+        }
+    },
+    "templateKey": "mantis_kick"
+}

@@ -15,6 +15,7 @@
   "class": "gladiator",
   "description": "Take 20% more damage, but deal 10% more damage\n\nGold required: 50000\nItems required: \nLocation: ",
   "level": 11,
+  "castLines": 1,
   "name": "frenzy 1",
   "panelSprite": 135,
   "cooldownMs": 30000,

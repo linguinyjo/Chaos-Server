@@ -13,6 +13,10 @@ public static partial class DugonRegexCache
     private static partial Regex GreenDugonRegex();
     public static readonly ICollection<Regex> GREEN_DUGON_PATTERNS = ImmutableList.Create(GreenDugonRegex());
     
+    [GeneratedRegex(@"Sabonim, I understand how to flow like water", RegexOptions.IgnoreCase | RegexOptions.Compiled)]
+    private static partial Regex BlueDugonRegex();
+    public static readonly ICollection<Regex> BLUE_DUGON_PATTERNS = ImmutableList.Create(BlueDugonRegex());
+    
 }
 
 // Green (Growth/Foundation):

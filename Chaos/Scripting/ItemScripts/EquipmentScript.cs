@@ -76,6 +76,20 @@ public class EquipmentScript(Item subject) : ConfigurableItemScriptBase(subject)
             return;
         }
 
+        if (Enum.TryParse<WeaponCategory>(template.Category, true, out var category) 
+            && category == WeaponCategory.TwoHanded 
+            && source.HasShieldEquipped())
+        {
+            source.SendOrangeBarMessage("You cannot equip a two-handed weapon while a shield is equipped!");
+            return;
+        }
+        
+        if (template.EquipmentType == EquipmentType.Shield && source.HasTwoHandedWeaponEquipped())
+        {
+            source.SendOrangeBarMessage("You cannot equip a two-handed weapon when a shield is equipped!");
+            return;
+        }
+
         source.Equip(template.EquipmentType.Value, Subject);
     }
 

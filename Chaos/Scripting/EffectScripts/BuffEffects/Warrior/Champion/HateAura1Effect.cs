@@ -58,7 +58,7 @@ public class HateAura1Effect : ContinuousAnimationEffectBase,
     }
 
     public bool ExcludeSourcePoint { get; init; } = true;
-    public TargetFilter Filter { get; init; } = TargetFilter.MonstersOnly;
+    public TargetFilter Filter { get; init; } = TargetFilter.HostileOnly;
     public bool MustHaveTargets { get; init; } = false;
     public int Range { get; init; } = 2;
     public AoeShape Shape { get; init; } = AoeShape.AllAround;

@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "blue_dugon_start_2",
+  "scriptKeys": ["startBlueDugon"],
+  "scriptVars": {},
+  "templateKey": "blue_dugon_start_1",
+  "text": "Go out and slay a turtle. Be warned, very few are able to kill this dangerous foe. You will find them around Piet Village, but proceed with care...",
+  "type": "Normal"
+}

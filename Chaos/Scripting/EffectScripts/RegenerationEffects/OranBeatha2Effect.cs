@@ -77,7 +77,7 @@ public sealed class OranBeatha2Effect : ContinuousAnimationEffectBase,
     public IScript SourceScript { get; init; } 
     public string? AbilityTemplateKey { get; init; }
     public bool ExcludeSourcePoint { get; init; }
-    public TargetFilter Filter { get; init; } = TargetFilter.SelfOnly;
+    public TargetFilter Filter { get; init; } = TargetFilter.GroupOnly;
     public bool MustHaveTargets { get; init; } = false;
     public int Range { get; init; }
     public AoeShape Shape { get; init; }
