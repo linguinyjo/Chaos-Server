@@ -1,7 +1,7 @@
 {
     "isAssail": true,
-    "learningrequirements": {
-        "itemrequirements": [],
+    "learningRequirements": {
+        "itemRequirements": [],
         "requiredGold": 5000,
         "requiredStats": {
             "con": 10,
@@ -14,10 +14,10 @@
         "prerequisiteSpells": []
     },
     "description": "Requires a two handed weapon\n\nGold required: 5000\nItems required: \nLocation: Mileth Combat Skill Master",
-    "level": 11,
+    "level": 71,
     "levelsUp": true,
     "name": "Two-Handed Attack",
-    "class": "warrior",
+    "class": "gladiator",
     "panelSprite": 17,
     "scriptKeys": ["Assail"],
     "scriptVars": {

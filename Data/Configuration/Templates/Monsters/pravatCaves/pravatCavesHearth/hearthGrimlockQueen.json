@@ -1,9 +1,9 @@
 {
     "assailIntervalMs": 1300,
-    "expReward": 80000,
+    "expReward": 46000,
     "aggroRange": 14,
     "moveIntervalMs": 1000,
-    "maxGoldDrop": 25000,
+    "maxGoldDrop": 30000,
     "minGoldDrop": 15000,
     "name": "Grimlock Queen",
     "lootTableKeys": ["pravatGrimlockQueens"],
@@ -20,8 +20,8 @@
     "sprite": 11,
     "statSheet": {
         "level": 42,
-        "ac": -12,
-        "maximumHp": 28500,
+        "ac": -15,
+        "maximumHp": 36000,
         "maximumMp": 40000,
         "physicalAttack": 90,
         "magicAttack": 160,

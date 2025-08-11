@@ -33,6 +33,7 @@ public abstract class BaseQuestHelper<TStatus> where TStatus : Enum
 
     public bool StartQuest(Aisling player)
     {
+        // if (!IsEligible(player)) return false;
         if (player.Trackers.TimedEvents.HasActiveEvent(QuestBlockId, out _)) return false;
         player.Trackers.Enums.Set(GetNextStatus(NoneStatus));
         player.Trackers.TimedEvents.AddEvent(QuestId, AllowedTime);
@@ -93,7 +94,7 @@ public abstract class BaseQuestHelper<TStatus> where TStatus : Enum
             GameTime.Now);
         source.Legend.AddOrReplace(legendMark);
         source.Trackers.Enums.Set(Dugon);
-        source.SendQuestCompletedAnimation();
+        source.SendMajorQuestCompletedAnimation();
     }
 
     protected abstract TStatus GetNextStatus(TStatus currentStatus);

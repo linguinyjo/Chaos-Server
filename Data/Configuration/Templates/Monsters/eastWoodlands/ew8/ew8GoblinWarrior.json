@@ -5,7 +5,7 @@
     "moveIntervalMs": 1500,
     "name": "Goblin Warrior",
     "maxGoldDrop": 300,
-    "minGoldDrop": 150,
+    "minGoldDrop": 100,
     "lootTableKeys": ["ew8GoblinWarriors"],
     "scriptKeys": ["default", "setMonsterElement","GoblinArmorDrop"],
     "scriptVars": {},
@@ -16,7 +16,7 @@
     "sprite": 17,
     "statSheet": {
       "level": 30,
-       "ac": 59,
+       "ac": 55,
         "maximumHp": 3050,
         "maximumMp": 1000,
         "physicalAttack": 51,

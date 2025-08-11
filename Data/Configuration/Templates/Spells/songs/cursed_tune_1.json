@@ -15,7 +15,7 @@
   "spellType": "Targeted",
   "castLines": 3,
   "class": "Bard",
-  "description": "TODO. Dot spell\n\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
+  "description": "Damage over time to the target\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
   "level": 11,
   "name": "cursed tune 1",
   "spellCategory": "Song",

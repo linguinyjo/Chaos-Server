@@ -4,6 +4,10 @@
     {
       "dropChance": 0.10,
       "itemTemplateKey": "frogLeg"
+    },
+    {
+      "dropChance": 0.01,
+      "itemTemplateKey": "enchantArmorScroll2nd"
     }
   ]
 }

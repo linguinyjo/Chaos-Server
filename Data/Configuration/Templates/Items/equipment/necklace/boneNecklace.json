@@ -1,5 +1,5 @@
 {
-    "buyCost": 40000,
+    "buyCost": 20000,
     "category": "Necklace",
     "color": "Forest",
     "displaySprite": 201,
@@ -14,7 +14,7 @@
     },
     "level": 11,
     "levelCircle": 2,
-    "sellValue": 20000,
+    "sellValue": 10000,
     "weight": 1,
     "description": "Class: All\nLevel: 11\nDmg 5, 200 Hp, Random offensive element",
     "name": "Bone Necklace",

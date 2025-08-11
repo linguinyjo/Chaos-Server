@@ -39,7 +39,7 @@ public class DefaultLevelUpScript : ScriptBase, ILevelUpScript
         // aisling.UserStatSheet.AdvClass
         if (aisling.UserStatSheet.Level < maxLevel)
         {
-            var newTnl = LevelUpFormula.CalculateTnl(aisling);
+            var newTnl = LevelUpFormula.CalculateTnl(aisling); 
             aisling.UserStatSheet.AddTnl(newTnl);
         }
 

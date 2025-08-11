@@ -1,9 +1,9 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 1336,
+    "expReward": 2036,
     "aggroRange": 12,
     "moveIntervalMs": 1500,
-    "maxGoldDrop": 400,
+    "maxGoldDrop": 300,
     "minGoldDrop": 200,
     "name": "Kobold",
     "lootTableKeys": ["ew10Kobolds"],
@@ -16,7 +16,7 @@
     "sprite": 50,
     "statSheet": {
         "level": 33,
-        "ac": 53,
+        "ac": 33,
         "maximumHp": 3100,
         "maximumMp": 1000,
         "physicalAttack": 48,

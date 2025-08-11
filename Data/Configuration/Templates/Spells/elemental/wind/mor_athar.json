@@ -13,7 +13,7 @@
         "prerequisiteSpells": []
     },
     "spellType": "Targeted",
-    "class": "Wizard",
+    "class": "Elementalist",
     "description": "Deals moderate water damage to target.\n\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
     "level": 41,
     "castLines": 3,

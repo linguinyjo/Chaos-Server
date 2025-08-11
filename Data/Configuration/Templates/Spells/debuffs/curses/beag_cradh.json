@@ -27,7 +27,7 @@
     "applyEffect": {
       "manaCost": 30,
       "bodyAnimation": "priestcast",
-      "effectKey": "beagcradh",
+      "effectKey": "beagCradh",
       "filter": "aliveOnly",
       "canResist": true,
       "animation": {

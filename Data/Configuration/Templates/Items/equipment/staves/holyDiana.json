@@ -1,7 +1,7 @@
 {
     "buyCost": 200000,
     "category": "Staff",
-    "color": "Forest",
+    "color": "Default",
     "displaySprite": 26,
     "equipmentType": "Weapon",
     "gender": "Unisex",

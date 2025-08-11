@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1200,
-    "expReward": 15000,
+    "expReward": 7500,
     "moveIntervalMs": 1200,
     "aggroRange": 14,
     "name": "Crypt Terror",
@@ -18,9 +18,9 @@
     "sprite": 137,
     "statSheet": {
         "level": 31,
-        "ac": 63,
-        "maximumHp": 1000,
-        "maximumMp": 1000,
+        "ac": 12,
+        "maximumHp": 17500,
+        "maximumMp": 10000,
         "physicalAttack": 120,
         "magicAttack": 120,
         "con": 4,

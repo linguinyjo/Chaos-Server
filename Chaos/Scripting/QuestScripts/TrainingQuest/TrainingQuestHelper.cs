@@ -40,8 +40,8 @@ public static class TrainingQuestHelper
     public static void CompleteQuest(Aisling player)
     {
         player.Trackers.Enums.Set(TrainingQuestStatus.Completed);
-        player.GiveExperience(500);
-        player.TryGiveGold(5000);
+        player.GiveExperience(1000);
+        player.TryGiveGold(7500);
         var legendMark = new LegendMark(
             "Completed Vorlof's training",
             "TrainingQuest",

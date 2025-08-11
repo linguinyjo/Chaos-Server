@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1200,
-    "expReward": 10000,
+    "expReward": 3600,
     "moveIntervalMs": 1200,
     "aggroRange": 14,
     "name": "Night Terror",
@@ -18,8 +18,8 @@
     "sprite": 105,
     "statSheet": {
         "level": 26,
-        "ac": 70,
-        "maximumHp": 5500,
+        "ac": 31,
+        "maximumHp": 8000,
         "maximumMp": 1000,
         "physicalAttack": 95,
         "magicAttack": 95,

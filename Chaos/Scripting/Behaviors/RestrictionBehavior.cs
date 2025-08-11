@@ -22,7 +22,7 @@ public class RestrictionBehavior
         return !_monsterNoMoveConditions.Any(condition => creature.Effects.Contains(condition));
     }
 
-    public virtual bool CanTalk(Creature creature) => creature.IsAlive;
+    public virtual bool CanTalk(Creature creature) => true;
 
     public virtual bool CanTurn(Creature creature) 
     {

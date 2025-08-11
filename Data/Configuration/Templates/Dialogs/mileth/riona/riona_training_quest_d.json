@@ -1,0 +1,14 @@
+{
+  "nextDialogKey": "close",
+  "scriptKeys": [
+    "OrangeBarMessage"
+  ],
+  "scriptVars": {
+    "orangeBarMessage": {
+      "message": "Go and find Vorlof to the south west to begin your training"
+    }
+  },
+  "templateKey": "riona_training_quest_d",
+  "text": "Go seek him out, and tell him I sent you. His training can be harsh but if you want to find out if you are an Aisling, then this is the only way.",
+  "type": "Normal"
+}

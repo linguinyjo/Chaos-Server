@@ -13,7 +13,7 @@ public sealed class BeagAcBuffEffect : EffectBase
    
 {
     /// <inheritdoc />
-    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(5);
+    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(10);
 
     /// <inheritdoc />
     public override byte Icon => 94;

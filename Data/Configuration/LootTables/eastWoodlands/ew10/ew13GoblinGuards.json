@@ -10,6 +10,10 @@
       "itemTemplateKey": "enchantWeaponScroll2nd"
     },
     {
+      "dropChance": 0.03,
+      "itemTemplateKey": "enchantArmorScroll2nd"
+    },
+    {
       "dropChance": 0.006,
       "itemTemplateKey": "shagreenBoots"
     },
@@ -26,7 +30,7 @@
       "itemTemplateKey": "templar"
     },
     {
-      "dropChance": 0.006,
+      "dropChance": 0.005,
       "itemTemplateKey": "masquerade"
     }
   ]

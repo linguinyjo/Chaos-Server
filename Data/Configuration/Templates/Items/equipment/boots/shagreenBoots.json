@@ -1,5 +1,5 @@
 {
-    "buyCost": 50000,
+    "buyCost": 30000,
     "category": "Boots",
     "color": "Green",
     "isDyable": true,
@@ -14,7 +14,7 @@
     "level": 11,
     "levelCircle": 2,
     "notMonk": true,
-    "sellValue": 25000,
+    "sellValue": 15000,
     "weight": 2,
     "description": "Class: All except monk\nLevel: 11\nDex 2",
     "name": "Shagreen Boots",

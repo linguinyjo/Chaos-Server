@@ -9,51 +9,22 @@ using Chaos.Scripting.EffectScripts.Abstractions;
 
 namespace Chaos.Scripting.EffectScripts.CurseEffects;
 
-public class CradhEffect : EffectBase,
-    NonOverwritableEffectComponent.INonOverwritableEffectComponentOptions,
-    GetTargetsAbilityComponent<Creature>.IGetTargetsComponentOptions,
-    AnimationAbilityComponent.IAnimationComponentOptions,
-    SoundAbilityComponent.ISoundComponentOptions
+public class CradhEffect : EffectBase, 
+    NonOverwritableEffectComponent.INonOverwritableEffectComponentOptions
 {
-    /// <inheritdoc />
-    public bool AnimatePoints { get; init; }
-
-    /// <inheritdoc />
-    public Animation? Animation { get; init; } 
 
     /// <inheritdoc />
     public List<string> ConflictingEffectNames { get; init; } =
         [
             "Beag Cradh",
             "Cradh",
-            "Curse",
+            "Mor Cradh",
             "Not So Bad Curse"
         ];
 
     /// <inheritdoc />
     protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(2);
-
-    /// <inheritdoc />
-    public bool ExcludeSourcePoint { get; init; }
-
-    /// <inheritdoc />
-    public TargetFilter Filter { get; init; }
-
-    /// <inheritdoc />
-    public bool MustHaveTargets { get; init; }
-
-    /// <inheritdoc />
-    public int Range { get; init; }
-
-    /// <inheritdoc />
-    public AoeShape Shape { get; init; }
-
-    /// <inheritdoc />
-    public bool SingleTarget { get; init; } = true;
-
-    /// <inheritdoc />
-    public byte? Sound { get; init; }
-
+    
     /// <inheritdoc />
     public override byte Icon => 82;
 
@@ -73,5 +44,13 @@ public class CradhEffect : EffectBase,
     {
         Subject.StatSheet.SubtractBonus(new Attributes { Ac = -AcDeduction });
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
+    }
+    
+    /// <inheritdoc />
+    public override bool ShouldApply(Creature source, Creature target)
+    {
+        var result = new ComponentExecutor(source, Subject).WithOptions(this)
+            .ExecuteAndCheck<NonOverwritableEffectComponent>();
+        return result != null;
     }
 }

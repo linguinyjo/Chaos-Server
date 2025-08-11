@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 339,
+    "expReward": 519,
     "moveIntervalMs": 1500,
     "name": "Bee",
     "lootTableKeys": ["ew4Bees"],
@@ -14,10 +14,10 @@
     "statSheet": {
         "level": 18,
         "ac": 75,
-        "maximumHp": 1200,
+        "maximumHp": 1550,
         "maximumMp": 1000,
-        "physicalAttack": 22,
-        "magicAttack": 25,
+        "physicalAttack": 25,
+        "magicAttack": 28,
         "con": 4,
         "dex": 1,
         "int": 20,

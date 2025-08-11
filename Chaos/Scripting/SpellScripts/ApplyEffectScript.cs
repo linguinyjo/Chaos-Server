@@ -11,7 +11,6 @@ using Chaos.Services.Factories.Abstractions;
 
 namespace Chaos.Scripting.SpellScripts;
 
-[SuppressMessage("ReSharper", "AutoPropertyCanBeMadeGetOnly.Global")]
 public class ApplyEffectScript : ConfigurableSpellScriptBase,
                                  GenericAbilityComponent<Creature>.IAbilityComponentOptions,
                                  ApplyEffectAbilityComponent.IApplyEffectComponentOptions,

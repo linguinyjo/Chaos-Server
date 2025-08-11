@@ -688,28 +688,25 @@ public enum StatUpdateType : byte
 /// <summary>
 ///     A byte representing the 'temuair class' of an aisling. Used in many places.
 /// </summary>
-[Flags]
-public enum BaseClass : uint 
+public enum BaseClass : byte 
 {
-    Peasant   = 1 << 0,    
-    Warrior   = 1 << 1,   
-    Rogue     = 1 << 2,    
-    Wizard    = 1 << 3,    
-    Priest    = 1 << 4,    
-    Monk      = 1 << 5,    
-    Diacht    = 1 << 21,   
-
-    // Advanced Classes 
-    Champion  = Warrior | (1 << 6), 
-    Gladiator = Warrior | (1 << 7), 
-    Assassin  = Rogue | (1 << 8), 
-    Archer = Rogue | (1 << 9), 
-    Elementalist  = Wizard | (1 << 10), 
-    Enchanter = Wizard | (1 << 11),
-    Bishop  = Priest | (1 << 12), 
-    Bard = Priest | (1 << 13),
-    Druid  = Monk | (1 << 14), 
-    Brawler = Monk | (1 << 15),
+    Peasant = 0,
+    Warrior = 1,
+    Rogue = 2,
+    Wizard = 3,
+    Priest = 4,
+    Monk = 5,
+    Diacht = 6,
+    Champion = 7,
+    Gladiator = 8,
+    Assassin = 9,
+    Archer = 10,
+    Elementalist = 11,
+    Enchanter = 12,
+    Bishop = 13,
+    Bard = 14,
+    Druid = 15,
+    Brawler = 16,
 }
 
 /// <summary>

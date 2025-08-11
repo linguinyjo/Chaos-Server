@@ -42,7 +42,5 @@ public class EnchantScript : ConfigurableItemScriptBase,
     public byte Slot { get; init; }
     public Item Item { get; init; }
 
-    public bool CanResist { get; init; }
-
     #endregion
 }

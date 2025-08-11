@@ -1,7 +1,7 @@
 {
     "isAssail": false,
-    "learningrequirements": {
-        "itemrequirements": [],
+    "learningRequirements": {
+        "itemRequirements": [],
         "requiredGold": 1000,
         "requiredStats": {
             "con": 3,
@@ -14,7 +14,7 @@
         "prerequisiteSpells": []
     },
     "description": "A powerful strike in the direction your facing.\n\nGold required: 1000\nItems required: \nLocation: Mileth Combat Skill Master",
-    "level": 11,
+    "level": 41,
     "levelsUp": true,
     "name": "Shield Bash 2",
     "class": "champion",

@@ -35,7 +35,7 @@
     {
         "title": "A Journey to Suomi",
         "summary": "Speak to Oona in Mileth's restaurant. She's in need of some help.",
-        "rewards": "Gold",
+        "rewards": "Gold and experience",
         "qualifyingCircles": ["one", "two", "three", "four"],
         "id": "aJourneyToSuomi",
         "result": "Completed"

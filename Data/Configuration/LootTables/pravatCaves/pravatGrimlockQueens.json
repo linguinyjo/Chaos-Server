@@ -18,6 +18,22 @@
             "itemTemplateKey": "enchantWeaponScroll2nd"
         },
         {
+            "dropChance": 0.07,
+            "itemTemplateKey": "enchantArmorScroll2nd"
+        },
+        {
+            "dropChance": 0.07,
+            "itemTemplateKey": "enchantArmorScroll2nd"
+        },
+        {
+            "dropChance": 0.07,
+            "itemTemplateKey": "enchantArmorScroll2nd"
+        },
+        {
+            "dropChance": 0.07,
+            "itemTemplateKey": "enchantArmorScroll2nd"
+        },
+        {
             "dropChance": 0.2,
             "itemTemplateKey": "reinforcedLeatherGreaves"
         },

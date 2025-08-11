@@ -24,7 +24,7 @@
         "scriptVars": {
             "terrorQuestWarp": {
                 "destination": "shroudedCrypt:(1, 4)",
-                "requiredStatus": 7
+                "requiredStatus": 5
             }
         },
         "shouldBlockPathfinding": false,

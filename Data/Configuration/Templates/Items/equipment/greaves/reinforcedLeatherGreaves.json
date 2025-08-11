@@ -1,5 +1,5 @@
 {
-    "buyCost": 45000,
+    "buyCost": 40000,
     "category": "Greaves",
     "color": "Default",
     "isDyable": true,
@@ -16,7 +16,7 @@
     "pantsColor": "Black",
     "level": 11,
     "levelCircle": 2,
-    "sellValue": 22500,
+    "sellValue": 20000,
     "weight": 2,
     "description": "Class: All\nLevel: 11\nAc -2\nWis 1",
     "name": "Reinforced Leather Greaves",

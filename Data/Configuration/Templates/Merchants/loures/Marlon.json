@@ -1,10 +1,6 @@
 {
     "itemsForSale": [
         {
-            "itemTemplateKey": "eppe",
-            "stock": 100
-        },
-        {
             "itemTemplateKey": "louresSabre",
             "stock": 100
         },
@@ -14,14 +10,6 @@
         },
         {
             "itemTemplateKey": "broadSword",
-            "stock": 100
-        },
-        {
-            "itemTemplateKey": "battleSword",
-            "stock": 100
-        },
-        {
-            "itemTemplateKey": "battleSword",
             "stock": 100
         },
         {

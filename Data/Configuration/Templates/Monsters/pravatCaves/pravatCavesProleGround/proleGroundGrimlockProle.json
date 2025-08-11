@@ -1,10 +1,10 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 2164,
+    "expReward": 2964,
     "moveIntervalMs": 1500,
     "aggroRange": 14,
-    "maxGoldDrop": 350,
-    "minGoldDrop": 200,
+    "maxGoldDrop": 300,
+    "minGoldDrop": 150,
     "name": "Grimlock Prole",
     "lootTableKeys": ["pravatGrimlockProles"],
     "scriptKeys": ["default", "setMonsterElement", "GoblinAllianceKill"],
@@ -16,7 +16,7 @@
     "sprite": 8,
     "statSheet": {
         "level": 33,
-        "ac": 52,
+        "ac": 27,
         "maximumHp": 3600,
         "maximumMp": 1000,
         "physicalAttack": 68,

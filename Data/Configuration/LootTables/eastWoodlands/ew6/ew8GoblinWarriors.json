@@ -10,6 +10,10 @@
       "itemTemplateKey": "enchantWeaponScroll2nd"
     },
     {
+      "dropChance": 0.01,
+      "itemTemplateKey": "enchantArmorScroll2nd"
+    },
+    {
       "dropChance": 0.008,
       "itemTemplateKey": "leatherHeartstoneGauntlet"
     },
@@ -26,11 +30,11 @@
       "itemTemplateKey": "battleSword"
     },
     {
-      "dropChance": 0.004,
+      "dropChance": 0.003,
       "itemTemplateKey": "templar"
     },
     {
-      "dropChance": 0.003,
+      "dropChance": 0.001,
       "itemTemplateKey": "masquerade"
     }
   ]

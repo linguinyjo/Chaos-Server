@@ -1,5 +1,5 @@
 {
-    "buyCost": 25000,
+    "buyCost": 20000,
     "category": "Ring",
     "color": "Default",
     "isDyable": true,
@@ -15,7 +15,7 @@
     "class": "peasant",
     "level": 11,
     "levelCircle": 2,
-    "sellValue": 12500,
+    "sellValue": 10000,
     "weight": 1,
     "description": "Class: All\nLevel: 11\nHp 200, Mp 100",
     "name": "Amethyst Ring",

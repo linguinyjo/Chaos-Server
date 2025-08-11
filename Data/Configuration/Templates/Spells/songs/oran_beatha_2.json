@@ -15,29 +15,25 @@
   "spellType": "NoTarget",
   "castLines": 3,
   "class": "Bard",
-  "description": "Todo aite like buff 25% dr\n\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
-  "level": 99,
-  "name": "oran dionach 2",
-  "spellCategory": "Song",
-  "panelSprite": 11,
+  "description": "Applies a regeneration buff to your group\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
+  "level": 71,
   "levelsUp": true,
+  "name": "oran beatha 2",
+  "spellCategory": "Song",
+  "panelSprite": 146,
   "scriptKeys": [
     "applyEffect"
   ],
   "scriptVars": {
     "applyEffect": {
       "shape": "allAround",
-      "manaCost": 150,
+      "manaCost": 300,
       "bodyAnimation": "PlayNotes",
       "range": 8,
-      "sound": 36,
-      "effectKey": "OranDionach2",
-      "animation": {
-        "targetAnimation": 21,
-        "animationSpeed": 100
-      },
+      "sound": 34,
+      "effectKey": "OranBeatha2",
       "filter": "friendlyOnly, aliveOnly, AislingsOnly, GroupOnly"
     }
   },
-  "templateKey": "oran_dionach_2"
+  "templateKey": "oran_beatha_2"
 }

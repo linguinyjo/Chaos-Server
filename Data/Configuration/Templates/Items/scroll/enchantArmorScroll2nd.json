@@ -1,0 +1,22 @@
+{
+  "buyCost": 100,
+  "category": "misc",
+  "color": "Default",
+  "isModifiable": false,
+  "maxStacks": 1,
+  "sellValue": 500,
+  "weight": 1,
+  "description": "A magical scroll for enchanting armor of the second circle",
+  "name": "Enchant Armor Scroll",
+  "panelSprite": 3298,
+  "levelCircle": 2,
+  "scriptKeys": [
+    "enchantArmor"
+  ],
+  "scriptVars": {
+    "enchantArmor": {
+      "filter": "selfOnly, aliveOnly"
+    }
+  },
+  "templateKey": "enchantArmorScroll2nd"
+}

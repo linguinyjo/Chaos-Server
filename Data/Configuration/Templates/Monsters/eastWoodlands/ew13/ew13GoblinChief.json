@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 65000,
+    "expReward": 32000,
     "aggroRange": 14,
     "moveIntervalMs": 1000,
     "maxGoldDrop": 20000,
@@ -15,13 +15,13 @@
     },
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail", "Assault", "beag_suain"],
-    "spellIntervalMs": 15000,
+    "spellIntervalMs": 8000,
     "spellTemplateKeys": ["sal", "athar", "creag", "srad", "cradh"],
     "sprite": 18,
     "statSheet": {
         "level": 40,
         "ac": -10,
-        "maximumHp": 24500,
+        "maximumHp": 28500,
         "maximumMp": 5000,
         "physicalAttack": 120,
         "magicAttack": 120,

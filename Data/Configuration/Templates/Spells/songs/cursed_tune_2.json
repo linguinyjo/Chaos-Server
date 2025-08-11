@@ -12,28 +12,33 @@
     "prerequisiteSkills": [],
     "prerequisiteSpells": []
   },
-  "spellType": "NoTarget",
+  "spellType": "Targeted",
   "castLines": 3,
   "class": "Bard",
-  "description": "Puts the enemy to sleep for 8 seconds. The skill/spell that breaks it deals double damage. \n\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
-  "level": 11,
-  "name": "oran beatha 1",
+  "description": "Damage over time to the target\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
+  "level": 71,
+  "name": "cursed tune 2",
   "spellCategory": "Song",
-  "panelSprite": 146,
+  "panelSprite": 141,
   "levelsUp": true,
   "scriptKeys": [
     "applyEffect"
   ],
   "scriptVars": {
     "applyEffect": {
-      "shape": "allAround",
+      "animatePoints": true,
       "manaCost": 150,
       "bodyAnimation": "PlayNotes",
       "range": 8,
-      "sound": 34,
-      "effectKey": "OranBeatha1",
-      "filter": "friendlyOnly, aliveOnly, AislingsOnly, GroupOnly"
+      "sound": 35,
+      "animation": {
+        "targetAnimation": 76,
+        "animationSpeed": 100
+      },
+      "effectKey": "CursedTune2",
+      "filter": "hostileOnly, aliveOnly, othersOnly",
+      "levelUpRate": "veryfast"
     }
   },
-  "templateKey": "oran_beatha_1"
+  "templateKey": "cursed_tune_2"
 }

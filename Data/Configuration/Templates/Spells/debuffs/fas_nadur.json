@@ -13,8 +13,8 @@
     "prerequisiteSpells": []
   },
   "spellType": "Targeted",
-  "castLines": 3,
-  "class": "Wizard",
+  "castLines": 2,
+  "class": "Elementalist",
   "description": "15% ele multiplier \n\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
   "level": 41,
   "name": "fas nadur",

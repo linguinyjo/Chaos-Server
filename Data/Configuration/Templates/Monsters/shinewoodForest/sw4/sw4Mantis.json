@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 700,
+    "expReward": 712,
     "aggroRange": 12,
     "moveIntervalMs": 1300,
     "name": "Mantis",
@@ -14,7 +14,7 @@
     "sprite": 87,
     "statSheet": {
         "level": 23,
-        "ac": 75,
+        "ac": 72,
         "maximumHp": 1900,
         "maximumMp": 1000,
         "physicalAttack": 38,

@@ -1,0 +1,41 @@
+{
+  "learningRequirements": {
+    "itemRequirements": [],
+    "requiredGold": 150000,
+    "requiredStats": {
+      "con": 3,
+      "dex": 12,
+      "int": 28,
+      "str": 3,
+      "wis": 38
+    },
+    "prerequisiteSkills": [],
+    "prerequisiteSpells": []
+  },
+  "spellType": "Targeted",
+  "castLines": 3,
+  "description": "Applies a blind to the target\n\nGold required: 150000\nItems required: \nLocation: Mileth Black Magic Master",
+  "name": "dall",
+  "level": 41,
+  "class": "enchanter",
+  "spellCategory": "Debuff",
+  "panelSprite": 3,
+  "scriptKeys": [
+    "applyEffect"
+  ],
+  "scriptVars": {
+    "applyEffect": {
+      "manaCost": 250,
+      "bodyAnimation": "handsup",
+      "range": 10,
+      "sound": 8,
+      "effectKey": "dall",
+      "filter": "hostileOnly, aliveOnly",
+      "animation": {
+        "targetAnimation": 57,
+        "animationSpeed": 100
+      }
+    }
+  },
+  "templateKey": "dall"
+}

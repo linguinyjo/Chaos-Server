@@ -1,5 +1,5 @@
 {
-    "buyCost": 75000,
+    "buyCost": 50000,
     "category": "Boots",
     "color": "Brown",
     "isDyable": true,
@@ -14,7 +14,7 @@
     "level": 41,
     "levelCircle": 3,
     "notMonk": true,
-    "sellValue": 37500,
+    "sellValue": 25000,
     "weight": 2,
     "description": "Class: All except monk\nLevel: 41\nDex 3",
     "name": "Cordovan Boots",

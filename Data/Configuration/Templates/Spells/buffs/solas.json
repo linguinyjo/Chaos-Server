@@ -22,6 +22,7 @@
   "scriptKeys": [
     "applyEffect"
   ],
+  "cooldownMs": 15000,
   "scriptVars": {
     "applyEffect": {
       "bodyAnimation": "priestCast",

@@ -1,10 +1,10 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 2425,
+    "expReward": 3225,
     "moveIntervalMs": 1300,
     "aggroRange": 14,
-    "maxGoldDrop": 450,
-    "minGoldDrop": 250,
+    "maxGoldDrop": 300,
+    "minGoldDrop": 200,
     "name": "Goblin Soldier",
     "lootTableKeys": ["pravatGoblinSoldiers"],
     "scriptKeys": ["default", "setMonsterElement", "GrimlockAllianceKill"],
@@ -16,7 +16,7 @@
     "sprite": 15,
     "statSheet": {
         "level": 34,
-        "ac": 50,
+        "ac": 25,
         "maximumHp": 3900,
         "maximumMp": 1000,
         "physicalAttack": 75,

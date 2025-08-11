@@ -11,6 +11,10 @@
     },
     {
       "dropChance": 0.01,
+      "itemTemplateKey": "enchantArmorScroll2nd"
+    },
+    {
+      "dropChance": 0.01,
       "itemTemplateKey": "enchantWeaponScroll2nd"
     },
     {

@@ -1,5 +1,5 @@
 {
-  "scriptKeys": ["TerrorQuest"],
+  "scriptKeys": ["TerrorSlain"],
   "scriptVars": {},
   "templateKey": "teague_garden_terror_slain",
   "nextDialogKey": "close",

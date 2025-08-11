@@ -1,4 +1,5 @@
 using Chaos.Collections;
+using Chaos.Common.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.Panel;
 using Chaos.Models.World;
@@ -13,6 +14,7 @@ namespace Chaos.Scripting.EffectScripts;
 public class SkulledEffect(ISimpleCache simpleCache) : ContinuousAnimationEffectBase
 {
     protected override TimeSpan Duration { get; set; } = TimeSpan.FromMilliseconds(20000);
+    private  const int ItemLockTime = 86400;
 
     /// <inheritdoc />
     protected override Animation Animation { get; } = new()
@@ -47,11 +49,24 @@ public class SkulledEffect(ISimpleCache simpleCache) : ContinuousAnimationEffect
         AislingSubject.IsDead = true;
         AislingSubject.TryDropAllEquipment();
         var currentPosition = AislingSubject.GetCurrentLocation();
-        AislingSubject.TryDrop(currentPosition, AislingSubject.Inventory, out var itemsToDrop);
-        AislingSubject.TryDropGold(currentPosition, AislingSubject.Gold, out _);
+        var droppedInventory = AislingSubject.TryDrop(currentPosition, AislingSubject.Inventory, out var itemsToDrop);
+        if (droppedInventory && itemsToDrop != null)
+        {
+            foreach (var groundItem in itemsToDrop)
+            {
+                groundItem.LockToAislings(ItemLockTime);
+            }
+        }
+        
+        var droppedMoney = AislingSubject.TryDropGold(currentPosition, AislingSubject.Gold, out var money);
+        if (droppedMoney && money != null)
+        {
+            money.LockToAislings(ItemLockTime);
+        }
         if (itemsToDrop != null)
             foreach (var groundItem in itemsToDrop)
             {
+                groundItem.LockToAislings(ItemLockTime);
                 AislingSubject.Inventory.RemoveByTemplateKey(groundItem.Item.Template.TemplateKey);
             }
         var mapInstance = simpleCache.Get<MapInstance>("cthonicRoom2");
@@ -67,7 +82,12 @@ public class SkulledEffect(ISimpleCache simpleCache) : ContinuousAnimationEffect
     public override void OnDispelled() {
         if (AislingSubject != null) AislingSubject.IsDead = false;
         AislingSubject?.StatSheet.SetHp(50);
-        AislingSubject?.Refresh(true);
-        AislingSubject?.Display();
+        AislingSubject?.Client.SendAttributes(StatUpdateType.Vitality);
+        // AislingSubject?.Display();
+        // AislingSubject?.Animate(new Animation
+        // {
+        //     AnimationSpeed = 150,
+        //     TargetAnimation = 5
+        // });
     }
 }

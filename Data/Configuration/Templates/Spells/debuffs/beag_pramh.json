@@ -30,7 +30,7 @@
       "range": 10,
       "sound": 27,
       "effectKey": "beagPramh",
-      "filter": "hostileOnly, aliveOnly",
+      "filter": "hostileOnly, aliveOnly"
     }
   },
   "templateKey": "beag_pramh"

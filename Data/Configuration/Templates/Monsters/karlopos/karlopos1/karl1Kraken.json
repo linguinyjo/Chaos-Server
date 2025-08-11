@@ -1,8 +1,8 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 4910,
+    "expReward": 7650,
     "moveIntervalMs": 1200,
-    "aggroRange": 14,
+    "aggroRange": 12,
     "name": "Kraken",
     "lootTableKeys": ["karl1Krakens"],
     "scriptKeys": ["default", "setMonsterElement"],

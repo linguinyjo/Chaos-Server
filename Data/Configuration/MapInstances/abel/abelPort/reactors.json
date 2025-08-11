@@ -84,7 +84,7 @@
         "scriptVars": {
             "terrorQuestWarp": {
                 "destination": "abelAlley:(1, 10)",
-                "requiredStatus": 4
+                "requiredStatus": 3
             }
         },
         "shouldBlockPathfinding": false,

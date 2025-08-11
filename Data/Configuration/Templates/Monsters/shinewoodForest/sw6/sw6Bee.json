@@ -3,6 +3,7 @@
     "expReward": 865,
     "moveIntervalMs": 1500,
     "name": "Bee",
+    "aggroRange": 12,
     "lootTableKeys": ["sw5Bees"],
     "scriptKeys": ["default", "setMonsterElement"],
     "scriptVars": {},

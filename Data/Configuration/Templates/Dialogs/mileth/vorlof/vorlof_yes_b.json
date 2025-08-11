@@ -1,7 +1,13 @@
 {
   "nextDialogKey": "Close",
-  "scriptKeys": [],
-  "scriptVars": {},
+  "scriptKeys": [
+    "OrangeBarMessage"
+  ],
+  "scriptVars": {
+    "orangeBarMessage": {
+      "message": "First visit the weapon shop, then seek out Dar the black magic master"
+    }
+  },
   "templateKey": "vorlof_yes_b",
   "text": "Oh, I almost forgot - go and speak to Callough in the weapon shop. He should be help you get started with some basic equipment.",
   "type": "Normal"

@@ -1,5 +1,5 @@
 {
-    "buyCost": 15000,
+    "buyCost": 10000,
     "category": "Bracer",
     "color": "Default",
     "isDyable": true,
@@ -16,7 +16,7 @@
     "pantsColor": "Black",
     "level": 11,
     "levelCircle": 2,
-    "sellValue": 7500,
+    "sellValue": 5000,
     "weight": 2,
     "description": "Class: Monk\nLevel: 11\nAc -1, Con 1",
     "name": "Leather Bracer",

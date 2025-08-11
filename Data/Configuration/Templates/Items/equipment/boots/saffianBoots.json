@@ -1,5 +1,5 @@
 {
-    "buyCost": 100000,
+    "buyCost": 75000,
     "category": "Boots",
     "color": "Lilac",
     "isDyable": true,
@@ -14,7 +14,7 @@
     "level": 41,
     "levelCircle": 3,
     "notMonk": true,
-    "sellValue": 50000,
+    "sellValue": 37500,
     "weight": 2,
     "description": "Class: All except monk\nLevel: 41\nDex 4",
     "name": "Saffian Boots",

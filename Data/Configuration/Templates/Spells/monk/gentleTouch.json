@@ -31,7 +31,7 @@
       "manaCost": 75,
       "shape": "allAround",
       "sound": 8,
-      "baseHeal": 300,
+      "baseHeal": 200,
       "healStat": "wis",
       "range": 1,
       "filter": "aliveOnly, friendlyOnly",

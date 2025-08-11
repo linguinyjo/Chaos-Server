@@ -14,7 +14,7 @@
     "prerequisiteSpells": []
   },
   "spellType": "Targeted",
-  "class": "Priest",
+  "class": "Bishop",
   "description": "Removes up to mor cradh effect.\n\nGold required: 5000\nItems required: \nLocation: Mileth White Magic Master",
   "level": 41,
   "name": "ao mor cradh",

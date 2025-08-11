@@ -39,7 +39,7 @@ public static class DevlinsIngredientsQuestHelper
 
     public static void CompleteQuest(Aisling source)
     {
-        source.TryGiveGold(2000);
+        source.TryGiveGold(3000);
         source.GiveExperience(2000);
         source.Trackers.Enums.Set(DevlinsIngredientsQuestStatus.Completed);
         var legendMark = new LegendMark(
@@ -50,7 +50,7 @@ public static class DevlinsIngredientsQuestHelper
             1,
             GameTime.Now);
         source.Legend.AddUnique(legendMark);
-        source.SendQuestCompletedAnimation();
+        source.SendMajorQuestCompletedAnimation();
     }
 }
 

@@ -1,7 +1,8 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 670,
+    "expReward": 654,
     "moveIntervalMs": 1500,
+    "aggroRange": 12,
     "name": "Bee",
     "lootTableKeys": ["sw4Bees"],
     "scriptKeys": ["default", "setMonsterElement"],
@@ -13,8 +14,8 @@
     "sprite": 271,
     "statSheet": {
         "level": 21,
-        "ac": 75,
-        "maximumHp": 1650,
+        "ac": 72,
+        "maximumHp": 1750,
         "maximumMp": 1000,
         "physicalAttack": 33,
         "magicAttack": 40,

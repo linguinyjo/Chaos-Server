@@ -29,7 +29,7 @@ public sealed class GoblinsBlessingBuffEffect : EffectBase,
     public List<string> ConflictingEffectNames { get; init; } = [];
 
     /// <inheritdoc />
-    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(60);
+    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(30);
 
     /// <inheritdoc />
     public bool ExcludeSourcePoint { get; init; }
@@ -58,7 +58,7 @@ public sealed class GoblinsBlessingBuffEffect : EffectBase,
     /// <inheritdoc />
     public override string Name => "Goblins blessing";
     
-    private static int RegenBuff => 7;
+    private static int RegenBuff => 5;
 
     public override void OnTerminated()
     {

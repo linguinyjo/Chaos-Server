@@ -1,5 +1,5 @@
 {
-  "castLines": 1,
+  "castLines": 2,
   "learningRequirements": {
     "itemRequirements": [],
     "requiredGold": 5000,
@@ -16,11 +16,11 @@
   "levelsUp": true,
   "spellType": "Targeted",
   "spellCategory": "Heal",
-  "class": "bishop",
+  "class": "Bishop",
   "description": "Applies a moderate heal to your target.\n\nGold required: 5000\nItems required: \nLocation: Mileth White Magic Master",
-  "level": 11,
-  "name": "luth ioc 1",
-  "panelSprite": 107,
+  "level": 41,
+  "name": "mor ioc",
+  "panelSprite": 30,
   "scriptKeys": ["heal"],
   "scriptVars": {
     "heal": {
@@ -29,16 +29,16 @@
         "targetAnimation": 4,
         "animationSpeed": 150
       },
-      "healStatMultiplier": 5,
-      "manaCost": 150,
+      "healStatMultiplier": 6,
+      "manaCost": 250,
       "sound": 8,
-      "baseHeal": 300,
+      "baseHeal": 800,
       "healStat": "wis",
-      "magicAttackMultiplier": 5,
+      "magicAttackMultiplier": 6,
       "range": 8,
-      "filter": "friendlyOnly, aliveOnly",
+      "filter": "aliveOnly",
       "levelUpRate": "veryfast"
     }
   },
-  "templateKey": "luth_ioc_1"
+  "templateKey": "mor_ioc"
 }

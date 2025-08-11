@@ -9,6 +9,7 @@ using Chaos.MetaData;
 using Chaos.Networking.Abstractions;
 using Chaos.Scripting.Components.AbilityComponents;
 using Chaos.Scripting.ItemScripts.Enchantments;
+using Chaos.Scripting.ItemScripts.Enchantments.ArmorScripts;
 using Chaos.Scripting.ItemScripts.Enchantments.EarthScripts;
 using Chaos.Scripting.ItemScripts.Enchantments.FireScripts;
 using Chaos.Scripting.ItemScripts.Enchantments.SeaScripts;
@@ -101,6 +102,26 @@ public sealed class OptionsConfigurer(IStagingDirectory stagingDirectory, IChann
         options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantWeapon14Script.Mutate));
         options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantWeapon15Script.Mutate));
         options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantWeapon16Script.Mutate));
+        
+        
+        // Weapon enchant mutators
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantArmor1Script.Mutate));
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantArmor2Script.Mutate));
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantArmor3Script.Mutate));
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantArmor4Script.Mutate));
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantArmor5Script.Mutate));
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantArmor6Script.Mutate));
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantArmor7Script.Mutate));
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantArmor8Script.Mutate));
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantArmor9Script.Mutate));
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantArmor10Script.Mutate));
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantArmor11Script.Mutate));
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantArmor12Script.Mutate));
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantArmor13Script.Mutate));
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantArmor14Script.Mutate));
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantArmor15Script.Mutate));
+        options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EnchantArmor16Script.Mutate));
+        
         
         // Element enchant mutators
         options.PrefixMutators.Add(ItemMetaNodeMutator.Create(EarthDefensePrefixScript.Mutate));

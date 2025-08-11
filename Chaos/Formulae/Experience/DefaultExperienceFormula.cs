@@ -35,13 +35,14 @@ public class DefaultExperienceFormula : IExperienceFormula
         => group.Count switch
         {
             1 => 0,
-            2 => 0.30m,
-            3 => 0.40m,
-            4 => 0.45m,
-            5 => 0.50m,
-            6 => 0.60m,
-            7 => 0.70m,
-            8 => 0.80m,
+            2 => 0.20m,
+            3 => 0.30m,
+            4 => 0.35m,
+            5 => 0.40m,
+            6 => 0.50m,
+            7 => 0.60m,
+            8 => 0.70m,
+            9 => 0.80m,
             _ => 0.95m
         };
 
@@ -56,34 +57,16 @@ public class DefaultExperienceFormula : IExperienceFormula
 
         // If highest level player is a lower level than the moster dont apply any deductions
         if (levelDifference <= 0) return 0;
-        
-        switch (levelDifference)
+
+        // 25% reduction for 6 levels higher
+        // 50% reduction for 7 levels higher
+        return levelDifference switch
         {
-            case <= 5:
-            {
-                // Use existing logic for level differences of 5 or less
-                var upperBound = LevelRangeFormulae.Default.GetUpperBound(highestPlayerLevel);
-                var lowerBound = LevelRangeFormulae.Default.GetLowerBound(highestPlayerLevel);
-
-                if ((monsterLevel >= lowerBound) && (monsterLevel <= upperBound))
-                    return 0;
-
-                var bounds = monsterLevel < highestPlayerLevel ? lowerBound : upperBound;
-                var stepSize = Math.Abs(bounds - highestPlayerLevel) / 2.0m;
-                var faultSize = Math.Abs(bounds - monsterLevel);
-                return Math.Min(1, faultSize / stepSize * 0.25m);
-            }
-            case 6:
-                // 25% reduction for 6 levels higher
-                return 0.25m;
-            case 7:
-                // 50% reduction for 7 levels higher
-                return 0.50m;
-            default:
-                // For 8 or more levels difference, we'll return a special value
-                // to indicate that the exp should be set to 1
-                return decimal.MaxValue;
-        }
+            <= 5 => 0,
+            6 => 0.25m,
+            7 => 0.50m,
+            _ => decimal.MaxValue
+        };
     }
 
     protected virtual decimal GetPartyLevelDifferenceDeductions(ICollection<Aisling> group)

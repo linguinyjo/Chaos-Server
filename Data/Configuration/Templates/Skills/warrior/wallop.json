@@ -1,9 +1,9 @@
 {
     "isAssail": true,
-    "learningrequirements": {
-        "itemrequirements": [
+    "learningRequirements": {
+        "itemRequirements": [
             {
-                "amountrequired": 1,
+                "amountRequired": 1,
                 "itemTemplateKey": "bramble"
             }
         ],

@@ -28,7 +28,7 @@ public sealed class FasDeireasBuffEffect : EffectBase,
         ];
 
     /// <inheritdoc />
-    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(5);
+    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(10);
 
     /// <inheritdoc />
     public bool ExcludeSourcePoint { get; init; }

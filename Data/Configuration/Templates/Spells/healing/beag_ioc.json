@@ -1,14 +1,14 @@
 {
-  "castLines": 1,
+  "castLines": 2,
   "learningRequirements": {
     "itemRequirements": [],
-    "requiredGold": 5000,
+    "requiredGold": 1000,
     "requiredStats": {
       "con": 3,
       "dex": 3,
-      "int": 11,
+      "int": 4,
       "str": 3,
-      "wis": 24
+      "wis": 8
     },
     "prerequisiteSkills": [],
     "prerequisiteSpells": []
@@ -16,11 +16,11 @@
   "levelsUp": true,
   "spellType": "Targeted",
   "spellCategory": "Heal",
-  "class": "bishop",
-  "description": "Applies a moderate heal to your target.\n\nGold required: 5000\nItems required: \nLocation: Mileth White Magic Master",
-  "level": 71,
-  "name": "luth ioc 2",
-  "panelSprite": 107,
+  "class": "Priest",
+  "description": "Applies a small heal to your target.\n\nGold required: 1000\nItems required: \nLocation: Mileth White Magic Master",
+  "level": 1,
+  "name": "beag ioc",
+  "panelSprite": 28,
   "scriptKeys": ["heal"],
   "scriptVars": {
     "heal": {
@@ -29,16 +29,16 @@
         "targetAnimation": 4,
         "animationSpeed": 150
       },
-      "healStatMultiplier": 8,
-      "manaCost": 400,
+      "healStatMultiplier": 2,
+      "manaCost": 30,
       "sound": 8,
-      "baseHeal": 600,
+      "baseHeal": 150,
       "healStat": "wis",
-      "magicAttackMultiplier": 8,
+      "magicAttackMultiplier": 1,
       "range": 8,
-      "filter": "friendlyOnly, aliveOnly",
+      "filter": "aliveOnly",
       "levelUpRate": "veryfast"
     }
   },
-  "templateKey": "luth_ioc_2"
+  "templateKey": "beag_ioc"
 }

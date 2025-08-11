@@ -18,6 +18,18 @@
       "itemTemplateKey": "enchantWeaponScroll2nd"
     },
     {
+      "dropChance": 0.70,
+      "itemTemplateKey": "enchantArmorScroll2nd"
+    },
+    {
+      "dropChance": 0.70,
+      "itemTemplateKey": "enchantArmorScroll2nd"
+    },
+    {
+      "dropChance": 0.70,
+      "itemTemplateKey": "enchantArmorScroll2nd"
+    },
+    {
       "dropChance": 0.20,
       "itemTemplateKey": "leatherHeartstoneGauntlet"
     },

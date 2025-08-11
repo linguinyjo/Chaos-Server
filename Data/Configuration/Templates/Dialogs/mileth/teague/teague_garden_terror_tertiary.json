@@ -1,6 +1,12 @@
 {
-  "scriptKeys": [],
-  "scriptVars": {},
+  "scriptKeys": [
+    "OrangeBarMessage"
+  ],
+  "scriptVars": {
+    "orangeBarMessage": {
+      "message": "Find the terror in the west part of the enchanted garden"
+    }
+  },
   "nextDialogKey": "close",
   "templateKey": "teague_garden_terror_tertiary",
   "text": "Ran for my life I did. Please...please leave old Teague alone. My drink is the only thing that matters any more...",

@@ -14,7 +14,7 @@ public class WhiteDugonQuestHelper : BaseQuestHelper<WhiteDugonQuestStatus>
     protected override int RequiredLevel => 11;
     protected override WhiteDugonQuestStatus CompletedStatus => WhiteDugonQuestStatus.Completed;
     protected override WhiteDugonQuestStatus NoneStatus => WhiteDugonQuestStatus.None;
-    protected override TimeSpan AllowedTime => TimeSpan.FromMinutes(15);
+    protected override TimeSpan AllowedTime => TimeSpan.FromMinutes(30);
 
     protected override WhiteDugonQuestStatus GetNextStatus(WhiteDugonQuestStatus currentStatus)
     {

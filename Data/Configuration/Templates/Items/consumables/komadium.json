@@ -22,6 +22,7 @@
         "targetAnimation": 5,
         "animationSpeed": 150
       },
+      "sound": 31,
       "filter": "AislingsOnly"
     }
   },

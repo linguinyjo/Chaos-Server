@@ -1,7 +1,11 @@
 {
   "nextDialogKey": "close",
-  "scriptKeys": ["torranceTrainingQuest"],
-  "scriptVars": {},
+  "scriptKeys": ["torranceTrainingQuest", "OrangeBarMessage"],
+  "scriptVars": {
+    "orangeBarMessage": {
+      "message": "Collect 1 viper gland and bring it back to Torrance"
+    }
+  },
   "templateKey": "torrance_training_quest_b",
   "text": "There's a forest east of here and I need you to go collect me a gland from one of the vipers there. Don't give me that look... I'm an armorer, not an adventurer. Now off you go, and try not to get yourself killed. I'd hate to explain that to Vorlof.",
   "type": "Normal"

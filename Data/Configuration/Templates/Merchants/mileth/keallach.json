@@ -11,7 +11,7 @@
         }
     },
     "skillsToTeach": ["powerStrike", "assault", "rescue", "windBlade", "kick", "doublePunch", "highKick", "clobber"],
-    "spellsToTeach": ["taunt"],
+    "spellsToTeach": ["monkTaunt", "warriorTaunt", "rogueTaunt"],
     "sprite": 93,
     "templateKey": "keallach"
 }

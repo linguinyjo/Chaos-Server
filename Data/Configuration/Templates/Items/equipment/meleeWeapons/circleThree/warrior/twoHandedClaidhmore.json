@@ -8,8 +8,8 @@
     "isModifiable": true,
     "maxDurability": 30000,
     "maxStacks": 1,
-    "level": 11,
-    "levelCircle": 1,
+    "level": 71,
+    "levelCircle": 4,
     "class": "warrior",
     "modifiers": {
         "physicalAttack": 116,

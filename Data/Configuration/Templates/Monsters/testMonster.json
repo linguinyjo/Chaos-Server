@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 3352,
+    "expReward": 1,
     "aggroRange": 12,
     "moveIntervalMs": 10002,
     "maxGoldDrop": 600,
@@ -17,9 +17,9 @@
     "statSheet": {
         "level": 37,
         "ac": 35,
-        "maximumHp": 500,
+        "maximumHp": 1,
         "maximumMp": 22000,
-        "physicalAttack": 30,
+        "physicalAttack": 1,
         "magicAttack": 1,
         "con": 12,
         "dex": 12,

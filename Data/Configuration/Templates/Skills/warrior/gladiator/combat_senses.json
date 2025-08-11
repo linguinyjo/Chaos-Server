@@ -16,7 +16,7 @@
     "description": "Identifies the attributes of the creature infront of you.\n\nGold required: 5000\nItems required: \nLocation: Mileth Special Skill Master",
     "level": 41,
     "levelsUp": true,
-    "name": "combat senses",
+    "name": "Combat senses",
     "class": "gladiator",
     "panelSprite": 10,
     "cooldownMs": 15000,

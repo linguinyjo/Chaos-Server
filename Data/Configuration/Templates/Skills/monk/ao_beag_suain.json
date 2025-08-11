@@ -17,7 +17,8 @@
   "class": "Monk",
   "description": "Removes beag suain effect.\n\nGold required: 75000\nItems required: \nLocation: Mileth White Magic Master",
   "level": 41,
-  "name": "ao suain",
+  "name": "Ao Suain",
+  "cooldownMs": 12000,
   "panelSprite": 51,
   "scriptKeys": [
     "removeEffect"

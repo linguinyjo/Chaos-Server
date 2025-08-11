@@ -15,9 +15,9 @@
   "spellType": "NoTarget",
   "castLines": 3,
   "class": "Bard",
-  "description": "Todo aite like buff 15% dr\n\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
-  "level": 41,
-  "name": "oran dionach 1",
+  "description": "Applies a damage reduction buff to your group\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
+  "level": 99,
+  "name": "oran dionach 2",
   "spellCategory": "Song",
   "panelSprite": 11,
   "levelsUp": true,
@@ -31,7 +31,7 @@
       "bodyAnimation": "PlayNotes",
       "range": 8,
       "sound": 36,
-      "effectKey": "OranDionach1",
+      "effectKey": "OranDionach2",
       "animation": {
         "targetAnimation": 21,
         "animationSpeed": 100
@@ -39,5 +39,5 @@
       "filter": "friendlyOnly, aliveOnly, AislingsOnly, GroupOnly"
     }
   },
-  "templateKey": "oran_dionach_1"
+  "templateKey": "oran_dionach_2"
 }

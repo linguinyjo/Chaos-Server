@@ -1,10 +1,10 @@
 {
-    "assailIntervalMs": 1500,
-    "expReward": 3352,
+    "assailIntervalMs": 1300,
+    "expReward": 4152,
     "moveIntervalMs": 1200,
     "aggroRange": 14,
-    "maxGoldDrop": 600,
-    "minGoldDrop": 350,
+    "maxGoldDrop": 450,
+    "minGoldDrop": 200,
     "name": "Grimlock Warrior",
     "lootTableKeys": ["pravatGrimlockWarriors"],
     "scriptKeys": ["default", "setMonsterElement", "GoblinAllianceKill"],
@@ -16,7 +16,7 @@
     "sprite": 9,
     "statSheet": {
         "level": 37,
-        "ac": 35,
+        "ac": 12,
         "maximumHp": 4900,
         "maximumMp": 1000,
         "physicalAttack": 80,

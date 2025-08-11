@@ -1,8 +1,8 @@
 {
-  "nextDialogKey": "Close",
+  "nextDialogKey": "riona_training_quest_c",
   "scriptKeys": [],
   "scriptVars": {},
   "templateKey": "riona_training_quest_b",
-  "text": "Well, there's only one way to know for sure. Go and speak to Vorlof. His house is south of here by the river, right next door to the weapon smith. Just let him know I sent you.",
+  "text": "Tell me child, have you ever heard the word *Aisling*? Some say its the name for those touched by fate, dreamers who shape the world itself.",
   "type": "Normal"
 }

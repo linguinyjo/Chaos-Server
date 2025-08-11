@@ -1,0 +1,30 @@
+{
+    "spellType": "NoTarget",
+    "description": "A spell that deals dark damage to all creatures on screen",
+    "level": 1,
+    "castLines": 1,
+    "name": "gm kill",
+    "panelSprite": 39,
+    "scriptKeys": ["damage"],
+    "scriptVars": {
+        "damage": {
+            "animatePoints": false,
+            "shape": "allAround",
+            "range": 12,
+            "element": "darkness",
+            "damageStat": "int",
+            "manaCost": 50,
+            "spellCategory": "Damage",
+            "sound": 27,
+            "filter": "hostileOnly, aliveOnly, othersOnly",
+            "minSoundIntervalMs": 900,
+            "baseDamage": 30000,
+            "animation": {
+                "targetAnimation": 62,
+                "animationSpeed": 100
+            },
+            "canResist": false
+        }
+    },
+    "templateKey": "gm_kill"
+}

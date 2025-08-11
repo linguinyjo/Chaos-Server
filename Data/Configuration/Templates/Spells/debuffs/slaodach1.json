@@ -14,7 +14,7 @@
   },
   "spellType": "Targeted",
   "castLines": 2,
-  "class": "Enchanter",
+  "class": "enchanter",
   "description": "Slows the enemies attack speed by 10%. \n\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
   "level": 11,
   "name": "slaodach 1",
@@ -30,7 +30,7 @@
       "range": 10,
       "sound": 104,
       "effectKey": "slaodach1",
-      "filter": "hostileOnly, aliveOnly",
+      "filter": "hostileOnly, aliveOnly"
     }
   },
   "templateKey": "slaodach1"

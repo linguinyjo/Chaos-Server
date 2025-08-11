@@ -2,7 +2,7 @@
     "assailIntervalMs": 1500,
     "expReward": 1878,
     "moveIntervalMs": 1300,
-    "aggroRange": 10,
+    "aggroRange": 8,
     "name": "Scorpion",
     "lootTableKeys": ["cryptScorpions"],
     "scriptKeys": ["default", "setMonsterElement"],

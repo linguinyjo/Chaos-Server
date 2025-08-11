@@ -14,6 +14,10 @@
       "itemTemplateKey": "enchantWeaponScroll2nd"
     },
     {
+      "dropChance": 0.01,
+      "itemTemplateKey": "enchantArmorScroll2nd"
+    },
+    {
       "dropChance": 0.008,
       "itemTemplateKey": "leatherEmeraldGauntlet"
     },
@@ -22,11 +26,11 @@
       "itemTemplateKey": "shagreenBoots"
     },
     {
-      "dropChance": 0.003,
+      "dropChance": 0.002,
       "itemTemplateKey": "holyKronos"
     },
     {
-      "dropChance": 0.003,
+      "dropChance": 0.002,
       "itemTemplateKey": "magusKronos"
     }
   ]

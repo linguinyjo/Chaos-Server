@@ -1,0 +1,41 @@
+{
+  "learningRequirements": {
+    "itemRequirements": [],
+    "requiredGold": 50000,
+    "requiredStats": {
+      "str": 8,
+      "int": 33,
+      "wis": 20,
+      "con": 8,
+      "dex": 8
+    },
+    "prerequisiteSkills": [],
+    "prerequisiteSpells": []
+  },
+  "spellType": "Targeted",
+  "class": "enchanter",
+  "description": "Applies a curse effect to your target reducing their AC.\n\nGold required: 50000\nItems required: \nLocation: Mileth Black Magic Master",
+  "level": 41,
+  "castLines": 2,
+  "name": "mor cradh",
+  "spellCategory": "Debuff",
+  "panelSprite": 83,
+  "scriptKeys": [
+    "applyEffect"
+  ],
+  "scriptVars": {
+    "applyEffect": {
+      "manaCost": 200,
+      "bodyAnimation": "priestcast",
+      "effectKey": "morcradh",
+      "filter": "aliveOnly",
+      "canResist": true,
+      "animation": {
+        "targetAnimation": 18,
+        "animationSpeed": 150
+      },
+      "sound": 27
+    }
+  },
+  "templateKey": "mor_cradh"
+}

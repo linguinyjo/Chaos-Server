@@ -12,33 +12,32 @@
     "prerequisiteSkills": [],
     "prerequisiteSpells": []
   },
-  "spellType": "Targeted",
+  "spellType": "NoTarget",
   "castLines": 3,
   "class": "Bard",
-  "description": "TODO. Dot spell\n\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
-  "level": 71,
-  "name": "cursed tune 2",
+  "description": "Applies a damage reduction buff to your group\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
+  "level": 41,
+  "name": "oran dionach 1",
   "spellCategory": "Song",
-  "panelSprite": 141,
+  "panelSprite": 11,
   "levelsUp": true,
   "scriptKeys": [
     "applyEffect"
   ],
   "scriptVars": {
     "applyEffect": {
-      "animatePoints": true,
+      "shape": "allAround",
       "manaCost": 150,
       "bodyAnimation": "PlayNotes",
       "range": 8,
-      "sound": 35,
+      "sound": 36,
+      "effectKey": "OranDionach1",
       "animation": {
-        "targetAnimation": 76,
+        "targetAnimation": 21,
         "animationSpeed": 100
       },
-      "effectKey": "CursedTune2",
-      "filter": "hostileOnly, aliveOnly, othersOnly",
-      "levelUpRate": "veryfast"
+      "filter": "friendlyOnly, aliveOnly, AislingsOnly, GroupOnly"
     }
   },
-  "templateKey": "cursed_tune_2"
+  "templateKey": "oran_dionach_1"
 }

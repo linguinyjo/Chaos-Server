@@ -1,9 +1,9 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 2569,
+    "expReward": 3269,
     "aggroRange": 14,
     "moveIntervalMs": 1300,
-    "maxGoldDrop": 500,
+    "maxGoldDrop": 300,
     "minGoldDrop": 200,
     "name": "Goblin Soldier",
     "lootTableKeys": ["pravatGoblinSoldiers"],
@@ -16,7 +16,7 @@
     "sprite": 15,
     "statSheet": {
         "level": 35,
-        "ac": 50,
+        "ac": 25,
         "maximumHp": 3950,
         "maximumMp": 1000,
         "physicalAttack": 75,

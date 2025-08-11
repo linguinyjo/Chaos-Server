@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1500,
-    "expReward": 1494,
+    "expReward": 2194,
     "aggroRange": 12,
     "moveIntervalMs": 1300,
     "maxGoldDrop": 400,
@@ -11,12 +11,12 @@
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],
-    "spellIntervalMs": 15000,
+    "spellIntervalMs": 20000,
     "spellTemplateKeys": ["sal", "athar", "creag", "srad", "cradh"],
     "sprite": 15,
     "statSheet": {
         "level": 34,
-        "ac": 52,
+        "ac": 32,
         "maximumHp": 3200,
         "maximumMp": 1000,
         "physicalAttack": 52,

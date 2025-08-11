@@ -29,7 +29,7 @@ public sealed class GrimlocksBlessingBuffEffect : EffectBase,
     public List<string> ConflictingEffectNames { get; init; } = [];
 
     /// <inheritdoc />
-    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(60);
+    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(30);
 
     /// <inheritdoc />
     public bool ExcludeSourcePoint { get; init; }

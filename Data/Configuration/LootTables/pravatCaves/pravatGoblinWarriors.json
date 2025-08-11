@@ -6,6 +6,10 @@
             "itemTemplateKey": "enchantWeaponScroll2nd"
         },
         {
+            "dropChance": 0.05,
+            "itemTemplateKey": "enchantArmorScroll2nd"
+        },
+        {
             "dropChance": 0.006,
             "itemTemplateKey": "templar"
         },

@@ -25,8 +25,14 @@ public class TerrorOnKillScript : ConfigurableMonsterScriptBase
     /// <inheritdoc />
     public override void OnDeath()
     {
-        if (player?.Group == null) return;
         var targetMap = SimpleCache.Get<MapInstance>(Destination.Map);
+        if (player == null) return;
+        if (player?.Group == null)
+        {
+            TerrorQuestHelper.IncrementQuestStage(player);
+            player.TraverseMap(targetMap, Destination);
+            return;
+        }
         var requiredMapId = player.Trackers.LastMapInstanceId;
         foreach (var aisling in player.Group)
         {

@@ -6,7 +6,7 @@
             "int": 7,
             "wis": 6,
             "con": 3,
-            "dex": 20
+            "dex": 10
         },
         "requiredGold": 5000,
         "prerequisiteSkills": [],

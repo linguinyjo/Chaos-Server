@@ -5,7 +5,7 @@
     "moveIntervalMs": 1500,
     "name": "Goblin Soldier",
     "maxGoldDrop": 300,
-    "minGoldDrop": 150,
+    "minGoldDrop": 100,
     "lootTableKeys": ["ew6GoblinSoldiers"],
     "scriptKeys": ["default", "setMonsterElement","GoblinArmorDrop"],
     "scriptVars": {},
@@ -16,7 +16,7 @@
     "sprite": 15,
     "statSheet": {
         "level": 30,
-        "ac": 60,
+        "ac": 55,
         "maximumHp": 2900,
         "maximumMp": 1000,
         "physicalAttack": 48,

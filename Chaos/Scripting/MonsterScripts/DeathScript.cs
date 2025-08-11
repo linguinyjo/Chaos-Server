@@ -49,7 +49,7 @@ public class DeathScript : MonsterScriptBase
         Subject.Items.AddRange(Subject.LootTable.GenerateLoot());
 
         var droppedGold = Subject.TryDropGold(Subject, Subject.Gold, out var money);
-        var droppedITems = Subject.TryDrop(Subject, Subject.Items, out var groundItems);
+        var droppedItems = Subject.TryDrop(Subject, Subject.Items, out var groundItems);
 
         if (rewardTargets is not null)
         {
@@ -60,7 +60,7 @@ public class DeathScript : MonsterScriptBase
                 if (droppedGold)
                     money!.LockToAislings(lockSecs, rewardTargets);
 
-                if (droppedITems)
+                if (droppedItems)
                     foreach (var groundItem in groundItems!)
                         groundItem.LockToAislings(lockSecs, rewardTargets);
             }

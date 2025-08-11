@@ -44,7 +44,7 @@ public static class GoblinAllianceQuestHelper
             GameTime.Now);
         source.Legend.AddUnique(legendMark);
         source.GiveExperience(25000);
-        source.SendQuestCompletedAnimation();
+        source.SendMajorQuestCompletedAnimation();
     }
 }
 

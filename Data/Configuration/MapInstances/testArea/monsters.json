@@ -7,8 +7,8 @@
     "extraLootTableKeys": [
       
     ],
-    "maxAmount": 1,
-    "maxPerSpawn": 1,
+    "maxAmount": 5,
+    "maxPerSpawn": 5,
     "monsterTemplateKey": "testMonster"
   }
 ]

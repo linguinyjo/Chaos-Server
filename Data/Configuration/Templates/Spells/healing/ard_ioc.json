@@ -16,7 +16,7 @@
   "levelsUp": true,
   "spellType": "Targeted",
   "spellCategory": "Heal",
-  "class": "Priest",
+  "class": "Bishop",
   "description": "Applies a moderate heal to your target.\n\nGold required: 5000\nItems required: \nLocation: Mileth White Magic Master",
   "level": 71,
   "name": "ard ioc",
@@ -36,7 +36,7 @@
       "healStat": "wis",
       "magicAttackMultiplier": 10,
       "range": 8,
-      "filter": "friendlyOnly, aliveOnly",
+      "filter": "aliveOnly",
       "levelUpRate": "veryfast"
     }
   },

@@ -1,7 +1,7 @@
 {
     "assailIntervalMs": 1500,
     "expReward": 660,
-    "aggroRange": 10,
+    "aggroRange": 8,
     "moveIntervalMs": 1500,
     "name": "Bat",
     "lootTableKeys": ["crypt4Bats"],

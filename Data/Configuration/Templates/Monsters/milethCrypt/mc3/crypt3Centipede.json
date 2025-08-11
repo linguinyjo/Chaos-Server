@@ -2,7 +2,7 @@
     "assailIntervalMs": 1500,
     "expReward": 258,
     "moveIntervalMs": 1500,
-    "aggroRange": 10,
+    "aggroRange": 8,
     "name": "Centipede",
     "lootTableKeys": ["crypt3Centipedes"],
     "scriptKeys": ["default", "setMonsterElement"],

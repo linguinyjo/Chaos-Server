@@ -15,12 +15,12 @@
   "spellType": "NoTarget",
   "castLines": 3,
   "class": "Bard",
-  "description": "Puts the enemy to sleep for 8 seconds. The skill/spell that breaks it deals double damage. \n\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
-  "level": 71,
+  "description": "Applies an attack speed buff to your group\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
+  "level": 41,
   "levelsUp": true,
-  "name": "oran beatha 2",
+  "name": "oran luth 1",
   "spellCategory": "Song",
-  "panelSprite": 146,
+  "panelSprite": 148,
   "scriptKeys": [
     "applyEffect"
   ],
@@ -30,10 +30,14 @@
       "manaCost": 300,
       "bodyAnimation": "PlayNotes",
       "range": 8,
-      "sound": 34,
-      "effectKey": "OranBeatha2",
+      "sound": 37,
+      "animation": {
+        "targetAnimation": 189,
+        "animationSpeed": 100
+      },
+      "effectKey": "OranLuth1",
       "filter": "friendlyOnly, aliveOnly, AislingsOnly, GroupOnly"
     }
   },
-  "templateKey": "oran_beatha_2"
+  "templateKey": "oran_luth_1"
 }

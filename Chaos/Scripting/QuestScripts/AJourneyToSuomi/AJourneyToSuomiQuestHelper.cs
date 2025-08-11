@@ -37,15 +37,8 @@ public static class AJourneyToSuomiQuestHelper
     public static void CompleteQuest(Aisling player)
     {
         player.Trackers.Enums.Set(AJourneyToSuomiQuestStatus.Completed);
-        var legendMark = new LegendMark(
-            "Delivered Oona's shipment of fruit",
-            "aJourneyToSuomi",
-            MarkIcon.Victory,
-            MarkColor.White,
-            1,
-            GameTime.Now);
-        player.TryGiveGold(5000);
-        player.Legend.AddUnique(legendMark);
+        player.TryGiveGold(2500);
+        player.GiveExperience(500);
         player.Client.SendAnimation(new Animation()
         {
             AnimationSpeed = 150,

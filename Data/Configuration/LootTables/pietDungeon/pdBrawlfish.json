@@ -4,6 +4,10 @@
     {
       "dropChance": 0.08,
       "itemTemplateKey": "brawlfishScale"
+    },
+    {
+      "dropChance": 0.01,
+      "itemTemplateKey": "enchantArmorScroll2nd"
     }
   ]
 }

@@ -1,6 +1,12 @@
 {
-  "scriptKeys": [],
-  "scriptVars": {},
+  "scriptKeys": [
+    "OrangeBarMessage"
+  ],
+  "scriptVars": {
+    "orangeBarMessage": {
+      "message": "Bring an end to the beggars nightmares somewhere deep in Mileth crypt"
+    }
+  },
   "nextDialogKey": "close",
   "templateKey": "teague_crypt_terror_tertiary",
   "text": "I saw... I saw something crawl out from a door that didn't belong. Pale, and twisted it was. It reached out, tried to drag me down into its tomb. Grinning at me.. oh the terror! The nightmares won't ever leave old Teague alone!",

@@ -2,6 +2,9 @@ using Chaos.Common.Definitions;
 using Chaos.Models.Menu;
 using Chaos.Models.World;
 using Chaos.Scripting.DialogScripts.Abstractions;
+using Chaos.Scripting.QuestScripts.Dugons.BlueDugonScripts;
+using Chaos.Scripting.QuestScripts.Dugons.GreenDugonScripts;
+using Chaos.Scripting.QuestScripts.Dugons.WhiteDugonScripts;
 using Chaos.Scripting.QuestScripts.TrainingQuest;
 using Chaos.Services.Factories.Abstractions;
 
@@ -10,7 +13,10 @@ namespace Chaos.Scripting.QuestScripts.Dugons;
 public class KyrosScript:  DialogScriptBase
 {
     private readonly IDialogFactory DialogFactory;
-    
+    private readonly WhiteDugonQuestHelper _whiteDugonQuestHelper = new();
+    private readonly GreenDugonQuestHelper _greenDugonQuestHelper = new();
+    private readonly BlueDugonQuestHelper _blueDugonQuestHelper = new();
+
     /// <inheritdoc />
     public KyrosScript(Dialog subject, IDialogFactory dialogFactory)
         : base(subject) => DialogFactory = dialogFactory;
@@ -26,13 +32,22 @@ public class KyrosScript:  DialogScriptBase
         switch (currentDugon)
         {
             case Dugon.None:
-                Subject.AddOption("White Dugon", "white_dugon_1");
+                if(_whiteDugonQuestHelper.IsEligible(source))
+                {
+                    Subject.AddOption("White Dugon", "white_dugon_1");
+                }
                 return;
             case Dugon.White:
-                Subject.AddOption("Green Dugon", "green_dugon_1");
+                if (_greenDugonQuestHelper.IsEligible(source))
+                {
+                    Subject.AddOption("Green Dugon", "green_dugon_1");
+                }
                 return;
             case Dugon.Green:
-                Subject.AddOption("Blue Dugon", "blue_dugon_1");
+                if (_blueDugonQuestHelper.IsEligible(source))
+                {
+                    Subject.AddOption("Blue Dugon", "blue_dugon_1");
+                }
                 return;
         }
     }

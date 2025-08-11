@@ -472,9 +472,32 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
     /// </returns>
     public bool HasClass(BaseClass @class)
     {
-        return @class == BaseClass.Peasant
-               || UserStatSheet.BaseClass == BaseClass.Diacht  // Diacht includes all classes
-               || (UserStatSheet.BaseClass & @class) == @class; // Check if base class is included
+        // Special case: Peasant items can be equipped by anyone
+        if (@class == BaseClass.Peasant)
+            return true;
+
+        // Special case: Diacht players can equip anything
+        if (UserStatSheet.BaseClass == BaseClass.Diacht)
+            return true;
+
+        // Check exact match or root class match
+        return UserStatSheet.BaseClass == @class || GetRootClass(UserStatSheet.BaseClass) == @class;
+    }
+
+    private static BaseClass GetRootClass(BaseClass cls)
+    {
+        return cls switch
+        {
+            BaseClass.Champion or BaseClass.Gladiator => BaseClass.Warrior,
+            BaseClass.Assassin or BaseClass.Archer => BaseClass.Rogue,
+            BaseClass.Elementalist or BaseClass.Enchanter => BaseClass.Wizard,
+            BaseClass.Bishop or BaseClass.Bard => BaseClass.Priest,
+            BaseClass.Druid or BaseClass.Brawler => BaseClass.Monk,
+            BaseClass.Peasant or BaseClass.Warrior or BaseClass.Rogue or 
+                BaseClass.Wizard or BaseClass.Priest or BaseClass.Monk or 
+                BaseClass.Diacht => cls, // Core classes are their own root
+            _ => throw new ArgumentOutOfRangeException(nameof(cls), "Unknown class")
+        };
     }
     
     public bool HasOnlyPeasant() => UserStatSheet.BaseClass == BaseClass.Peasant;
@@ -850,7 +873,7 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
 
             MapInstance.RemoveEntity(groundItem);
             item.Script.OnPickup(this, originalItem, originalCount);
-
+            SendOrangeBarMessage($"You picked up a {item.DisplayName}.");
             foreach (var reactor in MapInstance.GetDistinctReactorsAtPoint(groundItem)
                                                .ToList())
                 reactor.OnItemPickedUpFrom(this, groundItem, originalCount);
@@ -878,6 +901,7 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
                   .LogInformation("Aisling {@AislingName} picked up {Amount} gold", Name, money.Amount);
 
             MapInstance.RemoveEntity(money);
+            SendOrangeBarMessage($"You picked up {money.Amount} gold.");
 
             foreach (var reactor in MapInstance.GetDistinctReactorsAtPoint(money)
                                                .ToList())
@@ -1188,12 +1212,6 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
 
     public override void Walk(Direction direction, bool? ignoreBlockingReactors = null)
     {
-        var one = SpellBook.GetFirstSlotInPage(PageType.Page1);
-        Console.WriteLine(one);
-        var two = SpellBook.GetFirstSlotInPage(PageType.Page2);
-        Console.WriteLine(two);
-        var three = SpellBook.GetFirstSlotInPage(PageType.Page3);
-        Console.WriteLine(three);
         ignoreBlockingReactors ??= true;
 
         if (!Script.CanMove() || ((direction != Direction) && !Script.CanTurn()) || !ShouldWalk)
@@ -1302,13 +1320,27 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
         Refresh(true);
     }
 
-    public void SendQuestCompletedAnimation()
+    public void SendMajorQuestCompletedAnimation()
     {
-        Client.SendAnimation(new Animation()
-        {
-            AnimationSpeed = 150,
-            TargetAnimation = 50
-        });
+        Animate(
+            new Animation
+            {
+                AnimationSpeed = 150,
+                TargetAnimation = 50
+            }
+        );
+        Client.SendSound(42, false);
+    }
+    
+    public void SendMinorQuestCompletedAnimation()
+    {
+        Animate(
+            new Animation
+            {
+                AnimationSpeed = 150,
+                TargetAnimation = 22
+            }
+        );
         Client.SendSound(42, false);
     }
 

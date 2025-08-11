@@ -1,6 +1,6 @@
 {
     "assailIntervalMs": 1300,
-    "expReward": 5000,
+    "expReward": 1800,
     "moveIntervalMs": 1200,
     "aggroRange": 14,
     "name": "Garden Terror",
@@ -18,8 +18,8 @@
     "sprite": 2,
     "statSheet": {
         "level": 21,
-        "ac": 70,
-        "maximumHp": 3700,
+        "ac": 43,
+        "maximumHp": 5500,
         "maximumMp": 1000,
         "physicalAttack": 80,
         "magicAttack": 70,
