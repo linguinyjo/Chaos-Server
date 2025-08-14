@@ -5,6 +5,7 @@ using Chaos.Models.Panel;
 using Chaos.Scripting.Components.Abstractions;
 using Chaos.Scripting.Components.Execution;
 using Chaos.Scripting.ItemScripts.Enchantments;
+using Chaos.Scripting.ItemScripts.Enchantments.WeaponScripts;
 
 namespace Chaos.Scripting.Components.AbilityComponents;
 

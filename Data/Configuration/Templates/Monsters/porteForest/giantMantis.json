@@ -1,14 +1,18 @@
 {
-    "assailIntervalMs": 1200,
+    "assailIntervalMs": 1100,
     "expReward": 40431,
     "aggroRange": 20,
     "moveIntervalMs": 1000,
     "name": "Giant Mantis",
     "lootTableKeys": [],
-    "scriptKeys": ["default", "setMonsterElement", "giantMantis"],
+    "scriptKeys": ["default", "giantMantis", "SetElement"],
     "scriptVars": {
         "giantMantis": {
             "destination": "giantMantisUnderGround:(6,11)"
+        },
+        "SetElement": {
+            "offense": "darkness",
+            "defense": "darkness"
         }
     },
     "skillIntervalMs": 1500,

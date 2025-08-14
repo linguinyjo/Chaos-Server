@@ -8,7 +8,7 @@ namespace Chaos.Scripting.EffectScripts.DebuffEffects;
 public class BeagPramhEffect : ContinuousAnimationEffectBase
 {
     /// <inheritdoc />
-    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMilliseconds(8000);
+    protected override TimeSpan Duration { get; set; } = TimeSpan.FromMilliseconds(10000);
 
     /// <inheritdoc />
     protected override Animation Animation { get; } = new()

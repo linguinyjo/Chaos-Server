@@ -5,7 +5,7 @@
     "aggroRange": 8,
     "name": "Great Bat",
     "lootTableKeys": ["cryptGreatBats"],
-    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptKeys": ["default", "SetRandomElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],

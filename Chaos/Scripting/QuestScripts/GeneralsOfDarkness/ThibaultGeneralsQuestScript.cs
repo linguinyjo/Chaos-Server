@@ -11,12 +11,14 @@ namespace Chaos.Scripting.QuestScripts.GeneralsOfDarkness;
 public class ThibaultGeneralsQuestScript: DialogScriptBase
 {
     private readonly Dialog Dialog;
+    private readonly IItemFactory ItemFactory;
 
     /// <inheritdoc />
-    public ThibaultGeneralsQuestScript(Dialog subject)
+    public ThibaultGeneralsQuestScript(Dialog subject, IItemFactory itemFactory)
         : base(subject)
     {
         Dialog = subject;
+        ItemFactory = itemFactory;
     }
 
     /// <inheritdoc />
@@ -41,6 +43,14 @@ public class ThibaultGeneralsQuestScript: DialogScriptBase
                 {
                     source.Inventory.RemoveQuantityByTemplateKey("goblinChiefHeart", 1);
                     source.Inventory.RemoveQuantityByTemplateKey("grimlockQueenHeart", 1);
+                    var ews = ItemFactory.Create("enchantWeaponScroll2nd");
+                    var eas = ItemFactory.Create("enchantArmorScroll2nd");
+                    ews.Count = 2;
+                    eas.Count = 3;
+
+                    source.Inventory.TryAddToNextSlot(ews);
+                    source.Inventory.TryAddToNextSlot(eas);
+
                     GeneralsOfDarknessQuestHelper.CompleteQuest(source);
                     Subject.Reply(
                         source,

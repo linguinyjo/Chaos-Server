@@ -5,7 +5,7 @@
     "aggroRange": 14,
     "name": "Crypt Terror",
     "lootTableKeys": [],
-    "scriptKeys": ["default", "setMonsterElement", "terrorOnKill"],
+    "scriptKeys": ["default", "SetRandomElement", "terrorOnKill"],
     "scriptVars": {
         "terrorOnKill": {
             "destination": "crypt5:(2,45)"

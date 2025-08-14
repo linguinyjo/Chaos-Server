@@ -1,5 +1,5 @@
 {
-    "buyCost": 150000,
+    "buyCost": 75000,
     "category": "Sword",
     "color": "Forest",
     "displaySprite": 11,
@@ -15,7 +15,7 @@
         "physicalAttack": 72,
         "maximumMp": -750
     },
-    "sellValue": 75000,
+    "sellValue": 37500,
     "weight": 8,
     "description": "Class: warrior\nLevel: 11\nP.Atk 72",
     "name": "Masquerade",

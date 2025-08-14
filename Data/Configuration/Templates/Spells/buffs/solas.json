@@ -2,7 +2,7 @@
   "castLines": 2,
   "learningRequirements": {
     "itemRequirements": [],
-    "requiredGold": 5000,
+    "requiredGold": 100000,
     "requiredStats": {
       "con": 3,
       "dex": 3,
@@ -15,7 +15,7 @@
   },
   "spellType": "Targeted",
   "class": "bishop",
-  "description": "TODO.\n\nGold required: 5000\nItems required: \nLocation: Mileth White Magic Master",
+  "description": "TODO.\n\nGold required: 100000\nItems required: \nLocation: Mileth White Magic Master",
   "level": 41,
   "name": "solas",
   "panelSprite": 53,

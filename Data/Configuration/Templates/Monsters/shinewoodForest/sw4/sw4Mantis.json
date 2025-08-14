@@ -5,7 +5,7 @@
     "moveIntervalMs": 1300,
     "name": "Mantis",
     "lootTableKeys": ["sw4Mantis"],
-    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptKeys": ["default", "SetRandomElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],

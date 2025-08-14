@@ -5,7 +5,7 @@
     "aggroRange": 12,
     "name": "Viper",
     "lootTableKeys": ["sw4Vipers"],
-    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptKeys": ["default", "SetRandomElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],

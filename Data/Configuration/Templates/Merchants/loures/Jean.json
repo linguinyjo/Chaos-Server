@@ -7,7 +7,7 @@
     "scriptKeys": ["showdialog", "verbalShop", "defaultBehaviors"],
     "scriptVars": {
         "showdialog": {
-            "dialogKey": ""
+            "dialogKey": "jean_initial"
         }
     },
     "skillsToTeach": [],

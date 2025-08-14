@@ -6,8 +6,24 @@
       "itemTemplateKey": "mold"
     },
     {
-      "dropChance": 0.25,
+      "dropChance": 0.03,
       "itemTemplateKey": "rottenApple"
+    },
+    {
+      "dropChance": 0.03,
+      "itemTemplateKey": "rottenGrapes"
+    },
+    {
+      "dropChance": 0.03,
+      "itemTemplateKey": "rottenTomato"
+    },
+    {
+      "dropChance": 0.03,
+      "itemTemplateKey": "rottenCherry"
+    },
+    {
+      "dropChance": 0.03,
+      "itemTemplateKey": "mouldyBaguette"
     }
   ]
 }

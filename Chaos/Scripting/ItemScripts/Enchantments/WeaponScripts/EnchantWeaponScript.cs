@@ -4,7 +4,7 @@ using Chaos.Models.Panel;
 using Chaos.Models.Templates;
 using Chaos.Scripting.ItemScripts.Abstractions;
 
-namespace Chaos.Scripting.ItemScripts.Enchantments;
+namespace Chaos.Scripting.ItemScripts.Enchantments.WeaponScripts;
 
 public abstract class EnchantWeaponScriptBase : ItemScriptBase, IEnchantmentScript
 {
@@ -14,11 +14,11 @@ public abstract class EnchantWeaponScriptBase : ItemScriptBase, IEnchantmentScri
     {
         { LevelCircle.One, 2 },      // Levels 1-10
         { LevelCircle.Two, 4 },      // Levels 11-40
-        { LevelCircle.Three, 6 },   // Levels 41-70
-        { LevelCircle.Four, 8 },    // Levels 71-98
-        { LevelCircle.Five, 10 },    // Levels 99+
-        { LevelCircle.Six, 12 },     // Master
-        { LevelCircle.Seven, 14 }    // Advanced Class
+        { LevelCircle.Three, 8 },   // Levels 41-70
+        { LevelCircle.Four, 12 },    // Levels 71-98
+        { LevelCircle.Five, 16 },    // Levels 99+
+        { LevelCircle.Six, 20 },     // Master
+        { LevelCircle.Seven, 30 }    // Advanced Class
     };
 
     protected EnchantWeaponScriptBase(Item subject) : base(subject)
@@ -46,7 +46,7 @@ public abstract class EnchantWeaponScriptBase : ItemScriptBase, IEnchantmentScri
     protected int CalculatePhysicalAttackBonus(Item subject)
     {
         var baseBonus = BasePhysicalAttackBonus.GetValueOrDefault(subject.LevelCircle, 4); 
-        if (EnchantLevel > 10)
+        if (EnchantLevel > 9)
         {
             baseBonus *= 2;
         }

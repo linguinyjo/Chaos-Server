@@ -7,6 +7,10 @@
     {
       "dialogKey": "generic_sellshop_initial",
       "optionText": "Sell"
+    },
+    {
+      "dialogKey": "a_little_bit_of_that_initial",
+      "optionText": "A little bit of that"
     }
   ],
   "scriptKeys": [],

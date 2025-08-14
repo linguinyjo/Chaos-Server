@@ -1,7 +1,7 @@
 {
   "learningRequirements": {
     "itemRequirements": [],
-    "requiredGold": 150000,
+    "requiredGold": 100000,
     "requiredStats": {
       "con": 3,
       "dex": 12,
@@ -14,7 +14,7 @@
   },
   "spellType": "Targeted",
   "castLines": 3,
-  "description": "Applies a blind to the target\n\nGold required: 150000\nItems required: \nLocation: Mileth Black Magic Master",
+  "description": "Applies a blind to the target\n\nGold required: 100000\nItems required: \nLocation: Mileth Black Magic Master",
   "name": "dall",
   "level": 41,
   "class": "enchanter",

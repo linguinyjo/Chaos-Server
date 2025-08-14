@@ -1,7 +1,7 @@
 {
   "learningRequirements": {
     "itemRequirements": [],
-    "requiredGold": 5000,
+    "requiredGold": 10000,
     "requiredStats": {
       "con": 3,
       "dex": 5,
@@ -15,7 +15,7 @@
   "spellType": "Targeted",
   "castLines": 3,
   "class": "Wizard",
-  "description": "Puts the enemy to sleep for 8 seconds. The skill/spell that breaks it deals double damage. \n\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
+  "description": "Puts the enemy to sleep for 10 seconds. The skill/spell that breaks it deals double damage. \n\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
   "level": 11,
   "name": "beag pramh",
   "spellCategory": "Debuff",

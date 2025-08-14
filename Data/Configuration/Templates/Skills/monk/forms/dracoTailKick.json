@@ -29,11 +29,11 @@
             "range": 1,
             "shape": "allAround",
             "excludeSourcePoint": true,
-            "damageStatMultiplier": 5,
-            "baseDamage": 50,
+            "damageStatMultiplier": 8,
+            "baseDamage": 75,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "PAtkMultiplier": 50,
-            "levelUpRate": "fast"
+            "levelUpRate": "medium"
         }
     },
     "templateKey": "dracoTailKick"

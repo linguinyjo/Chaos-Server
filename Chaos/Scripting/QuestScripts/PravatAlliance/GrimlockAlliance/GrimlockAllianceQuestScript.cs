@@ -8,41 +8,39 @@ namespace Chaos.Scripting.QuestScripts.PravatAlliance.GrimlockAlliance;
 public class GrimlockAllianceQuestScript: DialogScriptBase
 {
     private readonly Dialog Dialog;
-    private readonly IEffectFactory EffectFactory;
-
     
     /// <inheritdoc />
-    public GrimlockAllianceQuestScript(Dialog subject, IEffectFactory effectFactory)
+    public GrimlockAllianceQuestScript(Dialog subject)
         : base(subject)
     {
         Dialog = subject;
-        EffectFactory = effectFactory;
     }
 
     /// <inheritdoc />
     public override void OnDisplaying(Aisling source)
     {
-        if (source.StatSheet.Level >= 50) return;
+        if (source.StatSheet.Level is >= 41 or < 21) return;
         var questStatus = GrimlockAllianceQuestHelper.GetQuestStatus(source);
-        switch (questStatus)
+        if (questStatus != GrimlockAllianceQuestStatus.Started) return;
+        Subject.AddOption("I have some here", "grimlock_i_have_some_here");
+        if (Subject.Template.TemplateKey != "grimlock_i_have_some_here") return;
+        
+        var count = source.Inventory.CountOfByTemplateKey("conixStone");
+        if (count <= 0)
         {
-            case GrimlockAllianceQuestStatus.Started:
-                var hasGemstones = source.Inventory.HasCountByTemplateKey("redGemstone", 10);
-                if (hasGemstones)
-                {
-                    GrimlockAllianceQuestHelper.CompleteQuest(source);
-                    source.Inventory.RemoveQuantityByTemplateKey("redgemstone", 10);
-                    Dialog.Reply(
-                        source, 
-                        "Yes... you return with the gemstones... and the putrid stench of goblin blood! You've proven yourself capable, surface dweller. The Grimlocks acknowledge your strength.", 
-                        "grimlock_alliance_completed");
-                }
-                break;
-            case GrimlockAllianceQuestStatus.Completed:
-                var effect = EffectFactory.Create("grimlocksBlessingBuff");
-                source.Effects.Apply(source, effect);
-                break;
+            Dialog.Reply(
+                source, 
+                "You return to me empty handed?", 
+                "close");
+            return;
         }
+        var expReward = count * 5000;
+        source.Inventory.RemoveQuantityByTemplateKey("conixStone", count);
+        source.GiveExperience(expReward);
+        Dialog.Reply(
+            source, 
+            "Ah yes, these will do just fine. I can feel them raidating with power.", 
+            "grimlock_alliance_completed");
     }
 
     public override void OnDisplayed(Aisling source) {}
@@ -50,14 +48,7 @@ public class GrimlockAllianceQuestScript: DialogScriptBase
     public override void OnNext(Aisling source, byte? optionIndex = null)
     {
         var questStatus = GrimlockAllianceQuestHelper.GetQuestStatus(source);
-        switch (questStatus)
-        {
-            case GrimlockAllianceQuestStatus.None:
-                if (optionIndex is 1 && GrimlockAllianceQuestHelper.IsQuestAvailable(source))
-                {
-                    GrimlockAllianceQuestHelper.StartQuest(source);
-                }
-                break;
-        }
+        if (optionIndex is not 1 || !GrimlockAllianceQuestHelper.IsQuestAvailable(source)) return;
+        if (questStatus == GrimlockAllianceQuestStatus.None) GrimlockAllianceQuestHelper.StartQuest(source);
     }
 }

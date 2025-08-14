@@ -1,5 +1,5 @@
 {
-    "buyCost": 100000,
+    "buyCost": 60000,
     "category": "Sword",
     "color": "Forest",
     "displaySprite": 10,
@@ -15,7 +15,7 @@
         "physicalAttack": 62,
         "maximumMp": -750
     },
-    "sellValue": 50000,
+    "sellValue": 30000,
     "weight": 10,
     "description": "Class: warrior\nLevel: 11\nP.Atk 62",
     "name": "Templar",

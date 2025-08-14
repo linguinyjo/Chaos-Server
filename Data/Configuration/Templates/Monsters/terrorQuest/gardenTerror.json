@@ -5,7 +5,7 @@
     "aggroRange": 14,
     "name": "Garden Terror",
     "lootTableKeys": [],
-    "scriptKeys": ["default", "setMonsterElement", "terrorOnKill"],
+    "scriptKeys": ["default", "SetRandomElement", "terrorOnKill"],
     "scriptVars": {
         "terrorOnKill": {
             "destination": "enchantedGarden:(10, 14)"

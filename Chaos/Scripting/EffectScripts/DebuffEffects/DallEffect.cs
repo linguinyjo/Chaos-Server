@@ -34,7 +34,7 @@ public class DallEffect : ContinuousAnimationEffectBase
     
     public override void OnApplied()
     {
-        Subject.SetVision(VisionType.TrueBlind);
+        Subject.SetVision(VisionType.Blind);
         base.OnApplied();
     }
 

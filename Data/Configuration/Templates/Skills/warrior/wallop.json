@@ -7,7 +7,7 @@
                 "itemTemplateKey": "bramble"
             }
         ],
-        "requiredGold": 150000,
+        "requiredGold": 50000,
         "requiredStats": {
             "con": 32,
             "dex": 12,
@@ -18,7 +18,7 @@
         "prerequisiteSkills": [],
         "prerequisiteSpells": []
     },
-    "description": "A fourth assail.\n\nGold required: 150000\nItems required: Bramble \nLocation: Mileth Combat Skill Master",
+    "description": "A fourth assail.\n\nGold required: 50000\nItems required: Bramble \nLocation: Mileth Combat Skill Master",
     "level": 41,
     "levelsUp": true,
     "name": "Wallop",

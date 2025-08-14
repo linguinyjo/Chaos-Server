@@ -17,24 +17,8 @@ public class PhailinScript:  DialogScriptBase
     /// <inheritdoc />
     public override void OnDisplaying(Aisling source)
     {
-        if (GoblinAllianceQuestHelper.GetQuestStatus(source) == GoblinAllianceQuestStatus.Completed)
-        {
-            Subject.Reply(source, "Filthy, traitorous scum! Leave here before my guards slay you where you stand.");
-        }
-        if (source.StatSheet.Level >= 50) return;
-        var questStatus = GrimlockAllianceQuestHelper.GetQuestStatus(source);
-        switch (questStatus)
-        {
-            case GrimlockAllianceQuestStatus.None:
-                Subject.AddOption("Grimlock alliance", "grimlock_alliance_1");
-                break;
-            case GrimlockAllianceQuestStatus.Started:
-                Subject.AddOption("Grimlock alliance", "grimlock_alliance_gemstones_1");
-                break;
-            case GrimlockAllianceQuestStatus.Completed:
-                Subject.AddOption("Grimlock alliance", "grimlock_alliance_buff");
-                break;
-        }
+        if (source.StatSheet.Level >= 41) return;
+        Subject.AddOption("Conix stones", "grimlock_conix_stones_1");
     }
     
     public override void OnDisplayed(Aisling source) {}

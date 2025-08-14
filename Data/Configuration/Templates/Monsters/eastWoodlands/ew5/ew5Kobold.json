@@ -7,7 +7,7 @@
     "minGoldDrop": 100,
     "name": "Kobold",
     "lootTableKeys": ["ew5Kobolds"],
-    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptKeys": ["default", "SetRandomElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],

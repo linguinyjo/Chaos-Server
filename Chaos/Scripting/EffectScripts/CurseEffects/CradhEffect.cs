@@ -31,7 +31,7 @@ public class CradhEffect : EffectBase,
     /// <inheritdoc />
     public override string Name => "Cradh";
 
-    private const int AcDeduction = 25;
+    private const int AcDeduction = 30;
 
     public override void OnTerminated()
     {

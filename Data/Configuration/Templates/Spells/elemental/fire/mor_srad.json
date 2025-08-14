@@ -8,7 +8,7 @@
             "con": 6,
             "dex": 3
         },
-        "requiredGold": 5000,
+        "requiredGold": 50000,
         "prerequisiteSkills": [],
         "prerequisiteSpells": []
     },

@@ -33,7 +33,7 @@
             "sound": 24,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "minSoundIntervalMs": 900,
-            "baseDamage": 30,
+            "baseDamage": 50,
             "damageStatMultiplier": 2,
             "animation": {
                 "targetAnimation": 9,

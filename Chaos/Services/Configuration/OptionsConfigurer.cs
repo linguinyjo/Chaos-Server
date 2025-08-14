@@ -13,6 +13,7 @@ using Chaos.Scripting.ItemScripts.Enchantments.ArmorScripts;
 using Chaos.Scripting.ItemScripts.Enchantments.EarthScripts;
 using Chaos.Scripting.ItemScripts.Enchantments.FireScripts;
 using Chaos.Scripting.ItemScripts.Enchantments.SeaScripts;
+using Chaos.Scripting.ItemScripts.Enchantments.WeaponScripts;
 using Chaos.Scripting.ItemScripts.Enchantments.WindScripts;
 using Chaos.Services.Servers.Options;
 using Chaos.Services.Storage.Options;

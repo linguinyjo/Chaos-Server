@@ -19,16 +19,12 @@ public class DarScript:  DialogScriptBase
     /// <inheritdoc />
     public override void OnDisplaying(Aisling source)
     {
+        Subject.AddOption("Dark things", "dar_dark_things_initial");
         var trainingQuestStatus = TrainingQuestHelper.GetQuestStatus(source);
         if (trainingQuestStatus is TrainingQuestStatus.SpokenToVorlof or TrainingQuestStatus.SpokenToDar)
         {
-            AddTrainingQuestOption();
+            Subject.AddOption("Training quest", "dar_training_quest");
         } 
-    }
-    
-    private void AddTrainingQuestOption()
-    {
-        Subject.AddOption("Training quest", "dar_training_quest");
     }
     
     public override void OnDisplayed(Aisling source) {}

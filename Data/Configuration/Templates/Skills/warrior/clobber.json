@@ -7,7 +7,7 @@
                 "itemTemplateKey": "battleSword"
             }
         ],
-        "requiredGold": 50000,
+        "requiredGold": 25000,
         "requiredStats": {
             "con": 14,
             "dex": 8,

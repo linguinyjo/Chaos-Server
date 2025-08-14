@@ -8,5 +8,12 @@
     },
     "shouldBlockPathfinding": true,
     "source": "(9, 6)"
+  },
+
+  {
+    "scriptKeys": ["intoTheMazeReactorTile"],
+    "scriptVars": {},
+    "shouldBlockPathfinding": true,
+    "source": "(6, 8)"
   }
 ]

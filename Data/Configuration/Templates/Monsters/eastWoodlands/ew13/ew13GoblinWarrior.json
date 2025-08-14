@@ -7,7 +7,7 @@
     "minGoldDrop": 250,
     "name": "Goblin Warrior",
     "lootTableKeys": ["ew10GoblinWarriors"],
-    "scriptKeys": ["default", "setMonsterElement","GoblinArmorDrop"],
+    "scriptKeys": ["default", "SetRandomElement","GoblinArmorDrop"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],

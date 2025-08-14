@@ -17,7 +17,7 @@
   "class": "enchanter",
   "description": "Puts the enemy to sleep for 15 seconds. The skill/spell that breaks it deals double damage.\n\nGold required: 150000\nItems required: \nLocation: Mileth Black Magic Master",
   "level": 71,
-  "name": "pramh",
+  "name": "mor pramh",
   "spellCategory": "Debuff",
   "panelSprite": 90,
   "scriptKeys": [
@@ -33,5 +33,5 @@
       "filter": "hostileOnly, aliveOnly"
     }
   },
-  "templateKey": "pramh"
+  "templateKey": "mor_pramh"
 }

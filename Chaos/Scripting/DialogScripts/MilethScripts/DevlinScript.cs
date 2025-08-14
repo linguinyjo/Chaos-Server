@@ -30,17 +30,6 @@ public class DevlinScript:  DialogScriptBase
             Subject.AddOption("Devlin's ingredients", "devlins_ingredients_quest_a");
         }
     }
-
-    private void HandleNonPeasantDisplay()
-    {
-        // Maybe add some options here, e.g., where to hunt
-        Console.WriteLine("Quest completed and already accepted path");
-    }
-
-    private void HandlePeasantDisplay(Aisling source)
-    {
-        
-    }
     
     public override void OnDisplayed(Aisling source) {}
 

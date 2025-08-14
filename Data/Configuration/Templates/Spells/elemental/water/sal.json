@@ -8,7 +8,7 @@
             "str": 4,
             "wis": 14
         },
-        "requiredGold": 5000,
+        "requiredGold": 10000,
         "prerequisiteSkills": [],
         "prerequisiteSpells": []
     },
@@ -33,7 +33,7 @@
             "sound": 24,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "minSoundIntervalMs": 900,
-            "baseDamage": 75,
+            "baseDamage": 150,
             "damageStatMultiplier": 3,
             "animation": {
                 "targetAnimation": 10,

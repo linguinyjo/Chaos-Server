@@ -5,7 +5,7 @@
     "aggroRange": 10,
     "name": "Anemone",
     "lootTableKeys": ["pdAnemones"],
-    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptKeys": ["default", "SetRandomElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],

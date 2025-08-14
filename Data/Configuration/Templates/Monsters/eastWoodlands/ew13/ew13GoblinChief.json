@@ -7,7 +7,7 @@
     "minGoldDrop": 10000,
     "name": "Goblin Chief",
     "lootTableKeys": ["ew13GoblinChiefs"],
-    "scriptKeys": ["default", "setMonsterElement", "GeneralOnKill"],
+    "scriptKeys": ["default", "SetRandomElement", "GeneralOnKill"],
     "scriptVars": {
         "GeneralOnKill": {
             "itemTemplateKey": "goblinChiefHeart"

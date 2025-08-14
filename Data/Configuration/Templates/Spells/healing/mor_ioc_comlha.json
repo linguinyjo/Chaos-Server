@@ -2,7 +2,7 @@
   "castLines": 2,
   "learningRequirements": {
     "itemRequirements": [],
-    "requiredGold": 50000,
+    "requiredGold": 200000,
     "requiredStats": {
       "con": 3,
       "dex": 3,
@@ -16,7 +16,7 @@
   "spellType": "NoTarget",
   "spellCategory": "Heal",
   "class": "Bishop",
-  "description": "Applies a moderate heal to your group.\n\nGold required: 50000\nItems required: \nLocation: Mileth White Magic Master",
+  "description": "Applies a large heal to your group.\n\nGold required: 200000\nItems required: \nLocation: Mileth White Magic Master",
   "level": 71,
   "name": "mor ioc comlha",
   "cooldownMs": 5000,

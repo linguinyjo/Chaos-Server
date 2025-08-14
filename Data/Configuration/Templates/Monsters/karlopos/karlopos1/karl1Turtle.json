@@ -5,7 +5,7 @@
     "aggroRange": 12,
     "name": "Turtle",
     "lootTableKeys": ["karl1Turtles"],
-    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptKeys": ["default", "SetRandomElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],

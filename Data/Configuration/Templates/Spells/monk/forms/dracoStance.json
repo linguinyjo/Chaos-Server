@@ -2,7 +2,7 @@
     "isAssail": false,
     "learningRequirements": {
         "itemRequirements": [],
-        "requiredGold": 100000,
+        "requiredGold": 25000,
         "requiredStats": {
             "str": 12,
             "int": 4,

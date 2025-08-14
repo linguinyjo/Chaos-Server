@@ -10,6 +10,10 @@
             "itemTemplateKey": "enchantArmorScroll2nd"
         },
         {
+            "dropChance": 0.15,
+            "itemTemplateKey": "conixStone"
+        },
+        {
             "dropChance": 0.007,
             "itemTemplateKey": "reinforcedLeatherGreaves"
         },

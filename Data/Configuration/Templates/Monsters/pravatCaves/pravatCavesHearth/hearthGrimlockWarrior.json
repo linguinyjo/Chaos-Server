@@ -7,7 +7,7 @@
     "minGoldDrop": 200,
     "name": "Grimlock Warrior",
     "lootTableKeys": ["pravatGrimlockWarriors"],
-    "scriptKeys": ["default", "setMonsterElement", "GoblinAllianceKill"],
+    "scriptKeys": ["default", "SetRandomElement", "GoblinAllianceKill"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],

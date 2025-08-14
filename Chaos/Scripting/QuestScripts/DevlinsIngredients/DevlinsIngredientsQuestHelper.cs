@@ -14,7 +14,7 @@ public static class DevlinsIngredientsQuestHelper
 
     public static bool IsQuestAvailable(Aisling player)
     {
-        return player.HasClass(BaseClass.Peasant) && GetQuestStatus(player) != DevlinsIngredientsQuestStatus.Completed;
+        return player.StatSheet.Level > 3 && GetQuestStatus(player) != DevlinsIngredientsQuestStatus.Completed;
     }
     
     public static void IncrementQuestStage(Aisling player)

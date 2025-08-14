@@ -68,13 +68,13 @@ public static class TerrorQuestHelper
         switch (GetQuestStatus(player))
         {
             case TerrorQuestStatus.GardenSlain:
-                player.GiveExperience(20000);
+                player.GiveExperience(25000);
                 break;
             case TerrorQuestStatus.AlleySlain:
-                player.GiveExperience(40000);
+                player.GiveExperience(50000);
                 break;
             case TerrorQuestStatus.CryptSlain:
-                player.GiveExperience(75000);
+                player.GiveExperience(100000);
                 break;
             case TerrorQuestStatus.None:
             case TerrorQuestStatus.GardenStarted:

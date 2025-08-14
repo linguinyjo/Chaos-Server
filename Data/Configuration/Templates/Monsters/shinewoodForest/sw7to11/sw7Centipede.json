@@ -5,7 +5,7 @@
     "aggroRange": 14,
     "name": "Centipede",
     "lootTableKeys": ["sw7Centipedes"],
-    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptKeys": ["default", "SetRandomElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],

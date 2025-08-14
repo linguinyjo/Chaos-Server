@@ -25,8 +25,24 @@
         "result": "Completed"
     },
     {
+        "title": "A little bit of that",
+        "summary": "Speak to Cian in Mileth's magic shop\nRepeatable",
+        "rewards": "Gold",
+        "qualifyingCircles": ["one", "two"],
+        "id": "aLittleBitOfThat",
+        "result": "Completed"
+    },
+    {
+        "title": "Dark things",
+        "summary": "Speak to Dar in Mileth\nRepeatable every 12 hours",
+        "rewards": "Experience",
+        "qualifyingCircles": ["one", "two", "three", "four"],
+        "id": "darkThings",
+        "result": "Completed"
+    },
+    {
         "title": "Devlin's Ingredients",
-        "summary": "Speak to Devlin the white magic master in Mileth",
+        "summary": "Speak to Devlin the white magic master in Mileth\nLevel 4+",
         "rewards": "Gold and experience",
         "qualifyingCircles": ["one", "two", "three", "four"],
         "id": "devlinsIngredients",
@@ -34,7 +50,7 @@
     },
     {
         "title": "A Journey to Suomi",
-        "summary": "Speak to Oona in Mileth's restaurant. She's in need of some help.",
+        "summary": "Speak to Oona in Mileth's restaurant. She's in need of some help.\nLevel 4+",
         "rewards": "Gold and experience",
         "qualifyingCircles": ["one", "two", "three", "four"],
         "id": "aJourneyToSuomi",
@@ -42,15 +58,23 @@
     },
     {
         "title": "The Beggar's Terror",
-        "summary": "Speak with the beggar in Mileth's tavern. \nLevel requirement: 11-41",
+        "summary": "Speak with the beggar in Mileth's tavern. \nLevel 11-40",
         "rewards": "Experience",
         "qualifyingCircles": ["two"],
         "id": "terrorOfTheBeggar",
         "result": "Completed"
     },
     {
+        "title": "From the Heart",
+        "summary": "Speak with Marlin in the jails of Loures Castle. \nLevel 11-40",
+        "rewards": "Experience",
+        "qualifyingCircles": ["two"],
+        "id": "fromTheHeart",
+        "result": "Completed"
+    },
+    {
         "title": "Porte Forest",
-        "summary": "Speak with Goran in Suomi.\nLevel requirement: 21-41",
+        "summary": "Speak with Goran in Suomi.\nLevel 21-40",
         "rewards": "Experience or Tristar Ring",
         "qualifyingCircles": ["two"],
         "id": "porteForest",
@@ -65,19 +89,11 @@
         "result": "Completed"
     },
     {
-        "title": "Alliance with the grimlocks",
-        "summary": "Speak with Phailin\nLevel requirement: 21-50\nYou may only pick one alliance",
-        "rewards": "Experience and grimlocks blessing",
-        "qualifyingCircles": ["two", "three"],
-        "id": "grimlockAlliance",
-        "result": "Completed"
-    },
-    {
-        "title": "Alliance with the goblins",
-        "summary": "Speak with Ozkan\nLevel requirement: 21-50\nYou may only pick one alliance",
-        "rewards": "Experience and goblins blessing",
-        "qualifyingCircles": ["two", "three"],
-        "id": "goblinAlliance",
+        "title": "Collecting conix stones",
+        "summary": "Speak with Phailin\nLevel 21-40",
+        "rewards": "Experience",
+        "qualifyingCircles": ["two"],
+        "id": "conixStones",
         "result": "Completed"
     }
 ]

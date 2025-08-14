@@ -4,7 +4,7 @@
     "moveIntervalMs": 1500,
     "name": "Spider",
     "lootTableKeys": ["crypt3Spiders"],
-    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptKeys": ["default", "SetRandomElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],

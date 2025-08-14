@@ -5,7 +5,7 @@
     "moveIntervalMs": 1500,
     "name": "Wolf",
     "lootTableKeys": ["ew4Wolfs"],
-    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptKeys": ["default", "SetRandomElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],

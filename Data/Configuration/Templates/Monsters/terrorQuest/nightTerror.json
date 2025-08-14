@@ -5,7 +5,7 @@
     "aggroRange": 14,
     "name": "Night Terror",
     "lootTableKeys": [],
-    "scriptKeys": ["default", "setMonsterElement", "terrorOnKill"],
+    "scriptKeys": ["default", "SetRandomElement", "terrorOnKill"],
     "scriptVars": {
         "terrorOnKill": {
             "destination": "abelPort:(15,53)"

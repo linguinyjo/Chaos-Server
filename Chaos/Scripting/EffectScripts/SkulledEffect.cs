@@ -54,19 +54,19 @@ public class SkulledEffect(ISimpleCache simpleCache) : ContinuousAnimationEffect
         {
             foreach (var groundItem in itemsToDrop)
             {
-                groundItem.LockToAislings(ItemLockTime);
+                groundItem.LockToAislings(ItemLockTime, AislingSubject);
             }
         }
         
         var droppedMoney = AislingSubject.TryDropGold(currentPosition, AislingSubject.Gold, out var money);
         if (droppedMoney && money != null)
         {
-            money.LockToAislings(ItemLockTime);
+            money.LockToAislings(ItemLockTime, AislingSubject);
         }
         if (itemsToDrop != null)
             foreach (var groundItem in itemsToDrop)
             {
-                groundItem.LockToAislings(ItemLockTime);
+                groundItem.LockToAislings(ItemLockTime, AislingSubject);
                 AislingSubject.Inventory.RemoveByTemplateKey(groundItem.Item.Template.TemplateKey);
             }
         var mapInstance = simpleCache.Get<MapInstance>("cthonicRoom2");
@@ -83,11 +83,5 @@ public class SkulledEffect(ISimpleCache simpleCache) : ContinuousAnimationEffect
         if (AislingSubject != null) AislingSubject.IsDead = false;
         AislingSubject?.StatSheet.SetHp(50);
         AislingSubject?.Client.SendAttributes(StatUpdateType.Vitality);
-        // AislingSubject?.Display();
-        // AislingSubject?.Animate(new Animation
-        // {
-        //     AnimationSpeed = 150,
-        //     TargetAnimation = 5
-        // });
     }
 }

@@ -5,8 +5,8 @@
     "intervalSecs": 480,
     "intervalVariancePct": 5,
     "extraLootTableKeys": [],
-    "maxAmount": 12,
-    "maxPerSpawn": 12,
+    "maxAmount": 15,
+    "maxPerSpawn": 15,
     "monsterTemplateKey": "ew13GoblinSoldier"
   },
   {
@@ -15,8 +15,8 @@
     "intervalSecs": 480,
     "intervalVariancePct": 5,
     "extraLootTableKeys": [],
-    "maxAmount": 12,
-    "maxPerSpawn": 12,
+    "maxAmount": 15,
+    "maxPerSpawn": 15,
     "monsterTemplateKey": "ew13GoblinWarrior"
   },
   {
@@ -25,15 +25,15 @@
     "intervalSecs": 480,
     "intervalVariancePct": 5,
     "extraLootTableKeys": [],
-    "maxAmount": 10,
-    "maxPerSpawn": 10,
+    "maxAmount": 12,
+    "maxPerSpawn": 12,
     "monsterTemplateKey": "ew13GoblinGuard"
   },
   {
     "blackList": [],
     "extraScriptKeys": [],
-    "intervalSecs": 86400,
-    "intervalVariancePct": 12,
+    "intervalSecs": 28800,
+    "intervalVariancePct": 50,
     "extraLootTableKeys": [],
     "maxAmount": 1,
     "maxPerSpawn": 1,

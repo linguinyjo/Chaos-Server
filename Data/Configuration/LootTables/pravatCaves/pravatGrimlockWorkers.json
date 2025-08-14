@@ -2,6 +2,10 @@
     "key": "pravatGrimlockWorkers",
     "lootDrops": [
         {
+            "dropChance": 0.15,
+            "itemTemplateKey": "conixStone"
+        },
+        {
             "dropChance": 0.01,
             "itemTemplateKey": "enchantWeaponScroll2nd"
         },

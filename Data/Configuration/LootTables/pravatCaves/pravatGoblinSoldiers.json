@@ -10,6 +10,10 @@
             "itemTemplateKey": "enchantArmorScroll2nd"
         },
         {
+            "dropChance": 0.15,
+            "itemTemplateKey": "conixStone"
+        },
+        {
             "dropChance": 0.005,
             "itemTemplateKey": "templar"
         },
@@ -22,7 +26,7 @@
             "itemTemplateKey": "magusApollo"
         },
         {
-            "dropChance": 0.06,
+            "dropChance": 0.006,
             "itemTemplateKey": "reinforcedLeatherGreaves"
         }
     ]

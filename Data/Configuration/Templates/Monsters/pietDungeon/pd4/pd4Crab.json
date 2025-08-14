@@ -5,7 +5,7 @@
     "moveIntervalMs": 1500,
     "name": "Crab",
     "lootTableKeys": ["pdCrabs"],
-    "scriptKeys": ["default", "setMonsterElement", "GreenDugonCrabOnKill"],
+    "scriptKeys": ["default", "SetRandomElement", "GreenDugonCrabOnKill"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],

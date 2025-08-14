@@ -7,7 +7,7 @@
     "maxGoldDrop": 300,
     "minGoldDrop": 100,
     "lootTableKeys": ["ew6GoblinSoldiers"],
-    "scriptKeys": ["default", "setMonsterElement","GoblinArmorDrop"],
+    "scriptKeys": ["default", "SetRandomElement","GoblinArmorDrop"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],

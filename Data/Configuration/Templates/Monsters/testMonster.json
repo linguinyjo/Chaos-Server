@@ -8,7 +8,7 @@
     "class": "Rogue",
     "name": "Grimlock Warrior",
     "lootTableKeys": ["testLoot"],
-    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptKeys": ["default", "SetRandomElement"],
     "scriptVars": {},
     "skillIntervalMs": 150000,
     "spellIntervalMs": 5000,

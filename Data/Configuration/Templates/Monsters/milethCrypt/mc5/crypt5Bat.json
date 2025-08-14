@@ -5,7 +5,7 @@
     "moveIntervalMs": 1500,
     "name": "Bat",
     "lootTableKeys": ["crypt4Bats"],
-    "scriptKeys": ["default", "setMonsterElement", "WhiteDugonBatOnKill"],
+    "scriptKeys": ["default", "SetRandomElement", "WhiteDugonBatOnKill"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],

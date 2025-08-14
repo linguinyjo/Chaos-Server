@@ -5,7 +5,7 @@
     "aggroRange": 12,
     "name": "Bee",
     "lootTableKeys": ["sw4Bees"],
-    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptKeys": ["default", "SetRandomElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],

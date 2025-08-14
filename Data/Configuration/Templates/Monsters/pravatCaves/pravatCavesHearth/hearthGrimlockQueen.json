@@ -7,7 +7,7 @@
     "minGoldDrop": 15000,
     "name": "Grimlock Queen",
     "lootTableKeys": ["pravatGrimlockQueens"],
-    "scriptKeys": ["default", "setMonsterElement", "GeneralOnKill"],
+    "scriptKeys": ["default", "SetRandomElement", "GeneralOnKill"],
     "scriptVars": {
         "GeneralOnKill": {
             "itemTemplateKey": "grimlockQueenHeart"

@@ -7,7 +7,7 @@
     "minGoldDrop": 450,
     "name": "Red Kobold",
     "lootTableKeys": ["redKobolds"],
-    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptKeys": ["default", "SetRandomElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],

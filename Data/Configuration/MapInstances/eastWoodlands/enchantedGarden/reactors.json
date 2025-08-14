@@ -29,5 +29,12 @@
         },
         "shouldBlockPathfinding": true,
         "source": "(63, 91)"
+    },
+
+    {
+        "scriptKeys": ["FaerieReactorTile"],
+        "scriptVars": {},
+        "shouldBlockPathfinding": false,
+        "source": "(80, 7)"
     }
 ]

@@ -7,7 +7,7 @@
     "maxGoldDrop": 1000,
     "minGoldDrop": 750,
     "lootTableKeys": ["silverKobolds"],
-    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptKeys": ["default", "SetRandomElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],

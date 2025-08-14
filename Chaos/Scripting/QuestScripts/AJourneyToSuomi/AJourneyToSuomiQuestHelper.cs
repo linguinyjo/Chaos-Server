@@ -18,7 +18,7 @@ public static class AJourneyToSuomiQuestHelper
     public static bool IsQuestAvailable(Aisling player)
     {
         var status = GetQuestStatus(player);
-        return player.StatSheet.Level < 41 && status != AJourneyToSuomiQuestStatus.Completed;
+        return player.StatSheet.Level > 3 && status != AJourneyToSuomiQuestStatus.Completed;
     }
     
     public static void IncrementQuestStage(Aisling player)
@@ -38,7 +38,7 @@ public static class AJourneyToSuomiQuestHelper
     {
         player.Trackers.Enums.Set(AJourneyToSuomiQuestStatus.Completed);
         player.TryGiveGold(2500);
-        player.GiveExperience(500);
+        player.GiveExperience(750);
         player.Client.SendAnimation(new Animation()
         {
             AnimationSpeed = 150,

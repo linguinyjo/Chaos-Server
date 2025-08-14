@@ -7,6 +7,6 @@
     }
   },
   "templateKey": "dar_training_quest_a",
-  "text": "Hmm... Perhaps you're not entirely useless. Let's see if you can handle a simple task. Journey to the Mileth Crypt and bring me some mold from the rats that infest that wretched place. Do try not to get yourself killed; it would be such a waste of my time.",
+  "text": "Hmm... Perhaps you're not entirely useless. Let's see if you can handle a simple task. Journey to the Mileth Crypt (x:92, y:54) and bring me some mold from the rats that infest that wretched place. \nDo try not to get yourself killed; it would be such a waste of my time.",
   "type": "Normal"
 }

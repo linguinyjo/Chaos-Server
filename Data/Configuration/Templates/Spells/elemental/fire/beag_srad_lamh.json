@@ -33,7 +33,7 @@
             "manaCost": 75,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "minSoundIntervalMs": 900,
-            "baseDamage": 15,
+            "baseDamage": 25,
             "damageStatMultiplier": 2,
             "animation": {
                 "targetAnimation": 12,

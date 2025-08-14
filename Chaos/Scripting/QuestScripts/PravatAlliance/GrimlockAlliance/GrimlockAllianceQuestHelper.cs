@@ -14,7 +14,7 @@ public static class GrimlockAllianceQuestHelper
     }
 
     public static bool IsQuestAvailable(Aisling player) =>
-        player.UserStatSheet.Level is >= 21 and < 50 && GetQuestStatus(player) == GrimlockAllianceQuestStatus.None;
+        player.UserStatSheet.Level is >= 21 and < 41 && GetQuestStatus(player) == GrimlockAllianceQuestStatus.None;
     
 
     public static void StartQuest(Aisling player)

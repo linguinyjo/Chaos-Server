@@ -4,7 +4,7 @@
     "moveIntervalMs": 1500,
     "name": "Bee",
     "lootTableKeys": ["ew4Bees"],
-    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptKeys": ["default", "SetRandomElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],

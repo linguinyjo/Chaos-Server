@@ -7,7 +7,7 @@
     "name": "Silver Floppy",
     "aggroRange": 10,
     "lootTableKeys": [],
-    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptKeys": ["default", "SetRandomElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],

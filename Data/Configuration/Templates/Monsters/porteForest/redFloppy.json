@@ -6,7 +6,7 @@
     "moveIntervalMs": 1500,
     "name": "Red Floppy",
     "lootTableKeys": [],
-    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptKeys": ["default", "SetRandomElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],

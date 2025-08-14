@@ -4,7 +4,7 @@
     "moveIntervalMs": 1500,
     "name": "Viper",
     "lootTableKeys": ["sw3Vipers"],
-    "scriptKeys": ["default", "setMonsterElement"],
+    "scriptKeys": ["default", "SetRandomElement"],
     "scriptVars": {},
     "skillIntervalMs": 1500,
     "skillTemplateKeys": ["Assail"],

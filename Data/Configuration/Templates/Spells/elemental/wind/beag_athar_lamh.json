@@ -8,7 +8,7 @@
             "con": 3,
             "dex": 12
         },
-        "requiredGold": 50000,
+        "requiredGold": 5000,
         "prerequisiteSkills": [],
         "prerequisiteSpells": []
     },
@@ -33,7 +33,7 @@
             "manaCost": 75,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "minSoundIntervalMs": 900,
-            "baseDamage": 15,
+            "baseDamage": 25,
             "damageStatMultiplier": 2,
             "animation": {
                 "targetAnimation": 15,
