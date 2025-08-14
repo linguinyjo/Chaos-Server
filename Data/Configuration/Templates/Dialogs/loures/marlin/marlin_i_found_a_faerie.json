@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "close",
+      "optionText": "I cannot help"
+    },
+    {
+      "dialogKey": "marlin_how_can_i_help",
+      "optionText": "How can I help you?"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "marlin_i_found_a_faerie",
+  "text": "My dream is true. A black hearted creature has stolen my love. Please help me find her.",
+  "type": "Menu"
+}

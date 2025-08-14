@@ -1,0 +1,9 @@
+{
+  "key": "darkMazeDunan",
+  "lootDrops": [
+    {
+      "dropChance": 0.01,
+      "itemTemplateKey": "darkBelt"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+[
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 240,
+    "intervalVariancePct": 5,
+    "extraLootTableKeys": [
+    ],
+    "maxAmount": 8,
+    "maxPerSpawn": 8,
+    "monsterTemplateKey": "darkMazeDunan"
+  }
+]

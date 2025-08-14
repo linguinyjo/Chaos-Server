@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "faerie_dance",
+      "optionText": "I'll dance with you"
+    },
+    {
+      "dialogKey": "close",
+      "optionText": "I can't"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "faerie_hello",
+  "text": "I see you watching me. Dance with me.",
+  "type": "Menu"
+}

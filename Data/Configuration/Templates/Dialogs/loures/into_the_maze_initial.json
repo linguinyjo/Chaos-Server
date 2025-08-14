@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "Close",
+      "optionText": "Resist it"
+    },
+    {
+      "dialogKey": "Close",
+      "optionText": "Feel it"
+    }
+  ],
+  "scriptKeys": ["FromTheHeartQuest"],
+  "scriptVars": {},
+  "templateKey": "into_the_maze_initial",
+  "text": "A large pulse moves beneath the stone",
+  "type": "Menu"
+}

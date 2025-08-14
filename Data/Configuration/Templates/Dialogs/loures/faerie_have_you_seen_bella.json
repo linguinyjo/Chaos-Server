@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "faerie_where_is_she_now",
+      "optionText": "Where is she now?"
+    },
+    {
+      "dialogKey": "faerie_she_danced_with_me",
+      "optionText": "What dance did you do?"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "faerie_have_you_seen_bella",
+  "text": "She danced with me.",
+  "type": "Menu"
+}

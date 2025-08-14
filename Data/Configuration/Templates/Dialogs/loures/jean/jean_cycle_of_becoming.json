@@ -1,0 +1,21 @@
+{
+  "options": [
+    {
+      "dialogKey": "jean_octave_in_years_1",
+      "optionText": "Theology of the Octave in Year"
+    },
+    {
+      "dialogKey": "jean_theology_of_the_conjuction_1",
+      "optionText": "Theology of the Conjunction"
+    },
+    {
+      "dialogKey": "jean_theology_of_the_octogram_1",
+      "optionText": "Theology of the Octogram"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "jean_cycle_of_becoming",
+  "text": "The cycle of becoming is the flow of one god into another, nominally beginning with Deoch and ending with Sgrios, although it is completely cyclical.",
+  "type": "Menu"
+}

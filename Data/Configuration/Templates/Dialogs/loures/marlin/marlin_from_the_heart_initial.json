@@ -1,0 +1,25 @@
+{
+  "options": [
+    {
+      "dialogKey": "marlin_who_is_bella",
+      "optionText": "Who is Bella?"
+    },
+    {
+      "dialogKey": "marlin_why_were_you_imprisoned_1",
+      "optionText": "Why were you imprisoned?"
+    },
+    {
+      "dialogKey": "marlin_what_dreadful_dreams",
+      "optionText": "What dreadful dreams?"
+    },
+    {
+      "dialogKey": "Close",
+      "optionText": "Thank you"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "marlin_from_the_heart_initial",
+  "text": "The tradegy of my imprisonment is that I miss Bella. Her coils of hair caught my heart years ago. It drives my dreadful dreams.",
+  "type": "Menu"
+}

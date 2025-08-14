@@ -1,0 +1,12 @@
+{
+  "scriptKeys": ["FromTheHeartQuest", "OrangeBarMessage"],
+  "scriptVars": {
+    "orangeBarMessage": {
+      "message": "He stares intently at a painting of a faerie"
+    }
+  },
+  "nextDialogKey": "close",
+  "templateKey": "jean_would_you_release_marlin",
+  "text": "I would release Marlin if Bella would bewed me. Gladly.",
+  "type": "Normal"
+}

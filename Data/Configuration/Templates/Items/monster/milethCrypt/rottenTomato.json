@@ -1,0 +1,15 @@
+{
+  "buyCost": 100,
+  "category": "misc",
+  "color": "Default",
+  "isModifiable": true,
+  "maxStacks": 50,
+  "sellValue": 50,
+  "weight": 1,
+  "description": "A rotten tomato",
+  "name": "Rotten Tomato",
+  "panelSprite": 2237,
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "rottenTomato"
+}

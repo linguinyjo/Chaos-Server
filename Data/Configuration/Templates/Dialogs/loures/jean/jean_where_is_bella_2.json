@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "jean_what_did_she_say",
+      "optionText": "What did she say?"
+    },
+    {
+      "dialogKey": "jean_do_you_love_bella",
+      "optionText": "Do you love Bella?"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "jean_where_is_bella_2",
+  "text": "She told me the silliest of things.",
+  "type": "Menu"
+}

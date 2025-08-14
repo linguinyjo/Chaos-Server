@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "close",
+  "scriptKeys": ["incrementGeneralsQuest"],
+  "scriptVars": {},
+  "templateKey": "thibault_slay_them_2",
+  "text": "Bring me proof of their defeat, and you will have the gratitude of an entire city.",
+  "type": "Normal"
+}

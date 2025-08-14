@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "marlin_i_found_a_faerie",
+      "optionText": "I found a faerie in the garden who said..."
+    },
+    {
+      "dialogKey": "marlin_i_cant_find_bella",
+      "optionText": "I can't find Bella"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "marlin_did_you_give_bella_the_letter",
+  "text": "Did you give Bella my letter?",
+  "type": "Menu"
+}

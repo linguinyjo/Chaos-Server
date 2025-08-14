@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "close",
+      "optionText": "I'll dance with you"
+    },
+    {
+      "dialogKey": "close",
+      "optionText": "I can't"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "faerie_she_danced_with_me",
+  "text": "We danced on the flower petals, light as dewdrops, to the percussion of the mantis' chomp, and the wind from the buzz of the bees.",
+  "type": "Menu"
+}

@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "marlin_where_is_bella",
+      "optionText": "Where is Bella?"
+    },
+    {
+      "dialogKey": "marlin_give_bella_the_message_1",
+      "optionText": "I will give the message to Bella"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "marlin_who_is_bella",
+  "text": "Bella is my love, from whom I am separated. My life depends on a ribbon of parchment between us. I sneak out letters to her. I have no more. But I have a message. Will you tell her something?",
+  "type": "Menu"
+}

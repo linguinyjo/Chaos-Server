@@ -1,0 +1,13 @@
+{
+  "options": [
+    {
+      "dialogKey": "dar_what_do_you_need_it_for",
+      "optionText": "What do you need it for?"
+    }
+  ],
+  "scriptKeys": ["DarkThingsQuest"],
+  "scriptVars": {},
+  "templateKey": "dar_dark_things_initial",
+  "text": "My work requires some natural ingredients from the nearby crypt. Would you be willing to help me out, I will of course compensate you for your time?",
+  "type": "Menu"
+}

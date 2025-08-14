@@ -1,0 +1,21 @@
+{
+  "options": [
+    {
+      "dialogKey": "generic_buyShop_initial",
+      "optionText": "Buy"
+    },
+    {
+      "dialogKey": "generic_sellshop_initial",
+      "optionText": "Sell"
+    },
+    {
+      "dialogKey": "jean_cycle_of_becoming",
+      "optionText": "Cycle of Becoming"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "jean_initial",
+  "text": "Hello, what can I do for you?",
+  "type": "Menu"
+}

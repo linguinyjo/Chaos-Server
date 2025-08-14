@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "marlin_councilor_jean_1",
+      "optionText": "What about the new councilor, Jean?"
+    },
+    {
+      "dialogKey": "marlin_what_is_the_conix",
+      "optionText": "What is the Conix?"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "marlin_why_were_you_imprisoned_2",
+  "text": "The Grimlock and Goblins battled over that Conix of Atavism. Cyril, the councilor of Loures, imprisoned me. Cyril is dead by horrors I dare not imagine. Jean is councilor now.",
+  "type": "Menu"
+}

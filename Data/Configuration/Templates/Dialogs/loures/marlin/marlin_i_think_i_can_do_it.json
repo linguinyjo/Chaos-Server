@@ -1,0 +1,13 @@
+{
+  "options": [
+    {
+      "dialogKey": "marlin_i_will_tell_her",
+      "optionText": "I will tell her"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "marlin_i_think_i_can_do_it",
+  "text": "There is one more thing. Will you give her an additional message?",
+  "type": "Menu"
+}

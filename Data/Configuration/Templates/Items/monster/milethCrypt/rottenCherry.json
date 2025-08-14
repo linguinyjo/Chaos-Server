@@ -1,0 +1,15 @@
+{
+  "buyCost": 100,
+  "category": "misc",
+  "color": "Default",
+  "isModifiable": true,
+  "maxStacks": 50,
+  "sellValue": 50,
+  "weight": 1,
+  "description": "",
+  "name": "Rotten Cherry",
+  "panelSprite": 42,
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "rottenCherry"
+}

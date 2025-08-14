@@ -1,0 +1,14 @@
+{
+  "scriptKeys": [
+    "OrangeBarMessage", "FromTheHeartQuest"
+  ],
+  "scriptVars": {
+    "orangeBarMessage": {
+      "message": "He nods softly"
+    }
+  },
+  "nextDialogKey": "close",
+  "templateKey": "marlin_i_will_tell_her",
+  "text": "Dear Bella, Though age claims my bones, though this cell claims my life, though poisonous thoughts claim my sanity, my heart is eternally with you.\nLove, Marlin",
+  "type": "Normal"
+}

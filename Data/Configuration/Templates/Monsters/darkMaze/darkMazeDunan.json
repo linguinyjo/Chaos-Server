@@ -1,0 +1,36 @@
+{
+    "assailIntervalMs": 1500,
+    "expReward": 821,
+    "moveIntervalMs": 1300,
+    "aggroRange": 8,
+    "name": "Dunan",
+    "lootTableKeys": ["darkMazeDunan"],
+    "scriptKeys": ["default", "SetElement"],
+    "scriptVars": {
+        "SetElement": {
+            "offense": "darkness",
+            "defense": "darkness"
+        }
+    },
+    "skillIntervalMs": 1500,
+    "skillTemplateKeys": ["Assail"],
+    "spellIntervalMs": 45000,
+    "spellTemplateKeys": ["beag_cradh"],
+    "sprite": 136,
+    "statSheet": {
+        "level": 24,
+        "ac": 45,
+        "maximumHp": 2200,
+        "maximumMp": 1000,
+        "physicalAttack": 25,
+        "magicAttack": 1,
+        "con": 20,
+        "dex": 1,
+        "int": 1,
+        "str": 30,
+        "wis": 1
+    },
+    "templateKey": "darkMazeDunan",
+    "type": "Normal",
+    "wanderIntervalMs": 2000
+}

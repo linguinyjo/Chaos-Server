@@ -1,0 +1,13 @@
+{
+  "options": [
+    {
+      "dialogKey": "jean_would_you_release_marlin",
+      "optionText": "Would you release Marlin?"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "jean_do_you_love_bella",
+  "text": "I would burn down the world for her. I would do anything for her.",
+  "type": "Menu"
+}

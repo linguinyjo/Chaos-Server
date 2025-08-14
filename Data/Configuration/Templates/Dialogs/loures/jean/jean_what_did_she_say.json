@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "jean_please_tell_me_more_1",
+      "optionText": "Please tell me more"
+    },
+    {
+      "dialogKey": "jean_where_is_bella",
+      "optionText": "Where is Bella?"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "jean_what_did_she_say",
+  "text": "She told me that on a twilight walk in the garden she met a faerie.",
+  "type": "Menu"
+}

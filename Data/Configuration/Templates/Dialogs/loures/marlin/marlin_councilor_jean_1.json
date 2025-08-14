@@ -1,0 +1,25 @@
+{
+  "options": [
+    {
+      "dialogKey": "marlin_where_is_jean",
+      "optionText": "Where is Jean?"
+    },
+    {
+      "dialogKey": "marlin_does_jean_not_care",
+      "optionText": "Does Jean not care you are imprisoned?"
+    },
+    {
+      "dialogKey": "marlin_does_jean_know_bella",
+      "optionText": "Does Jean know Bella?"
+    },
+    {
+      "dialogKey": "close",
+      "optionText": "Thank you"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "marlin_councilor_jean_1",
+  "text": "Jean, the acting councilor of Loures, is a scholar of magic. He studies the arcane of old",
+  "type": "Menu"
+}

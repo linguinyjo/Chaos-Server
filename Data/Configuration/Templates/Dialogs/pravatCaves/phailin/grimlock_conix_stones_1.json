@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "grimlock_i_want_to_help",
+      "optionText": "I want to help you"
+    },
+    {
+      "dialogKey": "grimlock_what_are_conix_stones",
+      "optionText": "What makes them precious?"
+    }
+  ],
+  "scriptKeys": ["GrimlockAllianceQuest"],
+  "scriptVars": {},
+  "templateKey": "grimlock_conix_stones_1",
+  "text": "Conix stones are a precious resource found only here. What business do you have with them?",
+  "type": "Menu"
+}

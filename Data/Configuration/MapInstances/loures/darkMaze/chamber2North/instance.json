@@ -1,0 +1,11 @@
+{
+    "flags": "None",
+    "instanceId": "chamber2North",
+    "music": 1,
+    "name": "Chamber II North",
+    "scriptKeys": [],
+    "templateKey": "4008",
+    "autoDayNightCycle": false,
+    "MaximumLevel": 41,
+    "MinimumLevel": 11
+}

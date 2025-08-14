@@ -1,0 +1,11 @@
+{
+    "flags": "None",
+    "instanceId": "heartOfStone",
+    "music": 1,
+    "name": "Heart of Stone",
+    "scriptKeys": [],
+    "templateKey": "3093",
+    "autoDayNightCycle": false,
+    "MaximumLevel": 41,
+    "MinimumLevel": 11
+}

@@ -1,0 +1,8 @@
+{
+  "nextDialogKey": "close",
+  "scriptKeys": ["ThibaultGeneralsQuest"],
+  "scriptVars": {},
+  "templateKey": "thibault_report_from_edric",
+  "text": "",
+  "type": "Normal"
+}

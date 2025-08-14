@@ -1,0 +1,8 @@
+{
+  "scriptKeys": [],
+  "scriptVars": {},
+  "nextDialogKey": "marlin_give_bella_the_message_2",
+  "templateKey": "marlin_give_bella_the_message_1",
+  "text": "Thank you, the message is:",
+  "type": "Normal"
+}

@@ -1,0 +1,27 @@
+{
+    "buyCost": 10000,
+    "category": "Belt",
+    "color": "Default",
+    "displaySprite": 246,
+    "equipmentType": "Belt",
+    "gender": "Unisex",
+    "isModifiable": false,
+    "maxDurability": 10000,
+    "maxStacks": 1,
+    "modifiers": {},
+    "level": 11,
+    "levelCircle": 2,
+    "sellValue": 5000,
+    "weight": 1,
+    "description": "Class: All\nLevel: 11\nDark defense",
+    "name": "Dark Belt",
+    "panelSprite": 246,
+    "scriptKeys": ["Equipment", "setelement"],
+    "scriptVars": {
+        "equipment": {},
+        "setelement": {
+            "defenseElement": "darkness"
+        }
+    },
+    "templateKey": "darkBelt"
+}

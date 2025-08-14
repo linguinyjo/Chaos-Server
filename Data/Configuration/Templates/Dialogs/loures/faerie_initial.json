@@ -1,0 +1,21 @@
+{
+  "options": [
+    {
+      "dialogKey": "faerie_hello",
+      "optionText": "Hello"
+    },
+    {
+      "dialogKey": "faerie_have_you_seen_bella",
+      "optionText": "Have you seen Bella?"
+    },
+    {
+      "dialogKey": "close",
+      "optionText": "Give me that scarf"
+    }
+  ],
+  "scriptKeys": ["FaerieDialog"],
+  "scriptVars": {},
+  "templateKey": "faerie_initial",
+  "text": "*peeks* Are all the mundanes away?",
+  "type": "Menu"
+}

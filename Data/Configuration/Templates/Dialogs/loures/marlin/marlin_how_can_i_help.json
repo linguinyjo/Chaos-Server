@@ -1,0 +1,21 @@
+{
+  "options": [
+    {
+      "dialogKey": "marlin_what_then_1",
+      "optionText": "What then?"
+    },
+    {
+      "dialogKey": "marlin_what_do_you_think_it_means_1",
+      "optionText": "What do you think it means?"
+    },
+    {
+      "dialogKey": "marlin_i_think_i_can_do_it",
+      "optionText": "I think i can do it"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "marlin_how_can_i_help",
+  "text": "In the same dream that began with the black winged creature swooping Bella away.",
+  "type": "Menu"
+}

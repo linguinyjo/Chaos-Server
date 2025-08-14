@@ -1,0 +1,10 @@
+{
+  "options": [
+   
+  ],
+  "scriptKeys": ["marlin"],
+  "scriptVars": {},
+  "templateKey": "marlin_initial",
+  "text": "Hello, what can I do for you?",
+  "type": "Menu"
+}

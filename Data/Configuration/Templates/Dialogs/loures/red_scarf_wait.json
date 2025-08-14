@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "faerie_initial",
+      "optionText": "Yes"
+    },
+    {
+      "dialogKey": "Close",
+      "optionText": "No"
+    }
+  ],
+  "scriptKeys": ["FromTheHeartQuest"],
+  "scriptVars": {},
+  "templateKey": "red_scarf_wait",
+  "text": "You wait but nothing appears. Set down some Faerie wine?",
+  "type": "Menu"
+}

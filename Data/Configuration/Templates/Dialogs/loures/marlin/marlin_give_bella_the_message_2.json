@@ -1,0 +1,8 @@
+{
+  "scriptKeys": ["fromTheHeartQuest"],
+  "scriptVars": {},
+  "nextDialogKey": "Close",
+  "templateKey": "marlin_give_bella_the_message_2",
+  "text": "Dear Bella, the chamber blackens. Its maze twists deeper into my mind. Each turn reveals darker creatures that I hadn't realised dwelt within. Save me from this sgriotic realm.\nYour love, Marlin.",
+  "type": "Normal"
+}

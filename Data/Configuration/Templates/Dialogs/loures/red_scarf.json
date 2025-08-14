@@ -1,0 +1,17 @@
+{
+  "options": [
+    {
+      "dialogKey": "red_scarf_wait",
+      "optionText": "Wait"
+    },
+    {
+      "dialogKey": "Close",
+      "optionText": "Take the scarf"
+    }
+  ],
+  "scriptKeys": ["redScarfDialog"],
+  "scriptVars": {},
+  "templateKey": "red_scarf",
+  "text": "You notice what appears to be part of a red silk scarf lying on the ground",
+  "type": "Menu"
+}

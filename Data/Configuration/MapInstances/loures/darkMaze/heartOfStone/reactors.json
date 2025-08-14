@@ -1,0 +1,22 @@
+[
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "loures2FloorHall:(14, 14)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(1, 7)"
+    },
+    {
+        "scriptKeys": ["warp"],
+        "scriptVars": {
+            "warp": {
+                "destination": "louresUndergroundJail:(27, 8)"
+            }
+        },
+        "shouldBlockPathfinding": true,
+        "source": "(8, 1)"
+    }
+]

@@ -1,0 +1,13 @@
+{
+  "options": [
+    {
+      "dialogKey": "a_little_bit_of_that_2",
+      "optionText": "I've got some for you"
+    }
+  ],
+  "scriptKeys": [],
+  "scriptVars": {},
+  "templateKey": "a_little_bit_of_that_initial",
+  "text": "Ah, so you're interested in helping me out are you? I'll take pretty much anything rotten you happen to find from the crypt.",
+  "type": "Menu"
+}
