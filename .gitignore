@@ -251,3 +251,8 @@ PATH.txt
 Data/Saved/
 Data/SavedBackups/
 Tests/Reports/CoverageReport/
+
+
+# .idea
+.idea/.idea.Chaos/.idea/workspace.xml
+.idea/.idea.Chaos/.idea/projectSettingsUpdater.xml
