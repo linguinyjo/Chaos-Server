@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Menu;
 using Chaos.Models.World;
 using Chaos.Scripting.DialogScripts.Abstractions;
@@ -8,14 +8,15 @@ using Chaos.Services.Factories.Abstractions;
 
 namespace Chaos.Scripting.DialogScripts;
 
-public class WaystoneSaveScript: DialogScriptBase
+public class WaystoneSaveScript : DialogScriptBase
 {
-    private readonly IDialogFactory DialogFactory;
     private readonly Dialog Dialog;
-    
+    private readonly IDialogFactory DialogFactory;
+
     /// <inheritdoc />
     public WaystoneSaveScript(Dialog subject, IDialogFactory dialogFactory)
-        : base(subject)   {
+        : base(subject)
+    {
         Dialog = subject;
         DialogFactory = dialogFactory;
     }
@@ -25,21 +26,20 @@ public class WaystoneSaveScript: DialogScriptBase
     {
     }
 
-   
 
     public override void OnDisplayed(Aisling source)
     {
         // Get waystone from args
         Subject.MenuArgs.TryGet(0, out string? waystone);
         if (waystone == null) return;
-        
+
         // Parse the string to Waystone enum
         if (!Enum.TryParse<Waystone>(waystone, out var currentWaystone))
         {
             Console.WriteLine($"Invalid waystone name: {waystone}");
             return; // Or handle the error differently
         }
-        
+
         if (source.Trackers.Flags.TryGetFlag<Waystone>(out var visitedWaystones))
         {
             if (visitedWaystones.HasFlag(currentWaystone))
@@ -67,7 +67,8 @@ public class WaystoneSaveScript: DialogScriptBase
     }
 
     public override void OnNext(Aisling source, byte? optionIndex = null)
-    {}
+    {
+    }
 
     private void HandleWaystoneNotVisited(Aisling source, Waystone currentWaystone)
     {

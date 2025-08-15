@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Common.Utilities;
 using Chaos.Extensions;
 using Chaos.Extensions.Geometry;
@@ -32,7 +32,7 @@ public struct PounceAbilityComponent : IComponent
 
     private static void Charge(IReadOnlyCollection<Creature> targets, ActivationContext context)
     {
-        foreach (var target in targets) 
+        foreach (var target in targets)
         {
             // Get the direction from the target to the player
             var directionToPlayer = target.DirectionalRelationTo(context.Source);
@@ -45,10 +45,10 @@ public struct PounceAbilityComponent : IComponent
             // Check if the point is walkable and not blocked
             if (!context.TargetMap.IsWalkable(destinationPoint, context.Source.Type) ||
                 context.TargetMap.IsBlockingReactor(destinationPoint)) continue;
-           
+
             context.Source.WarpTo(destinationPoint);
-            context.Source.Turn(context.Source.Direction); 
-            return; 
+            context.Source.Turn(context.Source.Direction);
+            return;
         }
     }
 
@@ -98,7 +98,7 @@ public struct PounceAbilityComponent : IComponent
             }
         }
     }
-    
+
     public interface IPounceComponentOptions
     {
         int? Distance { get; init; }

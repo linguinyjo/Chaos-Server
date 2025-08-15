@@ -2,6 +2,7 @@
 namespace Chaos.DarkAges.Definitions;
 
 #region Custom Stuff
+
 public enum ShardingType : byte
 {
     None,
@@ -42,9 +43,11 @@ public enum ChaosDialogType : byte
     Protected,
     CloseDialog
 }
+
 #endregion
 
 #region Misc server enums
+
 /// <summary>
 ///     A custom enum to separate server types for the purposes of redirects.
 /// </summary>
@@ -98,9 +101,11 @@ public enum MetaDataRequestType : byte
     /// </summary>
     AllCheckSums = 1
 }
+
 #endregion
 
 #region Messages
+
 /// <summary>
 ///     A byte switch as used for ServerOpCode.ServerMessage
 /// </summary>
@@ -356,9 +361,11 @@ public enum MessageColor : byte
     /// </summary>
     Invisible = 120
 }
+
 #endregion
 
 #region Legend
+
 /// <summary>
 ///     A byte representing the icon of a legend mark. Used by ServerOpCode.Profile and ServerOpCode.SelfProfile
 /// </summary>
@@ -406,9 +413,11 @@ public enum MarkColor : byte
     Brown = 160,
     Red = 248
 }
+
 #endregion
 
 #region DisplayData
+
 /// <summary>
 ///     A byte representing the color of hair and items. Used by many things.
 /// </summary>
@@ -570,9 +579,11 @@ public enum Gender : byte
     Female = 2,
     Unisex = Male | Female
 }
+
 #endregion
 
 #region Attributes
+
 /// <summary>
 ///     A byte switch used for ClientOpCode.RaiseStat
 /// </summary>
@@ -671,9 +682,11 @@ public enum StatUpdateType : byte
     Swimming = GameMasterA | GameMasterB,
     Full = Primary | Vitality | ExpGold | Secondary
 }
+
 #endregion
 
 #region Profile
+
 /// <summary>
 ///     A byte representing the 'temuair class' of an aisling. Used in many places.
 /// </summary>
@@ -685,7 +698,17 @@ public enum BaseClass : byte
     Wizard = 3,
     Priest = 4,
     Monk = 5,
-    Diacht = 255
+    Diacht = 6,
+    Champion = 7,
+    Gladiator = 8,
+    Assassin = 9,
+    Archer = 10,
+    Elementalist = 11,
+    Enchanter = 12,
+    Bishop = 13,
+    Bard = 14,
+    Druid = 15,
+    Brawler = 16,
 }
 
 /// <summary>
@@ -693,12 +716,7 @@ public enum BaseClass : byte
 /// </summary>
 public enum AdvClass : byte
 {
-    None = 0,
-    Gladiator = 1,
-    Druid = 2,
-    Archer = 3,
-    Bard = 4,
-    Summoner = 5
+    None = 0
 }
 
 /// <summary>
@@ -748,9 +766,42 @@ public enum EquipmentType : byte
     Boots,
     Accessory
 }
+
+/// <summary>
+///     A byte representing the slot of a piece of equipment. Used in many places.
+/// </summary>
+public enum WeaponCategory : byte
+{
+    None = 0,
+    Sword = 1,
+    TwoHanded = 2,
+    Bow = 3,
+    Dagger = 4,
+    Claw = 5,
+    Staff = 6,
+    Harp = 7
+}
+
+/// <summary>
+///     A byte representing the dugons available to monk.
+/// </summary>
+public enum Dugon
+{
+    None = 0,
+    White = 1,
+    Green = 2,
+    Blue = 3,
+    Yellow = 4,
+    Purple = 5,
+    Brown = 6,
+    Red = 7,
+    Black = 8
+}
+
 #endregion
 
 #region Options
+
 /// <summary>
 ///     A byte representing the social status of the user. Used by ServerOpCode.Profile, and ServerOpCode.WorldList
 /// </summary>
@@ -781,9 +832,11 @@ public enum UserOption
     Option7 = 7,
     Option8 = 8
 }
+
 #endregion
 
 #region GuI
+
 /// <summary>
 ///     A byte representing the color of a name in the world list. Used by ServerOpCode.WorldList
 /// </summary>
@@ -923,9 +976,11 @@ public enum NotepadType
     Orange = 3,
     White = 4
 }
+
 #endregion
 
 #region Skill/Spell
+
 /// <summary>
 ///     A byte representing the type of a spell. Used by ServerOpCode.AddSpellToPane
 /// </summary>
@@ -939,6 +994,22 @@ public enum SpellType : byte
     NoTarget = 5,
     Prompt2Nums = 6,
     Prompt1Num = 7
+}
+
+/// <summary>
+///     The category the spell belongs to
+/// </summary>
+public enum SpellCategory : byte
+{
+    None = 0,
+    Heal = 1,
+    Ao = 2,
+    Buff = 3,
+    Debuff = 4,
+    Song = 5,
+    Damage = 6,
+    Hide = 7,
+    Misc = 8
 }
 
 /// <summary>
@@ -1001,9 +1072,11 @@ public enum BodyAnimation : byte
     LongBowShot = 144,
     Summon = 145
 }
+
 #endregion
 
 #region Game
+
 /// <summary>
 ///     A byte switch used when receiving information about a click. Used by ClientOpCode.Click
 /// </summary>
@@ -1049,6 +1122,18 @@ public enum LevelCircle : byte
     ///     Advanced Class
     /// </summary>
     Seven = 7
+}
+
+/// <summary>
+///     All towns which can be warped to
+/// </summary>
+public enum Town : byte
+{
+    Mileth = 1,
+    Abel = 2,
+    Rucesion = 3,
+    Piet = 4,
+    Suomi = 5
 }
 
 /// <summary>
@@ -1162,4 +1247,5 @@ public enum TileFlags : byte
     Wall = 15,
     Transparent = 128
 }
+
 #endregion

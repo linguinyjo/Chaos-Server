@@ -1,5 +1,5 @@
 #region
-using Chaos.Collections.Common;
+
 using Chaos.Common.Abstractions;
 using Chaos.DarkAges.Definitions;
 using Chaos.Models.Panel;
@@ -7,6 +7,7 @@ using Chaos.Models.Templates;
 using Chaos.Scripting.Abstractions;
 using Chaos.Services.Factories.Abstractions;
 using Chaos.Storage.Abstractions;
+
 #endregion
 
 namespace Chaos.Services.Factories;
@@ -65,7 +66,8 @@ public sealed class SpellFactory(ISimpleCache simpleCache, IScriptProvider scrip
             ScriptVars = new Dictionary<string, IScriptVars>(StringComparer.OrdinalIgnoreCase),
             CastLines = 0,
             Prompt = null,
-            SpellType = SpellType.NoTarget
+            SpellType = SpellType.NoTarget,
+            SpellCategory = SpellCategory.None
         };
 
         var spell = new Spell(

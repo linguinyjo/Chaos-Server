@@ -1,4 +1,5 @@
 #region
+
 using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.Data;
@@ -11,23 +12,22 @@ using Chaos.Scripting.FunctionalScripts.ApplyDamage;
 using Chaos.Scripting.ReactorTileScripts.Abstractions;
 using Chaos.Time;
 using Chaos.Time.Abstractions;
+
 #endregion
 
 namespace Chaos.Scripting.ReactorTileScripts;
 
 public sealed class CascadingDamageTileScript : ConfigurableReactorTileScriptBase,
-                                                ICascadingTileScript,
-                                                GetCascadingTargetsAbilityComponent<Creature>.IGetCascadingTargetsComponentOptions,
-                                                DamageAbilityComponent.IDamageComponentOptions,
-                                                SoundAbilityComponent.ISoundComponentOptions,
-                                                AnimationAbilityComponent.IAnimationComponentOptions
+    ICascadingTileScript,
+    GetCascadingTargetsAbilityComponent<Creature>.IGetCascadingTargetsComponentOptions,
+    DamageAbilityComponent.IDamageComponentOptions,
+    SoundAbilityComponent.ISoundComponentOptions,
+    AnimationAbilityComponent.IAnimationComponentOptions
 {
     private readonly IIntervalTimer CascadeTimer;
     private readonly int EndingStage;
     private readonly IIntervalTimer SoundTimer;
     private readonly int StartingStage;
-    public ComponentExecutor Executor { get; init; }
-    private int Stages => Range;
 
     /// <inheritdoc />
     public CascadingDamageTileScript(ReactorTile subject)
@@ -60,6 +60,9 @@ public sealed class CascadingDamageTileScript : ConfigurableReactorTileScriptBas
         Executor = new ComponentExecutor(context, vars).WithOptions(this);
     }
 
+    private int Stages => Range;
+    public ComponentExecutor Executor { get; init; }
+
     public bool HandleStage(ComponentVars vars)
     {
         if (InvertShape)
@@ -74,7 +77,8 @@ public sealed class CascadingDamageTileScript : ConfigurableReactorTileScriptBas
             }
 
             vars.SetStage(stage);
-        } else
+        }
+        else
         {
             var stage = vars.GetStage() + 1;
 
@@ -108,10 +112,10 @@ public sealed class CascadingDamageTileScript : ConfigurableReactorTileScriptBas
         if (CascadeTimer.IntervalElapsed)
         {
             Executor.ExecuteAndCheck<GetCascadingTargetsAbilityComponent<Creature>>()
-                    ?.Execute<DamageAbilityComponent>()
-                    .Execute<AnimationAbilityComponent>()
-                    .Check(ShouldPlaySound)
-                    ?.Execute<SoundAbilityComponent>();
+                ?.Execute<DamageAbilityComponent>()
+                .Execute<AnimationAbilityComponent>()
+                .Check(ShouldPlaySound)
+                ?.Execute<SoundAbilityComponent>();
 
             //if the sound timer is elapsed, the predicate above will play the sound
             //however, we still need to reset it
@@ -124,6 +128,7 @@ public sealed class CascadingDamageTileScript : ConfigurableReactorTileScriptBas
     }
 
     #region ScriptVars
+
     public int MinSoundIntervalMs { get; init; }
     public int CascadeIntervalMs { get; init; }
 
@@ -146,9 +151,6 @@ public sealed class CascadingDamageTileScript : ConfigurableReactorTileScriptBas
     public int Range { get; init; }
 
     /// <inheritdoc />
-    public bool ExcludeSourcePoint { get; init; }
-
-    /// <inheritdoc />
     public bool MustHaveTargets { get; init; }
 
     /// <inheritdoc />
@@ -168,12 +170,13 @@ public sealed class CascadingDamageTileScript : ConfigurableReactorTileScriptBas
 
     /// <inheritdoc />
     public decimal? PctHpDamage { get; init; }
-    
+
     /// <inheritdoc />
     public decimal? PAtkMultiplier { get; init; }
 
     /// <inheritdoc />
     public bool? UseMatk { get; init; }
+
     /// <inheritdoc />
     public int? FistBonus { get; init; }
 
@@ -188,5 +191,6 @@ public sealed class CascadingDamageTileScript : ConfigurableReactorTileScriptBas
 
     /// <inheritdoc />
     public bool AnimatePoints { get; init; }
+
     #endregion
 }

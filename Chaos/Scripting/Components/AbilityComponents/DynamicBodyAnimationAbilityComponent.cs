@@ -1,4 +1,5 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Data;
 using Chaos.Scripting.Components.Abstractions;
 using Chaos.Scripting.Components.Execution;
@@ -17,10 +18,10 @@ public struct DynamicBodyAnimationAbilityComponent : IComponent
         switch (weaponType)
         {
             case not null when weaponType == WeaponCategory.Bow.ToString():
-                context.Source.AnimateBody(BodyAnimation.JumpAttack,  options.AnimationSpeed ?? 25);
+                context.Source.AnimateBody(BodyAnimation.JumpAttack, options.AnimationSpeed ?? 25);
                 break;
             case not null when weaponType == WeaponCategory.TwoHanded.ToString():
-                context.Source.AnimateBody(BodyAnimation.TwoHandAtk,  options.AnimationSpeed ?? 25);
+                context.Source.AnimateBody(BodyAnimation.TwoHandAtk, options.AnimationSpeed ?? 25);
                 break;
             default:
                 context.Source.AnimateBody(options.BodyAnimation, options.AnimationSpeed ?? 25);

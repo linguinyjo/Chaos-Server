@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.Panel;
@@ -6,34 +6,31 @@ using Chaos.Models.World;
 using Chaos.Scripting.Abstractions;
 using Chaos.Scripting.Components.AbilityComponents;
 using Chaos.Scripting.Components.Execution;
-using Chaos.Scripting.FunctionalScripts.Abstractions;
-using Chaos.Scripting.FunctionalScripts.ApplyDamage;
-using Chaos.Scripting.SkillScripts.Abstractions;
 using Chaos.Scripting.SpellScripts.Abstractions;
 
 namespace Chaos.Scripting.SpellScripts;
 
 public class SetDefenseElementScript : ConfigurableSpellScriptBase,
-                            GenericAbilityComponent<Monster>.IAbilityComponentOptions,
-                            SetDefenseElementAbilityComponent.ISetDefenseElementComponentOptions,
-                            AbilityLevellingAbilityComponent.IAbilityLevellingComponentOptions
+    GenericAbilityComponent<Monster>.IAbilityComponentOptions,
+    SetDefenseElementAbilityComponent.ISetDefenseElementComponentOptions,
+    AbilityLevellingAbilityComponent.IAbilityLevellingComponentOptions
 {
     /// <inheritdoc />
     public SetDefenseElementScript(Spell subject)
         : base(subject)
     {
-        SourceScript = this;
         IsSpell = true;
     }
 
     /// <inheritdoc />
     public override void OnUse(SpellContext context)
         => new ComponentExecutor(context).WithOptions(this)
-                                         .ExecuteAndCheck<GenericAbilityComponent<Monster>>()
-                                         ?.Execute<AbilityLevellingAbilityComponent>()
-                                         .Execute<SetDefenseElementAbilityComponent>();
+            .ExecuteAndCheck<GenericAbilityComponent<Monster>>()
+            ?.Execute<AbilityLevellingAbilityComponent>()
+            .Execute<SetDefenseElementAbilityComponent>();
 
     #region ScriptVars
+
     /// <inheritdoc />
     public AoeShape Shape { get; init; }
 
@@ -47,7 +44,7 @@ public class SetDefenseElementScript : ConfigurableSpellScriptBase,
     public int Range { get; init; }
 
     /// <inheritdoc />
-    public bool ExcludeSourcePoint { get; init; }
+    public int? ExclusionRange { get; init; }
 
     /// <inheritdoc />
     public bool MustHaveTargets { get; init; }
@@ -58,6 +55,8 @@ public class SetDefenseElementScript : ConfigurableSpellScriptBase,
     /// <inheritdoc />
     public BodyAnimation BodyAnimation { get; init; }
 
+    public bool? ScaleBodyAnimationSpeedByAttackSpeed { get; init; }
+
     /// <inheritdoc />
     public ushort? AnimationSpeed { get; init; }
 
@@ -66,11 +65,6 @@ public class SetDefenseElementScript : ConfigurableSpellScriptBase,
 
     /// <inheritdoc />
     public bool AnimatePoints { get; init; }
-    
-    /// <inheritdoc />
-    public Element Element { get; init; }
-    
-    public IScript SourceScript { get; init; }
 
     /// <inheritdoc />
     public int? ManaCost { get; init; }
@@ -80,13 +74,18 @@ public class SetDefenseElementScript : ConfigurableSpellScriptBase,
 
     /// <inheritdoc />
     public bool ShouldNotBreakHide { get; init; }
-    
+
     /// <inheritdoc />
     public AbilityLevellingRate? LevelUpRate { get; init; }
+
     public string? AbilityTemplateKey { get; init; }
     public bool? IsSpell { get; init; }
 
     /// <inheritdoc />
+    public Element Element { get; init; }
+
+    /// <inheritdoc />
     public bool CanResist { get; init; }
+
     #endregion
 }

@@ -1,6 +1,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Extensions.Common;
 using Chaos.Schemas.Content;
 using ChaosTool.Definitions;
@@ -13,15 +14,17 @@ namespace ChaosTool.Controls.LootTableControls;
 
 public sealed partial class LootTablePropertyEditor
 {
+    public LootTablePropertyEditor() => InitializeComponent();
+
     private LootTableViewModel ViewModel
         => DataContext as LootTableViewModel
            ?? throw new InvalidOperationException($"DataContext is not of type {nameof(LootTableViewModel)}");
 
-    public LootTablePropertyEditor() => InitializeComponent();
-
     #region Tbox Validation
+
     private void TemplateKeyTbox_OnTextChanged(object sender, TextChangedEventArgs e)
         => Validators.TemplateKeyMatchesFileName(KeyTbox, PathTbox);
+
     #endregion
 
     private void UserControl_Initialized(object sender, EventArgs e)
@@ -34,6 +37,7 @@ public sealed partial class LootTablePropertyEditor
     }
 
     #region Buttons
+
     private void RevertBtn_Click(object sender, RoutedEventArgs e) => ViewModel.RejectChanges();
 
     private void SaveBtn_Click(object sender, RoutedEventArgs e) => ViewModel.AcceptChanges();
@@ -47,9 +51,11 @@ public sealed partial class LootTablePropertyEditor
         ViewModel.IsDeleted = true;
         ViewModel.AcceptChanges();
     }
+
     #endregion
 
     #region LootDrops Controls
+
     private void DeleteLootDropBtn_Click(object sender, RoutedEventArgs e)
     {
         if (sender is not Button button)
@@ -61,6 +67,8 @@ public sealed partial class LootTablePropertyEditor
         ViewModel.LootDrops.Remove(lootDrop);
     }
 
-    private void AddLootDropBtn_Click(object sender, RoutedEventArgs e) => ViewModel.LootDrops.Add(new ObservableLootDrop());
+    private void AddLootDropBtn_Click(object sender, RoutedEventArgs e) =>
+        ViewModel.LootDrops.Add(new ObservableLootDrop());
+
     #endregion
 }

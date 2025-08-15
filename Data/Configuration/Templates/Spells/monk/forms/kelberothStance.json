@@ -25,7 +25,6 @@
     "scriptVars": {
         "applyEffect": {
             "bodyAnimation": "handsup",
-            "excludeSourcePoint": false,
             "sound": 8,
             "range": 2,
             "effectKey": "kelberothStance",

@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Menu;
 using Chaos.Models.World;
 using Chaos.Scripting.DialogScripts.Abstractions;
@@ -6,10 +6,10 @@ using Chaos.Services.Factories.Abstractions;
 
 namespace Chaos.Scripting.QuestScripts.AJourneyToSuomi;
 
-public class AJourneyToSuomiQuestScript:  DialogScriptBase
+public class AJourneyToSuomiQuestScript : DialogScriptBase
 {
-    private readonly IDialogFactory DialogFactory;
     private readonly Dialog Dialog;
+    private readonly IDialogFactory DialogFactory;
 
     /// <inheritdoc />
     public AJourneyToSuomiQuestScript(Dialog subject, IDialogFactory dialogFactory)
@@ -17,16 +17,17 @@ public class AJourneyToSuomiQuestScript:  DialogScriptBase
     {
         DialogFactory = dialogFactory;
         Dialog = subject;
-    } 
+    }
 
     /// <inheritdoc />
     public override void OnDisplaying(Aisling source)
     {
         var questStatus = AJourneyToSuomiQuestHelper.GetQuestStatus(source);
-        if (questStatus is AJourneyToSuomiQuestStatus.FetchFruitShipment or AJourneyToSuomiQuestStatus.ReceivedFruitShipment)
+        if (questStatus is AJourneyToSuomiQuestStatus.FetchFruitShipment
+            or AJourneyToSuomiQuestStatus.ReceivedFruitShipment)
         {
             QuestHandler(source);
-        } 
+        }
     }
 
     private void QuestHandler(Aisling source)
@@ -35,7 +36,8 @@ public class AJourneyToSuomiQuestScript:  DialogScriptBase
         if (hasShipment)
         {
             var newDialog = CreateDialog(
-                text: "Oh, you're back! And with the fruit! You're a lifesaver, truly. Now I can finally get back to baking. Here's a little something for your trouble.",
+                text:
+                "Oh, you're back! And with the fruit! You're a lifesaver, truly. Now I can finally get back to baking. Here's a little something for your trouble.",
                 nextKey: "Close"
             );
             newDialog.Display(source);
@@ -45,7 +47,8 @@ public class AJourneyToSuomiQuestScript:  DialogScriptBase
         else
         {
             var newDialog = CreateDialog(
-                text: "I see you've returned, but without my shipment. Please do hurry. I can't begin service until I receive my weekly supply of fruit.",
+                text:
+                "I see you've returned, but without my shipment. Please do hurry. I can't begin service until I receive my weekly supply of fruit.",
                 nextKey: "Close"
             );
             newDialog.Display(source);
@@ -63,8 +66,10 @@ public class AJourneyToSuomiQuestScript:  DialogScriptBase
             NextDialogKey = nextKey
         };
     }
-    
-    public override void OnDisplayed(Aisling source) {}
+
+    public override void OnDisplayed(Aisling source)
+    {
+    }
 
     public override void OnNext(Aisling source, byte? optionIndex = null)
     {

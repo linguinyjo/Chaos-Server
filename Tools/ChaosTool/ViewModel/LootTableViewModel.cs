@@ -1,4 +1,5 @@
 using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Schemas.Content;
 using Chaos.Wpf.Collections.ObjectModel;
 using ChaosTool.ViewModel.Abstractions;
@@ -10,6 +11,8 @@ public sealed class LootTableViewModel : SchemaViewModelBase<LootTableSchema>
 {
     private string _key = string.Empty;
     private LootTableMode _mode;
+
+    public LootTableViewModel() => LootDrops.CollectionChanged += (_, _) => OnPropertyChanged(nameof(LootDrops));
 
     public string Key
     {
@@ -24,6 +27,4 @@ public sealed class LootTableViewModel : SchemaViewModelBase<LootTableSchema>
     }
 
     public ObservingCollection<ObservableLootDrop> LootDrops { get; } = [];
-
-    public LootTableViewModel() => LootDrops.CollectionChanged += (_, _) => OnPropertyChanged(nameof(LootDrops));
 }

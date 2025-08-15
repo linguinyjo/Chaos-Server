@@ -1,4 +1,5 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.World.Abstractions;
@@ -16,22 +17,12 @@ public sealed class OranDionach2Effect : EffectBase,
     SoundAbilityComponent.ISoundComponentOptions
 {
     /// <inheritdoc />
-    public bool AnimatePoints { get; init; }
-
-    /// <inheritdoc />
-    public Animation? Animation { get; init; } 
-
-    /// <inheritdoc />
-    public List<string> ConflictingEffectNames { get; init; } =
-        [
-            "Oran Dionach 1", "Oran Dionach 2", "Oran Dionach 3"
-        ];
-
-    /// <inheritdoc />
     protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(2);
 
+    private static int DamageReductionBuff => 25;
+
     /// <inheritdoc />
-    public bool ExcludeSourcePoint { get; init; }
+    public int? ExclusionRange { get; init; }
 
     /// <inheritdoc />
     public TargetFilter Filter { get; init; }
@@ -49,26 +40,36 @@ public sealed class OranDionach2Effect : EffectBase,
     public bool SingleTarget { get; init; } = true;
 
     /// <inheritdoc />
-    public byte? Sound { get; init; }
+    public bool AnimatePoints { get; init; }
+
+    /// <inheritdoc />
+    public Animation? Animation { get; init; }
+
+    /// <inheritdoc />
+    public List<string> ConflictingEffectNames { get; init; } =
+    [
+        "Oran Dionach 1", "Oran Dionach 2", "Oran Dionach 3"
+    ];
 
     /// <inheritdoc />
     public override byte Icon => 11;
 
     /// <inheritdoc />
     public override string Name => "Oran Dionach 2";
-    
-    private static int DamageReductionBuff => 25;
 
     public override void OnTerminated()
     {
         Subject.StatSheet.SubtractBonus(new Attributes { DamageReduction = DamageReductionBuff });
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
-    
+
     /// <inheritdoc />
     public override void OnApplied()
     {
         Subject.StatSheet.AddBonus(new Attributes { DamageReduction = DamageReductionBuff });
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
+
+    /// <inheritdoc />
+    public byte? Sound { get; init; }
 }

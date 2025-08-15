@@ -13,7 +13,7 @@
             "damageStat": "str",
             "range": 1,
             "shape": "front",
-            "excludeSourcePoint": true,
+            "exclusionRange": 0,
             "baseDamage": 0,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "PAtkMultiplier": 0

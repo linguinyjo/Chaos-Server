@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Menu;
 using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
@@ -7,7 +7,7 @@ using Chaos.Services.Factories.Abstractions;
 
 namespace Chaos.Scripting.QuestScripts.PorteForest;
 
-public class TurucPendantScript :  ReactorTileScriptBase
+public class TurucPendantScript : ReactorTileScriptBase
 {
     private readonly IDialogFactory DialogFactory;
     private readonly IItemFactory ItemFactory;
@@ -23,11 +23,11 @@ public class TurucPendantScript :  ReactorTileScriptBase
     public override void OnWalkedOn(Creature source)
     {
         if (source is not Aisling aisling) return;
-        
+
         var questStatus = PorteForestQuestHelper.GetQuestStatus(aisling);
         if (questStatus != PorteForestQuestStatus.DeliveredTheRoots) return;
         DisplayDialog(aisling);
-               
+
         var item = ItemFactory.Create("turucPendant");
         var pendantAcquired = aisling.Inventory.TryAddToNextSlot(item);
         if (pendantAcquired)
@@ -35,7 +35,7 @@ public class TurucPendantScript :  ReactorTileScriptBase
             source.Trackers.Enums.Set(PorteForestQuestStatus.FoundThePendant);
         }
     }
-    
+
     private void DisplayDialog(Aisling source)
     {
         var newDialog = new Dialog(

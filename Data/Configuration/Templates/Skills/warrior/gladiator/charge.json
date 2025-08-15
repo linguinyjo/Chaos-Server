@@ -25,7 +25,7 @@
         "pounce": {
             "range": 4,
             "shape": "front",
-            "excludeSourcePoint": true,
+            "exclusionRange": 0,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "distance": 4,
             "withAmbush": false
@@ -36,7 +36,7 @@
             "damageStat": "str",
             "range": 1,
             "shape": "front",
-            "excludeSourcePoint": true,
+            "exclusionRange": 0,
             "damageStatMultiplier": 2,
             "baseDamage": 20,
             "filter": "hostileOnly, aliveOnly, othersOnly",

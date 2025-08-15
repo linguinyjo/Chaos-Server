@@ -23,7 +23,7 @@
     "scriptKeys": ["taunt", "removeEffect"],
     "scriptVars": {
         "taunt": {
-            "excludeSourcePoint": true,
+            "exclusionRange": 0,
             "bodyAnimation": "assail",
             "sound": 16,
             "range": 1,
@@ -34,7 +34,7 @@
             "levelUpRate": "veryfast"
         },
         "removeEffect": {
-            "excludeSourcePoint": true,
+            "exclusionRange": 0,
             "range": 1,
             "shape": "front",
             "effectKey": "skulled",

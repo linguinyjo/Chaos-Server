@@ -1,4 +1,5 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.World.Abstractions;
@@ -15,20 +16,13 @@ public sealed class Frenzy3BuffEffect : EffectBase,
     SoundAbilityComponent.ISoundComponentOptions
 {
     /// <inheritdoc />
-    public bool AnimatePoints { get; init; }
-
-    /// <inheritdoc />
-    public Animation? Animation { get; init; } 
-
-    /// <inheritdoc />
-    public List<string> ConflictingEffectNames { get; init; } =
-        ["frenzy 1", "frenzy 2", "frenzy 3"];
-
-    /// <inheritdoc />
     protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(5);
 
+    private int AcDebuff => 50;
+    private int DmgBuff => 30;
+
     /// <inheritdoc />
-    public bool ExcludeSourcePoint { get; init; }
+    public int? ExclusionRange { get; init; }
 
     /// <inheritdoc />
     public TargetFilter Filter { get; init; }
@@ -46,16 +40,20 @@ public sealed class Frenzy3BuffEffect : EffectBase,
     public bool SingleTarget { get; init; } = true;
 
     /// <inheritdoc />
-    public byte? Sound { get; init; }
-    
+    public bool AnimatePoints { get; init; }
+
+    /// <inheritdoc />
+    public Animation? Animation { get; init; }
+
+    /// <inheritdoc />
+    public List<string> ConflictingEffectNames { get; init; } =
+        ["frenzy 1", "frenzy 2", "frenzy 3"];
+
     /// <inheritdoc />
     public override byte Icon => 135;
 
     /// <inheritdoc />
     public override string Name => "frenzy 3";
-    
-    private int AcDebuff => 50;
-    private int DmgBuff => 30;
 
     public override void OnTerminated()
     {
@@ -66,7 +64,7 @@ public sealed class Frenzy3BuffEffect : EffectBase,
         });
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
-    
+
     /// <inheritdoc />
     public override void OnApplied()
     {
@@ -77,4 +75,7 @@ public sealed class Frenzy3BuffEffect : EffectBase,
         });
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
+
+    /// <inheritdoc />
+    public byte? Sound { get; init; }
 }

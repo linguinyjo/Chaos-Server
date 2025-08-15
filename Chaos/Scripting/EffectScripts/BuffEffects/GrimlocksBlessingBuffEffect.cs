@@ -1,4 +1,5 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.World.Abstractions;
@@ -16,23 +17,12 @@ public sealed class GrimlocksBlessingBuffEffect : EffectBase,
     SoundAbilityComponent.ISoundComponentOptions
 {
     /// <inheritdoc />
-    public bool AnimatePoints { get; init; }
-
-    /// <inheritdoc />
-    public Animation? Animation { get; init; } = new Animation()
-    {
-        AnimationSpeed = 150,
-        TargetAnimation = 21
-    };
-
-    /// <inheritdoc />
-    public List<string> ConflictingEffectNames { get; init; } = [];
-
-    /// <inheritdoc />
     protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(30);
 
+    private static int DamageBuff => 15;
+
     /// <inheritdoc />
-    public bool ExcludeSourcePoint { get; init; }
+    public int? ExclusionRange { get; init; }
 
     /// <inheritdoc />
     public TargetFilter Filter { get; init; }
@@ -50,26 +40,37 @@ public sealed class GrimlocksBlessingBuffEffect : EffectBase,
     public bool SingleTarget { get; init; } = true;
 
     /// <inheritdoc />
-    public byte? Sound { get; init; } = 31;
+    public bool AnimatePoints { get; init; }
+
+    /// <inheritdoc />
+    public Animation? Animation { get; init; } = new Animation()
+    {
+        AnimationSpeed = 150,
+        TargetAnimation = 21
+    };
+
+    /// <inheritdoc />
+    public List<string> ConflictingEffectNames { get; init; } = [];
 
     /// <inheritdoc />
     public override byte Icon => 127;
 
     /// <inheritdoc />
     public override string Name => "Grimlocks blessing";
-    
-    private static int DamageBuff => 15;
 
     public override void OnTerminated()
     {
         Subject.StatSheet.SubtractBonus(new Attributes { Dmg = DamageBuff });
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
-    
+
     /// <inheritdoc />
     public override void OnApplied()
     {
         Subject.StatSheet.AddBonus(new Attributes { Dmg = DamageBuff });
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
+
+    /// <inheritdoc />
+    public byte? Sound { get; init; } = 31;
 }

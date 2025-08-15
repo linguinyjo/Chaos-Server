@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Common.Utilities;
 using Chaos.Models.Data;
 using Chaos.Models.World;
@@ -25,13 +25,12 @@ public struct TauntAbilityComponent : IComponent
                 case Aisling aisling:
                     break;
                 case Monster monster:
-                    monster.AggroList.AddOrUpdate(context.Source.Id, _ => 
-                        options.Enmity, (_, currentAggro) => currentAggro + options.Enmity);
+                    monster.AggroList.AddAggro(context.Source, options.Enmity);
                     break;
             }
         }
     }
-    
+
     public interface ITauntComponentOptions
     {
         int Enmity { get; init; }

@@ -26,7 +26,7 @@
             "range": 4,
             "shape": "front",
             "singleTarget": true,
-            "excludeSourcePoint": true,
+            "exclusionRange": 0,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "levelUpRate": "veryfast"
         }

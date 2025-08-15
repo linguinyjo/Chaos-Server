@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Menu;
 using Chaos.Models.World;
 using Chaos.Scripting.DialogScripts.Abstractions;
@@ -6,17 +6,18 @@ using Chaos.Services.Factories.Abstractions;
 
 namespace Chaos.Scripting.QuestScripts.TrainingQuest;
 
-public class DarTrainingQuestScript:  DialogScriptBase
+public class DarTrainingQuestScript : DialogScriptBase
 {
-    private readonly IDialogFactory DialogFactory;
     private readonly Dialog Dialog;
+    private readonly IDialogFactory DialogFactory;
 
     /// <inheritdoc />
     public DarTrainingQuestScript(Dialog subject, IDialogFactory dialogFactory)
-        : base(subject) {
+        : base(subject)
+    {
         DialogFactory = dialogFactory;
         Dialog = subject;
-    } 
+    }
 
     /// <inheritdoc />
     public override void OnDisplaying(Aisling source)
@@ -31,7 +32,7 @@ public class DarTrainingQuestScript:  DialogScriptBase
                 source,
                 "Well, well... You've actually managed to collect the mold. I must admit, I'm mildly impressed. Perhaps there's a flicker of potential in you after all. Go back and tell Vorlof that you have succeeded in doing as I have asked.",
                 "Close"
-                );
+            );
             source.Inventory.RemoveQuantity("mold", 1);
             source.GiveExperience(350);
             TrainingQuestHelper.IncrementQuestStage(source);
@@ -50,7 +51,11 @@ public class DarTrainingQuestScript:  DialogScriptBase
         }
     }
 
-    public override void OnDisplayed(Aisling source) {}
+    public override void OnDisplayed(Aisling source)
+    {
+    }
 
-    public override void OnNext(Aisling source, byte? optionIndex = null) {}
+    public override void OnNext(Aisling source, byte? optionIndex = null)
+    {
+    }
 }

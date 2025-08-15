@@ -2,7 +2,6 @@ using System.Collections.Immutable;
 using Chaos.DarkAges.Definitions;
 using Chaos.Extensions;
 using Chaos.Formulae.Abstractions;
-using Chaos.Models.Data;
 using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
 using Chaos.Scripting.Abstractions;
@@ -36,7 +35,7 @@ public class DefaultDamageFormula : IDamageFormula
         /*      Undead*/   new[] { 2.32m, 0.50m, 0.83m,  0.83m, 1.88m, 0.93m, 0.83m,     0.58m, 0.76m,  0.58m }.ToImmutableArray() 
         // @formatter:on
     }.ToImmutableArray();
-    
+
     /// <inheritdoc />
     public int Calculate(
         Creature source,
@@ -51,34 +50,37 @@ public class DefaultDamageFormula : IDamageFormula
 
         ApplyAcModifier(ref damage, defenderAc);
         ApplyElementalModifier(
-            damage: ref damage, 
-            attackElement: elementOverride ?? source.StatSheet.OffenseElement, 
-            defenseElement: target.StatSheet.DefenseElement, 
+            damage: ref damage,
+            attackElement: elementOverride ?? source.StatSheet.OffenseElement,
+            defenseElement: target.StatSheet.DefenseElement,
             multiplier: target.StatSheet.EffectiveElementalMultiplier);
 
         return damage;
     }
 
-    protected virtual void ApplyAcModifier(ref int damage, int defenderAc) => damage = Convert.ToInt32(damage * (1 + defenderAc / 100m));
+    protected virtual void ApplyAcModifier(ref int damage, int defenderAc) =>
+        damage = Convert.ToInt32(damage * (1 + defenderAc / 100m));
 
     protected virtual void ApplyElementalModifier(ref int damage, Element attackElement, Element defenseElement)
         => damage = Convert.ToInt32(damage * ElementalModifierLookup[(int)attackElement][(int)defenseElement]);
 
-    protected virtual void ApplyElementalModifier(ref int damage, Element attackElement, Element defenseElement, int multiplier)
+    protected virtual void ApplyElementalModifier(ref int damage, Element attackElement, Element defenseElement,
+        int multiplier)
     {
         var baseMultiplier = ElementalModifierLookup[(int)attackElement][(int)defenseElement];
         var percentageMultiplier = multiplier / 100m;
         if (multiplier > 0)
         {
             var isStrong = baseMultiplier > 1.0m;
-            baseMultiplier = isStrong 
-                ? baseMultiplier + percentageMultiplier 
+            baseMultiplier = isStrong
+                ? baseMultiplier + percentageMultiplier
                 : baseMultiplier - percentageMultiplier;
             baseMultiplier = Math.Max(baseMultiplier, 0m); // Prevent negative multipliers
         }
+
         damage = Convert.ToInt32(damage * baseMultiplier);
     }
-    
+
     protected virtual void ApplySkillSpellModifier(ref int damage, IScript source, Creature attacker)
     {
         switch (source)
@@ -120,6 +122,7 @@ public class DefaultDamageFormula : IDamageFormula
                 aisling.UserStatSheet.EffectiveAc,
                 WorldOptions.Instance.MinimumAislingAc,
                 WorldOptions.Instance.MaximumAislingAc),
-            _ => Math.Clamp(defender.StatSheet.EffectiveAc, WorldOptions.Instance.MinimumMonsterAc, WorldOptions.Instance.MaximumMonsterAc)
+            _ => Math.Clamp(defender.StatSheet.EffectiveAc, WorldOptions.Instance.MinimumMonsterAc,
+                WorldOptions.Instance.MaximumMonsterAc)
         };
 }

@@ -1,4 +1,5 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Data;
 using Chaos.Scripting.Components.EffectComponents;
 using Chaos.Scripting.EffectScripts.Abstractions;
@@ -10,6 +11,8 @@ namespace Chaos.Scripting.EffectScripts.PoisonEffects;
 public class BeagPoisonEffect : ContinuousAnimationEffectBase,
     NonOverwritableEffectComponent.INonOverwritableEffectComponentOptions
 {
+    private const int DamagePerTick = 30;
+
     /// <inheritdoc />
     protected override TimeSpan Duration { get; set; } = TimeSpan.FromSeconds(8);
 
@@ -20,6 +23,12 @@ public class BeagPoisonEffect : ContinuousAnimationEffectBase,
         TargetAnimation = 247
     };
 
+    /// <inheritdoc />
+    protected override IIntervalTimer AnimationInterval { get; } = new IntervalTimer(TimeSpan.FromMilliseconds(1500));
+
+    /// <inheritdoc />
+    protected override IIntervalTimer Interval { get; } = new IntervalTimer(TimeSpan.FromMilliseconds(1000));
+
     public List<string> ConflictingEffectNames { get; init; } =
     [
         "beag poison",
@@ -28,23 +37,14 @@ public class BeagPoisonEffect : ContinuousAnimationEffectBase,
     ];
 
     /// <inheritdoc />
-    protected override IIntervalTimer AnimationInterval { get; } = new IntervalTimer(TimeSpan.FromMilliseconds(1500));
-
-    /// <inheritdoc />
-    protected override IIntervalTimer Interval { get; } = new IntervalTimer(TimeSpan.FromMilliseconds(1000));
-
-    /// <inheritdoc />
     public override byte Icon => 35;
 
     /// <inheritdoc />
     public override string Name => "beag poison";
 
-    private const int DamagePerTick = 30;
-    
     /// <inheritdoc />
     protected override void OnIntervalElapsed()
     {
-
         if (Subject.StatSheet.CurrentHp <= DamagePerTick)
             return;
 

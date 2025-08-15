@@ -14,7 +14,7 @@
             "damageStat": "dex",
             "range": 3,
             "shape": "front",
-            "excludeSourcePoint": true,
+            "exclusionRange": 0,
             "singleTarget": false,
             "damageStatMultiplier": 0.5,
             "baseDamage": 3,

@@ -1,4 +1,5 @@
 #region
+
 using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Extensions;
@@ -14,22 +15,19 @@ using Chaos.Scripting.ReactorTileScripts.Abstractions;
 using Chaos.Services.Factories.Abstractions;
 using Chaos.Time;
 using Chaos.Time.Abstractions;
+
 #endregion
 
 namespace Chaos.Scripting.ReactorTileScripts;
 
 public class TrapScript : ConfigurableReactorTileScriptBase,
-                          GetTargetsAbilityComponent<Creature>.IGetTargetsComponentOptions,
-                          SoundAbilityComponent.ISoundComponentOptions,
-                          AnimationAbilityComponent.IAnimationComponentOptions,
-                          DamageAbilityComponent.IDamageComponentOptions,
-                          ManaDrainAbilityComponent.IManaDrainComponentOptions,
-                          ApplyEffectAbilityComponent.IApplyEffectComponentOptions
+    GetTargetsAbilityComponent<Creature>.IGetTargetsComponentOptions,
+    SoundAbilityComponent.ISoundComponentOptions,
+    AnimationAbilityComponent.IAnimationComponentOptions,
+    DamageAbilityComponent.IDamageComponentOptions,
+    ManaDrainAbilityComponent.IManaDrainComponentOptions,
+    ApplyEffectAbilityComponent.IApplyEffectComponentOptions
 {
-    protected Creature Owner { get; set; }
-    protected IIntervalTimer? Timer { get; set; }
-    protected int TriggerCount { get; set; }
-
     /// <inheritdoc />
     public TrapScript(ReactorTile subject, IEffectFactory effectFactory)
         : base(subject)
@@ -49,6 +47,10 @@ public class TrapScript : ConfigurableReactorTileScriptBase,
         ApplyDamageScript.DamageFormula = DamageFormulae.PureDamage;
     }
 
+    protected Creature Owner { get; set; }
+    protected IIntervalTimer? Timer { get; set; }
+    protected int TriggerCount { get; set; }
+
     /// <inheritdoc />
     public override void OnWalkedOn(Creature source)
     {
@@ -57,12 +59,12 @@ public class TrapScript : ConfigurableReactorTileScriptBase,
             return;
 
         var executed = new ComponentExecutor(Owner, source).WithOptions(this)
-                                                           .ExecuteAndCheck<GetTargetsAbilityComponent<Creature>>()
-                                                           ?.Execute<SoundAbilityComponent>()
-                                                           .Execute<AnimationAbilityComponent>()
-                                                           .Execute<DamageAbilityComponent>()
-                                                           .Execute<ManaDrainAbilityComponent>()
-                                                           .Execute<ApplyEffectAbilityComponent>()
+                           .ExecuteAndCheck<GetTargetsAbilityComponent<Creature>>()
+                           ?.Execute<SoundAbilityComponent>()
+                           .Execute<AnimationAbilityComponent>()
+                           .Execute<DamageAbilityComponent>()
+                           .Execute<ManaDrainAbilityComponent>()
+                           .Execute<ApplyEffectAbilityComponent>()
                        != null;
 
         if (executed && MaxTriggers.HasValue)
@@ -89,6 +91,7 @@ public class TrapScript : ConfigurableReactorTileScriptBase,
     }
 
     #region ScriptVars
+
     /// <inheritdoc />
     public TimeSpan? EffectDurationOverride { get; init; }
 
@@ -111,11 +114,12 @@ public class TrapScript : ConfigurableReactorTileScriptBase,
     public Stat? DamageStat { get; init; }
     public decimal? DamageStatMultiplier { get; init; }
     public decimal? PctHpDamage { get; init; }
-    public IScript SourceScript { get; init; }
+
     /// <inheritdoc />
     public decimal? PAtkMultiplier { get; init; }
 
     public bool? UseMatk { get; init; }
+
     /// <inheritdoc />
     public int? FistBonus { get; init; }
 
@@ -127,5 +131,6 @@ public class TrapScript : ConfigurableReactorTileScriptBase,
     public string? EffectKey { get; init; }
     public int? ManaDrain { get; init; }
     public decimal PctManaDrain { get; init; }
+
     #endregion
 }

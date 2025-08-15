@@ -25,7 +25,7 @@
         "applyEffect": {
             "bodyAnimation": 1,
             "sound": 1,
-            "excludeSourcePoint": true,
+            "exclusionRange": 0,
             "range": 1,
             "shape": "front",
             "effectKey": "beagSuain",

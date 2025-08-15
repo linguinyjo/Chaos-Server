@@ -1,5 +1,6 @@
 using Chaos.DarkAges.Definitions;
 using Chaos.Networking.Abstractions.Definitions;
+using SpellType = Chaos.DarkAges.Definitions.SpellType;
 
 namespace Chaos.Networking.Entities.Server;
 
@@ -43,7 +44,7 @@ public sealed record SpellInfo
     ///     The sprite of the spell icon
     /// </summary>
     public ushort Sprite { get; set; }
-    
+
     /// <summary>
     ///     The category the spell belongs to
     /// </summary>

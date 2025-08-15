@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Extensions;
 using Chaos.Extensions.Common;
 using Chaos.MetaData.ItemMetaData;
@@ -17,7 +17,7 @@ public class SeaOffensePrefixScript : ItemScriptBase, IEnchantmentScript
         : base(subject)
     {
         Subject.Prefix = "Sea";
-        if(subject.ScriptKeys.Contains("SetSeaOffense")) return;
+        if (subject.ScriptKeys.Contains("SetSeaOffense")) return;
         subject.AddScript<SetSeaOffenseScript>();
     }
 

@@ -1,5 +1,4 @@
-using Chaos.Common.Definitions;
-using Chaos.Common.Utilities;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.World;
 using Chaos.Scripting.MonsterScripts.Abstractions;
 
@@ -27,10 +26,11 @@ public class SetElementScript : ConfigurableMonsterScriptBase
     {
         return Enum.TryParse<Element>(elementName, true, out var element) ? element : Element.None;
     }
-    
+
     #region ScriptVars
+
     public string? Offense { get; init; }
     public string? Defense { get; init; }
-    #endregion
 
+    #endregion
 }

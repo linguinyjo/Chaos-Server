@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Menu;
 using Chaos.Models.World;
 using Chaos.Scripting.DialogScripts.Abstractions;
@@ -8,12 +8,12 @@ namespace Chaos.Scripting.DialogScripts.MonkFormScripts;
 
 public abstract class MonkFormScriptBase : DialogScriptBase
 {
-    protected readonly IDialogFactory DialogFactory;
+    private const int GoldRequiremnent = 100000;
     protected readonly Dialog Dialog;
+    protected readonly IDialogFactory DialogFactory;
     protected readonly ISkillFactory SkillFactory;
     protected readonly ISpellFactory SpellFactory;
-    private const int GoldRequiremnent = 100000;
-    
+
     protected MonkFormScriptBase(
         Dialog subject,
         IDialogFactory dialogFactory,
@@ -25,6 +25,15 @@ public abstract class MonkFormScriptBase : DialogScriptBase
         SkillFactory = skillFactory;
         SpellFactory = spellFactory;
     }
+
+    protected abstract MonkFormType FormType { get; }
+    protected abstract string StanceSpellKey { get; }
+    protected abstract string SkillKey { get; }
+    protected abstract byte RequiredStr { get; }
+    protected abstract byte RequiredInt { get; }
+    protected abstract byte RequiredWis { get; }
+    protected abstract byte RequiredCon { get; }
+    protected abstract byte RequiredDex { get; }
 
     public override void OnDisplaying(Aisling source)
     {
@@ -78,6 +87,7 @@ public abstract class MonkFormScriptBase : DialogScriptBase
             source.SkillBook.RemoveByTemplateKey(StanceSpellKey);
             return false;
         }
+
         source.Trackers.Enums.Set(FormType);
         return true;
     }
@@ -107,7 +117,7 @@ public abstract class MonkFormScriptBase : DialogScriptBase
         };
         dialog.Display(source);
     }
-    
+
     private void ShowSpellBookFullDialog(Aisling source)
     {
         var dialog = new Dialog(
@@ -134,17 +144,13 @@ public abstract class MonkFormScriptBase : DialogScriptBase
         dialog.Display(source);
     }
 
-    public override void OnDisplayed(Aisling source) { }
-    public override void OnNext(Aisling source, byte? optionIndex = null) { }
+    public override void OnDisplayed(Aisling source)
+    {
+    }
 
-    protected abstract MonkFormType FormType { get; }
-    protected abstract string StanceSpellKey { get; }
-    protected abstract string SkillKey { get; }
-    protected abstract byte RequiredStr { get; }
-    protected abstract byte RequiredInt { get; }
-    protected abstract byte RequiredWis { get; }
-    protected abstract byte RequiredCon { get; }
-    protected abstract byte RequiredDex { get; }
+    public override void OnNext(Aisling source, byte? optionIndex = null)
+    {
+    }
 }
 
 public enum MonkFormType

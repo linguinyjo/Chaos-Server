@@ -1,6 +1,5 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Data;
-using Chaos.Models.World.Abstractions;
 using Chaos.Scripting.Components.Abstractions;
 using Chaos.Scripting.Components.Execution;
 
@@ -10,19 +9,17 @@ public struct IdentifyAbilityComponent : IComponent
 {
     private const int LineWidth = 52;
     private const string ColorPrefix = "{=";
-    private const int LeftColumnWidth = 26; 
-    
+    private const int LeftColumnWidth = 26;
+
     /// <inheritdoc />
     public void Execute(ActivationContext context, ComponentVars vars)
     {
-       
-        
     }
 
     private static string FormatColor(string text, MessageColor color)
     {
         if (color == MessageColor.Default) return text;
-        
+
         var colorCode = (char)color;
         return $"{ColorPrefix}{colorCode}{text}";
     }
@@ -31,16 +28,16 @@ public struct IdentifyAbilityComponent : IComponent
     {
         if (color == MessageColor.Default)
             return text;
-    
+
         var colorCode = (char)color;
         return $"{{={colorCode}{text}";
     }
 
     private static string FormatTwoColumns(
-        string leftLabel, 
-        string leftValue, 
-        string rightLabel, 
-        string rightValue, 
+        string leftLabel,
+        string leftValue,
+        string rightLabel,
+        string rightValue,
         MessageColor leftValueColor = MessageColor.White,
         MessageColor rightValueColor = MessageColor.White,
         MessageColor labelColor = MessageColor.Orange)
@@ -50,8 +47,8 @@ public struct IdentifyAbilityComponent : IComponent
         var rightContent = $"{rightLabel}: {rightValue}";
 
         // Truncate or pad left column
-        leftContent = leftContent.Length > LeftColumnWidth ? 
-            string.Concat(leftContent.AsSpan(0, LeftColumnWidth - 3), "...") 
+        leftContent = leftContent.Length > LeftColumnWidth
+            ? string.Concat(leftContent.AsSpan(0, LeftColumnWidth - 3), "...")
             : leftContent.PadRight(LeftColumnWidth);
 
         // Truncate right column if needed
@@ -60,6 +57,7 @@ public struct IdentifyAbilityComponent : IComponent
         {
             rightContent = string.Concat(rightContent.AsSpan(0, rightMaxWidth - 3), "...");
         }
+
         var coloredLeft = ApplyColors(leftContent, labelColor, leftValueColor);
         var coloredRight = ApplyColors(rightContent, labelColor, rightValueColor);
 
@@ -87,7 +85,7 @@ public struct IdentifyAbilityComponent : IComponent
             Element.Earth => MessageColor.DarkGreen,
             Element.Holy => MessageColor.HotPink,
             Element.Darkness => MessageColor.Black,
-            _ => MessageColor.White 
+            _ => MessageColor.White
         };
     }
 }

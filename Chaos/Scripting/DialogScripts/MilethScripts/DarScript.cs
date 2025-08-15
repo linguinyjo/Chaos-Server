@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Menu;
 using Chaos.Models.World;
 using Chaos.Scripting.DialogScripts.Abstractions;
@@ -8,10 +8,10 @@ using Chaos.Services.Factories.Abstractions;
 
 namespace Chaos.Scripting.DialogScripts.MilethScripts;
 
-public class DarScript:  DialogScriptBase
+public class DarScript : DialogScriptBase
 {
     private readonly IDialogFactory DialogFactory;
-    
+
     /// <inheritdoc />
     public DarScript(Dialog subject, IDialogFactory dialogFactory)
         : base(subject) => DialogFactory = dialogFactory;
@@ -24,10 +24,14 @@ public class DarScript:  DialogScriptBase
         if (trainingQuestStatus is TrainingQuestStatus.SpokenToVorlof or TrainingQuestStatus.SpokenToDar)
         {
             Subject.AddOption("Training quest", "dar_training_quest");
-        } 
+        }
     }
-    
-    public override void OnDisplayed(Aisling source) {}
 
-    public override void OnNext(Aisling source, byte? optionIndex = null) {}
+    public override void OnDisplayed(Aisling source)
+    {
+    }
+
+    public override void OnNext(Aisling source, byte? optionIndex = null)
+    {
+    }
 }

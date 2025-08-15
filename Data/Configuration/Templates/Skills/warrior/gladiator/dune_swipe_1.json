@@ -28,7 +28,7 @@
             "damageStat": "str",
             "range": 1,
             "shape": "allAround",
-            "excludeSourcePoint": true,
+            "exclusionRange": 0,
             "damageStatMultiplier": 3,
             "baseDamage": 50,
             "filter": "hostileOnly, aliveOnly, othersOnly",

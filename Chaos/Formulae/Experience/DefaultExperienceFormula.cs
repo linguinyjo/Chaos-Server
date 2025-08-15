@@ -1,7 +1,9 @@
 #region
+
 using Chaos.Formulae.Abstractions;
 using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
+
 #endregion
 
 namespace Chaos.Formulae.Experience;
@@ -20,17 +22,14 @@ public class DefaultExperienceFormula : IExperienceFormula
                 var partyLevelDifferenceDeductions = GetPartyLevelDifferenceDeductions(aislings);
                 var monsterLevelDeductions = GetMonsterLevelDifferenceDeductions(aislings, monster);
 
-                if (monsterLevelDeductions == decimal.MaxValue)
-                {
-                    return 1;
-                }
-
                 var groupMultiplier = Math.Max(0, 1 - (groupSizeDeductions + partyLevelDifferenceDeductions));
                 var monsterLevelMultiplier = Math.Max(0, 1 - monsterLevelDeductions);
 
-                return Convert.ToInt64(monster.Experience * groupMultiplier * monsterLevelMultiplier);
+                var experience = Convert.ToInt64(monster.Experience * groupMultiplier * monsterLevelMultiplier);
+                return Math.Max(1, experience);
         }
-        return 0;
+
+        return 1;
     }
 
     protected virtual decimal GetGroupSizeDeductions(ICollection<Aisling> group)
@@ -67,7 +66,7 @@ public class DefaultExperienceFormula : IExperienceFormula
             <= 5 => 0,
             6 => 0.25m,
             7 => 0.50m,
-            _ => decimal.MaxValue
+            _ => 1.0m
         };
     }
 

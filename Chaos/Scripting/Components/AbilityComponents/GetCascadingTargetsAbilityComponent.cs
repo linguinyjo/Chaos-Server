@@ -1,4 +1,5 @@
 #region
+
 using Chaos.Definitions;
 using Chaos.Extensions;
 using Chaos.Extensions.Geometry;
@@ -7,11 +8,12 @@ using Chaos.Models.Data;
 using Chaos.Models.World.Abstractions;
 using Chaos.Scripting.Components.Abstractions;
 using Chaos.Scripting.Components.Execution;
+
 #endregion
 
 namespace Chaos.Scripting.Components.AbilityComponents;
 
-public struct GetCascadingTargetsAbilityComponent<TEntity> : IConditionalComponent where TEntity: MapEntity
+public struct GetCascadingTargetsAbilityComponent<TEntity> : IConditionalComponent where TEntity : MapEntity
 {
     /// <inheritdoc />
     public bool Execute(ActivationContext context, ComponentVars vars)
@@ -38,11 +40,13 @@ public struct GetCascadingTargetsAbilityComponent<TEntity> : IConditionalCompone
             if (options.IgnoreWalls)
                 allPoints = tempAllPoints.ToList();
             else
-                allPoints = tempAllPoints.FilterByLineOfSight(context.SnapshotSourcePoint, context.TargetMap, options.InvertShape)
-                                         .ToList();
+                allPoints = tempAllPoints
+                    .FilterByLineOfSight(context.SnapshotSourcePoint, context.TargetMap, options.InvertShape)
+                    .ToList();
 
             vars.SetAllPoints(allPoints);
-        } else
+        }
+        else
             allPoints = vars.GetAllPoints();
 
         var cascadingAoeOptions = CreateOptions(
@@ -53,13 +57,13 @@ public struct GetCascadingTargetsAbilityComponent<TEntity> : IConditionalCompone
 
         //get the slice of points for the current stage
         var stagePoints = options.Shape
-                                 .ResolvePointsForRange(cascadingAoeOptions)
-                                 .ToList();
+            .ResolvePointsForRange(cascadingAoeOptions)
+            .ToList();
 
         var targetEntities = context.TargetMap
-                                    .GetEntitiesAtPoints<TEntity>(stagePoints)
-                                    .WithFilter(context.Source, options.Filter)
-                                    .ToList();
+            .GetEntitiesAtPoints<TEntity>(stagePoints)
+            .WithFilter(context.Source, options.Filter)
+            .ToList();
 
         //set the points and targets for the current stage
         vars.SetPoints(stagePoints);
@@ -70,7 +74,8 @@ public struct GetCascadingTargetsAbilityComponent<TEntity> : IConditionalCompone
 
     private AoeShapeOptions CreateOptions(ActivationContext context, IGetCascadingTargetsComponentOptions options)
     {
-        var direction = context.SnapshotTargetDirection ?? context.SnapshotTargetPoint.DirectionalRelationTo(context.SnapshotSourcePoint);
+        var direction = context.SnapshotTargetDirection ??
+                        context.SnapshotTargetPoint.DirectionalRelationTo(context.SnapshotSourcePoint);
 
         if (direction == Direction.Invalid)
             direction = context.SnapshotSourceDirection;
@@ -90,7 +95,8 @@ public struct GetCascadingTargetsAbilityComponent<TEntity> : IConditionalCompone
         int stage,
         List<Point> allPoints)
     {
-        var direction = context.SnapshotTargetDirection ?? context.SnapshotTargetPoint.DirectionalRelationTo(context.SnapshotSourcePoint);
+        var direction = context.SnapshotTargetDirection ??
+                        context.SnapshotTargetPoint.DirectionalRelationTo(context.SnapshotSourcePoint);
 
         if (direction == Direction.Invalid)
             direction = context.SnapshotSourceDirection;
@@ -107,7 +113,6 @@ public struct GetCascadingTargetsAbilityComponent<TEntity> : IConditionalCompone
 
     public interface IGetCascadingTargetsComponentOptions
     {
-        bool ExcludeSourcePoint { get; init; }
         int? ExclusionRange { get; init; }
         TargetFilter Filter { get; init; }
         bool IgnoreWalls { get; init; }

@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Menu;
 using Chaos.Models.World;
 using Chaos.Scripting.DialogScripts.Abstractions;
@@ -7,22 +7,23 @@ using Chaos.Services.Factories.Abstractions;
 
 namespace Chaos.Scripting.DialogScripts.suomiScripts;
 
-public class UnlearnFormScript:  DialogScriptBase
+public class UnlearnFormScript : DialogScriptBase
 {
-    private readonly IDialogFactory DialogFactory;
     private readonly Dialog Dialog;
+    private readonly IDialogFactory DialogFactory;
     private readonly ISkillFactory SkillFactory;
     private readonly ISpellFactory SpellFactory;
 
     /// <inheritdoc />
-    public UnlearnFormScript(Dialog subject, IDialogFactory dialogFactory, ISkillFactory skillFactory, ISpellFactory spellFactory)
+    public UnlearnFormScript(Dialog subject, IDialogFactory dialogFactory, ISkillFactory skillFactory,
+        ISpellFactory spellFactory)
         : base(subject)
     {
         Dialog = subject;
         DialogFactory = dialogFactory;
         SkillFactory = skillFactory;
         SpellFactory = spellFactory;
-    } 
+    }
 
     /// <inheritdoc />
     public override void OnDisplaying(Aisling source)
@@ -34,27 +35,28 @@ public class UnlearnFormScript:  DialogScriptBase
         {
             source.SpellBook.RemoveByTemplateKey("dracoStance");
             source.SkillBook.RemoveByTemplateKey("dracoTailKick");
-
         }
+
         if (formStatus == MonkFormType.Kelberoth)
         {
             source.SpellBook.RemoveByTemplateKey("kelberothStance");
             source.SkillBook.RemoveByTemplateKey("kelberothStrike");
-
         }
+
         if (formStatus == MonkFormType.Scorpion)
         {
             source.SpellBook.RemoveByTemplateKey("scorpionStance");
             source.SkillBook.RemoveByTemplateKey("poisonPunch");
         }
+
         if (formStatus == MonkFormType.WhiteBat)
         {
             source.SpellBook.RemoveByTemplateKey("whiteBatStance");
             source.SkillBook.RemoveByTemplateKey("darkSpear");
         }
-       
+
         source.Trackers.Enums.Set(MonkFormType.None);
-        
+
         var newDialog = new Dialog(
             Dialog.DialogSource,
             DialogFactory,
@@ -65,9 +67,13 @@ public class UnlearnFormScript:  DialogScriptBase
         };
         newDialog.Display(source);
     }
-    
-    
-    public override void OnDisplayed(Aisling source) {}
 
-    public override void OnNext(Aisling source, byte? optionIndex = null) {}
+
+    public override void OnDisplayed(Aisling source)
+    {
+    }
+
+    public override void OnNext(Aisling source, byte? optionIndex = null)
+    {
+    }
 }

@@ -1,4 +1,5 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.World.Abstractions;
@@ -21,22 +22,10 @@ public sealed class SolasBuffEffect : EffectBase,
     private Creature _source;
 
     /// <inheritdoc />
-    public bool AnimatePoints { get; init; }
-
-    /// <inheritdoc />
-    public Animation? Animation { get; init; } 
-
-    /// <inheritdoc />
-    public List<string> ConflictingEffectNames { get; init; } =
-        [
-            "solas",
-        ];
-
-    /// <inheritdoc />
     protected override TimeSpan Duration { get; set; } = TimeSpan.FromSeconds(60);
 
     /// <inheritdoc />
-    public bool ExcludeSourcePoint { get; init; }
+    public int? ExclusionRange { get; init; }
 
     /// <inheritdoc />
     public TargetFilter Filter { get; init; }
@@ -54,7 +43,16 @@ public sealed class SolasBuffEffect : EffectBase,
     public bool SingleTarget { get; init; } = true;
 
     /// <inheritdoc />
-    public byte? Sound { get; init; }
+    public bool AnimatePoints { get; init; }
+
+    /// <inheritdoc />
+    public Animation? Animation { get; init; }
+
+    /// <inheritdoc />
+    public List<string> ConflictingEffectNames { get; init; } =
+    [
+        "solas",
+    ];
 
     /// <inheritdoc />
     public override byte Icon => 53;
@@ -67,11 +65,12 @@ public sealed class SolasBuffEffect : EffectBase,
         Subject.StatSheet.RemoveBarrier();
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
-    
+
     /// <inheritdoc />
     public override void OnApplied()
     {
-        var barrierAmount = CalculateBarrierAmount(_source.StatSheet.EffectiveWis, Subject.StatSheet.EffectiveMaximumHp);
+        var barrierAmount =
+            CalculateBarrierAmount(_source.StatSheet.EffectiveWis, Subject.StatSheet.EffectiveMaximumHp);
         Subject.StatSheet.AddBarrier(barrierAmount);
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
@@ -82,12 +81,15 @@ public sealed class SolasBuffEffect : EffectBase,
         _source = source;
         return base.ShouldApply(source, target);
     }
-    
+
+    /// <inheritdoc />
+    public byte? Sound { get; init; }
+
     private static int CalculateBarrierAmount(int wisdom, uint maxHp)
     {
-        const float minScaling = 0.15f;  // 15% barrier at base Wisdom
-        const float maxScaling = 0.45f;  // 45% barrier at max Wisdom
-        const int maxWisdom = 200;       // Max Wisdom for full scaling
+        const float minScaling = 0.15f; // 15% barrier at base Wisdom
+        const float maxScaling = 0.45f; // 45% barrier at max Wisdom
+        const int maxWisdom = 200; // Max Wisdom for full scaling
 
         // Calculate scaling factor based on Wisdom progression
         var scalingFactor = minScaling + ((maxScaling - minScaling) * (wisdom / (float)maxWisdom));

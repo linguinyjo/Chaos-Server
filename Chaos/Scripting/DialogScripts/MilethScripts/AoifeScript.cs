@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Menu;
 using Chaos.Models.World;
 using Chaos.Scripting.DialogScripts.Abstractions;
@@ -8,17 +8,19 @@ using Chaos.Services.Factories.Abstractions;
 
 namespace Chaos.Scripting.DialogScripts.MilethScripts;
 
-public class AoifeScript:  DialogScriptBase
+public class AoifeScript : DialogScriptBase
 {
     private readonly IDialogFactory DialogFactory;
-    
-    #region ScriptVars
-    protected byte Class { get; init; }
-    #endregion
-    
+
     /// <inheritdoc />
     public AoifeScript(Dialog subject, IDialogFactory dialogFactory)
         : base(subject) => DialogFactory = dialogFactory;
+
+    #region ScriptVars
+
+    protected byte Class { get; init; }
+
+    #endregion
 
     /// <inheritdoc />
     public override void OnDisplaying(Aisling source)
@@ -29,6 +31,7 @@ public class AoifeScript:  DialogScriptBase
             HandlePeasantDisplay(source);
             return;
         }
+
         HandleNonPeasantDisplay();
     }
 
@@ -48,8 +51,12 @@ public class AoifeScript:  DialogScriptBase
             Subject.AddOption("I want to choose my path", "aoife_choose_path_help");
         }
     }
-    
-    public override void OnDisplayed(Aisling source) {}
 
-    public override void OnNext(Aisling source, byte? optionIndex = null) {}
+    public override void OnDisplayed(Aisling source)
+    {
+    }
+
+    public override void OnNext(Aisling source, byte? optionIndex = null)
+    {
+    }
 }

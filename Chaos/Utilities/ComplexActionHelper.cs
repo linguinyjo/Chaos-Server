@@ -1,11 +1,14 @@
 #region
-using Chaos.Common.Definitions;
+
+using Chaos.DarkAges.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Extensions.Common;
 using Chaos.Models.Abstractions;
 using Chaos.Models.Panel;
 using Chaos.Models.World;
 using Chaos.Services.Factories.Abstractions;
 using Chaos.TypeMapper.Abstractions;
+
 #endregion
 
 namespace Chaos.Utilities;
@@ -63,6 +66,13 @@ public static class ComplexActionHelper
         BadInput
     }
 
+    public enum RepairItemResult
+    {
+        Success,
+        BadInput,
+        NotEnoughGold
+    }
+
     public enum SellItemResult
     {
         Success,
@@ -70,13 +80,6 @@ public static class ComplexActionHelper
         TooMuchGold,
         BadInput,
         ItemDamaged
-    }
-    
-    public enum RepairItemResult
-    {
-        Success,
-        BadInput,
-        NotEnoughGold
     }
 
     public enum WithdrawGoldResult
@@ -277,15 +280,17 @@ public static class ComplexActionHelper
         ArgumentNullException.ThrowIfNull(spell);
         if (source.SpellBook.AvailableSlots == 0)
             return LearnSpellResult.NoRoom;
-        
+
         if (spellCategory == SpellCategory.Misc)
         {
-            return source.SpellBook.TryAddToNextSlot(PageType.Page3, spell) 
-                ? LearnSpellResult.Success : LearnSpellResult.NoRoom;
+            return source.SpellBook.TryAddToNextSlot(PageType.Page3, spell)
+                ? LearnSpellResult.Success
+                : LearnSpellResult.NoRoom;
         }
-        
-        return source.SpellBook.TryAddToNextSlot(spell) 
-            ? LearnSpellResult.Success : LearnSpellResult.NoRoom;
+
+        return source.SpellBook.TryAddToNextSlot(spell)
+            ? LearnSpellResult.Success
+            : LearnSpellResult.NoRoom;
     }
 
     public static RemoveManyItemsResult RemoveManyItems(
@@ -299,8 +304,8 @@ public static class ComplexActionHelper
             return RemoveManyItemsResult.Success;
 
         var groupedItems = items.GroupBy(item => item.ItemNameOrTemplateKey)
-                                .Select(group => (ItemNameOrTemplateKey: group.Key, Amount: group.Sum(item => item.Amount)))
-                                .ToList();
+            .Select(group => (ItemNameOrTemplateKey: group.Key, Amount: group.Sum(item => item.Amount)))
+            .ToList();
 
         if (groupedItems.Any(item => !source.Inventory.HasCount(item.ItemNameOrTemplateKey, item.Amount)))
             return RemoveManyItemsResult.DontHaveThatMany;
@@ -315,15 +320,15 @@ public static class ComplexActionHelper
         => RemoveManyItems(
             source,
             items.Select(item => (item.DisplayName, item.Count))
-                 .ToArray());
+                .ToArray());
 
     public static int? CalculateItemRepairCost(Item item)
     {
-        if(item.CurrentDurability == null || item.Template.MaxDurability == null) return null;
+        if (item.CurrentDurability == null || item.Template.MaxDurability == null) return null;
         return (int)Math.Round((item.Template.BuyCost * (
             1 - ((decimal)item.CurrentDurability.Value / item.Template.MaxDurability.Value)) * 0.20m));
     }
-    
+
     public static int? CalculateAllRepairCost(Aisling source)
     {
         var damagedInventoryItems = source.Inventory
@@ -341,18 +346,18 @@ public static class ComplexActionHelper
         ArgumentNullException.ThrowIfNull(source);
         var totalRepairValue = CalculateAllRepairCost(source);
         if (totalRepairValue == null) return RepairItemResult.BadInput;
-        
+
         var takeGoldResult = source.TryTakeGold(totalRepairValue.Value);
         if (!takeGoldResult) return RepairItemResult.NotEnoughGold;
-        
+
         source.Inventory
             .Where(item => item.CurrentDurability < item.Template.MaxDurability)
-            .ToList().ForEach(item => 
+            .ToList().ForEach(item =>
                 source.Inventory.Update(item.Slot, lItem => lItem.CurrentDurability = lItem.Template.MaxDurability));
-        
+
         source.Equipment
             .Where(item => item.CurrentDurability < item.Template.MaxDurability)
-            .ToList().ForEach(item => 
+            .ToList().ForEach(item =>
                 source.Equipment.Update(item.Slot, lItem => lItem.CurrentDurability = lItem.Template.MaxDurability));
 
         return RepairItemResult.Success;
@@ -365,24 +370,25 @@ public static class ComplexActionHelper
         ArgumentNullException.ThrowIfNull(source);
 
         var slotItem = source.Inventory[slot];
-        
+
         if (slotItem == null)
             return RepairItemResult.BadInput;
-        
+
         source.Inventory.TryGetObject(slot, out var item);
 
-        if (item?.Template.MaxDurability == null || item.CurrentDurability == null) return RepairItemResult.BadInput;;
+        if (item?.Template.MaxDurability == null || item.CurrentDurability == null) return RepairItemResult.BadInput;
+        ;
 
         var totalRepairValue = CalculateItemRepairCost(item);
         if (totalRepairValue == null) return RepairItemResult.BadInput;
-        
+
         var takeGoldResult = source.TryTakeGold(totalRepairValue.Value);
         if (!takeGoldResult) return RepairItemResult.NotEnoughGold;
-        
+
         source.Inventory.Update(item.Slot, lItem => lItem.CurrentDurability = item.Template.MaxDurability);
         return RepairItemResult.Success;
     }
-    
+
     public static SellItemResult SellItem(
         Aisling source,
         byte slot,

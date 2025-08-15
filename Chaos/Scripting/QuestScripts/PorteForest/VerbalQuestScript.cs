@@ -1,5 +1,5 @@
 using System.Text.RegularExpressions;
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.Menu;
 using Chaos.Models.World;
@@ -12,16 +12,17 @@ namespace Chaos.Scripting.QuestScripts.PorteForest;
 
 public class VerbalQuestScript : VerbalShopScriptBase
 {
-    private Merchant Merchant { get; set; }
     private readonly IDialogFactory DialogFactory;
-    
+
     /// <inheritdoc />
-    public VerbalQuestScript(Merchant subject, ILogger<VerbalSellShopScript> logger,  IDialogFactory dialogFactory)
+    public VerbalQuestScript(Merchant subject, ILogger<VerbalSellShopScript> logger, IDialogFactory dialogFactory)
         : base(subject, logger)
     {
         DialogFactory = dialogFactory;
         Merchant = subject;
     }
+
+    private Merchant Merchant { get; set; }
 
 
     /// <inheritdoc />
@@ -35,7 +36,7 @@ public class VerbalQuestScript : VerbalShopScriptBase
     private MessageHandler? GetMessageHandler(Aisling aisling)
     {
         var questStatus = PorteForestQuestHelper.GetQuestStatus(aisling);
-        
+
         return (Merchant.Template.TemplateKey, questStatus) switch
         {
             ("torbjorn", PorteForestQuestStatus.Started) => HandleTorbjornInitial,
@@ -46,14 +47,12 @@ public class VerbalQuestScript : VerbalShopScriptBase
         };
     }
 
-    private delegate void MessageHandler(Aisling aisling, string message);
-
     private void HandleTorbjornInitial(Aisling aisling, string message)
     {
         var porteForestMatch = FindFirstMatch(message, PorteForestRegexCache.PORTE_FOREST_PATTERNS);
         if (porteForestMatch is null) return;
 
-        DisplayDialog(aisling, 
+        DisplayDialog(aisling,
             "Well, well... I've not heard those two words spoken out loud in quite some time aisling.",
             "torbjorn_porte_a");
     }
@@ -104,4 +103,6 @@ public class VerbalQuestScript : VerbalShopScriptBase
         };
         dialog.Display(aisling);
     }
+
+    private delegate void MessageHandler(Aisling aisling, string message);
 }

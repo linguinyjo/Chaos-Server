@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.Panel;
@@ -12,23 +12,27 @@ namespace Chaos.Scripting.SpellScripts;
 
 [SuppressMessage("ReSharper", "AutoPropertyCanBeMadeGetOnly.Global")]
 public class RemoveEffectScript : ConfigurableSpellScriptBase,
-                                 GenericAbilityComponent<Creature>.IAbilityComponentOptions,
-                                 RemoveEffectAbilityComponent.IRemoveEffectComponentOptions,
-                                 AbilityLevellingAbilityComponent.IAbilityLevellingComponentOptions
+    GenericAbilityComponent<Creature>.IAbilityComponentOptions,
+    RemoveEffectAbilityComponent.IRemoveEffectComponentOptions,
+    AbilityLevellingAbilityComponent.IAbilityLevellingComponentOptions
 {
     /// <inheritdoc />
     public RemoveEffectScript(Spell subject, IEffectFactory effectFactory)
         : base(subject)
         => EffectFactory = effectFactory;
-    
+
+    public string? AbilityTemplateKey { get; init; }
+    public bool? IsSpell { get; init; }
+
     /// <inheritdoc />
     public override void OnUse(SpellContext context)
         => new ComponentExecutor(context).WithOptions(this)
-                                         .ExecuteAndCheck<GenericAbilityComponent<Creature>>()
-                                         ?.Execute<AbilityLevellingAbilityComponent>()
-                                         .Execute<RemoveEffectAbilityComponent>();
+            .ExecuteAndCheck<GenericAbilityComponent<Creature>>()
+            ?.Execute<AbilityLevellingAbilityComponent>()
+            .Execute<RemoveEffectAbilityComponent>();
 
     #region ScriptVars
+
     /// <inheritdoc />
     public bool ShouldNotBreakHide { get; init; }
 
@@ -45,7 +49,7 @@ public class RemoveEffectScript : ConfigurableSpellScriptBase,
     public int Range { get; init; }
 
     /// <inheritdoc />
-    public bool ExcludeSourcePoint { get; init; }
+    public int? ExclusionRange { get; init; }
 
     /// <inheritdoc />
     public bool MustHaveTargets { get; init; }
@@ -55,6 +59,8 @@ public class RemoveEffectScript : ConfigurableSpellScriptBase,
 
     /// <inheritdoc />
     public BodyAnimation BodyAnimation { get; init; }
+
+    public bool? ScaleBodyAnimationSpeedByAttackSpeed { get; init; }
 
     /// <inheritdoc />
     public ushort? AnimationSpeed { get; init; }
@@ -75,11 +81,11 @@ public class RemoveEffectScript : ConfigurableSpellScriptBase,
 
     /// <inheritdoc />
     public decimal PctManaCost { get; init; }
+
     /// <inheritdoc />
     public AbilityLevellingRate? LevelUpRate { get; init; }
-    public bool CanResist { get; init; }
-    #endregion
 
-    public string? AbilityTemplateKey { get; init; }
-    public bool? IsSpell { get; init; }
+    public bool CanResist { get; init; }
+
+    #endregion
 }

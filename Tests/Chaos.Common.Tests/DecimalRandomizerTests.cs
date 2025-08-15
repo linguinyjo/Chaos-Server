@@ -1,7 +1,10 @@
 #region
+
 using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Common.Utilities;
 using FluentAssertions;
+
 #endregion
 
 // ReSharper disable ArrangeAttributes
@@ -37,7 +40,7 @@ public sealed class DecimalRandomizerTests
 
         // Again, the exact number isn't too important.
         nullCount.Should()
-                 .BeInRange(1, 5000);
+            .BeInRange(1, 5000);
     }
 
     [Test]
@@ -62,7 +65,7 @@ public sealed class DecimalRandomizerTests
         // The exact number here isn't too important; the point is that we expect 
         // some null values given enough iterations, but not too many.
         nullCount.Should()
-                 .BeInRange(1, 5000);
+            .BeInRange(1, 5000);
     }
 
     [Test]
@@ -79,7 +82,7 @@ public sealed class DecimalRandomizerTests
         }
 
         success.Should()
-               .BeTrue();
+            .BeTrue();
     }
 
     [Test]
@@ -101,7 +104,8 @@ public sealed class DecimalRandomizerTests
     [Arguments(100, 0.1, 90)]
     [Arguments(100, 0.5, 50)]
     [Arguments(100, 1, 0)]
-    public void RollRange_NegativeRandomization_ReturnsWithinExpectedRange(decimal baseValue, decimal variancePct, decimal expectedMin)
+    public void RollRange_NegativeRandomization_ReturnsWithinExpectedRange(decimal baseValue, decimal variancePct,
+        decimal expectedMin)
     {
         // Repeat the test 1000 times to make sure we cover as many random values as possible
         for (var i = 0; i < 1000; i++)
@@ -109,7 +113,7 @@ public sealed class DecimalRandomizerTests
             var result = DecimalRandomizer.RollRange(baseValue, variancePct, RandomizationType.Negative);
 
             result.Should()
-                  .BeInRange(expectedMin, baseValue);
+                .BeInRange(expectedMin, baseValue);
         }
     }
 
@@ -117,7 +121,8 @@ public sealed class DecimalRandomizerTests
     [Arguments(100, 0.1, 110)]
     [Arguments(100, 0.5, 150)]
     [Arguments(100, 1, 200)]
-    public void RollRange_PositiveRandomization_ReturnsWithinExpectedRange(decimal baseValue, decimal variancePct, decimal expectedMax)
+    public void RollRange_PositiveRandomization_ReturnsWithinExpectedRange(decimal baseValue, decimal variancePct,
+        decimal expectedMax)
     {
         // Repeat the test 1000 times to make sure we cover as many random values as possible
         for (var i = 0; i < 1000; i++)
@@ -125,7 +130,7 @@ public sealed class DecimalRandomizerTests
             var result = DecimalRandomizer.RollRange(baseValue, variancePct, RandomizationType.Positive);
 
             result.Should()
-                  .BeInRange(baseValue, expectedMax);
+                .BeInRange(baseValue, expectedMax);
         }
     }
 }

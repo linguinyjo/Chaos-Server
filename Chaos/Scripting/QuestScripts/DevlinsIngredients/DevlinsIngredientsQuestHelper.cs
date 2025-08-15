@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Legend;
 using Chaos.Models.World;
 using Chaos.Time;
@@ -9,14 +9,16 @@ public static class DevlinsIngredientsQuestHelper
 {
     public static DevlinsIngredientsQuestStatus GetQuestStatus(Aisling player)
     {
-        return player.Trackers.Enums.TryGetValue<DevlinsIngredientsQuestStatus>(out var status) ? status : DevlinsIngredientsQuestStatus.None;
+        return player.Trackers.Enums.TryGetValue<DevlinsIngredientsQuestStatus>(out var status)
+            ? status
+            : DevlinsIngredientsQuestStatus.None;
     }
 
     public static bool IsQuestAvailable(Aisling player)
     {
         return player.StatSheet.Level > 3 && GetQuestStatus(player) != DevlinsIngredientsQuestStatus.Completed;
     }
-    
+
     public static void IncrementQuestStage(Aisling player)
     {
         var questStatus = GetQuestStatus(player);
@@ -24,7 +26,7 @@ public static class DevlinsIngredientsQuestHelper
         // If the quest is already completed, no further increment
         if (questStatus == DevlinsIngredientsQuestStatus.Completed)
             return;
-        
+
         // Increment to the next stage in the enum
         var nextStatus = questStatus + 1;
 
@@ -44,7 +46,7 @@ public static class DevlinsIngredientsQuestHelper
         source.Trackers.Enums.Set(DevlinsIngredientsQuestStatus.Completed);
         var legendMark = new LegendMark(
             "Brought Devlin her ingredients",
-            "devlinsIngredients", 
+            "devlinsIngredients",
             MarkIcon.Victory,
             MarkColor.White,
             1,

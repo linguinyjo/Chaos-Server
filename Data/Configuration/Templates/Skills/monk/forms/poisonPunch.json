@@ -28,14 +28,14 @@
             "damageStat": "dex",
             "range": 1,
             "shape": "front",
-            "excludeSourcePoint": true,
+            "exclusionRange": 0,
             "damageStatMultiplier": 2,
             "baseDamage": 30,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "PAtkMultiplier": 0
         },
         "applyEffect": {
-            "excludeSourcePoint": true,
+            "exclusionRange": 0,
             "range": 1,
             "shape": "front",
             "effectKey": "puinsein",

@@ -1,5 +1,5 @@
 using Chaos.Collections;
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Menu;
 using Chaos.Models.Panel;
 using Chaos.Models.World;
@@ -11,13 +11,13 @@ using Chaos.Storage.Abstractions;
 
 namespace Chaos.Scripting.QuestScripts.FromTheHeart;
 
-public class FromTheHeartQuestScript:  DialogScriptBase
+public class FromTheHeartQuestScript : DialogScriptBase
 {
-    private readonly IDialogFactory DialogFactory;
     private readonly Dialog Dialog;
+    private readonly IDialogFactory DialogFactory;
     private readonly ISimpleCache SimpleCache;
 
-    
+
     /// <inheritdoc />
     public FromTheHeartQuestScript(Dialog subject, IDialogFactory dialogFactory, ISimpleCache simpleCache)
         : base(subject)
@@ -63,7 +63,7 @@ public class FromTheHeartQuestScript:  DialogScriptBase
             source.Trackers.Enums.Set(FromTheHeartQuestStatus.SpokenToJean);
         }
     }
-    
+
     private static void HandleFaerieTemplate(Aisling source)
     {
         var questStatus = FromTheHeartQuestHelper.GetQuestStatus(source);
@@ -72,7 +72,7 @@ public class FromTheHeartQuestScript:  DialogScriptBase
             source.Trackers.Enums.Set(FromTheHeartQuestStatus.SpokenToFaerie);
         }
     }
-    
+
     private static void HandleIWillTellHerTemplate(Aisling source)
     {
         var questStatus = FromTheHeartQuestHelper.GetQuestStatus(source);
@@ -81,8 +81,10 @@ public class FromTheHeartQuestScript:  DialogScriptBase
             source.Trackers.Enums.Set(FromTheHeartQuestStatus.SpokenToMarlinAgain);
         }
     }
-    
-    public override void OnDisplayed(Aisling source) {}
+
+    public override void OnDisplayed(Aisling source)
+    {
+    }
 
     public override void OnNext(Aisling source, byte? optionIndex = null)
     {
@@ -92,10 +94,12 @@ public class FromTheHeartQuestScript:  DialogScriptBase
             {
                 var hasItem = source.Inventory.CountOfByTemplateKey("komadium") > 0;
                 if (!hasItem)
-                { 
-                    Subject.Reply(source, "You go to take some from your inventory and then realise that you have none.", "Close");
+                {
+                    Subject.Reply(source,
+                        "You go to take some from your inventory and then realise that you have none.", "Close");
                     return;
                 }
+
                 source.Inventory.RemoveQuantityByTemplateKey("komadium", 1);
                 return;
             }
@@ -103,20 +107,22 @@ public class FromTheHeartQuestScript:  DialogScriptBase
                 if (optionIndex is 2)
                 {
                     var mapInstance = SimpleCache.Get<MapInstance>("chamber2West");
-                    var destination = new Location("chamber2West",13, 26);
+                    var destination = new Location("chamber2West", 13, 26);
                     source.TraverseMap(mapInstance, destination);
                     source.SendOrangeBarMessage("A large pulse sucks you in");
                 }
+
                 break;
             case "maze_secret_warp":
                 if (optionIndex is 2)
                 {
                     var mapInstance = SimpleCache.Get<MapInstance>("heartOfStone");
-                    var destination = new Location("heartOfStone",3, 3);
+                    var destination = new Location("heartOfStone", 3, 3);
                     source.TraverseMap(mapInstance, destination);
                     source.SendOrangeBarMessage("You slip through on a pulse of soft light");
                 }
+
                 break;
-        }   
+        }
     }
 }

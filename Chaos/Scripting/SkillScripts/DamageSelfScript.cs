@@ -1,4 +1,5 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Formulae;
 using Chaos.Formulae.Damage;
@@ -16,8 +17,8 @@ using Chaos.Scripting.SkillScripts.Abstractions;
 namespace Chaos.Scripting.SkillScripts;
 
 public class DamageSelfScript : ConfigurableSkillScriptBase,
-                            GenericAbilityComponent<Creature>.IAbilityComponentOptions,
-                            DamageSelfAbilityComponent.IDamageSelfComponentOptions
+    GenericAbilityComponent<Creature>.IAbilityComponentOptions,
+    DamageSelfAbilityComponent.IDamageSelfComponentOptions
 {
     /// <inheritdoc />
     public DamageSelfScript(Skill subject)
@@ -34,8 +35,9 @@ public class DamageSelfScript : ConfigurableSkillScriptBase,
         new ComponentExecutor(context).WithOptions(this)
             .Execute<DamageSelfAbilityComponent>();
     }
-    
+
     #region ScriptVars
+
     /// <inheritdoc />
     public AoeShape Shape { get; init; }
 
@@ -49,7 +51,7 @@ public class DamageSelfScript : ConfigurableSkillScriptBase,
     public int Range { get; init; }
 
     /// <inheritdoc />
-    public bool ExcludeSourcePoint { get; init; }
+    public int? ExclusionRange { get; init; }
 
     /// <inheritdoc />
     public bool MustHaveTargets { get; init; }
@@ -59,6 +61,8 @@ public class DamageSelfScript : ConfigurableSkillScriptBase,
 
     /// <inheritdoc />
     public BodyAnimation BodyAnimation { get; init; }
+
+    public bool? ScaleBodyAnimationSpeedByAttackSpeed { get; init; }
 
     /// <inheritdoc />
     public ushort? AnimationSpeed { get; init; }
@@ -96,5 +100,6 @@ public class DamageSelfScript : ConfigurableSkillScriptBase,
 
     /// <inheritdoc />
     public bool CanResist { get; init; }
+
     #endregion
 }

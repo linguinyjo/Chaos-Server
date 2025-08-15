@@ -1,5 +1,5 @@
 using Chaos.Collections;
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.Panel;
@@ -13,13 +13,9 @@ using Chaos.Storage.Abstractions;
 namespace Chaos.Scripting.ItemScripts;
 
 public class SongScript : ConfigurableItemScriptBase,
-                                        ConsumableAbilityComponent.IConsumableComponentOptions
+    ConsumableAbilityComponent.IConsumableComponentOptions
 {
     private readonly ISimpleCache SimpleCache;
-    
-    #region ScriptVars
-    protected Location Destination { get; init; } = null!;
-    #endregion
 
     /// <inheritdoc />
     public SongScript(Item subject, ISimpleCache simpleCache)
@@ -32,6 +28,12 @@ public class SongScript : ConfigurableItemScriptBase,
         SimpleCache = simpleCache;
     }
 
+    #region ScriptVars
+
+    protected Location Destination { get; init; } = null!;
+
+    #endregion
+
     /// <inheritdoc />
     public override void OnUse(Aisling source)
     {
@@ -42,9 +44,11 @@ public class SongScript : ConfigurableItemScriptBase,
     }
 
     #region ScriptVars
+
     public IScript SourceScript { get; init; }
     public string ItemName { get; init; }
     public byte Slot { get; init; }
     public Item Item { get; init; }
+
     #endregion
 }

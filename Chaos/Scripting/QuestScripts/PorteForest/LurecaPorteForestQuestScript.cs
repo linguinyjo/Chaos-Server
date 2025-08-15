@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Menu;
 using Chaos.Models.World;
 using Chaos.Scripting.DialogScripts.Abstractions;
@@ -6,10 +6,10 @@ using Chaos.Services.Factories.Abstractions;
 
 namespace Chaos.Scripting.QuestScripts.PorteForest;
 
-public class LurecaPorteForestQuestScript: DialogScriptBase
+public class LurecaPorteForestQuestScript : DialogScriptBase
 {
-    private readonly IDialogFactory DialogFactory;
     private readonly Dialog Dialog;
+    private readonly IDialogFactory DialogFactory;
     private readonly IItemFactory ItemFactory;
 
     /// <inheritdoc />
@@ -33,13 +33,14 @@ public class LurecaPorteForestQuestScript: DialogScriptBase
             Dialog.DialogSource,
             DialogFactory,
             ChaosDialogType.Menu,
-            "Leave this place while the path is still open, aisling. For me it is too late..."            
+            "Leave this place while the path is still open, aisling. For me it is too late..."
         );
         newDialog.Display(source);
     }
 
     public override void OnDisplayed(Aisling source)
-    { }
+    {
+    }
 
     public override void OnNext(Aisling source, byte? optionIndex = null)
     {

@@ -1,5 +1,5 @@
 using Chaos.Collections;
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Menu;
 using Chaos.Models.World;
 using Chaos.Scripting.DialogScripts.Abstractions;
@@ -9,7 +9,7 @@ using Chaos.Storage.Abstractions;
 
 namespace Chaos.Scripting.QuestScripts.Dugons;
 
-public class DojoWarpScript:  DialogScriptBase
+public class DojoWarpScript : DialogScriptBase
 {
     private readonly IDialogFactory DialogFactory;
     private readonly ISimpleCache SimpleCache;
@@ -27,12 +27,12 @@ public class DojoWarpScript:  DialogScriptBase
     {
         var currentDugon = source.Trackers.Enums.TryGetValue<Dugon>(out var status) ? status : Dugon.None;
         Subject.AddOption("None", "Close");
-        if(currentDugon == Dugon.None) return;
+        if (currentDugon == Dugon.None) return;
         var availableDugons = Enum.GetValues(typeof(Dugon))
             .Cast<Dugon>()
             .Where(d => d <= currentDugon)
             .ToList();
-        
+
         foreach (var dugon in availableDugons)
         {
             switch (dugon)
@@ -64,15 +64,17 @@ public class DojoWarpScript:  DialogScriptBase
             }
         }
     }
-    
-    public override void OnDisplayed(Aisling source) {}
+
+    public override void OnDisplayed(Aisling source)
+    {
+    }
 
     public override void OnNext(Aisling source, byte? optionIndex = null)
     {
         var mapKey = GetMapKey(optionIndex);
         if (mapKey == null) return;
         var mapInstance = SimpleCache.Get<MapInstance>(mapKey);
-        var destination = new Location(mapKey,6, 4);
+        var destination = new Location(mapKey, 6, 4);
         source.TraverseMap(mapInstance, destination);
         Subject.Close(source);
     }

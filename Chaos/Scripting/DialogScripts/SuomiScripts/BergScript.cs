@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Menu;
 using Chaos.Models.World;
 using Chaos.Scripting.DialogScripts.Abstractions;
@@ -7,17 +7,19 @@ using Chaos.Services.Factories.Abstractions;
 
 namespace Chaos.Scripting.DialogScripts.suomiScripts;
 
-public class BergScript:  DialogScriptBase
+public class BergScript : DialogScriptBase
 {
     private readonly IDialogFactory DialogFactory;
-    
-    #region ScriptVars
-    protected byte Class { get; init; }
-    #endregion
-    
+
     /// <inheritdoc />
     public BergScript(Dialog subject, IDialogFactory dialogFactory)
         : base(subject) => DialogFactory = dialogFactory;
+
+    #region ScriptVars
+
+    protected byte Class { get; init; }
+
+    #endregion
 
     /// <inheritdoc />
     public override void OnDisplaying(Aisling source)
@@ -29,7 +31,7 @@ public class BergScript:  DialogScriptBase
             HandlePlayerAlreadyLearned(source, formStatus);
             return;
         }
-        
+
         Subject.AddOption("Draco Form", "draco_form_initial");
         Subject.AddOption("Kelberoth Form", "kelberoth_form_initial");
         Subject.AddOption("White Bat Form", "white_bat_form_initial");
@@ -41,7 +43,11 @@ public class BergScript:  DialogScriptBase
         Subject.AddOption("Unlearn Current Form", "unlearn_form");
     }
 
-    public override void OnDisplayed(Aisling source) {}
+    public override void OnDisplayed(Aisling source)
+    {
+    }
 
-    public override void OnNext(Aisling source, byte? optionIndex = null) {}
+    public override void OnNext(Aisling source, byte? optionIndex = null)
+    {
+    }
 }

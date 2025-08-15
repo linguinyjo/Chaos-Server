@@ -1,4 +1,5 @@
 #region
+
 using Chaos.Common.Abstractions;
 using Chaos.DarkAges.Definitions;
 using Chaos.Models.Data;
@@ -7,6 +8,7 @@ using Chaos.Models.Templates;
 using Chaos.Scripting.Abstractions;
 using Chaos.Services.Factories.Abstractions;
 using Chaos.Storage.Abstractions;
+
 #endregion
 
 namespace Chaos.Services.Factories;
@@ -57,7 +59,8 @@ public sealed class ItemFactory(ISimpleCache simpleCache, IScriptProvider script
             PreventBanking = true,
             IsDyeable = false,
             IsModifiable = false,
-            ItemSprite = new ItemSprite(0, 0),
+            ItemSprite = new ItemSprite(0,
+                0),
             MaxDurability = null,
             MaxStacks = 0,
             Modifiers = null,
@@ -76,7 +79,9 @@ public sealed class ItemFactory(ISimpleCache simpleCache, IScriptProvider script
             RequiresMaster = false,
             ScriptKeys = new HashSet<string>(StringComparer.OrdinalIgnoreCase),
             ScriptVars = new Dictionary<string, IScriptVars>(StringComparer.OrdinalIgnoreCase),
-            TemplateKey = "scriptProxy"
+            TemplateKey = "scriptProxy",
+            LevelCircle = (LevelCircle)0,
+            NotMonk = false
         };
 
         var item = new Item(

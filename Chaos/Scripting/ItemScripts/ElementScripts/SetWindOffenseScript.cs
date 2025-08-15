@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Panel;
 using Chaos.Models.World;
 using Chaos.Scripting.ItemScripts.Abstractions;
@@ -9,7 +9,9 @@ public class SetWindOffenseScript : ItemScriptBase
 {
     /// <inheritdoc />
     public SetWindOffenseScript(Item subject)
-        : base(subject) { }
+        : base(subject)
+    {
+    }
 
     /// <inheritdoc />
     public override void OnEquipped(Aisling aisling)

@@ -1,4 +1,5 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.World.Abstractions;
 using Chaos.Scripting.Components.Abstractions;
@@ -16,11 +17,11 @@ public struct SetDefenseElementAbilityComponent : IComponent
 
         foreach (var target in targets)
         {
-            if(target.StatSheet.DefenseElement is Element.Darkness or Element.Holy) continue;
+            if (target.StatSheet.DefenseElement is Element.Darkness or Element.Holy) continue;
             target.StatSheet.SetDefenseElement(options.Element);
         }
     }
-    
+
     public interface ISetDefenseElementComponentOptions
     {
         Element Element { get; init; }

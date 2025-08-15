@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Common.Utilities;
 using Chaos.Models.Data;
 using Chaos.Scripting.Components.Abstractions;
@@ -6,7 +6,7 @@ using Chaos.Scripting.Components.Execution;
 
 namespace Chaos.Scripting.Components.AbilityComponents;
 
-public struct  RequireShieldAbilityComponent : IConditionalComponent
+public struct RequireShieldAbilityComponent : IConditionalComponent
 {
     /// <inheritdoc />
     public bool Execute(ActivationContext context, ComponentVars vars)

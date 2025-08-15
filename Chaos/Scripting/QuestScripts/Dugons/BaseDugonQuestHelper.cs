@@ -1,11 +1,11 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Legend;
 using Chaos.Models.World;
 using Chaos.Time;
 
 namespace Chaos.Scripting.QuestScripts.Dugons;
 
-    
 public abstract class BaseQuestHelper<TStatus> where TStatus : Enum
 {
     protected abstract string QuestId { get; }
@@ -16,7 +16,7 @@ public abstract class BaseQuestHelper<TStatus> where TStatus : Enum
     protected abstract TStatus CompletedStatus { get; }
     protected abstract TStatus NoneStatus { get; }
     protected abstract TimeSpan AllowedTime { get; }
-    
+
     public TStatus GetQuestStatus(Aisling player)
     {
         return player.Trackers.Enums.TryGetValue<TStatus>(out var status) ? status : NoneStatus;
@@ -26,9 +26,9 @@ public abstract class BaseQuestHelper<TStatus> where TStatus : Enum
     {
         var status = GetQuestStatus(player);
         return player.StatSheet.Level >= RequiredLevel
-            && player.HasClass(BaseClass.Monk)
-            && !Equals(status, CompletedStatus) 
-            && Equals(status, NoneStatus);
+               && player.HasClass(BaseClass.Monk)
+               && !Equals(status, CompletedStatus)
+               && Equals(status, NoneStatus);
     }
 
     public bool StartQuest(Aisling player)
@@ -78,7 +78,7 @@ public abstract class BaseQuestHelper<TStatus> where TStatus : Enum
     {
         var status = GetQuestStatus(player);
         if (Equals(status, CompletedStatus)) return;
-        
+
         player.Trackers.Enums.Set(GetNextStatus(status));
     }
 
@@ -87,7 +87,7 @@ public abstract class BaseQuestHelper<TStatus> where TStatus : Enum
         source.Trackers.Enums.Set(CompletedStatus);
         var legendMark = new LegendMark(
             $"Earned the {QuestName} Dugon",
-            "dugon", 
+            "dugon",
             MarkIcon.Victory,
             MarkColor.White,
             1,

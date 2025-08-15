@@ -1,5 +1,5 @@
 using Chaos.Collections;
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Extensions;
 using Chaos.Extensions.Geometry;
 using Chaos.Geometry.Abstractions;
@@ -14,19 +14,20 @@ namespace Chaos.Scripting.QuestScripts.Dugons;
 
 public class DojoTileScript : ReactorTileScriptBase
 {
-    private readonly ISimpleCache SimpleCache;
     private readonly IDialogFactory DialogFactory;
     private readonly IMerchantFactory MerchantFactory;
+    private readonly ISimpleCache SimpleCache;
 
     /// <inheritdoc />
-    public DojoTileScript(ReactorTile subject, ISimpleCache simpleCache, IDialogFactory dialogFactory, IMerchantFactory merchantFactory)
+    public DojoTileScript(ReactorTile subject, ISimpleCache simpleCache, IDialogFactory dialogFactory,
+        IMerchantFactory merchantFactory)
         : base(subject)
     {
         SimpleCache = simpleCache;
         DialogFactory = dialogFactory;
         MerchantFactory = merchantFactory;
     }
-    
+
     /// <inheritdoc />
     public override void OnWalkedOn(Creature source)
     {

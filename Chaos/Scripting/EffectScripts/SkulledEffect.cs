@@ -1,5 +1,6 @@
 using Chaos.Collections;
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.Panel;
 using Chaos.Models.World;
@@ -13,8 +14,10 @@ namespace Chaos.Scripting.EffectScripts;
 
 public class SkulledEffect(ISimpleCache simpleCache) : ContinuousAnimationEffectBase
 {
+    private const int ItemLockTime = 86400;
+
+    private const byte Sound = 6;
     protected override TimeSpan Duration { get; set; } = TimeSpan.FromMilliseconds(20000);
-    private  const int ItemLockTime = 86400;
 
     /// <inheritdoc />
     protected override Animation Animation { get; } = new()
@@ -35,17 +38,15 @@ public class SkulledEffect(ISimpleCache simpleCache) : ContinuousAnimationEffect
     /// <inheritdoc />
     public override string Name => "Skulled";
 
-    private const byte Sound = 6;
-
     /// <inheritdoc />
     protected override void OnIntervalElapsed()
     {
-        AislingSubject?.Client.SendSound(Sound, false); 
+        AislingSubject?.Client.SendSound(Sound, false);
     }
 
     public override void OnTerminated()
     {
-        if (AislingSubject == null) return; 
+        if (AislingSubject == null) return;
         AislingSubject.IsDead = true;
         AislingSubject.TryDropAllEquipment();
         var currentPosition = AislingSubject.GetCurrentLocation();
@@ -57,20 +58,22 @@ public class SkulledEffect(ISimpleCache simpleCache) : ContinuousAnimationEffect
                 groundItem.LockToAislings(ItemLockTime, AislingSubject);
             }
         }
-        
+
         var droppedMoney = AislingSubject.TryDropGold(currentPosition, AislingSubject.Gold, out var money);
         if (droppedMoney && money != null)
         {
             money.LockToAislings(ItemLockTime, AislingSubject);
         }
+
         if (itemsToDrop != null)
             foreach (var groundItem in itemsToDrop)
             {
                 groundItem.LockToAislings(ItemLockTime, AislingSubject);
                 AislingSubject.Inventory.RemoveByTemplateKey(groundItem.Item.Template.TemplateKey);
             }
+
         var mapInstance = simpleCache.Get<MapInstance>("cthonicRoom2");
-        var destination = new Location("cthonicRoom2",10, 10);
+        var destination = new Location("cthonicRoom2", 10, 10);
         AislingSubject.TraverseMap(mapInstance, destination);
         foreach (var effect in AislingSubject.Effects)
         {
@@ -78,8 +81,9 @@ public class SkulledEffect(ISimpleCache simpleCache) : ContinuousAnimationEffect
             AislingSubject.Effects.Terminate(effect.Name);
         }
     }
-    
-    public override void OnDispelled() {
+
+    public override void OnDispelled()
+    {
         if (AislingSubject != null) AislingSubject.IsDead = false;
         AislingSubject?.StatSheet.SetHp(50);
         AislingSubject?.Client.SendAttributes(StatUpdateType.Vitality);

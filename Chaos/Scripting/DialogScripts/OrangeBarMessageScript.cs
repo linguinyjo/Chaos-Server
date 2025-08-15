@@ -1,5 +1,5 @@
 using Chaos.Collections;
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.Legend;
 using Chaos.Models.Menu;
@@ -13,24 +13,27 @@ namespace Chaos.Scripting.DialogScripts;
 
 public class OrangeBarMessageScript : ConfigurableDialogScriptBase
 {
-    
+    /// <inheritdoc />
+    public OrangeBarMessageScript(Dialog subject) : base(subject)
+    {
+    }
+
     #region ScriptVars
+
     protected string? Message { get; init; }
+
     #endregion
 
-    /// <inheritdoc />
-    public OrangeBarMessageScript(Dialog subject) : base(subject) {}
-    
 
     /// <inheritdoc />
     public override void OnDisplaying(Aisling source)
-    {}
+    {
+    }
 
     public override void OnDisplayed(Aisling source)
     {
-        
     }
-    
+
 
     public override void OnNext(Aisling source, byte? optionIndex = null)
     {

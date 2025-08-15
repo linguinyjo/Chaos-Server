@@ -1,4 +1,5 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Data;
 using Chaos.Scripting.EffectScripts.Abstractions;
 using Chaos.Time;
@@ -13,7 +14,7 @@ public class FasNadurEffect : EffectBase
 
     /// <inheritdoc />
     public override byte Icon => 90;
-    
+
     /// <inheritdoc />
     public override string Name => "fas nadur";
 
@@ -24,7 +25,7 @@ public class FasNadurEffect : EffectBase
         Subject.StatSheet.SubtractBonus(new Attributes { ElementalMultiplier = Multiplier });
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
-    
+
     /// <inheritdoc />
     public override void OnApplied()
     {

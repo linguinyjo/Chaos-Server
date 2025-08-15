@@ -1,17 +1,15 @@
 #region
+
 using Chaos.Collections.Abstractions;
 using Chaos.DarkAges.Definitions;
 using Chaos.Extensions;
 using Chaos.Extensions.Common;
-using Chaos.Models.Menu;
 using Chaos.Models.Panel;
 using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
 using Chaos.Scripting.Abstractions;
 using Chaos.Scripting.EffectScripts.Abstractions;
-using Chaos.Scripting.ReactorTileScripts.Abstractions;
-using Chaos.Scripting.SkillScripts.Abstractions;
-using Chaos.Scripting.SpellScripts.Abstractions;
+
 #endregion
 
 namespace Chaos.Collections;
@@ -108,16 +106,16 @@ public sealed class EffectsBar : IEffectsBar
     {
         //clear all effects that might be visible
         foreach (var effect in Effects.Values
-                                      .OrderBy(e => e.Remaining)
-                                      .DistinctBy(effect => effect.Icon)
-                                      .Take(10))
+                     .OrderBy(e => e.Remaining)
+                     .DistinctBy(effect => effect.Icon)
+                     .Take(10))
             AffectedAisling?.Client.SendEffect(EffectColor.None, effect.Icon);
 
         var orderedEffects = Effects.Values
-                                    .OrderBy(e => e.Remaining)
-                                    .DistinctBy(e => e.Icon)
-                                    .Take(9)
-                                    .ToList();
+            .OrderBy(e => e.Remaining)
+            .DistinctBy(e => e.Icon)
+            .Take(9)
+            .ToList();
 
         //re-apply all effects sorted by ascending remaining duration
         foreach (var effect in orderedEffects)
@@ -186,10 +184,10 @@ public sealed class EffectsBar : IEffectsBar
         {
             //these are the effect that need to be displayed now
             var currentlyDisplayed = Effects.Values
-                                            .OrderBy(e => e.Remaining)
-                                            .DistinctBy(e => e.Icon)
-                                            .Take(9)
-                                            .ToList();
+                .OrderBy(e => e.Remaining)
+                .DistinctBy(e => e.Icon)
+                .Take(9)
+                .ToList();
 
             var wasBeingDisplayed = true;
 
@@ -220,7 +218,8 @@ public sealed class EffectsBar : IEffectsBar
                     AffectedAisling?.Client.SendEffect(currentEffect.Color, currentEffect.Icon);
                 }
             }
-        } else
+        }
+        else
         {
             //effect is being added
             //effect has already been added to the collection, but not to the effectbar
@@ -228,14 +227,14 @@ public sealed class EffectsBar : IEffectsBar
             //grab the top 10 effects
             //we want 10 incase we need to remove the 10th from the display
             var currentlyDisplayed = Effects.Values
-                                            .OrderBy(e => e.Remaining)
-                                            .DistinctBy(e => e.Icon)
-                                            .Take(10)
-                                            .ToList();
+                .OrderBy(e => e.Remaining)
+                .DistinctBy(e => e.Icon)
+                .Take(10)
+                .ToList();
 
             //if the effect is not in the top 9, no action needed
             var isBeingDisplayed = currentlyDisplayed.Take(9)
-                                                     .Any(e => e == effect);
+                .Any(e => e == effect);
 
             //no action needed, new effect isnt on display
             if (!isBeingDisplayed)
@@ -284,10 +283,13 @@ public sealed class EffectsBar : IEffectsBar
 
         (var activatorType, var activatorKey, var scriptKey) = sourceScript switch
         {
-            SubjectiveScriptBase<Spell> spellScript => ("spell", spellScript.Subject.Template.TemplateKey, spellScript.ScriptKey),
-            SubjectiveScriptBase<Skill> skillScript => ("skill", skillScript.Subject.Template.TemplateKey, skillScript.ScriptKey),
-            SubjectiveScriptBase<Item> itemScript   => ("item", itemScript.Subject.Template.TemplateKey, itemScript.ScriptKey),
-            _                                       => ("unknown", "unknown", "unknown")
+            SubjectiveScriptBase<Spell> spellScript => ("spell", spellScript.Subject.Template.TemplateKey,
+                spellScript.ScriptKey),
+            SubjectiveScriptBase<Skill> skillScript => ("skill", skillScript.Subject.Template.TemplateKey,
+                skillScript.ScriptKey),
+            SubjectiveScriptBase<Item> itemScript => ("item", itemScript.Subject.Template.TemplateKey,
+                itemScript.ScriptKey),
+            _ => ("unknown", "unknown", "unknown")
         };
 
         effect.SetVar("activatorType", activatorType);

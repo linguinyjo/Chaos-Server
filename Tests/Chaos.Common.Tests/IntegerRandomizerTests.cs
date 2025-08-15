@@ -1,7 +1,10 @@
 #region
+
 using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Common.Utilities;
 using FluentAssertions;
+
 #endregion
 
 // ReSharper disable ArrangeAttributes
@@ -17,7 +20,7 @@ public sealed class IntegerRandomizerTests
         var res = empty.PickRandomWeightedSingleOrDefault();
 
         res.Should()
-           .BeNull();
+            .BeNull();
     }
 
     [Test]
@@ -62,10 +65,10 @@ public sealed class IntegerRandomizerTests
 
         // Smoke-check: results are plausible and at least one selection occurred
         (choice1Count + choice2Count + choice3Count + nullCount).Should()
-                                                                .Be(1000);
+            .Be(1000);
 
         (choice1Count + choice2Count + choice3Count).Should()
-                                                    .BeGreaterThan(0);
+            .BeGreaterThan(0);
     }
 
     [Test]
@@ -97,22 +100,22 @@ public sealed class IntegerRandomizerTests
 
         // Assert
         results.Should()
-               .ContainKey("A")
-               .WhoseValue
-               .Should()
-               .BeGreaterThan(0);
+            .ContainKey("A")
+            .WhoseValue
+            .Should()
+            .BeGreaterThan(0);
 
         results.Should()
-               .ContainKey("B")
-               .WhoseValue
-               .Should()
-               .BeGreaterThan(0);
+            .ContainKey("B")
+            .WhoseValue
+            .Should()
+            .BeGreaterThan(0);
 
         results.Should()
-               .ContainKey("C")
-               .WhoseValue
-               .Should()
-               .BeGreaterThan(0);
+            .ContainKey("C")
+            .WhoseValue
+            .Should()
+            .BeGreaterThan(0);
     }
 
     [Test]
@@ -138,7 +141,7 @@ public sealed class IntegerRandomizerTests
 
         // Assert - with 99% weights, we should get selections in almost all cases
         successCount.Should()
-                    .BeGreaterThan(95);
+            .BeGreaterThan(95);
     }
 
     [Test]
@@ -164,7 +167,7 @@ public sealed class IntegerRandomizerTests
 
         // Assert - with 1% weights, we should get many nulls
         nullCount.Should()
-                 .BeGreaterThan(800);
+            .BeGreaterThan(800);
     }
 
     [Test]
@@ -202,22 +205,22 @@ public sealed class IntegerRandomizerTests
 
         // Assert
         results.Should()
-               .ContainKey("A")
-               .WhoseValue
-               .Should()
-               .BeGreaterThan(0);
+            .ContainKey("A")
+            .WhoseValue
+            .Should()
+            .BeGreaterThan(0);
 
         results.Should()
-               .ContainKey("B")
-               .WhoseValue
-               .Should()
-               .BeGreaterThan(0);
+            .ContainKey("B")
+            .WhoseValue
+            .Should()
+            .BeGreaterThan(0);
 
         results.Should()
-               .ContainKey("C")
-               .WhoseValue
-               .Should()
-               .BeGreaterThan(0);
+            .ContainKey("C")
+            .WhoseValue
+            .Should()
+            .BeGreaterThan(0);
     }
 
     [Test]
@@ -237,7 +240,7 @@ public sealed class IntegerRandomizerTests
 
         // The success rate should be close to the successChance. Allow a 10% error margin.
         (successCount * 100m / testCount).Should()
-                                         .BeApproximately(successChance, 10);
+            .BeApproximately(successChance, 10);
     }
 
     [Test]
@@ -246,8 +249,8 @@ public sealed class IntegerRandomizerTests
         // Act & Assert
         for (var i = 0; i < 100; i++)
             IntegerRandomizer.RollChance(100)
-                             .Should()
-                             .BeTrue();
+                .Should()
+                .BeTrue();
     }
 
     [Test]
@@ -256,8 +259,8 @@ public sealed class IntegerRandomizerTests
         // Act & Assert
         for (var i = 0; i < 100; i++)
             IntegerRandomizer.RollChance(0)
-                             .Should()
-                             .BeFalse();
+                .Should()
+                .BeFalse();
     }
 
     [Test]
@@ -271,9 +274,9 @@ public sealed class IntegerRandomizerTests
             var result = IntegerRandomizer.RollDouble(maxPer);
 
             result.Should()
-                  .BeGreaterThan(0)
-                  .And
-                  .BeLessThanOrEqualTo(maxPer * 2);
+                .BeGreaterThan(0)
+                .And
+                .BeLessThanOrEqualTo(maxPer * 2);
         }
     }
 
@@ -283,8 +286,8 @@ public sealed class IntegerRandomizerTests
         // Act & Assert
         for (var i = 0; i < 100; i++)
             IntegerRandomizer.RollDouble(1)
-                             .Should()
-                             .Be(2);
+                .Should()
+                .Be(2);
     }
 
     [Test]
@@ -315,9 +318,9 @@ public sealed class IntegerRandomizerTests
             var result = IntegerRandomizer.RollRange(baseValue, variancePct, RandomizationType.Balanced);
 
             result.Should()
-                  .BeGreaterThanOrEqualTo(expectedMin)
-                  .And
-                  .BeLessThanOrEqualTo(expectedMax);
+                .BeGreaterThanOrEqualTo(expectedMin)
+                .And
+                .BeLessThanOrEqualTo(expectedMax);
         }
     }
 
@@ -325,7 +328,8 @@ public sealed class IntegerRandomizerTests
     [Arguments(100, 10, 90)]
     [Arguments(100, 50, 50)]
     [Arguments(100, 100, 0)]
-    public void RollRange_NegativeRandomization_ReturnsWithinExpectedRange(int baseValue, int variancePct, int expectedMin)
+    public void RollRange_NegativeRandomization_ReturnsWithinExpectedRange(int baseValue, int variancePct,
+        int expectedMin)
     {
         // Repeat the test 1000 times to make sure we cover as many random values as possible
         for (var i = 0; i < 1000; i++)
@@ -333,9 +337,9 @@ public sealed class IntegerRandomizerTests
             var result = IntegerRandomizer.RollRange(baseValue, variancePct, RandomizationType.Negative);
 
             result.Should()
-                  .BeGreaterThanOrEqualTo(expectedMin)
-                  .And
-                  .BeLessThanOrEqualTo(baseValue);
+                .BeGreaterThanOrEqualTo(expectedMin)
+                .And
+                .BeLessThanOrEqualTo(baseValue);
         }
     }
 
@@ -343,7 +347,8 @@ public sealed class IntegerRandomizerTests
     [Arguments(100, 10, 110)]
     [Arguments(100, 50, 150)]
     [Arguments(100, 100, 200)]
-    public void RollRange_PositiveRandomization_ReturnsWithinExpectedRange(int baseValue, int variancePct, int expectedMax)
+    public void RollRange_PositiveRandomization_ReturnsWithinExpectedRange(int baseValue, int variancePct,
+        int expectedMax)
     {
         // Repeat the test 1000 times to make sure we cover as many random values as possible
         for (var i = 0; i < 1000; i++)
@@ -351,9 +356,9 @@ public sealed class IntegerRandomizerTests
             var result = IntegerRandomizer.RollRange(baseValue, variancePct, RandomizationType.Positive);
 
             result.Should()
-                  .BeGreaterThanOrEqualTo(baseValue)
-                  .And
-                  .BeLessThanOrEqualTo(expectedMax);
+                .BeGreaterThanOrEqualTo(baseValue)
+                .And
+                .BeLessThanOrEqualTo(expectedMax);
         }
     }
 
@@ -364,7 +369,7 @@ public sealed class IntegerRandomizerTests
         var act = () => IntegerRandomizer.RollRange(100, 10, (RandomizationType)999);
 
         act.Should()
-           .Throw<ArgumentOutOfRangeException>();
+            .Throw<ArgumentOutOfRangeException>();
     }
 
     [Test]
@@ -378,16 +383,16 @@ public sealed class IntegerRandomizerTests
         for (var i = 0; i < 100; i++)
         {
             IntegerRandomizer.RollRange(baseValue, variancePct, RandomizationType.Positive)
-                             .Should()
-                             .Be(baseValue);
+                .Should()
+                .Be(baseValue);
 
             IntegerRandomizer.RollRange(baseValue, variancePct, RandomizationType.Negative)
-                             .Should()
-                             .Be(baseValue);
+                .Should()
+                .Be(baseValue);
 
             IntegerRandomizer.RollRange(baseValue, variancePct, RandomizationType.Balanced)
-                             .Should()
-                             .Be(baseValue);
+                .Should()
+                .Be(baseValue);
         }
     }
 
@@ -419,9 +424,9 @@ public sealed class IntegerRandomizerTests
             var result = IntegerRandomizer.RollRange(baseValue, variancePct, RandomizationType.Balanced);
 
             result.Should()
-                  .BeGreaterThanOrEqualTo(expectedMin)
-                  .And
-                  .BeLessThanOrEqualTo(expectedMax);
+                .BeGreaterThanOrEqualTo(expectedMin)
+                .And
+                .BeLessThanOrEqualTo(expectedMax);
         }
     }
 
@@ -429,7 +434,8 @@ public sealed class IntegerRandomizerTests
     [Arguments(100, 10, 90)]
     [Arguments(100, 50, 50)]
     [Arguments(100, 100, 0)]
-    public void RollRangeLong_NegativeRandomization_ReturnsWithinExpectedRange(long baseValue, int variancePct, long expectedMin)
+    public void RollRangeLong_NegativeRandomization_ReturnsWithinExpectedRange(long baseValue, int variancePct,
+        long expectedMin)
     {
         // Repeat the test 1000 times to make sure we cover as many random values as possible
         for (var i = 0; i < 1000; i++)
@@ -437,9 +443,9 @@ public sealed class IntegerRandomizerTests
             var result = IntegerRandomizer.RollRange(baseValue, variancePct, RandomizationType.Negative);
 
             result.Should()
-                  .BeGreaterThanOrEqualTo(expectedMin)
-                  .And
-                  .BeLessThanOrEqualTo(baseValue);
+                .BeGreaterThanOrEqualTo(expectedMin)
+                .And
+                .BeLessThanOrEqualTo(baseValue);
         }
     }
 
@@ -447,7 +453,8 @@ public sealed class IntegerRandomizerTests
     [Arguments(100, 10, 110)]
     [Arguments(100, 50, 150)]
     [Arguments(100, 100, 200)]
-    public void RollRangeLong_PositiveRandomization_ReturnsWithinExpectedRange(long baseValue, int variancePct, long expectedMax)
+    public void RollRangeLong_PositiveRandomization_ReturnsWithinExpectedRange(long baseValue, int variancePct,
+        long expectedMax)
     {
         // Repeat the test 1000 times to make sure we cover as many random values as possible
         for (var i = 0; i < 1000; i++)
@@ -455,9 +462,9 @@ public sealed class IntegerRandomizerTests
             var result = IntegerRandomizer.RollRange(baseValue, variancePct, RandomizationType.Positive);
 
             result.Should()
-                  .BeGreaterThanOrEqualTo(baseValue)
-                  .And
-                  .BeLessThanOrEqualTo(expectedMax);
+                .BeGreaterThanOrEqualTo(baseValue)
+                .And
+                .BeLessThanOrEqualTo(expectedMax);
         }
     }
 
@@ -468,7 +475,7 @@ public sealed class IntegerRandomizerTests
         var act = () => IntegerRandomizer.RollRange(100L, 10, (RandomizationType)999);
 
         act.Should()
-           .Throw<ArgumentOutOfRangeException>();
+            .Throw<ArgumentOutOfRangeException>();
     }
 
     [Test]
@@ -482,16 +489,16 @@ public sealed class IntegerRandomizerTests
         for (var i = 0; i < 100; i++)
         {
             IntegerRandomizer.RollRange(baseValue, variancePct, RandomizationType.Positive)
-                             .Should()
-                             .Be(baseValue);
+                .Should()
+                .Be(baseValue);
 
             IntegerRandomizer.RollRange(baseValue, variancePct, RandomizationType.Negative)
-                             .Should()
-                             .Be(baseValue);
+                .Should()
+                .Be(baseValue);
 
             IntegerRandomizer.RollRange(baseValue, variancePct, RandomizationType.Balanced)
-                             .Should()
-                             .Be(baseValue);
+                .Should()
+                .Be(baseValue);
         }
     }
 
@@ -506,9 +513,9 @@ public sealed class IntegerRandomizerTests
             var result = IntegerRandomizer.RollSingle(max);
 
             result.Should()
-                  .BeGreaterThan(0)
-                  .And
-                  .BeLessThanOrEqualTo(max);
+                .BeGreaterThan(0)
+                .And
+                .BeLessThanOrEqualTo(max);
         }
     }
 
@@ -518,7 +525,7 @@ public sealed class IntegerRandomizerTests
         Action act = () => IntegerRandomizer.RollSingle(0);
 
         act.Should()
-           .Throw<InvalidOperationException>();
+            .Throw<InvalidOperationException>();
     }
 
     [Test]
@@ -527,7 +534,7 @@ public sealed class IntegerRandomizerTests
         // Act & Assert
         for (var i = 0; i < 100; i++)
             IntegerRandomizer.RollSingle(1)
-                             .Should()
-                             .Be(1);
+                .Should()
+                .Be(1);
     }
 }

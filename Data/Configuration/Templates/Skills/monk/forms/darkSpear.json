@@ -24,7 +24,7 @@
     "scriptVars": {
         "applyEffect": {
             "bodyAnimation": "punch",
-            "excludeSourcePoint": true,
+            "exclusionRange": 0,
             "range": 4,
             "shape": "front",
             "effectKey": "dall",

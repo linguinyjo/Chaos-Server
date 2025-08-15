@@ -1,4 +1,5 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.Panel;
@@ -14,11 +15,10 @@ using Chaos.Scripting.SkillScripts.Abstractions;
 namespace Chaos.Scripting.SkillScripts;
 
 public class PounceScript : ConfigurableSkillScriptBase,
-                            GenericAbilityComponent<Creature>.IAbilityComponentOptions,
-                            PounceAbilityComponent.IPounceComponentOptions
-    
+    GenericAbilityComponent<Creature>.IAbilityComponentOptions,
+    PounceAbilityComponent.IPounceComponentOptions
+
 {
-    
     /// <inheritdoc />
     public PounceScript(Skill subject)
         : base(subject)
@@ -33,8 +33,9 @@ public class PounceScript : ConfigurableSkillScriptBase,
             .ExecuteAndCheck<GenericAbilityComponent<Creature>>()
             ?.Execute<PounceAbilityComponent>();
     }
-    
+
     #region ScriptVars
+
     /// <inheritdoc />
     public AoeShape Shape { get; init; }
 
@@ -48,7 +49,7 @@ public class PounceScript : ConfigurableSkillScriptBase,
     public int Range { get; init; }
 
     /// <inheritdoc />
-    public bool ExcludeSourcePoint { get; init; }
+    public int? ExclusionRange { get; init; }
 
     /// <inheritdoc />
     public bool MustHaveTargets { get; init; }
@@ -58,6 +59,9 @@ public class PounceScript : ConfigurableSkillScriptBase,
 
     /// <inheritdoc />
     public BodyAnimation BodyAnimation { get; init; }
+
+    /// <inheritdoc />
+    public bool? ScaleBodyAnimationSpeedByAttackSpeed { get; init; }
 
     public IScript SourceScript { get; init; }
 
@@ -69,7 +73,7 @@ public class PounceScript : ConfigurableSkillScriptBase,
 
     /// <inheritdoc />
     public bool AnimatePoints { get; init; }
-    
+
     // public IScript SourceScript { get; init; }
 
     /// <inheritdoc />
@@ -80,16 +84,15 @@ public class PounceScript : ConfigurableSkillScriptBase,
 
     /// <inheritdoc />
     public bool ShouldNotBreakHide { get; init; }
-    
+
     /// <inheritdoc />
     public bool CanResist { get; init; }
-    
+
     /// <inheritdoc />
     public int? Distance { get; init; }
-    
+
     /// <inheritdoc />
     public bool? WithAmbush { get; init; }
 
     #endregion
-   
 }

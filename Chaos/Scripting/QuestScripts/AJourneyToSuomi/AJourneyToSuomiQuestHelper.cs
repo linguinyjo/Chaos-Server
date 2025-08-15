@@ -1,5 +1,5 @@
 using System.Diagnostics.Eventing.Reader;
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.MetaData.EventMetaData;
 using Chaos.Models.Data;
 using Chaos.Models.Legend;
@@ -12,7 +12,9 @@ public static class AJourneyToSuomiQuestHelper
 {
     public static AJourneyToSuomiQuestStatus GetQuestStatus(Aisling player)
     {
-        return player.Trackers.Enums.TryGetValue<AJourneyToSuomiQuestStatus>(out var status) ? status : AJourneyToSuomiQuestStatus.None;
+        return player.Trackers.Enums.TryGetValue<AJourneyToSuomiQuestStatus>(out var status)
+            ? status
+            : AJourneyToSuomiQuestStatus.None;
     }
 
     public static bool IsQuestAvailable(Aisling player)
@@ -20,7 +22,7 @@ public static class AJourneyToSuomiQuestHelper
         var status = GetQuestStatus(player);
         return player.StatSheet.Level > 3 && status != AJourneyToSuomiQuestStatus.Completed;
     }
-    
+
     public static void IncrementQuestStage(Aisling player)
     {
         var questStatus = GetQuestStatus(player);

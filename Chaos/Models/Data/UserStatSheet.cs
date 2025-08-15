@@ -1,8 +1,10 @@
 // ReSharper disable InconsistentNaming
 
 #region
+
 using Chaos.DarkAges.Definitions;
 using Chaos.Services.Servers.Options;
+
 #endregion
 
 namespace Chaos.Models.Data;
@@ -83,7 +85,8 @@ public sealed record UserStatSheet : StatSheet
     }
 
     public override sbyte EffectiveAc
-        => (sbyte)Math.Clamp(Ac + AcMod, WorldOptions.Instance.MinimumAislingAc, WorldOptions.Instance.MaximumAislingAc);
+        => (sbyte)Math.Clamp(Ac + AcMod, WorldOptions.Instance.MinimumAislingAc,
+            WorldOptions.Instance.MaximumAislingAc);
 
     public static UserStatSheet NewCharacter
         => new()
@@ -109,12 +112,12 @@ public sealed record UserStatSheet : StatSheet
     public void PerformClassAdvancement(AdvClass advClass, int stats)
     {
         SetAdvClass(advClass);
-        SetLevel(1); 
-        Str = 3;
-        Int = 3;
-        Wis = 3;
-        Con = 3;
-        Dex = 3;
+        SetLevel(1);
+        _str = 3;
+        _int = 3;
+        _wis = 3;
+        _con = 3;
+        _dex = 3;
         _currentHp = 100;
         _maximumHp = 100;
         _currentMp = 50;

@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Legend;
 using Chaos.Models.World;
 using Chaos.Time;
@@ -9,14 +9,16 @@ public static class TrainingQuestHelper
 {
     public static TrainingQuestStatus GetQuestStatus(Aisling player)
     {
-        return player.Trackers.Enums.TryGetValue<TrainingQuestStatus>(out var status) ? status : TrainingQuestStatus.None;
+        return player.Trackers.Enums.TryGetValue<TrainingQuestStatus>(out var status)
+            ? status
+            : TrainingQuestStatus.None;
     }
 
     public static bool IsQuestAvailable(Aisling player)
     {
         return player.HasClass(BaseClass.Peasant) && GetQuestStatus(player) != TrainingQuestStatus.Completed;
     }
-    
+
     public static void IncrementQuestStage(Aisling player)
     {
         var questStatus = GetQuestStatus(player);
@@ -36,7 +38,7 @@ public static class TrainingQuestHelper
     {
         player.Trackers.Enums.Set(TrainingQuestStatus.SpokenToRiona);
     }
-    
+
     public static void CompleteQuest(Aisling player)
     {
         player.Trackers.Enums.Set(TrainingQuestStatus.Completed);

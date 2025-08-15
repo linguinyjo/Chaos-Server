@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Legend;
 using Chaos.Models.World;
 using Chaos.Scripting.QuestScripts.Terror;
@@ -10,7 +10,9 @@ public static class SpareAStickQuestHelper
 {
     public static SpareAStickQuestStatus GetQuestStatus(Aisling player)
     {
-        return player.Trackers.Enums.TryGetValue<SpareAStickQuestStatus>(out var status) ? status : SpareAStickQuestStatus.None;
+        return player.Trackers.Enums.TryGetValue<SpareAStickQuestStatus>(out var status)
+            ? status
+            : SpareAStickQuestStatus.None;
     }
 
     public static bool IsQuestAvailable(Aisling player)
@@ -22,7 +24,7 @@ public static class SpareAStickQuestHelper
     {
         player.Trackers.Enums.Set(SpareAStickQuestStatus.Started);
     }
-    
+
     public static void CompleteQuest(Aisling player)
     {
         player.Trackers.Enums.Set(SpareAStickQuestStatus.Completed);

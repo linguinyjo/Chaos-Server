@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Legend;
 using Chaos.Models.World;
 using Chaos.Scripting.QuestScripts.PravatAlliance.GrimlockAlliance;
@@ -10,7 +10,9 @@ public static class GoblinAllianceQuestHelper
 {
     public static GoblinAllianceQuestStatus GetQuestStatus(Aisling player)
     {
-        return player.Trackers.Enums.TryGetValue<GoblinAllianceQuestStatus>(out var status) ? status : GoblinAllianceQuestStatus.None;
+        return player.Trackers.Enums.TryGetValue<GoblinAllianceQuestStatus>(out var status)
+            ? status
+            : GoblinAllianceQuestStatus.None;
     }
 
     public static bool IsQuestAvailable(Aisling player) =>
@@ -25,7 +27,7 @@ public static class GoblinAllianceQuestHelper
     {
         player.Client.SendSound(30, false);
     }
-    
+
     public static void CompleteQuest(Aisling source)
     {
         source.Trackers.Enums.Set(GoblinAllianceQuestStatus.Completed);
@@ -37,7 +39,7 @@ public static class GoblinAllianceQuestHelper
 
         var legendMark = new LegendMark(
             "Formed an alliance with the goblins",
-            "goblinAlliance", 
+            "goblinAlliance",
             MarkIcon.Victory,
             MarkColor.White,
             1,
@@ -51,6 +53,6 @@ public static class GoblinAllianceQuestHelper
 public enum GoblinAllianceQuestStatus
 {
     None = 0,
-    Started = 1, 
+    Started = 1,
     Completed = 2
 }
