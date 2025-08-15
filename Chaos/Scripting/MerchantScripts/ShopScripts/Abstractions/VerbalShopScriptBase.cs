@@ -1,3 +1,4 @@
+#region
 using Chaos.Common.Utilities;
 using Chaos.Extensions;
 using Chaos.Extensions.Common;
@@ -6,6 +7,7 @@ using Chaos.Models.World;
 using Chaos.Scripting.MerchantScripts.Abstractions;
 using Chaos.Utilities;
 using Humanizer;
+#endregion
 
 namespace Chaos.Scripting.MerchantScripts.ShopScripts.Abstractions;
 
@@ -30,9 +32,9 @@ public abstract class VerbalShopScriptBase : MerchantScriptBase
     {
         "{Name}, you can't carry {AmountOfThing}.",
         "Sorry, {Name}. You don't seem to be able to carry {AmountOfThing}.",
-        "{Name}, it seems you can't handle {Amount} more {Thing}.",
+        "{Name}, it seems you can't handle {AmountOfThing}.",
         "{Name}, it looks like {AmountOfThing} is too much for you.",
-        "{Name}, it appears you can't take {Amount} more {Thing}."
+        "{Name}, it appears you can't take {AmountOfThing}."
     };
 
     protected static ICollection<string> DontHaveThatManySellPhrases { get; } = new List<string>
@@ -91,12 +93,16 @@ public abstract class VerbalShopScriptBase : MerchantScriptBase
         string template,
         string name,
         int amount,
-        string thing)
+        string thing,
+        int? gold = null)
     {
         if (amount > 1)
             template.ReplaceI("{AmountOfThing} is", "{AmountOfThing} are");
         else
             template.ReplaceI("{AmountOfThing} are", "{AmountOfThing} is");
+
+        if (gold.HasValue)
+            return template.Inject(name, thing.ToQuantity(amount), gold.Value);
 
         return template.Inject(name, thing.ToQuantity(amount));
     }
@@ -107,7 +113,7 @@ public abstract class VerbalShopScriptBase : MerchantScriptBase
         var closestVerbalShop = aisling.MapInstance
                                        .GetEntities<Merchant>()
                                        .Where(merchant => merchant.Script.Is<VerbalShopScriptBase>())
-                                       .OrderBy(x => x.DistanceFrom(aisling))
+                                       .OrderBy(x => x.ManhattanDistanceFrom(aisling))
                                        .ThenBy(x => x.Creation)
                                        .First();
 
@@ -131,10 +137,8 @@ public abstract class VerbalShopScriptBase : MerchantScriptBase
             phrase,
             name,
             amount,
-            thing);
-
-        if (goldAmount.HasValue)
-            phrase = phrase.Inject(goldAmount.Value);
+            thing,
+            goldAmount);
 
         source.Say(phrase);
     }

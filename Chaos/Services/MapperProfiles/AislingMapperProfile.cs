@@ -1,7 +1,8 @@
+#region
 using Chaos.Collections;
 using Chaos.Collections.Synchronized;
 using Chaos.Common.Abstractions;
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Geometry.Abstractions;
 using Chaos.Models.Data;
@@ -10,9 +11,9 @@ using Chaos.Models.World;
 using Chaos.Networking.Entities.Server;
 using Chaos.Schemas.Aisling;
 using Chaos.Scripting.Abstractions;
-using Chaos.Services.Servers.Options;
 using Chaos.Storage.Abstractions;
 using Chaos.TypeMapper.Abstractions;
+#endregion
 
 namespace Chaos.Services.MapperProfiles;
 
@@ -145,41 +146,38 @@ public sealed class AislingMapperProfile(
         => new()
         {
             Ability = (byte)obj.UserStatSheet.AbilityLevel,
-            Ac = (sbyte)Math.Clamp(
-                obj.UserStatSheet.EffectiveAc,
-                WorldOptions.Instance.MinimumAislingAc,
-                WorldOptions.Instance.MaximumAislingAc),
+            Ac = obj.UserStatSheet.EffectiveAc,
             Blind = obj.IsBlind,
-            Con = obj.UserStatSheet.EffectiveCon,
+            Con = (byte)Math.Clamp(obj.UserStatSheet.EffectiveCon, byte.MinValue, byte.MaxValue),
             CurrentHp = (uint)Math.Clamp(obj.UserStatSheet.CurrentHp, 0, int.MaxValue),
             CurrentMp = (uint)Math.Clamp(obj.UserStatSheet.CurrentMp, 0, int.MaxValue),
             CurrentWeight = (short)obj.UserStatSheet.CurrentWeight,
             DefenseElement = obj.UserStatSheet.DefenseElement,
-            Dex = obj.UserStatSheet.EffectiveDex,
-            Dmg = obj.UserStatSheet.EffectiveDmg,
+            Dex = (byte)Math.Clamp(obj.UserStatSheet.EffectiveDex, byte.MinValue, byte.MaxValue),
+            Dmg = (byte)Math.Clamp(obj.UserStatSheet.EffectiveDmg, byte.MinValue, byte.MaxValue),
             GamePoints = (uint)obj.GamePoints,
             Gold = (uint)obj.Gold,
-            Hit = obj.UserStatSheet.EffectiveHit,
-            Int = obj.UserStatSheet.EffectiveInt,
+            Hit = (byte)Math.Clamp(obj.UserStatSheet.EffectiveHit, byte.MinValue, byte.MaxValue),
+            Int = (byte)Math.Clamp(obj.UserStatSheet.EffectiveInt, byte.MinValue, byte.MaxValue),
             IsAdmin = obj.IsAdmin,
             IsSwimming = obj.MapInstance.Template.Tiles[obj.X, obj.Y].IsWater,
             Level = (byte)obj.UserStatSheet.Level,
             HasUnreadMail = obj.MailBox.Any(post => post.IsHighlighted),
-            MagicResistance = (byte)(obj.UserStatSheet.EffectiveMagicResistance / 10),
+            MagicResistance = (byte)Math.Clamp(obj.UserStatSheet.EffectiveMagicResistance / 10.0, byte.MinValue, byte.MaxValue),
             MaximumHp = obj.UserStatSheet.EffectiveMaximumHp,
             MaximumMp = obj.UserStatSheet.EffectiveMaximumMp,
             MaxWeight = (short)obj.UserStatSheet.MaxWeight,
             OffenseElement = obj.UserStatSheet.OffenseElement,
+            Str = (byte)Math.Clamp(obj.UserStatSheet.EffectiveStr, byte.MinValue, byte.MaxValue),
             PhysicalAttack = obj.UserStatSheet.EffectivePhysicalAttack,
             MagicAttack = obj.UserStatSheet.EffectiveMagicAttack,
             Regen = obj.UserStatSheet.EffectiveRegen,
-            Str = obj.UserStatSheet.EffectiveStr,
             ToNextAbility = obj.UserStatSheet.ToNextAbility,
             ToNextLevel = obj.UserStatSheet.ToNextLevel,
             TotalAbility = obj.UserStatSheet.TotalAbility,
             TotalExp = obj.UserStatSheet.TotalExp,
             UnspentPoints = (byte)obj.UserStatSheet.UnspentPoints,
-            Wis = obj.UserStatSheet.EffectiveWis
+            Wis = (byte)Math.Clamp(obj.UserStatSheet.EffectiveWis, byte.MinValue, byte.MaxValue)
         };
 
     public Aisling Map(DisplayAislingArgs obj) => throw new NotImplementedException();
@@ -199,17 +197,108 @@ public sealed class AislingMapperProfile(
             var overcoat = obj.Equipment[EquipmentSlot.Overcoat];
             var pantsColor = overcoat?.Template.PantsColor ?? armor?.Template.PantsColor;
 
+            ushort headSprite;
+            byte bootsSprite;
             DisplayColor headColor;
+            DisplayColor bootsColor;
+            ushort overcoatSprite;
+            DisplayColor overcoatColor;
+            ushort armorSprite;
 
-            //use overhelm color if it is dyeable or if it is not default
-            if ((overHelm != null) && (overHelm.Template.IsDyeable || (overHelm.Color != DisplayColor.Default)))
-                headColor = overHelm.Color;
+            //determine if we should override head/boots sprite
+            var shouldOverrideHeadSprite = obj.Equipment.Any(item => item.Template.OverridesHeadSprite);
+            var shouldOverrideBootsSprite = obj.Equipment.Any(item => item.Template.OverridesBootsSprite);
 
-            //use helmet color if it is dyeable or if it is not default
-            else if ((helmet != null) && (helmet.Template.IsDyeable || (helmet.Color != DisplayColor.Default)))
-                headColor = helmet.Color;
+            //if we have a helmet or armor that overrides head sprite, but an overcoat or overhelm that does not
+            //then we should not override the head sprite
+            if (shouldOverrideHeadSprite)
+                if (armor is not null
+                    && overcoat is not null
+                    && armor.Template.OverridesHeadSprite
+                    && !overcoat.Template.OverridesHeadSprite)
+                    shouldOverrideHeadSprite = false;
+                else if (helmet is not null
+                         && overHelm is not null
+                         && helmet.Template.OverridesHeadSprite
+                         && !overHelm.Template.OverridesHeadSprite)
+                    shouldOverrideHeadSprite = false;
+
+            //if we have a helmet or armor that overrides boots sprite, but an overcoat or overhelm that does not
+            //then we should not override the boots sprite
+            if (shouldOverrideBootsSprite)
+                if (armor is not null
+                    && overcoat is not null
+                    && armor.Template.OverridesBootsSprite
+                    && !overcoat.Template.OverridesBootsSprite)
+                    shouldOverrideBootsSprite = false;
+                else if (helmet is not null
+                         && overHelm is not null
+                         && helmet.Template.OverridesBootsSprite
+                         && !overHelm.Template.OverridesBootsSprite)
+                    shouldOverrideBootsSprite = false;
+
+            //determine which head sprite we should use
+            // this value is shared amongst helmet, overhelm, and hair
+            if (shouldOverrideHeadSprite)
+                headSprite = 0;
+            else if (overHelm?.ItemSprite.DisplaySprite is not null)
+                headSprite = overHelm.ItemSprite.DisplaySprite;
+            else if (helmet?.ItemSprite.DisplaySprite is not null)
+                headSprite = helmet.ItemSprite.DisplaySprite;
             else
-                headColor = obj.HairColor;
+                headSprite = (ushort)obj.HairStyle;
+
+            //if we have a head sprite, we need to determine the color
+            //prefer overhelm over helmet
+            //helmet over hairstyle
+            if (headSprite != 0)
+            {
+                //use overhelm color if it is dyeable or if it is not default
+                if ((overHelm != null) && (overHelm.Template.IsDyeable || (overHelm.Color != DisplayColor.Default)))
+                    headColor = overHelm.Color;
+
+                //use helmet color if it is dyeable or if it is not default
+                else if ((helmet != null) && (helmet.Template.IsDyeable || (helmet.Color != DisplayColor.Default)))
+                    headColor = helmet.Color;
+                else
+                    headColor = obj.HairColor;
+            } else
+                headColor = DisplayColor.Default;
+
+            //determine boots sprite/color
+            if (shouldOverrideBootsSprite)
+                bootsSprite = 0;
+            else if (boots?.ItemSprite.DisplaySprite is not null)
+                bootsSprite = (byte)boots.ItemSprite.DisplaySprite;
+            else
+                bootsSprite = 0;
+
+            //if we have a boots sprite, we need to determine the color
+            if (bootsSprite != 0)
+                bootsColor = boots?.Color ?? DisplayColor.Default;
+            else
+                bootsColor = DisplayColor.Default;
+
+            //determine overcoat sprite/color
+            if (overcoat is not null)
+            {
+                overcoatSprite = overcoat.ItemSprite.DisplaySprite;
+                overcoatColor = overcoat.Color;
+            } else if (armor?.ArmorUsesOvercoatSprites == true)
+            {
+                overcoatSprite = armor.ItemSprite.DisplaySprite;
+                overcoatColor = armor.Color;
+            } else
+            {
+                overcoatSprite = 0;
+                overcoatColor = DisplayColor.Default;
+            }
+
+            //determine armor sprite
+            if (overcoat?.ArmorUsesOvercoatSprites == true)
+                armorSprite = overcoat.ItemSprite.DisplaySprite;
+            else
+                armorSprite = armor?.ItemSprite.DisplaySprite ?? 0;
 
             return new DisplayAislingArgs
             {
@@ -219,28 +308,28 @@ public sealed class AislingMapperProfile(
                 AccessorySprite1 = acc1?.ItemSprite.DisplaySprite ?? 0,
                 AccessorySprite2 = acc2?.ItemSprite.DisplaySprite ?? 0,
                 AccessorySprite3 = acc3?.ItemSprite.DisplaySprite ?? 0,
-                ArmorSprite1 = armor?.ItemSprite.DisplaySprite ?? 0, //TODO: figure this out again cuz i deleted it
-                ArmorSprite2 = armor?.ItemSprite.DisplaySprite ?? 0,
+                ArmorSprite1 = armorSprite,
+                ArmorSprite2 = armorSprite,
                 BodyColor = obj.BodyColor,
                 BodySprite = obj.BodySprite,
                 PantsColor = pantsColor,
-                BootsColor = boots?.Color ?? DisplayColor.Default,
-                BootsSprite = (byte)(boots?.ItemSprite.DisplaySprite ?? 0),
+                BootsColor = bootsColor,
+                BootsSprite = bootsSprite,
                 Direction = obj.Direction,
                 FaceSprite = (byte)obj.FaceSprite,
                 Gender = obj.Gender,
-                GroupBoxText = null,
+                GroupBoxText = obj.GroupBox?.Name,
                 HeadColor = headColor,
-                HeadSprite = overHelm?.ItemSprite.DisplaySprite ?? helmet?.ItemSprite.DisplaySprite ?? (ushort)obj.HairStyle,
+                HeadSprite = headSprite,
                 Id = obj.Id,
                 IsDead = obj.IsDead,
                 IsHidden = false, //"Hidden" people are unobservable, so this packet wont even be sent
-                IsTransparent = obj.Visibility is VisibilityType.Hidden or VisibilityType.TrueHidden or VisibilityType.GmHidden,
+                IsTransparent = obj.Visibility is not VisibilityType.Normal,
                 LanternSize = obj.LanternSize,
                 Name = obj.Name,
                 NameTagStyle = NameTagStyle.NeutralHover, //this is a default value
-                OvercoatColor = overcoat?.Color ?? DisplayColor.Default,
-                OvercoatSprite = overcoat?.ItemSprite.DisplaySprite ?? 0,
+                OvercoatColor = overcoatColor,
+                OvercoatSprite = overcoatSprite,
                 X = obj.X,
                 Y = obj.Y,
                 RestPosition = obj.RestPosition,

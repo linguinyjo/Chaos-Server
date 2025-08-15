@@ -1,17 +1,21 @@
-using Chaos.Scripting.Abstractions.Tests.Mocks;
+#region
+using Chaos.Testing.Infrastructure.Mocks;
 using FluentAssertions;
-using Xunit;
+#endregion
 
 namespace Chaos.Scripting.Abstractions.Tests;
 
 public sealed class ScriptBaseTests
 {
-    [Fact]
+    [Test]
     public void Equals_ReturnsFalse_ForDifferentObjects()
     {
         // Arrange
-        var scriptA = new MockScriptBase();
-        var scriptB = new MockCompositeScript();
+        var scriptA = MockScript.Create()
+                                .Object;
+
+        var scriptB = MockCompositeScript.Create()
+                                         .Object;
 
         // Assert
         scriptA.Equals(scriptB)
@@ -19,7 +23,7 @@ public sealed class ScriptBaseTests
                .BeFalse();
     }
 
-    [Fact]
+    [Test]
     public void Equals_ReturnsTrue_ForObjectsWithSameScriptKey()
     {
         // Arrange
@@ -32,7 +36,7 @@ public sealed class ScriptBaseTests
                .BeTrue();
     }
 
-    [Fact]
+    [Test]
     public void Equals_ReturnsTrue_ForSameObjects()
     {
         // Arrange
@@ -44,7 +48,7 @@ public sealed class ScriptBaseTests
               .BeTrue();
     }
 
-    [Fact]
+    [Test]
     public void GetHashCode_ReturnsSameValue_ForObjectsWithSameScriptKey()
     {
         // Arrange

@@ -1,3 +1,4 @@
+#region
 using System.Collections.Frozen;
 using Chaos.Extensions.Common;
 using Chaos.NLog.Logging.Definitions;
@@ -5,6 +6,7 @@ using Chaos.NLog.Logging.Extensions;
 using Chaos.Scripting.Abstractions;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+#endregion
 
 namespace Chaos.Scripting;
 

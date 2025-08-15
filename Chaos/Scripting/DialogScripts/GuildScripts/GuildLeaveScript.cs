@@ -1,3 +1,4 @@
+#region
 using Chaos.Collections;
 using Chaos.Common.Abstractions;
 using Chaos.Models.Menu;
@@ -7,6 +8,7 @@ using Chaos.NLog.Logging.Definitions;
 using Chaos.NLog.Logging.Extensions;
 using Chaos.Scripting.DialogScripts.GuildScripts.Abstractions;
 using Chaos.Storage.Abstractions;
+#endregion
 
 namespace Chaos.Scripting.DialogScripts.GuildScripts;
 
@@ -60,7 +62,7 @@ public class GuildLeaveScript : GuildScriptBase
         }
 
         //ensure that if the player is a guild leader, that there are other guild leaders
-        if (IsLeader(sourceRank) && (sourceRank.Count <= 1))
+        if (sourceRank is { IsLeaderRank: true, Count: <= 1 })
         {
             Subject.Reply(
                 source,
@@ -71,7 +73,7 @@ public class GuildLeaveScript : GuildScriptBase
         }
 
         //leave the guild
-        if (!source.Guild!.Leave(source))
+        if (!source.Guild!.TryLeave(source))
         {
             //something went wrong, but I don't know what
             Subject.Reply(

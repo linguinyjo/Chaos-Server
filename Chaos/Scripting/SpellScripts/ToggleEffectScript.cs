@@ -1,4 +1,5 @@
-using Chaos.Common.Definitions;
+#region
+using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.Panel;
@@ -7,6 +8,7 @@ using Chaos.Scripting.Components.AbilityComponents;
 using Chaos.Scripting.Components.Execution;
 using Chaos.Scripting.SpellScripts.Abstractions;
 using Chaos.Services.Factories.Abstractions;
+#endregion
 
 namespace Chaos.Scripting.SpellScripts;
 
@@ -37,13 +39,13 @@ public class ToggleEffectScript : ConfigurableSpellScriptBase,
     public bool SingleTarget { get; init; }
 
     /// <inheritdoc />
+    public int? ExclusionRange { get; init; }
+
+    /// <inheritdoc />
     public TargetFilter Filter { get; init; }
 
     /// <inheritdoc />
     public int Range { get; init; }
-
-    /// <inheritdoc />
-    public bool ExcludeSourcePoint { get; init; }
 
     /// <inheritdoc />
     public bool MustHaveTargets { get; init; }
@@ -53,6 +55,9 @@ public class ToggleEffectScript : ConfigurableSpellScriptBase,
 
     /// <inheritdoc />
     public BodyAnimation BodyAnimation { get; init; }
+
+    /// <inheritdoc />
+    public bool? ScaleBodyAnimationSpeedByAttackSpeed { get; init; }
 
     /// <inheritdoc />
     public ushort? AnimationSpeed { get; init; }

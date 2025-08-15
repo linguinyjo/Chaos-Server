@@ -5,8 +5,8 @@
         <UseWPF>true</UseWPF>
         <AssemblyName>ChaosTool</AssemblyName>
         <RootNamespace>ChaosTool</RootNamespace>
-        <ApplicationIcon>..\..\Chaos\Resources\chaos.ico</ApplicationIcon>
-        <TargetFramework>net8.0-windows</TargetFramework>
+        <ApplicationIcon>Resources\chaosTool.ico</ApplicationIcon>
+        <TargetFramework>net9.0-windows</TargetFramework>
     </PropertyGroup>
 
     <ItemGroup>
@@ -16,6 +16,7 @@
         <PackageReference Include="Namotion.Reflection"/>
         <PackageReference Include="RoslynPad.Editor.Windows"/>
         <PackageReference Include="ShowMeTheXAML.MSBuild"/>
+        <PackageReference Include="System.Text.Json"/>
     </ItemGroup>
 
     <ItemGroup>
@@ -122,9 +123,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <None Include="..\..\Chaos\Resources\chaos.ico">
-            <Link>chaos.ico</Link>
-        </None>
+        <Folder Include="Resources\"/>
     </ItemGroup>
 
 </Project>

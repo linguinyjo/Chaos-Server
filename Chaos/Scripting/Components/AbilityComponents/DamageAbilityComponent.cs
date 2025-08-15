@@ -1,17 +1,19 @@
-using Chaos.Common.Definitions;
+#region
 using Chaos.Common.Utilities;
+using Chaos.DarkAges.Definitions;
 using Chaos.Extensions.Geometry;
 using Chaos.Geometry.Abstractions.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
-using Chaos.Scripting.Abstractions;
 using Chaos.Scripting.Components.Abstractions;
 using Chaos.Scripting.Components.Execution;
 using Chaos.Scripting.FunctionalScripts.Abstractions;
 using Chaos.Scripting.MonsterScripts;
 using Chaos.Scripting.MonsterScripts.Abstractions;
 using Microsoft.Extensions.Options;
+#endregion
+
 
 namespace Chaos.Scripting.Components.AbilityComponents;
 
@@ -22,6 +24,7 @@ public struct DamageAbilityComponent : IComponent
     {
         var options = vars.GetOptions<IDamageComponentOptions>();
         var targets = vars.GetTargets<Creature>();
+        var sourceScript = vars.GetSourceScript();
 
         var abilityDamageMultiplier = CalculateAbilityDamageMultiplier(
             context.SourceAisling, 
@@ -30,20 +33,27 @@ public struct DamageAbilityComponent : IComponent
         
         foreach (var target in targets)
         {
-            var damage = CalculateDamage(context.Source, target, options, abilityDamageMultiplier);
+            var baseDamage = CalculateDamage(context.Source, target, options, abilityDamageMultiplier);
 
-            if (damage <= 0) continue;
+            if (baseDamage <= 0) continue;
 
             var isAsleep = target.IsAsleep(out var sleepEffect);
-            if (isAsleep) damage *= 2;
+            if (isAsleep) baseDamage *= 2;
             
-            options.ApplyDamageScript.ApplyDamage(
+            vars.SetBaseDamage(target, baseDamage);
+
+            if (baseDamage <= 0)
+                continue;
+            
+            var finalDamage = options.ApplyDamageScript.ApplyDamage(
                 context.Source,
                 target,
-                options.SourceScript,
-                damage,
+                sourceScript,
+                baseDamage,
                 options.Element);
             
+            vars.SetFinalDamage(target, finalDamage);
+
             // TODO this probably belongs in its own functional script but i am too lazy to write one for now
             ApplyDurabilityLoss(target);
             if (sleepEffect != null) target.Effects.Dispel(sleepEffect);

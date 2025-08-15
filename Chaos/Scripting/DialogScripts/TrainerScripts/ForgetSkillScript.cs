@@ -1,8 +1,10 @@
+#region
 using Chaos.Models.Menu;
 using Chaos.Models.World;
 using Chaos.NLog.Logging.Definitions;
 using Chaos.NLog.Logging.Extensions;
 using Chaos.Scripting.DialogScripts.Abstractions;
+#endregion
 
 namespace Chaos.Scripting.DialogScripts.TrainerScripts;
 

@@ -1,9 +1,11 @@
-﻿using Chaos.Models.Menu;
+﻿#region
+using Chaos.Models.Menu;
 using Chaos.Models.World;
 using Chaos.NLog.Logging.Definitions;
 using Chaos.NLog.Logging.Extensions;
 using Chaos.Scripting.DialogScripts.Abstractions;
 using Chaos.Utilities;
+#endregion
 
 namespace Chaos.Scripting.DialogScripts.BankScripts;
 
@@ -61,6 +63,7 @@ public class DepositItemScript : DialogScriptBase
 
     private void OnDisplayingInitial(Aisling source)
         => Subject.Slots = source.Inventory
+                                 .Where(obj => !obj.PreventBanking)
                                  .Select(obj => obj.Slot)
                                  .ToList();
 

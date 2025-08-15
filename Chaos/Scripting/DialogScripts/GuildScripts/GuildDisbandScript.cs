@@ -1,3 +1,4 @@
+#region
 using Chaos.Collections;
 using Chaos.Common.Abstractions;
 using Chaos.Models.Menu;
@@ -7,6 +8,7 @@ using Chaos.NLog.Logging.Definitions;
 using Chaos.NLog.Logging.Extensions;
 using Chaos.Scripting.DialogScripts.GuildScripts.Abstractions;
 using Chaos.Storage.Abstractions;
+#endregion
 
 namespace Chaos.Scripting.DialogScripts.GuildScripts;
 
@@ -60,7 +62,7 @@ public class GuildDisbandScript : GuildScriptBase
         }
 
         //ensure the player is the guild leader
-        if (!IsLeader(sourceRank))
+        if (!sourceRank.IsLeaderRank)
         {
             Subject.Reply(source, "You do not have the authority to disband the guild.", "generic_guild_members_initial");
 

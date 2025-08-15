@@ -1,14 +1,15 @@
+#region
 using System.Text;
 using System.Text.Json;
 using Chaos.Geometry.JsonConverters;
 using FluentAssertions;
-using Xunit;
+#endregion
 
 namespace Chaos.Geometry.Tests;
 
 public sealed class RectangleConverterTests
 {
-    [Fact]
+    [Test]
     public void Read_ShouldReturnRectangle_WhenInputIsValid()
     {
         const string JSON_STRING = "{\"Top\": 1, \"Left\": 2, \"Width\": 3, \"Height\": 4}";
@@ -27,7 +28,25 @@ public sealed class RectangleConverterTests
                          4));
     }
 
-    [Fact]
+    [Test]
+    public void Read_ShouldThrow_When_NotStartingWith_Object()
+    {
+        // Start token is a number, not StartObject
+        var json = Encoding.UTF8.GetBytes("123");
+        var reader = new Utf8JsonReader(json);
+        reader.Read();
+
+        try
+        {
+            RectangleConverter.Instance.Read(ref reader, typeof(Rectangle), null!);
+            Assert.Fail("Expected InvalidOperationException");
+        } catch (InvalidOperationException)
+        {
+            // expected
+        }
+    }
+
+    [Test]
     public void Read_ShouldThrowInvalidOperationException_WhenInputIsInvalid()
     {
         const string JSON_STRING = "{\"Left\": \"abcd\"}";
@@ -48,7 +67,7 @@ public sealed class RectangleConverterTests
           .NotBeNull();
     }
 
-    [Fact]
+    [Test]
     public void Write_ShouldWriteJson_WhenRectangleIsValid()
     {
         var rectangle = new Rectangle(

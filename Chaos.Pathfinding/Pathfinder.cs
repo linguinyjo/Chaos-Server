@@ -1,4 +1,4 @@
-using Chaos.Common.Synchronization;
+#region
 using Chaos.Extensions.Common;
 using Chaos.Extensions.Geometry;
 using Chaos.Geometry;
@@ -6,6 +6,7 @@ using Chaos.Geometry.Abstractions;
 using Chaos.Geometry.Abstractions.Definitions;
 using Chaos.Geometry.EqualityComparers;
 using Chaos.Pathfinding.Abstractions;
+#endregion
 
 namespace Chaos.Pathfinding;
 
@@ -18,7 +19,7 @@ public sealed class Pathfinder : IPathfinder
     private readonly int[] NeighborIndexes;
     private readonly PathNode[,] PathNodes;
     private readonly PriorityQueue<PathNode, int> PriorityQueue;
-    private readonly AutoReleasingMonitor Sync;
+    private readonly Lock Sync;
     private readonly int Width;
 
     /// <summary>
@@ -37,7 +38,7 @@ public sealed class Pathfinder : IPathfinder
         NeighborIndexes = Enumerable.Range(0, 4)
                                     .Shuffle()
                                     .ToArray();
-        Sync = new AutoReleasingMonitor();
+        Sync = new Lock();
 
         //create nodes, assign walls
         for (var x = 0; x < Width; x++)
@@ -88,10 +89,10 @@ public sealed class Pathfinder : IPathfinder
             return new Stack<IPoint>();
         }
 
-        if (start.DistanceFrom(end) == 0)
+        if (start.ManhattanDistanceFrom(end) == 0)
             return new Stack<IPoint>();
 
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         var blockedPoints = pathOptions.BlockedPoints.ToList();
         List<Point>? subGrid = null;
@@ -141,7 +142,6 @@ public sealed class Pathfinder : IPathfinder
         var directionBias = end.DirectionalRelationTo(start);
 
         var points = start.GenerateCardinalPoints()
-                          .Shuffle()
                           .WithConsistentDirectionBias(directionBias);
 
         var optimalPoint = GetFirstWalkablePoint(points, pathOptions);
@@ -237,7 +237,7 @@ public sealed class Pathfinder : IPathfinder
                 //we're ok with this even if the end is inside a wall
                 if (neighbor.Equals(end))
                 {
-                    neighbor.Parent = node;
+                    endNode.Parent = node;
 
                     return new Stack<IPoint>(GetParentChain(endNode));
                 }
@@ -250,7 +250,7 @@ public sealed class Pathfinder : IPathfinder
                     continue;
 
                 neighbor.Parent = node;
-                PriorityQueue.Enqueue(neighbor, neighbor.DistanceFrom(start) + neighbor.DistanceFrom(end));
+                PriorityQueue.Enqueue(neighbor, neighbor.ManhattanDistanceFrom(start) + neighbor.ManhattanDistanceFrom(end));
                 neighbor.Open = true;
             }
 

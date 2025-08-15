@@ -1,12 +1,33 @@
+#region
 using Chaos.Geometry.Abstractions;
 using FluentAssertions;
-using Xunit;
+#endregion
 
 namespace Chaos.Geometry.Tests;
 
 public sealed class PointTests
 {
-    [Fact]
+    [Test]
+    public void Operator_Equality_And_Inequality_With_IPoint()
+    {
+        var p = new Point(1, 2);
+        IPoint same = new Point(1, 2);
+        IPoint diff = new Point(2, 3);
+
+        (p == same).Should()
+                   .BeTrue();
+
+        (p != same).Should()
+                   .BeFalse();
+
+        (p == diff).Should()
+                   .BeFalse();
+
+        (p != diff).Should()
+                   .BeTrue();
+    }
+
+    [Test]
     public void Point_Constructor_CreatesPointWithGivenCoordinates()
     {
         // Arrange
@@ -26,7 +47,7 @@ public sealed class PointTests
              .Be(Y);
     }
 
-    [Fact]
+    [Test]
     public void Point_Deconstructor_CreatesPointWithGivenCoordinates()
     {
         // Arrange
@@ -44,7 +65,24 @@ public sealed class PointTests
          .Be(Y);
     }
 
-    [Fact]
+    [Test]
+    public void Point_Equals_Object_IPoint_Path()
+    {
+        var p = new Point(7, 8);
+        object obj = new Point(7, 8);
+
+        p.Equals(obj)
+         .Should()
+         .BeTrue();
+
+        obj = new Point(1, 1);
+
+        p.Equals(obj)
+         .Should()
+         .BeFalse();
+    }
+
+    [Test]
     public void Point_Equals_ReturnsFalseWhenComparingWithDifferentType()
     {
         // Arrange
@@ -59,7 +97,7 @@ public sealed class PointTests
               .BeFalse();
     }
 
-    [Fact]
+    [Test]
     public void Point_Equals_ReturnsFalseWhenPointsAreNotEqual()
     {
         // Arrange
@@ -74,7 +112,7 @@ public sealed class PointTests
               .BeFalse();
     }
 
-    [Fact]
+    [Test]
     public void Point_Equals_ReturnsTrueWhenPointsAreEqual()
     {
         // Arrange
@@ -91,11 +129,12 @@ public sealed class PointTests
               .BeTrue();
     }
 
-    [Fact]
+    [Test]
     public void Point_From_ReturnsNewPointWithSameValuesWhenPassedPointOfDifferentType()
     {
         // Arrange
-        IPoint originalPoint = new MockPoint(10, 20);
+        IPoint originalPoint = Chaos.Testing.Infrastructure.Mocks.MockPoint.Create(10, 20)
+                                    .Object;
 
         // Act
         var newPoint = Point.From(originalPoint);
@@ -110,7 +149,7 @@ public sealed class PointTests
                 .Be(originalPoint.Y);
     }
 
-    [Fact]
+    [Test]
     public void Point_From_ReturnsSamePointWhenPassedPointOfSameType()
     {
         // Arrange
@@ -124,7 +163,7 @@ public sealed class PointTests
                 .BeEquivalentTo(originalPoint);
     }
 
-    [Fact]
+    [Test]
     public void Point_GetHashCode_ReturnsConsistentHashCode()
     {
         // Arrange
@@ -143,7 +182,7 @@ public sealed class PointTests
                  .Be(EXPECTED_HASH_CODE);
     }
 
-    [Fact]
+    [Test]
     public void Point_TryParse_InvalidInput_ReturnsFalseAndDefaultPoint()
     {
         // Arrange
@@ -160,7 +199,7 @@ public sealed class PointTests
              .Be(default(Point));
     }
 
-    [Fact]
+    [Test]
     public void Point_TryParse_ValidInput_ReturnsTrueAndParsesPoint()
     {
         // Arrange
@@ -184,10 +223,5 @@ public sealed class PointTests
              .Be(EXPECTED_Y);
     }
 
-    // CustomPoint class for testing Point.From method
-    private sealed class MockPoint(int x, int y) : IPoint
-    {
-        public int X { get; } = x;
-        public int Y { get; } = y;
-    }
+    // moved to Chaos.Testing.Infrastructure.Mocks.MockPoint
 }

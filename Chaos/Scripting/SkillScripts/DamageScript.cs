@@ -1,15 +1,16 @@
-using Chaos.Common.Definitions;
+#region
+using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.Panel;
 using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
-using Chaos.Scripting.Abstractions;
 using Chaos.Scripting.Components.AbilityComponents;
 using Chaos.Scripting.Components.Execution;
 using Chaos.Scripting.FunctionalScripts.Abstractions;
 using Chaos.Scripting.FunctionalScripts.ApplyDamage;
 using Chaos.Scripting.SkillScripts.Abstractions;
+#endregion
 
 namespace Chaos.Scripting.SkillScripts;
 
@@ -25,7 +26,6 @@ public class DamageScript : ConfigurableSkillScriptBase,
         : base(subject)
     {
         ApplyDamageScript = ApplyAttackDamageScript.Create();
-        SourceScript = this;
         AbilityTemplateKey = subject.Template.TemplateKey;
         IsSpell = false;
     }
@@ -47,13 +47,13 @@ public class DamageScript : ConfigurableSkillScriptBase,
     public bool SingleTarget { get; init; }
 
     /// <inheritdoc />
+    public int? ExclusionRange { get; init; }
+
+    /// <inheritdoc />
     public TargetFilter Filter { get; init; }
 
     /// <inheritdoc />
     public int Range { get; init; }
-
-    /// <inheritdoc />
-    public bool ExcludeSourcePoint { get; init; }
 
     /// <inheritdoc />
     public bool MustHaveTargets { get; init; }
@@ -63,6 +63,9 @@ public class DamageScript : ConfigurableSkillScriptBase,
 
     /// <inheritdoc />
     public BodyAnimation BodyAnimation { get; init; }
+
+    /// <inheritdoc />
+    public bool? ScaleBodyAnimationSpeedByAttackSpeed { get; init; }
 
     /// <inheritdoc />
     public ushort? AnimationSpeed { get; init; }
@@ -89,8 +92,6 @@ public class DamageScript : ConfigurableSkillScriptBase,
 
     /// <inheritdoc />
     public decimal? PctHpDamage { get; init; }
-
-    public IScript SourceScript { get; init; }
 
     /// <inheritdoc />
     public int? ManaCost { get; init; }

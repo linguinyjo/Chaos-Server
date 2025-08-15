@@ -1,10 +1,27 @@
-using Chaos.Common.Definitions;
+#region
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Panel.Abstractions;
+#endregion
 
 namespace Chaos.Collections.Abstractions;
 
+/// <summary>
+///     A panel that contains skills or spells
+/// </summary>
+/// <typeparam name="T">
+///     Skill or Spell
+/// </typeparam>
 public abstract class KnowledgeBookBase<T> : PanelBase<T>, IKnowledgeBook<T> where T: PanelEntityBase
 {
+    /// <summary>
+    ///     Initializes a new instance of the <see cref="KnowledgeBookBase{T}" /> class
+    /// </summary>
+    /// <param name="panelType">
+    ///     The type of panel this is
+    /// </param>
+    /// <param name="abilities">
+    ///     The abilities to populate the knowledge book with
+    /// </param>
     protected KnowledgeBookBase(PanelType panelType, IEnumerable<T>? abilities = null)
         : base(
             panelType,
@@ -15,12 +32,13 @@ public abstract class KnowledgeBookBase<T> : PanelBase<T>, IKnowledgeBook<T> whe
                 72
             ])
     {
-        abilities ??= Array.Empty<T>();
+        abilities ??= [];
 
         foreach (var ability in abilities)
             Objects[ability.Slot] = ability;
     }
 
+    // <inheritdoc />
     public byte GetFirstSlotInPage(PageType page)
         => page switch
         {
@@ -30,6 +48,7 @@ public abstract class KnowledgeBookBase<T> : PanelBase<T>, IKnowledgeBook<T> whe
             _              => throw new ArgumentOutOfRangeException(nameof(page), page, null)
         };
 
+    // <inheritdoc />
     public byte GetLastSlotInPage(PageType page)
         => page switch
         {
@@ -45,7 +64,7 @@ public abstract class KnowledgeBookBase<T> : PanelBase<T>, IKnowledgeBook<T> whe
         if (IsFull)
             return false;
 
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         var firstPossibleSlot = GetFirstSlotInPage(page);
         var lastPossibleSlot = GetLastSlotInPage(page);

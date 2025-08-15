@@ -1,8 +1,10 @@
+#region
 using Chaos.Collections;
 using Chaos.Collections.Abstractions;
 using Chaos.Common.Definitions;
 using Chaos.Definitions;
 using Chaos.Extensions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Formulae;
 using Chaos.Geometry.Abstractions;
 using Chaos.Models.Data;
@@ -22,6 +24,7 @@ using Chaos.Services.Servers.Options;
 using Chaos.Storage.Abstractions;
 using Chaos.Time;
 using Chaos.Time.Abstractions;
+#endregion
 
 namespace Chaos.Scripting.AislingScripts;
 
@@ -53,7 +56,25 @@ public class DefaultAislingScript : AislingScriptBase
     }
 
     /// <inheritdoc />
+    public override bool CanDropItem(Item item) => RestrictionBehavior.CanDropItem(Subject, item);
+
+    /// <inheritdoc />
+    public override bool CanDropItemOn(Aisling source, Item item) => RestrictionBehavior.CanDropItemOn(source, item, Subject);
+
+    /// <inheritdoc />
+    public override bool CanDropMoney(int amount) => RestrictionBehavior.CanDropMoney(Subject, amount);
+
+    /// <inheritdoc />
+    public override bool CanDropMoneyOn(Aisling source, int amount) => RestrictionBehavior.CanDropMoneyOn(source, amount, Subject);
+
+    /// <inheritdoc />
     public override bool CanMove() => RestrictionBehavior.CanMove(Subject);
+
+    /// <inheritdoc />
+    public override bool CanPickupItem(GroundItem groundItem) => RestrictionBehavior.CanPickupItem(Subject, groundItem);
+
+    /// <inheritdoc />
+    public override bool CanPickupMoney(Money money) => RestrictionBehavior.CanPickupMoney(Subject, money);
 
     /// <inheritdoc />
     public override bool CanSee(VisibleEntity entity) => VisibilityBehavior.CanSee(Subject, entity);
@@ -115,7 +136,6 @@ public class DefaultAislingScript : AislingScriptBase
     /// <inheritdoc />
     public override bool IsHostileTo(Creature creature) => RelationshipBehavior.IsHostileTo(Subject, creature);
     
-
     public void OnUse()
         => new ComponentExecutor(null!, Subject).WithOptions(this)
             .ExecuteAndCheck<GenericAbilityComponent<Creature>>()

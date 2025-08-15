@@ -1,17 +1,19 @@
+#region
 using System.Net;
 using System.Net.Sockets;
 using Chaos.Common.Synchronization;
 using Chaos.Extensions.Common;
+using Chaos.Networking.Abstractions.Definitions;
 using Chaos.Networking.Entities.Client;
 using Chaos.Networking.Options;
 using Chaos.NLog.Logging.Definitions;
 using Chaos.NLog.Logging.Extensions;
 using Chaos.Packets;
 using Chaos.Packets.Abstractions;
-using Chaos.Packets.Abstractions.Definitions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+#endregion
 
 namespace Chaos.Networking.Abstractions;
 
@@ -217,9 +219,9 @@ public abstract class ServerBase<T> : BackgroundService, IServer<T> where T: ICo
     protected virtual void IndexHandlers()
     {
         ClientHandlers[(byte)ClientOpCode.ClientException] = OnClientException;
-        ClientHandlers[(byte)ClientOpCode.HeartBeat] = OnHeartBeatAsync;
+        ClientHandlers[(byte)ClientOpCode.HeartBeatResponse] = OnHeartBeatAsync;
         ClientHandlers[(byte)ClientOpCode.SequenceChange] = OnSequenceChangeAsync;
-        ClientHandlers[(byte)ClientOpCode.SynchronizeTicks] = OnSynchronizeTicksAsync;
+        ClientHandlers[(byte)ClientOpCode.SynchronizeTicksResponse] = OnSynchronizeTicksAsync;
     }
 
     /// <inheritdoc />
@@ -301,7 +303,7 @@ public abstract class ServerBase<T> : BackgroundService, IServer<T> where T: ICo
     /// <inheritdoc />
     public virtual ValueTask OnHeartBeatAsync(T client, in Packet packet)
     {
-        _ = PacketSerializer.Deserialize<HeartBeatArgs>(in packet);
+        _ = PacketSerializer.Deserialize<HeartBeatResponseArgs>(in packet);
 
         //do nothing
 
@@ -335,7 +337,7 @@ public abstract class ServerBase<T> : BackgroundService, IServer<T> where T: ICo
     /// <inheritdoc />
     public virtual ValueTask OnSynchronizeTicksAsync(T client, in Packet packet)
     {
-        _ = PacketSerializer.Deserialize<SynchronizeTicksArgs>(in packet);
+        _ = PacketSerializer.Deserialize<SynchronizeTicksResponseArgs>(in packet);
 
         //do nothing
 

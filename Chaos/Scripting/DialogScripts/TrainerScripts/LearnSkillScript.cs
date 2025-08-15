@@ -1,3 +1,4 @@
+#region
 using Chaos.Extensions.Common;
 using Chaos.Models.Abstractions;
 using Chaos.Models.Data;
@@ -9,6 +10,7 @@ using Chaos.NLog.Logging.Extensions;
 using Chaos.Scripting.DialogScripts.Abstractions;
 using Chaos.Services.Factories.Abstractions;
 using Chaos.Utilities;
+#endregion
 
 namespace Chaos.Scripting.DialogScripts.TrainerScripts;
 
@@ -160,10 +162,10 @@ public class LearnSkillScript : DialogScriptBase
         //name matches
         //source has the skill's class
         //adv class matches if there is one
-        skill = SkillTeacherSource.SkillsToTeach.FirstOrDefault(
-            skill => skill.Template.Name.EqualsI(skillName)
-                     && source.HasClass(skill.Template.Class!.Value)
-                     && (!skill.Template.AdvClass.HasValue || (source.UserStatSheet.AdvClass == skill.Template.AdvClass.Value)));
+        skill = SkillTeacherSource.SkillsToTeach.FirstOrDefault(skill
+            => skill.Template.Name.EqualsI(skillName)
+               && source.HasClass(skill.Template.Class!.Value)
+               && (!skill.Template.AdvClass.HasValue || (source.UserStatSheet.AdvClass == skill.Template.AdvClass.Value)));
 
         return skill != null;
     }
@@ -228,6 +230,13 @@ public class LearnSkillScript : DialogScriptBase
         if (template.RequiresMaster && !source.UserStatSheet.Master)
         {
             dialog.Reply(source, "Come back when you have mastered your art.", "generic_learnskill_initial");
+
+            return false;
+        }
+
+        if (source.StatSheet.AbilityLevel < template.AbilityLevel)
+        {
+            dialog.Reply(source, "Come back when you have more ability.", "generic_learnskill_initial");
 
             return false;
         }

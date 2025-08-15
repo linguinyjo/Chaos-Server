@@ -1,17 +1,26 @@
+#region
 using System.Diagnostics;
 using Chaos.Collections.Abstractions;
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Extensions.Common;
 using Chaos.Models.Board;
 using Chaos.Models.World;
 using Chaos.NLog.Logging.Definitions;
 using Chaos.NLog.Logging.Extensions;
+#endregion
 
 namespace Chaos.Collections;
 
+/// <summary>
+///     Represents a mailbox for a player
+/// </summary>
 public sealed class MailBox : BoardBase
 {
+    /// <summary>
+    ///     The unique identifier for the mailbox is always 0
+    /// </summary>
     public const ushort BOARD_ID = 0;
+
     private readonly ILogger<MailBox> Logger;
 
     /// <inheritdoc />
@@ -26,7 +35,7 @@ public sealed class MailBox : BoardBase
     /// <inheritdoc />
     public override bool Delete(Aisling deletedBy, short postId)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         //check that post exists
         if (!Posts.TryGetValue(postId, out var post))
@@ -85,7 +94,7 @@ public sealed class MailBox : BoardBase
     /// <inheritdoc />
     public override void Highlight(Aisling highlightedBy, short postId)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         //if post doesnt exist
         if (!Posts.TryGetValue(postId, out var post))
@@ -149,7 +158,7 @@ public sealed class MailBox : BoardBase
         string message,
         bool highlighted = false)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         //create post
         var post = new Post(
@@ -185,7 +194,7 @@ public sealed class MailBox : BoardBase
     /// <inheritdoc />
     public override void Show(Aisling aisling, short startPostId = short.MaxValue)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         if (!ShouldShowTo(aisling.Id))
             return;
@@ -214,7 +223,7 @@ public sealed class MailBox : BoardBase
     /// <inheritdoc />
     public override void ShowPost(Aisling aisling, short postId, BoardControls control)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         var postIdActual = postId;
 
@@ -272,7 +281,7 @@ public sealed class MailBox : BoardBase
     /// <inheritdoc />
     public override void UnHighlight(Aisling unhighlightedBy, ref Post post)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         if (!post.IsHighlighted)
             return;

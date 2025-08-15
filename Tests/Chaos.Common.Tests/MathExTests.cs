@@ -1,12 +1,22 @@
+#region
 using Chaos.Common.Utilities;
 using FluentAssertions;
-using Xunit;
+#endregion
 
 namespace Chaos.Common.Tests;
 
 public sealed class MathExTests
 {
-    [Fact]
+    [Test]
+    public void CalculatePercent_Should_Throw_When_Max_Is_Zero()
+    {
+        Action act = () => MathEx.CalculatePercent<decimal>(5, 0);
+
+        act.Should()
+           .Throw<DivideByZeroException>();
+    }
+
+    [Test]
     public void CalculatePercent_ShouldCalculatePercentBetweenTwoNumbers()
     {
         // Arrange
@@ -21,7 +31,7 @@ public sealed class MathExTests
               .Be(25);
     }
 
-    [Fact]
+    [Test]
     public void CalculatePercent_ShouldCalculatePercentBetweenTwoNumbers_ForDifferentNumericTypes()
     {
         // Arrange
@@ -36,7 +46,7 @@ public sealed class MathExTests
               .Be(25.0m);
     }
 
-    [Fact]
+    [Test]
     public void GetPercentOf_ShouldCalculatePercentageOfNumber()
     {
         // Arrange
@@ -51,7 +61,7 @@ public sealed class MathExTests
               .Be(10);
     }
 
-    [Fact]
+    [Test]
     public void GetPercentOf_ShouldCalculatePercentageOfNumber_ForDifferentNumericTypes()
     {
         // Arrange
@@ -66,7 +76,49 @@ public sealed class MathExTests
               .Be(10.0m);
     }
 
-    [Fact]
+    [Test]
+    public void ScaleRange_Generic_IntegerTarget_Rounds_Away_From_Zero()
+    {
+        var result = MathEx.ScaleRange(
+            2,
+            0,
+            3,
+            0,
+            1); // ratio=2/3 -> 0.666.. → rounds to 1
+
+        result.Should()
+              .Be(1);
+    }
+
+    [Test]
+    public void ScaleRange_Generic_Should_Throw_When_Min_Equals_Max()
+    {
+        Action act = () => MathEx.ScaleRange(
+            1,
+            2,
+            2,
+            0.0,
+            1.0);
+
+        act.Should()
+           .Throw<ArgumentOutOfRangeException>();
+    }
+
+    [Test]
+    public void ScaleRange_Should_Throw_When_Min_Equals_Max_Double()
+    {
+        Action act = () => MathEx.ScaleRange(
+            1.0,
+            2.0,
+            2.0,
+            0.0,
+            1.0);
+
+        act.Should()
+           .Throw<ArgumentOutOfRangeException>();
+    }
+
+    [Test]
     public void ScaleRange_ShouldScaleNumberFromOneRangeToAnother()
     {
         // Arrange
@@ -89,7 +141,7 @@ public sealed class MathExTests
               .Be(5);
     }
 
-    [Fact]
+    [Test]
     public void ScaleRange_ShouldScaleNumberFromOneRangeToAnother_ForDifferentNumericTypes()
     {
         // Arrange
@@ -112,7 +164,7 @@ public sealed class MathExTests
               .Be(5.0m);
     }
 
-    [Fact]
+    [Test]
     public void ScaleRange_ShouldScaleNumberFromOneRangeToAnother_WithNumericTypes()
     {
         // Arrange

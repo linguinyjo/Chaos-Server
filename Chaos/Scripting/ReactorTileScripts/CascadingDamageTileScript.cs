@@ -1,9 +1,9 @@
-using Chaos.Common.Definitions;
+#region
+using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
-using Chaos.Scripting.Abstractions;
 using Chaos.Scripting.Components.AbilityComponents;
 using Chaos.Scripting.Components.Execution;
 using Chaos.Scripting.FunctionalScripts.Abstractions;
@@ -11,6 +11,7 @@ using Chaos.Scripting.FunctionalScripts.ApplyDamage;
 using Chaos.Scripting.ReactorTileScripts.Abstractions;
 using Chaos.Time;
 using Chaos.Time.Abstractions;
+#endregion
 
 namespace Chaos.Scripting.ReactorTileScripts;
 
@@ -22,7 +23,9 @@ public sealed class CascadingDamageTileScript : ConfigurableReactorTileScriptBas
                                                 AnimationAbilityComponent.IAnimationComponentOptions
 {
     private readonly IIntervalTimer CascadeTimer;
+    private readonly int EndingStage;
     private readonly IIntervalTimer SoundTimer;
+    private readonly int StartingStage;
     public ComponentExecutor Executor { get; init; }
     private int Stages => Range;
 
@@ -31,29 +34,59 @@ public sealed class CascadingDamageTileScript : ConfigurableReactorTileScriptBas
         : base(subject)
     {
         ApplyDamageScript = ApplyAttackDamageScript.Create();
-        SourceScript = this;
         CascadeTimer = new IntervalTimer(TimeSpan.FromMilliseconds(CascadeIntervalMs));
         SoundTimer = new IntervalTimer(TimeSpan.FromMilliseconds(MinSoundIntervalMs));
 
         var context = new ActivationContext(Subject.Owner!, Subject);
         var vars = new ComponentVars();
-        vars.SetStage(0);
+
+        if (InvertShape)
+            StartingStage = Stages;
+        else if (ExclusionRange.HasValue)
+            StartingStage = ExclusionRange.Value + 1;
+        else
+            StartingStage = 0;
+
+        vars.SetStage(StartingStage);
+
+        // ReSharper disable once ConvertIfStatementToSwitchStatement
+        if (InvertShape && ExclusionRange.HasValue)
+            EndingStage = ExclusionRange.Value;
+        else if (InvertShape)
+            EndingStage = 0;
+        else
+            EndingStage = Stages;
 
         Executor = new ComponentExecutor(context, vars).WithOptions(this);
     }
 
     public bool HandleStage(ComponentVars vars)
     {
-        var stage = vars.GetStage() + 1;
-
-        if (stage >= Stages)
+        if (InvertShape)
         {
-            Subject.MapInstance.RemoveEntity(Subject);
+            var stage = vars.GetStage() - 1;
 
-            return false;
+            if (stage < EndingStage)
+            {
+                Subject.MapInstance.RemoveEntity(Subject);
+
+                return false;
+            }
+
+            vars.SetStage(stage);
+        } else
+        {
+            var stage = vars.GetStage() + 1;
+
+            if (stage > EndingStage)
+            {
+                Subject.MapInstance.RemoveEntity(Subject);
+
+                return false;
+            }
+
+            vars.SetStage(stage);
         }
-
-        vars.SetStage(stage);
 
         return true;
     }
@@ -95,7 +128,13 @@ public sealed class CascadingDamageTileScript : ConfigurableReactorTileScriptBas
     public int CascadeIntervalMs { get; init; }
 
     /// <inheritdoc />
+    public int? ExclusionRange { get; init; }
+
+    /// <inheritdoc />
     public AoeShape Shape { get; init; }
+
+    /// <inheritdoc />
+    public bool InvertShape { get; init; }
 
     /// <inheritdoc />
     public bool IgnoreWalls { get; init; }
@@ -107,7 +146,7 @@ public sealed class CascadingDamageTileScript : ConfigurableReactorTileScriptBas
     public int Range { get; init; }
 
     /// <inheritdoc />
-    public bool IncludeSourcePoint { get; init; }
+    public bool ExcludeSourcePoint { get; init; }
 
     /// <inheritdoc />
     public bool MustHaveTargets { get; init; }
@@ -129,10 +168,7 @@ public sealed class CascadingDamageTileScript : ConfigurableReactorTileScriptBas
 
     /// <inheritdoc />
     public decimal? PctHpDamage { get; init; }
-
-    /// <inheritdoc />
-    public IScript SourceScript { get; init; }
-
+    
     /// <inheritdoc />
     public decimal? PAtkMultiplier { get; init; }
 

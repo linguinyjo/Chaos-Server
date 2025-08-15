@@ -1,4 +1,6 @@
+#region
 using System.Buffers;
+using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -11,6 +13,7 @@ using Chaos.NLog.Logging.Extensions;
 using Chaos.Packets;
 using Chaos.Packets.Abstractions;
 using Microsoft.Extensions.Logging;
+#endregion
 
 namespace Chaos.Networking.Abstractions;
 
@@ -19,8 +22,11 @@ namespace Chaos.Networking.Abstractions;
 /// </summary>
 public abstract class SocketClientBase : ISocketClient, IDisposable
 {
+    private readonly Memory<byte> Memory;
     private readonly ConcurrentQueue<SocketAsyncEventArgs> SocketArgsQueue;
     private int Count;
+
+    private NetworkMonitor? NetworkMonitor;
     private int Sequence;
 
     /// <inheritdoc />
@@ -34,6 +40,16 @@ public abstract class SocketClientBase : ISocketClient, IDisposable
     /// </summary>
     public bool LogRawPackets { get; set; }
 
+    /// <summary>
+    ///     Whether or not to log the packet opcode when receiving packets
+    /// </summary>
+    public bool LogReceivePacketCode { get; set; }
+
+    /// <summary>
+    ///     Whether or not to log the packet opcode when sending packets
+    /// </summary>
+    public bool LogSendPacketCode { get; set; }
+
     /// <inheritdoc />
     public uint Id { get; }
 
@@ -41,8 +57,6 @@ public abstract class SocketClientBase : ISocketClient, IDisposable
     ///     The logger for logging client-related events
     /// </summary>
     protected ILogger<SocketClientBase> Logger { get; }
-
-    private MemoryHandle MemoryHandle { get; }
 
     private IMemoryOwner<byte> MemoryOwner { get; }
 
@@ -60,9 +74,7 @@ public abstract class SocketClientBase : ISocketClient, IDisposable
     /// <inheritdoc />
     public Socket Socket { get; }
 
-    private unsafe Span<byte> Buffer => new(MemoryHandle.Pointer, ushort.MaxValue * 4);
-
-    private Memory<byte> Memory => MemoryOwner.Memory;
+    private Span<byte> Buffer => Memory.Span;
 
     /// <summary>
     ///     Initializes a new instance of the <see cref="SocketClientBase" /> class.
@@ -87,7 +99,7 @@ public abstract class SocketClientBase : ISocketClient, IDisposable
 
         //var buffer = new byte[ushort.MaxValue];
         MemoryOwner = MemoryPool<byte>.Shared.Rent(ushort.MaxValue * 4);
-        MemoryHandle = Memory.Pin();
+        Memory = MemoryOwner.Memory;
         Logger = logger;
         PacketSerializer = packetSerializer;
         RemoteIp = (Socket.RemoteEndPoint as IPEndPoint)?.Address ?? IPAddress.None;
@@ -106,7 +118,7 @@ public abstract class SocketClientBase : ISocketClient, IDisposable
 
         try
         {
-            MemoryHandle.Dispose();
+            Socket.Dispose();
         } catch
         {
             //ignored
@@ -115,14 +127,6 @@ public abstract class SocketClientBase : ISocketClient, IDisposable
         try
         {
             MemoryOwner.Dispose();
-        } catch
-        {
-            //ignored
-        }
-
-        try
-        {
-            Socket.Dispose();
         } catch
         {
             //ignored
@@ -148,10 +152,17 @@ public abstract class SocketClientBase : ISocketClient, IDisposable
 
     #region Networking
     /// <inheritdoc />
+
+    // ReSharper disable once AsyncVoidMethod
     public virtual async void BeginReceive()
     {
+        if (!Socket.Connected)
+            return;
+
         Connected = true;
         await Task.Yield();
+
+        NetworkMonitor = new NetworkMonitor(this, Logger);
 
         var args = new SocketAsyncEventArgs();
         args.SetBuffer(Memory);
@@ -159,6 +170,7 @@ public abstract class SocketClientBase : ISocketClient, IDisposable
         Socket.ReceiveAndForget(args, ReceiveEventHandler);
     }
 
+    // ReSharper disable once AsyncVoidMethod
     private async void ReceiveEventHandler(object? sender, SocketAsyncEventArgs e)
     {
         await ReceiveSync.WaitAsync()
@@ -195,8 +207,14 @@ public abstract class SocketClientBase : ISocketClient, IDisposable
 
                 try
                 {
+                    var start = Stopwatch.GetTimestamp();
+                    var opcode = Buffer[offset + 3];
+
                     await HandlePacketAsync(Buffer.Slice(offset, packetLength))
                         .ConfigureAwait(false);
+
+                    var elapsed = Stopwatch.GetElapsedTime(start);
+                    NetworkMonitor!.Digest(opcode, elapsed);
                 } catch (Exception ex)
                 {
                     //required so we can use Span<byte> in an async method
@@ -263,7 +281,7 @@ public abstract class SocketClientBase : ISocketClient, IDisposable
     /// <inheritdoc />
     public virtual void Send(ref Packet packet)
     {
-        if (!Connected)
+        if (!Connected || !Socket.Connected)
             return;
 
         //no way to pass the packet in because its a ref struct
@@ -276,6 +294,14 @@ public abstract class SocketClientBase : ISocketClient, IDisposable
                       Topics.Actions.Send)
                   .WithProperty(this)
                   .LogTrace("[Snd] {Packet}", packet.ToString());
+        else if (LogSendPacketCode)
+            Logger.WithTopics(
+                      Topics.Qualifiers.Raw,
+                      Topics.Entities.Client,
+                      Topics.Entities.Packet,
+                      Topics.Actions.Send)
+                  .WithProperty(this)
+                  .LogTrace("Sending packet with code {@OpCode} to {@ClientIp}", packet.OpCode, RemoteIp);
 
         packet.IsEncrypted = IsEncrypted(packet.OpCode);
 

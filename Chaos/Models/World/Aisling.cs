@@ -1,3 +1,4 @@
+#region
 using Chaos.Collections;
 using Chaos.Collections.Abstractions;
 using Chaos.Collections.Common;
@@ -6,6 +7,7 @@ using Chaos.Collections.Time;
 using Chaos.Common.Abstractions;
 using Chaos.Common.Definitions;
 using Chaos.Common.Synchronization;
+using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Extensions;
 using Chaos.Extensions.Common;
@@ -31,6 +33,7 @@ using Chaos.Services.Servers.Options;
 using Chaos.Time;
 using Chaos.Time.Abstractions;
 using Chaos.TypeMapper.Abstractions;
+#endregion
 
 namespace Chaos.Models.World;
 
@@ -49,6 +52,7 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
     public int FaceSprite { get; set; }
     public Gender Gender { get; set; }
     public Group? Group { get; set; }
+    public GroupBox? GroupBox { get; set; }
     public Guild? Guild { get; set; }
     public string? GuildRank { get; set; }
     public DisplayColor HairColor { get; set; }
@@ -59,6 +63,7 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
     public LanternSize LanternSize { get; private set; }
     public Collections.Legend Legend { get; private set; }
     public MailBox MailBox { get; set; } = null!;
+    public bool Muted { get; set; }
     public Nation Nation { get; set; }
     public UserOptions Options { get; init; }
     public byte[] Portrait { get; set; }
@@ -138,6 +143,8 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
 
     /// <inheritdoc />
     EntityType IDialogSourceEntity.EntityType => EntityType.Aisling;
+
+    public bool IsOnWorldMap => ActiveObject.TryGet<Collections.WorldMap>() != null;
 
     public bool ShouldRefresh
         => !Trackers.LastRefresh.HasValue
@@ -265,34 +272,49 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
         var skillBookObserver = new SkillBookObserver(this);
         var equipmentObserver = new EquipmentObserver(this);
 
-        Inventory.AddObserver(inventoryObserver);
-        SpellBook.AddObserver(spellBookObserver);
-        SkillBook.AddObserver(skillBookObserver);
-        Equipment.AddObserver(equipmentObserver);
-
-        //trigger observers
-        foreach (var item in Equipment)
-            equipmentObserver.OnAdded(item);
-
-        foreach (var item in Inventory)
-            inventoryObserver.OnAdded(item);
-
-        foreach (var spell in SpellBook)
-            spellBookObserver.OnAdded(spell);
-
-        foreach (var skill in SkillBook)
-            skillBookObserver.OnAdded(skill);
+        BeginObservingPanel(Inventory, inventoryObserver);
+        BeginObservingPanel(SpellBook, spellBookObserver);
+        BeginObservingPanel(SkillBook, skillBookObserver);
+        BeginObservingPanel(Equipment, equipmentObserver);
 
         foreach (var effect in Effects)
         {
             effect.Subject = this;
             effect.OnReApplied();
         }
+
+        Effects.ResetDisplay();
     }
 
-    public bool CanCarry(params Item[] items) => CanCarry(items.Select(item => (item, item.Count)));
+    private void BeginObservingPanel<T>(IPanel<T> panel, Observers.Abstractions.IObserver<T> observer)
+    {
+        panel.AddObserver(observer);
 
-    public bool CanCarry(IEnumerable<(Item Item, int Count)> hypotheticalItems)
+        var objs = panel.ToList();
+        panel.Clear();
+
+        foreach (var obj in objs)
+        {
+            panel.ForceAdd(obj);
+            observer.OnAdded(obj);
+
+            switch (obj)
+            {
+                case Spell { Elapsed: not null } spell:
+                    Client.SendCooldown(spell);
+
+                    break;
+                case Skill { Elapsed: not null, Template.IsAssail: false } skill:
+                    Client.SendCooldown(skill);
+
+                    break;
+            }
+        }
+    }
+
+    public bool CanCarry(params IEnumerable<Item> items) => CanCarry(items.Select(item => (item, item.Count)));
+
+    public bool CanCarry(params IEnumerable<(Item Item, int Count)> hypotheticalItems)
     {
         var weightSum = 0;
         var slotSum = 0;
@@ -347,8 +369,6 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
         return ((UserStatSheet.CurrentWeight + weightSum) <= UserStatSheet.MaxWeight) && (Inventory.AvailableSlots >= slotSum);
     }
 
-    public bool CanCarry(params (Item Item, int Count)[] hypotheticalItems) => CanCarry(hypotheticalItems.AsEnumerable());
-
     /// <inheritdoc />
     public override bool CanObserve(VisibleEntity entity, bool fullCheck = false)
     {
@@ -362,7 +382,7 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
         if (!fullCheck)
             return ApproachTime.ContainsKey(entity);
 
-        if ((entity.DistanceFrom(this) > 1) && !MapInstance.IsInSharedLanternVision(entity))
+        if ((entity.ManhattanDistanceFrom(this) > 1) && !MapInstance.IsInSharedLanternVision(entity))
             return false;
 
         if (Vision == VisionType.TrueBlind)
@@ -394,7 +414,7 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
     public override bool CanUse(
         Spell spell,
         Creature target,
-        string? prompt,
+        string? promptResponse,
         [MaybeNullWhen(false)] out SpellContext spellContext)
     {
         spellContext = null;
@@ -408,7 +428,7 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
         return base.CanUse(
             spell,
             target,
-            prompt,
+            promptResponse,
             out spellContext!);
     }
 
@@ -560,6 +580,16 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
 
     public override void OnGoldDroppedOn(Aisling source, int amount)
     {
+        if (!this.WithinRange(source, WorldOptions.Instance.TradeRange))
+            return;
+
+        if (!Script.CanDropMoneyOn(source, amount))
+        {
+            source.SendActiveMessage("You can't do that right now");
+
+            return;
+        }
+
         if (!TryStartExchange(source, out var exchange))
             return;
 
@@ -568,13 +598,18 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
 
     public override void OnItemDroppedOn(Aisling source, byte slot, byte count)
     {
-        if (source.Inventory.TryGetObject(slot, out var inventoryItem))
-            if (!Script.CanDropItemOn(source, inventoryItem))
-            {
-                source.SendActiveMessage("You can't trade that item");
+        if (!this.WithinRange(source, WorldOptions.Instance.TradeRange))
+            return;
 
-                return;
-            }
+        if (!source.Inventory.TryGetObject(slot, out var inventoryItem) || (inventoryItem.Count < count))
+            return;
+
+        if (!Script.CanDropItemOn(source, inventoryItem) || !inventoryItem.Script.CanBeDroppedOn(source, this))
+        {
+            source.SendActiveMessage("You can't trade that item");
+
+            return;
+        }
 
         if (!TryStartExchange(source, out var exchange))
             return;
@@ -616,17 +651,7 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
     public void SendPersistentMessage(string message) => SendServerMessage(ServerMessageType.PersistentMessage, message);
 
     public void SendServerMessage(ServerMessageType serverMessageType, string message)
-    {
-        if ((message.Length < CONSTANTS.MAX_MESSAGE_LINE_LENGTH)
-            || serverMessageType is ServerMessageType.WoodenBoard
-                                    or ServerMessageType.ScrollWindow
-                                    or ServerMessageType.NonScrollWindow
-                                    or ServerMessageType.UserOptions)
-            Client.SendServerMessage(serverMessageType, message);
-        else
-            foreach (var msg in message.Chunk(CONSTANTS.MAX_MESSAGE_LINE_LENGTH))
-                Client.SendServerMessage(serverMessageType, new string(msg));
-    }
+        => Client.SendServerMessage(serverMessageType, message);
 
     public void SetLanternSize(LanternSize lanternSize)
     {
@@ -711,8 +736,12 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
 
         var item = Inventory[slot];
 
-        if ((item == null) || item.Template.AccountBound)
+        if ((item == null) || item.AccountBound || !Script.CanDropItem(item) || !item.Script.CanBeDropped(this, Point.From(point)))
+        {
+            SendActiveMessage("You can't drop that item");
+
             return false;
+        }
 
         if (amount.HasValue)
         {
@@ -748,6 +777,16 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
     public override bool TryDropGold(IPoint point, int amount, [MaybeNullWhen(false)] out Money money)
     {
         money = null;
+
+        if (!this.WithinRange(point, WorldOptions.Instance.DropRange) || MapInstance.IsWall(point))
+            return false;
+
+        if (!Script.CanDropMoney(amount))
+        {
+            SendActiveMessage("You can't drop that right now");
+
+            return false;
+        }
 
         if (!TryTakeGold(amount))
             return false;
@@ -826,7 +865,7 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
         return false;
     }
 
-    public bool TryGiveItems(params Item[] items)
+    public bool TryGiveItems(params ICollection<Item> items)
     {
         if (!CanCarry(items))
         {
@@ -849,7 +888,7 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
     public bool TryPickupItem(GroundItem groundItem, byte destinationSlot)
     {
         if (IsDead) return false;
-        if (!groundItem.CanPickUp(this))
+        if (!groundItem.CanBePickedUp(this) || !Script.CanPickupItem(groundItem))
         {
             SendActiveMessage("You can't pick that up right now");
 
@@ -886,7 +925,7 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
 
     public bool TryPickupMoney(Money money)
     {
-        if (!money.CanPickUp(this))
+        if (!money.CanBePickedUp(this) || !Script.CanPickupMoney(money))
         {
             SendActiveMessage("You can't pick that up right now");
 
@@ -1053,7 +1092,7 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
     }
 
     /// <inheritdoc />
-    public override bool TryUseSpell(Spell spell, uint? targetId = null, string? prompt = null)
+    public override bool TryUseSpell(Spell spell, uint? targetId = null, string? promptResponse = null)
     {
         Creature? target;
 
@@ -1069,7 +1108,7 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
         if (!CanUse(
                 spell,
                 target!,
-                prompt,
+                promptResponse,
                 out var context))
             return false;
 
@@ -1086,18 +1125,42 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
         return true;
     }
 
-    public bool TryUseSpell(byte slot, uint? targetId = null, string? prompt = null)
+    public bool TryUseSpell(byte slot, uint? targetId = null, string? promptResponse = null)
     {
         if (!SpellBook.TryGetObject(slot, out var spell))
             return false;
 
-        return TryUseSpell(spell, targetId, prompt);
+        return TryUseSpell(spell, targetId, promptResponse);
+    }
+
+    // ReSharper disable once MethodOverloadWithOptionalParameter
+    public void Turn(Direction direction, bool forced = false, bool isResponse = false)
+    {
+        if (!forced && (!Script.CanTurn() || !TurnThrottle.TryIncrement()))
+            return;
+
+        Direction = direction;
+
+        foreach (var aisling in MapInstance.GetEntitiesWithinRange<Aisling>(this)
+                                           .ThatCanObserve(this))
+        {
+            //if turn is not forced
+            //and aisling is this asiling
+            //and this is a turn response to a client turn
+            //dont send them the turn (this prevents double tap macros)
+            if (!forced && aisling.Equals(this) && isResponse)
+                continue;
+
+            aisling.Client.SendCreatureTurn(Id, direction);
+        }
+
+        Trackers.LastTurn = DateTime.UtcNow;
     }
 
     /// <inheritdoc />
-    public override void Turn(Direction direction)
+    public override void Turn(Direction direction, bool forced = false)
     {
-        if (!Script.CanTurn() || !TurnThrottle.TryIncrement())
+        if (!forced && (!Script.CanTurn() || !TurnThrottle.TryIncrement()))
             return;
 
         Direction = direction;
@@ -1160,46 +1223,48 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
             ? MapInstance.GetEntitiesWithinRange<VisibleEntity>(this)
                          .ThatAreObservedBy(this, true)
                          .ToHashSet()
-            : MapInstance.GetEntitiesWithinRange<VisibleEntity>(this)
-                         .Where(partialUpdateEntities.Contains)
-                         .ThatAreObservedBy(this, true)
-                         .ToHashSet();
+            : partialUpdateEntities.ThatAreWithinRange(this)
+                                   .Where(e => MapInstance.TryGetEntity<WorldEntity>(e.Id, out _)) //make sure they are still on the map
+                                   .ThatAreObservedBy(this, true)
+                                   .ToHashSet();
 
         var entitiesToSend = new List<VisibleEntity>();
         var doorsToSend = new HashSet<Door>();
 
-        foreach (var entity in previouslyObservable.Except(currentlyObservable))
-        {
-            if (entity.Equals(this))
-                continue;
-
-            entity.HideFrom(this);
-            OnDeparture(entity, refresh);
-        }
-
-        foreach (var entity in currentlyObservable.Except(previouslyObservable))
-        {
-            if (entity.Equals(this))
-                continue;
-
-            switch (entity)
+        foreach (var entity in previouslyObservable)
+            if (!currentlyObservable.Contains(entity))
             {
-                case Aisling:
-                    entity.ShowTo(this);
+                if (entity.Equals(this))
+                    continue;
 
-                    break;
-                case Door door:
-                    doorsToSend.AddRange(door.GetCluster());
-
-                    break;
-                default:
-                    entitiesToSend.Add(entity);
-
-                    break;
+                entity.HideFrom(this);
+                OnDeparture(entity, refresh);
             }
 
-            OnApproached(entity, refresh);
-        }
+        foreach (var entity in currentlyObservable)
+            if (!previouslyObservable.Contains(entity))
+            {
+                if (entity.Equals(this))
+                    continue;
+
+                switch (entity)
+                {
+                    case Aisling:
+                        entity.ShowTo(this);
+
+                        break;
+                    case Door door:
+                        doorsToSend.AddRange(door.GetCluster());
+
+                        break;
+                    default:
+                        entitiesToSend.Add(entity);
+
+                        break;
+                }
+
+                OnApproached(entity, refresh);
+            }
 
         Client.SendVisibleEntities(entitiesToSend);
         Client.SendDoors(doorsToSend);
@@ -1210,10 +1275,12 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
                     ApproachTime[kvp.Key] = kvp.Value;
     }
 
-    public override void Walk(Direction direction, bool? ignoreBlockingReactors = null)
+    public override void Walk(
+        Direction direction,
+        bool? ignoreBlockingReactors = null,
+        bool? ignoreWalls = null,
+        bool? ignoreCollision = null)
     {
-        ignoreBlockingReactors ??= true;
-
         if (!Script.CanMove() || ((direction != Direction) && !Script.CanTurn()) || !ShouldWalk)
         {
             Refresh(true);
@@ -1238,7 +1305,12 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
         }
 
         //otherwise, check if the point is walkable
-        else if (!MapInstance.IsWalkable(endPoint, Type, ignoreBlockingReactors))
+        else if (!MapInstance.IsWalkable(
+                     endPoint,
+                     ignoreBlockingReactors,
+                     ignoreWalls,
+                     ignoreCollision,
+                     Type))
         {
             Refresh(true);
 
@@ -1248,7 +1320,7 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
         SetLocation(endPoint);
         Trackers.LastWalk = DateTime.UtcNow;
         Trackers.LastPosition = startPosition;
-        Client.SendCancelCasting();
+
         var creaturesToUpdate = MapInstance.GetEntitiesWithinRange<Creature>(startPoint, 16)
                                            .ThatAreWithinRange(
                                                points:

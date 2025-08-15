@@ -1,8 +1,10 @@
+#region
 using System.Net.Sockets;
 using Chaos.Collections;
 using Chaos.Collections.Abstractions;
-using Chaos.Common.Definitions;
 using Chaos.Cryptography.Abstractions;
+using Chaos.DarkAges.Definitions;
+using Chaos.DarkAges.Extensions;
 using Chaos.Definitions;
 using Chaos.Extensions.Common;
 using Chaos.Extensions.Networking;
@@ -15,15 +17,18 @@ using Chaos.Models.Panel.Abstractions;
 using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
 using Chaos.Networking.Abstractions;
+using Chaos.Networking.Abstractions.Definitions;
 using Chaos.Networking.Entities.Server;
 using Chaos.NLog.Logging.Definitions;
 using Chaos.NLog.Logging.Extensions;
 using Chaos.Packets;
 using Chaos.Packets.Abstractions;
-using Chaos.Packets.Abstractions.Definitions;
+using Chaos.Services.Servers.Options;
 using Chaos.Services.Storage.Abstractions;
 using Chaos.TypeMapper.Abstractions;
+using Chaos.Utilities;
 using Microsoft.Extensions.Options;
+#endregion
 
 namespace Chaos.Networking;
 
@@ -31,7 +36,17 @@ public sealed class ChaosWorldClient : WorldClientBase, IChaosWorldClient
 {
     private readonly ITypeMapper Mapper;
     private readonly IWorldServer<IChaosWorldClient> Server;
+    private Animation? CurrentAnimation;
+    private Task HeartbeatTask = null!;
     public Aisling Aisling { get; set; } = null!;
+    public byte? Heartbeat1 { get; set; }
+    public byte? Heartbeat2 { get; set; }
+
+    /// <inheritdoc />
+    public uint LoginId1 { get; set; }
+
+    /// <inheritdoc />
+    public ushort LoginId2 { get; set; }
 
     public ChaosWorldClient(
         Socket socket,
@@ -48,8 +63,17 @@ public sealed class ChaosWorldClient : WorldClientBase, IChaosWorldClient
             logger)
     {
         LogRawPackets = chaosOptions.Value.LogRawPackets;
+        LogSendPacketCode = chaosOptions.Value.LogSendPacketCode;
+        LogReceivePacketCode = chaosOptions.Value.LogReceivePacketCode;
         Mapper = mapper;
         Server = server;
+    }
+
+    /// <inheritdoc />
+    public override void BeginReceive()
+    {
+        base.BeginReceive();
+        HeartbeatTask = DoHeartbeatAsync();
     }
 
     public void SendAddItemToPane(Item item)
@@ -84,9 +108,47 @@ public sealed class ChaosWorldClient : WorldClientBase, IChaosWorldClient
 
     public void SendAnimation(Animation animation)
     {
-        var args = Mapper.Map<AnimationArgs>(animation);
+        //check if the current animation is null
+        var currentAnimation = Interlocked.CompareExchange(ref CurrentAnimation, animation, null);
 
-        Send(args);
+        if (currentAnimation is null || animation.TargetPoint.HasValue || Aisling is { Options.PriorityAnimations: false })
+        {
+            InnerSendAnimation();
+
+            return;
+        }
+
+        //this is for thread safety
+        //if the current animation is not null
+        while (true)
+        {
+            //if the current animation is higher priority, don't replace it
+            if (!animation.ShouldAnimateOver(currentAnimation))
+                break;
+
+            //try to replace the current animation with the new animation
+            var newCurrentAnimation = Interlocked.CompareExchange(ref CurrentAnimation, animation, currentAnimation);
+
+            //the animation replaced was the animation we expected
+            if (newCurrentAnimation == currentAnimation)
+            {
+                InnerSendAnimation();
+
+                break;
+            }
+
+            currentAnimation = newCurrentAnimation;
+        }
+
+        return;
+
+        void InnerSendAnimation()
+        {
+            animation.Started = DateTime.UtcNow;
+            var args = Mapper.Map<AnimationArgs>(animation);
+
+            Send(args);
+        }
     }
 
     public void SendAttributes(StatUpdateType statUpdateType)
@@ -167,13 +229,16 @@ public sealed class ChaosWorldClient : WorldClientBase, IChaosWorldClient
         if (panelEntityBase is Item)
             return;
 
-        if (!panelEntityBase.Cooldown.HasValue)
+        if (!panelEntityBase.Cooldown.HasValue && !panelEntityBase.Elapsed.HasValue)
             return;
 
         if (!panelEntityBase.Elapsed.HasValue)
             return;
 
-        var remaining = panelEntityBase.Cooldown.Value.TotalSeconds - panelEntityBase.Elapsed.Value.TotalSeconds;
+        var cd = panelEntityBase.Cooldown ?? TimeSpan.Zero;
+        var elapsed = panelEntityBase.Elapsed ?? TimeSpan.Zero;
+
+        var remaining = Math.Abs(cd.TotalSeconds - elapsed.TotalSeconds);
 
         var args = new CooldownArgs
         {
@@ -269,12 +334,34 @@ public sealed class ChaosWorldClient : WorldClientBase, IChaosWorldClient
         }
     }
 
-    public void SendDisplayGroupInvite(GroupRequestType groupRequestType, string fromName)
+    public void SendDisplayGroupInvite(ServerGroupSwitch serverGroupSwitch, string fromName, DisplayGroupBoxInfo? groupBoxInfo = null)
     {
         var args = new DisplayGroupInviteArgs
         {
-            GroupRequestType = groupRequestType,
+            ServerGroupSwitch = serverGroupSwitch,
             SourceName = fromName
+        };
+
+        if (serverGroupSwitch == ServerGroupSwitch.ShowGroupBox)
+            args.GroupBoxInfo = groupBoxInfo;
+
+        Send(args);
+    }
+
+    /// <inheritdoc />
+    public void SendDisplayNotepad(
+        NotepadType type,
+        Item item,
+        byte width,
+        byte height)
+    {
+        var args = new DisplayNotepadArgs
+        {
+            Slot = item.Slot,
+            NotepadType = type,
+            Width = width,
+            Height = height,
+            Message = item.NotepadText ?? string.Empty
         };
 
         Send(args);
@@ -560,7 +647,7 @@ public sealed class ChaosWorldClient : WorldClientBase, IChaosWorldClient
         byte width,
         string? message)
     {
-        var args = new NotepadArgs
+        var args = new DisplayNotepadArgs
         {
             Slot = identifier,
             NotepadType = type,
@@ -647,6 +734,17 @@ public sealed class ChaosWorldClient : WorldClientBase, IChaosWorldClient
 
     public void SendServerMessage(ServerMessageType serverMessageType, string message)
     {
+        if ((message.Length < CONSTANTS.MAX_MESSAGE_LINE_LENGTH)
+            || serverMessageType is ServerMessageType.WoodenBoard
+                                    or ServerMessageType.ScrollWindow
+                                    or ServerMessageType.NonScrollWindow
+                                    or ServerMessageType.UserOptions
+                                    or ServerMessageType.Whisper)
+            InnerSendServerMessage(serverMessageType, message);
+        else
+            foreach (var chunk in Helpers.ChunkMessage(message))
+                InnerSendServerMessage(serverMessageType, chunk);
+
         if (serverMessageType is ServerMessageType.Whisper
                                  or ServerMessageType.OrangeBar1
                                  or ServerMessageType.OrangeBar2
@@ -658,13 +756,18 @@ public sealed class ChaosWorldClient : WorldClientBase, IChaosWorldClient
                                  or ServerMessageType.GuildChat)
             Aisling.Trackers.LastOrangeBarMessage = DateTime.UtcNow;
 
-        var args = new ServerMessageArgs
-        {
-            ServerMessageType = serverMessageType,
-            Message = message
-        };
+        return;
 
-        Send(args);
+        void InnerSendServerMessage(ServerMessageType localType, string localMessage)
+        {
+            var args = new ServerMessageArgs
+            {
+                ServerMessageType = localType,
+                Message = localMessage
+            };
+
+            Send(args);
+        }
     }
 
     public void SendSound(byte sound, bool isMusic)
@@ -761,7 +864,10 @@ public sealed class ChaosWorldClient : WorldClientBase, IChaosWorldClient
                 arg.Color = WorldListColor.WithinLevelRange;
 
             if (aisling.Guild is not null && (aisling.Guild == Aisling.Guild))
+            {
+                arg.IsGuilded = true;
                 arg.Color = WorldListColor.Guilded;
+            }
 
             worldList.Add(arg);
         }
@@ -776,6 +882,40 @@ public sealed class ChaosWorldClient : WorldClientBase, IChaosWorldClient
         var args = Mapper.Map<WorldMapArgs>(worldMap);
 
         Send(args);
+    }
+
+    private async Task DoHeartbeatAsync()
+    {
+        var timer = new PeriodicTimer(TimeSpan.FromSeconds(WorldOptions.Instance.HeartbeatIntervalSecs));
+
+        while (Connected)
+        {
+            try
+            {
+                await timer.WaitForNextTickAsync();
+
+                //if heartbeat is still populated, that means the client has not responded to the last heartbeat
+                //assume the client has disconnected
+                if (Heartbeat1.HasValue || Heartbeat2.HasValue)
+                {
+                    Logger.WithTopics(Topics.Entities.Client, Topics.Servers.WorldServer, Topics.Actions.Disconnect)
+                          .WithProperty(this)
+                          .LogWarning("Disconnecting due to heartbeat timeout");
+
+                    Disconnect();
+
+                    return;
+                }
+
+                Heartbeat1 = Random.Shared.Next<byte>();
+                Heartbeat2 = Random.Shared.Next<byte>();
+
+                SendHeartBeat(Heartbeat1.Value, Heartbeat2.Value);
+            } catch
+            {
+                //ignored
+            }
+        }
     }
 
     /// <inheritdoc />
@@ -796,6 +936,14 @@ public sealed class ChaosWorldClient : WorldClientBase, IChaosWorldClient
                       Topics.Actions.Receive)
                   .WithProperty(this)
                   .LogTrace("[Rcv] {@Packet}", packet.ToString());
+        else if (LogReceivePacketCode)
+            Logger.WithTopics(
+                      Topics.Qualifiers.Raw,
+                      Topics.Entities.Client,
+                      Topics.Entities.Packet,
+                      Topics.Actions.Receive)
+                  .WithProperty(this)
+                  .LogTrace("Received packet with code {@OpCode} from {@ClientIp}", opCode, RemoteIp);
 
         return Server.HandlePacketAsync(this, in packet);
     }

@@ -1,11 +1,14 @@
+#region
 using Chaos.Collections;
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Extensions;
 using Chaos.Geometry.Abstractions;
 using Chaos.Models.Abstractions;
 using Chaos.Models.Data;
 using Chaos.Models.Panel;
 using Chaos.Models.World.Abstractions;
+using Chaos.Scripting.Abstractions;
+#endregion
 
 namespace Chaos.Models.World;
 
@@ -37,6 +40,9 @@ public sealed class GroundItem(Item item, MapInstance mapInstance, IPoint point)
                                        .ThatCanObserve(this))
             obj.Client.SendAnimation(targetedAnimation);
     }
+
+    /// <inheritdoc />
+    public override bool CanBePickedUp(Aisling source) => base.CanBePickedUp(source) && Item.Script.CanBePickedUp(source, Point.From(this));
 
     public override void OnClicked(Aisling source)
     {

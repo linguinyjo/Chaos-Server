@@ -1,11 +1,13 @@
+#region
 using System.Runtime.InteropServices;
 using Chaos.Collections.Abstractions;
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Panel;
 using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
 using Chaos.Scripting.Abstractions;
 using Chaos.Scripting.AislingScripts.Abstractions;
+#endregion
 
 namespace Chaos.Scripting.AislingScripts;
 
@@ -14,7 +16,21 @@ namespace Chaos.Scripting.AislingScripts;
 /// </summary>
 public class CompositeAislingScript : CompositeScriptBase<IAislingScript>, IAislingScript
 {
-    /// <inheritdoc />
+    /// <summary>
+    ///     DO NOT EDIT THIS SCRIPT
+    /// </summary>
+    public virtual bool CanDropItem(Item item)
+    {
+        foreach (ref var script in CollectionsMarshal.AsSpan(Scripts))
+            if (!script.CanDropItem(item))
+                return false;
+
+        return true;
+    }
+
+    /// <summary>
+    ///     DO NOT EDIT THIS SCRIPT
+    /// </summary>
     public virtual bool CanDropItemOn(Aisling source, Item item)
     {
         foreach (ref var script in CollectionsMarshal.AsSpan(Scripts))
@@ -27,10 +43,58 @@ public class CompositeAislingScript : CompositeScriptBase<IAislingScript>, IAisl
     /// <summary>
     ///     DO NOT EDIT THIS SCRIPT
     /// </summary>
+    public virtual bool CanDropMoney(int amount)
+    {
+        foreach (ref var script in CollectionsMarshal.AsSpan(Scripts))
+            if (!script.CanDropMoney(amount))
+                return false;
+
+        return true;
+    }
+
+    /// <summary>
+    ///     DO NOT EDIT THIS SCRIPT
+    /// </summary>
+    public virtual bool CanDropMoneyOn(Aisling source, int amount)
+    {
+        foreach (ref var script in CollectionsMarshal.AsSpan(Scripts))
+            if (!script.CanDropMoneyOn(source, amount))
+                return false;
+
+        return true;
+    }
+
+    /// <summary>
+    ///     DO NOT EDIT THIS SCRIPT
+    /// </summary>
     public virtual bool CanMove()
     {
         foreach (ref var script in CollectionsMarshal.AsSpan(Scripts))
             if (!script.CanMove())
+                return false;
+
+        return true;
+    }
+
+    /// <summary>
+    ///     DO NOT EDIT THIS SCRIPT
+    /// </summary>
+    public virtual bool CanPickupItem(GroundItem groundItem)
+    {
+        foreach (ref var script in CollectionsMarshal.AsSpan(Scripts))
+            if (!script.CanPickupItem(groundItem))
+                return false;
+
+        return true;
+    }
+
+    /// <summary>
+    ///     DO NOT EDIT THIS SCRIPT
+    /// </summary>
+    public virtual bool CanPickupMoney(Money money)
+    {
+        foreach (ref var script in CollectionsMarshal.AsSpan(Scripts))
+            if (!script.CanPickupMoney(money))
                 return false;
 
         return true;
@@ -220,6 +284,24 @@ public class CompositeAislingScript : CompositeScriptBase<IAislingScript>, IAisl
     /// <summary>
     ///     DO NOT EDIT THIS SCRIPT
     /// </summary>
+    public virtual void OnLogin()
+    {
+        foreach (ref var script in CollectionsMarshal.AsSpan(Scripts))
+            script.OnLogin();
+    }
+
+    /// <summary>
+    ///     DO NOT EDIT THIS SCRIPT
+    /// </summary>
+    public virtual void OnLogout()
+    {
+        foreach (ref var script in CollectionsMarshal.AsSpan(Scripts))
+            script.OnLogout();
+    }
+
+    /// <summary>
+    ///     DO NOT EDIT THIS SCRIPT
+    /// </summary>
     public virtual void OnPublicMessage(Creature source, string message)
     {
         foreach (ref var script in CollectionsMarshal.AsSpan(Scripts))
@@ -229,7 +311,7 @@ public class CompositeAislingScript : CompositeScriptBase<IAislingScript>, IAisl
     /// <summary>
     ///     DO NOT EDIT THIS SCRIPT
     /// </summary>
-    public void OnStatIncrease(Stat stat)
+    public virtual void OnStatIncrease(Stat stat)
     {
         foreach (ref var script in CollectionsMarshal.AsSpan(Scripts))
             script.OnStatIncrease(stat);

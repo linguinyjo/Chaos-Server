@@ -1,3 +1,4 @@
+#region
 using Chaos.Models.Abstractions;
 using Chaos.Models.Data;
 using Chaos.Models.Menu;
@@ -9,6 +10,7 @@ using Chaos.Scripting.DialogScripts.Abstractions;
 using Chaos.Services.Factories.Abstractions;
 using Chaos.TypeMapper.Abstractions;
 using Chaos.Utilities;
+#endregion
 
 namespace Chaos.Scripting.DialogScripts.ShopScripts;
 

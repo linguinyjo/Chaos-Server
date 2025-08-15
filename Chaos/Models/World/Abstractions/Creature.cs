@@ -1,14 +1,17 @@
+#region
 using System.Runtime.CompilerServices;
 using Chaos.Collections;
 using Chaos.Collections.Abstractions;
-using Chaos.Common.Definitions;
 using Chaos.Common.Utilities;
+using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Extensions;
+using Chaos.Extensions.Common;
 using Chaos.Extensions.Geometry;
 using Chaos.Formulae;
 using Chaos.Geometry.Abstractions;
 using Chaos.Geometry.Abstractions.Definitions;
+using Chaos.Geometry.EqualityComparers;
 using Chaos.Models.Data;
 using Chaos.Models.Panel;
 using Chaos.NLog.Logging.Definitions;
@@ -19,8 +22,10 @@ using Chaos.Scripting.Abstractions;
 using Chaos.Scripting.CreatureScripts.Abstractions;
 using Chaos.Scripting.EffectScripts.Abstractions;
 using Chaos.Scripting.FunctionalScripts.NaturalRegeneration;
+using Chaos.Services.Servers.Options;
 using Chaos.Time;
 using Chaos.Time.Abstractions;
+#endregion
 
 namespace Chaos.Models.World.Abstractions;
 
@@ -187,7 +192,7 @@ public abstract class Creature : NamedEntity, IAffected, IScripted<ICreatureScri
     public virtual bool CanUse(
         Spell spell,
         Creature target,
-        string? prompt,
+        string? promptResponse,
         [MaybeNullWhen(false)] out SpellContext spellContext)
     {
         spellContext = null;
@@ -198,17 +203,16 @@ public abstract class Creature : NamedEntity, IAffected, IScripted<ICreatureScri
         if (!spell.CanUse())
             return false;
 
-        spellContext = new SpellContext(this, target, prompt);
+        spellContext = new SpellContext(this, target, promptResponse);
 
         return spell.Script.CanUse(spellContext);
     }
 
     public virtual void Chant(string message) => ShowPublicMessage(PublicMessageType.Chant, message);
 
-    public Stack<IPoint> FindPath(IPoint target, IPathOptions? pathOptions = null)
+    public Stack<IPoint> FindPath(IPoint target, IPathOptions? pathOptions = null, bool ignoreCollision = false)
     {
-        pathOptions ??= PathOptions.Default;
-        pathOptions.IgnoreWalls |= Type == CreatureType.WalkThrough;
+        pathOptions ??= PathOptions.Default.ForCreatureType(Type);
 
         var nearbyDoors = MapInstance.GetEntitiesWithinRange<Door>(this)
                                      .Where(door => door.Closed);
@@ -216,11 +220,15 @@ public abstract class Creature : NamedEntity, IAffected, IScripted<ICreatureScri
         var nearbyCreatures = MapInstance.GetEntitiesWithinRange<Creature>(this)
                                          .ThatThisCollidesWith(this);
 
-        var nearbyUnwalkablePoints = nearbyDoors.Concat<IPoint>(nearbyCreatures)
-                                                .Concat(pathOptions.BlockedPoints)
-                                                .ToHashSet();
+        var blockedPoints = new HashSet<IPoint>(pathOptions.BlockedPoints, PointEqualityComparer.Instance);
 
-        pathOptions.BlockedPoints = nearbyUnwalkablePoints;
+        if (!pathOptions.IgnoreWalls)
+            blockedPoints.AddRange(nearbyDoors);
+
+        if (!ignoreCollision)
+            blockedPoints.AddRange(nearbyCreatures);
+
+        pathOptions.BlockedPoints = blockedPoints;
 
         return MapInstance.Pathfinder.FindPath(
             MapInstance.InstanceId,
@@ -272,6 +280,16 @@ public abstract class Creature : NamedEntity, IAffected, IScripted<ICreatureScri
 
     public virtual void OnGoldDroppedOn(Aisling source, int amount)
     {
+        if (!this.WithinRange(source, WorldOptions.Instance.TradeRange))
+            return;
+
+        if (!Script.CanDropMoneyOn(source, amount))
+        {
+            source.SendActiveMessage("You can't do that right now");
+
+            return;
+        }
+
         if (source.TryTakeGold(amount))
         {
             Gold += amount;
@@ -293,13 +311,18 @@ public abstract class Creature : NamedEntity, IAffected, IScripted<ICreatureScri
         if (count == 0)
             count = 1;
 
-        if (source.Inventory.TryGetObject(slot, out var inventoryItem))
-            if (!Script.CanDropItemOn(source, inventoryItem))
-            {
-                source.SendActiveMessage("You can't trade that item");
+        if (!this.WithinRange(source, WorldOptions.Instance.TradeRange))
+            return;
 
-                return;
-            }
+        if (!source.Inventory.TryGetObject(slot, out var inventoryItem) || (inventoryItem.Count < count))
+            return;
+
+        if (!Script.CanDropItemOn(source, inventoryItem) || !inventoryItem.Script.CanBeDroppedOn(source, this))
+        {
+            source.SendActiveMessage("You can't trade that item");
+
+            return;
+        }
 
         if (source.Inventory.RemoveQuantity(slot, count, out var items))
             foreach (var item in items)
@@ -321,13 +344,16 @@ public abstract class Creature : NamedEntity, IAffected, IScripted<ICreatureScri
             }
     }
 
-    public void Pathfind(IPoint target, int distance = 1, IPathOptions? pathOptions = null)
+    public void Pathfind(
+        IPoint target,
+        int distance = 1,
+        IPathOptions? pathOptions = null,
+        bool ignoreCollision = false)
     {
-        pathOptions ??= PathOptions.Default;
-        pathOptions.IgnoreWalls |= Type == CreatureType.WalkThrough;
+        pathOptions ??= PathOptions.Default.ForCreatureType(Type);
 
         //if we're within distance, no need to pathfind
-        if (this.DistanceFrom(target) <= distance)
+        if (this.ManhattanDistanceFrom(target) <= distance)
             return;
 
         var path = FindPath(target, pathOptions);
@@ -335,7 +361,11 @@ public abstract class Creature : NamedEntity, IAffected, IScripted<ICreatureScri
         var nextPoint = path.Pop();
         var direction = nextPoint.DirectionalRelationTo(this);
 
-        Walk(direction, pathOptions.IgnoreBlockingReactors);
+        Walk(
+            direction,
+            pathOptions.IgnoreBlockingReactors,
+            pathOptions.IgnoreWalls,
+            ignoreCollision);
     }
 
     public virtual void Say(string message) => ShowPublicMessage(PublicMessageType.Normal, message);
@@ -403,7 +433,7 @@ public abstract class Creature : NamedEntity, IAffected, IScripted<ICreatureScri
 
         creaturesWithinRange = creaturesWithinRange.ToList();
 
-        //separated to merchant replies show up below the text theyre responding to
+        //separated so merchant replies show up below the text theyre responding to
         foreach (var aisling in creaturesWithinRange.OfType<Aisling>())
             if (!aisling.IgnoreList.Contains(Name))
                 aisling.Client.SendDisplayPublicMessage(Id, publicMessageType, sendMessage);
@@ -429,7 +459,7 @@ public abstract class Creature : NamedEntity, IAffected, IScripted<ICreatureScri
         bool ignoreSharding = false,
         bool fromWolrdMap = false,
         Func<Task>? onTraverse = null)
-        => Task.Run(
+        => Task.Run<Task>(
             async () =>
             {
                 var currentMap = MapInstance;
@@ -478,6 +508,68 @@ public abstract class Creature : NamedEntity, IAffected, IScripted<ICreatureScri
                 }
             });
 
+    /// <summary>
+    ///     Attempts to move this entity from its current map to the destination map
+    /// </summary>
+    /// <remarks>
+    ///     This method does not use the MapInstance.BeginInvoke api due to not knowing who the caller is. The caller could be
+    ///     from another map, which would require entrancy into this entity's map synchronization, but there is no way of
+    ///     knowing where the caller is from. In order for this to be safe, it has to make no assumptions and deal with every
+    ///     requirement itself.
+    /// </remarks>
+    public virtual async Task TraverseMapAsync(
+        MapInstance destinationMap,
+        IPoint destinationPoint,
+        bool ignoreSharding = false,
+        bool fromWolrdMap = false,
+        Func<Task>? onTraverse = null)
+    {
+        var currentMap = MapInstance;
+
+        var aisling = this as Aisling;
+
+        if (aisling is not null)
+            await aisling.Client.ReceiveSync.WaitAsync();
+
+        try
+        {
+            await using var sync = await ComplexSynchronizationHelper.WaitAsync(
+                TimeSpan.FromMilliseconds(500),
+                TimeSpan.FromMilliseconds(3),
+                currentMap.Sync,
+                destinationMap.Sync);
+
+            if (!fromWolrdMap && !currentMap.RemoveEntity(this))
+                return;
+
+            if (currentMap.InstanceId != destinationMap.InstanceId)
+                Trackers.LastMapInstanceId = currentMap.InstanceId;
+
+            if (aisling is not null && ignoreSharding)
+                destinationMap.AddAislingDirect(aisling, destinationPoint);
+            else
+                destinationMap.AddEntity(this, destinationPoint);
+
+            if (onTraverse is not null)
+                await onTraverse();
+        } catch (Exception e)
+        {
+            Logger.WithTopics(Topics.Entities.MapInstance, Topics.Entities.Creature, Topics.Actions.Traverse)
+                  .WithProperty(this)
+                  .WithProperty(currentMap)
+                  .WithProperty(destinationMap)
+                  .LogError(
+                      e,
+                      "Exception thrown while creature {@CreatureName} attempted to traverse from map {@FromMapInstanceId} to map {@ToMapInstanceId}",
+                      Name,
+                      currentMap.InstanceId,
+                      destinationMap.InstanceId);
+        } finally
+        {
+            aisling?.Client.ReceiveSync.Release();
+        }
+    }
+
     public virtual bool TryDrop(IPoint point, IEnumerable<Item> items, [MaybeNullWhen(false)] out GroundItem[] groundItems)
     {
         groundItems = items
@@ -485,7 +577,7 @@ public abstract class Creature : NamedEntity, IAffected, IScripted<ICreatureScri
             .Select(i => new GroundItem(i, MapInstance, point))
             .ToArray();
 
-        if (!groundItems.Any())
+        if (groundItems.Length == 0)
             return false;
 
         MapInstance.AddEntities(groundItems);
@@ -515,8 +607,8 @@ public abstract class Creature : NamedEntity, IAffected, IScripted<ICreatureScri
         return true;
     }
 
-    public virtual bool TryDrop(IPoint point, [MaybeNullWhen(false)] out GroundItem[] groundItems, params Item[] items)
-        => TryDrop(point, items.AsEnumerable(), out groundItems);
+    public virtual bool TryDrop(IPoint point, [MaybeNullWhen(false)] out GroundItem[] groundItems, params IEnumerable<Item> items)
+        => TryDrop(point, items, out groundItems);
 
     public virtual bool TryDropGold(IPoint point, int amount, [MaybeNullWhen(false)] out Money money)
     {
@@ -561,7 +653,7 @@ public abstract class Creature : NamedEntity, IAffected, IScripted<ICreatureScri
         return true;
     }
 
-    public virtual bool TryUseSpell(Spell spell, uint? targetId = null, string? prompt = null)
+    public virtual bool TryUseSpell(Spell spell, uint? targetId = null, string? promptResponse = null)
     {
         Creature? target;
 
@@ -577,7 +669,7 @@ public abstract class Creature : NamedEntity, IAffected, IScripted<ICreatureScri
         if (!CanUse(
                 spell,
                 target!,
-                prompt,
+                promptResponse,
                 out var context))
             return false;
 
@@ -588,9 +680,9 @@ public abstract class Creature : NamedEntity, IAffected, IScripted<ICreatureScri
         return true;
     }
 
-    public virtual void Turn(Direction direction)
+    public virtual void Turn(Direction direction, bool forced = false)
     {
-        if (!Script.CanTurn())
+        if (!forced && !Script.CanTurn())
             return;
 
         Direction = direction;
@@ -614,31 +706,46 @@ public abstract class Creature : NamedEntity, IAffected, IScripted<ICreatureScri
             ? MapInstance.GetEntitiesWithinRange<VisibleEntity>(this)
                          .ThatAreObservedBy(this, true)
                          .ToHashSet()
-            : MapInstance.GetEntitiesWithinRange<VisibleEntity>(this)
-                         .Where(partialUpdateEntities.Contains)
-                         .ThatAreObservedBy(this, true)
-                         .ToHashSet();
+            : partialUpdateEntities.ThatAreWithinRange(this)
+                                   .Where(e => MapInstance.TryGetEntity<WorldEntity>(e.Id, out _)) //make sure they are still on the map
+                                   .ThatAreObservedBy(this, true)
+                                   .ToHashSet();
 
-        foreach (var entity in previouslyObservable.Except(currentlyObservable))
+        foreach (var entity in previouslyObservable)
+            if (!currentlyObservable.Contains(entity))
+                OnDeparture(entity, refresh);
+
+        foreach (var entity in currentlyObservable)
+            if (!previouslyObservable.Contains(entity))
+                OnApproached(entity, refresh);
+
+        /*foreach (var entity in previouslyObservable.Except(currentlyObservable))
             OnDeparture(entity, refresh);
 
         foreach (var entity in currentlyObservable.Except(previouslyObservable))
-            OnApproached(entity, refresh);
+            OnApproached(entity, refresh);*/
     }
 
-    public virtual void Walk(Direction direction, bool? ignoreBlockingReactors = null)
+    public virtual void Walk(
+        Direction direction,
+        bool? ignoreBlockingReactors = null,
+        bool? ignoreWalls = null,
+        bool? ignoreCollision = null)
     {
-        ignoreBlockingReactors ??= Type == CreatureType.Aisling;
-
         if (!Script.CanMove())
             return;
 
         Direction = direction;
         var startPosition = Location.From(this);
         var startPoint = Point.From(this);
-        var endPoint = ((IPoint)this).DirectionalOffset(direction);
+        var endPoint = this.DirectionalOffset(direction);
 
-        if (!MapInstance.IsWalkable(endPoint, Type, ignoreBlockingReactors))
+        if (!MapInstance.IsWalkable(
+                endPoint,
+                ignoreBlockingReactors,
+                ignoreWalls,
+                ignoreCollision,
+                Type))
             return;
 
         SetLocation(endPoint);
@@ -671,10 +778,9 @@ public abstract class Creature : NamedEntity, IAffected, IScripted<ICreatureScri
             reactor.OnWalkedOn(this);
     }
 
-    public virtual void Wander(IPathOptions? pathOptions = null)
+    public virtual void Wander(IPathOptions? pathOptions = null, bool ignoreCollision = false)
     {
-        pathOptions ??= PathOptions.Default;
-        pathOptions.IgnoreWalls |= Type == CreatureType.WalkThrough;
+        pathOptions ??= PathOptions.Default.ForCreatureType(Type);
 
         var nearbyDoors = MapInstance.GetEntitiesWithinRange<Door>(this, 1)
                                      .Where(door => door.Closed);
@@ -682,18 +788,26 @@ public abstract class Creature : NamedEntity, IAffected, IScripted<ICreatureScri
         var nearbyCreatures = MapInstance.GetEntitiesWithinRange<Creature>(this, 1)
                                          .ThatThisCollidesWith(this);
 
-        var nearbyUnwalkablePoints = nearbyDoors.Concat<IPoint>(nearbyCreatures)
-                                                .Concat(pathOptions.BlockedPoints)
-                                                .ToHashSet();
+        var blockedPoints = new HashSet<IPoint>(pathOptions.BlockedPoints, PointEqualityComparer.Instance);
 
-        pathOptions.BlockedPoints = nearbyUnwalkablePoints;
+        if (!pathOptions.IgnoreWalls)
+            blockedPoints.AddRange(nearbyDoors);
+
+        if (!ignoreCollision)
+            blockedPoints.AddRange(nearbyCreatures);
+
+        pathOptions.BlockedPoints = blockedPoints;
 
         var direction = MapInstance.Pathfinder.FindRandomDirection(MapInstance.InstanceId, this, pathOptions);
 
         if (direction == Direction.Invalid)
             return;
 
-        Walk(direction);
+        Walk(
+            direction,
+            pathOptions.IgnoreBlockingReactors,
+            pathOptions.IgnoreWalls,
+            ignoreCollision);
     }
 
     /// <inheritdoc />

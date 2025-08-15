@@ -1,7 +1,10 @@
+#region
+using System.Buffers;
 using System.Buffers.Binary;
 using System.Runtime.InteropServices;
 using System.Text;
 using Chaos.IO.Definitions;
+#endregion
 
 namespace Chaos.IO.Memory;
 
@@ -109,8 +112,7 @@ public ref struct SpanWriter
 
         //create a new buffer of length * 3 OR (length + bytesToWrite) * 1.5 (whichever is bigger)
         var newLength = (int)Math.Max(buffer.Length * 3, (buffer.Length + bytesToWrite) * 1.5);
-        var newBuffer = new byte[newLength];
-        Buffer = new Span<byte>(newBuffer);
+        Buffer = new byte[newLength].AsSpan();
         buffer.CopyTo(Buffer);
     }
 
@@ -227,7 +229,7 @@ public ref struct SpanWriter
     /// <param name="buffer">
     ///     The byte array to write.
     /// </param>
-    public void WriteBytes(params byte[] buffer)
+    public void WriteBytes(params ReadOnlySpan<byte> buffer)
     {
         GrowIfNeeded(buffer.Length);
 

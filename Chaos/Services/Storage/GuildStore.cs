@@ -1,3 +1,4 @@
+#region
 using Chaos.Collections;
 using Chaos.IO.FileSystem;
 using Chaos.NLog.Logging.Definitions;
@@ -7,6 +8,7 @@ using Chaos.Services.Storage.Abstractions;
 using Chaos.Services.Storage.Options;
 using Chaos.Storage.Abstractions;
 using Microsoft.Extensions.Options;
+#endregion
 
 namespace Chaos.Services.Storage;
 
@@ -105,13 +107,12 @@ public class GuildStore : PeriodicSaveStoreBase<Guild, GuildStoreOptions>
         var tier3 = EntityRepository.LoadAndMap<GuildRank, GuildRankSchema>(tier3Path);
 
         guild.Initialize(
-            new[]
-            {
+            [
                 tier0,
                 tier1,
                 tier2,
                 tier3
-            });
+            ]);
 
         metricsLogger.LogDebug("Loaded new {@TypeName} entry with {@Key}", nameof(Guild), key);
 

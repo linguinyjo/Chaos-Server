@@ -1,6 +1,7 @@
-using System.Collections;
+#region
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
+#endregion
 
 namespace Chaos.Extensions.Common;
 
@@ -100,23 +101,6 @@ public static class EnumerableExtensions
         => enumerable.OrderByDescending(e => e, comparer);
 
     /// <summary>
-    ///     Attempts to cast the IEnumerable to use a different generic type, otherwise checks each element for the given type
-    /// </summary>
-    /// <param name="enumerable">
-    ///     The enumerable to iterate
-    /// </param>
-    /// <typeparam name="TReturn">
-    /// </typeparam>
-    [ExcludeFromCodeCoverage]
-    public static IEnumerable<TReturn> SafeCast<TReturn>(this IEnumerable enumerable)
-    {
-        if (enumerable is IEnumerable<TReturn> casted)
-            return casted;
-
-        return enumerable.OfType<TReturn>();
-    }
-
-    /// <summary>
     ///     Randomizes the order of the elements in a sequence
     /// </summary>
     [ExcludeFromCodeCoverage(Justification = "Impossible to test randomness without creating an occasionally failing test")]
@@ -126,6 +110,58 @@ public static class EnumerableExtensions
         list.ShuffleInPlace();
 
         return list;
+    }
+
+    /// <summary>
+    ///     Randomly selects a number of elements from the given enumerable
+    /// </summary>
+    /// <param name="source">
+    ///     The source of items
+    /// </param>
+    /// <param name="count">
+    ///     The amount of items to randomly select
+    /// </param>
+    /// <typeparam name="T">
+    ///     The type of the item
+    /// </typeparam>
+    /// <returns>
+    ///     A randomly selected sequence of items from the source. Count items are returned, and order is preserved.
+    /// </returns>
+    public static IEnumerable<T> TakeRandom<T>(this IEnumerable<T> source, int count)
+    {
+        ArgumentNullException.ThrowIfNull(source);
+
+        ArgumentOutOfRangeException.ThrowIfLessThan(count, 0, nameof(count));
+
+        var collection = source.ToList();
+
+        if (count >= collection.Count)
+            return collection;
+
+        return RandomlyIterate(collection, count);
+
+        // variant of reservoir sampling
+        static IEnumerable<T> RandomlyIterate(List<T> localCollection, int localCount)
+        {
+            var remaining = localCollection.Count;
+
+            for (var i = 0; i < localCollection.Count; i++)
+            {
+                var probability = (double)localCount / remaining;
+
+                if (Random.Shared.NextDouble() <= probability)
+                {
+                    yield return localCollection[i];
+
+                    localCount--;
+
+                    if (localCount == 0)
+                        yield break;
+                }
+
+                remaining--;
+            }
+        }
     }
 
     /// <summary>
@@ -139,23 +175,4 @@ public static class EnumerableExtensions
     /// </summary>
     public static IOrderedEnumerable<T> ThenByDescending<T>(this IOrderedEnumerable<T> orderedEnumerable, IComparer<T> comparer)
         => orderedEnumerable.ThenByDescending(e => e, comparer);
-
-    /// <summary>
-    ///     Casts the given IEnumerable and then converts it to a List
-    /// </summary>
-    /// <param name="enumerable">
-    ///     The enumerable to cast and convert
-    /// </param>
-    /// <typeparam name="TReturn">
-    ///     The type to cast the IEnumerable to
-    /// </typeparam>
-    [ExcludeFromCodeCoverage]
-    public static List<TReturn> ToListCast<TReturn>(this IEnumerable enumerable)
-    {
-        if (enumerable is List<TReturn> list)
-            return list;
-
-        return enumerable.SafeCast<TReturn>()
-                         .ToList();
-    }
 }

@@ -1,9 +1,11 @@
+#region
 using Chaos.Collections;
 using Chaos.Extensions.Common;
 using Chaos.Geometry.Abstractions;
 using Chaos.Services.Servers.Options;
 using Chaos.Time;
 using Chaos.Time.Abstractions;
+#endregion
 
 namespace Chaos.Models.World.Abstractions;
 
@@ -26,9 +28,9 @@ public abstract class GroundEntity : NamedEntity
             point)
         => GroundTimer = new IntervalTimer(TimeSpan.FromMinutes(WorldOptions.Instance.GroundItemDespawnTimeMins), false);
 
-    public virtual bool CanPickUp(Aisling source) => Owners.IsNullOrEmpty() || source.IsAdmin || Owners!.Contains(source.Name);
+    public virtual bool CanBePickedUp(Aisling source) => Owners.IsNullOrEmpty() || source.IsAdmin || Owners!.Contains(source.Name);
 
-    public void LockToAislings(int seconds, params Aisling[] aislings)
+    public void LockToAislings(int seconds, params IEnumerable<Aisling> aislings)
     {
         if (seconds <= 0)
             return;

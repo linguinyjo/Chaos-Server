@@ -1,6 +1,8 @@
+#region
 using Chaos.Common.Identity;
 using FluentAssertions;
-using Xunit;
+using Assembly = System.Reflection.Assembly;
+#endregion
 
 namespace Chaos.Common.Tests;
 
@@ -20,7 +22,31 @@ public sealed class PersistentIdGeneratorTests : IDisposable
             File.Delete(FILE_PATH);
     }
 
-    [Fact]
+    [Test]
+    public void NextId_Does_Not_Save_When_Not_Advanced()
+    {
+        var gen = new PersistentIdGenerator<int>("NoAdvance");
+
+        // Give background saver a chance to run
+        Thread.Sleep(1200);
+
+        // No call to NextId; file should not exist
+        var path = Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData),
+            "Chaos",
+            "PersistentIdentity",
+            Assembly.GetEntryAssembly()
+                    ?.GetName()
+                    .Name
+            ?? "Unknown",
+            "NoAdvance.json");
+
+        File.Exists(path)
+            .Should()
+            .BeFalse();
+    }
+
+    [Test]
     public void NextId_ShouldGenerateNextSequentialId()
     {
         // Arrange
@@ -34,7 +60,7 @@ public sealed class PersistentIdGeneratorTests : IDisposable
            .Be(6);
     }
 
-    [Fact]
+    [Test]
     public void NextId_ShouldGenerateSequentialIds()
     {
         // Arrange
@@ -49,7 +75,7 @@ public sealed class PersistentIdGeneratorTests : IDisposable
            .BeGreaterThan(id1);
     }
 
-    [Fact]
+    [Test]
     public void NextId_ShouldPersistIdBetweenInstances()
     {
         // Arrange

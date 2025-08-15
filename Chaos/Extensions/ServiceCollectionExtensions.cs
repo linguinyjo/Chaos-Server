@@ -1,4 +1,6 @@
+#region
 using System.Net.Sockets;
+using System.Reflection;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -54,9 +56,10 @@ using Chaos.TypeMapper.Abstractions;
 using Chaos.Utilities;
 using Microsoft.Extensions.Options;
 using ItemMapperProfile = Chaos.Site.Services.MapperProfiles.ItemMapperProfile;
+using MonsterMapperProfile = Chaos.Site.Services.MapperProfiles.MonsterMapperProfile;
 using SkillMapperProfile = Chaos.Site.Services.MapperProfiles.SkillMapperProfile;
 using SpellMapperProfile = Chaos.Site.Services.MapperProfiles.SpellMapperProfile;
-using MonsterMapperProfile = Chaos.Site.Services.MapperProfiles.MonsterMapperProfile;
+#endregion
 
 namespace Chaos.Extensions;
 
@@ -78,7 +81,9 @@ public static class ServiceCollectionExtensions
             IgnoreReadOnlyFields = true,
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
             AllowTrailingCommas = true,
-            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+            RespectNullableAnnotations = true,
+            RespectRequiredConstructorParameters = true
         };
 
         JsonSerializerOptions.Converters.Add(new PointConverter());
@@ -94,7 +99,17 @@ public static class ServiceCollectionExtensions
         services.ConfigureOptions<OptionsConfigurer>();
         services.ConfigureOptions<OptionsValidator>();
 
-        services.AddOptionsFromConfig<ChaosOptions>(ConfigKeys.Options.Key);
+        services.AddOptionsFromConfig<ChaosOptions>(ConfigKeys.Options.Key)
+                .PostConfigure(
+                    o =>
+                    {
+                        var assemblyPath = Assembly.GetExecutingAssembly()
+                                                   .Location;
+                        var assemblyDirectory = Path.GetDirectoryName(assemblyPath)!;
+                        var relative = Path.Combine(assemblyDirectory, o.StagingDirectory);
+                        var absolute = Path.GetFullPath(relative);
+                        o.StagingDirectory = absolute;
+                    });
         services.AddOptionsFromConfig<SiteOptions>(ConfigKeys.Options.Key);
 
         services.AddSingleton<IStagingDirectory, ChaosOptions>(
@@ -167,6 +182,8 @@ public static class ServiceCollectionExtensions
 
         services.AddTransient<IScriptProvider, ScriptProvider>();
         services.AddTransient<ICloningService<Item>, ItemCloningService>();
+
+        services.AddSingleton<IHostedService, WorldScriptingService>();
     }
 
     public static void AddServerAuthentication(this IServiceCollection services)
@@ -195,6 +212,10 @@ public static class ServiceCollectionExtensions
 
     public static void AddStorage(this IServiceCollection services)
     {
+        //add local storage for general use
+        services.AddLocalStorage(ConfigKeys.Options.Key);
+
+        services.AddOptionsFromConfig<EntityRepositoryOptions>(ConfigKeys.Options.Key);
         services.AddTransient<IEntityRepository, EntityRepository>();
 
         //add mail store with backup service
@@ -218,6 +239,8 @@ public static class ServiceCollectionExtensions
         //add aisling store with backup service
         services.AddOptionsFromConfig<AislingStoreOptions>(ConfigKeys.Options.Key);
         services.AddSingleton<IAsyncStore<Aisling>, IStore<Aisling>, AislingStore>();
+        services.AddSingleton<IFacadeStore<Aisling>>(provider => (IFacadeStore<Aisling>)provider.GetService<IAsyncStore<Aisling>>()!);
+        services.AddSingleton<AislingFacadeCache>();
         services.AddHostedService<DirectoryBackupService<AislingStoreOptions>>();
         services.ConfigureOptions<DirectoryBoundOptionsConfigurer<AislingStoreOptions>>();
 
@@ -279,6 +302,7 @@ public static class ServiceCollectionExtensions
         services.AddSimpleFactory<IChaosLobbyClient, ChaosLobbyClient>(typeof(Socket));
         services.AddSimpleFactory<IChaosLoginClient, ChaosLoginClient>(typeof(Socket));
         services.AddSimpleFactory<IChaosWorldClient, ChaosWorldClient>(typeof(Socket));
+        services.AddSimpleFactory<Group>(typeof(Aisling), typeof(Aisling));
         services.AddSimpleFactory<Exchange>(typeof(Aisling), typeof(Aisling));
         services.AddSimpleFactory<MailBox>(typeof(string));
     }

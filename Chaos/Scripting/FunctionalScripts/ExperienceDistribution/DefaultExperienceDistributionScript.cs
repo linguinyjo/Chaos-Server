@@ -1,5 +1,6 @@
+#region
 using System.Diagnostics;
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Formulae;
 using Chaos.Formulae.Abstractions;
 using Chaos.Models.World;
@@ -10,6 +11,7 @@ using Chaos.Scripting.Abstractions;
 using Chaos.Scripting.FunctionalScripts.Abstractions;
 using Chaos.Scripting.FunctionalScripts.LevelUp;
 using Chaos.Services.Servers.Options;
+#endregion
 
 namespace Chaos.Scripting.FunctionalScripts.ExperienceDistribution;
 
@@ -27,7 +29,7 @@ public class DefaultExperienceDistributionScript(ILogger<DefaultExperienceDistri
     public static IExperienceDistributionScript Create() => FunctionalScriptRegistry.Instance.Get<IExperienceDistributionScript>(Key);
 
     /// <inheritdoc />
-    public virtual void DistributeExperience(Creature killedCreature, params Aisling[] aislings)
+    public virtual void DistributeExperience(Creature killedCreature, params ICollection<Aisling> aislings)
     {
         //var rateMultiplier = 3; // TODO temporary exp boost
         var exp = ExperienceFormula.Calculate(killedCreature, aislings);

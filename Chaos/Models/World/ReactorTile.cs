@@ -1,3 +1,4 @@
+#region
 using Chaos.Collections;
 using Chaos.Common.Abstractions;
 using Chaos.Geometry.Abstractions;
@@ -6,6 +7,7 @@ using Chaos.Models.World.Abstractions;
 using Chaos.Scripting.Abstractions;
 using Chaos.Scripting.ReactorTileScripts.Abstractions;
 using Chaos.Time.Abstractions;
+#endregion
 
 namespace Chaos.Models.World;
 
@@ -20,7 +22,8 @@ public sealed class TemplatedReactorTile : ReactorTile
         IPoint point,
         IScriptProvider scriptProvider,
         ICollection<string>? extraScriptKeys,
-        Creature? owner)
+        Creature? owner,
+        IScript? sourceScript = null)
         : base(
             mapInstance,
             point,
@@ -29,15 +32,17 @@ public sealed class TemplatedReactorTile : ReactorTile
 
             // ReSharper disable once RedundantAssignment
             template.ScriptKeys
-                    .Union(extraScriptKeys ??= Array.Empty<string>())
+                    .Union(extraScriptKeys ??= [])
                     .ToList(),
             template.ScriptVars,
-            owner)
+            owner,
+            sourceScript)
         => Template = template;
 }
 
 public class ReactorTile : InteractableEntity, IDeltaUpdatable, IScripted<IReactorTileScript>
 {
+    public IScript? SourceScript { get; set; }
     public Creature? Owner { get; }
 
     /// <inheritdoc />
@@ -59,10 +64,12 @@ public class ReactorTile : InteractableEntity, IDeltaUpdatable, IScripted<IReact
         // ReSharper disable once ParameterTypeCanBeEnumerable.Local
         ICollection<string> scriptKeys,
         IDictionary<string, IScriptVars> scriptVars,
-        Creature? owner = null)
+        Creature? owner = null,
+        IScript? sourceScript = null)
         : base(mapInstance, point)
     {
         Owner = owner;
+        SourceScript = sourceScript;
         ShouldBlockPathfinding = shouldBlockPathfinding;
         ScriptVars = new Dictionary<string, IScriptVars>(scriptVars, StringComparer.OrdinalIgnoreCase);
         ScriptKeys = new HashSet<string>(scriptKeys, StringComparer.OrdinalIgnoreCase);

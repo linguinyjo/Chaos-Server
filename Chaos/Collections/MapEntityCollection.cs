@@ -1,19 +1,30 @@
+#region
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using Chaos.Collections.Specialized;
 using Chaos.Common.Utilities;
-using Chaos.Extensions;
 using Chaos.Extensions.Common;
 using Chaos.Extensions.Geometry;
 using Chaos.Geometry.Abstractions;
+using Chaos.Geometry.EqualityComparers;
 using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
 using Chaos.Time.Abstractions;
+#endregion
 
 namespace Chaos.Collections;
 
+/// <summary>
+///     Represents a collection of entities on a map
+/// </summary>
+/// <remarks>
+///     This is a very specialized collection used to satisfy very specific requirements. It is not intended for general
+///     use
+/// </remarks>
 public sealed class MapEntityCollection : IDeltaUpdatable
 {
     private readonly HashSet<Aisling> Aislings;
-    private readonly Rectangle Bounds;
+    private readonly IRectangle Bounds;
     private readonly HashSet<Door> Doors;
     private readonly Dictionary<uint, MapEntity> EntityLookup;
     private readonly HashSet<GroundEntity> GroundEntities;
@@ -22,22 +33,34 @@ public sealed class MapEntityCollection : IDeltaUpdatable
     private readonly ILogger Logger;
     private readonly HashSet<Merchant> Merchants;
     private readonly HashSet<Monster> Monsters;
-    private readonly HashSet<MapEntity>[,] PointLookup;
+    private readonly QuadTreeWithSpatialHash<MapEntity> QuadTree;
     private readonly HashSet<ReactorTile> Reactors;
     private readonly UpdatableCollection Updatables;
     private readonly TypeSwitchExpression<IEnumerable> ValuesCases;
 
-    private readonly int WalkableArea;
-
-    public MapEntityCollection(
-        ILogger logger,
-        int mapWidth,
-        int mapHeight,
-        int walkableArea)
+    /// <summary>
+    ///     Initializes a new instance of the <see cref="MapEntityCollection" /> class
+    /// </summary>
+    /// <param name="logger">
+    ///     A logger to log messages
+    /// </param>
+    /// <param name="mapWidth">
+    ///     The width of the map
+    /// </param>
+    /// <param name="mapHeight">
+    ///     The height of the map
+    /// </param>
+    public MapEntityCollection(ILogger logger, int mapWidth, int mapHeight)
     {
+        Bounds = new Rectangle(
+            0,
+            0,
+            mapWidth,
+            mapHeight);
+
         Logger = logger;
         EntityLookup = new Dictionary<uint, MapEntity>();
-        PointLookup = new HashSet<MapEntity>[mapWidth, mapHeight];
+        QuadTree = new QuadTreeWithSpatialHash<MapEntity>(Bounds, EqualityComparer<WorldEntity>.Default);
         Monsters = new HashSet<Monster>(WorldEntity.IdComparer);
         Merchants = new HashSet<Merchant>(WorldEntity.IdComparer);
         Aislings = new HashSet<Aisling>(WorldEntity.IdComparer);
@@ -45,20 +68,6 @@ public sealed class MapEntityCollection : IDeltaUpdatable
         Reactors = new HashSet<ReactorTile>(WorldEntity.IdComparer);
         Doors = new HashSet<Door>(WorldEntity.IdComparer);
         Updatables = new UpdatableCollection(logger);
-
-        Bounds = new Rectangle(
-            0,
-            0,
-            mapWidth,
-            mapHeight);
-
-        WalkableArea = walkableArea;
-
-        for (var x = 0; x < mapWidth; x++)
-        {
-            for (var y = 0; y < mapHeight; y++)
-                PointLookup[x, y] = new HashSet<MapEntity>(WorldEntity.IdComparer);
-        }
 
         //setup Values<T> cases
         ValuesCases = new TypeSwitchExpression<IEnumerable>().Case<Aisling>(Aislings)
@@ -68,18 +77,15 @@ public sealed class MapEntityCollection : IDeltaUpdatable
                                                              .Case<GroundEntity>(GroundEntities)
                                                              .Case<ReactorTile>(Reactors)
                                                              .Case<Door>(Doors)
-                                                             .Case<Creature>(
-                                                                 () => Aislings.Concat<Creature>(Monsters)
-                                                                               .Concat(Merchants))
-                                                             .Case<NamedEntity>(
-                                                                 () => Aislings.Concat<NamedEntity>(Monsters)
-                                                                               .Concat(Merchants)
-                                                                               .Concat(GroundEntities))
-                                                             .Case<VisibleEntity>(
-                                                                 () => Aislings.Concat<VisibleEntity>(Monsters)
-                                                                               .Concat(Merchants)
-                                                                               .Concat(GroundEntities)
-                                                                               .Concat(Doors))
+                                                             .Case<Creature>(() => Aislings.Concat<Creature>(Monsters)
+                                                                                           .Concat(Merchants))
+                                                             .Case<NamedEntity>(() => Aislings.Concat<NamedEntity>(Monsters)
+                                                                 .Concat(Merchants)
+                                                                 .Concat(GroundEntities))
+                                                             .Case<VisibleEntity>(() => Aislings.Concat<VisibleEntity>(Monsters)
+                                                                 .Concat(Merchants)
+                                                                 .Concat(GroundEntities)
+                                                                 .Concat(Doors))
                                                              .Default(EntityLookup.Values)
                                                              .Freeze();
     }
@@ -87,6 +93,18 @@ public sealed class MapEntityCollection : IDeltaUpdatable
     /// <inheritdoc />
     public void Update(TimeSpan delta) => Updatables.Update(delta);
 
+    /// <summary>
+    ///     Adds an entity to the collection
+    /// </summary>
+    /// <param name="id">
+    ///     The id of the entity
+    /// </param>
+    /// <param name="entity">
+    ///     The entity being added
+    /// </param>
+    /// <exception cref="InvalidOperationException">
+    ///     Thrown when an unrecognized entity type is added
+    /// </exception>
     public void Add(uint id, MapEntity entity)
     {
         EntityLookup.Add(id, entity);
@@ -126,20 +144,49 @@ public sealed class MapEntityCollection : IDeltaUpdatable
         }
     }
 
-    public void AddToPointLookup(MapEntity mapEntity)
-    {
-        var entities = PointLookup[mapEntity.X, mapEntity.Y];
-        entities.Add(mapEntity);
-    }
+    private void AddToPointLookup(MapEntity mapEntity) => QuadTree.Insert(mapEntity);
 
-    public IEnumerable<T> AtPoint<T>(IPoint point) where T: MapEntity
-        => Bounds.Contains(point)
-            ? PointLookup[point.X, point.Y]
-                .OfType<T>()
+    [OverloadResolutionPriority(1)]
+    private IEnumerable<T> AtPoint<T>(Point point) where T: MapEntity
+        => Bounds.ContainsPoint(point)
+            ? QuadTree.Query(point)
+                      .OfType<T>()
             : [];
 
-    public IEnumerable<T> AtPoints<T>(IEnumerable<IPoint> points) where T: MapEntity => points.SelectMany(AtPoint<T>);
+    /// <summary>
+    ///     Gets all entities at the given points
+    /// </summary>
+    /// <param name="points">
+    ///     The points at which to look for entities
+    /// </param>
+    /// <typeparam name="T">
+    ///     The type of entity to look for. Must inherit from <see cref="MapEntity" />
+    /// </typeparam>
+    /// <remarks>
+    ///     This method uses a spatial hash to quickly find entities at the given points. However, it is less efficient for
+    ///     large sets of points. Try using <see cref="WithinRange{T}" /> in those cases
+    /// </remarks>
+    [OverloadResolutionPriority(1)]
+    public IEnumerable<T> AtPoints<T>(params IEnumerable<Point> points) where T: MapEntity => points.SelectMany(AtPoint<T>);
 
+    /// <summary>
+    ///     Gets all entities at the given points
+    /// </summary>
+    /// <param name="points">
+    ///     The points at which to look for entities
+    /// </param>
+    /// <typeparam name="T">
+    ///     The type of entity to look for. Must inherit from <see cref="MapEntity" />
+    /// </typeparam>
+    /// <remarks>
+    ///     This method uses a spatial hash to quickly find entities at the given points. However, it is less efficient for
+    ///     large sets of points. Try using <see cref="WithinRange{T}" /> in those cases
+    /// </remarks>
+    public IEnumerable<T> AtPoints<T>(params IEnumerable<IPoint> points) where T: MapEntity => AtPoints<T>(points.Select(Point.From));
+
+    /// <summary>
+    ///     Clears the collection of all entities
+    /// </summary>
     public void Clear()
     {
         EntityLookup.Clear();
@@ -149,22 +196,67 @@ public sealed class MapEntityCollection : IDeltaUpdatable
         Reactors.Clear();
         Doors.Clear();
         Updatables.Clear();
-
-        foreach (var lookup in PointLookup.Flatten())
-            lookup.Clear();
+        QuadTree.Clear();
     }
 
+    /// <summary>
+    ///     Determines if the collection contains an entity with the given id
+    /// </summary>
+    /// <param name="id">
+    ///     The id to look for
+    /// </param>
+    /// <returns>
+    ///     <c>
+    ///         true
+    ///     </c>
+    ///     if the collection contains an entity with the given id, otherwise
+    ///     <c>
+    ///         false
+    ///     </c>
+    /// </returns>
     public bool ContainsKey(uint id) => EntityLookup.ContainsKey(id);
 
-    public void MoveEntity(MapEntity mapEntity, IPoint oldPoint)
+    /// <summary>
+    ///     Moves an entity within the collection
+    /// </summary>
+    /// <param name="mapEntity">
+    ///     The entity to move
+    /// </param>
+    /// <param name="newPoint">
+    ///     The point to move the entity to
+    /// </param>
+    /// <remarks>
+    ///     Since this collection has spatial aspects to it, when an entity's location changes, it must be given special care.
+    ///     This method will also set the entity's location data
+    /// </remarks>
+    public void MoveEntity(MapEntity mapEntity, IPoint newPoint)
     {
-        var fromEntities = PointLookup[oldPoint.X, oldPoint.Y];
-        var toEntities = PointLookup[mapEntity.X, mapEntity.Y];
+        if (PointEqualityComparer.Instance.Equals(newPoint, mapEntity))
+            return;
 
-        if (fromEntities.Remove(mapEntity))
-            toEntities.Add(mapEntity);
+        QuadTree.Remove(mapEntity);
+        mapEntity.SetLocation(mapEntity.MapInstance, newPoint);
+        QuadTree.Insert(mapEntity);
     }
 
+    /// <summary>
+    ///     Removes an entity from the collection
+    /// </summary>
+    /// <param name="id">
+    ///     The id of the entity to remove
+    /// </param>
+    /// <returns>
+    ///     <c>
+    ///         true
+    ///     </c>
+    ///     if the entity was found and removed, otherwise
+    ///     <c>
+    ///         false
+    ///     </c>
+    /// </returns>
+    /// <exception cref="InvalidOperationException">
+    ///     Thrown when an unrecognized entity type is removed
+    /// </exception>
     public bool Remove(uint id)
     {
         if (!EntityLookup.TryRemove(id, out var entity))
@@ -209,13 +301,29 @@ public sealed class MapEntityCollection : IDeltaUpdatable
         return true;
     }
 
-    public bool RemoveFromPointLookup(MapEntity mapEntity)
-    {
-        var entities = PointLookup[mapEntity.X, mapEntity.Y];
+    private bool RemoveFromPointLookup(MapEntity mapEntity) => QuadTree.Remove(mapEntity);
 
-        return entities.Remove(mapEntity);
-    }
-
+    /// <summary>
+    ///     Attempts to retrieve the entity with the given id
+    /// </summary>
+    /// <param name="id">
+    ///     The id of the entity to retrieve
+    /// </param>
+    /// <param name="entity">
+    ///     The entity if found
+    /// </param>
+    /// <typeparam name="T">
+    ///     The type of the entity to find or cast to
+    /// </typeparam>
+    /// <returns>
+    ///     <c>
+    ///         true
+    ///     </c>
+    ///     if the entity was found and was able to be cast to the specified type, otherwise
+    ///     <c>
+    ///         false
+    ///     </c>
+    /// </returns>
     public bool TryGetValue<T>(uint id, [NotNullWhen(true)] out T? entity)
     {
         entity = default;
@@ -230,6 +338,19 @@ public sealed class MapEntityCollection : IDeltaUpdatable
         return false;
     }
 
+    /// <summary>
+    ///     Gets all entities of the specified type
+    /// </summary>
+    /// <typeparam name="T">
+    ///     The type of entity to find or cast to
+    /// </typeparam>
+    /// <exception cref="UnreachableException">
+    ///     Thrown when the expression result is null
+    /// </exception>
+    /// <remarks>
+    ///     This method will retrieve all entities of the specified type. If the type has inheritors, those will also be
+    ///     returned if found
+    /// </remarks>
     public IEnumerable<T> Values<T>() where T: MapEntity
     {
         var result = ValuesCases.Switch<T>();
@@ -244,64 +365,32 @@ public sealed class MapEntityCollection : IDeltaUpdatable
         return result.OfType<T>();
     }
 
+    public IEnumerable<T> Within<T>(IRectangle rectangle) where T: MapEntity
+        => QuadTree.Query(rectangle)
+                   .OfType<T>();
+
+    /// <summary>
+    ///     Gets all entities within a certain range of a point
+    /// </summary>
+    /// <param name="point">
+    ///     The point around which to search
+    /// </param>
+    /// <param name="range">
+    ///     The range of the search
+    /// </param>
+    /// <typeparam name="T">
+    ///     The type of entity to retrieve
+    /// </typeparam>
+    /// <remarks>
+    ///     This method queries a quadtree to find entities. It is very efficient for large search areas, but less so for small
+    ///     areas. Try using <see cref="AtPoints{T}(System.Collections.Generic.IEnumerable{Chaos.Geometry.Point})" /> in this
+    ///     cases
+    /// </remarks>
     public IEnumerable<T> WithinRange<T>(IPoint point, int range = 15) where T: MapEntity
     {
-        //we arent looking in a square, we're looking in a diamond that fits into a square
-        //that diamond has 1/2 the area of the square it fits into
-        //the area of the square is (range * 2 + 1)^2
-        var searchArea = Math.Pow(range * 2 + 1, 2) / 2;
-        var avgEntitiesPerTile = EntityLookup.Count / (float)WalkableArea;
-        int entityCount;
-        var tType = typeof(T);
+        var searchBounds = new Circle(point, range);
 
-        //get an estimate of the number of entities that exist on the map for the type theyre trying to get
-        if (tType.IsAssignableTo(typeof(Aisling)))
-            entityCount = Aislings.Count;
-        else if (tType.IsAssignableTo(typeof(Monster)))
-            entityCount = Monsters.Count;
-        else if (tType.IsAssignableTo(typeof(Merchant)))
-            entityCount = Merchants.Count;
-        else if (tType.IsAssignableTo(typeof(GroundEntity)))
-            entityCount = GroundEntities.Count;
-        else if (tType.IsAssignableTo(typeof(ReactorTile)))
-            entityCount = Reactors.Count;
-        else if (tType.IsAssignableTo(typeof(Door)))
-            entityCount = Doors.Count;
-        else if (tType.IsAssignableTo(typeof(Creature)))
-            entityCount = Aislings.Count + Monsters.Count + Merchants.Count;
-        else if (tType.IsAssignableFrom(typeof(NamedEntity)))
-            entityCount = Aislings.Count + Monsters.Count + Merchants.Count + GroundEntities.Count;
-        else if (tType.IsAssignableFrom(typeof(VisibleEntity)))
-            entityCount = Aislings.Count + Monsters.Count + Merchants.Count + GroundEntities.Count + Doors.Count;
-        else
-            entityCount = EntityLookup.Count;
-
-        //the avg number of entities we can expect to search when searching by area
-        var areaSearchAvgEntityCount = searchArea * avgEntitiesPerTile;
-
-        //the amortized cost of searching by area (there is a base cost associated with enumerating the hashsets that contain the entities)
-        var estimatedAmortizedCost = searchArea + areaSearchAvgEntityCount;
-
-        //if we can expect to search significantly fewer entities by searching points
-        //then search by point lookup
-        if (estimatedAmortizedCost < entityCount)
-            foreach (var pt in point.SpiralSearch(range))
-            {
-                if (!Bounds.Contains(pt))
-                    continue;
-
-                var entities = PointLookup[pt.X, pt.Y];
-
-                if (entities.Count == 0)
-                    continue;
-
-                foreach (var entity in entities)
-                    if (entity is T t)
-                        yield return t;
-            }
-        else //otherwise just check every entity of that type with a distance check
-            foreach (var entity in Values<T>()
-                         .ThatAreWithinRange(point, range))
-                yield return entity;
+        return QuadTree.Query(searchBounds)
+                       .OfType<T>();
     }
 }

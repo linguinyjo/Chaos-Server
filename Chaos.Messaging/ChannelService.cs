@@ -1,6 +1,7 @@
+#region
 using System.Collections.Concurrent;
 using System.Text;
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Extensions.Common;
 using Chaos.IO.Memory;
 using Chaos.Messaging.Abstractions;
@@ -8,6 +9,7 @@ using Chaos.NLog.Logging.Definitions;
 using Chaos.NLog.Logging.Extensions;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+#endregion
 
 namespace Chaos.Messaging;
 
@@ -113,6 +115,15 @@ public sealed class ChannelService : IChannelService
             subscriber.SendMessage($"You have left channel {channelDetails.ChannelNameOverride ?? channelName}");
         } else
             subscriber.SendMessage($"You are not in channel {channelDetails.ChannelNameOverride ?? channelName}");
+    }
+
+    /// <inheritdoc />
+    public void MuteChannel(string channelName)
+    {
+        channelName = PrependPrefix(channelName);
+
+        if (Channels.TryGetValue(channelName, out var channelDetails))
+            channelDetails.Muted = true;
     }
 
     /// <inheritdoc />
@@ -282,6 +293,15 @@ public sealed class ChannelService : IChannelService
         }
 
         subDetails.MessageColorOverride = messageColor;
+    }
+
+    /// <inheritdoc />
+    public void UnmuteChannel(string channelName)
+    {
+        channelName = PrependPrefix(channelName);
+
+        if (Channels.TryGetValue(channelName, out var channelDetails))
+            channelDetails.Muted = false;
     }
 
     /// <inheritdoc />

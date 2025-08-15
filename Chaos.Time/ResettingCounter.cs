@@ -1,4 +1,6 @@
+#region
 using Chaos.Time.Abstractions;
+#endregion
 
 namespace Chaos.Time;
 
@@ -7,14 +9,21 @@ namespace Chaos.Time;
 /// </summary>
 public sealed class ResettingCounter : IDeltaUpdatable
 {
-    private readonly int MaxCount;
     private readonly IIntervalTimer Timer;
-    private int Counter;
+    private readonly int UpdateIntervalSecs;
+    private int _counter;
+
+    private int MaxCount { get; set; }
 
     /// <summary>
     ///     Gets whether or not the counter can be incremented
     /// </summary>
     public bool CanIncrement => Counter < MaxCount;
+
+    /// <summary>
+    ///     The current value of the counter
+    /// </summary>
+    public int Counter => _counter;
 
     /// <summary>
     ///     Initializes a new instance of the <see cref="ResettingCounter" /> class
@@ -29,6 +38,7 @@ public sealed class ResettingCounter : IDeltaUpdatable
     {
         Timer = timer;
         MaxCount = maxCount;
+        UpdateIntervalSecs = 1;
     }
 
     /// <summary>
@@ -45,6 +55,7 @@ public sealed class ResettingCounter : IDeltaUpdatable
     {
         Timer = new IntervalTimer(TimeSpan.FromSeconds(updateIntervalSecs));
         MaxCount = maxPerSecond * updateIntervalSecs;
+        UpdateIntervalSecs = updateIntervalSecs;
     }
 
     /// <inheritdoc />
@@ -53,8 +64,21 @@ public sealed class ResettingCounter : IDeltaUpdatable
         Timer.Update(delta);
 
         if (Timer.IntervalElapsed)
-            Counter = 0;
+            _counter = 0;
     }
+
+    /// <summary>
+    ///     Resets the counter back to 0
+    /// </summary>
+    public void Reset() => _counter = 0;
+
+    /// <summary>
+    ///     Sets the maximum count of the counter (will be automatically multiplied by the update interval)
+    /// </summary>
+    /// <param name="maxCount">
+    ///     The new MaxCount to use
+    /// </param>
+    public void SetMaxCount(int maxCount) => MaxCount = maxCount * UpdateIntervalSecs;
 
     /// <summary>
     ///     Attempts to increment the counter
@@ -73,7 +97,7 @@ public sealed class ResettingCounter : IDeltaUpdatable
         if (Counter >= MaxCount)
             return false;
 
-        var newCounter = Interlocked.Increment(ref Counter);
+        var newCounter = Interlocked.Increment(ref _counter);
 
         return newCounter <= MaxCount;
     }

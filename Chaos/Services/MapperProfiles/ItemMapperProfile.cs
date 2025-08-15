@@ -1,3 +1,4 @@
+#region
 using Chaos.Common.Abstractions;
 using Chaos.Models.Data;
 using Chaos.Models.Panel;
@@ -9,6 +10,7 @@ using Chaos.Schemas.Templates;
 using Chaos.Scripting.Abstractions;
 using Chaos.Storage.Abstractions;
 using Chaos.TypeMapper.Abstractions;
+#endregion
 
 namespace Chaos.Services.MapperProfiles;
 
@@ -60,16 +62,32 @@ public sealed class ItemMapperProfile(ISimpleCache simpleCache, IScriptProvider 
         if (obj.Color.HasValue)
             item.Color = obj.Color.Value;
 
-        if (obj is { PanelSprite: not null, DisplaySprite: not null })
-            item.ItemSprite = new ItemSprite(obj.PanelSprite.Value, obj.DisplaySprite.Value);
+        if (obj.PanelSprite.HasValue)
+            item.ItemSprite.PanelSprite = obj.PanelSprite.Value;
+
+        if (obj.DisplaySprite.HasValue)
+            item.ItemSprite.DisplaySprite = obj.DisplaySprite.Value;
+
+        if (obj.AccountBound.HasValue)
+            item.AccountBound = obj.AccountBound.Value;
+
+        if (obj.NoTrade.HasValue)
+            item.NoTrade = obj.NoTrade.Value;
+
+        if (obj.PreventBanking.HasValue)
+            item.PreventBanking = obj.PreventBanking.Value;
+
+        if (obj.ArmorUsesOvercoatSprites.HasValue)
+            item.ArmorUsesOvercoatSprites = obj.ArmorUsesOvercoatSprites.Value;
+
+        if (obj.OvercoatUsesArmorSprites.HasValue)
+            item.OvercoatUsesArmorSprites = obj.OvercoatUsesArmorSprites.Value;
 
         item.CustomNameOverride = obj.CustomNameOverride;
         item.Prefix = obj.Prefix;
         item.Suffix = obj.Suffix;
-        // if (obj.Enchant.HasValue)
-        // {
-            // item.Enchant = obj.Enchant;
-        // }
+        item.NotepadText = obj.NotepadText;
+
         return item;
     }
 
@@ -83,7 +101,7 @@ public sealed class ItemMapperProfile(ISimpleCache simpleCache, IScriptProvider 
         {
             UniqueId = obj.UniqueId,
             ElapsedMs = obj.Elapsed.HasValue ? Convert.ToInt32(obj.Elapsed.Value.TotalMilliseconds) : null,
-            ScriptKeys = extraScriptKeys.Any() ? extraScriptKeys : null,
+            ScriptKeys = extraScriptKeys.Count != 0 ? extraScriptKeys : null,
             TemplateKey = obj.Template.TemplateKey,
             Color = obj.Template.Color == obj.Color ? null : obj.Color,
             Count = obj.Count,
@@ -95,7 +113,7 @@ public sealed class ItemMapperProfile(ISimpleCache simpleCache, IScriptProvider 
             Weight = obj.Weight == obj.Template.Weight ? null : obj.Weight,
             PanelSprite = obj.ItemSprite.PanelSprite == obj.Template.ItemSprite.PanelSprite ? null : obj.ItemSprite.PanelSprite,
             DisplaySprite = obj.ItemSprite.DisplaySprite == obj.Template.ItemSprite.DisplaySprite ? null : obj.ItemSprite.DisplaySprite,
-            // Enchant = obj.Enchant ?? obj.Template.Enchant,
+            NotepadText = obj.NotepadText
         };
 
         return ret;
@@ -144,6 +162,7 @@ public sealed class ItemMapperProfile(ISimpleCache simpleCache, IScriptProvider 
             ScriptKeys = new HashSet<string>(obj.ScriptKeys, StringComparer.OrdinalIgnoreCase),
             AccountBound = obj.AccountBound,
             NoTrade = obj.NoTrade,
+            PreventBanking = obj.PreventBanking,
             NotMonk = obj.NotMonk,
             Color = obj.Color,
             ItemSprite = new ItemSprite(obj.PanelSprite, obj.DisplaySprite ?? 0),
@@ -170,6 +189,10 @@ public sealed class ItemMapperProfile(ISimpleCache simpleCache, IScriptProvider 
             Category = obj.Category,
             EquipmentType = obj.EquipmentType,
             Gender = obj.Gender,
+            OverridesHeadSprite = obj.OverridesHeadSprite,
+            OverridesBootsSprite = obj.OverridesBootsSprite,
+            ArmorUsesOvercoatSprites = obj.ArmorUsesOvercoatSprites,
+            OvercoatUsesArmorSprites = obj.OvercoatUsesArmorSprites,
             LevelCircle = obj.LevelCircle
         };
 

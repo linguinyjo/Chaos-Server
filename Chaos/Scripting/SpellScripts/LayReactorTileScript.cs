@@ -1,16 +1,21 @@
-using Chaos.Common.Definitions;
+#region
+using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.Panel;
 using Chaos.Models.World.Abstractions;
+using Chaos.Scripting.Abstractions;
 using Chaos.Scripting.Components.AbilityComponents;
 using Chaos.Scripting.Components.Execution;
 using Chaos.Scripting.SpellScripts.Abstractions;
 using Chaos.Services.Factories.Abstractions;
+#endregion
 
 namespace Chaos.Scripting.SpellScripts;
 
 public class LayReactorTileScript(Spell subject, IReactorTileFactory reactorTileFactory) : ConfigurableSpellScriptBase(subject),
+                                                                                           GenericAbilityComponent<MapEntity>.IAbilityComponentOptions,
+                                                                                           LayReactorAbilityComponent.ILayReactorComponentOptions
                                                                                            GenericAbilityComponent<MapEntity>.
                                                                                            IAbilityComponentOptions,
                                                                                            LayReactorAbilityComponent.
@@ -35,13 +40,13 @@ public class LayReactorTileScript(Spell subject, IReactorTileFactory reactorTile
     public bool SingleTarget { get; init; }
 
     /// <inheritdoc />
+    public int? ExclusionRange { get; init; }
+
+    /// <inheritdoc />
     public TargetFilter Filter { get; init; }
 
     /// <inheritdoc />
     public int Range { get; init; }
-
-    /// <inheritdoc />
-    public bool ExcludeSourcePoint { get; init; }
 
     /// <inheritdoc />
     public bool MustHaveTargets { get; init; } = false;
@@ -51,6 +56,9 @@ public class LayReactorTileScript(Spell subject, IReactorTileFactory reactorTile
 
     /// <inheritdoc />
     public BodyAnimation BodyAnimation { get; init; }
+
+    /// <inheritdoc />
+    public bool? ScaleBodyAnimationSpeedByAttackSpeed { get; init; }
 
     /// <inheritdoc />
     public ushort? AnimationSpeed { get; init; }
@@ -63,6 +71,9 @@ public class LayReactorTileScript(Spell subject, IReactorTileFactory reactorTile
 
     /// <inheritdoc />
     public string? ReactorTileTemplateKey { get; init; }
+
+    /// <inheritdoc />
+    public IScript? SourceScript { get; init; }
 
     /// <inheritdoc />
     public IReactorTileFactory ReactorTileFactory { get; init; } = reactorTileFactory;

@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿#region
+using System.Collections;
 using System.Text.Json.Serialization;
 using Chaos.Geometry.Abstractions;
 using Chaos.Geometry.JsonConverters;
+#endregion
 
 namespace Chaos.Geometry;
 
@@ -96,4 +98,9 @@ public sealed class Polygon : IPolygon, IEquatable<IPolygon>
 
         return hashCode.ToHashCode();
     }
+
+    /// <summary>
+    ///     Implicitly converts a ref struct polygon to a polygon
+    /// </summary>
+    public static implicit operator Polygon(ValuePolygon poly) => new(poly.Vertices);
 }

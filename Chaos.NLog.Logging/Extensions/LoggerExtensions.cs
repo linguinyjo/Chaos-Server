@@ -1,5 +1,7 @@
+#region
 using System.Runtime.CompilerServices;
 using Microsoft.Extensions.Logging;
+#endregion
 
 namespace Chaos.NLog.Logging.Extensions;
 
@@ -39,6 +41,11 @@ public static class LoggerExtensions
         if (logger is not LogEvent logEvent)
             logEvent = new LogEvent(logger);
 
+        var lastDotIndex = name.LastIndexOf('.');
+
+        if (lastDotIndex != -1)
+            name = name[(lastDotIndex + 1)..];
+
         return logEvent.WithProperty(name, value);
     }
 
@@ -51,7 +58,7 @@ public static class LoggerExtensions
     /// <param name="topics">
     ///     The topics to add to the logger
     /// </param>
-    public static ILogger WithTopics(this ILogger logger, params string[] topics)
+    public static ILogger WithTopics(this ILogger logger, params ReadOnlySpan<string> topics)
     {
         if (logger is not LogEvent logEvent)
             logEvent = new LogEvent(logger);

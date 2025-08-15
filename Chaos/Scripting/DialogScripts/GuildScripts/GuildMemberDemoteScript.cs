@@ -1,3 +1,4 @@
+#region
 using System.Diagnostics;
 using Chaos.Collections;
 using Chaos.Common.Abstractions;
@@ -9,6 +10,7 @@ using Chaos.NLog.Logging.Definitions;
 using Chaos.NLog.Logging.Extensions;
 using Chaos.Scripting.DialogScripts.GuildScripts.Abstractions;
 using Chaos.Storage.Abstractions;
+#endregion
 
 namespace Chaos.Scripting.DialogScripts.GuildScripts;
 
@@ -70,8 +72,12 @@ public class GuildMemberDemoteScript : GuildScriptBase
         }
 
         //ensure the player has permission to demote members (Tier 1+)
-        if (!IsOfficer(sourceRank))
+        if (!sourceRank.IsOfficerRank)
+        {
             Subject.Reply(source, "You do not have permission to demote members.", "generic_guild_members_initial");
+
+            return;
+        }
 
         //ensure the player to demote is in the guild
         if (!guild.HasMember(name))
@@ -84,7 +90,7 @@ public class GuildMemberDemoteScript : GuildScriptBase
         var targetCurrentRank = guild.RankOf(name);
 
         //ensure the player to demote is not the same or higher rank (same or lower tier)
-        if (!IsSuperiorRank(sourceRank, targetCurrentRank))
+        if (!sourceRank.IsSuperiorTo(targetCurrentRank))
         {
             Subject.Reply(source, $"You do not have permission to demote {name}", "generic_guild_members_initial");
 
@@ -92,38 +98,25 @@ public class GuildMemberDemoteScript : GuildScriptBase
         }
 
         //ensure the player to demote is not already the lowest rank
-        if (!CanBeDemoted(targetCurrentRank))
+        if (!targetCurrentRank.CanBeDemoted)
         {
             Subject.Reply(source, $"{name} is already the lowest rank and can not be further demoted.", "generic_guild_members_initial");
 
             return;
         }
 
-        //grab the aisling to demote
-        var aislingToDemote = ClientRegistry.FirstOrDefault(cli => cli.Aisling.Name.EqualsI(name))
-                                            ?.Aisling;
-
-        //ensure the aisling is online
-        if (aislingToDemote is null)
-        {
-            Subject.Reply(source, $"{name} is not online", "generic_guild_members_initial");
-
-            return;
-        }
-
         //change the rank of the aisling
-        guild.ChangeRank(aislingToDemote, sourceRank.Tier + 1, source);
+        guild.ChangeRank(name, targetCurrentRank.Tier + 1, source);
 
         Logger.WithTopics(Topics.Entities.Guild, Topics.Actions.Demote)
               .WithProperty(Subject)
               .WithProperty(Subject.DialogSource)
               .WithProperty(source)
               .WithProperty(guild)
-              .WithProperty(aislingToDemote)
               .LogInformation(
                   "Aisling {@AislingName} demoted {@TargetAislingName} to {@RankName} in {@GuildName}",
                   source.Name,
-                  aislingToDemote.Name,
+                  name,
                   sourceRank.Name,
                   guild.Name);
     }

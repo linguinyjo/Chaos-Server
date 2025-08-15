@@ -1,5 +1,9 @@
+#region
+using System.CodeDom.Compiler;
 using System.Collections;
-using Chaos.Common.Synchronization;
+using System.Runtime.CompilerServices;
+using System.Text.Json.Serialization;
+#endregion
 
 // ReSharper disable once CheckNamespace
 namespace Chaos.Collections.Synchronized;
@@ -17,23 +21,23 @@ public class SynchronizedList<T> : IList<T>, IReadOnlyList<T>
     protected readonly List<T> List;
 
     /// <summary>
-    ///     The <see cref="AutoReleasingMonitor" /> used to synchronize access to the <see cref="List" />
+    ///     Object used to synchronize access to the <see cref="List" />
     /// </summary>
-    protected readonly AutoReleasingMonitor Sync;
+    protected readonly Lock Sync;
 
     /// <inheritdoc cref="IList{T}.this" />
     public virtual T this[int index]
     {
         get
         {
-            using var @lock = Sync.Enter();
+            using var @lock = Sync.EnterScope();
 
             return List[index];
         }
 
         set
         {
-            using var @lock = Sync.Enter();
+            using var @lock = Sync.EnterScope();
             List[index] = value;
         }
     }
@@ -43,7 +47,7 @@ public class SynchronizedList<T> : IList<T>, IReadOnlyList<T>
     {
         get
         {
-            using var @lock = Sync.Enter();
+            using var @lock = Sync.EnterScope();
 
             return List.Count;
         }
@@ -55,34 +59,40 @@ public class SynchronizedList<T> : IList<T>, IReadOnlyList<T>
     /// <summary>
     ///     Creates a new <see cref="SynchronizedList{T}" />
     /// </summary>
-    /// <param name="items">
+    public SynchronizedList()
+        : this([]) { }
+
+    /// <summary>
+    ///     Creates a new <see cref="SynchronizedList{T}" />
+    /// </summary>
+    /// <param name="list">
     ///     An optional sequence of initial items to add to the collection
     /// </param>
-    public SynchronizedList(IEnumerable<T>? items = null)
+    [JsonConstructor]
+    public SynchronizedList(IEnumerable<T> list)
     {
-        Sync = new AutoReleasingMonitor();
-        items ??= [];
-        List = [..items];
+        Sync = new Lock();
+        List = [..list];
     }
 
     /// <inheritdoc cref="ICollection{T}.Add" />
     public virtual void Add(T item)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
         List.Add(item);
     }
 
     /// <inheritdoc cref="ICollection{T}.Clear" />
     public virtual void Clear()
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
         List.Clear();
     }
 
     /// <inheritdoc cref="ICollection{T}.Contains" />
     public virtual bool Contains(T item)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         return List.Contains(item);
     }
@@ -90,7 +100,7 @@ public class SynchronizedList<T> : IList<T>, IReadOnlyList<T>
     /// <inheritdoc cref="ICollection{T}.CopyTo" />
     public virtual void CopyTo(T[] array, int arrayIndex)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
         List.CopyTo(array, arrayIndex);
     }
 
@@ -101,7 +111,7 @@ public class SynchronizedList<T> : IList<T>, IReadOnlyList<T>
     {
         List<T> snapshot;
 
-        using (Sync.Enter())
+        using (Sync.EnterScope())
             snapshot = List.ToList();
 
         foreach (var item in snapshot)
@@ -111,7 +121,7 @@ public class SynchronizedList<T> : IList<T>, IReadOnlyList<T>
     /// <inheritdoc cref="IList{T}.IndexOf" />
     public virtual int IndexOf(T item)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         return List.IndexOf(item);
     }
@@ -119,14 +129,14 @@ public class SynchronizedList<T> : IList<T>, IReadOnlyList<T>
     /// <inheritdoc cref="IList{T}.Insert" />
     public virtual void Insert(int index, T item)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
         List.Insert(index, item);
     }
 
     /// <inheritdoc cref="ICollection{T}.Remove" />
     public virtual bool Remove(T item)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         return List.Remove(item);
     }
@@ -134,7 +144,7 @@ public class SynchronizedList<T> : IList<T>, IReadOnlyList<T>
     /// <inheritdoc cref="IList{T}.RemoveAt" />
     public virtual void RemoveAt(int index)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
         List.RemoveAt(index);
     }
 }

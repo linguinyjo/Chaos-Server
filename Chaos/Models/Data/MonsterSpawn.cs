@@ -1,3 +1,4 @@
+#region
 using Chaos.Collections;
 using Chaos.Collections.Abstractions;
 using Chaos.Extensions.Common;
@@ -9,6 +10,7 @@ using Chaos.Models.Templates;
 using Chaos.Models.World;
 using Chaos.Services.Factories.Abstractions;
 using Chaos.Time.Abstractions;
+#endregion
 
 namespace Chaos.Models.Data;
 
@@ -16,14 +18,15 @@ public sealed class MonsterSpawn : IDeltaUpdatable
 {
     public required ICollection<IPoint> BlackList { get; init; }
     public required Direction? Direction { get; init; }
-    public required ICollection<LootTable> ExtraLootTables { get; set; } = Array.Empty<LootTable>();
-    public required ICollection<string> ExtraScriptKeys { get; init; } = Array.Empty<string>();
+    public required ICollection<LootTable> ExtraLootTables { get; set; } = [];
+    public required ICollection<string> ExtraScriptKeys { get; init; } = [];
     public ILootTable? FinalLootTable { get; set; }
     public MapInstance MapInstance { get; set; } = null!;
     public required int MaxAmount { get; init; }
     public required int MaxPerSpawn { get; init; }
     public required IMonsterFactory MonsterFactory { get; init; }
     public required MonsterTemplate MonsterTemplate { get; init; }
+    public bool OnlyCountMonstersInSpawnArea { get; set; }
     public required Rectangle? SpawnArea { get; set; }
     public required IIntervalTimer SpawnTimer { get; init; }
 
@@ -50,15 +53,21 @@ public sealed class MonsterSpawn : IDeltaUpdatable
         }
     }
 
+    private int GetCurrentCount()
+        => SpawnArea is not null && OnlyCountMonstersInSpawnArea
+            ? MapInstance.GetEntitiesWithin<Monster>(SpawnArea)
+                         .Count(obj => obj.Template.TemplateKey.EqualsI(MonsterTemplate.TemplateKey))
+            : MapInstance.GetEntities<Monster>()
+                         .Count(obj => obj.Template.TemplateKey.EqualsI(MonsterTemplate.TemplateKey));
+
     private bool PointValidator(Point point)
-        => (SpawnArea is null || SpawnArea.Contains(point))
-           && MapInstance.IsWalkable(point, MonsterTemplate.Type)
+        => (SpawnArea is null || SpawnArea.ContainsPoint(point))
+           && MapInstance.IsWalkable(point, collisionType: MonsterTemplate.Type)
            && !BlackList.Contains(point, PointEqualityComparer.Instance);
 
     private void SpawnMonsters()
     {
-        var currentCount = MapInstance.GetEntities<Monster>()
-                                      .Count(obj => obj.Template.TemplateKey.EqualsI(MonsterTemplate.TemplateKey));
+        var currentCount = GetCurrentCount();
 
         if (currentCount >= MaxAmount)
             return;
@@ -77,7 +86,7 @@ public sealed class MonsterSpawn : IDeltaUpdatable
                 spawnPoint,
                 ExtraScriptKeys);
 
-            FinalLootTable ??= ExtraLootTables.Any()
+            FinalLootTable ??= ExtraLootTables.Count != 0
                 ? new CompositeLootTable(ExtraLootTables.Append(monster.LootTable))
                 : monster.LootTable;
 

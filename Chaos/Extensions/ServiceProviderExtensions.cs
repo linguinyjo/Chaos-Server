@@ -1,3 +1,4 @@
+#region
 using Chaos.Collections;
 using Chaos.Common.Utilities;
 using Chaos.Extensions.Common;
@@ -15,6 +16,7 @@ using Chaos.Services.Storage;
 using Chaos.Services.Storage.Abstractions;
 using Chaos.Storage.Abstractions;
 using Chaos.TypeMapper.Abstractions;
+#endregion
 
 namespace Chaos.Extensions;
 
@@ -96,7 +98,7 @@ public static class ServiceProviderExtensions
                     }
                     case Merchant merchant:
                     {
-                        var hadStock = merchant.ItemsForSale.Any();
+                        var hadStock = merchant.ItemsForSale.Count != 0;
                         var itemsForSale = merchant.ItemsForSale.ToList();
                         merchant.ItemsForSale.Clear();
 
@@ -147,7 +149,7 @@ public static class ServiceProviderExtensions
 
             foreach (var monsterSpawn in mapInstance.MonsterSpawns)
             {
-                if (!monsterSpawn.ExtraLootTables.Any())
+                if (monsterSpawn.ExtraLootTables.Count == 0)
                     continue;
 
                 var lootTables = monsterSpawn.ExtraLootTables
@@ -182,12 +184,62 @@ public static class ServiceProviderExtensions
         }
     }
 
+    public static async Task ReloadMapAsync(this IServiceProvider provider, ILogger logger, string key)
+    {
+        var cacheProvider = provider.GetRequiredService<ISimpleCacheProvider>();
+        var mapTemplateCache = cacheProvider.GetCache<MapTemplate>();
+        var mapCache = cacheProvider.GetCache<MapInstance>();
+        var oldMap = mapCache.Get(key);
+
+        oldMap.Stop();
+
+        //wait for oldMap to stop and become accessible
+        await using (await oldMap.Sync.WaitAsync(TimeSpan.FromSeconds(15))) { }
+
+        //reload template and mapinstance
+        await mapTemplateCache.ReloadAsync(oldMap.Template.TemplateKey);
+        await mapCache.ReloadAsync(key);
+
+        var newMap = mapCache.Get(key);
+
+        //lock both maps
+        await using var sync = await ComplexSynchronizationHelper.WaitAsync(
+            TimeSpan.FromSeconds(10),
+            TimeSpan.FromMilliseconds(50),
+            oldMap.Sync,
+            newMap.Sync);
+
+        foreach (var monster in newMap.GetEntities<Monster>())
+            newMap.RemoveEntity(monster);
+
+        foreach (var groundEntity in oldMap.GetEntities<GroundEntity>())
+            newMap.SimpleAdd(groundEntity);
+
+        foreach (var monster in oldMap.GetEntities<Monster>())
+            newMap.SimpleAdd(monster);
+
+        foreach (var aisling in oldMap.GetEntities<Aisling>())
+            if (aisling.Client.Connected) //dont copy dopplegangers
+                newMap.SimpleAdd(aisling);
+
+        oldMap.Destroy();
+
+        newMap.BaseInstanceId = oldMap.BaseInstanceId;
+    }
+
     public static async Task ReloadMapsAsync(this IServiceProvider provider, ILogger logger)
     {
         var cacheProvider = provider.GetRequiredService<ISimpleCacheProvider>();
         var mapTemplateCache = cacheProvider.GetCache<MapTemplate>();
         var mapCache = cacheProvider.GetCache<MapInstance>();
         var oldMaps = mapCache.ToDictionary(m => m.InstanceId, StringComparer.OrdinalIgnoreCase);
+
+        foreach (var map in oldMaps.Values)
+            map.Stop();
+
+        //ensure all maps are unlocked
+        foreach (var map in oldMaps.Values)
+            await using (await map.Sync.WaitAsync(TimeSpan.FromSeconds(15))) { }
 
         //locks ALL maps
         await using var oldSync = await ComplexSynchronizationHelper.WaitAsync(
@@ -224,7 +276,8 @@ public static class ServiceProviderExtensions
                     newMap.SimpleAdd(monster);
 
                 foreach (var aisling in oldMap.GetEntities<Aisling>())
-                    newMap.SimpleAdd(aisling);
+                    if (aisling.Client.Connected) //dont copy dopplegangers
+                        newMap.SimpleAdd(aisling);
 
                 oldMap.Destroy();
 

@@ -1,8 +1,9 @@
+#region
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Chaos.Collections.Common;
 using Chaos.Collections.Time;
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.Data;
 using Chaos.Schemas.Aisling;
@@ -12,6 +13,7 @@ using Chaos.Schemas.Data;
 using Chaos.Schemas.Guilds;
 using Chaos.Schemas.MetaData;
 using Chaos.Schemas.Templates;
+#endregion
 
 // ReSharper disable ArrangeAttributes because it breaks for some reason
 
@@ -61,6 +63,7 @@ namespace Chaos;
 [JsonSerializable(typeof(StatsSchema))]
 [JsonSerializable(typeof(UserOptionsSchema))]
 [JsonSerializable(typeof(UserStatSheetSchema))]
+[JsonSerializable(typeof(AislingTrackersSchema))]
 [JsonSerializable(typeof(TrackersSchema))]
 [JsonSerializable(typeof(MundaneIllustrationMetaSchema))]
 [JsonSerializable(typeof(ChannelSettingsSchema))]

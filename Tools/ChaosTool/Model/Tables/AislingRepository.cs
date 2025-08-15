@@ -1,3 +1,4 @@
+#region
 using System.IO;
 using System.Text.Json;
 using Chaos.Extensions.Common;
@@ -6,6 +7,7 @@ using Chaos.Services.Storage.Options;
 using Chaos.Storage.Abstractions;
 using ChaosTool.Model.Abstractions;
 using Microsoft.Extensions.Options;
+#endregion
 
 namespace ChaosTool.Model.Tables;
 
@@ -27,9 +29,8 @@ public sealed class AislingRepository : RepositoryBase<AislingRepository.Aisling
     /// </remarks>
     protected override IEnumerable<string> GetPaths()
         => Directory.EnumerateDirectories(Options.Directory, "*", SearchOption.AllDirectories)
-                    .Where(
-                        src => Directory.EnumerateFiles(src)
-                                        .Any());
+                    .Where(src => Directory.EnumerateFiles(src)
+                                           .Any());
 
     /// <inheritdoc />
     protected override async Task<AislingComposite?> LoadFromFileAsync(string path)
@@ -63,7 +64,7 @@ public sealed class AislingRepository : RepositoryBase<AislingRepository.Aisling
                                              .ToListAsync()
                                              .AsTask();
 
-            var trackersTask = EntityRepository.LoadAsync<TrackersSchema>(Path.Combine(path, "trackers.json"));
+            var trackersTask = EntityRepository.LoadAsync<AislingTrackersSchema>(Path.Combine(path, "trackers.json"));
 
             await Task.WhenAll(
                 aislingTask,
@@ -78,15 +79,15 @@ public sealed class AislingRepository : RepositoryBase<AislingRepository.Aisling
 
             return new AislingComposite
             {
-                Aisling = aislingTask.Result,
-                Bank = bankTask.Result,
-                Effects = effectsTask.Result,
-                Equipment = equipmentTask.Result,
-                Inventory = inventoryTask.Result,
-                Legend = legendTask.Result,
-                Skills = skillsTask.Result,
-                Spells = spellsTask.Result,
-                Trackers = trackersTask.Result
+                Aisling = await aislingTask,
+                Bank = await bankTask,
+                Effects = await effectsTask,
+                Equipment = await equipmentTask,
+                Inventory = await inventoryTask,
+                Legend = await legendTask,
+                Skills = await skillsTask,
+                Spells = await spellsTask,
+                Trackers = await trackersTask
             };
         } catch (Exception e) //must be "Exception" because this will throw an AggregateException, not a JsonException
         {
@@ -138,6 +139,6 @@ public sealed class AislingRepository : RepositoryBase<AislingRepository.Aisling
         public required ICollection<LegendMarkSchema> Legend { get; init; }
         public required ICollection<SkillSchema> Skills { get; init; }
         public required ICollection<SpellSchema> Spells { get; init; }
-        public required TrackersSchema Trackers { get; init; }
+        public required AislingTrackersSchema Trackers { get; init; }
     }
 }

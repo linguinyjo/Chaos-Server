@@ -1,5 +1,7 @@
+#region
 using Chaos.Collections;
 using Chaos.Common.Abstractions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Extensions;
 using Chaos.Extensions.Common;
 using Chaos.Extensions.Geometry;
@@ -18,6 +20,7 @@ using Chaos.Storage;
 using Chaos.Storage.Abstractions;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Options;
+#endregion
 
 namespace Chaos.Services.Storage;
 
@@ -64,7 +67,8 @@ public sealed class ExpiringMapInstanceCache : ExpiringFileCache<MapInstance, Ma
         while (true)
             try
             {
-                await PersistUsedMapsTimer.WaitForNextTickAsync();
+                await PersistUsedMapsTimer.WaitForNextTickAsync()
+                                          .ConfigureAwait(false);
 
                 //checks each map for aislings
                 //if the map has aislings on it, re-access the map to keep it in the cache
@@ -82,6 +86,23 @@ public sealed class ExpiringMapInstanceCache : ExpiringFileCache<MapInstance, Ma
             }
 
         // ReSharper disable once FunctionNeverReturns
+    }
+
+    /// <inheritdoc />
+    public override MapInstance Get(string key)
+    {
+        var mapInstance = base.Get(key);
+
+        if ((mapInstance.ShardingOptions?.ShardingType == ShardingType.AlwaysShardOnCreate) && !mapInstance.IsShard)
+        {
+            var shard = CreateShardOfInstance(mapInstance.InstanceId);
+            shard.Shards = mapInstance.Shards;
+            shard.Shards.TryAdd(shard.InstanceId, shard);
+
+            mapInstance = shard;
+        }
+
+        return mapInstance;
     }
 
     /// <inheritdoc />
@@ -184,7 +205,7 @@ public sealed class ExpiringMapInstanceCache : ExpiringFileCache<MapInstance, Ma
                 merchantSpawn.SpawnPoint,
                 merchantSpawn.ExtraScriptKeys);
 
-            var pathingBoundsBlacklist = merchantSpawn.PathingBounds?.GetOutline() ?? Array.Empty<Point>();
+            var pathingBoundsBlacklist = merchantSpawn.PathingBounds?.GetOutline() ?? [];
 
             merchant.BlackList = merchantSpawn.BlackList
                                               .Concat(pathingBoundsBlacklist.OfType<IPoint>())
@@ -235,7 +256,12 @@ public sealed class ExpiringMapInstanceCache : ExpiringFileCache<MapInstance, Ma
         foreach (var key in LocalLookup.Keys)
         {
             if (!Cache.TryGetValue(key, out var value))
+            {
+                Logger.WithTopics(Topics.Qualifiers.Forced, Topics.Actions.Reload)
+                      .LogWarning("MapInstance with key {@Key} not found in cache when trying to reload it", key);
+
                 continue;
+            }
 
             var mapInstance = (MapInstance)value!;
             var instanceId = DeconstructKeyForType(DeconstructShardKey(key));
@@ -255,6 +281,37 @@ public sealed class ExpiringMapInstanceCache : ExpiringFileCache<MapInstance, Ma
         }
 
         ReconstructShardLookups();
+
+        return Task.CompletedTask;
+    }
+
+    /// <inheritdoc />
+    public override Task ReloadAsync(string key)
+    {
+        using var @lock = Sync.EnterScope();
+
+        try
+        {
+            key = ConstructKeyForType(key);
+
+            if (!Cache.TryGetValue(key, out var value))
+            {
+                Logger.WithTopics(Topics.Qualifiers.Forced, Topics.Actions.Reload)
+                      .LogWarning("MapInstance with key {@Key} not found in cache when trying to reload it specifically", key);
+
+                return Task.CompletedTask;
+            }
+
+            var mapInstance = (MapInstance)value!;
+            var instanceId = DeconstructKeyForType(DeconstructShardKey(key));
+
+            using var entry = Cache.CreateEntry(key);
+            entry.Value = mapInstance.IsShard ? InnerCreateFromEntry(entry, instanceId) : InnerCreateFromEntry(entry);
+        } catch (Exception e)
+        {
+            Logger.WithTopics(Topics.Qualifiers.Forced, Topics.Actions.Reload)
+                  .LogError(e, "Failed to reload MapInstance with key {@Key}", key);
+        }
 
         return Task.CompletedTask;
     }

@@ -1,3 +1,4 @@
+#region
 using Chaos.Definitions;
 using Chaos.Extensions.Common;
 using Chaos.Models.Abstractions;
@@ -10,6 +11,7 @@ using Chaos.Scripting.MerchantScripts.ShopScripts.Abstractions;
 using Chaos.Services.Factories.Abstractions;
 using Chaos.TypeMapper.Abstractions;
 using Chaos.Utilities;
+#endregion
 
 namespace Chaos.Scripting.MerchantScripts.ShopScripts;
 

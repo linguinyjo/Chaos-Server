@@ -1,10 +1,12 @@
+#region
 using Chaos.Collections;
 using Chaos.Collections.Abstractions;
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Panel;
 using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
 using Chaos.Scripting.Abstractions;
+#endregion
 
 namespace Chaos.Scripting.AislingScripts.Abstractions;
 
@@ -20,10 +22,25 @@ public abstract class AislingScriptBase : SubjectiveScriptBase<Aisling>, IAislin
         : base(subject) { }
 
     /// <inheritdoc />
-    public virtual bool CanDropItemOn(Aisling source, Item item) => !(item.Template.AccountBound || item.Template.NoTrade);
+    public virtual bool CanDropItem(Item item) => Subject.IsAlive;
+
+    /// <inheritdoc />
+    public virtual bool CanDropItemOn(Aisling source, Item item) => Subject.IsAlive;
+
+    /// <inheritdoc />
+    public virtual bool CanDropMoney(int amount) => Subject.IsAlive;
+
+    /// <inheritdoc />
+    public virtual bool CanDropMoneyOn(Aisling source, int amount) => Subject.IsAlive;
 
     /// <inheritdoc />
     public virtual bool CanMove() => true;
+
+    /// <inheritdoc />
+    public virtual bool CanPickupItem(GroundItem groundItem) => Subject.IsAlive;
+
+    /// <inheritdoc />
+    public virtual bool CanPickupMoney(Money money) => Subject.IsAlive;
 
     /// <param name="entity">
     /// </param>
@@ -77,6 +94,12 @@ public abstract class AislingScriptBase : SubjectiveScriptBase<Aisling>, IAislin
 
     /// <inheritdoc />
     public virtual void OnItemDroppedOn(Aisling source, Item item) { }
+
+    /// <inheritdoc />
+    public virtual void OnLogin() { }
+
+    /// <inheritdoc />
+    public virtual void OnLogout() { }
 
     /// <inheritdoc />
     public virtual void OnPublicMessage(Creature source, string message) { }

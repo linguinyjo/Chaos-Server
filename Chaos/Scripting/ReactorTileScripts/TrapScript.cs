@@ -1,11 +1,11 @@
-using Chaos.Common.Definitions;
+#region
+using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Extensions;
 using Chaos.Formulae;
 using Chaos.Models.Data;
 using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
-using Chaos.Scripting.Abstractions;
 using Chaos.Scripting.Components.AbilityComponents;
 using Chaos.Scripting.Components.Execution;
 using Chaos.Scripting.FunctionalScripts.Abstractions;
@@ -14,6 +14,7 @@ using Chaos.Scripting.ReactorTileScripts.Abstractions;
 using Chaos.Services.Factories.Abstractions;
 using Chaos.Time;
 using Chaos.Time.Abstractions;
+#endregion
 
 namespace Chaos.Scripting.ReactorTileScripts;
 
@@ -46,7 +47,6 @@ public class TrapScript : ConfigurableReactorTileScriptBase,
 
         ApplyDamageScript = ApplyNonAttackDamageScript.Create();
         ApplyDamageScript.DamageFormula = DamageFormulae.PureDamage;
-        SourceScript = this;
     }
 
     /// <inheritdoc />
@@ -98,12 +98,15 @@ public class TrapScript : ConfigurableReactorTileScriptBase,
     public bool SingleTarget { get; init; }
     public BodyAnimation BodyAnimation { get; init; }
     public int Range { get; init; }
+
+    /// <inheritdoc />
+    public int? ExclusionRange { get; init; }
+
     public TargetFilter Filter { get; init; }
     public Animation? Animation { get; init; }
     public byte? Sound { get; init; }
     public bool AnimatePoints { get; init; }
     public bool MustHaveTargets { get; init; } = true;
-    public bool ExcludeSourcePoint { get; init; }
     public int? BaseDamage { get; init; }
     public Stat? DamageStat { get; init; }
     public decimal? DamageStatMultiplier { get; init; }
