@@ -2,8 +2,10 @@
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using Chaos.Common.Abstractions;
 using Chaos.Common.Synchronization;
 using Chaos.DarkAges.Definitions;
+using Chaos.Definitions;
 using Chaos.Extensions;
 using Chaos.Extensions.Common;
 using Chaos.Extensions.Geometry;
@@ -33,7 +35,6 @@ public sealed class MapInstance : IScripted<IMapScript>, IDeltaUpdatable
 {
     private readonly IAsyncStore<Aisling> AislingStore;
     private readonly IIntervalTimer DayNightCycleTimer;
-    private readonly DeltaMonitor DeltaMonitor;
     private readonly DeltaTime DeltaTime;
     private readonly PeriodicTimer DeltaTimer;
     private readonly IIntervalTimer HandleShardLimitersTimer;
@@ -221,12 +222,6 @@ public sealed class MapInstance : IScripted<IMapScript>, IDeltaUpdatable
         var delta = 1000.0 / WorldOptions.Instance.UpdatesPerSecond;
         DeltaTimer = new PeriodicTimer(TimeSpan.FromMilliseconds(delta));
         DeltaTime = new DeltaTime();
-
-        DeltaMonitor = new DeltaMonitor(
-            InstanceId,
-            logger,
-            TimeSpan.FromMinutes(1),
-            Math.Min(delta * 10, 500));
 
         if (extraScriptKeys != null)
             ScriptKeys.AddRange(extraScriptKeys);
@@ -1079,151 +1074,17 @@ public sealed class MapInstance : IScripted<IMapScript>, IDeltaUpdatable
         => GetEntitiesAtPoints<ReactorTile>(point)
             .Any();
 
-    /*/// <summary>
-    ///     Determines if a point is walkable
-    /// </summary>
-    /// <param name="point">
-    ///     The point to check
-    /// </param>
-    /// <param name="creatureType">
-    ///     The type of the creature
-    /// </param>
-    /// <param name="ignoreBlockingReactors">
-    ///     Whether to ignore blocking reactors. Default behavior ignores blocking reactors only for Aislings
-    /// </param>
-    /// <returns>
-    ///     <c>
-    ///         true
-    ///     </c>
-    ///     if the point is within the map, and walkable to the specified creature type, otherwise
-    ///     <c>
-    ///         false
-    ///     </c>
-    /// </returns>
-    /// <exception cref="ArgumentOutOfRangeException">
-    ///     Thrown when the creature type is not recognized
-    /// </exception>
-    /// <remarks>
-    ///     This method checks if a point is within the map, is a wall, or has a reactor or creature that will stop you from
-    ///     walking
-    /// </remarks>
-    public bool IsWalkable(IPoint point, CreatureType creatureType, bool? ignoreBlockingReactors = null)
-        => IsWalkable(Point.From(point), creatureType, ignoreBlockingReactors);*/
-
-    /*/// <summary>
-    ///     Determines if a point is walkable
-    /// </summary>
-    /// <param name="point">
-    ///     The point to check
-    /// </param>
-    /// <param name="creatureType">
-    ///     The type of the creature
-    /// </param>
-    /// <param name="ignoreBlockingReactors">
-    ///     Whether to ignore blocking reactors. Default behavior ignores blocking reactors only for Aislings
-    /// </param>
-    /// <returns>
-    ///     <c>
-    ///         true
-    ///     </c>
-    ///     if the point is within the map, and walkable to the specified creature type, otherwise
-    ///     <c>
-    ///         false
-    ///     </c>
-    /// </returns>
-    /// <exception cref="ArgumentOutOfRangeException">
-    ///     Thrown when the creature type is not recognized
-    /// </exception>
-    /// <remarks>
-    ///     This method checks if a point is within the map, is a wall, or has a reactor or creature that will stop you from
-    ///     walking
-    /// </remarks>
-    public bool IsWalkable(Point point, CreatureType creatureType, bool? ignoreBlockingReactors = null)
-    {
-        ignoreBlockingReactors ??= creatureType == CreatureType.Aisling;
-
-        var creatures = GetEntitiesAtPoints<Creature>(point)
-            .ToList();
-
-        if (!ignoreBlockingReactors.Value && IsBlockingReactor(point))
-            return false;
-
-        return creatureType switch
-        {
-            CreatureType.Normal      => !IsWall(point) && !creatures.Any(c => creatureType.WillCollideWith(c)),
-            CreatureType.WalkThrough => IsWithinMap(point) && !creatures.Any(c => creatureType.WillCollideWith(c)),
-            CreatureType.Merchant    => !IsWall(point) && !creatures.Any(c => creatureType.WillCollideWith(c)),
-            CreatureType.WhiteSquare => !IsWall(point) && !creatures.Any(c => creatureType.WillCollideWith(c)),
-            CreatureType.Aisling     => !IsWall(point) && !creatures.Any(c => creatureType.WillCollideWith(c)),
-            _                        => throw new ArgumentOutOfRangeException(nameof(creatureType), creatureType, null)
-        };
-    }*/
-
     /// <summary>
     ///     Determines if a point is walkable
     /// </summary>
     /// <param name="point">
     ///     The point to check
     /// </param>
-    /// <param name="creatureType">
-    ///     The type of the creature
-    /// </param>
-    /// <returns>
-    ///     <c>
-    ///         true
-    ///     </c>
-    ///     if the point is within the map, and walkable to the specified creature type, otherwise
-    ///     <c>
-    ///         false
-    ///     </c>
-    /// </returns>
-    /// <exception cref="ArgumentOutOfRangeException">
-    ///     Thrown when the creature type is not recognized
-    /// </exception>
-    /// <remarks>
-    ///     This method checks if a point is within the map, is a wall, or has a reactor or creature that will stop you from
-    ///     walking
-    /// </remarks>
-    public bool IsWalkable(Point point, CreatureType creatureType) => IsWalkable(point, collisionType: creatureType);
-
-    /// <summary>
-    ///     Determines if a point is walkable
-    /// </summary>
-    /// <param name="point">
-    ///     The point to check
-    /// </param>
-    /// <param name="creatureType">
-    ///     The type of the creature
-    /// </param>
-    /// <returns>
-    ///     <c>
-    ///         true
-    ///     </c>
-    ///     if the point is within the map, and walkable to the specified creature type, otherwise
-    ///     <c>
-    ///         false
-    ///     </c>
-    /// </returns>
-    /// <exception cref="ArgumentOutOfRangeException">
-    ///     Thrown when the creature type is not recognized
-    /// </exception>
-    /// <remarks>
-    ///     This method checks if a point is within the map, is a wall, or has a reactor or creature that will stop you from
-    ///     walking
-    /// </remarks>
-    public bool IsWalkable(IPoint point, CreatureType creatureType) => IsWalkable(Point.From(point), collisionType: creatureType);
-
-    /// <summary>
-    ///     Determines if a point is walkable
-    /// </summary>
-    /// <param name="point">
-    ///     The point to check
+    /// <param name="creature">
+    ///     The creature to make the check FOR
     /// </param>
     /// <param name="ignoreBlockingReactors">
     ///     Whether to ignore blocking reactors. Default behavior ignores blocking reactors only for Aislings
-    /// </param>
-    /// <param name="collisionType">
-    ///     The type of the creature
     /// </param>
     /// <param name="ignoreWalls">
     ///     Whether to ignore walls. Default behavior ignores walls only for WalkThrough creatures
@@ -1249,16 +1110,16 @@ public sealed class MapInstance : IScripted<IMapScript>, IDeltaUpdatable
     /// </remarks>
     public bool IsWalkable(
         IPoint point,
+        Creature? creature = null,
         bool? ignoreBlockingReactors = null,
         bool? ignoreWalls = null,
-        bool? ignoreCollision = null,
-        CreatureType? collisionType = null)
+        bool? ignoreCollision = null)
         => IsWalkable(
             Point.From(point),
+            creature,
             ignoreBlockingReactors,
             ignoreWalls,
-            ignoreCollision,
-            collisionType);
+            ignoreCollision);
 
     /// <summary>
     ///     Determines if a point is walkable
@@ -1266,11 +1127,11 @@ public sealed class MapInstance : IScripted<IMapScript>, IDeltaUpdatable
     /// <param name="point">
     ///     The point to check
     /// </param>
+    /// <param name="creature">
+    ///     The creature to make the check FOR
+    /// </param>
     /// <param name="ignoreBlockingReactors">
     ///     Whether to ignore blocking reactors. Default behavior ignores blocking reactors only for Aislings
-    /// </param>
-    /// <param name="collisionType">
-    ///     The type of the creature
     /// </param>
     /// <param name="ignoreWalls">
     ///     Whether to ignore walls. Default behavior ignores walls only for WalkThrough creatures
@@ -1296,12 +1157,12 @@ public sealed class MapInstance : IScripted<IMapScript>, IDeltaUpdatable
     /// </remarks>
     public bool IsWalkable(
         Point point,
+        Creature? creature = null,
         bool? ignoreBlockingReactors = null,
         bool? ignoreWalls = null,
-        bool? ignoreCollision = null,
-        CreatureType? collisionType = null)
+        bool? ignoreCollision = null)
     {
-        collisionType ??= CreatureType.Normal;
+        var collisionType = creature?.Type ?? CreatureType.Normal;
         ignoreBlockingReactors ??= collisionType == CreatureType.Aisling;
         ignoreWalls ??= collisionType == CreatureType.WalkThrough;
         ignoreCollision ??= false;
@@ -1316,12 +1177,23 @@ public sealed class MapInstance : IScripted<IMapScript>, IDeltaUpdatable
             return false;
 
         if (!ignoreWalls.Value && IsWall(point))
-            return false;
+        {
+            var openDoor = GetEntitiesAtPoints<Door>(point)
+                .FirstOrDefault(d => !d.Closed);
+
+            //we have an open door that is also a wall
+            if (openDoor is null)
+                return false;
+        }
 
         if (ignoreCollision.Value)
             return true;
 
-        return !creatures.Any(c => collisionType.Value.WillCollideWith(c));
+        if (creature is not null)
+            return !creatures.ThatThisCollidesWith(creature)
+                             .Any();
+
+        return !creatures.Any(c => collisionType.WillCollideWith(c));
     }
 
     /// <summary>
@@ -1647,8 +1519,8 @@ public sealed class MapInstance : IScripted<IMapScript>, IDeltaUpdatable
     /// <param name="point">
     ///     A random point if found
     /// </param>
-    /// <param name="creatureType">
-    ///     The type of the creature. This is used to determine if a point is walkable
+    /// <param name="creature">
+    ///     The creature to make the check FOR. This creature may have a special type or other circumstances
     /// </param>
     /// <returns>
     ///     <c>
@@ -1659,9 +1531,38 @@ public sealed class MapInstance : IScripted<IMapScript>, IDeltaUpdatable
     ///         false
     ///     </c>
     /// </returns>
-    public bool TryGetRandomWalkablePoint([NotNullWhen(true)] out Point? point, CreatureType creatureType = CreatureType.Normal)
+    public bool TryGetRandomWalkablePoint([NotNullWhen(true)] out Point? point, Creature? creature = null)
     {
-        if (!Template.Bounds.TryGetRandomPoint(pt => IsWalkable(pt, collisionType: creatureType), out point))
+        if (!Template.Bounds.TryGetRandomPoint(pt => IsWalkable(pt, creature), out point))
+            return false;
+
+        return true;
+    }
+
+    /// <summary>
+    ///     Attempts to find a random walkable point on the map
+    /// </summary>
+    /// <param name="predicate">
+    ///     A predicate used to further filter valid points
+    /// </param>
+    /// <param name="point">
+    ///     A random point if found
+    /// </param>
+    /// <param name="creature">
+    ///     The creature to make the check FOR. This creature may have a special type or other circumstances
+    /// </param>
+    /// <returns>
+    ///     <c>
+    ///         true
+    ///     </c>
+    ///     if a walkable point was found, otherwise
+    ///     <c>
+    ///         false
+    ///     </c>
+    /// </returns>
+    public bool TryGetRandomWalkablePoint(Func<Point, bool> predicate, [NotNullWhen(true)] out Point? point, Creature? creature = null)
+    {
+        if (!Template.Bounds.TryGetRandomPoint(pt => IsWalkable(pt, creature) && predicate(pt), out point))
             return false;
 
         return true;
@@ -1675,21 +1576,52 @@ public sealed class MapInstance : IScripted<IMapScript>, IDeltaUpdatable
     /// </param>
     public async Task UpdateMapAsync(TimeSpan delta)
     {
-        await using var sync = await Sync.WaitAsync();
+        using var activity = ChaosActivitySource.StartRootUpdateActivity("Map.UpdateAsync");
 
-        DeltaMonitor.Update(delta);
+        activity?.SetTag("map.instance_id", InstanceId);
 
-        var start = Stopwatch.GetTimestamp();
+        // Get parent context for child spans (use default if not sampled)
+        var parentContext = activity?.Context ?? default;
 
-        Update(delta);
+        IPolyDisposable sync;
 
-        var aislingsToSave = Objects.Values<Aisling>()
-                                    .Where(aisling => aisling.SaveTimer.IntervalElapsed);
+        using (var syncActivity = ChaosActivitySource.Updates.StartActivity(
+                   "Map.UpdateAsync.AcquireSync",
+                   ActivityKind.Internal,
+                   parentContext))
+        {
+            sync = await Sync.WaitAsync();
+            syncActivity?.SetTag("sync.acquired", true);
+        }
 
-        await Task.WhenAll(aislingsToSave.Select(AislingStore.SaveAsync));
+        await using (sync)
+        {
+            using (var updateActivity = ChaosActivitySource.Updates.StartActivity(
+                       "Map.UpdateAsync.Update",
+                       ActivityKind.Internal,
+                       parentContext))
+            {
+                updateActivity?.SetTag("delta_ms", delta.TotalMilliseconds);
 
-        var elapsed = Stopwatch.GetElapsedTime(start);
-        DeltaMonitor.DigestDelta(elapsed);
+                Update(delta);
+            }
+
+            var aislingsToSave = Objects.Values<Aisling>()
+                                        .Where(aisling => aisling.SaveTimer.IntervalElapsed)
+                                        .ToList();
+
+            if (aislingsToSave.Count > 0)
+            {
+                using var saveActivity = ChaosActivitySource.Updates.StartActivity(
+                    "Map.UpdateAsync.SaveAislings",
+                    ActivityKind.Internal,
+                    parentContext);
+
+                saveActivity?.SetTag("aisling.save_count", aislingsToSave.Count);
+
+                await Task.WhenAll(aislingsToSave.Select(AislingStore.SaveAsync));
+            }
+        }
     }
 
     /// <summary>

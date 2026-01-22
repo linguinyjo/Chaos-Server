@@ -1,5 +1,4 @@
 #region
-
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -17,6 +16,8 @@ using Chaos.Extensions;
 using Chaos.Extensions.Common;
 using Chaos.Messaging.Abstractions;
 using Chaos.Models.Data;
+using Chaos.Models.Panel;
+using Chaos.Models.Panel.Abstractions;
 using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
 using Chaos.Networking.Abstractions;
@@ -30,6 +31,8 @@ using Chaos.Packets;
 using Chaos.Packets.Abstractions;
 using Chaos.Scripting.Abstractions;
 using Chaos.Scripting.EffectScripts.Abstractions;
+using Chaos.Scripting.SpellScripts.Abstractions;
+using Chaos.Services.Factories;
 using Chaos.Services.Factories.Abstractions;
 using Chaos.Services.Other;
 using Chaos.Services.Other.Abstractions;
@@ -40,7 +43,6 @@ using Chaos.Storage.Abstractions;
 using Chaos.Utilities;
 using Microsoft.Extensions.Options;
 using HeartBeatResponseArgs = Chaos.Networking.Entities.Client.HeartBeatResponseArgs;
-
 #endregion
 
 namespace Chaos.Services.Servers;
@@ -62,6 +64,11 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
     private readonly IMonsterFactory MonsterFactory;
     private readonly ISkillFactory SkillFactory;
     private readonly ISpellFactory SpellFactory;
+    private new WorldOptions Options { get; }
+
+    public IEnumerable<Aisling> Aislings
+        => ClientRegistry.Select(c => c.Aisling)
+                         .Where(player => player != null!);
 
     public WorldServer(
         IClientRegistry<IChaosWorldClient> clientRegistry,
@@ -111,20 +118,11 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
         IndexHandlers();
     }
 
-    private new WorldOptions Options { get; }
-
-    public IEnumerable<Aisling> Aislings
-        => ClientRegistry.Select(c => c.Aisling)
-            .Where(player => player != null!);
-
     #region Server Loop
-
     private Task SaveUserAsync(Aisling aisling) => AislingStore.SaveAsync(aisling);
-
     #endregion
 
     #region Utility
-
     private bool TrySetSource(Aisling aisling, IEffect effect)
     {
         var sourceType = effect.SnapshotVars.Get<CreatureType>("sourceType");
@@ -134,8 +132,7 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
         var scriptKey = effect.SnapshotVars.Get<string>("scriptKey");
 
         //if there's no source script info, return false
-        if (string.IsNullOrEmpty(activatorType) || string.IsNullOrEmpty(activatorKey) ||
-            string.IsNullOrEmpty(scriptKey))
+        if (string.IsNullOrEmpty(activatorType) || string.IsNullOrEmpty(activatorKey) || string.IsNullOrEmpty(scriptKey))
             return false;
 
         //if there's source script info, but the data is unknown
@@ -146,13 +143,13 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
             {
                 "spell" => SpellFactory.CreateFaux(activatorKey),
                 "skill" => SkillFactory.CreateFaux(activatorKey),
-                "item" => ItemFactory.CreateFaux(activatorKey),
-                _ => throw new ArgumentOutOfRangeException()
+                "item"  => ItemFactory.CreateFaux(activatorKey),
+                _       => throw new ArgumentOutOfRangeException()
             });
 
             effect.SourceScript = sourceActivator.Script
-                .GetScripts<IScript>()
-                .Single(script => script.ScriptKey.EqualsI(scriptKey));
+                                                 .GetScripts<IScript>()
+                                                 .Single(script => script.ScriptKey.EqualsI(scriptKey));
         }
 
         if (string.IsNullOrEmpty(sourceIdentifier))
@@ -219,8 +216,7 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
 
                         if (TrySetSource(aisling, effect))
                             continue;
-                    }
-                    catch
+                    } catch
                     {
                         //ignored
                     }
@@ -228,8 +224,7 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
                     try
                     {
                         aisling.Effects.Dispel(effect.Name);
-                    }
-                    catch
+                    } catch
                     {
                         //ignored
                     }
@@ -279,47 +274,44 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
                 aisling.Script.OnLogin();
 
                 Logger.WithTopics(
-                        Topics.Servers.WorldServer,
-                        Topics.Entities.Aisling,
-                        Topics.Actions.Redirect,
-                        Topics.Actions.Login)
-                    .WithProperty(client)
-                    .LogInformation("World redirect finalized for {@AislingName}", aisling.Name);
-            }
-            catch (Exception e)
+                          Topics.Servers.WorldServer,
+                          Topics.Entities.Aisling,
+                          Topics.Actions.Redirect,
+                          Topics.Actions.Login)
+                      .WithProperty(client)
+                      .LogInformation("World redirect finalized for {@AislingName}", aisling.Name);
+            } catch (Exception e)
             {
                 Logger.WithTopics(
-                        Topics.Servers.WorldServer,
-                        Topics.Entities.Aisling,
-                        Topics.Actions.Redirect,
-                        Topics.Actions.Login)
-                    .WithProperty(aisling)
-                    .LogError(e, "Failed to add aisling {@AislingName} to the world", aisling.Name);
+                          Topics.Servers.WorldServer,
+                          Topics.Entities.Aisling,
+                          Topics.Actions.Redirect,
+                          Topics.Actions.Login)
+                      .WithProperty(aisling)
+                      .LogError(e, "Failed to add aisling {@AislingName} to the world", aisling.Name);
 
                 client.Disconnect();
             }
-        }
-        catch (Exception e)
+        } catch (Exception e)
         {
             Logger.WithTopics(
-                    Topics.Servers.WorldServer,
-                    Topics.Entities.Aisling,
-                    Topics.Actions.Redirect,
-                    Topics.Actions.Login)
-                .WithProperty(client)
-                .WithProperty(redirect)
-                .LogError(
-                    e,
-                    "Client with ip {@ClientIp} failed to load aisling {@AislingName}",
-                    client.RemoteIp,
-                    redirect.Name);
+                      Topics.Servers.WorldServer,
+                      Topics.Entities.Aisling,
+                      Topics.Actions.Redirect,
+                      Topics.Actions.Login)
+                  .WithProperty(client)
+                  .WithProperty(redirect)
+                  .LogError(
+                      e,
+                      "Client with ip {@ClientIp} failed to load aisling {@AislingName}",
+                      client.RemoteIp,
+                      redirect.Name);
 
             client.Disconnect();
         }
     }
 
-    private bool TryGetBoard(IChaosWorldClient client, BoardInteractionArgs args,
-        [MaybeNullWhen(false)] out BoardBase boardBase)
+    private bool TryGetBoard(IChaosWorldClient client, BoardInteractionArgs args, [MaybeNullWhen(false)] out BoardBase boardBase)
     {
         boardBase = null;
 
@@ -352,41 +344,37 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
             if (boardBase is null)
             {
                 Logger.WithTopics(
-                        Topics.Entities.Aisling,
-                        Topics.Entities.BulletinBoard,
-                        Topics.Entities.MailBox,
-                        Topics.Actions.Read)
-                    .WithProperty(client)
-                    .LogError("{@AislingName} requested an invalid board id: {@BoardId}", client.Aisling.Name,
-                        args.BoardId);
+                          Topics.Entities.Aisling,
+                          Topics.Entities.BulletinBoard,
+                          Topics.Entities.MailBox,
+                          Topics.Actions.Read)
+                      .WithProperty(client)
+                      .LogError("{@AislingName} requested an invalid board id: {@BoardId}", client.Aisling.Name, args.BoardId);
 
                 return false;
             }
 
             return true;
-        }
-        catch (Exception e)
+        } catch (Exception e)
         {
             Logger.WithTopics(
-                    Topics.Entities.Aisling,
-                    Topics.Entities.BulletinBoard,
-                    Topics.Entities.MailBox,
-                    Topics.Actions.Read)
-                .WithProperty(client)
-                .LogError(
-                    e,
-                    "{@AislingName} requested an invalid board id: {@BoardId}",
-                    client.Aisling.Name,
-                    args.BoardId);
+                      Topics.Entities.Aisling,
+                      Topics.Entities.BulletinBoard,
+                      Topics.Entities.MailBox,
+                      Topics.Actions.Read)
+                  .WithProperty(client)
+                  .LogError(
+                      e,
+                      "{@AislingName} requested an invalid board id: {@BoardId}",
+                      client.Aisling.Name,
+                      args.BoardId);
 
             return false;
         }
     }
-
     #endregion
 
     #region OnHandlers
-
     public ValueTask OnBeginChant(IChaosWorldClient client, in Packet packet)
     {
         var args = PacketSerializer.Deserialize<BeginChantArgs>(in packet);
@@ -429,21 +417,20 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
                 {
                     if (!TryGetBoard(localClient, localArgs, out var board))
                     {
-                        localClient.SendBoardResponse(BoardOrResponseType.SubmitPostResponse,
-                            "That board does not exist.", false);
+                        localClient.SendBoardResponse(BoardOrResponseType.SubmitPostResponse, "That board does not exist.", false);
 
                         Logger.WithTopics(
-                                Topics.Entities.Aisling,
-                                Topics.Entities.BulletinBoard,
-                                Topics.Entities.MailBox,
-                                Topics.Actions.Read,
-                                Topics.Qualifiers.Cheating)
-                            .WithProperty(client)
-                            .LogError(
-                                "{@AislingName} requested an invalid board id for request type {@BoardRequestType}: {@BoardId}",
-                                client.Aisling.Name,
-                                localArgs.BoardRequestType,
-                                args.BoardId);
+                                  Topics.Entities.Aisling,
+                                  Topics.Entities.BulletinBoard,
+                                  Topics.Entities.MailBox,
+                                  Topics.Actions.Read,
+                                  Topics.Qualifiers.Cheating)
+                              .WithProperty(client)
+                              .LogError(
+                                  "{@AislingName} requested an invalid board id for request type {@BoardRequestType}: {@BoardId}",
+                                  client.Aisling.Name,
+                                  localArgs.BoardRequestType,
+                                  args.BoardId);
 
                         return default;
                     }
@@ -456,21 +443,20 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
                 {
                     if (!TryGetBoard(localClient, localArgs, out var board))
                     {
-                        localClient.SendBoardResponse(BoardOrResponseType.SubmitPostResponse,
-                            "That board does not exist.", false);
+                        localClient.SendBoardResponse(BoardOrResponseType.SubmitPostResponse, "That board does not exist.", false);
 
                         Logger.WithTopics(
-                                Topics.Entities.Aisling,
-                                Topics.Entities.BulletinBoard,
-                                Topics.Entities.MailBox,
-                                Topics.Actions.Read,
-                                Topics.Qualifiers.Cheating)
-                            .WithProperty(client)
-                            .LogError(
-                                "{@AislingName} requested an invalid board id for request type {@BoardRequestType}: {@BoardId}",
-                                client.Aisling.Name,
-                                localArgs.BoardRequestType,
-                                args.BoardId);
+                                  Topics.Entities.Aisling,
+                                  Topics.Entities.BulletinBoard,
+                                  Topics.Entities.MailBox,
+                                  Topics.Actions.Read,
+                                  Topics.Qualifiers.Cheating)
+                              .WithProperty(client)
+                              .LogError(
+                                  "{@AislingName} requested an invalid board id for request type {@BoardRequestType}: {@BoardId}",
+                                  client.Aisling.Name,
+                                  localArgs.BoardRequestType,
+                                  args.BoardId);
 
                         return default;
                     }
@@ -483,20 +469,19 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
                 {
                     if (!TryGetBoard(localClient, localArgs, out var board))
                     {
-                        localClient.SendBoardResponse(BoardOrResponseType.SubmitPostResponse,
-                            "That board does not exist", false);
+                        localClient.SendBoardResponse(BoardOrResponseType.SubmitPostResponse, "That board does not exist", false);
 
                         Logger.WithTopics(
-                                Topics.Entities.Aisling,
-                                Topics.Entities.BulletinBoard,
-                                Topics.Actions.Read,
-                                Topics.Qualifiers.Cheating)
-                            .WithProperty(client)
-                            .LogError(
-                                "{@AislingName} requested an invalid board id for request type {@BoardRequestType}: {@BoardId}",
-                                client.Aisling.Name,
-                                localArgs.BoardRequestType,
-                                args.BoardId);
+                                  Topics.Entities.Aisling,
+                                  Topics.Entities.BulletinBoard,
+                                  Topics.Actions.Read,
+                                  Topics.Qualifiers.Cheating)
+                              .WithProperty(client)
+                              .LogError(
+                                  "{@AislingName} requested an invalid board id for request type {@BoardRequestType}: {@BoardId}",
+                                  client.Aisling.Name,
+                                  localArgs.BoardRequestType,
+                                  args.BoardId);
 
                         return default;
                     }
@@ -505,17 +490,17 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
                     if (board is MailBox)
                     {
                         Logger.WithTopics(
-                                Topics.Entities.Aisling,
-                                Topics.Entities.BulletinBoard,
-                                Topics.Entities.MailBox,
-                                Topics.Actions.Read,
-                                Topics.Qualifiers.Cheating)
-                            .WithProperty(client)
-                            .LogError(
-                                "{@AislingName} requested an invalid board id for request type {@BoardRequestType}: {@BoardId}",
-                                client.Aisling.Name,
-                                localArgs.BoardRequestType,
-                                args.BoardId);
+                                  Topics.Entities.Aisling,
+                                  Topics.Entities.BulletinBoard,
+                                  Topics.Entities.MailBox,
+                                  Topics.Actions.Read,
+                                  Topics.Qualifiers.Cheating)
+                              .WithProperty(client)
+                              .LogError(
+                                  "{@AislingName} requested an invalid board id for request type {@BoardRequestType}: {@BoardId}",
+                                  client.Aisling.Name,
+                                  localArgs.BoardRequestType,
+                                  args.BoardId);
 
                         return default;
                     }
@@ -532,21 +517,20 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
                 {
                     if (!TryGetBoard(localClient, localArgs, out var board))
                     {
-                        localClient.SendBoardResponse(BoardOrResponseType.SubmitPostResponse,
-                            "That board does not exist.", false);
+                        localClient.SendBoardResponse(BoardOrResponseType.SubmitPostResponse, "That board does not exist.", false);
 
                         Logger.WithTopics(
-                                Topics.Entities.Aisling,
-                                Topics.Entities.BulletinBoard,
-                                Topics.Entities.MailBox,
-                                Topics.Actions.Read,
-                                Topics.Qualifiers.Cheating)
-                            .WithProperty(client)
-                            .LogError(
-                                "{@AislingName} requested an invalid board id for request type {@BoardRequestType}: {@BoardId}",
-                                client.Aisling.Name,
-                                localArgs.BoardRequestType,
-                                args.BoardId);
+                                  Topics.Entities.Aisling,
+                                  Topics.Entities.BulletinBoard,
+                                  Topics.Entities.MailBox,
+                                  Topics.Actions.Read,
+                                  Topics.Qualifiers.Cheating)
+                              .WithProperty(client)
+                              .LogError(
+                                  "{@AislingName} requested an invalid board id for request type {@BoardRequestType}: {@BoardId}",
+                                  client.Aisling.Name,
+                                  localArgs.BoardRequestType,
+                                  args.BoardId);
 
                         return default;
                     }
@@ -559,8 +543,7 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
                 {
                     if (!TryGetBoard(localClient, localArgs, out var board))
                     {
-                        localClient.SendBoardResponse(BoardOrResponseType.SubmitPostResponse,
-                            $"{localArgs.To} does not exist.", false);
+                        localClient.SendBoardResponse(BoardOrResponseType.SubmitPostResponse, $"{localArgs.To} does not exist.", false);
 
                         return default;
                     }
@@ -582,14 +565,13 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
                     //you cant highlight mail messages
                     if (board is MailBox)
                     {
-                        Logger.WithTopics(Topics.Entities.MailBox, Topics.Entities.BulletinBoard,
-                                Topics.Actions.Highlight)
-                            .WithProperty(client)
-                            .LogError(
-                                "{@AislingName} requested an invalid board id for request type {@BoardRequestType}: {@BoardId}",
-                                client.Aisling.Name,
-                                localArgs.BoardRequestType,
-                                args.BoardId);
+                        Logger.WithTopics(Topics.Entities.MailBox, Topics.Entities.BulletinBoard, Topics.Actions.Highlight)
+                              .WithProperty(client)
+                              .LogError(
+                                  "{@AislingName} requested an invalid board id for request type {@BoardRequestType}: {@BoardId}",
+                                  client.Aisling.Name,
+                                  localArgs.BoardRequestType,
+                                  args.BoardId);
 
                         return default;
                     }
@@ -616,8 +598,7 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
         {
             if (localClient.Aisling.IsOnWorldMap || localClient.Aisling.Muted)
             {
-                localClient.SendServerMessage(ServerMessageType.OrangeBar1,
-                    "Your voice is swept away by a strange wind...");
+                localClient.SendServerMessage(ServerMessageType.OrangeBar1, "Your voice is swept away by a strange wind...");
 
                 return default;
             }
@@ -659,8 +640,7 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
                 }
 
                 localClient.Aisling.MapInstance.Click(localArgs.TargetId.Value, localClient.Aisling);
-            }
-            else if (localArgs.TargetPoint is not null)
+            } else if (localArgs.TargetPoint is not null)
                 localClient.Aisling.MapInstance.Click(localArgs.TargetPoint, localClient.Aisling);
 
             return default;
@@ -678,12 +658,12 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
             if (!RedirectManager.TryGetRemove(localArgs.Id, out var redirect))
             {
                 Logger.WithTopics(
-                        Topics.Servers.WorldServer,
-                        Topics.Entities.Client,
-                        Topics.Actions.Redirect,
-                        Topics.Qualifiers.Cheating)
-                    .WithProperty(localArgs)
-                    .LogWarning("{@ClientIp} tried to redirect to the world with invalid details", client.RemoteIp);
+                          Topics.Servers.WorldServer,
+                          Topics.Entities.Client,
+                          Topics.Actions.Redirect,
+                          Topics.Qualifiers.Cheating)
+                      .WithProperty(localArgs)
+                      .LogWarning("{@ClientIp} tried to redirect to the world with invalid details", client.RemoteIp);
 
                 localClient.Disconnect();
 
@@ -694,16 +674,16 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
             if (localArgs.Name != redirect.Name)
             {
                 Logger.WithTopics(
-                        Topics.Servers.WorldServer,
-                        Topics.Entities.Client,
-                        Topics.Actions.Redirect,
-                        Topics.Qualifiers.Cheating)
-                    .WithProperty(redirect)
-                    .WithProperty(localArgs)
-                    .LogWarning(
-                        "{@ClientIp} tried to impersonate a redirect with redirect {@RedirectId}",
-                        localClient.RemoteIp,
-                        redirect.Id);
+                          Topics.Servers.WorldServer,
+                          Topics.Entities.Client,
+                          Topics.Actions.Redirect,
+                          Topics.Qualifiers.Cheating)
+                      .WithProperty(redirect)
+                      .WithProperty(localArgs)
+                      .LogWarning(
+                          "{@ClientIp} tried to impersonate a redirect with redirect {@RedirectId}",
+                          localClient.RemoteIp,
+                          redirect.Id);
 
                 localClient.Disconnect();
 
@@ -711,9 +691,9 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
             }
 
             Logger.WithTopics(Topics.Servers.WorldServer, Topics.Entities.Client, Topics.Actions.Redirect)
-                .WithProperty(localClient)
-                .WithProperty(redirect)
-                .LogDebug("Received world redirect {@RedirectId}", redirect.Id);
+                  .WithProperty(localClient)
+                  .WithProperty(redirect)
+                  .LogDebug("Received world redirect {@RedirectId}", redirect.Id);
 
             var existingAisling = Aislings.FirstOrDefault(user => user.Name.EqualsI(redirect.Name));
 
@@ -721,14 +701,13 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
             if (existingAisling != null)
             {
                 Logger.WithTopics(
-                        Topics.Servers.WorldServer,
-                        Topics.Entities.Aisling,
-                        Topics.Actions.Login,
-                        Topics.Actions.Redirect)
-                    .WithProperty(localClient)
-                    .WithProperty(existingAisling)
-                    .LogDebug("Duplicate login detected for aisling {@AislingName}, disconnecting both clients",
-                        existingAisling.Name);
+                          Topics.Servers.WorldServer,
+                          Topics.Entities.Aisling,
+                          Topics.Actions.Login,
+                          Topics.Actions.Redirect)
+                      .WithProperty(localClient)
+                      .WithProperty(existingAisling)
+                      .LogDebug("Duplicate login detected for aisling {@AislingName}, disconnecting both clients", existingAisling.Name);
 
                 existingAisling.Client.Disconnect();
                 localClient.Disconnect();
@@ -783,11 +762,11 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
                 localClient.Aisling.DialogHistory.Clear();
 
                 Logger.WithTopics(Topics.Entities.Dialog, Topics.Actions.Read, Topics.Qualifiers.Cheating)
-                    .WithProperty(localClient.Aisling)
-                    .WithProperty(localArgs)
-                    .LogWarning(
-                        "Aisling {@AislingName} attempted to access a dialog, but there is no active dialog (possibly packeting)",
-                        localClient.Aisling.Name);
+                      .WithProperty(localClient.Aisling)
+                      .WithProperty(localArgs)
+                      .LogWarning(
+                          "Aisling {@AislingName} attempted to access a dialog, but there is no active dialog (possibly packeting)",
+                          localClient.Aisling.Name);
 
                 return default;
             }
@@ -854,12 +833,12 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
 
             if (mapInstance.TryGetEntity<VisibleEntity>(localArgs.TargetId, out var obj) && !aisling.CanObserve(obj))
                 Logger.WithTopics(Topics.Entities.Aisling, Topics.Qualifiers.Forced)
-                    .WithProperty(aisling)
-                    .WithProperty(obj)
-                    .LogTrace(
-                        "Aisling {@AislingName} attempted to forcefully display an entity {@EntityId} that they cannot observe. (Unknown why this happens)",
-                        aisling.Name,
-                        obj.Id);
+                      .WithProperty(aisling)
+                      .WithProperty(obj)
+                      .LogTrace(
+                          "Aisling {@AislingName} attempted to forcefully display an entity {@EntityId} that they cannot observe. (Unknown why this happens)",
+                          aisling.Name,
+                          obj.Id);
 
             return default;
         }
@@ -882,7 +861,7 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
                 return default;
 
             if (exchange.GetOther(localClient.Aisling)
-                    .Id
+                        .Id
                 != localArgs.OtherPlayerId)
                 return default;
 
@@ -890,14 +869,14 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
             {
                 case ExchangeRequestType.StartExchange:
                     Logger.WithTopics(
-                            Topics.Entities.Aisling,
-                            Topics.Entities.Exchange,
-                            Topics.Actions.Create,
-                            Topics.Qualifiers.Cheating)
-                        .WithProperty(localClient)
-                        .LogWarning(
-                            "Aisling {@AislingName} attempted to directly start an exchange. This should not be possible unless packeting",
-                            localClient.Aisling.Name);
+                              Topics.Entities.Aisling,
+                              Topics.Entities.Exchange,
+                              Topics.Actions.Create,
+                              Topics.Qualifiers.Cheating)
+                          .WithProperty(localClient)
+                          .LogWarning(
+                              "Aisling {@AislingName} attempted to directly start an exchange. This should not be possible unless packeting",
+                              localClient.Aisling.Name);
 
                     break;
                 case ExchangeRequestType.AddItem:
@@ -905,8 +884,7 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
 
                     break;
                 case ExchangeRequestType.AddStackableItem:
-                    exchange.AddStackableItem(localClient.Aisling, localArgs.SourceSlot!.Value,
-                        localArgs.ItemCount!.Value);
+                    exchange.AddStackableItem(localClient.Aisling, localArgs.SourceSlot!.Value, localArgs.ItemCount!.Value);
 
                     break;
                 case ExchangeRequestType.SetGold:
@@ -951,13 +929,12 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
                 RedirectManager.Add(redirect);
 
                 Logger.WithTopics(
-                        Topics.Servers.WorldServer,
-                        Topics.Entities.Aisling,
-                        Topics.Actions.Logout,
-                        Topics.Actions.Redirect)
-                    .WithProperty(localClient)
-                    .LogDebug("Redirecting {@ClientIp} to {@ServerIp}", client.RemoteIp,
-                        Options.LoginRedirect.Address.ToString());
+                          Topics.Servers.WorldServer,
+                          Topics.Entities.Aisling,
+                          Topics.Actions.Logout,
+                          Topics.Actions.Redirect)
+                      .WithProperty(localClient)
+                      .LogDebug("Redirecting {@ClientIp} to {@ServerIp}", client.RemoteIp, Options.LoginRedirect.Address.ToString());
 
                 localClient.SendRedirect(redirect);
             }
@@ -989,8 +966,7 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
 
         return ExecuteHandler(client, args, InnerOnGoldDroppedOnCreature);
 
-        static ValueTask InnerOnGoldDroppedOnCreature(IChaosWorldClient localClient,
-            GoldDroppedOnCreatureArgs localArgs)
+        static ValueTask InnerOnGoldDroppedOnCreature(IChaosWorldClient localClient, GoldDroppedOnCreatureArgs localArgs)
         {
             if (localClient.Aisling.IsOnWorldMap)
                 return default;
@@ -1034,14 +1010,14 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
             {
                 case ClientGroupSwitch.FormalInvite:
                     Logger.WithTopics(
-                            Topics.Entities.Aisling,
-                            Topics.Entities.Group,
-                            Topics.Actions.Invite,
-                            Topics.Qualifiers.Cheating)
-                        .WithProperty(aisling)
-                        .LogWarning(
-                            "Aisling {@AislingName} attempted to send a formal group invite to the server. This type of group request is something only the server should send",
-                            localClient);
+                              Topics.Entities.Aisling,
+                              Topics.Entities.Group,
+                              Topics.Actions.Invite,
+                              Topics.Qualifiers.Cheating)
+                          .WithProperty(aisling)
+                          .LogWarning(
+                              "Aisling {@AislingName} attempted to send a formal group invite to the server. This type of group request is something only the server should send",
+                              localClient);
 
                     return default;
                 case ClientGroupSwitch.TryInvite:
@@ -1066,14 +1042,14 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
                             break;
                         default:
                             Logger.WithTopics(
-                                    Topics.Entities.Aisling,
-                                    Topics.Entities.Group,
-                                    Topics.Actions.Invite,
-                                    Topics.Qualifiers.Cheating)
-                                .LogWarning(
-                                    "{@Aisling} attempted to accept an invite from {@Target}, but there was no invite or request",
-                                    aisling,
-                                    target);
+                                      Topics.Entities.Aisling,
+                                      Topics.Entities.Group,
+                                      Topics.Actions.Invite,
+                                      Topics.Qualifiers.Cheating)
+                                  .LogWarning(
+                                      "{@Aisling} attempted to accept an invite from {@Target}, but there was no invite or request",
+                                      aisling,
+                                      target);
 
                             break;
                     }
@@ -1101,12 +1077,12 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
                     if (target.GroupBox is null)
                     {
                         Logger.WithTopics(Topics.Entities.Aisling, Topics.Entities.Group, Topics.Qualifiers.Cheating)
-                            .WithProperty(localClient.Aisling)
-                            .WithProperty(target)
-                            .LogWarning(
-                                "{@AislingName} attempted to view {@TargetName}'s group box, but they do not have one",
-                                localClient.Aisling.Name,
-                                target.Name);
+                              .WithProperty(localClient.Aisling)
+                              .WithProperty(target)
+                              .LogWarning(
+                                  "{@AislingName} attempted to view {@TargetName}'s group box, but they do not have one",
+                                  localClient.Aisling.Name,
+                                  target.Name);
 
                         return default;
                     }
@@ -1153,10 +1129,10 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
                     if (target.GroupBox is null)
                     {
                         Logger.WithTopics(Topics.Entities.Aisling, Topics.Entities.Group, Topics.Qualifiers.Cheating)
-                            .LogWarning(
-                                "{@Aisling} attempted to interact with {@Target}'s group box, but they do not have one",
-                                localClient.Aisling,
-                                target);
+                              .LogWarning(
+                                  "{@Aisling} attempted to interact with {@Target}'s group box, but they do not have one",
+                                  localClient.Aisling,
+                                  target);
 
                         return default;
                     }
@@ -1184,8 +1160,7 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
             switch (localArgs.IgnoreType)
             {
                 case IgnoreType.Request:
-                    localClient.SendServerMessage(ServerMessageType.ScrollWindow,
-                        localClient.Aisling.IgnoreList.ToString());
+                    localClient.SendServerMessage(ServerMessageType.ScrollWindow, localClient.Aisling.IgnoreList.ToString());
 
                     break;
                 case IgnoreType.AddUser:
@@ -1233,8 +1208,7 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
 
         return ExecuteHandler(client, args, InnerOnItemDroppedOnCreature);
 
-        static ValueTask InnerOnItemDroppedOnCreature(IChaosWorldClient localClient,
-            ItemDroppedOnCreatureArgs localArgs)
+        static ValueTask InnerOnItemDroppedOnCreature(IChaosWorldClient localClient, ItemDroppedOnCreatureArgs localArgs)
         {
             if (localClient.Aisling.IsOnWorldMap)
                 return default;
@@ -1292,22 +1266,10 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
     public override ValueTask OnHeartBeatAsync(IChaosWorldClient client, in Packet packet)
     {
         var args = PacketSerializer.Deserialize<HeartBeatResponseArgs>(in packet);
+        var hbVal = (ushort)((args.Second << 8) | args.First);
 
-        if ((args.First != client.Heartbeat2) || (args.Second != client.Heartbeat1))
-        {
-            Logger.WithTopics(Topics.Servers.WorldServer, Topics.Entities.Client, Topics.Actions.Processing)
-                .WithProperty(client)
-                .LogWarning(
-                    "Client {@ClientIp} sent an invalid heartbeat. Expected: {@Expected}, Received: {@Received}",
-                    client.RemoteIp,
-                    (client.Heartbeat2, client.Heartbeat1),
-                    (args.First, args.Second));
-
-            client.Disconnect();
-        }
-
-        client.Heartbeat1 = null;
-        client.Heartbeat2 = null;
+        if (client.HeartBeatValues.Contains(hbVal))
+            client.HeartBeatValues.Clear();
 
         return default;
     }
@@ -1334,11 +1296,11 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
         if (args.Message.Length > CHAOS_CONSTANTS.MAX_NOTEPAD_MESSAGE_LENGTH)
         {
             Logger.WithTopics(Topics.Entities.Packet, Topics.Actions.Processing, Topics.Qualifiers.Cheating)
-                .WithProperty(client)
-                .LogWarning(
-                    "Aisling {@AislingName} attempted to set a notepad message that was too long. Length: {@MessageLength}",
-                    client.Aisling.Name,
-                    args.Message.Length);
+                  .WithProperty(client)
+                  .LogWarning(
+                      "Aisling {@AislingName} attempted to set a notepad message that was too long. Length: {@MessageLength}",
+                      client.Aisling.Name,
+                      args.Message.Length);
 
             return default;
         }
@@ -1381,8 +1343,8 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
                 return default;
 
             var possibleObjs = map.GetEntitiesAtPoints<GroundEntity>(localArgs.SourcePoint)
-                .OrderByDescending(obj => obj.Creation)
-                .ToList();
+                                  .OrderByDescending(obj => obj.Creation)
+                                  .ToList();
 
             if (possibleObjs.Count == 0)
                 return default;
@@ -1448,8 +1410,7 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
         {
             if (localClient.Aisling.IsOnWorldMap || localClient.Aisling.Muted)
             {
-                localClient.SendServerMessage(ServerMessageType.OrangeBar1,
-                    "Your voice is swept away by a strange wind...");
+                localClient.SendServerMessage(ServerMessageType.OrangeBar1, "Your voice is swept away by a strange wind...");
 
                 return;
             }
@@ -1457,15 +1418,14 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
             if (CommandInterceptor.IsCommand(localArgs.Message))
             {
                 Logger.WithTopics(
-                        Topics.Entities.Aisling,
-                        Topics.Entities.Message,
-                        Topics.Actions.Send,
-                        Topics.Entities.Command,
-                        Topics.Actions.Execute)
-                    .WithProperty(localClient)
-                    .WithProperty(localClient.Aisling)
-                    .LogDebug("Aisling {@AislingName} sent command {@Command}", localClient.Aisling.Name,
-                        localArgs.Message);
+                          Topics.Entities.Aisling,
+                          Topics.Entities.Message,
+                          Topics.Actions.Send,
+                          Topics.Entities.Command,
+                          Topics.Actions.Execute)
+                      .WithProperty(localClient)
+                      .WithProperty(localClient.Aisling)
+                      .LogDebug("Aisling {@AislingName} sent command {@Command}", localClient.Aisling.Name, localArgs.Message);
 
                 await CommandInterceptor.HandleCommandAsync(localClient.Aisling, localArgs.Message);
 
@@ -1492,15 +1452,15 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
             if (dialog == null)
             {
                 Logger.WithTopics(
-                        Topics.Entities.Aisling,
-                        Topics.Entities.Dialog,
-                        Topics.Actions.Read,
-                        Topics.Qualifiers.Cheating)
-                    .WithProperty(localClient.Aisling)
-                    .WithProperty(localArgs)
-                    .LogWarning(
-                        "Aisling {@AislingName} attempted to access a dialog, but there is no active dialog (possibly packeting)",
-                        localClient.Aisling.Name);
+                          Topics.Entities.Aisling,
+                          Topics.Entities.Dialog,
+                          Topics.Actions.Read,
+                          Topics.Qualifiers.Cheating)
+                      .WithProperty(localClient.Aisling)
+                      .WithProperty(localArgs)
+                      .LogWarning(
+                          "Aisling {@AislingName} attempted to access a dialog, but there is no active dialog (possibly packeting)",
+                          localClient.Aisling.Name);
 
                 return default;
             }
@@ -1727,8 +1687,7 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
             }
 
             localClient.Aisling.Options.Toggle(localArgs.UserOption);
-            localClient.SendServerMessage(ServerMessageType.UserOptions,
-                localClient.Aisling.Options.ToString(localArgs.UserOption));
+            localClient.SendServerMessage(ServerMessageType.UserOptions, localClient.Aisling.Options.ToString(localArgs.UserOption));
 
             return default;
         }
@@ -1834,8 +1793,7 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
         {
             if (localClient.Aisling.IsOnWorldMap || localClient.Aisling.Muted)
             {
-                localClient.SendServerMessage(ServerMessageType.OrangeBar1,
-                    "Your voice is swept away by a strange wind...");
+                localClient.SendServerMessage(ServerMessageType.OrangeBar1, "Your voice is swept away by a strange wind...");
 
                 return default;
             }
@@ -1847,8 +1805,7 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
 
             if (ChannelService.IsChannel(localArgs.TargetName))
             {
-                if (localArgs.TargetName.EqualsI(WorldOptions.Instance.GroupChatName) ||
-                    localArgs.TargetName.EqualsI("!group"))
+                if (localArgs.TargetName.EqualsI(WorldOptions.Instance.GroupChatName) || localArgs.TargetName.EqualsI("!group"))
                 {
                     if (fromAisling.Group == null)
                     {
@@ -1858,9 +1815,7 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
                     }
 
                     fromAisling.Group.SendMessage(fromAisling, localArgs.Message);
-                }
-                else if (localArgs.TargetName.EqualsI(WorldOptions.Instance.GuildChatName) ||
-                         localArgs.TargetName.EqualsI("!guild"))
+                } else if (localArgs.TargetName.EqualsI(WorldOptions.Instance.GuildChatName) || localArgs.TargetName.EqualsI("!guild"))
                 {
                     if (fromAisling.Guild == null)
                     {
@@ -1870,8 +1825,7 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
                     }
 
                     fromAisling.Guild.SendMessage(fromAisling, localArgs.Message);
-                }
-                else if (ChannelService.ContainsChannel(localArgs.TargetName))
+                } else if (ChannelService.ContainsChannel(localArgs.TargetName))
                     ChannelService.SendMessage(fromAisling, localArgs.TargetName, localArgs.Message);
 
                 return default;
@@ -1920,32 +1874,31 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
             if (targetAisling.IgnoreList.ContainsI(fromAisling.Name))
             {
                 Logger.WithTopics(
-                        Topics.Entities.Aisling,
-                        Topics.Entities.Message,
-                        Topics.Actions.Send,
-                        Topics.Qualifiers.Harassment)
-                    .WithProperty(fromAisling)
-                    .WithProperty(targetAisling)
-                    .LogWarning(
-                        "Aisling {@FromAislingName} sent whisper {@Message} to aisling {@TargetAislingName}, but they are being ignored (possibly harassment)",
-                        fromAisling.Name,
-                        localArgs.Message,
-                        targetAisling.Name);
+                          Topics.Entities.Aisling,
+                          Topics.Entities.Message,
+                          Topics.Actions.Send,
+                          Topics.Qualifiers.Harassment)
+                      .WithProperty(fromAisling)
+                      .WithProperty(targetAisling)
+                      .LogWarning(
+                          "Aisling {@FromAislingName} sent whisper {@Message} to aisling {@TargetAislingName}, but they are being ignored (possibly harassment)",
+                          fromAisling.Name,
+                          localArgs.Message,
+                          targetAisling.Name);
 
                 return default;
             }
 
             Logger.WithTopics(Topics.Entities.Aisling, Topics.Entities.Message, Topics.Actions.Send)
-                .WithProperty(fromAisling)
-                .WithProperty(targetAisling)
-                .LogInformation(
-                    "Aisling {@FromAislingName} sent whisper {@Message} to aisling {@TargetAislingName}",
-                    fromAisling.Name,
-                    localArgs.Message,
-                    targetAisling.Name);
+                  .WithProperty(fromAisling)
+                  .WithProperty(targetAisling)
+                  .LogInformation(
+                      "Aisling {@FromAislingName} sent whisper {@Message} to aisling {@TargetAislingName}",
+                      fromAisling.Name,
+                      localArgs.Message,
+                      targetAisling.Name);
 
-            targetAisling.Client.SendServerMessage(ServerMessageType.Whisper,
-                $"[{fromAisling.Name}]: {localArgs.Message}");
+            targetAisling.Client.SendServerMessage(ServerMessageType.Whisper, $"[{fromAisling.Name}]: {localArgs.Message}");
 
             return default;
         }
@@ -1988,11 +1941,9 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
             return default;
         }
     }
-
     #endregion
 
     #region Connection / Handler
-
     public override async ValueTask ExecuteHandler<TArgs>(
         IChaosWorldClient client,
         TArgs args,
@@ -2024,23 +1975,22 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
         try
         {
             await action(client, args);
-        }
-        catch (Exception e)
+        } catch (Exception e)
         {
             Logger.WithTopics(
-                    Topics.Servers.WorldServer,
-                    Topics.Entities.Client,
-                    Topics.Entities.Packet,
-                    Topics.Actions.Processing)
-                .WithProperty(client)
-                .WithProperty(args!)
-                .LogError(
-                    e,
-                    "{@ClientType} failed to execute inner handler with args type {@ArgsType}",
-                    client.GetType()
-                        .Name,
-                    args!.GetType()
-                        .Name);
+                      Topics.Servers.WorldServer,
+                      Topics.Entities.Client,
+                      Topics.Entities.Packet,
+                      Topics.Actions.Processing)
+                  .WithProperty(client)
+                  .WithProperty(args!)
+                  .LogError(
+                      e,
+                      "{@ClientType} failed to execute inner handler with args type {@ArgsType}",
+                      client.GetType()
+                            .Name,
+                      args!.GetType()
+                           .Name);
         }
     }
 
@@ -2071,20 +2021,19 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
         try
         {
             await action(client);
-        }
-        catch (Exception e)
+        } catch (Exception e)
         {
             Logger.WithTopics(
-                    Topics.Servers.WorldServer,
-                    Topics.Entities.Client,
-                    Topics.Entities.Packet,
-                    Topics.Actions.Processing)
-                .WithProperty(client)
-                .LogError(
-                    e,
-                    "{@ClientType} failed to execute inner handler",
-                    client.GetType()
-                        .Name);
+                      Topics.Servers.WorldServer,
+                      Topics.Entities.Client,
+                      Topics.Entities.Packet,
+                      Topics.Actions.Processing)
+                  .WithProperty(client)
+                  .LogError(
+                      e,
+                      "{@ClientType} failed to execute inner handler",
+                      client.GetType()
+                            .Name);
         }
     }
 
@@ -2098,13 +2047,13 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
 
         if (handler is null)
             Logger.WithTopics(
-                    Topics.Servers.WorldServer,
-                    Topics.Entities.Packet,
-                    Topics.Actions.Processing,
-                    Topics.Qualifiers.Cheating)
-                .WithProperty(client)
-                .WithProperty(packet.ToString(), "HexData")
-                .LogWarning("Received packet with unknown code {@OpCode} from {@ClientIp}", opCode, client.RemoteIp);
+                      Topics.Servers.WorldServer,
+                      Topics.Entities.Packet,
+                      Topics.Actions.Processing,
+                      Topics.Qualifiers.Cheating)
+                  .WithProperty(client)
+                  .WithProperty(packet.ToString(), "HexData")
+                  .LogWarning("Received packet with unknown code {@OpCode} from {@ClientIp}", opCode, client.RemoteIp);
 
         if ((trackers != null) && IsManualAction((ClientOpCode)packet.OpCode))
             trackers.LastManualAction = DateTime.UtcNow;
@@ -2167,20 +2116,20 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
         var ip = clientSocket.RemoteEndPoint as IPEndPoint;
 
         Logger.WithTopics(Topics.Servers.WorldServer, Topics.Entities.Client, Topics.Actions.Connect)
-            .LogDebug("Incoming connection from {@ClientIp}", ip!.Address);
+              .LogDebug("Incoming connection from {@ClientIp}", ip!.Address);
 
         var client = ClientFactory.Create(clientSocket);
         client.OnDisconnected += OnDisconnect;
 
         Logger.WithTopics(Topics.Servers.WorldServer, Topics.Entities.Client, Topics.Actions.Connect)
-            .WithProperty(client)
-            .LogInformation("Connection established with {@ClientIp}", client.RemoteIp);
+              .WithProperty(client)
+              .LogInformation("Connection established with {@ClientIp}", client.RemoteIp);
 
         if (!ClientRegistry.TryAdd(client))
         {
             Logger.WithTopics(Topics.Servers.WorldServer, Topics.Entities.Client, Topics.Actions.Connect)
-                .WithProperty(client)
-                .LogError("Somehow two clients got the same id");
+                  .WithProperty(client)
+                  .LogError("Somehow two clients got the same id");
 
             client.Disconnect();
             clientSocket.Disconnect(false);
@@ -2214,26 +2163,24 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
                     {
                         aisling.Trackers.LastLogout = DateTime.UtcNow;
                         aisling.Script.OnLogout();
-                    }
-                    catch (Exception ex)
+                    } catch (Exception ex)
                     {
                         Logger.WithTopics(
-                                Topics.Servers.WorldServer,
-                                Topics.Entities.Client,
-                                Topics.Entities.Aisling,
-                                Topics.Actions.Disconnect)
-                            .WithProperty(client)
-                            .LogError(ex, "{@AislingName} encountered an exception while running logout events",
-                                aisling.Name);
+                                  Topics.Servers.WorldServer,
+                                  Topics.Entities.Client,
+                                  Topics.Entities.Aisling,
+                                  Topics.Actions.Disconnect)
+                              .WithProperty(client)
+                              .LogError(ex, "{@AislingName} encountered an exception while running logout events", aisling.Name);
                     }
 
                 Logger.WithTopics(
-                        Topics.Servers.WorldServer,
-                        Topics.Entities.Client,
-                        Topics.Entities.Aisling,
-                        Topics.Actions.Disconnect)
-                    .WithProperty(client)
-                    .LogInformation("Aisling {@AislingName} has disconnected", aisling?.Name ?? "N/A");
+                          Topics.Servers.WorldServer,
+                          Topics.Entities.Client,
+                          Topics.Entities.Aisling,
+                          Topics.Actions.Disconnect)
+                      .WithProperty(client)
+                      .LogInformation("Aisling {@AislingName} has disconnected", aisling?.Name ?? "N/A");
 
                 //remove client from client list
                 ClientRegistry.TryRemove(client.Id, out _);
@@ -2246,56 +2193,53 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
                     try
                     {
                         activeExchange?.Cancel(aisling);
-                    }
-                    catch (Exception ex)
+                    } catch (Exception ex)
                     {
                         Logger.WithTopics(
-                                Topics.Servers.WorldServer,
-                                Topics.Entities.Client,
-                                Topics.Entities.Aisling,
-                                Topics.Actions.Disconnect)
-                            .WithProperty(client)
-                            .LogError(
-                                ex,
-                                "{@Aisling} failed to cancel exchange {@Exchange} on disconnect",
-                                aisling,
-                                activeExchange);
+                                  Topics.Servers.WorldServer,
+                                  Topics.Entities.Client,
+                                  Topics.Entities.Aisling,
+                                  Topics.Actions.Disconnect)
+                              .WithProperty(client)
+                              .LogError(
+                                  ex,
+                                  "{@Aisling} failed to cancel exchange {@Exchange} on disconnect",
+                                  aisling,
+                                  activeExchange);
                     }
 
                     try
                     {
                         //leave the group if in one
                         aisling.Group?.Leave(aisling);
-                    }
-                    catch (Exception ex)
+                    } catch (Exception ex)
                     {
                         Logger.WithTopics(
-                                Topics.Servers.WorldServer,
-                                Topics.Entities.Client,
-                                Topics.Entities.Aisling,
-                                Topics.Actions.Disconnect)
-                            .WithProperty(client)
-                            .LogError(ex, "{@Aisling} failed to leave group on disconnect", aisling);
+                                  Topics.Servers.WorldServer,
+                                  Topics.Entities.Client,
+                                  Topics.Entities.Aisling,
+                                  Topics.Actions.Disconnect)
+                              .WithProperty(client)
+                              .LogError(ex, "{@Aisling} failed to leave group on disconnect", aisling);
                     }
 
                     try
                     {
                         //leave guild channel if in one
                         aisling.Guild?.LeaveChannel(aisling);
-                    }
-                    catch (Exception ex)
+                    } catch (Exception ex)
                     {
                         Logger.WithTopics(
-                                Topics.Servers.WorldServer,
-                                Topics.Entities.Client,
-                                Topics.Entities.Aisling,
-                                Topics.Actions.Disconnect)
-                            .WithProperty(client)
-                            .LogError(
-                                ex,
-                                "{@Aisling} failed to leave guild channel on disconnect (Guild: {@Guild}",
-                                aisling,
-                                aisling.Guild);
+                                  Topics.Servers.WorldServer,
+                                  Topics.Entities.Client,
+                                  Topics.Entities.Aisling,
+                                  Topics.Actions.Disconnect)
+                              .WithProperty(client)
+                              .LogError(
+                                  ex,
+                                  "{@Aisling} failed to leave guild channel on disconnect (Guild: {@Guild}",
+                                  aisling,
+                                  aisling.Guild);
                     }
 
                     try
@@ -2305,125 +2249,117 @@ public sealed class WorldServer : ServerBase<IChaosWorldClient>, IWorldServer<IC
                             try
                             {
                                 ChannelService.LeaveChannel(aisling, channel.ChannelName);
-                            }
-                            catch
+                            } catch
                             {
                                 //ignored
                             }
-                    }
-                    catch (Exception ex)
+                    } catch (Exception ex)
                     {
                         Logger.WithTopics(
-                                Topics.Servers.WorldServer,
-                                Topics.Entities.Client,
-                                Topics.Entities.Aisling,
-                                Topics.Actions.Disconnect)
-                            .WithProperty(client)
-                            .LogError(ex, "{@Aisling} failed to leave chat channels on disconnect", aisling);
+                                  Topics.Servers.WorldServer,
+                                  Topics.Entities.Client,
+                                  Topics.Entities.Aisling,
+                                  Topics.Actions.Disconnect)
+                              .WithProperty(client)
+                              .LogError(ex, "{@Aisling} failed to leave chat channels on disconnect", aisling);
                     }
 
                     try
                     {
                         //save aisling
                         await SaveUserAsync(client.Aisling);
-                    }
-                    catch (Exception ex)
+                    } catch (Exception ex)
                     {
                         Logger.WithTopics(
-                                Topics.Servers.WorldServer,
-                                Topics.Entities.Client,
-                                Topics.Entities.Aisling,
-                                Topics.Actions.Disconnect)
-                            .WithProperty(client)
-                            .LogError(ex, "{@Aisling} failed to save on disconnect", aisling);
+                                  Topics.Servers.WorldServer,
+                                  Topics.Entities.Client,
+                                  Topics.Entities.Aisling,
+                                  Topics.Actions.Disconnect)
+                              .WithProperty(client)
+                              .LogError(ex, "{@Aisling} failed to save on disconnect", aisling);
                     }
 
                     try
                     {
                         //remove aisling from map
                         mapInstance?.RemoveEntity(client.Aisling);
-                    }
-                    catch (Exception ex)
+                    } catch (Exception ex)
                     {
                         Logger.WithTopics(
-                                Topics.Servers.WorldServer,
-                                Topics.Entities.Client,
-                                Topics.Entities.Aisling,
-                                Topics.Actions.Disconnect)
-                            .WithProperty(client)
-                            .LogError(ex, "{@Aisling} failed to remove from map on disconnect", aisling);
+                                  Topics.Servers.WorldServer,
+                                  Topics.Entities.Client,
+                                  Topics.Entities.Aisling,
+                                  Topics.Actions.Disconnect)
+                              .WithProperty(client)
+                              .LogError(ex, "{@Aisling} failed to remove from map on disconnect", aisling);
                     }
                 }
-            }
-            catch (Exception ex)
+            } catch (Exception ex)
             {
                 Logger.WithTopics(
-                        Topics.Servers.WorldServer,
-                        Topics.Entities.Client,
-                        Topics.Entities.Aisling,
-                        Topics.Actions.Disconnect)
-                    .WithProperty(client)
+                          Topics.Servers.WorldServer,
+                          Topics.Entities.Client,
+                          Topics.Entities.Aisling,
+                          Topics.Actions.Disconnect)
+                      .WithProperty(client)
 
-                    // ReSharper disable once ConditionalAccessQualifierIsNonNullableAccordingToAPIContract
-                    .LogError(ex, "Exception thrown while {@AislingName} was trying to disconnect",
-                        client.Aisling?.Name ?? "N/A");
+                      // ReSharper disable once ConditionalAccessQualifierIsNonNullableAccordingToAPIContract
+                      .LogError(ex, "Exception thrown while {@AislingName} was trying to disconnect", client.Aisling?.Name ?? "N/A");
             }
-        }
-        catch (Exception ex)
+        } catch (Exception ex)
         {
             Logger.WithTopics(
-                    Topics.Servers.WorldServer,
-                    Topics.Entities.Client,
-                    Topics.Entities.Aisling,
-                    Topics.Actions.Disconnect)
+                      Topics.Servers.WorldServer,
+                      Topics.Entities.Client,
+                      Topics.Entities.Aisling,
+                      Topics.Actions.Disconnect)
 
-                // ReSharper disable once ConditionalAccessQualifierIsNonNullableAccordingToAPIContract
-                .LogCritical(ex, "Prevented server crash when disconnecting a client (see exception)");
+                  // ReSharper disable once ConditionalAccessQualifierIsNonNullableAccordingToAPIContract
+                  .LogCritical(ex, "Prevented server crash when disconnecting a client (see exception)");
         }
     }
 
     private bool IsManualAction(ClientOpCode opCode)
         => opCode switch
         {
-            ClientOpCode.ClientWalk => true,
-            ClientOpCode.Pickup => true,
-            ClientOpCode.ItemDrop => true,
-            ClientOpCode.ExitRequest => true,
-            ClientOpCode.Ignore => true,
-            ClientOpCode.PublicMessage => true,
-            ClientOpCode.SpellUse => true,
-            ClientOpCode.ClientRedirected => true,
-            ClientOpCode.Turn => true,
-            ClientOpCode.Spacebar => true,
-            ClientOpCode.WorldListRequest => true,
-            ClientOpCode.Whisper => true,
-            ClientOpCode.OptionToggle => true,
-            ClientOpCode.ItemUse => true,
-            ClientOpCode.Emote => true,
-            ClientOpCode.SetNotepad => true,
-            ClientOpCode.GoldDrop => true,
+            ClientOpCode.ClientWalk            => true,
+            ClientOpCode.Pickup                => true,
+            ClientOpCode.ItemDrop              => true,
+            ClientOpCode.ExitRequest           => true,
+            ClientOpCode.Ignore                => true,
+            ClientOpCode.PublicMessage         => true,
+            ClientOpCode.SpellUse              => true,
+            ClientOpCode.ClientRedirected      => true,
+            ClientOpCode.Turn                  => true,
+            ClientOpCode.Spacebar              => true,
+            ClientOpCode.WorldListRequest      => true,
+            ClientOpCode.Whisper               => true,
+            ClientOpCode.OptionToggle          => true,
+            ClientOpCode.ItemUse               => true,
+            ClientOpCode.Emote                 => true,
+            ClientOpCode.SetNotepad            => true,
+            ClientOpCode.GoldDrop              => true,
             ClientOpCode.ItemDroppedOnCreature => true,
             ClientOpCode.GoldDroppedOnCreature => true,
-            ClientOpCode.SelfProfileRequest => true,
-            ClientOpCode.GroupInvite => true,
-            ClientOpCode.ToggleGroup => true,
-            ClientOpCode.SwapSlot => true,
-            ClientOpCode.RefreshRequest => true,
-            ClientOpCode.MenuInteraction => true,
-            ClientOpCode.DialogInteraction => true,
-            ClientOpCode.BoardInteraction => true,
-            ClientOpCode.SkillUse => true,
-            ClientOpCode.WorldMapClick => true,
-            ClientOpCode.Click => true,
-            ClientOpCode.Unequip => true,
-            ClientOpCode.RaiseStat => true,
-            ClientOpCode.ExchangeInteraction => true,
-            ClientOpCode.BeginChant => true,
-            ClientOpCode.Chant => true,
-            ClientOpCode.EditableProfile => true,
-            ClientOpCode.SocialStatus => true,
-            _ => false
+            ClientOpCode.SelfProfileRequest    => true,
+            ClientOpCode.GroupInvite           => true,
+            ClientOpCode.ToggleGroup           => true,
+            ClientOpCode.SwapSlot              => true,
+            ClientOpCode.RefreshRequest        => true,
+            ClientOpCode.MenuInteraction       => true,
+            ClientOpCode.DialogInteraction     => true,
+            ClientOpCode.BoardInteraction      => true,
+            ClientOpCode.SkillUse              => true,
+            ClientOpCode.WorldMapClick         => true,
+            ClientOpCode.Click                 => true,
+            ClientOpCode.Unequip               => true,
+            ClientOpCode.RaiseStat             => true,
+            ClientOpCode.ExchangeInteraction   => true,
+            ClientOpCode.BeginChant            => true,
+            ClientOpCode.Chant                 => true,
+            ClientOpCode.EditableProfile       => true,
+            ClientOpCode.SocialStatus          => true,
+            _                                  => false
         };
-
     #endregion
 }

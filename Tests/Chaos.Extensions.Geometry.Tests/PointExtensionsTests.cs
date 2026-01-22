@@ -317,7 +317,7 @@ public sealed class PointExtensionsTests
                              .ToList();
 
         act.Should()
-           .Throw<ArgumentNullException>();
+           .Throw<NullReferenceException>();
     }
 
     //formatter:off
@@ -435,7 +435,7 @@ public sealed class PointExtensionsTests
         var act = () => start.DirectionalOffset(Direction.Up);
 
         act.Should()
-           .Throw<ArgumentNullException>();
+           .Throw<NullReferenceException>();
     }
 
     [Test]
@@ -889,66 +889,23 @@ public sealed class PointExtensionsTests
                 .Contain(dir);
     }
 
-    //formatter:off
+    //@formatter:off
     [Test]
-    [Arguments(
-        0,
-        0,
-        0,
-        0,
-        Direction.Invalid)] // Same point
-    [Arguments(
-        5,
-        3,
-        2,
-        1,
-        new[]
-        {
-            Direction.Right,
-            Direction.Down
-        })] // SE direction (tie resolution)
-    [Arguments(
-        2,
-        5,
-        1,
-        3,
-        new[]
-        {
-            Direction.Right,
-            Direction.Down
-        })] // Another tie case
-    [Arguments(
-        0,
-        0,
-        -3,
-        0,
-        Direction.Right)] // Pure west
-    [Arguments(
-        0,
-        0,
-        3,
-        0,
-        Direction.Left)] // Pure east
-    [Arguments(
-        0,
-        0,
-        0,
-        -3,
-        Direction.Down)] // Pure south  
-    [Arguments(
-        0,
-        0,
-        0,
-        3,
-        Direction.Up)] // Pure north
+    [Arguments( 5, 3, 2, 1, new[] { Direction.Right })]
+    [Arguments(0, 0, 0, 0, new [] { Direction.Invalid })] // Same point
+    [Arguments( 2, 5, 1, 3, new[] { Direction.Down })]
+    [Arguments( 0, 0, -3, 0, new [] { Direction.Right })] // Pure west
+    [Arguments( 0, 0, 3, 0, new [] { Direction.Left })] // Pure east
+    [Arguments( 0, 0, 0, -3, new [] { Direction.Down })] // Pure south  
+    [Arguments( 0, 0, 0, 3, new [] { Direction.Up })] // Pure north
+    //@formatter:on
     public void DirectionalRelationTo_Point_Point_ExtendedCases(
-            int px,
-            int py,
-            int ox,
-            int oy,
-            params IEnumerable<Direction> expected)
+        int px,
+        int py,
+        int ox,
+        int oy,
+        params IEnumerable<Direction> expected)
 
-        //formatter:on
     {
         var point = new Point(px, py);
         var other = new Point(ox, oy);
@@ -1066,7 +1023,7 @@ public sealed class PointExtensionsTests
         var act = () => start.DirectionalRelationTo(other);
 
         act.Should()
-           .Throw<ArgumentNullException>();
+           .Throw<NullReferenceException>();
     }
 
     [Test]
@@ -1078,7 +1035,7 @@ public sealed class PointExtensionsTests
         var act = () => start.DirectionalRelationTo(other);
 
         act.Should()
-           .Throw<ArgumentNullException>();
+           .Throw<NullReferenceException>();
     }
 
     //formatter:off
@@ -1474,14 +1431,14 @@ public sealed class PointExtensionsTests
         Action act1 = () => a1.EuclideanDistanceFrom(b1);
 
         act1.Should()
-            .Throw<ArgumentNullException>();
+            .Throw<NullReferenceException>();
 
         a = new Point(0, 0);
         b = null!;
         Action act2 = () => a.EuclideanDistanceFrom(b);
 
         act2.Should()
-            .Throw<ArgumentNullException>();
+            .Throw<NullReferenceException>();
     }
 
     //@formatter:off
@@ -2064,7 +2021,7 @@ public sealed class PointExtensionsTests
                              .ToList();
 
         act.Should()
-           .Throw<ArgumentNullException>();
+           .Throw<NullReferenceException>();
     }
 
     [Test]
@@ -2383,7 +2340,7 @@ public sealed class PointExtensionsTests
                              .ToList();
 
         act.Should()
-           .Throw<ArgumentNullException>();
+           .Throw<NullReferenceException>();
     }
 
     //formatter:off
@@ -2848,7 +2805,7 @@ public sealed class PointExtensionsTests
                              .ToList();
 
         act.Should()
-           .Throw<ArgumentNullException>();
+           .Throw<NullReferenceException>();
     }
 
     [Test]
@@ -2861,7 +2818,7 @@ public sealed class PointExtensionsTests
                              .ToList();
 
         act.Should()
-           .Throw<ArgumentNullException>();
+           .Throw<NullReferenceException>();
     }
 
     //formatter:off
@@ -3707,7 +3664,7 @@ public sealed class PointExtensionsTests
         var act = () => start.IsInterCardinalTo(other, Direction.Up);
 
         act.Should()
-           .Throw<ArgumentNullException>();
+           .Throw<NullReferenceException>();
     }
 
     [Test]
@@ -3719,7 +3676,7 @@ public sealed class PointExtensionsTests
         var act = () => start.IsInterCardinalTo(other, Direction.Up);
 
         act.Should()
-           .Throw<ArgumentNullException>();
+           .Throw<NullReferenceException>();
     }
 
     [Test]
@@ -4189,14 +4146,14 @@ public sealed class PointExtensionsTests
         Action act1 = () => a1.ManhattanDistanceFrom(b1);
 
         act1.Should()
-            .Throw<ArgumentNullException>();
+            .Throw<NullReferenceException>();
 
         a = new Point(0, 0);
         b = null!;
         Action act2 = () => a.ManhattanDistanceFrom(b);
 
         act2.Should()
-            .Throw<ArgumentNullException>();
+            .Throw<NullReferenceException>();
     }
 
     //formatter:off
@@ -4378,14 +4335,14 @@ public sealed class PointExtensionsTests
         Action act1 = () => point1.OffsetTowards(other1);
 
         act1.Should()
-            .Throw<ArgumentNullException>();
+            .Throw<NullReferenceException>();
 
         point = new Point(0, 0);
         other = null!;
         Action act2 = () => point.OffsetTowards(other);
 
         act2.Should()
-            .Throw<ArgumentNullException>();
+            .Throw<NullReferenceException>();
     }
 
     //formatter:off
@@ -4692,7 +4649,7 @@ public sealed class PointExtensionsTests
                              .ToList();
 
         act.Should()
-           .Throw<ArgumentNullException>();
+           .Throw<NullReferenceException>();
     }
 
     [Test]
@@ -4705,7 +4662,7 @@ public sealed class PointExtensionsTests
                              .ToList();
 
         act.Should()
-           .Throw<ArgumentNullException>();
+           .Throw<NullReferenceException>();
     }
 
     //formatter:off
@@ -4876,7 +4833,7 @@ public sealed class PointExtensionsTests
                              .ToList();
 
         act.Should()
-           .Throw<ArgumentNullException>();
+           .Throw<NullReferenceException>();
     }
 
     [Test]

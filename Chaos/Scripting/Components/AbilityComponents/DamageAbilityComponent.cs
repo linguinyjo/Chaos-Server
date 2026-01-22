@@ -1,9 +1,9 @@
 #region
-
 using Chaos.Common.Utilities;
 using Chaos.DarkAges.Definitions;
 using Chaos.Extensions.Geometry;
 using Chaos.Geometry.Abstractions.Definitions;
+using Chaos.Extensions.Common;
 using Chaos.Models.Data;
 using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
@@ -15,7 +15,6 @@ using Chaos.Scripting.MonsterScripts.Abstractions;
 using Microsoft.Extensions.Options;
 
 #endregion
-
 
 namespace Chaos.Scripting.Components.AbilityComponents;
 

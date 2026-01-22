@@ -1261,6 +1261,7 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
             }
 
         foreach (var entity in currentlyObservable)
+        {
             if (!previouslyObservable.Contains(entity))
             {
                 if (entity.Equals(this))
@@ -1272,8 +1273,9 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
                         entity.ShowTo(this);
 
                         break;
+
                     case Door door:
-                        doorsToSend.AddRange(door.GetCluster());
+                        doorsToSend.Add(door);
 
                         break;
                     default:
@@ -1284,6 +1286,10 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
 
                 OnApproached(entity, refresh);
             }
+
+            if (entity is Door stillADoor && (stillADoor.ManhattanDistanceFrom(this) == 11))
+                doorsToSend.Add(stillADoor);
+        }
 
         Client.SendVisibleEntities(entitiesToSend);
         Client.SendDoors(doorsToSend);
@@ -1326,10 +1332,10 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
         //otherwise, check if the point is walkable
         else if (!MapInstance.IsWalkable(
                      endPoint,
+                     this,
                      ignoreBlockingReactors,
                      ignoreWalls,
-                     ignoreCollision,
-                     Type))
+                     ignoreCollision))
         {
             Refresh(true);
 

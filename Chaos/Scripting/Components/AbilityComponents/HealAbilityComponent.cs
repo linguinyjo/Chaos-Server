@@ -1,6 +1,7 @@
 #region
 using Chaos.Common.Utilities;
 using Chaos.DarkAges.Definitions;
+using Chaos.Extensions.Common;
 using Chaos.Models.Data;
 using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
@@ -79,14 +80,6 @@ public struct HealAbilityComponent : IComponent
         finalHeal += Convert.ToInt32(source.StatSheet.GetEffectiveStat(healStat.Value) * healStatMultiplier.Value);
 
         return finalHeal;
-    }
-    
-    private static decimal CalculateAbilityHealMultiplier(Aisling? aisling, string? abilityTemplateKey)
-    {
-        if (aisling == null || abilityTemplateKey == null) return 0;  
-        var level = aisling.SpellBook.TryGetObjectByTemplateKey(abilityTemplateKey, out var spell) 
-            ? spell.Level : (byte)0;
-        return (decimal)(1.0f + (level / 100f) * 0.2f);
     }
 
     public interface IHealComponentOptions

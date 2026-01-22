@@ -66,7 +66,7 @@ public sealed class ItemFactory(ISimpleCache simpleCache, IScriptProvider script
             Modifiers = null,
             NoTrade = false,
             PanelSprite = 0,
-            PantsColor = null,
+            PantsColor = DisplayColor.Default,
             SellValue = 0,
             Weight = 0,
             AbilityLevel = 0,

@@ -22,11 +22,14 @@ namespace Chaos.Networking.Abstractions;
 /// </summary>
 public abstract class SocketClientBase : ISocketClient, IDisposable
 {
+    /// <summary>
+    ///     ActivitySource for packet processing traces. Name matches the registered source in OpenTelemetry configuration.
+    /// </summary>
+    private static readonly ActivitySource PacketActivitySource = new("chaos-server.packets");
+
     private readonly Memory<byte> Memory;
     private readonly ConcurrentQueue<SocketAsyncEventArgs> SocketArgsQueue;
     private int Count;
-
-    private NetworkMonitor? NetworkMonitor;
     private int Sequence;
 
     /// <inheritdoc />
@@ -162,8 +165,6 @@ public abstract class SocketClientBase : ISocketClient, IDisposable
         Connected = true;
         await Task.Yield();
 
-        NetworkMonitor = new NetworkMonitor(this, Logger);
-
         var args = new SocketAsyncEventArgs();
         args.SetBuffer(Memory);
         args.Completed += ReceiveEventHandler;
@@ -207,20 +208,35 @@ public abstract class SocketClientBase : ISocketClient, IDisposable
 
                 try
                 {
-                    var start = Stopwatch.GetTimestamp();
                     var opcode = Buffer[offset + 3];
+
+                    // Clear parent context so packets are sampled independently
+                    var previousActivity = Activity.Current;
+                    Activity.Current = null;
+
+                    using var activity = PacketActivitySource.StartActivity("Packet.Handle");
+
+                    // Restore previous if not sampled
+                    if (activity == null)
+                        Activity.Current = previousActivity;
+
+                    activity?.SetTag("packet.opcode", opcode);
+                    activity?.SetTag("packet.length", packetLength);
+
+                    activity?.SetTag(
+                        "client.type",
+                        GetType()
+                            .Name);
 
                     await HandlePacketAsync(Buffer.Slice(offset, packetLength))
                         .ConfigureAwait(false);
-
-                    var elapsed = Stopwatch.GetElapsedTime(start);
-                    NetworkMonitor!.Digest(opcode, elapsed);
                 } catch (Exception ex)
                 {
                     //required so we can use Span<byte> in an async method
                     void InnerCatch()
                     {
-                        var buffer = Buffer.TrimEnd((byte)0);
+                        var buffer = Buffer[offset..(offset + Count)]
+                            .TrimEnd((byte)0);
 
                         var hex = BitConverter.ToString(buffer.ToArray())
                                               .Replace("-", " ");
@@ -312,7 +328,8 @@ public abstract class SocketClientBase : ISocketClient, IDisposable
             Encrypt(ref packet);
         }
 
-        var args = DequeueArgs(packet.ToMemory());
+        (var owner, var length) = packet.TransferOwnership();
+        var args = DequeueArgs(owner, length);
         Socket.SendAndForget(args, ReuseSocketAsyncEventArgs);
     }
 
@@ -358,7 +375,17 @@ public abstract class SocketClientBase : ISocketClient, IDisposable
     #endregion
 
     #region Utility
-    private void ReuseSocketAsyncEventArgs(object? sender, SocketAsyncEventArgs e) => SocketArgsQueue.Enqueue(e);
+    private void ReuseSocketAsyncEventArgs(object? sender, SocketAsyncEventArgs e)
+    {
+        // Dispose the memory owner and return it to the pool
+        if (e.UserToken is IMemoryOwner<byte> owner)
+        {
+            owner.Dispose();
+            e.UserToken = null;
+        }
+
+        SocketArgsQueue.Enqueue(e);
+    }
 
     private SocketAsyncEventArgs CreateArgs()
     {
@@ -368,12 +395,14 @@ public abstract class SocketClientBase : ISocketClient, IDisposable
         return args;
     }
 
-    private SocketAsyncEventArgs DequeueArgs(Memory<byte> buffer)
+    private SocketAsyncEventArgs DequeueArgs(IMemoryOwner<byte> owner, int length)
     {
         if (!SocketArgsQueue.TryDequeue(out var args))
             args = CreateArgs();
 
-        args.SetBuffer(buffer);
+        // Store the owner in UserToken so we can dispose it later
+        args.UserToken = owner;
+        args.SetBuffer(owner.Memory[..length]);
 
         return args;
     }
