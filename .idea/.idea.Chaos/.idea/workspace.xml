@@ -57,138 +57,13 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="CMakeSettings">
+    <configurations />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="5428a732-04b4-4ad7-b61b-5764b5027982" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/SpiritOfWolfBuffEffect.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains1/instance.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains1/merchants.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains1/monsters.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains1/reactors.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains10/instance.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains10/merchants.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains10/monsters.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains10/reactors.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains2/instance.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains2/merchants.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains2/monsters.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains2/reactors.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains3/instance.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains3/merchants.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains3/monsters.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains3/reactors.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains4/instance.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains4/merchants.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains4/monsters.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains4/reactors.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains5/instance.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains5/merchants.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains5/monsters.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains5/reactors.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains6/instance.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains6/merchants.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains6/monsters.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains6/reactors.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains7/instance.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains7/merchants.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains7/monsters.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains7/reactors.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains8/instance.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains8/merchants.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains8/monsters.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains8/reactors.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains9/instance.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains9/merchants.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains9/monsters.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains9/reactors.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreCellar4-3/instance.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreCellar4-3/merchants.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreCellar4-3/monsters.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreCellar4-3/reactors.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreCellar4-4/instance.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreCellar4-4/merchants.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreCellar4-4/monsters.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreCellar4-4/reactors.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreCellar4-5/instance.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreCellar4-5/merchants.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreCellar4-5/monsters.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreCellar4-5/reactors.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreStudy4-2/instance.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreStudy4-2/merchants.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreStudy4-2/monsters.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreStudy4-2/reactors.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Items/scroll/enchantArmorScroll3rd.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr1/dholeLarva1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr1/nagetierDieter1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr1/scarletBeetle1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr10/boneCollector10.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr10/mummy10.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr10/qualgeist10.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr10/scarletBeetle10.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr2/dholeLarva2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr2/nagetierDieter2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr2/qualgeist2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr2/scarletBeetle2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr3/dholeLarva3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr3/nagetierDieter3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr3/qualgeist3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr3/scarletBeetle3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr4/dholeLarva4.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr4/nagetierDieter4.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr4/qualgeist4.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr4/scarletBeetle4.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr5/dholeLarva5.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr5/nagetierDieter5.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr5/qualgeist5.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr5/scarletBeetle5.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr6/boneCollector6.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr6/mummy6.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr6/qualgeist6.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr6/scarletBeetle6.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr7/boneCollector7.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr7/mummy7.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr7/qualgeist7.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr7/scarletBeetle7.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr8/boneCollector8.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr8/mummy8.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr8/qualgeist8.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr8/scarletBeetle8.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr9/boneCollector9.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr9/mummy9.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr9/qualgeist9.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr9/scarletBeetle9.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Spells/buffs/spirit_of_wolf.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Spells/songs/song_of_wind.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Chaos/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Chaos/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Models/World/Abstractions/Creature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Models/World/Abstractions/Creature.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Models/World/Aisling.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Models/World/Aisling.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/DamageAbilityComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/DamageAbilityComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/EnchantArmorComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/EnchantArmorComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/EnchantWeaponComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/EnchantWeaponComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/SolasBuffEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/SolasBuffEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/Enchantments/ArmorScripts/EnchantArmorScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/Enchantments/ArmorScripts/EnchantArmorScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/MonsterScripts/MoveToTargetScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/MonsterScripts/MoveToTargetScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/AJourneyToSuomi/AJourneyToSuomiQuestHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/AJourneyToSuomi/AJourneyToSuomiQuestHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/DarkThings/DarkThingsQuestHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/DarkThings/DarkThingsQuestHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/LootTables/shinewoodForest/sw2Bees.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/LootTables/shinewoodForest/sw2Bees.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/houseMacabreYard4/reactors.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/houseMacabreYard4/reactors.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreStudy4-1/reactors.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreStudy4-1/reactors.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/MapInstances/testArea/monsters.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/testArea/monsters.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Dialogs/waystones/teleport_menu.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Dialogs/waystones/teleport_menu.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Items/equipment/meleeWeapons/circleThree/warrior/primitiveSpear.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Items/equipment/meleeWeapons/circleThree/warrior/primitiveSpear.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Items/equipment/meleeWeapons/circleThree/warrior/woodenClub.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Items/equipment/meleeWeapons/circleThree/warrior/woodenClub.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Items/equipment/staves/holyDiana.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Items/equipment/staves/holyDiana.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/porteForest/giantMantis.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/porteForest/giantMantis.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/monk/kick.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/monk/kick.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/monk/mantis_kick.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/monk/mantis_kick.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/combat_senses.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/combatSenses.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/dune_swipe_1.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/duneSwipe1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/long_strike.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/longStrike.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/sneak_attack.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/sneakAttack.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/strikedown_1.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/strikeDown1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/two_handed_attack.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/twoHandedAttack.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Spells/debuffs/beag_seun.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Spells/debuffs/beag_seun.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Spells/debuffs/seun.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Spells/debuffs/seun.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chaos/Collections/Group.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Collections/Group.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,6 +77,9 @@
   </component>
   <component name="CodyActiveAccount">
     <option name="activeAccountId" value="VXNlcjo4NjYxMg==" />
+  </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -223,7 +101,7 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="merge-in-chaos-latest-v2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -350,6 +228,10 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="NamedScopeManager">
     <scope name="Testing" pattern="file:Tests//*" />
@@ -372,58 +254,67 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.Chaos.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Project.Benchmarks.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Project.Chaos.executor&quot;: &quot;Debug&quot;,
-    &quot;.NET Project.ChaosTool.executor&quot;: &quot;Debug&quot;,
-    &quot;.NET Project.ItemLevelPatch.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Project.SchemaGenerator.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Project.SeqConfigurator.executor&quot;: &quot;Run&quot;,
-    &quot;54c0c070-a7bc-4bed-b39d-bc8f581e068c.executor&quot;: &quot;Debug&quot;,
-    &quot;5cacdb9d-324b-4d7e-9eea-0604ac093b11.executor&quot;: &quot;Debug&quot;,
-    &quot;67a2ddff-cb31-4aef-aec5-224d07a1c1d8.executor&quot;: &quot;Debug&quot;,
-    &quot;86858d17-9592-45c9-b16f-227e8425ab45.executor&quot;: &quot;Debug&quot;,
-    &quot;88ebbb62-3b48-4f36-88fd-bd8138606451.executor&quot;: &quot;Debug&quot;,
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.CodyProjectSettingsMigration&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.75555557&quot;,
-    &quot;c2afcbe5-0e59-4837-899f-c28ccc52a2d6.executor&quot;: &quot;Debug&quot;,
-    &quot;c4624a35-7dc3-41a5-9b53-3f8f1f8317f0.executor&quot;: &quot;Debug&quot;,
-    &quot;dde2c854-b787-4b8f-97bd-cd545d332b2e.executor&quot;: &quot;Debug&quot;,
-    &quot;ded3c7a5-9a9d-445e-8825-e30b079c3145.executor&quot;: &quot;Debug&quot;,
-    &quot;e1a18812-12c1-4799-bd54-eba5d50eb555.executor&quot;: &quot;Debug&quot;,
-    &quot;edb1b382-81ae-4b94-a501-fae99ab1c6bf.executor&quot;: &quot;Debug&quot;,
-    &quot;fc439a04-995e-4a7b-9c5d-88fa3c6ed18d.executor&quot;: &quot;Debug&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;merge-in-chaos-latest&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;js.last.introduce.type&quot;: &quot;LET&quot;,
-    &quot;lastPackageVersionDialogProperty&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/repos/Sichii/Chaos-Server/Chaos.Schemas&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;rider.code.cleanup.on.save&quot;: &quot;true&quot;,
-    &quot;rider.code.cleanup.on.save.profile&quot;: &quot;Custom Cleanup&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;fileTemplates&quot;,
-    &quot;settings.editor.splitter.proportion&quot;: &quot;0.21536253&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\JetBrains\\apps\\Rider\\ch-0\\233.13135.100\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.Chaos.executor": "Run",
+    ".NET Project.Benchmarks.executor": "Run",
+    ".NET Project.Chaos.executor": "Debug",
+    ".NET Project.ChaosTool.executor": "Debug",
+    ".NET Project.ItemLevelPatch.executor": "Run",
+    ".NET Project.SchemaGenerator.executor": "Run",
+    ".NET Project.SeqConfigurator.executor": "Run",
+    "54c0c070-a7bc-4bed-b39d-bc8f581e068c.executor": "Debug",
+    "5cacdb9d-324b-4d7e-9eea-0604ac093b11.executor": "Debug",
+    "67a2ddff-cb31-4aef-aec5-224d07a1c1d8.executor": "Debug",
+    "86858d17-9592-45c9-b16f-227e8425ab45.executor": "Debug",
+    "88ebbb62-3b48-4f36-88fd-bd8138606451.executor": "Debug",
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.CodyProjectSettingsMigration": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "XThreadsFramesViewSplitterKey": "0.75555557",
+    "c2afcbe5-0e59-4837-899f-c28ccc52a2d6.executor": "Debug",
+    "c4624a35-7dc3-41a5-9b53-3f8f1f8317f0.executor": "Debug",
+    "cidr.known.project.marker": "true",
+    "dde2c854-b787-4b8f-97bd-cd545d332b2e.executor": "Debug",
+    "ded3c7a5-9a9d-445e-8825-e30b079c3145.executor": "Debug",
+    "e1a18812-12c1-4799-bd54-eba5d50eb555.executor": "Debug",
+    "edb1b382-81ae-4b94-a501-fae99ab1c6bf.executor": "Debug",
+    "fc439a04-995e-4a7b-9c5d-88fa3c6ed18d.executor": "Debug",
+    "git-widget-placeholder": "merge-in-chaos-latest",
+    "ignore.virus.scanning.warn.message": "true",
+    "js.last.introduce.type": "LET",
+    "lastPackageVersionDialogProperty": "true",
+    "last_opened_file_path": "D:/repos/Sichii/Chaos-Server/Chaos.Schemas",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "rider.code.cleanup.on.save": "true",
+    "rider.code.cleanup.on.save.profile": "Custom Cleanup",
+    "settings.editor.selected.configurable": "fileTemplates",
+    "settings.editor.splitter.proportion": "0.21536253",
+    "ts.external.directory.path": "D:\\JetBrains\\apps\\Rider\\ch-0\\233.13135.100\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Chaos">
     <configuration name="SeqConfiguratorPublish" type="DotNetFolderPublish" factoryName="Publish to folder">
-      <riderPublish configuration="Release" delete_existing_files="true" platform="Any CPU" runtime="Portable" target_folder="$PROJECT_DIR$/Tools/SeqConfigurator/bin/Release/net7.0/publish" target_framework="net7.0" uuid_high="-3565605415540145261" uuid_low="-5168491521234425180" />
+      <riderPublish configuration="Release" delete_existing_files="true" platform="Any CPU" target_folder="$PROJECT_DIR$/Tools/SeqConfigurator/bin/Release/net7.0/publish" target_framework="net7.0" uuid_high="-3565605415540145261" uuid_low="-5168491521234425180">
+        <runtimes>
+          <item value="Portable" />
+        </runtimes>
+      </riderPublish>
       <method v="2" />
     </configuration>
     <configuration name="Benchmarks" type="DotNetProject" factoryName=".NET Project">
@@ -431,9 +322,12 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Tools/Benchmarks/Benchmarks.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -449,9 +343,12 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Chaos" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Chaos/Chaos.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -467,9 +364,12 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Tools/ChaosTool/ChaosTool.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -485,9 +385,12 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Chaos.Client/Chaos.Client.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -503,9 +406,12 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Tests/Chaos.Collections.Tests/Chaos.Collections.Tests.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -521,9 +427,12 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Tests/Chaos.Common.Tests/Chaos.Common.Tests.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -539,9 +448,12 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Tests/Chaos.Cryptography.Tests/Chaos.Cryptography.Tests.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -557,9 +469,12 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Tests/Chaos.DarkAges.Tests/Chaos.DarkAges.Tests.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -575,9 +490,12 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Tests/Chaos.Extensions.Common.Tests/Chaos.Extensions.Common.Tests.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -593,9 +511,12 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Tests/Chaos.Extensions.Geometry.Tests/Chaos.Extensions.Geometry.Tests.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -611,9 +532,12 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Tests/Chaos.Geometry.Tests/Chaos.Geometry.Tests.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -629,9 +553,12 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Tests/Chaos.IO.Tests/Chaos.IO.Tests.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -647,9 +574,12 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Tests/Chaos.Messaging.Tests/Chaos.Messaging.Tests.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -665,9 +595,12 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Tests/Chaos.MetaData.Tests/Chaos.MetaData.Tests.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -683,9 +616,12 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Chaos.NLog.Logging/Chaos.NLog.Logging.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -701,9 +637,12 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Tests/Chaos.NLog.Logging.Tests/Chaos.NLog.Logging.Tests.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -719,9 +658,12 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Tests/Chaos.Networking.Tests/Chaos.Networking.Tests.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -737,9 +679,12 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Tests/Chaos.Packets.Tests/Chaos.Packets.Tests.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -755,9 +700,12 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Tests/Chaos.Pathfinding.Tests/Chaos.Pathfinding.Tests.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -773,9 +721,12 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Tests/Chaos.Scripting.Abstractions.Tests/Chaos.Scripting.Abstractions.Tests.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -791,9 +742,12 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Tests/Chaos.Scripting.Tests/Chaos.Scripting.Tests.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -809,9 +763,12 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Tests/Chaos.Security.Tests/Chaos.Security.Tests.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -827,9 +784,12 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Tests/Chaos.Storage.Abstractions.Tests/Chaos.Storage.Abstractions.Tests.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -845,9 +805,12 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Tests/Chaos.Storage.Tests/Chaos.Storage.Tests.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -863,9 +826,12 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Tests/Chaos.Testing.Infrastructure/Chaos.Testing.Infrastructure.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -881,9 +847,12 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Tests/Chaos.Time.Tests/Chaos.Time.Tests.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -899,9 +868,12 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Patches/ColorPatch/ColorPatch.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -917,9 +889,12 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Patches/AbilityLevelPatch/AbilityLevelPatch.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -935,9 +910,12 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Tools/SchemaGenerator/SchemaGenerator.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -953,9 +931,12 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Tools/SeqConfigurator/SeqConfigurator.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -971,9 +952,12 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Tools/WaveFunctionCollapse/WaveFunctionCollapse.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -988,13 +972,14 @@
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Chaos/Chaos.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
       <option name="LAUNCH_PROFILE_NAME" value="Chaos" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
       <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
       <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
       <option name="SEND_DEBUG_REQUEST" value="1" />
       <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <method v="2">
         <option name="Build" />
       </method>
@@ -1833,6 +1818,7 @@
       <workItem from="1769011249266" duration="9758000" />
       <workItem from="1769031466456" duration="4415000" />
       <workItem from="1769077998023" duration="16035000" />
+      <workItem from="1769124193695" duration="2009000" />
     </task>
     <task id="LOCAL-00065" summary="healing&#10;- added IHealFormula and DefaultHealFormula&#10;- added IApplyHealScript and 2 variants&#10;- changed DefaultApplyDamageScript to ApplyAttackDamageScript&#10;- added ApplyNonAttackDamageScript variant&#10;- added HealComponent&#10;- added skill and spell HealScript&#10;- added OnHealed to all creature scripts&#10;- consumables now use non-alerting damage or heal functional scripts to apply their effect">
       <created>1678409128727</created>
@@ -2821,8 +2807,10 @@
         <PinnedItemInfo parentTag="Type#Microsoft.Extensions.Configuration.ConfigurationProvider" memberName="Data" />
         <PinnedItemInfo parentTag="Type#NLog.LogEventInfo" memberName="_parameters" />
         <PinnedItemInfo parentTag="Type#Chaos.Networking.Entities.Server.MetaDataInfo" memberName="Data" />
+        <PinnedItemInfo parentTag="Type#OpenTelemetry.Trace.SamplingParameters" memberName="Name" />
         <PinnedItemInfo parentTag="Type#System.Collections.Generic.KeyValuePair`2" memberName="Value" />
         <PinnedItemInfo parentTag="Type#ChaosTool.Model.TraceWrapper`1" memberName="Path" />
+        <PinnedItemInfo parentTag="Type#Chaos.Models.World.Door" memberName="Closed" />
         <PinnedItemInfo parentTag="Type#NLog.LogEventInfo" memberName="Parameters" />
         <PinnedItemInfo parentTag="Type#Chaos.Models.Data.StatSheet" memberName="PhysicalAttackMod" />
         <PinnedItemInfo parentTag="Frame#Chaos.Services.Servers.LobbyServer.OnConnected" memberName="this" />

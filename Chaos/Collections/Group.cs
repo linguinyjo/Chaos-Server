@@ -1,4 +1,5 @@
 #region
+
 using Chaos.DarkAges.Definitions;
 using Chaos.Extensions.Common;
 using Chaos.Messaging.Abstractions;
@@ -9,6 +10,7 @@ using Chaos.NLog.Logging.Definitions;
 using Chaos.NLog.Logging.Extensions;
 using Chaos.Services.Servers.Options;
 using Chaos.Utilities;
+
 #endregion
 
 namespace Chaos.Collections;
@@ -22,29 +24,6 @@ public sealed class Group : IEnumerable<Aisling>, IDedicatedChannel, ITransforma
     private readonly ILogger<Group> Logger;
     private readonly List<Aisling> Members;
     private readonly Lock Sync;
-
-    /// <inheritdoc />
-    public string ChannelName { get; }
-
-    public string Id { get; }
-
-    /// <summary>
-    ///     The leader of the group
-    /// </summary>
-    public Aisling Leader
-    {
-        get
-        {
-            using var @lock = Sync.EnterScope();
-
-            return Members[0];
-        }
-    }
-
-    /// <summary>
-    ///     The number of members in the group
-    /// </summary>
-    public int Count => Members.Count;
 
     /// <summary>
     ///     Initializes a new instance of the <see cref="Group" /> class.
@@ -67,8 +46,10 @@ public sealed class Group : IEnumerable<Aisling>, IDedicatedChannel, ITransforma
         IChannelService channelService,
         ILogger<Group> logger)
     {
+        Sync = new Lock();
+
         Id = Guid.NewGuid()
-                 .ToString();
+            .ToString();
         Logger = logger;
         ChannelName = $"!group-{Id}";
         ChannelService = channelService;
@@ -108,31 +89,38 @@ public sealed class Group : IEnumerable<Aisling>, IDedicatedChannel, ITransforma
         receiver.SendActiveMessage($"You form a group with {sender.Name}");
 
         Logger.WithTopics(Topics.Entities.Group, Topics.Actions.Create)
-              .WithProperty(this)
-              .WithProperty(sender)
-              .WithProperty(receiver)
-              .LogInformation(
-                  "{@AislingName1} and {@AislingName2} have formed group {@GroupId}",
-                  sender.Name,
-                  receiver.Name,
-                  Id);
-
-        Sync = new Lock();
+            .WithProperty(this)
+            .WithProperty(sender)
+            .WithProperty(receiver)
+            .LogInformation(
+                "{@AislingName1} and {@AislingName2} have formed group {@GroupId}",
+                sender.Name,
+                receiver.Name,
+                Id);
     }
 
-    /// <inheritdoc />
-    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+    public string Id { get; }
 
-    /// <inheritdoc />
-    public IEnumerator<Aisling> GetEnumerator()
+    /// <summary>
+    ///     The leader of the group
+    /// </summary>
+    public Aisling Leader
     {
-        List<Aisling> snapshot;
+        get
+        {
+            using var @lock = Sync.EnterScope();
 
-        using (Sync.EnterScope())
-            snapshot = Members.ToList();
-
-        return snapshot.GetEnumerator();
+            return Members[0];
+        }
     }
+
+    /// <summary>
+    ///     The number of members in the group
+    /// </summary>
+    public int Count => Members.Count;
+
+    /// <inheritdoc />
+    public string ChannelName { get; }
 
     /// <inheritdoc />
     public void JoinChannel(IChannelSubscriber subscriber) => ChannelService.JoinChannel(subscriber, ChannelName, true);
@@ -141,7 +129,29 @@ public sealed class Group : IEnumerable<Aisling>, IDedicatedChannel, ITransforma
     public void LeaveChannel(IChannelSubscriber subscriber) => ChannelService.LeaveChannel(subscriber, ChannelName);
 
     /// <inheritdoc />
-    public void SendMessage(IChannelSubscriber from, string message) => ChannelService.SendMessage(from, ChannelName, message);
+    public void SendMessage(IChannelSubscriber from, string message)
+    {
+        ChannelService.SendMessage(from, ChannelName, message);
+    }
+
+    /// <inheritdoc />
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
+    }
+
+    /// <inheritdoc />
+    public IEnumerator<Aisling> GetEnumerator()
+    {
+        List<Aisling> snapshot;
+
+        using (Sync.EnterScope())
+        {
+            snapshot = Members.ToList();
+        }
+
+        return snapshot.GetEnumerator();
+    }
 
     /// <summary>
     ///     Adds an aisling to the group
@@ -162,9 +172,9 @@ public sealed class Group : IEnumerable<Aisling>, IDedicatedChannel, ITransforma
         Members.Add(aisling);
 
         Logger.WithTopics(Topics.Entities.Group, Topics.Actions.Add)
-              .WithProperty(aisling)
-              .WithProperty(this)
-              .LogInformation("{@AislingName} has been added to group {@GroupId}", aisling.Name, Id);
+            .WithProperty(aisling)
+            .WithProperty(this)
+            .LogInformation("{@AislingName} has been added to group {@GroupId}", aisling.Name, Id);
 
         JoinChannel(aisling);
         aisling.SendActiveMessage($"You have joined {Leader.Name}'s group");
@@ -207,8 +217,8 @@ public sealed class Group : IEnumerable<Aisling>, IDedicatedChannel, ITransforma
         }
 
         Logger.WithTopics(Topics.Entities.Group, Topics.Actions.Disband)
-              .WithProperty(this)
-              .LogInformation("Group {@GroupId} has been disbanded", Id);
+            .WithProperty(this)
+            .LogInformation("Group {@GroupId} has been disbanded", Id);
 
         ChannelService.UnregisterChannel(ChannelName);
         Members.Clear();
@@ -243,9 +253,9 @@ public sealed class Group : IEnumerable<Aisling>, IDedicatedChannel, ITransforma
             return;
 
         Logger.WithTopics(Topics.Entities.Group, Topics.Actions.Kick)
-              .WithProperty(aisling)
-              .WithProperty(this)
-              .LogInformation("{@AislingName} has been kicked from group {@GroupId}", aisling.Name, Id);
+            .WithProperty(aisling)
+            .WithProperty(this)
+            .LogInformation("{@AislingName} has been kicked from group {@GroupId}", aisling.Name, Id);
 
         aisling.SendActiveMessage($"You have been kicked from the group by {Leader.Name}");
 
@@ -280,9 +290,9 @@ public sealed class Group : IEnumerable<Aisling>, IDedicatedChannel, ITransforma
             return;
 
         Logger.WithTopics(Topics.Entities.Group, Topics.Actions.Leave)
-              .WithProperty(aisling)
-              .WithProperty(this)
-              .LogInformation("{@AislingName} has left group {@GroupId}", aisling.Name, Id);
+            .WithProperty(aisling)
+            .WithProperty(this)
+            .LogInformation("{@AislingName} has left group {@GroupId}", aisling.Name, Id);
 
         aisling.SendActiveMessage("You have left the group");
 
@@ -316,9 +326,9 @@ public sealed class Group : IEnumerable<Aisling>, IDedicatedChannel, ITransforma
         Members.Insert(0, aisling);
 
         Logger.WithTopics(Topics.Entities.Group, Topics.Actions.Promote)
-              .WithProperty(aisling)
-              .WithProperty(this)
-              .LogInformation("{@AislingName} has been promoted to group leader in group {@GroupId}", aisling.Name, Id);
+            .WithProperty(aisling)
+            .WithProperty(this)
+            .LogInformation("{@AislingName} has been promoted to group leader in group {@GroupId}", aisling.Name, Id);
 
         foreach (var member in Members)
         {
