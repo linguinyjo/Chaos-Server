@@ -6,8 +6,8 @@ using Chaos.Collections.Common;
 using Chaos.Collections.Synchronized;
 using Chaos.Collections.Time;
 using Chaos.Common.Abstractions;
-using Chaos.DarkAges.Definitions;
 using Chaos.Common.Synchronization;
+using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Extensions;
 using Chaos.Extensions.Common;
@@ -1102,6 +1102,8 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
         if (!SkillBook.TryGetObject(slot, out var skill))
             return false;
 
+        if (HasSow(out var effect) && effect != null) Effects.Dispel(effect);
+
         return TryUseSkill(skill);
     }
 
@@ -1132,6 +1134,8 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
 
         if (!SpellThrottle.TryIncrement())
             return false;
+
+        if (HasSow(out var effect) && effect != null) Effects.Dispel(effect);
 
         spell.Use(context);
         Trackers.LastSpellUse = DateTime.UtcNow;
@@ -1335,7 +1339,7 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
         SetLocation(endPoint);
         Trackers.LastWalk = DateTime.UtcNow;
         Trackers.LastPosition = startPosition;
-
+        Client.SendCancelCasting();
         var creaturesToUpdate = MapInstance.GetEntitiesWithinRange<Creature>(startPoint, 16)
             .ThatAreWithinRange(
                 points:

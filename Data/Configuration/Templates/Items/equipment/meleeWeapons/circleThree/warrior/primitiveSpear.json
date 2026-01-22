@@ -12,12 +12,12 @@
     "levelCircle": 3,
     "class": "warrior",
     "modifiers": {
-        "physicalAttack": 116,
+      "physicalAttack": 130,
         "maximumMp": -1500
     },
     "sellValue": 200000,
     "weight": 11,
-    "description": "Class: Warrior\nLevel: 41\nP.Atk 116",
+  "description": "Class: Warrior\nLevel: 41\nP.Atk 130",
     "name": "Primitive Spear",
     "panelSprite": 1095,
     "scriptKeys": ["Equipment"],

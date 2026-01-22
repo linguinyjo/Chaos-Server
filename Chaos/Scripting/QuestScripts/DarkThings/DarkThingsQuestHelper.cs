@@ -1,7 +1,4 @@
-using Chaos.DarkAges.Definitions;
-using Chaos.Models.Legend;
 using Chaos.Models.World;
-using Chaos.Time;
 
 namespace Chaos.Scripting.QuestScripts.DarkThings;
 
@@ -46,7 +43,7 @@ public static class DarkThingsQuestHelper
 
     public static void CompleteQuest(Aisling source)
     {
-        source.GiveExperience(8000);
+        source.GiveExperience(4000);
         source.Trackers.Enums.Set(DarkThingsQuestStatus.None);
         source.SendMinorQuestCompletedAnimation();
         source.Trackers.TimedEvents.AddEvent(QuestBlockId, TimeSpan.FromSeconds(QuestBlockTimer), true);

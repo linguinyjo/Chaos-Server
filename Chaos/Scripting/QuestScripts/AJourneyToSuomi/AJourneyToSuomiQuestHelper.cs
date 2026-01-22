@@ -1,10 +1,5 @@
-using System.Diagnostics.Eventing.Reader;
-using Chaos.DarkAges.Definitions;
-using Chaos.MetaData.EventMetaData;
 using Chaos.Models.Data;
-using Chaos.Models.Legend;
 using Chaos.Models.World;
-using Chaos.Time;
 
 namespace Chaos.Scripting.QuestScripts.AJourneyToSuomi;
 
@@ -39,8 +34,8 @@ public static class AJourneyToSuomiQuestHelper
     public static void CompleteQuest(Aisling player)
     {
         player.Trackers.Enums.Set(AJourneyToSuomiQuestStatus.Completed);
-        player.TryGiveGold(2500);
-        player.GiveExperience(750);
+        player.TryGiveGold(5000);
+        player.GiveExperience(500);
         player.Client.SendAnimation(new Animation()
         {
             AnimationSpeed = 150,

@@ -1,0 +1,22 @@
+{
+  "buyCost": 100,
+  "category": "misc",
+  "color": "Default",
+  "isModifiable": false,
+  "maxStacks": 100,
+  "sellValue": 500,
+  "weight": 1,
+  "description": "A magical scroll for enchanting armor of the third circle",
+  "name": "Enchant Armor Scroll",
+  "panelSprite": 3299,
+  "levelCircle": 2,
+  "scriptKeys": [
+    "enchantArmor"
+  ],
+  "scriptVars": {
+    "enchantArmor": {
+      "filter": "selfOnly, aliveOnly"
+    }
+  },
+  "templateKey": "enchantArmorScroll3rd"
+}

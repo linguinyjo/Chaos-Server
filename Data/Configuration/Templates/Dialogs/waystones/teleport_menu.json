@@ -3,6 +3,6 @@
   "scriptKeys": ["waystoneTeleport"],
   "scriptVars": {},
   "templateKey": "teleport_menu",
-  "text": "* You retrieve the memory of the waystones you have previously visisted *",
+  "text": "* You dig deep into your mind and retrieve the memory of the waystones previously seen *",
   "type": "Menu"
 }

@@ -1,5 +1,4 @@
 using Chaos.DarkAges.Definitions;
-using Chaos.DarkAges.Definitions;
 using Chaos.Extensions;
 using Chaos.Models.Data;
 using Chaos.Models.Panel;
@@ -43,7 +42,7 @@ public struct EnchantArmorComponent : IConditionalComponent
             context.SourceAisling?.Inventory.Remove(item.Slot);
             context.SourceAisling?.Client.SendSound(10, false);
             context.SourceAisling?.SendOrangeBarMessage(
-                $"Your {item.Template.Name} has smashed into a thousand pieces");
+                $"Your {item.Template.Name} has shattered into a thousand pieces");
         }
 
         return true;

@@ -1,5 +1,4 @@
 using Chaos.DarkAges.Definitions;
-using Chaos.DarkAges.Definitions;
 using Chaos.MetaData.ItemMetaData;
 using Chaos.Models.Data;
 using Chaos.Models.Panel;
@@ -12,12 +11,12 @@ public abstract class EnchantArmorScriptBase : ItemScriptBase, IEnchantmentScrip
 {
     private static readonly Dictionary<LevelCircle, int> Bonus = new()
     {
-        { LevelCircle.One, 25 }, // Levels 1-10
-        { LevelCircle.Two, 30 }, // Levels 11-40
-        { LevelCircle.Three, 60 }, // Levels 41-70
-        { LevelCircle.Four, 90 }, // Levels 71-98
-        { LevelCircle.Five, 10 }, // Levels 99+
-        { LevelCircle.Six, 12 }, // Master
+        { LevelCircle.One, 10 }, // Levels 1-10
+        { LevelCircle.Two, 25 }, // Levels 11-40
+        { LevelCircle.Three, 50 }, // Levels 41-70
+        { LevelCircle.Four, 100 }, // Levels 71-98
+        { LevelCircle.Five, 200 }, // Levels 99+
+        { LevelCircle.Six, 400 }, // Master
         { LevelCircle.Seven, 14 } // Advanced Class
     };
 

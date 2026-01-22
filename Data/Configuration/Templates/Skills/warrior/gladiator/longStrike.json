@@ -13,28 +13,27 @@
         "prerequisiteSkills": [],
         "prerequisiteSpells": []
     },
-    "description": "Requires a two handed weapon\n\nGold required: 5000\nItems required: \nLocation: Mileth Combat Skill Master",
-    "level": 71,
+    "description": "A Gladiator's fifth assail.\n\nGold required: 5000\nItems required: \nLocation: Mileth Combat Skill Master",
+    "level": 41,
     "levelsUp": true,
-    "name": "Two-Handed Attack",
+    "name": "Long Strike",
     "class": "gladiator",
-    "panelSprite": 17,
-    "scriptKeys": ["Assail"],
+    "panelSprite": 1,
+    "scriptKeys": ["damage"],
     "scriptVars": {
-        "assail": {
-            "bodyAnimation": 129,
+        "damage": {
+            "bodyAnimation": "assail",
             "sound": 1,
             "damageStat": "str",
             "range": 1,
             "shape": "front",
             "exclusionRange": 0,
             "damageStatMultiplier": 0.25,
-            "baseDamage": 30,
+            "baseDamage": 3,
             "PAtkMultiplier": -80,
             "filter": "hostileOnly, aliveOnly, othersOnly",
-            "levelUpRate": "slow",
-            "weaponCategory": "twoHanded"
+            "levelUpRate": "medium"
         }
     },
-    "templateKey": "two_handed_attack"
+    "templateKey": "longStrike"
 }

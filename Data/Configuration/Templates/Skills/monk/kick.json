@@ -23,7 +23,7 @@
     "scriptKeys": ["damage"],
     "scriptVars": {
         "damage": {
-            "bodyAnimation": 140,
+            "bodyAnimation": "Kick",
             "sound": 53,
             "damageStat": "con",
             "range": 1,

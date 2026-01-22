@@ -19,7 +19,7 @@
   "castLines": 4,
   "spellCategory": "Debuff",
   "name": "beag seun",
-  "panelSprite": 20,
+  "panelSprite": 88,
   "cooldownMs": 10000,
   "scriptKeys": [
     "applyEffect"

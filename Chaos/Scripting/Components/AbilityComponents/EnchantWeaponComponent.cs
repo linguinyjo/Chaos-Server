@@ -1,11 +1,9 @@
 using Chaos.DarkAges.Definitions;
-using Chaos.DarkAges.Definitions;
 using Chaos.Extensions;
 using Chaos.Models.Data;
 using Chaos.Models.Panel;
 using Chaos.Scripting.Components.Abstractions;
 using Chaos.Scripting.Components.Execution;
-using Chaos.Scripting.ItemScripts.Enchantments;
 using Chaos.Scripting.ItemScripts.Enchantments.WeaponScripts;
 
 namespace Chaos.Scripting.Components.AbilityComponents;
@@ -41,7 +39,7 @@ public struct EnchantWeaponComponent : IConditionalComponent
             context.SourceAisling?.Inventory.Remove(item.Slot);
             context.SourceAisling?.Client.SendSound(10, false);
             context.SourceAisling?.SendOrangeBarMessage(
-                $"Your {item.Template.Name} has smashed into a thousand pieces");
+                $"Your {item.Template.Name} has shattered into a thousand pieces");
         }
 
         return true;

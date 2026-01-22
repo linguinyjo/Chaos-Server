@@ -1,0 +1,74 @@
+[
+  {
+    "scriptKeys": [
+      "warp"
+    ],
+    "scriptVars": {
+      "warp": {
+        "destination": "cthonicRemains5:(4, 31)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(28, 22)"
+  },
+  {
+    "scriptKeys": [
+      "warp"
+    ],
+    "scriptVars": {
+      "warp": {
+        "destination": "cthonicRemains5:(37, 64)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(74, 47)"
+  },
+  {
+    "scriptKeys": [
+      "warp"
+    ],
+    "scriptVars": {
+      "warp": {
+        "destination": "cthonicRemains5:(5, 81)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(7, 81)"
+  },
+  {
+    "scriptKeys": [
+      "warp"
+    ],
+    "scriptVars": {
+      "warp": {
+        "destination": "cthonicRemains3:(53, 2)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(43, 2)"
+  },
+  {
+    "scriptKeys": [
+      "warp"
+    ],
+    "scriptVars": {
+      "warp": {
+        "destination": "cthonicRemains3:(38, 64)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(38, 63)"
+  },
+  {
+    "scriptKeys": [
+      "warp"
+    ],
+    "scriptVars": {
+      "warp": {
+        "destination": "cthonicRemains3:(3, 43)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(6, 50)"
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "scriptKeys": [
+      "warp"
+    ],
+    "scriptVars": {
+      "warp": {
+        "destination": "cthonicRemains2:(74, 45)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(73, 45)"
+  },
+  {
+    "scriptKeys": [
+      "warp"
+    ],
+    "scriptVars": {
+      "warp": {
+        "destination": "cthonicRemains2:(52, 73)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(52, 72)"
+  },
+  {
+    "scriptKeys": [
+      "warp"
+    ],
+    "scriptVars": {
+      "warp": {
+        "destination": "cthonicRemains2:(40, 2)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(39, 1)"
+  },
+  {
+    "scriptKeys": [
+      "warp"
+    ],
+    "scriptVars": {
+      "warp": {
+        "destination": "macabreCellar4-3:(10, 1)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(7, 39)"
+  },
+  {
+    "scriptKeys": [
+      "warp"
+    ],
+    "scriptVars": {
+      "warp": {
+        "destination": "macabreCellar4-4:(1, 15)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(47, 38)"
+  },
+  {
+    "scriptKeys": [
+      "warp"
+    ],
+    "scriptVars": {
+      "warp": {
+        "destination": "macabreCellar4-5:(1, 4)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(63, 18)"
+  }
+]

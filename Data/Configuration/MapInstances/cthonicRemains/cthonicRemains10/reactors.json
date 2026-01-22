@@ -1,0 +1,38 @@
+[
+  {
+    "scriptKeys": [
+      "warp"
+    ],
+    "scriptVars": {
+      "warp": {
+        "destination": "cthonicRemains9:(23, 6)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(23, 6)"
+  },
+  {
+    "scriptKeys": [
+      "warp"
+    ],
+    "scriptVars": {
+      "warp": {
+        "destination": "cthonicRemains9:(60, 15)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(59, 16)"
+  },
+  {
+    "scriptKeys": [
+      "warp"
+    ],
+    "scriptVars": {
+      "warp": {
+        "destination": "cthonicRemains9:(4, 69)"
+      }
+    },
+    "shouldBlockPathfinding": true,
+    "source": "(2, 65)"
+  }
+]

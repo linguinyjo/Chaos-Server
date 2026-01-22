@@ -59,239 +59,136 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5428a732-04b4-4ad7-b61b-5764b5027982" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/SpiritOfWolfBuffEffect.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains1/instance.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains1/merchants.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains1/monsters.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains1/reactors.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains10/instance.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains10/merchants.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains10/monsters.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains10/reactors.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains2/instance.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains2/merchants.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains2/monsters.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains2/reactors.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains3/instance.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains3/merchants.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains3/monsters.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains3/reactors.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains4/instance.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains4/merchants.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains4/monsters.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains4/reactors.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains5/instance.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains5/merchants.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains5/monsters.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains5/reactors.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains6/instance.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains6/merchants.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains6/monsters.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains6/reactors.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains7/instance.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains7/merchants.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains7/monsters.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains7/reactors.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains8/instance.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains8/merchants.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains8/monsters.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains8/reactors.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains9/instance.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains9/merchants.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains9/monsters.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/cthonicRemains/cthonicRemains9/reactors.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreCellar4-3/instance.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreCellar4-3/merchants.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreCellar4-3/monsters.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreCellar4-3/reactors.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreCellar4-4/instance.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreCellar4-4/merchants.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreCellar4-4/monsters.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreCellar4-4/reactors.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreCellar4-5/instance.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreCellar4-5/merchants.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreCellar4-5/monsters.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreCellar4-5/reactors.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreStudy4-2/instance.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreStudy4-2/merchants.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreStudy4-2/monsters.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreStudy4-2/reactors.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Items/scroll/enchantArmorScroll3rd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr1/dholeLarva1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr1/nagetierDieter1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr1/scarletBeetle1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr10/boneCollector10.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr10/mummy10.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr10/qualgeist10.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr10/scarletBeetle10.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr2/dholeLarva2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr2/nagetierDieter2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr2/qualgeist2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr2/scarletBeetle2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr3/dholeLarva3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr3/nagetierDieter3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr3/qualgeist3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr3/scarletBeetle3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr4/dholeLarva4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr4/nagetierDieter4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr4/qualgeist4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr4/scarletBeetle4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr5/dholeLarva5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr5/nagetierDieter5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr5/qualgeist5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr5/scarletBeetle5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr6/boneCollector6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr6/mummy6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr6/qualgeist6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr6/scarletBeetle6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr7/boneCollector7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr7/mummy7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr7/qualgeist7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr7/scarletBeetle7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr8/boneCollector8.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr8/mummy8.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr8/qualgeist8.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr8/scarletBeetle8.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr9/boneCollector9.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr9/mummy9.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr9/qualgeist9.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/cthonicRemains/cr9/scarletBeetle9.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Spells/buffs/spirit_of_wolf.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Spells/songs/song_of_wind.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Chaos/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Chaos/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos.Common/Definitions/Enums.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos.Common/Definitions/Enums.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos.DarkAges/Definitions/Enums.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos.DarkAges/Definitions/Enums.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos.Networking/Entities/Server/SpellInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos.Networking/Entities/Server/SpellInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos.Schemas/Templates/SpellTemplateSchema.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos.Schemas/Templates/SpellTemplateSchema.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Chaos.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Chaos.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Collections/EffectsBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Collections/EffectsBar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Formulae/Ability/DefaultAbilityFormula.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Formulae/Ability/DefaultAbilityFormula.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Formulae/Damage/DefaultDamageFormula.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Formulae/Damage/DefaultDamageFormula.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Formulae/Experience/DefaultExperienceFormula.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Formulae/Experience/DefaultExperienceFormula.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Models/Data/UserStatSheet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Models/Data/UserStatSheet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chaos/Models/World/Abstractions/Creature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Models/World/Abstractions/Creature.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chaos/Models/World/Aisling.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Models/World/Aisling.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Models/World/Monster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Models/World/Monster.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/AislingScripts/DefaultAislingScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/AislingScripts/DefaultAislingScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/DamageAbilityComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/DamageAbilityComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/DamageSelfAbilityComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/DamageSelfAbilityComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/DynamicBodyAnimationAbilityComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/DynamicBodyAnimationAbilityComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/DynamicSoundAbilityComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/DynamicSoundAbilityComponent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/EnchantArmorComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/EnchantArmorComponent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/EnchantWeaponComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/EnchantWeaponComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/GetCascadingTargetsAbilityComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/GetCascadingTargetsAbilityComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/IdentifyAbilityComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/IdentifyAbilityComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/PounceAbilityComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/PounceAbilityComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/RequireShieldAbilityComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/RequireShieldAbilityComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/RequireWeaponTypeAbilityComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/RequireWeaponTypeAbilityComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/SenseAbilityComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/SenseAbilityComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/SetDefenseElementAbilityComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/SetDefenseElementAbilityComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/TauntAbilityComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/Components/AbilityComponents/TauntAbilityComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/ClassChangeScripts/FirstClassChangeScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/ClassChangeScripts/FirstClassChangeScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/ClassChangeScripts/FirstClassScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/ClassChangeScripts/FirstClassScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/ClassChangeScripts/SecondClassChangeScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/ClassChangeScripts/SecondClassChangeScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/LouresScripts/JeanScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/LouresScripts/JeanScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/MilethScripts/AoifeScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/MilethScripts/AoifeScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/MilethScripts/CalloughScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/MilethScripts/CalloughScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/MilethScripts/CianScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/MilethScripts/CianScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/MilethScripts/DarScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/MilethScripts/DarScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/MilethScripts/DevlinScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/MilethScripts/DevlinScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/MilethScripts/OonaScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/MilethScripts/OonaScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/MilethScripts/RionaScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/MilethScripts/RionaScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/MilethScripts/TorranceScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/MilethScripts/TorranceScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/MilethScripts/VorlofScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/MilethScripts/VorlofScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/MonkFormScripts/MonkFormScriptBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/MonkFormScripts/MonkFormScriptBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/MonkFormScripts/UnlearnFormScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/MonkFormScripts/UnlearnFormScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/OrangeBarMessageScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/OrangeBarMessageScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/PathTempleScripts/DonnanScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/PathTempleScripts/DonnanScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/PathTempleScripts/ErinScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/PathTempleScripts/ErinScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/PathTempleScripts/KeefeScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/PathTempleScripts/KeefeScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/PathTempleScripts/LoganScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/PathTempleScripts/LoganScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/PathTempleScripts/NealScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/PathTempleScripts/NealScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/SuomiScripts/BergScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/SuomiScripts/BergScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/WaystoneScripts/WaystoneSaveScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/WaystoneScripts/WaystoneSaveScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/WaystoneScripts/WaystoneScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/DialogScripts/WaystoneScripts/WaystoneScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/BeagAcBuffEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/BeagAcBuffEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/FasDeireasBuffEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/FasDeireasBuffEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/GoblinsBlessingBuffEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/GoblinsBlessingBuffEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/GrimlocksBlessingBuffEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/GrimlocksBlessingBuffEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/OranDionach1Effect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/OranDionach1Effect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/OranDionach2Effect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/OranDionach2Effect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/OranLuth1Effect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/OranLuth1Effect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/OranLuth2Effect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/OranLuth2Effect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/RegenBuffEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/RegenBuffEffect.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/SolasBuffEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/SolasBuffEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/Warrior/Champion/AegisSphere1BuffEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/Warrior/Champion/AegisSphere1BuffEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/Warrior/Champion/AegisSphere2BuffEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/Warrior/Champion/AegisSphere2BuffEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/Warrior/Champion/HateAura1Effect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/Warrior/Champion/HateAura1Effect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/Warrior/Champion/HateAura2Effect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/Warrior/Champion/HateAura2Effect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/Warrior/Gladiator/Frenzy1BuffEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/Warrior/Gladiator/Frenzy1BuffEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/Warrior/Gladiator/Frenzy2BuffEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/Warrior/Gladiator/Frenzy2BuffEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/Warrior/Gladiator/Frenzy3BuffEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/BuffEffects/Warrior/Gladiator/Frenzy3BuffEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/CurseEffects/BeagCradhEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/CurseEffects/BeagCradhEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/CurseEffects/CradhEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/CurseEffects/CradhEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/CurseEffects/DubhBasEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/CurseEffects/DubhBasEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/CurseEffects/MorCradhEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/CurseEffects/MorCradhEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/DamageOverTimeEffects/CursedTune1Effect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/DamageOverTimeEffects/CursedTune1Effect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/DamageOverTimeEffects/CursedTune2Effect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/DamageOverTimeEffects/CursedTune2Effect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/DebuffEffects/BeagFasNadurEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/DebuffEffects/BeagFasNadurEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/DebuffEffects/BeagSeunEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/DebuffEffects/BeagSeunEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/DebuffEffects/FasNadurEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/DebuffEffects/FasNadurEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/DebuffEffects/SeunEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/DebuffEffects/SeunEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/DebuffEffects/Slaodach1Effect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/DebuffEffects/Slaodach1Effect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/DebuffEffects/Slaodach2Effect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/DebuffEffects/Slaodach2Effect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/HideEffects/HideEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/HideEffects/HideEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/MonkEffects/DracoStanceEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/MonkEffects/DracoStanceEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/MonkEffects/KelberothStanceEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/MonkEffects/KelberothStanceEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/MonkEffects/ScorpionStanceEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/MonkEffects/ScorpionStanceEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/PoisonEffects/BeagPoisonEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/PoisonEffects/BeagPoisonEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/PoisonEffects/MorPoisonEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/PoisonEffects/MorPoisonEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/PoisonEffects/PoisonEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/PoisonEffects/PoisonEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/RegenerationEffects/OranBeatha1Effect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/RegenerationEffects/OranBeatha1Effect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/RegenerationEffects/OranBeatha2Effect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/RegenerationEffects/OranBeatha2Effect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/SkulledEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/EffectScripts/SkulledEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/FunctionalScripts/ExperienceDistribution/DefaultExperienceDistributionScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/FunctionalScripts/ExperienceDistribution/DefaultExperienceDistributionScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/ElementScripts/SetEarthDefenseScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/ElementScripts/SetEarthDefenseScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/ElementScripts/SetEarthOffenseScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/ElementScripts/SetEarthOffenseScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/ElementScripts/SetFireDefenseScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/ElementScripts/SetFireDefenseScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/ElementScripts/SetFireOffenseScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/ElementScripts/SetFireOffenseScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/ElementScripts/SetSeaDefenseScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/ElementScripts/SetSeaDefenseScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/ElementScripts/SetSeaOffenseScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/ElementScripts/SetSeaOffenseScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/ElementScripts/SetWindDefenseScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/ElementScripts/SetWindDefenseScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/ElementScripts/SetWindOffenseScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/ElementScripts/SetWindOffenseScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/EnchantArmorScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/EnchantArmorScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/EnchantScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/EnchantScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/Enchantments/ArmorScripts/EnchantArmorScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/Enchantments/ArmorScripts/EnchantArmorScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/Enchantments/SeaScripts/SeaDefensePrefixScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/Enchantments/SeaScripts/SeaDefensePrefixScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/Enchantments/SeaScripts/SeaOffensePrefixScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/Enchantments/SeaScripts/SeaOffensePrefixScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/Enchantments/WeaponScripts/EnchantWeaponScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/Enchantments/WeaponScripts/EnchantWeaponScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/EquipStaffScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/EquipStaffScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/RemoveEffectConsumableScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/RemoveEffectConsumableScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/SetRandomDefenseElementScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/SetRandomDefenseElementScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/SetRandomOffenseElementScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/SetRandomOffenseElementScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/SongScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/SongScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/VitalityConsumableScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/ItemScripts/VitalityConsumableScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/MonsterScripts/CastingScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/MonsterScripts/CastingScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/MonsterScripts/SetElementScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/MonsterScripts/SetElementScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/MonsterScripts/SetRandomElementScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/MonsterScripts/SetRandomElementScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/MonsterScripts/MoveToTargetScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/MonsterScripts/MoveToTargetScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/AJourneyToSuomi/AJourneyToSuomiQuestHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/AJourneyToSuomi/AJourneyToSuomiQuestHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/AJourneyToSuomi/AJourneyToSuomiQuestScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/AJourneyToSuomi/AJourneyToSuomiQuestScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/AJourneyToSuomi/GoranAJourneyToSuomiQuestScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/AJourneyToSuomi/GoranAJourneyToSuomiQuestScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/AlittleBitOfThat/ALittleBitOfThatQuestScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/AlittleBitOfThat/ALittleBitOfThatQuestScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/DarkThings/DarkThingsQuestHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/DarkThings/DarkThingsQuestHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/DarkThings/DarkThingsQuestScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/DarkThings/DarkThingsQuestScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/DevlinsIngredients/DevlinsIngredientsQuestHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/DevlinsIngredients/DevlinsIngredientsQuestHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/DevlinsIngredients/DevlinsIngredientsQuestScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/DevlinsIngredients/DevlinsIngredientsQuestScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Dugons/BaseDugonQuestHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Dugons/BaseDugonQuestHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Dugons/BlueDugonScripts/BlueDugonMeditationTileScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Dugons/BlueDugonScripts/BlueDugonMeditationTileScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Dugons/BlueDugonScripts/BlueDugonQuestHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Dugons/BlueDugonScripts/BlueDugonQuestHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Dugons/BlueDugonScripts/BlueDugonVerbalScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Dugons/BlueDugonScripts/BlueDugonVerbalScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Dugons/DojoTileScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Dugons/DojoTileScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Dugons/DojoWarpScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Dugons/DojoWarpScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Dugons/GreenDugonScripts/GreenDugonMeditationTileScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Dugons/GreenDugonScripts/GreenDugonMeditationTileScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Dugons/GreenDugonScripts/GreenDugonQuestHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Dugons/GreenDugonScripts/GreenDugonQuestHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Dugons/GreenDugonScripts/GreenDugonVerbalScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Dugons/GreenDugonScripts/GreenDugonVerbalScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Dugons/KyrosScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Dugons/KyrosScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Dugons/WhiteDugonScripts/WhiteDugonMeditationTileScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Dugons/WhiteDugonScripts/WhiteDugonMeditationTileScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Dugons/WhiteDugonScripts/WhiteDugonQuestHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Dugons/WhiteDugonScripts/WhiteDugonQuestHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Dugons/WhiteDugonScripts/WhiteDugonVerbalScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Dugons/WhiteDugonScripts/WhiteDugonVerbalScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/FromTheHeart/FaerieDialogScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/FromTheHeart/FaerieDialogScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/FromTheHeart/FromTheHeartQuestScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/FromTheHeart/FromTheHeartQuestScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/FromTheHeart/RedScarfDialogScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/FromTheHeart/RedScarfDialogScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/GeneralsOfDarkness/GeneralsOfDarknessQuestHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/GeneralsOfDarkness/GeneralsOfDarknessQuestHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/PorteForest/LurecaPorteForestQuestScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/PorteForest/LurecaPorteForestQuestScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/PorteForest/PorteForestBossRoomWarpScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/PorteForest/PorteForestBossRoomWarpScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/PorteForest/PorteForestQuestHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/PorteForest/PorteForestQuestHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/PorteForest/PorteForestTrapScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/PorteForest/PorteForestTrapScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/PorteForest/TurucPendantScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/PorteForest/TurucPendantScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/PorteForest/VerbalQuestScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/PorteForest/VerbalQuestScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/PravatAlliance/GoblinAlliance/GoblinAllianceQuestHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/PravatAlliance/GoblinAlliance/GoblinAllianceQuestHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/PravatAlliance/GrimlockAlliance/GrimlockAllianceQuestHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/PravatAlliance/GrimlockAlliance/GrimlockAllianceQuestHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/QuestHelperBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/QuestHelperBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/SpareAStick/SpareAStickQuestHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/SpareAStick/SpareAStickQuestHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Terror/TerrorOnKillScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Terror/TerrorOnKillScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Terror/TerrorQuestHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Terror/TerrorQuestHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Terror/TerrorSlainScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Terror/TerrorSlainScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Terror/TerrorStartScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/Terror/TerrorStartScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/TrainingQuest/DarTrainingQuestScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/TrainingQuest/DarTrainingQuestScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/TrainingQuest/RionaTrainingQuestScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/TrainingQuest/RionaTrainingQuestScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/TrainingQuest/TorranceTrainingQuestScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/TrainingQuest/TorranceTrainingQuestScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/TrainingQuest/TrainingQuestHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/TrainingQuest/TrainingQuestHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/TrainingQuest/VorlofTrainingQuestScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/QuestScripts/TrainingQuest/VorlofTrainingQuestScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/ReactorTileScripts/CascadingDamageTileScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/ReactorTileScripts/CascadingDamageTileScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/ReactorTileScripts/NewAislingScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/ReactorTileScripts/NewAislingScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/ReactorTileScripts/TrapScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/ReactorTileScripts/TrapScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/SkillScripts/ApplyEffectScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/SkillScripts/ApplyEffectScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/SkillScripts/AssailScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/SkillScripts/AssailScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/SkillScripts/DamageSelfScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/SkillScripts/DamageSelfScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/SkillScripts/LevelUpScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/SkillScripts/LevelUpScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/SkillScripts/PounceScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/SkillScripts/PounceScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/SkillScripts/RemoveEffectScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/SkillScripts/RemoveEffectScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/SkillScripts/SenseScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/SkillScripts/SenseScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/SkillScripts/TauntScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/SkillScripts/TauntScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/SpellScripts/CascadingDamageScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/SpellScripts/CascadingDamageScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/SpellScripts/DamageScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/SpellScripts/DamageScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/SpellScripts/IdentifyScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/SpellScripts/IdentifyScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/SpellScripts/LayReactorTileScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/SpellScripts/LayReactorTileScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/SpellScripts/LevelUpScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/SpellScripts/LevelUpScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/SpellScripts/RemoveEffectScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/SpellScripts/RemoveEffectScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/SpellScripts/SetDefenseElementScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/SpellScripts/SetDefenseElementScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/SpellScripts/TauntScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/SpellScripts/TauntScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Scripting/SpellScripts/TeleportScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Scripting/SpellScripts/TeleportScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Services/Factories/ItemFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Services/Factories/ItemFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Services/Factories/SpellFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Services/Factories/SpellFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Services/Servers/WorldServer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Services/Servers/WorldServer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chaos/Utilities/ComplexActionHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/Utilities/ComplexActionHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Items/consumables/komadium.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Items/consumables/komadium.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/darkMaze/darkMazeDunan.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/darkMaze/darkMazeDunan.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/ReactorTiles/bolt_trap.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/ReactorTiles/bolt_trap.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/ReactorTiles/coiled_bolt_trap.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/ReactorTiles/coiled_bolt_trap.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/ReactorTiles/needle_trap.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/ReactorTiles/needle_trap.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/ReactorTiles/stiletto_trap.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/ReactorTiles/stiletto_trap.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/ambush.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/assail.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/assail.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/monk/doublePunch.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/monk/doublePunch.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/monk/forms/darkSpear.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/monk/forms/darkSpear.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/monk/forms/dracoTailKick.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/monk/forms/dracoTailKick.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/monk/forms/kelberothStrike.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/monk/forms/kelberothStrike.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/monk/forms/poisonPunch.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/monk/forms/poisonPunch.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/monk/highKick.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/monk/highKick.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chaos/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Chaos/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Configuration/LootTables/shinewoodForest/sw2Bees.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/LootTables/shinewoodForest/sw2Bees.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/houseMacabreYard4/reactors.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/houseMacabreYard4/reactors.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreStudy4-1/reactors.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/houseMacbre/macabreStudy4-1/reactors.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Configuration/MapInstances/testArea/monsters.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/MapInstances/testArea/monsters.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Dialogs/waystones/teleport_menu.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Dialogs/waystones/teleport_menu.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Items/equipment/meleeWeapons/circleThree/warrior/primitiveSpear.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Items/equipment/meleeWeapons/circleThree/warrior/primitiveSpear.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Items/equipment/meleeWeapons/circleThree/warrior/woodenClub.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Items/equipment/meleeWeapons/circleThree/warrior/woodenClub.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Items/equipment/staves/holyDiana.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Items/equipment/staves/holyDiana.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/porteForest/giantMantis.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Monsters/porteForest/giantMantis.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/monk/kick.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/monk/kick.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/monk/mantis_kick.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/monk/mantis_kick.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/monk/martialAwareness.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/monk/martialAwareness.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/monk/monkAssail.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/monk/monkAssail.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/monster/pounce.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/monster/pounce.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/monster/veryWeakAssail.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/monster/veryWeakAssail.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/rogue/rogueAssail.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/rogue/rogueAssail.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/rogue/stabAndTwist.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/rogue/stabAndTwist.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/rogue/studyCreature.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/rogue/studyCreature.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/rogue/throw_surigum.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/rogue/throw_surigum.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/assault.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/assault.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/champion/battle_awareness.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/champion/battle_awareness.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/champion/beag_suain.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/champion/beag_suain.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/champion/pummel.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/champion/pummel.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/champion/shield_bash_1.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/champion/shield_bash_1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/champion/shield_bash_2.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/champion/shield_bash_2.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/champion/shield_charge.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/champion/shield_charge.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/clobber.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/clobber.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/charge.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/charge.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/combat_senses.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/combat_senses.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/crasher.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/crasher.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/dune_swipe_1.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/dune_swipe_1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/long_strike.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/long_strike.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/sneak_attack.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/sneak_attack.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/strikedown_1.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/strikedown_1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/two_handed_attack.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/two_handed_attack.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/powerStrike.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/powerStrike.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/rescue.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/rescue.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/wallop.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/wallop.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/windBlade.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/windBlade.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Spells/monk/forms/kelberothStance.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Spells/monk/forms/kelberothStance.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Spells/monk/forms/scorpionStance.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Spells/monk/forms/scorpionStance.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Chaos.Common.Tests/DecimalRandomizerTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Chaos.Common.Tests/DecimalRandomizerTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Chaos.Common.Tests/IntegerRandomizerTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Chaos.Common.Tests/IntegerRandomizerTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/ChaosTool/Controls/LootTableControls/LootTablePropertyEditor.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/ChaosTool/Controls/LootTableControls/LootTablePropertyEditor.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/ChaosTool/ViewModel/LootTableViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/ChaosTool/ViewModel/LootTableViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/combat_senses.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/combatSenses.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/dune_swipe_1.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/duneSwipe1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/long_strike.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/longStrike.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/sneak_attack.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/sneakAttack.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/strikedown_1.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/strikeDown1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/two_handed_attack.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Skills/warrior/gladiator/twoHandedAttack.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Spells/debuffs/beag_seun.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Spells/debuffs/beag_seun.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Configuration/Templates/Spells/debuffs/seun.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Configuration/Templates/Spells/debuffs/seun.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -305,9 +202,6 @@
   </component>
   <component name="CodyActiveAccount">
     <option name="activeAccountId" value="VXNlcjo4NjYxMg==" />
-  </component>
-  <component name="DpaMonitoringSettings">
-    <option name="autoShow" value="false" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -348,12 +242,8 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Chaos.Common.Abstractions/IInterlockedObject.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos.Common/Collections/ArgumentCollection.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos.Common/Collections/ArgumentCollection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chaos.Common/Collections/FlagCollection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chaos.Common/Collections/Synchronized/SynchronizedHashSet.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos.Common/Definitions/Enums.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos.Common/Definitions/Enums.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chaos.Common/Definitions/RegexCache.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chaos.Common/Synchronization/InterlockedObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chaos.Cryptography/Tables.cs" root0="FORCE_HIGHLIGHTING" />
@@ -366,12 +256,8 @@
     <setting file="file://$PROJECT_DIR$/Chaos.Extensions.Geometry/PointExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chaos.Geometry.Abstractions/Definitions/Enums.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chaos.MetaData/Abstractions/IMetaNode.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos.MetaData/ItemMetadata/ItemMetaNode.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos.MetaData/ItemMetadata/ItemMetaNode.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chaos.MetaData/MetaNode.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chaos.NLog.Logging/Definitions/Topics.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos.Networking/Abstractions/ConnectedClientBase.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos.Networking/Abstractions/ConnectedClientBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chaos.Networking/Entities/Server/WorldListArgs.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chaos.Schemas/Data/ItemRequirementSchema.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chaos.Schemas/Data/LootDropSchema.cs" root0="FORCE_HIGHLIGHTING" />
@@ -385,87 +271,22 @@
     <setting file="file://$PROJECT_DIR$/Chaos.TypeMapper.Abstractions/ICloningService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chaos.TypeMapper.Abstractions/IMapperProfile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chaos.TypeMapper.Abstractions/ITypeMapper.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Collections/EffectsBar.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Collections/EffectsBar.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Collections/Equipment.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Collections/Equipment.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chaos/Collections/Exchange.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Collections/Inventory.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Collections/Inventory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chaos/Collections/MapEntityCollection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chaos/Collections/MapInstance.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Definitions/RegexCache.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Definitions/RegexCache.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Extensions/ScriptExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Extensions/ScriptExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chaos/Messaging/ChannelListCommand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chaos/Messaging/JoinChannelCommand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chaos/Messaging/LeaveChannelCommand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chaos/Messaging/SetChannelColorCommand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chaos/Messaging/WhoChannelCommand.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Models/Data/StatSheet.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Models/Data/StatSheet.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Models/Panel/Item.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Models/Panel/Item.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Models/Templates/ItemTemplate.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Models/Templates/ItemTemplate.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chaos/Models/World/Abstractions/Creature.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Models/World/Aisling.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Models/World/Aisling.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chaos/Models/World/ReactorTile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chaos/Networking/ChaosWorldClient.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chaos/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/AislingScripts/DefaultAislingScript.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/AislingScripts/DefaultAislingScript.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/Behaviors/RestrictionBehavior.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/Behaviors/RestrictionBehavior.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/Components/AbilityComponents/BodyAnimationAbilityComponent.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/Components/AbilityComponents/BodyAnimationAbilityComponent.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/Components/AbilityComponents/DamageAbilityComponent.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/Components/AbilityComponents/DamageAbilityComponent.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/Components/AbilityComponents/GetTargetsAbilityComponent.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/Components/AbilityComponents/GetTargetsAbilityComponent.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/Components/AbilityComponents/HealAbilityComponent.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/Components/AbilityComponents/HealAbilityComponent.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/EffectScripts/Abstractions/EffectBase.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/EffectScripts/Abstractions/EffectBase.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/EffectScripts/BuffEffects/Warrior/Champion/AegisSphere1BuffEffect.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/EffectScripts/CurseEffects/MorCradhEffect.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/EffectScripts/CurseEffects/MorCradhEffect.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/FunctionalScripts/ApplyDamage/ApplyAttackDamageScript.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/FunctionalScripts/ApplyDamage/ApplyAttackDamageScript.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/ItemScripts/VitalityConsumableScript.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/ItemScripts/VitalityConsumableScript.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chaos/Scripting/MapScripts/CompositeMapScript.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/MonsterScripts/AggroTargetingScript.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/MonsterScripts/AggroTargetingScript.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chaos/Scripting/MonsterScripts/AttackingScript.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/ReactorTileScripts/CascadingDamageTileScript.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/ReactorTileScripts/CascadingDamageTileScript.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/ReactorTileScripts/TrapScript.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/ReactorTileScripts/TrapScript.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/SkillScripts/DamageScript.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/SkillScripts/DamageScript.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/SkillScripts/HealScript.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/SkillScripts/HealScript.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/SpellScripts/CascadingDamageScript.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/SpellScripts/CascadingDamageScript.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/SpellScripts/DamageScript.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/SpellScripts/DamageScript.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/SpellScripts/HealScript.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/SpellScripts/HealScript.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/SpellScripts/LayReactorTileScript.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Scripting/SpellScripts/LayReactorTileScript.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Services/Configuration/OptionsConfigurer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Services/Configuration/OptionsConfigurer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Services/MapperProfiles/AislingMapperProfile.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Services/MapperProfiles/AislingMapperProfile.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Services/MapperProfiles/ItemMapperProfile.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Services/MapperProfiles/ItemMapperProfile.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chaos/Services/MapperProfiles/MapInstanceMapperProfile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chaos/Services/Servers/WorldServer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Utilities/ComplexActionHelper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Chaos/Utilities/ComplexActionHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chaos/obj/Debug/net8.0/Chaos.Version.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Data/Configuration/MapData/lod10057.map" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Data/Configuration/MapData/lod10212.map" root0="FORCE_HIGHLIGHTING" />
@@ -474,7 +295,6 @@
     <setting file="file://$PROJECT_DIR$/Data/Configuration/MapData/lod8298.map" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Data/Configuration/MapData/lod8348.map" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Data/Configuration/MapData/lod992.map" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Data/Configuration/Templates/Skills/assail.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Data/Saved/Aislings/bobg/aisling.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Data/Saved/Aislings/bobh/aisling.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Data/Saved/Aislings/bobk/aisling.json" root0="FORCE_HIGHLIGHTING" />
@@ -484,8 +304,6 @@
     <setting file="file://$PROJECT_DIR$/Tests/Chaos.Extensions.Geometry.Tests/LocationExtensionsTests.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tests/Chaos.IO.Tests/DirectorySynchronizerTests.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tests/Chaos.Messaging.Tests/CommandInterceptorTests.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Tests/Chaos.Scripting.Abstractions.Tests/ConfigurableScriptTests.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Chaos-Server/Tests/Chaos.Scripting.Abstractions.Tests/ConfigurableScriptTests.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tools/ChaosTool/App.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tools/ChaosTool/App.xaml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tools/ChaosTool/Controls/DialogTemplateControls/DialogTemplatePropertyEditor.xaml.cs" root0="FORCE_HIGHLIGHTING" />
@@ -524,8 +342,10 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/387238ef9c8f8c6b1dccf4dcba4eed0e459454919b2e4b9cad11a5071789df/Dictionary.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5a876eaa41b34484b8fcd5cb8827d6e27e1844a2709c7397f37df6ed403f/Enum.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/613493476d9451bbf35e618b8279fa5dacc0916d8067d3b47648bdcbc097beb/Byte.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/81cc2099363ff84f1614136d278beb5bed411454404ec1ec16856d72b0d434e9/LoggerExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9f3e637c30e4ff62e3793652afb7beebace3f58f2c89a451ccdf7c221c4e6/Span.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ca429a21c33085f75852201c3bd51fa8e65bf7d6ab5543339f23ad135f4c242/Math.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e399fc861c188bd19ebde14346e2f5f2c1a54c1c0d6fbd5cbe05227afe6d/CollectionExtensions.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -552,55 +372,55 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.Chaos.executor": "Run",
-    ".NET Project.Benchmarks.executor": "Run",
-    ".NET Project.Chaos.executor": "Debug",
-    ".NET Project.ChaosTool.executor": "Debug",
-    ".NET Project.ItemLevelPatch.executor": "Run",
-    ".NET Project.SchemaGenerator.executor": "Run",
-    ".NET Project.SeqConfigurator.executor": "Run",
-    "54c0c070-a7bc-4bed-b39d-bc8f581e068c.executor": "Debug",
-    "5cacdb9d-324b-4d7e-9eea-0604ac093b11.executor": "Debug",
-    "67a2ddff-cb31-4aef-aec5-224d07a1c1d8.executor": "Debug",
-    "86858d17-9592-45c9-b16f-227e8425ab45.executor": "Debug",
-    "88ebbb62-3b48-4f36-88fd-bd8138606451.executor": "Debug",
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.CodyProjectSettingsMigration": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "XThreadsFramesViewSplitterKey": "0.75555557",
-    "c2afcbe5-0e59-4837-899f-c28ccc52a2d6.executor": "Debug",
-    "c4624a35-7dc3-41a5-9b53-3f8f1f8317f0.executor": "Debug",
-    "dde2c854-b787-4b8f-97bd-cd545d332b2e.executor": "Debug",
-    "ded3c7a5-9a9d-445e-8825-e30b079c3145.executor": "Debug",
-    "e1a18812-12c1-4799-bd54-eba5d50eb555.executor": "Debug",
-    "edb1b382-81ae-4b94-a501-fae99ab1c6bf.executor": "Debug",
-    "fc439a04-995e-4a7b-9c5d-88fa3c6ed18d.executor": "Debug",
-    "git-widget-placeholder": "#4 on merge-in-chaos-latest",
-    "ignore.virus.scanning.warn.message": "true",
-    "js.last.introduce.type": "LET",
-    "lastPackageVersionDialogProperty": "true",
-    "last_opened_file_path": "D:/repos/Sichii/Chaos-Server/Chaos.Schemas",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "rider.code.cleanup.on.save": "true",
-    "rider.code.cleanup.on.save.profile": "Custom Cleanup",
-    "settings.editor.selected.configurable": "fileTemplates",
-    "settings.editor.splitter.proportion": "0.21536253",
-    "ts.external.directory.path": "D:\\JetBrains\\apps\\Rider\\ch-0\\233.13135.100\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.Chaos.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Project.Benchmarks.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Project.Chaos.executor&quot;: &quot;Debug&quot;,
+    &quot;.NET Project.ChaosTool.executor&quot;: &quot;Debug&quot;,
+    &quot;.NET Project.ItemLevelPatch.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Project.SchemaGenerator.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Project.SeqConfigurator.executor&quot;: &quot;Run&quot;,
+    &quot;54c0c070-a7bc-4bed-b39d-bc8f581e068c.executor&quot;: &quot;Debug&quot;,
+    &quot;5cacdb9d-324b-4d7e-9eea-0604ac093b11.executor&quot;: &quot;Debug&quot;,
+    &quot;67a2ddff-cb31-4aef-aec5-224d07a1c1d8.executor&quot;: &quot;Debug&quot;,
+    &quot;86858d17-9592-45c9-b16f-227e8425ab45.executor&quot;: &quot;Debug&quot;,
+    &quot;88ebbb62-3b48-4f36-88fd-bd8138606451.executor&quot;: &quot;Debug&quot;,
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.CodyProjectSettingsMigration&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.75555557&quot;,
+    &quot;c2afcbe5-0e59-4837-899f-c28ccc52a2d6.executor&quot;: &quot;Debug&quot;,
+    &quot;c4624a35-7dc3-41a5-9b53-3f8f1f8317f0.executor&quot;: &quot;Debug&quot;,
+    &quot;dde2c854-b787-4b8f-97bd-cd545d332b2e.executor&quot;: &quot;Debug&quot;,
+    &quot;ded3c7a5-9a9d-445e-8825-e30b079c3145.executor&quot;: &quot;Debug&quot;,
+    &quot;e1a18812-12c1-4799-bd54-eba5d50eb555.executor&quot;: &quot;Debug&quot;,
+    &quot;edb1b382-81ae-4b94-a501-fae99ab1c6bf.executor&quot;: &quot;Debug&quot;,
+    &quot;fc439a04-995e-4a7b-9c5d-88fa3c6ed18d.executor&quot;: &quot;Debug&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;merge-in-chaos-latest&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;js.last.introduce.type&quot;: &quot;LET&quot;,
+    &quot;lastPackageVersionDialogProperty&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/repos/Sichii/Chaos-Server/Chaos.Schemas&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;rider.code.cleanup.on.save&quot;: &quot;true&quot;,
+    &quot;rider.code.cleanup.on.save.profile&quot;: &quot;Custom Cleanup&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;fileTemplates&quot;,
+    &quot;settings.editor.splitter.proportion&quot;: &quot;0.21536253&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\JetBrains\\apps\\Rider\\ch-0\\233.13135.100\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Chaos">
     <configuration name="SeqConfiguratorPublish" type="DotNetFolderPublish" factoryName="Publish to folder">
       <riderPublish configuration="Release" delete_existing_files="true" platform="Any CPU" runtime="Portable" target_folder="$PROJECT_DIR$/Tools/SeqConfigurator/bin/Release/net7.0/publish" target_framework="net7.0" uuid_high="-3565605415540145261" uuid_low="-5168491521234425180" />
@@ -2007,6 +1827,12 @@
       <workItem from="1755160830282" duration="171000" />
       <workItem from="1755161075422" duration="3386000" />
       <workItem from="1755187972013" duration="1093000" />
+      <workItem from="1755338105687" duration="1886000" />
+      <workItem from="1767877548179" duration="4408000" />
+      <workItem from="1768645795367" duration="7034000" />
+      <workItem from="1769011249266" duration="9758000" />
+      <workItem from="1769031466456" duration="4415000" />
+      <workItem from="1769077998023" duration="16035000" />
     </task>
     <task id="LOCAL-00065" summary="healing&#10;- added IHealFormula and DefaultHealFormula&#10;- added IApplyHealScript and 2 variants&#10;- changed DefaultApplyDamageScript to ApplyAttackDamageScript&#10;- added ApplyNonAttackDamageScript variant&#10;- added HealComponent&#10;- added skill and spell HealScript&#10;- added OnHealed to all creature scripts&#10;- consumables now use non-alerting damage or heal functional scripts to apply their effect">
       <created>1678409128727</created>
@@ -2351,7 +2177,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687476978684</updated>
     </task>
-    <option name="localTasksCounter" value="368" />
+    <option name="localTasksCounter" value="369" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -2447,7 +2273,6 @@
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="sanitize createchar" />
     <MESSAGE value="diff hairstyle cap per gender" />
     <MESSAGE value="PreventBanking&#10;- added PreventBanking to items&#10;- allowed NoTrade and AccountBound to be modified on the item&#10;- LoginIds are logged as part of the client/aisling transform" />
     <MESSAGE value="fix verbalshopscript" />
@@ -2472,7 +2297,8 @@
     <MESSAGE value="schema documentation" />
     <MESSAGE value="gitignore" />
     <MESSAGE value="fix sln" />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="merged in chaos remote" />
+    <option name="LAST_COMMIT_MESSAGE" value="merged in chaos remote" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -2518,78 +2344,155 @@
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos.Common/Collections/FlagCollection.cs</url>
           <line>181</line>
-          <properties documentPath="D:\repos\Sichii\Chaos-Server\Chaos.Common\Collections\FlagCollection.cs" containingFunctionPresentation="Method 'RemoveFlag'" />
+          <properties documentPath="D:\repos\Sichii\Chaos-Server\Chaos.Common\Collections\FlagCollection.cs" containingFunctionPresentation="Method 'RemoveFlag'">
+            <startOffsets>
+              <option value="5922" />
+            </startOffsets>
+            <endOffsets>
+              <option value="6026" />
+            </endOffsets>
+          </properties>
           <option name="timeStamp" value="271" />
         </line-breakpoint>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos.Common/Collections/FlagCollection.cs</url>
           <line>145</line>
-          <properties documentPath="D:\repos\Sichii\Chaos-Server\Chaos.Common\Collections\FlagCollection.cs" containingFunctionPresentation="Method 'HasFlag'" />
+          <properties documentPath="D:\repos\Sichii\Chaos-Server\Chaos.Common\Collections\FlagCollection.cs" containingFunctionPresentation="Method 'HasFlag'">
+            <startOffsets>
+              <option value="4686" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4800" />
+            </endOffsets>
+          </properties>
           <option name="timeStamp" value="276" />
         </line-breakpoint>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos.Common/Collections/FlagCollection.cs</url>
           <line>147</line>
-          <properties documentPath="D:\repos\Sichii\Chaos-Server\Chaos.Common\Collections\FlagCollection.cs" containingFunctionPresentation="Method 'HasFlag'" />
+          <properties documentPath="D:\repos\Sichii\Chaos-Server\Chaos.Common\Collections\FlagCollection.cs" containingFunctionPresentation="Method 'HasFlag'">
+            <startOffsets>
+              <option value="4810" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4861" />
+            </endOffsets>
+          </properties>
           <option name="timeStamp" value="277" />
         </line-breakpoint>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos.Common/Collections/FlagCollection.cs</url>
           <line>149</line>
-          <properties documentPath="D:\repos\Sichii\Chaos-Server\Chaos.Common\Collections\FlagCollection.cs" containingFunctionPresentation="Method 'HasFlag'" />
+          <properties documentPath="D:\repos\Sichii\Chaos-Server\Chaos.Common\Collections\FlagCollection.cs" containingFunctionPresentation="Method 'HasFlag'">
+            <startOffsets>
+              <option value="4884" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4932" />
+            </endOffsets>
+          </properties>
           <option name="timeStamp" value="278" />
         </line-breakpoint>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos.Common/Collections/FlagCollection.cs</url>
           <line>152</line>
-          <properties documentPath="D:\repos\Sichii\Chaos-Server\Chaos.Common\Collections\FlagCollection.cs" containingFunctionPresentation="Method 'HasFlag'" />
+          <properties documentPath="D:\repos\Sichii\Chaos-Server\Chaos.Common\Collections\FlagCollection.cs" containingFunctionPresentation="Method 'HasFlag'">
+            <startOffsets>
+              <option value="5002" />
+            </startOffsets>
+            <endOffsets>
+              <option value="5052" />
+            </endOffsets>
+          </properties>
           <option name="timeStamp" value="279" />
         </line-breakpoint>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos.Common/Collections/FlagCollection.cs</url>
           <line>155</line>
-          <properties documentPath="D:\repos\Sichii\Chaos-Server\Chaos.Common\Collections\FlagCollection.cs" containingFunctionPresentation="Method 'HasFlag'" />
+          <properties documentPath="D:\repos\Sichii\Chaos-Server\Chaos.Common\Collections\FlagCollection.cs" containingFunctionPresentation="Method 'HasFlag'">
+            <startOffsets>
+              <option value="5072" />
+            </startOffsets>
+            <endOffsets>
+              <option value="5085" />
+            </endOffsets>
+          </properties>
           <option name="timeStamp" value="280" />
         </line-breakpoint>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos.Time/IntervalTimer.cs</url>
           <line>50</line>
-          <properties documentPath="D:\repos\Sichii\Chaos-Server\Chaos.Time\IntervalTimer.cs" containingFunctionPresentation="Method 'SetOrigin'" />
+          <properties documentPath="D:\repos\Sichii\Chaos-Server\Chaos.Time\IntervalTimer.cs" containingFunctionPresentation="Method 'SetOrigin'">
+            <startOffsets>
+              <option value="1482" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1483" />
+            </endOffsets>
+          </properties>
           <option name="timeStamp" value="369" />
         </line-breakpoint>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos.Networking/Converters/Server/DisplayDialogConverter.cs</url>
           <line>174</line>
-          <properties documentPath="D:\repos\Sichii\Chaos-Server\Chaos.Networking\Converters\Server\DisplayDialogConverter.cs" containingFunctionPresentation="Method 'Serialize'" />
+          <properties documentPath="D:\repos\Sichii\Chaos-Server\Chaos.Networking\Converters\Server\DisplayDialogConverter.cs" containingFunctionPresentation="Method 'Serialize'">
+            <startOffsets>
+              <option value="5575" />
+            </startOffsets>
+            <endOffsets>
+              <option value="5619" />
+            </endOffsets>
+          </properties>
           <option name="timeStamp" value="880" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos/Scripting/ItemScripts/Abstractions/ItemScriptBase.cs</url>
           <line>17</line>
-          <properties documentPath="D:\repos\Sichii\Chaos-Server\Chaos\Scripting\ItemScripts\Abstractions\ItemScriptBase.cs" containingFunctionPresentation="Method 'CanBeDropped'" />
+          <properties documentPath="D:\repos\Sichii\Chaos-Server\Chaos\Scripting\ItemScripts\Abstractions\ItemScriptBase.cs" containingFunctionPresentation="Method 'CanBeDropped'">
+            <startOffsets>
+              <option value="499" />
+            </startOffsets>
+            <endOffsets>
+              <option value="503" />
+            </endOffsets>
+          </properties>
           <option name="timeStamp" value="887" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos/Scripting/ItemScripts/Abstractions/ItemScriptBase.cs</url>
           <line>20</line>
-          <properties documentPath="D:\repos\Sichii\Chaos-Server\Chaos\Scripting\ItemScripts\Abstractions\ItemScriptBase.cs" containingFunctionPresentation="Method 'CanBeDroppedOn'" />
+          <properties documentPath="D:\repos\Sichii\Chaos-Server\Chaos\Scripting\ItemScripts\Abstractions\ItemScriptBase.cs" containingFunctionPresentation="Method 'CanBeDroppedOn'">
+            <startOffsets>
+              <option value="606" />
+            </startOffsets>
+            <endOffsets>
+              <option value="610" />
+            </endOffsets>
+          </properties>
           <option name="timeStamp" value="888" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos/Scripting/ItemScripts/Abstractions/ItemScriptBase.cs</url>
           <line>23</line>
-          <properties documentPath="D:\repos\Sichii\Chaos-Server\Chaos\Scripting\ItemScripts\Abstractions\ItemScriptBase.cs" containingFunctionPresentation="Method 'CanBePickedUp'" />
+          <properties documentPath="D:\repos\Sichii\Chaos-Server\Chaos\Scripting\ItemScripts\Abstractions\ItemScriptBase.cs" containingFunctionPresentation="Method 'CanBePickedUp'">
+            <startOffsets>
+              <option value="712" />
+            </startOffsets>
+            <endOffsets>
+              <option value="716" />
+            </endOffsets>
+          </properties>
           <option name="timeStamp" value="889" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos/Services/Servers/WorldServer.cs</url>
-          <line>177</line>
+          <line>184</line>
           <properties documentPath="D:\repos\Sichii\Chaos-Server\Chaos\Services\Servers\WorldServer.cs" containingFunctionPresentation="Method 'TrySetSource'">
             <startOffsets>
-              <option value="6829" />
+              <option value="6761" />
             </startOffsets>
             <endOffsets>
-              <option value="6842" />
+              <option value="6774" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="915" />
@@ -2597,297 +2500,311 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Tests/Chaos.Extensions.Geometry.Tests/CircleExtensionsTests.cs</url>
           <line>5522</line>
-          <properties documentPath="D:\repos\Sichii\Chaos-Server\Tests\Chaos.Extensions.Geometry.Tests\CircleExtensionsTests.cs" containingFunctionPresentation="Method 'Intersects_ValueCircle_ValueRectangle_Should_Return_Correct_Result'" />
+          <properties documentPath="D:\repos\Sichii\Chaos-Server\Tests\Chaos.Extensions.Geometry.Tests\CircleExtensionsTests.cs" containingFunctionPresentation="Method 'Intersects_ValueCircle_ValueRectangle_Should_Return_Correct_Result'">
+            <startOffsets>
+              <option value="161796" />
+            </startOffsets>
+            <endOffsets>
+              <option value="161852" />
+            </endOffsets>
+          </properties>
           <option name="timeStamp" value="916" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos.Storage.Abstractions/DirectoryBackupService.cs</url>
           <line>37</line>
-          <properties documentPath="D:\repos\Sichii\Chaos-Server\Chaos.Storage.Abstractions\DirectoryBackupService.cs" containingFunctionPresentation="Method 'HandleBackupRetentionAsync'" />
+          <properties documentPath="D:\repos\Sichii\Chaos-Server\Chaos.Storage.Abstractions\DirectoryBackupService.cs" containingFunctionPresentation="Method 'HandleBackupRetentionAsync'">
+            <startOffsets>
+              <option value="1178" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1227" />
+            </endOffsets>
+          </properties>
           <option name="timeStamp" value="919" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos/Formulae/Experience/DefaultExperienceFormula.cs</url>
-          <line>13</line>
+          <line>15</line>
           <properties documentPath="C:\Chaos-Server\Chaos\Formulae\Experience\DefaultExperienceFormula.cs" containingFunctionPresentation="Method 'Calculate'">
             <startOffsets>
-              <option value="345" />
+              <option value="347" />
             </startOffsets>
             <endOffsets>
-              <option value="368" />
+              <option value="370" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="924" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos/Formulae/Experience/DefaultExperienceFormula.cs</url>
-          <line>18</line>
+          <line>20</line>
           <properties documentPath="C:\Chaos-Server\Chaos\Formulae\Experience\DefaultExperienceFormula.cs" containingFunctionPresentation="Method 'Calculate'">
             <startOffsets>
-              <option value="481" />
+              <option value="483" />
             </startOffsets>
             <endOffsets>
-              <option value="540" />
+              <option value="542" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="925" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos/Scripting/FunctionalScripts/ExperienceDistribution/DefaultExperienceDistributionScript.cs</url>
-          <line>83</line>
+          <line>87</line>
           <properties documentPath="C:\Chaos-Server\Chaos\Scripting\FunctionalScripts\ExperienceDistribution\DefaultExperienceDistributionScript.cs" containingFunctionPresentation="Method 'GiveExp'">
             <startOffsets>
-              <option value="3144" />
+              <option value="3127" />
             </startOffsets>
             <endOffsets>
-              <option value="3212" />
+              <option value="3195" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="926" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos/Scripting/FunctionalScripts/ExperienceDistribution/DefaultExperienceDistributionScript.cs</url>
-          <line>84</line>
+          <line>88</line>
           <properties documentPath="C:\Chaos-Server\Chaos\Scripting\FunctionalScripts\ExperienceDistribution\DefaultExperienceDistributionScript.cs" containingFunctionPresentation="Method 'GiveExp'">
             <startOffsets>
-              <option value="3229" />
+              <option value="3212" />
             </startOffsets>
             <endOffsets>
-              <option value="3274" />
+              <option value="3257" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="927" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos/Scripting/FunctionalScripts/ExperienceDistribution/DefaultExperienceDistributionScript.cs</url>
-          <line>85</line>
+          <line>89</line>
           <properties documentPath="C:\Chaos-Server\Chaos\Scripting\FunctionalScripts\ExperienceDistribution\DefaultExperienceDistributionScript.cs" containingFunctionPresentation="Method 'GiveExp'">
             <startOffsets>
-              <option value="3291" />
+              <option value="3274" />
             </startOffsets>
             <endOffsets>
-              <option value="3336" />
+              <option value="3319" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="928" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos/Scripting/FunctionalScripts/ExperienceDistribution/DefaultExperienceDistributionScript.cs</url>
-          <line>79</line>
+          <line>82</line>
           <properties documentPath="C:\Chaos-Server\Chaos\Scripting\FunctionalScripts\ExperienceDistribution\DefaultExperienceDistributionScript.cs" containingFunctionPresentation="Method 'GiveExp'">
             <startOffsets>
-              <option value="3024" />
+              <option value="2995" />
             </startOffsets>
             <endOffsets>
-              <option value="3066" />
+              <option value="3037" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="929" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos/Formulae/Experience/DefaultExperienceFormula.cs</url>
-          <line>22</line>
+          <line>24</line>
           <properties documentPath="C:\Chaos-Server\Chaos\Formulae\Experience\DefaultExperienceFormula.cs" containingFunctionPresentation="Method 'Calculate'">
             <startOffsets>
-              <option value="757" />
+              <option value="759" />
             </startOffsets>
             <endOffsets>
-              <option value="851" />
+              <option value="853" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="930" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos/Formulae/Experience/DefaultExperienceFormula.cs</url>
-          <line>23</line>
+          <line>25</line>
           <properties documentPath="C:\Chaos-Server\Chaos\Formulae\Experience\DefaultExperienceFormula.cs" containingFunctionPresentation="Method 'Calculate'">
             <startOffsets>
-              <option value="868" />
+              <option value="870" />
             </startOffsets>
             <endOffsets>
-              <option value="937" />
+              <option value="939" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="932" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos/Scripting/FunctionalScripts/ExperienceDistribution/DefaultExperienceDistributionScript.cs</url>
-          <line>37</line>
+          <line>40</line>
           <properties documentPath="C:\Chaos-Server\Chaos\Scripting\FunctionalScripts\ExperienceDistribution\DefaultExperienceDistributionScript.cs" containingFunctionPresentation="Method 'DistributeExperience'">
             <startOffsets>
-              <option value="1556" />
+              <option value="1566" />
             </startOffsets>
             <endOffsets>
-              <option value="1578" />
+              <option value="1588" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="933" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos/Scripting/FunctionalScripts/ExperienceDistribution/DefaultExperienceDistributionScript.cs</url>
-          <line>41</line>
+          <line>44</line>
           <properties documentPath="C:\Chaos-Server\Chaos\Scripting\FunctionalScripts\ExperienceDistribution\DefaultExperienceDistributionScript.cs" containingFunctionPresentation="Method 'DistributeExperience'">
             <startOffsets>
-              <option value="1641" />
+              <option value="1650" />
             </startOffsets>
             <endOffsets>
-              <option value="1663" />
+              <option value="1672" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="934" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos/Scripting/FunctionalScripts/ExperienceDistribution/DefaultExperienceDistributionScript.cs</url>
-          <line>47</line>
+          <line>50</line>
           <properties documentPath="C:\Chaos-Server\Chaos\Scripting\FunctionalScripts\ExperienceDistribution\DefaultExperienceDistributionScript.cs" containingFunctionPresentation="Method 'GiveExp'">
             <startOffsets>
-              <option value="1761" />
+              <option value="1770" />
             </startOffsets>
             <endOffsets>
-              <option value="1776" />
+              <option value="1785" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="935" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos/Formulae/Experience/DefaultExperienceFormula.cs</url>
-          <line>50</line>
+          <line>53</line>
           <properties documentPath="C:\Chaos-Server\Chaos\Formulae\Experience\DefaultExperienceFormula.cs" containingFunctionPresentation="Method 'GetMonsterLevelDifferenceDeductions'">
             <startOffsets>
-              <option value="1752" />
+              <option value="1755" />
             </startOffsets>
             <endOffsets>
-              <option value="1785" />
+              <option value="1788" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="936" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos/Formulae/Experience/DefaultExperienceFormula.cs</url>
-          <line>51</line>
+          <line>54</line>
           <properties documentPath="C:\Chaos-Server\Chaos\Formulae\Experience\DefaultExperienceFormula.cs" containingFunctionPresentation="Method 'GetMonsterLevelDifferenceDeductions'">
             <startOffsets>
-              <option value="1804" />
+              <option value="1807" />
             </startOffsets>
             <endOffsets>
-              <option value="1863" />
+              <option value="1866" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="937" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos/Formulae/Experience/DefaultExperienceFormula.cs</url>
-          <line>52</line>
+          <line>55</line>
           <properties documentPath="C:\Chaos-Server\Chaos\Formulae\Experience\DefaultExperienceFormula.cs" containingFunctionPresentation="Method 'GetMonsterLevelDifferenceDeductions'">
             <startOffsets>
-              <option value="1872" />
+              <option value="1875" />
             </startOffsets>
             <endOffsets>
-              <option value="1915" />
+              <option value="1918" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="938" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos/Formulae/Experience/DefaultExperienceFormula.cs</url>
-          <line>53</line>
+          <line>56</line>
           <properties documentPath="C:\Chaos-Server\Chaos\Formulae\Experience\DefaultExperienceFormula.cs" containingFunctionPresentation="Method 'GetMonsterLevelDifferenceDeductions'">
             <startOffsets>
-              <option value="1924" />
+              <option value="1927" />
             </startOffsets>
             <endOffsets>
-              <option value="1980" />
+              <option value="1983" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="939" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos/Formulae/Experience/DefaultExperienceFormula.cs</url>
-          <line>56</line>
+          <line>59</line>
           <properties documentPath="C:\Chaos-Server\Chaos\Formulae\Experience\DefaultExperienceFormula.cs" containingFunctionPresentation="Method 'GetMonsterLevelDifferenceDeductions'">
             <startOffsets>
-              <option value="2084" />
+              <option value="2087" />
             </startOffsets>
             <endOffsets>
-              <option value="2109" />
+              <option value="2112" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="940" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos/Formulae/Experience/DefaultExperienceFormula.cs</url>
-          <line>60</line>
+          <line>63</line>
           <properties documentPath="C:\Chaos-Server\Chaos\Formulae\Experience\DefaultExperienceFormula.cs" containingFunctionPresentation="Method 'GetMonsterLevelDifferenceDeductions'">
             <startOffsets>
-              <option value="2219" />
+              <option value="2222" />
             </startOffsets>
             <endOffsets>
-              <option value="2362" />
+              <option value="2365" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="941" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos/Formulae/Experience/DefaultExperienceFormula.cs</url>
-          <line>19</line>
+          <line>21</line>
           <properties documentPath="C:\Chaos-Server\Chaos\Formulae\Experience\DefaultExperienceFormula.cs" containingFunctionPresentation="Method 'Calculate'">
             <startOffsets>
-              <option value="557" />
+              <option value="559" />
             </startOffsets>
             <endOffsets>
-              <option value="638" />
+              <option value="640" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="942" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos/Formulae/Experience/DefaultExperienceFormula.cs</url>
-          <line>20</line>
+          <line>22</line>
           <properties documentPath="C:\Chaos-Server\Chaos\Formulae\Experience\DefaultExperienceFormula.cs" containingFunctionPresentation="Method 'Calculate'">
             <startOffsets>
-              <option value="655" />
+              <option value="657" />
             </startOffsets>
             <endOffsets>
-              <option value="739" />
+              <option value="741" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="943" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos/Formulae/Experience/DefaultExperienceFormula.cs</url>
-          <line>65</line>
+          <line>68</line>
           <properties documentPath="C:\Chaos-Server\Chaos\Formulae\Experience\DefaultExperienceFormula.cs" containingFunctionPresentation="Method 'GetMonsterLevelDifferenceDeductions'">
             <startOffsets>
-              <option value="2347" />
+              <option value="2350" />
             </startOffsets>
             <endOffsets>
-              <option value="2351" />
+              <option value="2354" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="944" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos/Formulae/Experience/DefaultExperienceFormula.cs</url>
-          <line>64</line>
+          <line>67</line>
           <properties documentPath="C:\Chaos-Server\Chaos\Formulae\Experience\DefaultExperienceFormula.cs" containingFunctionPresentation="Method 'GetMonsterLevelDifferenceDeductions'">
             <startOffsets>
-              <option value="2323" />
+              <option value="2326" />
             </startOffsets>
             <endOffsets>
-              <option value="2328" />
+              <option value="2331" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="945" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Chaos/Formulae/Experience/DefaultExperienceFormula.cs</url>
-          <line>63</line>
+          <line>66</line>
           <properties documentPath="C:\Chaos-Server\Chaos\Formulae\Experience\DefaultExperienceFormula.cs" containingFunctionPresentation="Method 'GetMonsterLevelDifferenceDeductions'">
             <startOffsets>
-              <option value="2299" />
+              <option value="2302" />
             </startOffsets>
             <endOffsets>
-              <option value="2304" />
+              <option value="2307" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="946" />

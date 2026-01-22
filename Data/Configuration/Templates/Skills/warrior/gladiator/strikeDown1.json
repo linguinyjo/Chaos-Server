@@ -2,39 +2,39 @@
     "isAssail": false,
     "learningRequirements": {
         "itemRequirements": [],
-        "requiredGold": 0,
+        "requiredGold": 1000,
         "requiredStats": {
-            "str": 12,
-            "int": 4,
-            "wis": 8,
-            "con": 28,
-            "dex": 8
+            "con": 3,
+            "dex": 4,
+            "int": 3,
+            "str": 11,
+            "wis": 3
         },
         "prerequisiteSkills": [],
         "prerequisiteSpells": []
     },
-    "description": "Deals Moderate damage to surrounding enemies",
-    "level": 71,
+    "description": "A powerful strike in the direction your facing.\n\nGold required: 1000\nItems required: \nLocation: Mileth Combat Skill Master",
+    "level": 41,
     "levelsUp": true,
-    "name": "Dune Swipe 1",
+    "name": "Strikedown 1",
     "class": "gladiator",
-    "panelSprite": 74,
-    "cooldownMs": 18000,
+    "panelSprite": 73,
+    "cooldownMs": 12000,
     "scriptKeys": ["damage"],
     "scriptVars": {
         "damage": {
-            "bodyAnimation": "assail",
+            "bodyAnimation": 1,
             "sound": 45,
             "damageStat": "str",
             "range": 1,
-            "shape": "allAround",
+            "shape": "front",
             "exclusionRange": 0,
-            "damageStatMultiplier": 3,
-            "baseDamage": 50,
+            "damageStatMultiplier": 5,
+            "baseDamage": 30,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "PAtkMultiplier": 50,
             "levelUpRate": "medium"
         }
     },
-    "templateKey": "dune_swipe_1"
+    "templateKey": "strikeDown1"
 }

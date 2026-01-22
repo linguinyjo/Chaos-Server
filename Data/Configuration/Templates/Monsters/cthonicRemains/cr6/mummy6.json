@@ -1,0 +1,45 @@
+{
+  "assailIntervalMs": 1500,
+  "expReward": 6592,
+  "moveIntervalMs": 1500,
+  "aggroRange": 12,
+  "name": "Mummy",
+  "lootTableKeys": [],
+  "scriptKeys": [
+    "default",
+    "SetRandomElement"
+  ],
+  "scriptVars": {},
+  "skillIntervalMs": 1500,
+  "skillTemplateKeys": [
+    "Assail",
+    "duneSwipe1"
+  ],
+  "spellIntervalMs": 13000,
+  "spellTemplateKeys": [
+    "mor_sal",
+    "mor_sal",
+    "mor_creag",
+    "mor_srad",
+    "mor_cradh",
+    "puinsein"
+  ],
+  "sprite": 188,
+  "statSheet": {
+    "level": 78,
+    "ac": -45,
+    "maximumHp": 32000,
+    "maximumMp": 5000,
+    "physicalAttack": 450,
+    "magicAttack": 300,
+    "con": 50,
+    "dex": 45,
+    "int": 48,
+    "str": 55,
+    "wis": 33,
+    "magicResistance": 20
+  },
+  "templateKey": "mummy6",
+  "type": "Normal",
+  "wanderIntervalMs": 1000
+}
