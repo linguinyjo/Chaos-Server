@@ -1,14 +1,8 @@
-using Chaos.DarkAges.Definitions;
-using Chaos.Common.Utilities;
-using Chaos.Extensions;
 using Chaos.Extensions.Geometry;
 using Chaos.Models.Data;
-using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
-using Chaos.Scripting.Abstractions;
 using Chaos.Scripting.Components.Abstractions;
 using Chaos.Scripting.Components.Execution;
-using Chaos.Scripting.FunctionalScripts.Abstractions;
 
 namespace Chaos.Scripting.Components.AbilityComponents;
 
@@ -43,7 +37,7 @@ public struct PounceAbilityComponent : IComponent
             var destinationPoint = target.DirectionalOffset(frontOfTargetDirection);
 
             // Check if the point is walkable and not blocked
-            if (!context.TargetMap.IsWalkable(destinationPoint, context.Source.Type) ||
+            if (!context.TargetMap.IsWalkable(destinationPoint, context.Source) ||
                 context.TargetMap.IsBlockingReactor(destinationPoint)) continue;
 
             context.Source.WarpTo(destinationPoint);
@@ -83,7 +77,7 @@ public struct PounceAbilityComponent : IComponent
                         var destinationPoint = target.DirectionalOffset(direction);
 
                         //if that point is not walkable or is a reactor, continue
-                        if (!context.TargetMap.IsWalkable(destinationPoint, context.Source.Type)
+                        if (!context.TargetMap.IsWalkable(destinationPoint, context.Source)
                             || context.TargetMap.IsBlockingReactor(destinationPoint))
                             continue;
 

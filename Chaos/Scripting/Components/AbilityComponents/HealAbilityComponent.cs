@@ -1,13 +1,13 @@
 #region
-using Chaos.Common.Utilities;
+
 using Chaos.DarkAges.Definitions;
-using Chaos.Extensions.Common;
 using Chaos.Models.Data;
 using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
 using Chaos.Scripting.Components.Abstractions;
 using Chaos.Scripting.Components.Execution;
 using Chaos.Scripting.FunctionalScripts.Abstractions;
+
 #endregion
 
 namespace Chaos.Scripting.Components.AbilityComponents;
@@ -53,33 +53,48 @@ public struct HealAbilityComponent : IComponent
         decimal? healStatMultiplier = null,
         decimal? magicAttackMultiplier = null,
         decimal? abilityMultiplier = null
-        )
+    )
     {
         var finalHeal = baseHeal ?? 0;
-        finalHeal += MathEx.GetPercentOf<int>((int)target.StatSheet.EffectiveMaximumHp, pctHpHeal ?? 0);
+        finalHeal += (int)(
+            target.StatSheet.EffectiveMaximumHp * (pctHpHeal ?? 0) / 100m
+        );
+
+        finalHeal += (int)(
+            target.StatSheet.EffectiveMaximumHp * ((pctHpHeal ?? 0) / 100m)
+        );
 
         // Apply bonus heal from the skill level
         if (abilityMultiplier is > 0)
         {
             finalHeal = Convert.ToInt32(finalHeal * abilityMultiplier.Value);
         }
-        
+
         if (magicAttackMultiplier.HasValue)
         {
-            finalHeal += Convert.ToInt32(source.StatSheet.EffectiveMagicAttack * magicAttackMultiplier.Value); 
+            finalHeal += Convert.ToInt32(source.StatSheet.EffectiveMagicAttack * magicAttackMultiplier.Value);
         }
-        
+
         if (!healStat.HasValue) return finalHeal;
-        
+
         if (!healStatMultiplier.HasValue)
         {
             finalHeal += source.StatSheet.GetEffectiveStat(healStat.Value);
             return finalHeal;
         }
-        
+
         finalHeal += Convert.ToInt32(source.StatSheet.GetEffectiveStat(healStat.Value) * healStatMultiplier.Value);
 
         return finalHeal;
+    }
+
+    private static decimal CalculateAbilityHealMultiplier(Aisling? aisling, string? abilityTemplateKey)
+    {
+        if (aisling == null || abilityTemplateKey == null) return 0;
+        var level = aisling.SpellBook.TryGetObjectByTemplateKey(abilityTemplateKey, out var spell)
+            ? spell.Level
+            : (byte)0;
+        return (decimal)(1.0f + level / 100f * 0.2f);
     }
 
     public interface IHealComponentOptions

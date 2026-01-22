@@ -1,6 +1,4 @@
 using Chaos.DarkAges.Definitions;
-using Chaos.Common.Utilities;
-using Chaos.DarkAges.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
@@ -47,7 +45,7 @@ public struct DamageSelfAbilityComponent : IComponent
     )
     {
         var finalDamage = baseDamage ?? 0;
-        finalDamage += MathEx.GetPercentOf<int>(target.StatSheet.CurrentHp, pctHpDamage ?? 0);
+        finalDamage += (int)(target.StatSheet.CurrentHp * ((pctHpDamage ?? 0) / 100m));
         return finalDamage;
     }
 

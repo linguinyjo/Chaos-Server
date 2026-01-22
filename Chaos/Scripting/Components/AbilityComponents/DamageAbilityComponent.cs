@@ -1,18 +1,13 @@
 #region
-using Chaos.Common.Utilities;
+
 using Chaos.DarkAges.Definitions;
 using Chaos.Extensions.Geometry;
-using Chaos.Geometry.Abstractions.Definitions;
-using Chaos.Extensions.Common;
 using Chaos.Models.Data;
 using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
 using Chaos.Scripting.Components.Abstractions;
 using Chaos.Scripting.Components.Execution;
 using Chaos.Scripting.FunctionalScripts.Abstractions;
-using Chaos.Scripting.MonsterScripts;
-using Chaos.Scripting.MonsterScripts.Abstractions;
-using Microsoft.Extensions.Options;
 
 #endregion
 
@@ -90,9 +85,9 @@ public struct DamageAbilityComponent : IComponent
         if (!components.PctHpDamage.HasValue) return currentDamage;
         if (components.PctHpDamage.HasValue)
         {
-            currentDamage += MathEx.GetPercentOf<int>(
-                source.StatSheet.CurrentHp,
-                (decimal)components.PctHpDamage);
+            currentDamage += (int)(
+                source.StatSheet.CurrentHp * ((decimal)components.PctHpDamage / 100m)
+            );
         }
 
         return currentDamage;
