@@ -40,10 +40,10 @@ public abstract class AllianceKillScriptBase : MonsterScriptBase
             return;
         }
 
-        var requiredMapId = Player.Trackers.LastMapInstanceId;
+        var requiredMapId = Player.GetCurrentLocation().Map;
         foreach (var aisling in Player.Group)
         {
-            if (aisling.Trackers.LastMapInstanceId != requiredMapId) continue;
+            if (aisling.GetCurrentLocation().Map != requiredMapId) continue;
             TryGivePlayerGemstone(aisling);
         }
     }

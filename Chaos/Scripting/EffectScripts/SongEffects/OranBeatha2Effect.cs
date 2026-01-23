@@ -10,7 +10,7 @@ using Chaos.Scripting.FunctionalScripts.Abstractions;
 using Chaos.Time;
 using Chaos.Time.Abstractions;
 
-namespace Chaos.Scripting.EffectScripts.RegenerationEffects;
+namespace Chaos.Scripting.EffectScripts.SongEffects;
 
 /// <summary>
 ///  The healing power will be roughly half the equivalent level of ioc
@@ -20,17 +20,16 @@ public sealed class OranBeatha2Effect : ContinuousAnimationEffectBase,
     HealAbilityComponent.IHealComponentOptions,
     GetTargetsAbilityComponent<Creature>.IGetTargetsComponentOptions
 {
-    private Creature _source;
+    private Creature? _source;
 
-    public OranBeatha2Effect(Creature source)
+    public OranBeatha2Effect()
     {
-        _source = source;
         SourceScript = this;
-        AbilityTemplateKey = Name;
+        AbilityTemplateKey = "oran beatha 2";
     }
 
     /// <inheritdoc />
-    protected override TimeSpan Duration { get; set; } = TimeSpan.FromSeconds(8);
+    protected override TimeSpan Duration { get; set; } = TimeSpan.FromSeconds(12);
 
     /// <inheritdoc />
     protected override Animation Animation { get; } = new()
@@ -76,9 +75,10 @@ public sealed class OranBeatha2Effect : ContinuousAnimationEffectBase,
     /// <inheritdoc />
     protected override void OnIntervalElapsed()
     {
-        new ComponentExecutor(_source, Subject)
-            .WithOptions(this)
-            .ExecuteAndCheck<GetTargetsAbilityComponent<Creature>>()
-            ?.Execute<HealAbilityComponent>();
+        if (_source != null)
+            new ComponentExecutor(_source, Subject)
+                .WithOptions(this)
+                .ExecuteAndCheck<GetTargetsAbilityComponent<Creature>>()
+                ?.Execute<HealAbilityComponent>();
     }
 }

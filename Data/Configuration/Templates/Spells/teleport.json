@@ -27,7 +27,7 @@
     "scriptVars": {
         "teleport": {
             "dialogKey": "teleport_menu",
-            "PctManaCost": 100
+            "PctManaCost": 1
         }
     },
     "templateKey": "teleport"

@@ -1,2 +1,43 @@
 [
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 500,
+    "intervalVariancePct": 10,
+    "extraLootTableKeys": [
+    ],
+    "maxAmount": 12,
+    "maxPerSpawn": 12,
+    "monsterTemplateKey": "dholelarva2"
+  },
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 500,
+    "intervalVariancePct": 10,
+    "extraLootTableKeys": [],
+    "maxAmount": 12,
+    "maxPerSpawn": 12,
+    "monsterTemplateKey": "nagetierdieter2"
+  },
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 500,
+    "intervalVariancePct": 10,
+    "extraLootTableKeys": [],
+    "maxAmount": 12,
+    "maxPerSpawn": 12,
+    "monsterTemplateKey": "scarletbeetle2"
+  },
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 500,
+    "intervalVariancePct": 10,
+    "extraLootTableKeys": [],
+    "maxAmount": 8,
+    "maxPerSpawn": 8,
+    "monsterTemplateKey": "qualgeist2"
+  }
 ]

@@ -34,6 +34,8 @@ public class PuinseinEffect : ContinuousAnimationEffectBase
     /// <inheritdoc />
     protected override void OnIntervalElapsed()
     {
+        if (AislingSubject?.IsAdmin == true) return;
+
         if (Subject.StatSheet.CurrentHp <= 1) return;
         var damagePerTick = (int)(Subject.StatSheet.EffectiveMaximumHp * 0.03);
         if (Subject.StatSheet.CurrentHp <= damagePerTick)

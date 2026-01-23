@@ -9,11 +9,7 @@ public class GeneralOnKillScript : ConfigurableMonsterScriptBase
 {
     private readonly IItemFactory ItemFactory;
     private Aisling? player;
-    
-    #region ScriptVars
-    protected string? ItemTemplateKey { get; init; }
-    #endregion
-    
+
     /// <inheritdoc />
     public GeneralOnKillScript(Monster subject, IItemFactory itemFactory)
         : base(subject)
@@ -21,12 +17,18 @@ public class GeneralOnKillScript : ConfigurableMonsterScriptBase
         ItemFactory = itemFactory;
     }
 
+    #region ScriptVars
+
+    protected string? ItemTemplateKey { get; init; }
+
+    #endregion
+
     /// <inheritdoc />
     public override void OnAttacked(Creature source, int damage, int? aggroOverride)
     {
         player ??= source as Aisling;
     }
-    
+
     public override void OnDeath()
     {
         if (player == null) return;
@@ -35,11 +37,11 @@ public class GeneralOnKillScript : ConfigurableMonsterScriptBase
             GivePlayerGoblinHeartArmor(player);
             return;
         }
-        
-        var requiredMapId = player?.Trackers.LastMapInstanceId;
+
+        var requiredMapId = player?.GetCurrentLocation().Map;
         foreach (var aisling in player.Group)
         {
-            if (aisling.Trackers.LastMapInstanceId != requiredMapId) continue;
+            if (aisling.GetCurrentLocation().Map != requiredMapId) continue;
             GivePlayerGoblinHeartArmor(aisling);
         }
     }

@@ -1,2 +1,45 @@
 [
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 500,
+    "intervalVariancePct": 10,
+    "extraLootTableKeys": [
+    ],
+    "maxAmount": 12,
+    "maxPerSpawn": 12,
+    "monsterTemplateKey": "boneCollector8"
+  },
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 500,
+    "intervalVariancePct": 10,
+    "extraLootTableKeys": [],
+    "maxAmount": 10,
+    "maxPerSpawn": 10,
+    "monsterTemplateKey": "mummy8"
+  },
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 500,
+    "intervalVariancePct": 10,
+    "extraLootTableKeys": [],
+    "maxAmount": 8,
+    "maxPerSpawn": 8,
+    "monsterTemplateKey": "scarletbeetle8"
+  },
+  {
+    "blackList": [],
+    "extraScriptKeys": [],
+    "intervalSecs": 500,
+    "intervalVariancePct": 10,
+    "extraLootTableKeys": [],
+    "maxAmount": 10,
+    "maxPerSpawn": 10,
+    "monsterTemplateKey": "qualgeist8"
+  }
 ]
+
+

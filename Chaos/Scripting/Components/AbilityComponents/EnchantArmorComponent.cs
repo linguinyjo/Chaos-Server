@@ -19,7 +19,7 @@ public struct EnchantArmorComponent : IConditionalComponent
 
         if (item.LevelCircle != options.LevelCircle ||
             item.Template.EquipmentType is not (EquipmentType.Armor or EquipmentType.Gauntlet or EquipmentType.Greaves
-                or EquipmentType.Boots)
+                or EquipmentType.Boots or EquipmentType.Shield)
            )
         {
             context.SourceAisling?.SendOrangeBarMessage(

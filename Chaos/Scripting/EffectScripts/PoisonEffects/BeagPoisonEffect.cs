@@ -1,5 +1,4 @@
 using Chaos.DarkAges.Definitions;
-using Chaos.DarkAges.Definitions;
 using Chaos.Models.Data;
 using Chaos.Scripting.Components.EffectComponents;
 using Chaos.Scripting.EffectScripts.Abstractions;
@@ -45,6 +44,8 @@ public class BeagPoisonEffect : ContinuousAnimationEffectBase,
     /// <inheritdoc />
     protected override void OnIntervalElapsed()
     {
+        if (AislingSubject?.IsAdmin == true) return;
+
         if (Subject.StatSheet.CurrentHp <= DamagePerTick)
             return;
 

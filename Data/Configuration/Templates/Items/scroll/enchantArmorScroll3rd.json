@@ -7,9 +7,9 @@
   "sellValue": 500,
   "weight": 1,
   "description": "A magical scroll for enchanting armor of the third circle",
-  "name": "Enchant Armor Scroll",
+  "name": "Enchant Armor Scroll (C3)",
   "panelSprite": 3299,
-  "levelCircle": 2,
+  "levelCircle": 3,
   "scriptKeys": [
     "enchantArmor"
   ],

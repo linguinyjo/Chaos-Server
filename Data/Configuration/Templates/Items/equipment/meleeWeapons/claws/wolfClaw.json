@@ -1,0 +1,29 @@
+{
+  "buyCost": 500000,
+  "category": "claw",
+  "color": "Default",
+  "displaySprite": 86,
+  "equipmentType": "Weapon",
+  "gender": "Unisex",
+  "isModifiable": true,
+  "maxDurability": 30000,
+  "maxStacks": 1,
+  "level": 41,
+  "levelCircle": 3,
+  "class": "monk",
+  "modifiers": {
+    "physicalAttack": 112
+  },
+  "sellValue": 250000,
+  "weight": 4,
+  "description": "Class: Brawler\nLevel: 41\nP.Atk 116",
+  "name": "Wolf Claw",
+  "panelSprite": 1098,
+  "scriptKeys": [
+    "Equipment"
+  ],
+  "scriptVars": {
+    "equipment": {}
+  },
+  "templateKey": "wolfClaw"
+}

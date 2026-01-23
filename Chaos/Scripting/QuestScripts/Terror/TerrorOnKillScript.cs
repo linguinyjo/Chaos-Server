@@ -36,10 +36,10 @@ public class TerrorOnKillScript : ConfigurableMonsterScriptBase
             return;
         }
 
-        var requiredMapId = player.Trackers.LastMapInstanceId;
+        var requiredMapId = player.GetCurrentLocation().Map;
         foreach (var aisling in player.Group)
         {
-            if (aisling.Trackers.LastMapInstanceId != requiredMapId) continue;
+            if (aisling.GetCurrentLocation().Map != requiredMapId) continue;
             TerrorQuestHelper.IncrementQuestStage(aisling);
             aisling.TraverseMap(targetMap, Destination);
         }

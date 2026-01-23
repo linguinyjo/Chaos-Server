@@ -30,7 +30,7 @@
             "exclusionRange": 0,
             "damageStatMultiplier": 0.25,
             "baseDamage": 3,
-            "PAtkMultiplier": -80,
+            "PAtkMultiplier": -60,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "levelUpRate": "medium"
         }

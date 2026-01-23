@@ -1,0 +1,41 @@
+{
+  "isAssail": true,
+  "learningRequirements": {
+    "itemRequirements": [],
+    "requiredGold": 10000,
+    "requiredStats": {
+      "con": 12,
+      "dex": 8,
+      "int": 3,
+      "str": 14,
+      "wis": 3
+    },
+    "prerequisiteSkills": [],
+    "prerequisiteSpells": []
+  },
+  "description": "A monk's third assail.\n\nGold required: 5000\nItems required: \nLocation: Mileth Combat Skill Master",
+  "level": 41,
+  "levelsUp": true,
+  "name": "Triple Kick",
+  "class": "monk",
+  "panelSprite": 11,
+  "scriptKeys": [
+    "damage"
+  ],
+  "scriptVars": {
+    "damage": {
+      "bodyAnimation": "kick",
+      "damageStat": "str",
+      "range": 1,
+      "shape": "front",
+      "exclusionRange": 0,
+      "damageStatMultiplier": 0.50,
+      "baseDamage": 15,
+      "filter": "hostileOnly, aliveOnly, othersOnly",
+      "PAtkMultiplier": -60,
+      "fistBonus": 75,
+      "levelUpRate": "medium"
+    }
+  },
+  "templateKey": "tripleKick"
+}

@@ -9,7 +9,7 @@ public class GoblinChiefDropScript : MonsterScriptBase
 {
     private readonly IItemFactory ItemFactory;
     private Aisling? player;
-    
+
     /// <inheritdoc />
     public GoblinChiefDropScript(Monster subject, IItemFactory itemFactory)
         : base(subject)
@@ -22,7 +22,7 @@ public class GoblinChiefDropScript : MonsterScriptBase
     {
         player ??= source as Aisling;
     }
-    
+
     public override void OnDeath()
     {
         if (player == null) return;
@@ -31,18 +31,19 @@ public class GoblinChiefDropScript : MonsterScriptBase
             GivePlayerGoblinHeartArmor(player);
             return;
         }
-        
-        var requiredMapId = player?.Trackers.LastMapInstanceId;
+
+        var requiredMapId = player?.GetCurrentLocation().Map;
         foreach (var aisling in player.Group)
         {
-            if (aisling.Trackers.LastMapInstanceId != requiredMapId) continue;
+            if (aisling.GetCurrentLocation().Map != requiredMapId) continue;
             GivePlayerGoblinHeartArmor(aisling);
         }
     }
 
     private void GivePlayerGoblinHeartArmor(Aisling aisling)
     {
-        if (GeneralsOfDarknessQuestHelper.GetQuestStatus(aisling) != GeneralsOfDarknessQuestStatus.SlayTheGenerals) return;
+        if (GeneralsOfDarknessQuestHelper.GetQuestStatus(aisling) !=
+            GeneralsOfDarknessQuestStatus.SlayTheGenerals) return;
         if (aisling.Inventory.HasCountByTemplateKey("goblinChiefHeart", 1)) return;
         var item = ItemFactory.Create("goblinChiefHeart");
         aisling.Inventory.TryAddToNextSlot(item);

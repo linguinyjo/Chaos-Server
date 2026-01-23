@@ -173,6 +173,7 @@ public struct DamageAbilityComponent : IComponent
         if (components.IsSpell is true) return finalDamage;
         if (source.Direction == target.Direction)
         {
+            // TODO Assassin maybe 1.75x or 2.0x?
             return Convert.ToInt32(finalDamage * 1.5);
         }
 

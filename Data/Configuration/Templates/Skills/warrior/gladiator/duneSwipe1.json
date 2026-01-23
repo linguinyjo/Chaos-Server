@@ -29,8 +29,8 @@
             "range": 1,
             "shape": "allAround",
             "exclusionRange": 0,
-            "damageStatMultiplier": 3,
-            "baseDamage": 50,
+            "damageStatMultiplier": 10,
+            "baseDamage": 100,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "PAtkMultiplier": 50,
             "levelUpRate": "medium"

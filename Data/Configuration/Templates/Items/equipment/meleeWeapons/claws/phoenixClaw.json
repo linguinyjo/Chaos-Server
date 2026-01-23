@@ -1,0 +1,31 @@
+{
+  "buyCost": 500000,
+  "category": "claw",
+  "color": "Default",
+  "displaySprite": 116,
+  "equipmentType": "Weapon",
+  "gender": "Unisex",
+  "isModifiable": true,
+  "maxDurability": 30000,
+  "maxStacks": 1,
+  "level": 41,
+  "levelCircle": 3,
+  "class": "monk",
+  "modifiers": {
+    "physicalAttack": 148,
+    "str": 4,
+    "con": 4
+  },
+  "sellValue": 250000,
+  "weight": 4,
+  "description": "Class: Brawler\nLevel: 41\nP.Atk 148, str 4, con 4",
+  "name": "Phoenix Claw",
+  "panelSprite": 1421,
+  "scriptKeys": [
+    "Equipment"
+  ],
+  "scriptVars": {
+    "equipment": {}
+  },
+  "templateKey": "phoenixClaw"
+}

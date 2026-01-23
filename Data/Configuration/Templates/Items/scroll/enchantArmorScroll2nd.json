@@ -7,7 +7,7 @@
   "sellValue": 500,
   "weight": 1,
   "description": "A magical scroll for enchanting armor of the second circle",
-  "name": "Enchant Armor Scroll",
+  "name": "Enchant Armor Scroll (C2)",
   "panelSprite": 3298,
   "levelCircle": 2,
   "scriptKeys": [

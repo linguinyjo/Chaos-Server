@@ -1090,7 +1090,9 @@ public sealed class Aisling : Creature, IScripted<IAislingScript>, IDialogSource
                 return false;
         }
 
+        if (HasSow(out var effect) && effect != null) Effects.Dispel(effect);
         skill.Use(context);
+
         Trackers.LastSkillUse = DateTime.UtcNow;
         Trackers.LastUsedSkill = skill;
 

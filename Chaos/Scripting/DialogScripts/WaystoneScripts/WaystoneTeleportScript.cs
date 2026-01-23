@@ -6,19 +6,19 @@ using Chaos.Scripting.DialogScripts.Abstractions;
 using Chaos.Scripting.SpellScripts.WaystoneScripts;
 using Chaos.Storage.Abstractions;
 
-namespace Chaos.Scripting.DialogScripts;
+namespace Chaos.Scripting.DialogScripts.WaystoneScripts;
 
-public class WaystoneTeleportScript: DialogScriptBase
+public class WaystoneTeleportScript : DialogScriptBase
 {
+    private readonly List<Waystone> _optionWaystones = [];
     private readonly ISimpleCache SimpleCache;
-    
+
     /// <inheritdoc />
     public WaystoneTeleportScript(Dialog subject, ISimpleCache simpleCache)
-        : base(subject)   {
+        : base(subject)
+    {
         SimpleCache = simpleCache;
     }
-    
-    private readonly List<Waystone> _optionWaystones = [];
 
     /// <inheritdoc />
     public override void OnDisplaying(Aisling source)
@@ -42,7 +42,8 @@ public class WaystoneTeleportScript: DialogScriptBase
     }
 
     public override void OnDisplayed(Aisling source)
-    {}
+    {
+    }
 
     public override void OnNext(Aisling source, byte? optionIndex = null)
     {
@@ -61,10 +62,10 @@ public class WaystoneTeleportScript: DialogScriptBase
         {
             var waystoneInfo = WaystoneData.GetWaystoneInfo(selectedWaystone);
             Console.WriteLine($"Teleporting to {selectedWaystone}");
-            
+
             var mapInstance = SimpleCache.Get<MapInstance>(waystoneInfo.MapName);
             var destination = waystoneInfo.Location;
-            
+
             if (source.Group == null)
             {
                 _ = PerformTeleport(source, mapInstance, destination);
@@ -72,11 +73,10 @@ public class WaystoneTeleportScript: DialogScriptBase
                 return;
             }
 
-            
-            var requiredMapId = source.Trackers.LastMapInstanceId;
-            
+            var requiredMapId = source.GetCurrentLocation().Map;
+
             _ = PerformTeleportAsync(source.Group, mapInstance, destination, requiredMapId);
-            
+
             Subject.Close(source);
         }
         else
@@ -84,14 +84,13 @@ public class WaystoneTeleportScript: DialogScriptBase
             Console.WriteLine("No valid waystone selected.");
         }
     }
-    
+
     private static async Task PerformTeleportAsync(IEnumerable<Aisling> aislings, MapInstance mapInstance,
         Location destination, string? requiredMapId)
     {
-        
-        var aislingsToTeleport = aislings.Where(aisling => aisling.Trackers.LastMapInstanceId == requiredMapId).ToArray();
+        var aislingsToTeleport = aislings.Where(aisling => aisling.GetCurrentLocation().Map == requiredMapId).ToArray();
         var currentLocations = aislingsToTeleport.Select(aisling => aisling.GetCurrentLocation()).ToList();
-        
+
         foreach (var aisling in aislingsToTeleport)
         {
             aisling.Client.SendSound(47, false);

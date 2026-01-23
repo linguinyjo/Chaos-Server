@@ -9,7 +9,7 @@ public class GoblinArmorDropScript : MonsterScriptBase
 {
     private readonly IItemFactory ItemFactory;
     private Aisling? player;
-    
+
     /// <inheritdoc />
     public GoblinArmorDropScript(Monster subject, IItemFactory itemFactory)
         : base(subject)
@@ -22,7 +22,7 @@ public class GoblinArmorDropScript : MonsterScriptBase
     {
         player ??= source as Aisling;
     }
-    
+
     public override void OnDeath()
     {
         if (player == null) return;
@@ -31,11 +31,11 @@ public class GoblinArmorDropScript : MonsterScriptBase
             GivePlayerGoblinArmor(player);
             return;
         }
-        
-        var requiredMapId = player?.Trackers.LastMapInstanceId;
+
+        var requiredMapId = player?.GetCurrentLocation().Map;
         foreach (var aisling in player.Group)
         {
-            if (aisling.Trackers.LastMapInstanceId != requiredMapId) continue;
+            if (player?.GetCurrentLocation().Map != requiredMapId) continue;
             GivePlayerGoblinArmor(aisling);
         }
     }

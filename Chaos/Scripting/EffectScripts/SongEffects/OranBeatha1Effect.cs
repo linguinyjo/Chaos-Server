@@ -10,7 +10,7 @@ using Chaos.Scripting.FunctionalScripts.Abstractions;
 using Chaos.Time;
 using Chaos.Time.Abstractions;
 
-namespace Chaos.Scripting.EffectScripts.RegenerationEffects;
+namespace Chaos.Scripting.EffectScripts.SongEffects;
 
 /// <summary>
 ///  The healing power will be roughly half the equivalent level of ioc
@@ -21,7 +21,6 @@ public sealed class OranBeatha1Effect : ContinuousAnimationEffectBase,
     GetTargetsAbilityComponent<Creature>.IGetTargetsComponentOptions
 {
     private Creature? _source;
-    private Creature _target;
 
     public OranBeatha1Effect()
     {
@@ -71,7 +70,6 @@ public sealed class OranBeatha1Effect : ContinuousAnimationEffectBase,
     public override bool ShouldApply(Creature source, Creature target)
     {
         _source = source;
-        _target = target;
         return base.ShouldApply(source, target);
     }
 

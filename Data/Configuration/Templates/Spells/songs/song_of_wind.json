@@ -19,7 +19,7 @@
   "level": 71,
   "name": "song of wind",
   "spellCategory": "Song",
-  "panelSprite": 11,
+  "panelSprite": 92,
   "levelsUp": true,
   "scriptKeys": [
     "applyEffect"

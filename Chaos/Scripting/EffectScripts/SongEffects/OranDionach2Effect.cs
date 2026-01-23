@@ -1,14 +1,12 @@
 using Chaos.DarkAges.Definitions;
-using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.World.Abstractions;
 using Chaos.Scripting.Components.AbilityComponents;
 using Chaos.Scripting.Components.EffectComponents;
-using Chaos.Scripting.Components.Execution;
 using Chaos.Scripting.EffectScripts.Abstractions;
 
-namespace Chaos.Scripting.EffectScripts.BuffEffects;
+namespace Chaos.Scripting.EffectScripts.SongEffects;
 
 public sealed class OranDionach2Effect : EffectBase,
     NonOverwritableEffectComponent.INonOverwritableEffectComponentOptions,
