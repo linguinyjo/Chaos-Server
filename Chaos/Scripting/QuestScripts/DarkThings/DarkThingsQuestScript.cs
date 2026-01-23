@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Menu;
 using Chaos.Models.World;
 using Chaos.Scripting.DialogScripts.Abstractions;
@@ -6,11 +6,11 @@ using Chaos.Services.Factories.Abstractions;
 
 namespace Chaos.Scripting.QuestScripts.DarkThings;
 
-public class DarkThingsQuestScript:  DialogScriptBase
+public class DarkThingsQuestScript : DialogScriptBase
 {
-    private readonly IDialogFactory DialogFactory;
     private readonly Dialog Dialog;
-    
+    private readonly IDialogFactory DialogFactory;
+
     /// <inheritdoc />
     public DarkThingsQuestScript(Dialog subject, IDialogFactory dialogFactory)
         : base(subject)
@@ -46,15 +46,18 @@ public class DarkThingsQuestScript:  DialogScriptBase
             DarkThingsQuestHelper.RemoveRequiredItem(source, questStatus);
             DarkThingsQuestHelper.CompleteQuest(source);
             var finishQuestDialog = CreateDialog(
-                text: $"Excellent! This {itemDisplayName} is perfect for my studies. Come back to me soon and I will have another task for you.",
+                text:
+                $"Excellent! This {itemDisplayName} is perfect for my studies. Come back to me soon and I will have another task for you.",
                 nextKey: "Close"
             );
             finishQuestDialog.Display(source);
             return;
         }
+
         // Player does not have the item
         var reminderDialog = CreateDialog(
-            text: $"It looks like you haven't brought me the {itemDisplayName}. Don't waste my time, Aisling. Return with what I need or don't return at all.",
+            text:
+            $"It looks like you haven't brought me the {itemDisplayName}. Don't waste my time, Aisling. Return with what I need or don't return at all.",
             nextKey: "Close"
         );
         reminderDialog.Display(source);
@@ -93,8 +96,10 @@ public class DarkThingsQuestScript:  DialogScriptBase
                     Subject.AddOption("I will", "dar_dark_things_accepted");
                     break;
                 }
+
                 var blockedQuestDialog = CreateDialog(
-                    text: "Oh you've already brought me something recently. Once I have finished studying it I will surely need more. Return to me soon.",
+                    text:
+                    "Oh you've already brought me something recently. Once I have finished studying it I will surely need more. Return to me soon.",
                     nextKey: "Close"
                 );
                 blockedQuestDialog.Display(source);
@@ -121,9 +126,12 @@ public class DarkThingsQuestScript:  DialogScriptBase
             Options = []
         };
     }
-    
-    public override void OnDisplayed(Aisling source) {}
+
+    public override void OnDisplayed(Aisling source)
+    {
+    }
 
     public override void OnNext(Aisling source, byte? optionIndex = null)
-    { }
+    {
+    }
 }

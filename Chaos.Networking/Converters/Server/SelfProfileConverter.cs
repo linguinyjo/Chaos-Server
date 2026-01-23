@@ -1,8 +1,11 @@
-using Chaos.Common.Definitions;
+#region
+using Chaos.DarkAges.Definitions;
+using Chaos.Extensions.Common;
 using Chaos.IO.Memory;
+using Chaos.Networking.Abstractions.Definitions;
 using Chaos.Networking.Entities.Server;
 using Chaos.Packets.Abstractions;
-using Chaos.Packets.Abstractions.Definitions;
+#endregion
 
 namespace Chaos.Networking.Converters.Server;
 
@@ -22,7 +25,7 @@ public sealed class SelfProfileConverter : PacketConverterBase<SelfProfileArgs>
         var title = reader.ReadString8();
         var groupString = reader.ReadString8();
         var groupOpen = reader.ReadBoolean();
-        _ = reader.ReadBoolean(); //groupbox fml
+        var groupBox = reader.ReadBoolean();
 
         //TODO: read groupbox shit
         var baseClass = reader.ReadByte();
@@ -95,9 +98,21 @@ public sealed class SelfProfileConverter : PacketConverterBase<SelfProfileArgs>
         writer.WriteBoolean(args.EnableMasterQuestMetaData);
         writer.WriteString8(args.DisplayClass);
         writer.WriteString8(args.GuildName ?? string.Empty);
-        writer.WriteByte((byte)Math.Min(byte.MaxValue, args.LegendMarks.Count));
 
-        foreach (var mark in args.LegendMarks.Take(byte.MaxValue))
+        var legendMarks = args.LegendMarks;
+        var legendMarkCount = legendMarks.Count;
+
+        if (legendMarkCount > byte.MaxValue)
+        {
+            legendMarkCount = byte.MaxValue;
+
+            legendMarks = legendMarks.TakeRandom(byte.MaxValue)
+                                     .ToList();
+        }
+
+        writer.WriteByte((byte)legendMarkCount);
+
+        foreach (var mark in legendMarks)
         {
             writer.WriteByte((byte)mark.Icon);
             writer.WriteByte((byte)mark.Color);

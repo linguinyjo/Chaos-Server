@@ -1,41 +1,64 @@
-using Chaos.Common.Definitions;
-using Chaos.Common.Synchronization;
+#region
+
+using Chaos.DarkAges.Definitions;
+using Chaos.Extensions.Common;
 using Chaos.Messaging.Abstractions;
 using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
+using Chaos.NLog.Logging.Abstractions;
+using Chaos.NLog.Logging.Definitions;
+using Chaos.NLog.Logging.Extensions;
 using Chaos.Services.Servers.Options;
+using Chaos.Utilities;
+
+#endregion
 
 namespace Chaos.Collections;
 
-public sealed class Group : IEnumerable<Aisling>, IDedicatedChannel
+/// <summary>
+///     Represents a group of players
+/// </summary>
+public sealed class Group : IEnumerable<Aisling>, IDedicatedChannel, ITransformableCollection
 {
     private readonly IChannelService ChannelService;
+    private readonly ILogger<Group> Logger;
     private readonly List<Aisling> Members;
-    private readonly AutoReleasingMonitor Sync;
-    public string ChannelName { get; }
+    private readonly Lock Sync;
 
-    public Aisling Leader
+    /// <summary>
+    ///     Initializes a new instance of the <see cref="Group" /> class.
+    /// </summary>
+    /// <param name="sender">
+    ///     The aisling who started the group
+    /// </param>
+    /// <param name="receiver">
+    ///     The first aisling to join the group (besides the sender/leader)
+    /// </param>
+    /// <param name="channelService">
+    ///     A channel service for the group to communicate through
+    /// </param>
+    /// <param name="logger">
+    ///     A class logger
+    /// </param>
+    public Group(
+        Aisling sender,
+        Aisling receiver,
+        IChannelService channelService,
+        ILogger<Group> logger)
     {
-        get
-        {
-            using var @lock = Sync.Enter();
+        Sync = new Lock();
 
-            return Members[0];
-        }
-    }
-
-    public int Count => Members.Count;
-
-    public Group(Aisling sender, Aisling receiver, IChannelService channelService)
-    {
-        ChannelName = $"!group-{Guid.NewGuid()}";
+        Id = Guid.NewGuid()
+            .ToString();
+        Logger = logger;
+        ChannelName = $"!group-{Id}";
         ChannelService = channelService;
 
-        Members = new List<Aisling>
-        {
+        Members =
+        [
             sender,
             receiver
-        };
+        ];
 
         //create a group chat channel and add both members to it
         ChannelService.RegisterChannel(
@@ -46,6 +69,15 @@ public sealed class Group : IEnumerable<Aisling>, IDedicatedChannel
             {
                 var aisling = (Aisling)sub;
                 aisling.SendServerMessage(ServerMessageType.GroupChat, msg);
+
+                var chunks = Helpers.ChunkMessage(msg);
+
+                if (chunks.Count > 1)
+                {
+                    var orangeBarChunk = Helpers.ChunkMessage(msg)[0];
+                    orangeBarChunk = $"{orangeBarChunk[..^3]}...";
+                    aisling.SendServerMessage(ServerMessageType.OrangeBar1, orangeBarChunk);
+                }
             },
             true,
             "!group");
@@ -56,22 +88,39 @@ public sealed class Group : IEnumerable<Aisling>, IDedicatedChannel
         sender.SendActiveMessage($"You form a group with {receiver.Name}");
         receiver.SendActiveMessage($"You form a group with {sender.Name}");
 
-        Sync = new AutoReleasingMonitor();
+        Logger.WithTopics(Topics.Entities.Group, Topics.Actions.Create)
+            .WithProperty(this)
+            .WithProperty(sender)
+            .WithProperty(receiver)
+            .LogInformation(
+                "{@AislingName1} and {@AislingName2} have formed group {@GroupId}",
+                sender.Name,
+                receiver.Name,
+                Id);
     }
 
-    /// <inheritdoc />
-    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+    public string Id { get; }
 
-    /// <inheritdoc />
-    public IEnumerator<Aisling> GetEnumerator()
+    /// <summary>
+    ///     The leader of the group
+    /// </summary>
+    public Aisling Leader
     {
-        List<Aisling> snapshot;
+        get
+        {
+            using var @lock = Sync.EnterScope();
 
-        using (Sync.Enter())
-            snapshot = Members.ToList();
-
-        return snapshot.GetEnumerator();
+            return Members[0];
+        }
     }
+
+    /// <summary>
+    ///     The number of members in the group
+    /// </summary>
+    public int Count => Members.Count;
+
+    /// <inheritdoc />
+    public string ChannelName { get; }
 
     /// <inheritdoc />
     public void JoinChannel(IChannelSubscriber subscriber) => ChannelService.JoinChannel(subscriber, ChannelName, true);
@@ -79,11 +128,40 @@ public sealed class Group : IEnumerable<Aisling>, IDedicatedChannel
     /// <inheritdoc />
     public void LeaveChannel(IChannelSubscriber subscriber) => ChannelService.LeaveChannel(subscriber, ChannelName);
 
-    public void SendMessage(IChannelSubscriber from, string message) => ChannelService.SendMessage(from, ChannelName, message);
+    /// <inheritdoc />
+    public void SendMessage(IChannelSubscriber from, string message)
+    {
+        ChannelService.SendMessage(from, ChannelName, message);
+    }
 
+    /// <inheritdoc />
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
+    }
+
+    /// <inheritdoc />
+    public IEnumerator<Aisling> GetEnumerator()
+    {
+        List<Aisling> snapshot;
+
+        using (Sync.EnterScope())
+        {
+            snapshot = Members.ToList();
+        }
+
+        return snapshot.GetEnumerator();
+    }
+
+    /// <summary>
+    ///     Adds an aisling to the group
+    /// </summary>
+    /// <param name="aisling">
+    ///     The aisling to add to the group
+    /// </param>
     public void Add(Aisling aisling)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         foreach (var member in this)
         {
@@ -93,22 +171,42 @@ public sealed class Group : IEnumerable<Aisling>, IDedicatedChannel
 
         Members.Add(aisling);
 
+        Logger.WithTopics(Topics.Entities.Group, Topics.Actions.Add)
+            .WithProperty(aisling)
+            .WithProperty(this)
+            .LogInformation("{@AislingName} has been added to group {@GroupId}", aisling.Name, Id);
+
         JoinChannel(aisling);
         aisling.SendActiveMessage($"You have joined {Leader.Name}'s group");
         aisling.Group = this;
         aisling.Client.SendSelfProfile();
     }
 
+    /// <summary>
+    ///     Determines whether the group contains the specified aisling
+    /// </summary>
+    /// <param name="aisling">
+    ///     The aisling to check for
+    /// </param>
+    /// <returns>
+    ///     <c>
+    ///         true
+    ///     </c>
+    ///     if the group contains the specified aisling, otherwise
+    ///     <c>
+    ///         false
+    ///     </c>
+    /// </returns>
     public bool Contains(Aisling aisling)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         return Members.Contains(aisling, WorldEntity.IdComparer);
     }
 
     private void Disband()
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         foreach (var member in this)
         {
@@ -118,13 +216,23 @@ public sealed class Group : IEnumerable<Aisling>, IDedicatedChannel
             member.Client.SendSelfProfile();
         }
 
+        Logger.WithTopics(Topics.Entities.Group, Topics.Actions.Disband)
+            .WithProperty(this)
+            .LogInformation("Group {@GroupId} has been disbanded", Id);
+
         ChannelService.UnregisterChannel(ChannelName);
         Members.Clear();
     }
 
+    /// <summary>
+    ///     Kicks an aisling from the group
+    /// </summary>
+    /// <param name="aisling">
+    ///     The aisling to kick
+    /// </param>
     public void Kick(Aisling aisling)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         if (Members.Count <= 2)
         {
@@ -133,8 +241,21 @@ public sealed class Group : IEnumerable<Aisling>, IDedicatedChannel
             return;
         }
 
+        //leader is kicking himself
+        if (aisling.Equals(Leader))
+        {
+            Leave(aisling);
+
+            return;
+        }
+
         if (!Remove(aisling))
             return;
+
+        Logger.WithTopics(Topics.Entities.Group, Topics.Actions.Kick)
+            .WithProperty(aisling)
+            .WithProperty(this)
+            .LogInformation("{@AislingName} has been kicked from group {@GroupId}", aisling.Name, Id);
 
         aisling.SendActiveMessage($"You have been kicked from the group by {Leader.Name}");
 
@@ -142,9 +263,19 @@ public sealed class Group : IEnumerable<Aisling>, IDedicatedChannel
             member.SendActiveMessage($"{aisling.Name} has been kicked from the group");
     }
 
+    /// <summary>
+    ///     Leaves the group
+    /// </summary>
+    /// <param name="aisling">
+    ///     The aisling leaving the group
+    /// </param>
+    /// <remarks>
+    ///     This handles if the group has only 2 members (disbands), or if the aisling leaving is the leader. The new leader
+    ///     will be the member who has been in the group longest
+    /// </remarks>
     public void Leave(Aisling aisling)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         if (Members.Count <= 2)
         {
@@ -157,6 +288,11 @@ public sealed class Group : IEnumerable<Aisling>, IDedicatedChannel
 
         if (!Remove(aisling))
             return;
+
+        Logger.WithTopics(Topics.Entities.Group, Topics.Actions.Leave)
+            .WithProperty(aisling)
+            .WithProperty(this)
+            .LogInformation("{@AislingName} has left group {@GroupId}", aisling.Name, Id);
 
         aisling.SendActiveMessage("You have left the group");
 
@@ -175,9 +311,35 @@ public sealed class Group : IEnumerable<Aisling>, IDedicatedChannel
         }
     }
 
+    public void Promote(Aisling aisling)
+    {
+        using var @lock = Sync.EnterScope();
+
+        if (aisling.Equals(Leader))
+        {
+            aisling.SendActiveMessage("You dumbly point to yourself");
+
+            return;
+        }
+
+        Members.Remove(aisling);
+        Members.Insert(0, aisling);
+
+        Logger.WithTopics(Topics.Entities.Group, Topics.Actions.Promote)
+            .WithProperty(aisling)
+            .WithProperty(this)
+            .LogInformation("{@AislingName} has been promoted to group leader in group {@GroupId}", aisling.Name, Id);
+
+        foreach (var member in Members)
+        {
+            member.SendActiveMessage($"{aisling.Name} has been promoted to group leader");
+            member.Client.SendSelfProfile();
+        }
+    }
+
     private bool Remove(Aisling aisling)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         if (!Members.Remove(aisling))
             return false;
@@ -189,17 +351,22 @@ public sealed class Group : IEnumerable<Aisling>, IDedicatedChannel
         return true;
     }
 
+    /// <inheritdoc />
     public override string ToString()
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         var groupString = "Group members";
 
         foreach (var user in Members)
+        {
+            var name = user.Name.ReplaceI(" ", "_");
+
             if (user.Equals(Leader))
-                groupString += '\n' + $"* {user.Name}";
+                groupString += '\n' + $"* {name}";
             else
-                groupString += '\n' + $"  {user.Name}";
+                groupString += '\n' + $"  {name}";
+        }
 
         groupString += '\n' + $"Total {Count}";
 

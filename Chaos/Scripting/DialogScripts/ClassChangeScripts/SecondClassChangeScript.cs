@@ -1,5 +1,5 @@
 using Chaos.Collections;
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.Legend;
 using Chaos.Models.Menu;
@@ -16,13 +16,21 @@ namespace Chaos.Scripting.DialogScripts.ClassChangeScripts;
 
 public class SecondClassChangeScript : ConfigurableDialogScriptBase
 {
-    private readonly ISimpleCache SimpleCache;
-    
-    #region ScriptVars
-    protected byte Class { get; init; }
-    #endregion
-
     private const byte SOUND = 42;
+    private readonly ISimpleCache SimpleCache;
+
+    /// <inheritdoc />
+    public SecondClassChangeScript(Dialog subject, ISimpleCache simpleCache)
+        : base(subject)
+    {
+        SimpleCache = simpleCache;
+    }
+
+    #region ScriptVars
+
+    protected byte Class { get; init; }
+
+    #endregion
 
     private Animation Animation { get; } = new()
     {
@@ -31,20 +39,14 @@ public class SecondClassChangeScript : ConfigurableDialogScriptBase
     };
 
     /// <inheritdoc />
-    public SecondClassChangeScript(Dialog subject, ISimpleCache simpleCache)
-        : base(subject)
-    {
-        SimpleCache = simpleCache;
-    } 
-
-    /// <inheritdoc />
     public override void OnDisplaying(Aisling source)
-    {}
+    {
+    }
 
     public override void OnDisplayed(Aisling source)
     {
         var advClass = (AdvClass)Class;
-        var statsToCarryOver = Math.Min(source.UserStatSheet.UnspentPoints, 10); 
+        var statsToCarryOver = Math.Min(source.UserStatSheet.UnspentPoints, 10);
         source.TryDropAllEquipment();
         source.UserStatSheet.PerformClassAdvancement(advClass, statsToCarryOver);
         source.Refresh();
@@ -57,7 +59,7 @@ public class SecondClassChangeScript : ConfigurableDialogScriptBase
             GameTime.Now);
         source.Legend.AddUnique(legendMark);
         source.Animate(Animation);
-        source.Client.SendSound(SOUND, false); 
+        source.Client.SendSound(SOUND, false);
     }
 
     public override void OnNext(Aisling source, byte? optionIndex = null)

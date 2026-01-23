@@ -1,7 +1,10 @@
+#region
+using System.Diagnostics;
 using Chaos.Common.Comparers;
 using Chaos.Extensions.Common;
 using Chaos.Scripting.Abstractions;
 using Chaos.Storage.Abstractions;
+#endregion
 
 namespace Chaos.Extensions;
 
@@ -85,6 +88,8 @@ public static class ScriptExtensions
 
         if (scripted.Script is ICompositeScript composite)
             composite.Remove(scriptToRemove);
+        else
+            throw new UnreachableException("All scripted objects should have a composite script at the top level");
     }
     
     public static ISimpleCache GetCacheProvider(this IScript script) 

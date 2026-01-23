@@ -25,7 +25,6 @@
     "scriptVars": {
         "applyEffect": {
             "bodyAnimation": "handsup",
-            "excludeSourcePoint": false,
             "sound": 8,
             "range": 2,
             "effectKey": "scorpionStance",
@@ -38,7 +37,6 @@
             "levelUpRate": "veryfast"
         },
         "removeEffect": {
-            "excludeSourcePoint": false,
             "range": 8,
             "effectKey": "puinsein",
             "filter": "selfOnly, aliveOnly"

@@ -1,11 +1,11 @@
-using Chaos.Common.Definitions;
-using Chaos.Packets.Abstractions.Definitions;
+using Chaos.DarkAges.Definitions;
+using Chaos.Networking.Abstractions.Definitions;
+using SpellType = Chaos.DarkAges.Definitions.SpellType;
 
 namespace Chaos.Networking.Entities.Server;
 
 /// <summary>
-///     Represents the serialization of a spell in the
-///     <see cref="Chaos.Packets.Abstractions.Definitions.ServerOpCode.AddSpellToPane" /> and
+///     Represents the serialization of a spell in the <see cref="ServerOpCode.AddSpellToPane" /> and
 ///     <see cref="ServerOpCode.DisplayMenu" /> packets
 /// </summary>
 public sealed record SpellInfo
@@ -44,7 +44,7 @@ public sealed record SpellInfo
     ///     The sprite of the spell icon
     /// </summary>
     public ushort Sprite { get; set; }
-    
+
     /// <summary>
     ///     The category the spell belongs to
     /// </summary>

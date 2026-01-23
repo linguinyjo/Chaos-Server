@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Menu;
 using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
@@ -8,10 +8,10 @@ using Chaos.Services.Factories.Abstractions;
 
 namespace Chaos.Scripting.QuestScripts.Dugons.BlueDugonScripts;
 
-public class BlueDugonMeditationTileScript :  ReactorTileScriptBase
+public class BlueDugonMeditationTileScript : ReactorTileScriptBase
 {
-    private readonly IDialogFactory DialogFactory;
     private readonly BlueDugonQuestHelper BlueDugonQuestHelper = new();
+    private readonly IDialogFactory DialogFactory;
 
     /// <inheritdoc />
     public BlueDugonMeditationTileScript(ReactorTile subject, IDialogFactory dialogFactory)
@@ -23,9 +23,9 @@ public class BlueDugonMeditationTileScript :  ReactorTileScriptBase
     public override void OnWalkedOn(Creature source)
     {
         if (source is not Aisling aisling) return;
-        if(BlueDugonQuestHelper.GetQuestStatus(aisling) != BlueDugonQuestStatus.ReturnedToSabonim) return;
+        if (BlueDugonQuestHelper.GetQuestStatus(aisling) != BlueDugonQuestStatus.ReturnedToSabonim) return;
         if (BlueDugonQuestHelper.IsPlayerBlocked(aisling)) return;
-        
+
         var newDialog = new Dialog(
             aisling,
             DialogFactory,

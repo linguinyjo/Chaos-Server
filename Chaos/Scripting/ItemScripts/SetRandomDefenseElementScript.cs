@@ -1,5 +1,5 @@
 using Chaos.Collections;
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Common.Utilities;
 using Chaos.Extensions;
 using Chaos.Models.Panel;
@@ -19,7 +19,9 @@ public class SetRandomDefenseElementScript : ItemScriptBase
 {
     /// <inheritdoc />
     public SetRandomDefenseElementScript(Item subject)
-        : base(subject) { }
+        : base(subject)
+    {
+    }
 
     public override void OnDropped(Creature source, MapInstance mapInstance)
     {

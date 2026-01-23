@@ -1,5 +1,8 @@
+#region
+using System.Runtime.CompilerServices;
 using Chaos.Geometry;
 using Chaos.Geometry.Abstractions;
+#endregion
 
 namespace Chaos.Extensions.Geometry;
 
@@ -8,6 +11,79 @@ namespace Chaos.Extensions.Geometry;
 /// </summary>
 public static class PolygonExtensions
 {
+    #region Polygon Contains Point (PNPOLY)
+    /// <inheritdoc cref="ContainsPoint(Chaos.Geometry.Abstractions.IPolygon,Chaos.Geometry.Abstractions.IPoint)" />
+    public static bool ContainsPoint(this ValuePolygon polygon, ValuePoint point)
+    {
+        var inside = false;
+        var vertices = polygon.Vertices;
+        var count = vertices.Count;
+
+        for (int i = 0,
+                 j = count - 1;
+             i < count;
+             j = i++)
+        {
+            var iVertex = vertices[i];
+            var jVertex = vertices[j];
+
+            //long form version of pnpoly, allowing for fast fails
+            if ((((iVertex.Y < point.Y) && (jVertex.Y >= point.Y)) || ((jVertex.Y < point.Y) && (iVertex.Y >= point.Y)))
+                && ((iVertex.X <= point.X) || (jVertex.X <= point.X)))
+                inside ^= (iVertex.X + (point.Y - iVertex.Y) / (jVertex.Y - iVertex.Y) * (jVertex.X - iVertex.X)) < point.X;
+        }
+
+        return inside;
+    }
+
+    /// <inheritdoc cref="ContainsPoint(Chaos.Geometry.Abstractions.IPolygon,Chaos.Geometry.Abstractions.IPoint)" />
+    public static bool ContainsPoint(this ValuePolygon polygon, Point point)
+    {
+        var inside = false;
+        var vertices = polygon.Vertices;
+        var count = vertices.Count;
+
+        for (int i = 0,
+                 j = count - 1;
+             i < count;
+             j = i++)
+        {
+            var iVertex = vertices[i];
+            var jVertex = vertices[j];
+
+            //long form version of pnpoly, allowing for fast fails
+            if ((((iVertex.Y < point.Y) && (jVertex.Y >= point.Y)) || ((jVertex.Y < point.Y) && (iVertex.Y >= point.Y)))
+                && ((iVertex.X <= point.X) || (jVertex.X <= point.X)))
+                inside ^= (iVertex.X + (point.Y - iVertex.Y) / (jVertex.Y - iVertex.Y) * (jVertex.X - iVertex.X)) < point.X;
+        }
+
+        return inside;
+    }
+
+    /// <inheritdoc cref="ContainsPoint(Chaos.Geometry.Abstractions.IPolygon,Chaos.Geometry.Abstractions.IPoint)" />
+    public static bool ContainsPoint(this IPolygon polygon, Point point)
+    {
+        var inside = false;
+        var vertices = polygon.Vertices;
+        var count = vertices.Count;
+
+        for (int i = 0,
+                 j = count - 1;
+             i < count;
+             j = i++)
+        {
+            var iVertex = vertices[i];
+            var jVertex = vertices[j];
+
+            //long form version of pnpoly, allowing for fast fails
+            if ((((iVertex.Y < point.Y) && (jVertex.Y >= point.Y)) || ((jVertex.Y < point.Y) && (iVertex.Y >= point.Y)))
+                && ((iVertex.X <= point.X) || (jVertex.X <= point.X)))
+                inside ^= (iVertex.X + (point.Y - iVertex.Y) / (jVertex.Y - iVertex.Y) * (jVertex.X - iVertex.X)) < point.X;
+        }
+
+        return inside;
+    }
+
     /// <summary>
     ///     Determines whether the given <see cref="Chaos.Geometry.Abstractions.IPolygon" /> contains the given
     ///     <see cref="Chaos.Geometry.Abstractions.IPoint" />
@@ -63,8 +139,10 @@ public static class PolygonExtensions
     ///     TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     ///     SOFTWARE.
     /// </remarks>
-    public static bool Contains<TPoint>(this IPolygon polygon, TPoint point) where TPoint: IPoint
+    public static bool ContainsPoint(this IPolygon polygon, IPoint point)
     {
+        ArgumentNullException.ThrowIfNull(point);
+
         var inside = false;
         var vertices = polygon.Vertices;
         var count = vertices.Count;
@@ -84,6 +162,36 @@ public static class PolygonExtensions
         }
 
         return inside;
+    }
+    #endregion
+
+    #region Polygon GetOutline
+    /// <inheritdoc cref="GetOutline(IPolygon)" />
+    public static IEnumerable<Point> GetOutline(this ValuePolygon polygon)
+    {
+        var vertices = polygon.Vertices;
+
+        return InnerGetOutline(vertices);
+
+        static IEnumerable<Point> InnerGetOutline(IReadOnlyList<IPoint> localVertices)
+        {
+            for (var i = 0; i < (localVertices.Count - 1); i++)
+            {
+                var current = localVertices[i];
+                var next = localVertices[i + 1];
+
+                //skip the last point so the vertices are not included twice
+                foreach (var point in current.RayTraceTo(next)
+                                             .SkipLast(1))
+                    yield return point;
+            }
+
+            //include the last point
+            foreach (var point in localVertices[^1]
+                                  .RayTraceTo(localVertices[0])
+                                  .SkipLast(1))
+                yield return point;
+        }
     }
 
     /// <summary>
@@ -111,4 +219,5 @@ public static class PolygonExtensions
                               .SkipLast(1))
             yield return point;
     }
+    #endregion
 }

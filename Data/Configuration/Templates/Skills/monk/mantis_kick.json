@@ -2,7 +2,7 @@
     "isAssail": false,
     "learningRequirements": {
         "itemRequirements": [],
-        "requiredGold": 5000,
+        "requiredGold": 25000,
         "requiredStats": {
             "con": 22,
             "dex": 8,
@@ -28,7 +28,7 @@
             "damageStat": "con",
             "range": 1,
             "shape": "front",
-            "excludeSourcePoint": true,
+            "exclusionRange": 0,
             "damageStatMultiplier": 5,
             "baseDamage": 100,
             "filter": "hostileOnly, aliveOnly, othersOnly",

@@ -1,8 +1,10 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿#region
+using System.Diagnostics.CodeAnalysis;
 using System.Text.Json.Serialization;
 using Chaos.Geometry.Abstractions;
 using Chaos.Geometry.Definitions;
 using Chaos.Geometry.JsonConverters;
+#endregion
 
 namespace Chaos.Geometry;
 
@@ -106,6 +108,11 @@ public sealed record Location : ILocation, IEquatable<ILocation>
     public static bool operator ==(Location left, ILocation right) => left.Equals(right);
 
     /// <summary>
+    ///     Implicitly converts a ref struct location to a location
+    /// </summary>
+    public static implicit operator Location(ValueLocation loc) => new(loc.Map, loc.X, loc.Y);
+
+    /// <summary>
     ///     Compares two locations
     /// </summary>
     public static bool operator !=(Location left, ILocation right) => !left.Equals(right);
@@ -125,7 +132,7 @@ public sealed record Location : ILocation, IEquatable<ILocation>
     public static bool TryParse(string str, [MaybeNullWhen(false)] out Location location)
     {
         location = null;
-        var match = RegexCache.LOCATION_REGEX.Match(str);
+        var match = RegexCache.LocationRegex.Match(str);
 
         if (!match.Success)
             return false;

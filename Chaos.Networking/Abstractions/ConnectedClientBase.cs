@@ -1,3 +1,4 @@
+#region
 using System.Net;
 using System.Net.Sockets;
 using Chaos.Cryptography.Abstractions;
@@ -5,6 +6,7 @@ using Chaos.Networking.Entities.Server;
 using Chaos.Packets;
 using Chaos.Packets.Abstractions;
 using Microsoft.Extensions.Logging;
+#endregion
 
 namespace Chaos.Networking.Abstractions;
 
@@ -54,7 +56,7 @@ public abstract class ConnectedClientBase : SocketClientBase, IConnectedClient
     /// <inheritdoc />
     public virtual void SendHeartBeat(byte first, byte second)
     {
-        var args = new HeartBeatResponseArgs
+        var args = new HeartBeatArgs
         {
             First = first,
             Second = second
@@ -79,6 +81,17 @@ public abstract class ConnectedClientBase : SocketClientBase, IConnectedClient
         {
             args.EndPoint = new IPEndPoint(IPAddress.Loopback, args.EndPoint.Port);
         }
+
+        Send(args);
+    }
+
+    /// <inheritdoc />
+    public void SendSynchronizeTicks()
+    {
+        var args = new SynchronizeTicksArgs
+        {
+            Ticks = (uint)Environment.TickCount
+        };
 
         Send(args);
     }

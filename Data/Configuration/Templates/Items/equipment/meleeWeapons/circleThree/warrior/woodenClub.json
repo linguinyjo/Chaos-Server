@@ -12,12 +12,12 @@
     "levelCircle": 3,
     "class": "warrior",
     "modifiers": {
-        "physicalAttack": 130,
+      "physicalAttack": 116,
         "maximumMp": -1500
     },
     "sellValue": 250000,
     "weight": 13,
-    "description": "Class: Warrior\nLevel: 41\nP.Atk 130",
+  "description": "Class: Warrior\nLevel: 41\nP.Atk 116",
     "name": "Wooden Club",
     "panelSprite": 506,
     "scriptKeys": ["Equipment"],

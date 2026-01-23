@@ -1,23 +1,21 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Data;
-using Chaos.Models.Menu;
 using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
 using Chaos.Scripting.ReactorTileScripts.Abstractions;
 using Chaos.Services.Factories.Abstractions;
-using NLog.Filters;
 
 namespace Chaos.Scripting.QuestScripts.PorteForest;
 
-public class PorteForestTrapScript :  ReactorTileScriptBase
+public class PorteForestTrapScript : ReactorTileScriptBase
 {
-    private readonly IDialogFactory DialogFactory;
-
     private readonly Animation Animation = new()
     {
         AnimationSpeed = 150,
         TargetAnimation = 50
     };
+
+    private readonly IDialogFactory DialogFactory;
 
     /// <inheritdoc />
     public PorteForestTrapScript(ReactorTile subject, IDialogFactory dialogFactory)
@@ -29,7 +27,7 @@ public class PorteForestTrapScript :  ReactorTileScriptBase
     public override void OnWalkedOn(Creature source)
     {
         if (source is not Aisling aisling) return;
-        
+
         var hasWing = aisling.Inventory.HasCountByTemplateKey("flyingAntWing", 1);
         if (hasWing)
         {

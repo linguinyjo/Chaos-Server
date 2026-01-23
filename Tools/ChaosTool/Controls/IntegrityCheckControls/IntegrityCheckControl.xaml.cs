@@ -1,9 +1,10 @@
+#region
 using System.Collections.Frozen;
 using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Extensions.Common;
 using Chaos.Extensions.Geometry;
 using Chaos.Geometry;
@@ -12,6 +13,7 @@ using Chaos.Schemas.Templates;
 using ChaosTool.Model;
 using ChaosTool.Model.Tables;
 using ChaosTool.ViewModel;
+#endregion
 
 namespace ChaosTool.Controls.IntegrityCheckControls;
 
@@ -58,27 +60,26 @@ public sealed partial class IntegrityCheckControl
             var template = wrapper.Object;
             var expectedTemplateKey = GetExpectedKey(wrapper);
 
-            var handler = new RoutedEventHandler(
-                (sender, _) =>
+            var handler = new RoutedEventHandler((sender, _) =>
+            {
+                var dialogListView = MainWindow.DialogTemplateListView;
+                var button = (Button)sender;
+
+                var selected = dialogListView.Items
+                                             .OfType<DialogTemplateViewModel>()
+                                             .FirstOrDefault(obs => obs.TemplateKey.EqualsI(template.TemplateKey));
+
+                if (selected is null)
                 {
-                    var dialogListView = MainWindow.DialogTemplateListView;
-                    var button = (Button)sender;
+                    button.IsEnabled = false;
 
-                    var selected = dialogListView.Items
-                                                 .OfType<DialogTemplateViewModel>()
-                                                 .FirstOrDefault(obs => obs.TemplateKey.EqualsI(template.TemplateKey));
+                    return;
+                }
 
-                    if (selected is null)
-                    {
-                        button.IsEnabled = false;
-
-                        return;
-                    }
-
-                    MainWindow.DialogsTab.IsSelected = true;
-                    dialogListView.ItemsView.SelectedItem = selected;
-                    dialogListView.ItemsView.ScrollIntoView(selected);
-                });
+                MainWindow.DialogsTab.IsSelected = true;
+                dialogListView.ItemsView.SelectedItem = selected;
+                dialogListView.ItemsView.ScrollIntoView(selected);
+            });
 
             if (!template.TemplateKey.EqualsI(expectedTemplateKey))
                 await AddViolationAsync($"TemplateKey mismatch: {template.TemplateKey} != {expectedTemplateKey}", handler, true);
@@ -140,23 +141,22 @@ public sealed partial class IntegrityCheckControl
             DetectWorldMapViolationsAsync());
 
         if (IntegrityViolationsControl.Items.IsEmpty)
-            await Dispatcher.InvokeAsync(
-                () =>
+            await Dispatcher.InvokeAsync(() =>
+            {
+                var label = new Label
                 {
-                    var label = new Label
-                    {
-                        HorizontalAlignment = HorizontalAlignment.Center,
-                        VerticalAlignment = VerticalAlignment.Center,
-                        Margin = new Thickness(
-                            10,
-                            200,
-                            10,
-                            200),
-                        Content = "No integrity violations detected"
-                    };
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    VerticalAlignment = VerticalAlignment.Center,
+                    Margin = new Thickness(
+                        10,
+                        200,
+                        10,
+                        200),
+                    Content = "No integrity violations detected"
+                };
 
-                    IntegrityViolationsControl.Items.Add(label);
-                });
+                IntegrityViolationsControl.Items.Add(label);
+            });
     }
 
     private async Task DetectItemTemplateViolationsAsync()
@@ -168,27 +168,26 @@ public sealed partial class IntegrityCheckControl
             var template = wrapper.Object;
             var expectedTemplateKey = GetExpectedKey(wrapper);
 
-            var handler = new RoutedEventHandler(
-                (sender, _) =>
+            var handler = new RoutedEventHandler((sender, _) =>
+            {
+                var itemListView = MainWindow.ItemTemplateListView;
+                var button = (Button)sender;
+
+                var selected = itemListView.Items
+                                           .OfType<ItemTemplateViewModel>()
+                                           .FirstOrDefault(obs => obs.TemplateKey.EqualsI(template.TemplateKey));
+
+                if (selected is null)
                 {
-                    var itemListView = MainWindow.ItemTemplateListView;
-                    var button = (Button)sender;
+                    button.IsEnabled = false;
 
-                    var selected = itemListView.Items
-                                               .OfType<ItemTemplateViewModel>()
-                                               .FirstOrDefault(obs => obs.TemplateKey.EqualsI(template.TemplateKey));
+                    return;
+                }
 
-                    if (selected is null)
-                    {
-                        button.IsEnabled = false;
-
-                        return;
-                    }
-
-                    MainWindow.ItemsTab.IsSelected = true;
-                    itemListView.ItemsView.SelectedItem = selected;
-                    itemListView.ItemsView.ScrollIntoView(selected);
-                });
+                MainWindow.ItemsTab.IsSelected = true;
+                itemListView.ItemsView.SelectedItem = selected;
+                itemListView.ItemsView.ScrollIntoView(selected);
+            });
 
             if (!template.TemplateKey.EqualsI(expectedTemplateKey))
                 await AddViolationAsync($"TemplateKey mismatch: {template.TemplateKey} != {expectedTemplateKey}", handler, true);
@@ -223,27 +222,26 @@ public sealed partial class IntegrityCheckControl
             var template = wrapper.Object;
             var expectedKey = GetExpectedKey(wrapper);
 
-            var handler = new RoutedEventHandler(
-                (sender, _) =>
+            var handler = new RoutedEventHandler((sender, _) =>
+            {
+                var lootTableListView = MainWindow.LootTableListView;
+                var button = (Button)sender;
+
+                var selected = lootTableListView.Items
+                                                .OfType<LootTableViewModel>()
+                                                .FirstOrDefault(obs => obs.Key.EqualsI(template.Key));
+
+                if (selected is null)
                 {
-                    var lootTableListView = MainWindow.LootTableListView;
-                    var button = (Button)sender;
+                    button.IsEnabled = false;
 
-                    var selected = lootTableListView.Items
-                                                    .OfType<LootTableViewModel>()
-                                                    .FirstOrDefault(obs => obs.Key.EqualsI(template.Key));
+                    return;
+                }
 
-                    if (selected is null)
-                    {
-                        button.IsEnabled = false;
-
-                        return;
-                    }
-
-                    MainWindow.LootTablesTab.IsSelected = true;
-                    lootTableListView.ItemsView.SelectedItem = selected;
-                    lootTableListView.ItemsView.ScrollIntoView(selected);
-                });
+                MainWindow.LootTablesTab.IsSelected = true;
+                lootTableListView.ItemsView.SelectedItem = selected;
+                lootTableListView.ItemsView.ScrollIntoView(selected);
+            });
 
             if (!template.Key.EqualsI(expectedKey))
                 await AddViolationAsync($"Key mismatch: {template.Key} != {expectedKey}", handler, true);
@@ -263,27 +261,26 @@ public sealed partial class IntegrityCheckControl
             var template = wrapper.Object;
             var expectedTemplateKey = GetExpectedKey(wrapper);
 
-            var handler = new RoutedEventHandler(
-                (sender, _) =>
+            var handler = new RoutedEventHandler((sender, _) =>
+            {
+                var mapListView = MainWindow.MapTemplateListView;
+                var button = (Button)sender;
+
+                var selected = mapListView.Items
+                                          .OfType<MapTemplateViewModel>()
+                                          .FirstOrDefault(obs => obs.TemplateKey.EqualsI(template.TemplateKey));
+
+                if (selected is null)
                 {
-                    var mapListView = MainWindow.MapTemplateListView;
-                    var button = (Button)sender;
+                    button.IsEnabled = false;
 
-                    var selected = mapListView.Items
-                                              .OfType<MapTemplateViewModel>()
-                                              .FirstOrDefault(obs => obs.TemplateKey.EqualsI(template.TemplateKey));
+                    return;
+                }
 
-                    if (selected is null)
-                    {
-                        button.IsEnabled = false;
-
-                        return;
-                    }
-
-                    MainWindow.MapTemplatesTab.IsSelected = true;
-                    mapListView.ItemsView.SelectedItem = selected;
-                    mapListView.ItemsView.ScrollIntoView(selected);
-                });
+                MainWindow.MapTemplatesTab.IsSelected = true;
+                mapListView.ItemsView.SelectedItem = selected;
+                mapListView.ItemsView.ScrollIntoView(selected);
+            });
 
             if (!template.TemplateKey.EqualsI(expectedTemplateKey))
                 await AddViolationAsync($"TemplateKey mismatch: {template.TemplateKey} != {expectedTemplateKey}", handler, true);
@@ -302,27 +299,26 @@ public sealed partial class IntegrityCheckControl
             var template = wrapper.Object;
             var expectedTemplateKey = GetExpectedKey(wrapper);
 
-            var handler = new RoutedEventHandler(
-                (sender, _) =>
+            var handler = new RoutedEventHandler((sender, _) =>
+            {
+                var merchantListView = MainWindow.MerchantTemplateListView;
+                var button = (Button)sender;
+
+                var selected = merchantListView.Items
+                                               .OfType<MerchantTemplateViewModel>()
+                                               .FirstOrDefault(obs => obs.TemplateKey.EqualsI(template.TemplateKey));
+
+                if (selected is null)
                 {
-                    var merchantListView = MainWindow.MerchantTemplateListView;
-                    var button = (Button)sender;
+                    button.IsEnabled = false;
 
-                    var selected = merchantListView.Items
-                                                   .OfType<MerchantTemplateViewModel>()
-                                                   .FirstOrDefault(obs => obs.TemplateKey.EqualsI(template.TemplateKey));
+                    return;
+                }
 
-                    if (selected is null)
-                    {
-                        button.IsEnabled = false;
-
-                        return;
-                    }
-
-                    MainWindow.MerchantTemplatesTab.IsSelected = true;
-                    merchantListView.ItemsView.SelectedItem = selected;
-                    merchantListView.ItemsView.ScrollIntoView(selected);
-                });
+                MainWindow.MerchantTemplatesTab.IsSelected = true;
+                merchantListView.ItemsView.SelectedItem = selected;
+                merchantListView.ItemsView.ScrollIntoView(selected);
+            });
 
             if (!template.TemplateKey.EqualsI(expectedTemplateKey))
                 await AddViolationAsync($"TemplateKey mismatch: {template.TemplateKey} != {expectedTemplateKey}", handler, true);
@@ -359,27 +355,26 @@ public sealed partial class IntegrityCheckControl
             var template = wrapper.Object;
             var expectedTemplateKey = GetExpectedKey(wrapper);
 
-            var handler = new RoutedEventHandler(
-                (sender, _) =>
+            var handler = new RoutedEventHandler((sender, _) =>
+            {
+                var monsterListView = MainWindow.MonsterTemplateListView;
+                var button = (Button)sender;
+
+                var selected = monsterListView.Items
+                                              .OfType<MonsterTemplateViewModel>()
+                                              .FirstOrDefault(obs => obs.TemplateKey.EqualsI(template.TemplateKey));
+
+                if (selected is null)
                 {
-                    var monsterListView = MainWindow.MonsterTemplateListView;
-                    var button = (Button)sender;
+                    button.IsEnabled = false;
 
-                    var selected = monsterListView.Items
-                                                  .OfType<MonsterTemplateViewModel>()
-                                                  .FirstOrDefault(obs => obs.TemplateKey.EqualsI(template.TemplateKey));
+                    return;
+                }
 
-                    if (selected is null)
-                    {
-                        button.IsEnabled = false;
-
-                        return;
-                    }
-
-                    MainWindow.MonsterTemplatesTab.IsSelected = true;
-                    monsterListView.ItemsView.SelectedItem = selected;
-                    monsterListView.ItemsView.ScrollIntoView(selected);
-                });
+                MainWindow.MonsterTemplatesTab.IsSelected = true;
+                monsterListView.ItemsView.SelectedItem = selected;
+                monsterListView.ItemsView.ScrollIntoView(selected);
+            });
 
             if (!template.TemplateKey.EqualsI(expectedTemplateKey))
                 await AddViolationAsync($"TemplateKey mismatch: {template.TemplateKey} != {expectedTemplateKey}", handler, true);
@@ -407,27 +402,26 @@ public sealed partial class IntegrityCheckControl
             var template = wrapper.Object;
             var expectedTemplateKey = GetExpectedKey(wrapper);
 
-            var handler = new RoutedEventHandler(
-                (sender, _) =>
+            var handler = new RoutedEventHandler((sender, _) =>
+            {
+                var reactorTileListView = MainWindow.ReactorTileTemplateListView;
+                var button = (Button)sender;
+
+                var selected = reactorTileListView.Items
+                                                  .OfType<ReactorTileTemplateViewModel>()
+                                                  .FirstOrDefault(obs => obs.TemplateKey.EqualsI(template.TemplateKey));
+
+                if (selected is null)
                 {
-                    var reactorTileListView = MainWindow.ReactorTileTemplateListView;
-                    var button = (Button)sender;
+                    button.IsEnabled = false;
 
-                    var selected = reactorTileListView.Items
-                                                      .OfType<ReactorTileTemplateViewModel>()
-                                                      .FirstOrDefault(obs => obs.TemplateKey.EqualsI(template.TemplateKey));
+                    return;
+                }
 
-                    if (selected is null)
-                    {
-                        button.IsEnabled = false;
-
-                        return;
-                    }
-
-                    MainWindow.ReactorTileTemplatesTab.IsSelected = true;
-                    reactorTileListView.ItemsView.SelectedItem = selected;
-                    reactorTileListView.ItemsView.ScrollIntoView(selected);
-                });
+                MainWindow.ReactorTileTemplatesTab.IsSelected = true;
+                reactorTileListView.ItemsView.SelectedItem = selected;
+                reactorTileListView.ItemsView.ScrollIntoView(selected);
+            });
 
             if (!template.TemplateKey.EqualsI(expectedTemplateKey))
                 await AddViolationAsync($"TemplateKey mismatch: {template.TemplateKey} != {expectedTemplateKey}", handler, true);
@@ -444,27 +438,26 @@ public sealed partial class IntegrityCheckControl
             var expectedTemplateKey = GetExpectedKey(wrapper);
             var learningRequirements = template.LearningRequirements;
 
-            var handler = new RoutedEventHandler(
-                (sender, _) =>
+            var handler = new RoutedEventHandler((sender, _) =>
+            {
+                var skillListView = MainWindow.SkillTemplateListView;
+                var button = (Button)sender;
+
+                var selected = skillListView.Items
+                                            .OfType<SkillTemplateViewModel>()
+                                            .FirstOrDefault(obs => obs.TemplateKey.EqualsI(template.TemplateKey));
+
+                if (selected is null)
                 {
-                    var skillListView = MainWindow.SkillTemplateListView;
-                    var button = (Button)sender;
+                    button.IsEnabled = false;
 
-                    var selected = skillListView.Items
-                                                .OfType<SkillTemplateViewModel>()
-                                                .FirstOrDefault(obs => obs.TemplateKey.EqualsI(template.TemplateKey));
+                    return;
+                }
 
-                    if (selected is null)
-                    {
-                        button.IsEnabled = false;
-
-                        return;
-                    }
-
-                    MainWindow.SkillsTab.IsSelected = true;
-                    skillListView.ItemsView.SelectedItem = selected;
-                    skillListView.ItemsView.ScrollIntoView(selected);
-                });
+                MainWindow.SkillsTab.IsSelected = true;
+                skillListView.ItemsView.SelectedItem = selected;
+                skillListView.ItemsView.ScrollIntoView(selected);
+            });
 
             if (!template.TemplateKey.EqualsI(expectedTemplateKey))
                 await AddViolationAsync($"TemplateKey mismatch: {template.TemplateKey} != {expectedTemplateKey}", handler, true);
@@ -519,27 +512,26 @@ public sealed partial class IntegrityCheckControl
             var expectedTemplateKey = GetExpectedKey(wrapper);
             var learningRequirements = template.LearningRequirements;
 
-            var handler = new RoutedEventHandler(
-                (sender, _) =>
+            var handler = new RoutedEventHandler((sender, _) =>
+            {
+                var spellListView = MainWindow.SpellTemplateListView;
+                var button = (Button)sender;
+
+                var selected = spellListView.Items
+                                            .OfType<SpellTemplateViewModel>()
+                                            .FirstOrDefault(obs => obs.TemplateKey.EqualsI(template.TemplateKey));
+
+                if (selected is null)
                 {
-                    var spellListView = MainWindow.SpellTemplateListView;
-                    var button = (Button)sender;
+                    button.IsEnabled = false;
 
-                    var selected = spellListView.Items
-                                                .OfType<SpellTemplateViewModel>()
-                                                .FirstOrDefault(obs => obs.TemplateKey.EqualsI(template.TemplateKey));
+                    return;
+                }
 
-                    if (selected is null)
-                    {
-                        button.IsEnabled = false;
-
-                        return;
-                    }
-
-                    MainWindow.SpellsTab.IsSelected = true;
-                    spellListView.ItemsView.SelectedItem = selected;
-                    spellListView.ItemsView.ScrollIntoView(selected);
-                });
+                MainWindow.SpellsTab.IsSelected = true;
+                spellListView.ItemsView.SelectedItem = selected;
+                spellListView.ItemsView.ScrollIntoView(selected);
+            });
 
             if (!template.TemplateKey.EqualsI(expectedTemplateKey))
                 await AddViolationAsync($"TemplateKey mismatch: {template.TemplateKey} != {expectedTemplateKey}", handler, true);
@@ -579,32 +571,31 @@ public sealed partial class IntegrityCheckControl
             var node = wrapper.Object;
             var expectedNodeKey = GetExpectedKey(wrapper);
 
-            var handler = new RoutedEventHandler(
-                (sender, _) =>
+            var handler = new RoutedEventHandler((sender, _) =>
+            {
+                var nodeListView = MainWindow.WorldMapNodeListView;
+                var button = (Button)sender;
+
+                var selected = nodeListView.Items
+                                           .OfType<WorldMapNodeViewModel>()
+                                           .FirstOrDefault(obs => obs.NodeKey.EqualsI(node.NodeKey));
+
+                if (selected is null)
                 {
-                    var nodeListView = MainWindow.WorldMapNodeListView;
-                    var button = (Button)sender;
+                    button.IsEnabled = false;
 
-                    var selected = nodeListView.Items
-                                               .OfType<WorldMapNodeViewModel>()
-                                               .FirstOrDefault(obs => obs.NodeKey.EqualsI(node.NodeKey));
+                    return;
+                }
 
-                    if (selected is null)
-                    {
-                        button.IsEnabled = false;
-
-                        return;
-                    }
-
-                    MainWindow.WorldMapNodesTab.IsSelected = true;
-                    nodeListView.ItemsView.SelectedItem = selected;
-                    nodeListView.ItemsView.ScrollIntoView(selected);
-                });
+                MainWindow.WorldMapNodesTab.IsSelected = true;
+                nodeListView.ItemsView.SelectedItem = selected;
+                nodeListView.ItemsView.ScrollIntoView(selected);
+            });
 
             if (!node.NodeKey.EqualsI(expectedNodeKey))
                 await AddViolationAsync($"NodeKey mismatch: {node.NodeKey} != {expectedNodeKey}", handler, true);
 
-            if (!clientRect.Contains(node.ScreenPosition))
+            if (!clientRect.ContainsPoint(node.ScreenPosition))
                 await AddViolationAsync("ScreenPosition out of bounds", handler);
 
             if (!MapInstanceIndex.TryGetValue(node.Destination.Map, out var destinationMapInstance))
@@ -619,7 +610,7 @@ public sealed partial class IntegrityCheckControl
                     destinationMapTemplate.Width,
                     destinationMapTemplate.Height);
 
-                if (!bounds.Contains(node.Destination))
+                if (!bounds.ContainsPoint(node.Destination))
                     await AddViolationAsync("Destination out of bounds", handler);
             }
         }
@@ -634,27 +625,26 @@ public sealed partial class IntegrityCheckControl
             var worldMap = wrapper.Object;
             var expectdWorldMapKey = GetExpectedKey(wrapper);
 
-            var handler = new RoutedEventHandler(
-                (sender, _) =>
+            var handler = new RoutedEventHandler((sender, _) =>
+            {
+                var worldMapListView = MainWindow.WorldMapListView;
+                var button = (Button)sender;
+
+                var selected = worldMapListView.Items
+                                               .OfType<WorldMapViewModel>()
+                                               .FirstOrDefault(obs => obs.WorldMapKey.EqualsI(worldMap.WorldMapKey));
+
+                if (selected is null)
                 {
-                    var worldMapListView = MainWindow.WorldMapListView;
-                    var button = (Button)sender;
+                    button.IsEnabled = false;
 
-                    var selected = worldMapListView.Items
-                                                   .OfType<WorldMapViewModel>()
-                                                   .FirstOrDefault(obs => obs.WorldMapKey.EqualsI(worldMap.WorldMapKey));
+                    return;
+                }
 
-                    if (selected is null)
-                    {
-                        button.IsEnabled = false;
-
-                        return;
-                    }
-
-                    MainWindow.WorldMapsTab.IsSelected = true;
-                    worldMapListView.ItemsView.SelectedItem = selected;
-                    worldMapListView.ItemsView.ScrollIntoView(selected);
-                });
+                MainWindow.WorldMapsTab.IsSelected = true;
+                worldMapListView.ItemsView.SelectedItem = selected;
+                worldMapListView.ItemsView.ScrollIntoView(selected);
+            });
 
             if (!worldMap.WorldMapKey.EqualsI(expectdWorldMapKey))
                 await AddViolationAsync($"WorldMapKey mismatch: {worldMap.WorldMapKey} != {expectdWorldMapKey}", handler, true);
@@ -667,42 +657,47 @@ public sealed partial class IntegrityCheckControl
 
     #region Utility
     private async Task AddViolationAsync(string violation, RoutedEventHandler handler, bool insertToHead = false)
-        => await Dispatcher.InvokeAsync(
-            () =>
+        => await Dispatcher.InvokeAsync(() =>
+        {
+            var button = new Button
             {
-                var button = new Button
-                {
-                    Content = violation,
-                    Style = Application.Current.Resources["MaterialDesignFlatSecondaryMidBgButton"] as Style,
-                    HorizontalAlignment = HorizontalAlignment.Left,
-                    VerticalAlignment = VerticalAlignment.Top,
-                    Margin = new Thickness(
-                        10,
-                        3,
-                        10,
-                        3)
-                };
+                Content = violation,
+                Style = Application.Current.Resources["MaterialDesignFlatSecondaryMidBgButton"] as Style,
+                HorizontalAlignment = HorizontalAlignment.Left,
+                VerticalAlignment = VerticalAlignment.Top,
+                Margin = new Thickness(
+                    10,
+                    3,
+                    10,
+                    3)
+            };
 
-                button.Click += handler;
+            button.Click += handler;
 
-                if (insertToHead)
-                    IntegrityViolationsControl.Items.Insert(0, button);
-                else
-                    IntegrityViolationsControl.Items.Add(button);
-            });
+            if (insertToHead)
+                IntegrityViolationsControl.Items.Insert(0, button);
+            else
+                IntegrityViolationsControl.Items.Add(button);
+        });
 
     private string GetExpectedKey<T>(TraceWrapper<T> wrapper) => Path.GetFileNameWithoutExtension(wrapper.Path);
 
     private async void IntegrityCheckBtn_OnClick(object sender, RoutedEventArgs e)
     {
-        await JsonContext.LoadingTask;
+        try
+        {
+            await JsonContext.LoadingTask;
 
-        if (!await ReBuildIndexes()
-                .ConfigureAwait(false))
-            return;
+            if (!await ReBuildIndexes()
+                    .ConfigureAwait(false))
+                return;
 
-        await DetectIntegrityViolationsAsync()
-            .ConfigureAwait(false);
+            await DetectIntegrityViolationsAsync()
+                .ConfigureAwait(false);
+        } catch
+        {
+            //ignored
+        }
     }
 
     private async Task<bool> ReBuildIndexes()
@@ -896,7 +891,7 @@ public sealed partial class IntegrityCheckControl
 
         Task AddRebuildFailureViolationAsync(string indexName, Exception ex)
             => AddViolationAsync(
-                $"Unable to build {indexName}.)",
+                $"Unable to build {indexName}.",
                 (_, _) => MessageBox.Show(
                     ex.Message,
                     "Error",
@@ -925,16 +920,15 @@ public sealed partial class IntegrityCheckControl
             var monsterSpawnsPath = Path.Combine(wrapper.Path, "monsters.json");
             var reactorsPath = Path.Combine(wrapper.Path, "reactors.json");
 
-            var handler = new RoutedEventHandler(
-                (_, _) =>
+            var handler = new RoutedEventHandler((_, _) =>
+            {
+                var info = new ProcessStartInfo(instancePath)
                 {
-                    var info = new ProcessStartInfo(instancePath)
-                    {
-                        UseShellExecute = true
-                    };
+                    UseShellExecute = true
+                };
 
-                    Process.Start(info);
-                });
+                Process.Start(info);
+            });
 
             if (!mapInstance.InstanceId.EqualsI(expectedInstanceId))
                 await AddViolationAsync($"InstanceId mismatch: {mapInstance.InstanceId} != {expectedInstanceId}", handler, true);
@@ -951,16 +945,15 @@ public sealed partial class IntegrityCheckControl
         MapInstanceRepository.MapInstanceComposite composite,
         List<ReactorTileSchema> reactors)
     {
-        var handler = new RoutedEventHandler(
-            (_, _) =>
+        var handler = new RoutedEventHandler((_, _) =>
+        {
+            var info = new ProcessStartInfo(path)
             {
-                var info = new ProcessStartInfo(path)
-                {
-                    UseShellExecute = true
-                };
+                UseShellExecute = true
+            };
 
-                Process.Start(info);
-            });
+            Process.Start(info);
+        });
 
         if (!MapTemplateIndex.TryGetValue(composite.Instance.TemplateKey, out var template))
             return;
@@ -973,7 +966,7 @@ public sealed partial class IntegrityCheckControl
 
         foreach (var reactor in reactors)
         {
-            if (!templateBounds.Contains(reactor.Source))
+            if (!templateBounds.ContainsPoint(reactor.Source))
                 await AddViolationAsync($"Reactor out of bounds: {reactor.Source}", handler);
 
             if (reactor.OwnerMonsterTemplateKey is not null && !MonsterTemplateIndex.ContainsKey(reactor.OwnerMonsterTemplateKey))
@@ -983,16 +976,15 @@ public sealed partial class IntegrityCheckControl
 
     private async Task DetectMapInstance_InstanceViolationsAsync(string path, MapInstanceSchema mapInstance)
     {
-        var handler = new RoutedEventHandler(
-            (_, _) =>
+        var handler = new RoutedEventHandler((_, _) =>
+        {
+            var info = new ProcessStartInfo(path)
             {
-                var info = new ProcessStartInfo(path)
-                {
-                    UseShellExecute = true
-                };
+                UseShellExecute = true
+            };
 
-                Process.Start(info);
-            });
+            Process.Start(info);
+        });
 
         if (!MapTemplateIndex.ContainsKey(mapInstance.TemplateKey))
             await AddViolationAsync($"TemplateKey not found: {mapInstance.TemplateKey}", handler, true);
@@ -1027,7 +1019,7 @@ public sealed partial class IntegrityCheckControl
                              0,
                              0,
                              mt.Width,
-                             mt.Height).Contains(shardingOptions.ExitLocation))
+                             mt.Height).ContainsPoint(shardingOptions.ExitLocation))
                     await AddViolationAsync($"Exit location out of bounds: {shardingOptions.ExitLocation}", handler);
             }
         }
@@ -1038,16 +1030,15 @@ public sealed partial class IntegrityCheckControl
         MapInstanceRepository.MapInstanceComposite composite,
         IEnumerable<MerchantSpawnSchema> merchantSpawns)
     {
-        var handler = new RoutedEventHandler(
-            (_, _) =>
+        var handler = new RoutedEventHandler((_, _) =>
+        {
+            var info = new ProcessStartInfo(path)
             {
-                var info = new ProcessStartInfo(path)
-                {
-                    UseShellExecute = true
-                };
+                UseShellExecute = true
+            };
 
-                Process.Start(info);
-            });
+            Process.Start(info);
+        });
 
         foreach (var merchantSpawn in merchantSpawns)
         {
@@ -1062,13 +1053,13 @@ public sealed partial class IntegrityCheckControl
                     template.Width,
                     template.Height);
 
-                if (!templateBounds.Contains(merchantSpawn.SpawnPoint))
+                if (!templateBounds.ContainsPoint(merchantSpawn.SpawnPoint))
                     await AddViolationAsync("Merchant spawn point out of bounds", handler);
 
-                if (merchantSpawn.PathingBounds is not null && !templateBounds.Contains(merchantSpawn.PathingBounds))
+                if (merchantSpawn.PathingBounds is not null && !templateBounds.ContainsRectangle(merchantSpawn.PathingBounds))
                     await AddViolationAsync("Merchant pathing bounds out of bounds", handler);
 
-                if (merchantSpawn.BlackList.Any(pt => !templateBounds.Contains(pt)))
+                if (merchantSpawn.BlackList.Any(pt => !templateBounds.ContainsPoint(pt)))
                     await AddViolationAsync("Merchant blacklisted point out of bounds", handler);
             }
         }
@@ -1079,16 +1070,15 @@ public sealed partial class IntegrityCheckControl
         MapInstanceRepository.MapInstanceComposite composite,
         IEnumerable<MonsterSpawnSchema> monsterSpawns)
     {
-        var handler = new RoutedEventHandler(
-            (_, _) =>
+        var handler = new RoutedEventHandler((_, _) =>
+        {
+            var info = new ProcessStartInfo(path)
             {
-                var info = new ProcessStartInfo(path)
-                {
-                    UseShellExecute = true
-                };
+                UseShellExecute = true
+            };
 
-                Process.Start(info);
-            });
+            Process.Start(info);
+        });
 
         foreach (var monsterSpawn in monsterSpawns)
         {
@@ -1103,7 +1093,7 @@ public sealed partial class IntegrityCheckControl
                     template.Width,
                     template.Height);
 
-                if (monsterSpawn.SpawnArea is not null && !templateBounds.Contains(monsterSpawn.SpawnArea))
+                if (monsterSpawn.SpawnArea is not null && !templateBounds.ContainsRectangle(monsterSpawn.SpawnArea))
                     await AddViolationAsync("Monster spawn area out of bounds", handler);
 
                 if (monsterSpawn.IntervalSecs <= 0)
@@ -1115,7 +1105,7 @@ public sealed partial class IntegrityCheckControl
                 if (monsterSpawn.MaxPerSpawn <= 0)
                     await AddViolationAsync($"Invalid monster spawn max per spawn: {monsterSpawn.MaxPerSpawn}", handler);
 
-                if (monsterSpawn.BlackList.Any(pt => !templateBounds.Contains(pt)))
+                if (monsterSpawn.BlackList.Any(pt => !templateBounds.ContainsPoint(pt)))
                     await AddViolationAsync("Monster blacklisted point out of bounds", handler);
 
                 foreach (var extraLootTableKey in monsterSpawn.ExtraLootTableKeys)

@@ -1,4 +1,5 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.World.Abstractions;
@@ -18,28 +19,12 @@ public sealed class ScorpionStanceEffect : EffectBase,
     RemoveEffectAbilityComponent.IRemoveEffectComponentOptions
 {
     /// <inheritdoc />
-    public IEffectFactory EffectFactory { get; init; }
-    
-    /// <inheritdoc />
-    public string? EffectKey { get; init; }
-    
-    /// <inheritdoc />
-    public bool AnimatePoints { get; init; }
-
-    /// <inheritdoc />
-    public Animation? Animation { get; init; } 
-
-    /// <inheritdoc />
-    public List<string> ConflictingEffectNames { get; init; } =
-    [
-        "Scorpion Stance",
-    ];
-
-    /// <inheritdoc />
     protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(2);
 
+    private static int AcBuff => 15;
+
     /// <inheritdoc />
-    public bool ExcludeSourcePoint { get; init; }
+    public int? ExclusionRange { get; init; }
 
     /// <inheritdoc />
     public TargetFilter Filter { get; init; }
@@ -57,15 +42,22 @@ public sealed class ScorpionStanceEffect : EffectBase,
     public bool SingleTarget { get; init; } = true;
 
     /// <inheritdoc />
-    public byte? Sound { get; init; }
+    public bool AnimatePoints { get; init; }
+
+    /// <inheritdoc />
+    public Animation? Animation { get; init; }
+
+    /// <inheritdoc />
+    public List<string> ConflictingEffectNames { get; init; } =
+    [
+        "Scorpion Stance",
+    ];
 
     /// <inheritdoc />
     public override byte Icon => 158;
 
     /// <inheritdoc />
     public override string Name => "Scorpion Stance";
-    
-    private static int AcBuff => 15;
 
     /// <inheritdoc />
     public override void OnTerminated()
@@ -73,7 +65,7 @@ public sealed class ScorpionStanceEffect : EffectBase,
         Subject.StatSheet.AddBonus(new Attributes { Ac = AcBuff });
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
-    
+
     /// <inheritdoc />
     public override void OnApplied()
     {
@@ -82,7 +74,7 @@ public sealed class ScorpionStanceEffect : EffectBase,
             ?.Execute<AnimationAbilityComponent>()
             .Execute<SoundAbilityComponent>()
             .Execute<RemoveEffectAbilityComponent>();
-            
+
         Subject.StatSheet.SubtractBonus(new Attributes { Ac = AcBuff });
 
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
@@ -97,4 +89,13 @@ public sealed class ScorpionStanceEffect : EffectBase,
 
         return execution is not null;
     }
+
+    /// <inheritdoc />
+    public IEffectFactory EffectFactory { get; init; }
+
+    /// <inheritdoc />
+    public string? EffectKey { get; init; }
+
+    /// <inheritdoc />
+    public byte? Sound { get; init; }
 }

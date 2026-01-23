@@ -1,11 +1,13 @@
-using Chaos.Common.Definitions;
+#region
+using Chaos.DarkAges.Definitions;
+using Chaos.Networking.Abstractions.Definitions;
 using Chaos.Packets.Abstractions;
+#endregion
 
 namespace Chaos.Networking.Entities.Server;
 
 /// <summary>
-///     Represents the serialization of the <see cref="Chaos.Packets.Abstractions.Definitions.ServerOpCode.SelfProfile" />
-///     packet
+///     Represents the serialization of the <see cref="ServerOpCode.SelfProfile" /> packet
 /// </summary>
 public sealed record SelfProfileArgs : IPacketSerializable
 {
@@ -76,7 +78,7 @@ public sealed record SelfProfileArgs : IPacketSerializable
     /// <summary>
     ///     The character's legend marks
     /// </summary>
-    public ICollection<LegendMarkInfo> LegendMarks { get; set; } = Array.Empty<LegendMarkInfo>();
+    public ICollection<LegendMarkInfo> LegendMarks { get; set; } = [];
 
     /// <summary>
     ///     The character's name

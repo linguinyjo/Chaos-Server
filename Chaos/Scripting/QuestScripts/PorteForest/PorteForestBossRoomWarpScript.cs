@@ -1,5 +1,5 @@
 using Chaos.Collections;
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Menu;
 using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
@@ -9,7 +9,7 @@ using Chaos.Storage.Abstractions;
 
 namespace Chaos.Scripting.QuestScripts.PorteForest;
 
-public class PorteForestBossRoomWarpScript :  ReactorTileScriptBase
+public class PorteForestBossRoomWarpScript : ReactorTileScriptBase
 {
     private readonly IDialogFactory DialogFactory;
     private readonly ISimpleCache SimpleCache;
@@ -33,11 +33,12 @@ public class PorteForestBossRoomWarpScript :  ReactorTileScriptBase
             DisplayDialog(aisling);
             return;
         }
+
         var mapInstance = SimpleCache.Get<MapInstance>("porteForestPeak");
-        var destination = new Location("porteForestPeak",9, 18);
+        var destination = new Location("porteForestPeak", 9, 18);
         aisling.TraverseMap(mapInstance, destination);
     }
-    
+
     private void DisplayDialog(Aisling source)
     {
         var newDialog = new Dialog(

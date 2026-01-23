@@ -1,4 +1,5 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
+using Chaos.DarkAges.Definitions;
 
 namespace Chaos.Scripting.QuestScripts.Dugons.GreenDugonScripts;
 

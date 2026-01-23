@@ -32,7 +32,7 @@
             "damageStat": "str",
             "range": 1,
             "shape": "front",
-            "excludeSourcePoint": true,
+            "exclusionRange": 0,
             "damageStatMultiplier": 0.25,
             "baseDamage": 3,
             "PAtkMultiplier": -80,

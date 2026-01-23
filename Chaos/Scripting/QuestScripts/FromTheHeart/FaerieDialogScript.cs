@@ -1,4 +1,5 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Abstractions;
 using Chaos.Models.Menu;
 using Chaos.Models.World;
@@ -9,11 +10,11 @@ using Chaos.Services.Factories.Abstractions;
 
 namespace Chaos.Scripting.QuestScripts.FromTheHeart;
 
-public class FaerieDialogScript:  DialogScriptBase
+public class FaerieDialogScript : DialogScriptBase
 {
-    private readonly IDialogFactory DialogFactory;
     private readonly Dialog Dialog;
-    
+    private readonly IDialogFactory DialogFactory;
+
     /// <inheritdoc />
     public FaerieDialogScript(Dialog subject, IDialogFactory dialogFactory)
         : base(subject)
@@ -28,11 +29,14 @@ public class FaerieDialogScript:  DialogScriptBase
         var faerieEntity = new FaerieDialogSource();
         Subject.DialogSource = faerieEntity;
     }
-    
-    public override void OnDisplayed(Aisling source) {}
+
+    public override void OnDisplayed(Aisling source)
+    {
+    }
 
     public override void OnNext(Aisling source, byte? optionIndex = null)
-    {}
+    {
+    }
 }
 
 public sealed class FaerieDialogSource : IDialogSourceEntity
@@ -42,6 +46,8 @@ public sealed class FaerieDialogSource : IDialogSourceEntity
     public uint Id => 1;
     public string Name => "Faerie";
     public ushort Sprite => 4;
+
     public void Activate(Aisling source)
-    {}
+    {
+    }
 }

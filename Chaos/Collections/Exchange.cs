@@ -1,13 +1,17 @@
+#region
 using Chaos.Common.Identity;
-using Chaos.Common.Synchronization;
 using Chaos.Models.World;
 using Chaos.NLog.Logging.Definitions;
 using Chaos.NLog.Logging.Extensions;
 using Chaos.Observers;
 using Humanizer;
+#endregion
 
 namespace Chaos.Collections;
 
+/// <summary>
+///     Represents an exchange window between two aislings, used to manage the state of the exchange
+/// </summary>
 public sealed class Exchange
 {
     private readonly Aisling Aisling1;
@@ -15,14 +19,30 @@ public sealed class Exchange
     private readonly Aisling Aisling2;
     private readonly Inventory Aisling2Items;
     private readonly ILogger<Exchange> Logger;
-    private readonly AutoReleasingMonitor Sync;
+    private readonly Lock Sync;
     private bool Aisling1Accept;
     private int Aisling1Gold;
     private bool Aisling2Accept;
     private int Aisling2Gold;
     private bool IsActive;
+
+    /// <summary>
+    ///     The unique identifier for this exchange
+    /// </summary>
     public ulong ExchangeId { get; }
 
+    /// <summary>
+    ///     Initializes a new instance of the <see cref="Exchange" /> class.
+    /// </summary>
+    /// <param name="sender">
+    ///     The aisling that initiated this exchange
+    /// </param>
+    /// <param name="receiver">
+    ///     The other aisling in the exchange
+    /// </param>
+    /// <param name="logger">
+    ///     A class logger
+    /// </param>
     public Exchange(Aisling sender, Aisling receiver, ILogger<Exchange> logger)
     {
         ExchangeId = PersistentIdGenerator<ulong>.Shared.NextId;
@@ -33,12 +53,21 @@ public sealed class Exchange
         Aisling1Items.AddObserver(new ExchangeObserver(Aisling1, Aisling2));
         Aisling2Items = new Inventory();
         Aisling2Items.AddObserver(new ExchangeObserver(Aisling2, Aisling1));
-        Sync = new AutoReleasingMonitor();
+        Sync = new Lock();
     }
 
+    /// <summary>
+    ///     Accepts the exchange
+    /// </summary>
+    /// <param name="aisling">
+    ///     The aisling accepting the exchange
+    /// </param>
+    /// <remarks>
+    ///     Both aislings must accept the exchange for it to be completed
+    /// </remarks>
     public void Accept(Aisling aisling)
     {
-        using var sync = Sync.Enter();
+        using var sync = Sync.EnterScope();
 
         var otherUser = GetOther(aisling);
         (var gold, var items, var accepted) = InnerGetVars(aisling);
@@ -64,9 +93,15 @@ public sealed class Exchange
         }
     }
 
+    /// <summary>
+    ///     Activates the exchange
+    /// </summary>
+    /// <remarks>
+    ///     This sets the exchange to active, and opens the window for both aislings
+    /// </remarks>
     public void Activate()
     {
-        using var sync = Sync.Enter();
+        using var sync = Sync.EnterScope();
 
         IsActive = true;
 
@@ -82,9 +117,22 @@ public sealed class Exchange
                   Aisling2.Name);
     }
 
+    /// <summary>
+    ///     Adds an item to the exchange
+    /// </summary>
+    /// <param name="aisling">
+    ///     The aisling adding the item
+    /// </param>
+    /// <param name="slot">
+    ///     The slot of the item in the aisling's inventory that is being added
+    /// </param>
+    /// <remarks>
+    ///     If an item is stackable, the aisling will be prompted to enter the amount to add. While the item(s) are in the
+    ///     exchange, they are not in the aisling's inventory
+    /// </remarks>
     public void AddItem(Aisling aisling, byte slot)
     {
-        using var sync = Sync.Enter();
+        using var sync = Sync.EnterScope();
 
         var otherUser = GetOther(aisling);
         (_, var userItems, var userAccepted) = InnerGetVars(aisling);
@@ -92,14 +140,14 @@ public sealed class Exchange
         if (!IsActive || !aisling.Inventory.TryGetObject(slot, out var item) || userAccepted)
             return;
 
-        if (item.Template.AccountBound)
+        if (item.AccountBound)
         {
             aisling.SendActiveMessage($"{item.DisplayName} is account bound");
 
             return;
         }
 
-        if (item.Template.NoTrade)
+        if (item.NoTrade)
         {
             aisling.SendActiveMessage($"{item.DisplayName} is no-trade");
 
@@ -139,9 +187,24 @@ public sealed class Exchange
         }
     }
 
+    /// <summary>
+    ///     Adds a stackable item to the exchange
+    /// </summary>
+    /// <param name="aisling">
+    ///     The aisling adding the items
+    /// </param>
+    /// <param name="slot">
+    ///     The slot of the items in the aisling's inventory that is being added
+    /// </param>
+    /// <param name="amount">
+    ///     The amount of the item to add
+    /// </param>
+    /// <remarks>
+    ///     While the item(s) are in the exchange, they are not in the aisling's inventory
+    /// </remarks>
     public void AddStackableItem(Aisling aisling, byte slot, byte amount)
     {
-        using var sync = Sync.Enter();
+        using var sync = Sync.EnterScope();
 
         var otherUser = GetOther(aisling);
         (_, var userItems, var userAccepted) = InnerGetVars(aisling);
@@ -149,14 +212,14 @@ public sealed class Exchange
         if (!IsActive || (amount <= 0) || !aisling.Inventory.TryGetObject(slot, out var item) || userAccepted)
             return;
 
-        if (item.Template.AccountBound)
+        if (item.AccountBound)
         {
             aisling.SendActiveMessage($"{item.DisplayName} is account bound");
 
             return;
         }
 
-        if (item.Template.NoTrade)
+        if (item.NoTrade)
         {
             aisling.SendActiveMessage($"{item.DisplayName} is no-trade");
 
@@ -204,9 +267,18 @@ public sealed class Exchange
         }
     }
 
+    /// <summary>
+    ///     Cancels the exchange
+    /// </summary>
+    /// <param name="aisling">
+    ///     The aisling cancelling the exchange
+    /// </param>
+    /// <remarks>
+    ///     This will return each aisling's gold and items to them
+    /// </remarks>
     public void Cancel(Aisling aisling)
     {
-        using var sync = Sync.Enter();
+        using var sync = Sync.EnterScope();
 
         var otherUser = GetOther(aisling);
         (var gold, var items, _) = InnerGetVars(aisling);
@@ -229,6 +301,13 @@ public sealed class Exchange
         Deactivate();
     }
 
+    /// <summary>
+    ///     Deactivates the exchange
+    /// </summary>
+    /// <remarks>
+    ///     A deactivated exchange cannot be interacted with. This is an extra step used to ensure the exchange cannot be
+    ///     re-used
+    /// </remarks>
     private void Deactivate()
     {
         IsActive = false;
@@ -285,6 +364,15 @@ public sealed class Exchange
         }
     }
 
+    /// <summary>
+    ///     Gets the other aisling in the exchange
+    /// </summary>
+    /// <param name="aisling">
+    ///     The current aisling
+    /// </param>
+    /// <returns>
+    ///     The aisling in the exchange that is not the given aisling
+    /// </returns>
     public Aisling GetOther(Aisling aisling) => aisling.Equals(Aisling1) ? Aisling2 : Aisling1;
 
     private (int Gold, Inventory Items, bool Accepted) InnerGetVars(Aisling aisling)
@@ -306,9 +394,23 @@ public sealed class Exchange
             Aisling2Gold = amount;
     }
 
+    /// <summary>
+    ///     Sets the gold amount for the exchange
+    /// </summary>
+    /// <param name="aisling">
+    ///     The aisling setting the gold amount
+    /// </param>
+    /// <param name="amount">
+    ///     The amount of gold set
+    /// </param>
+    /// <remarks>
+    ///     This is a set, not an add. While the gold is in the exchange, it is not on the aisling. The first step of this
+    ///     method is to return any gold already in the exchange, so that if they have their full amount of gold to be able to
+    ///     set
+    /// </remarks>
     public void SetGold(Aisling aisling, int amount)
     {
-        using var sync = Sync.Enter();
+        using var sync = Sync.EnterScope();
 
         var otherUser = GetOther(aisling);
         var uuserVars = InnerGetVars(aisling);
@@ -337,9 +439,13 @@ public sealed class Exchange
                       aisling.Name,
                       amount,
                       ExchangeId);
-        }
 
-        aisling.Client.SendExchangeSetGold(false, amount);
-        otherUser.Client.SendExchangeSetGold(true, amount);
+            aisling.Client.SendExchangeSetGold(false, amount);
+            otherUser.Client.SendExchangeSetGold(true, amount);
+        } else
+        {
+            aisling.Client.SendExchangeSetGold(false, 0);
+            otherUser.Client.SendExchangeSetGold(true, 0);
+        }
     }
 }

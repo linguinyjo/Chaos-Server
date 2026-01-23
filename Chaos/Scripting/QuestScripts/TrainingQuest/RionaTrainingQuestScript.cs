@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Menu;
 using Chaos.Models.World;
 using Chaos.Scripting.DialogScripts.Abstractions;
@@ -6,21 +6,24 @@ using Chaos.Services.Factories.Abstractions;
 
 namespace Chaos.Scripting.QuestScripts.TrainingQuest;
 
-public class RionaTrainingQuestScript:  DialogScriptBase
+public class RionaTrainingQuestScript : DialogScriptBase
 {
-    private readonly IDialogFactory DialogFactory;
     private readonly Dialog Dialog;
+    private readonly IDialogFactory DialogFactory;
 
-    #region ScriptVars
-    protected byte Class { get; init; }
-    #endregion
-    
     /// <inheritdoc />
     public RionaTrainingQuestScript(Dialog subject, IDialogFactory dialogFactory)
-        : base(subject) {
+        : base(subject)
+    {
         DialogFactory = dialogFactory;
         Dialog = subject;
-    } 
+    }
+
+    #region ScriptVars
+
+    protected byte Class { get; init; }
+
+    #endregion
 
     /// <inheritdoc />
     public override void OnDisplaying(Aisling source)
@@ -38,7 +41,8 @@ public class RionaTrainingQuestScript:  DialogScriptBase
                 NextDialogKey = "Close"
             };
             newDialog.Display(source);
-        } else if (hasReceivedQuest is TrainingQuestStatus.None)
+        }
+        else if (hasReceivedQuest is TrainingQuestStatus.None)
         {
             // not on the quest so start it
             TrainingQuestHelper.StartQuest(source);
@@ -58,7 +62,11 @@ public class RionaTrainingQuestScript:  DialogScriptBase
         }
     }
 
-    public override void OnDisplayed(Aisling source) {}
+    public override void OnDisplayed(Aisling source)
+    {
+    }
 
-    public override void OnNext(Aisling source, byte? optionIndex = null) {}
+    public override void OnNext(Aisling source, byte? optionIndex = null)
+    {
+    }
 }

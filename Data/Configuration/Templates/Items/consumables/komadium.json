@@ -14,7 +14,7 @@
   ],
   "scriptVars": {
     "removeEffectConsumable": {
-      "excludeSourcePoint": true,
+      "exclusionRange": 0,
       "range": 1,
       "shape": "front",
       "effectKey": "skulled",

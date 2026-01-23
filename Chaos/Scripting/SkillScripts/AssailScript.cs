@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.Panel;
@@ -13,10 +13,10 @@ using Chaos.Scripting.SkillScripts.Abstractions;
 namespace Chaos.Scripting.SkillScripts;
 
 public class AssailScript : ConfigurableSkillScriptBase,
-                            DynamicAbilityComponent<Creature>.IDynamicAbilityComponentOptions,
-                            DamageAbilityComponent.IDamageComponentOptions,
-                            AbilityLevellingAbilityComponent.IAbilityLevellingComponentOptions,
-                            RequireWeaponTypeAbilityComponent.IRequireWeaponTypeComponentOptions
+    DynamicAbilityComponent<Creature>.IDynamicAbilityComponentOptions,
+    DamageAbilityComponent.IDamageComponentOptions,
+    AbilityLevellingAbilityComponent.IAbilityLevellingComponentOptions,
+    RequireWeaponTypeAbilityComponent.IRequireWeaponTypeComponentOptions
 {
     /// <inheritdoc />
     public AssailScript(Skill subject)
@@ -37,8 +37,9 @@ public class AssailScript : ConfigurableSkillScriptBase,
             ?.Execute<AbilityLevellingAbilityComponent>()
             .Execute<DamageAbilityComponent>();
     }
-    
+
     #region ScriptVars
+
     /// <inheritdoc />
     public AoeShape Shape { get; init; }
 
@@ -52,7 +53,7 @@ public class AssailScript : ConfigurableSkillScriptBase,
     public int Range { get; init; }
 
     /// <inheritdoc />
-    public bool ExcludeSourcePoint { get; init; }
+    public int? ExclusionRange { get; init; }
 
     /// <inheritdoc />
     public bool MustHaveTargets { get; init; }
@@ -99,10 +100,10 @@ public class AssailScript : ConfigurableSkillScriptBase,
 
     /// <inheritdoc />
     public bool ShouldNotBreakHide { get; init; }
-    
+
     /// <inheritdoc />
     public decimal? PAtkMultiplier { get; init; }
-    
+
     /// <inheritdoc />
     public bool? UseMatk { get; init; }
 
@@ -114,12 +115,12 @@ public class AssailScript : ConfigurableSkillScriptBase,
 
     /// <inheritdoc />
     public AbilityLevellingRate? LevelUpRate { get; init; }
-    
+
     /// <inheritdoc />
     public string? WeaponCategory { get; init; }
-    
+
     public string? AbilityTemplateKey { get; init; }
     public bool? IsSpell { get; init; }
-    #endregion
 
+    #endregion
 }

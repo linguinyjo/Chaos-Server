@@ -1,3 +1,4 @@
+#region
 using Chaos.Collections;
 using Chaos.IO.FileSystem;
 using Chaos.Models.Legend;
@@ -7,10 +8,12 @@ using Chaos.NLog.Logging.Definitions;
 using Chaos.NLog.Logging.Extensions;
 using Chaos.Schemas.Aisling;
 using Chaos.Scripting.EffectScripts.Abstractions;
+using Chaos.Services.Storage.Abstractions;
 using Chaos.Services.Storage.Options;
 using Chaos.Storage.Abstractions;
 using Chaos.TypeMapper.Abstractions;
 using Microsoft.Extensions.Options;
+#endregion
 
 namespace Chaos.Services.Storage;
 
@@ -21,7 +24,7 @@ public sealed class AislingStore(
     IEntityRepository entityRepository,
     IOptions<AislingStoreOptions> options,
     ILogger<AislingStore> logger,
-    ICloningService<Item> itemCloningService) : IAsyncStore<Aisling>
+    ICloningService<Item> itemCloningService) : IAsyncStore<Aisling>, IFacadeStore<Aisling>
 {
     private readonly IEntityRepository EntityRepository = entityRepository;
     private readonly ICloningService<Item> ItemCloningService = itemCloningService;
@@ -47,6 +50,29 @@ public sealed class AislingStore(
         => LoadAsync(key)
            .GetAwaiter()
            .GetResult();
+
+    Aisling IFacadeStore<Aisling>.Load(string name)
+        => ((IFacadeStore<Aisling>)this).LoadAsync(name)
+                                        .GetAwaiter()
+                                        .GetResult();
+
+    async Task<Aisling> IFacadeStore<Aisling>.LoadAsync(string name)
+    {
+        Logger.WithTopics(Topics.Entities.Aisling, Topics.Actions.Load)
+              .LogDebug("Loading aisling {@AislingName}", name);
+
+        var metricsLogger = Logger.WithTopics(Topics.Entities.Aisling, Topics.Actions.Load)
+                                  .WithMetrics();
+
+        var directory = Path.Combine(Options.Directory, name.ToLower());
+
+        var aisling = await directory.SafeExecuteAsync(dir => InnerLoadFacadeAsync(name, dir));
+
+        metricsLogger.WithProperty(aisling)
+                     .LogDebug("Loaded aisling facade {@AislingName}", aisling.Name);
+
+        return aisling;
+    }
 
     public async Task<Aisling> LoadAsync(string name)
     {
@@ -130,7 +156,7 @@ public sealed class AislingStore(
 
         var aislingTask = EntityRepository.LoadAndMapAsync<Aisling, AislingSchema>(aislingPath);
         var bankTask = EntityRepository.LoadAndMapAsync<Bank, BankSchema>(bankPath);
-        var trackersTask = EntityRepository.LoadAndMapAsync<AislingTrackers, TrackersSchema>(trackersPath);
+        var trackersTask = EntityRepository.LoadAndMapAsync<AislingTrackers, AislingTrackersSchema>(trackersPath);
 
         var effectsTask = EntityRepository.LoadAndMapManyAsync<IEffect, EffectSchema>(effectsPath)
                                           .ToListAsync();
@@ -175,6 +201,50 @@ public sealed class AislingStore(
         return aisling;
     }
 
+    private async Task<Aisling> InnerLoadFacadeAsync(string name, string directory)
+    {
+        if (!Directory.Exists(directory))
+            throw new InvalidOperationException($"No aisling data exists for the key \"{name}\" at the specified path \"{directory}\"");
+
+        var aislingPath = Path.Combine(directory, "aisling.json");
+        var trackersPath = Path.Combine(directory, "trackers.json");
+        var legendPath = Path.Combine(directory, "legend.json");
+        var equipmentPath = Path.Combine(directory, "equipment.json");
+
+        var aislingTask = EntityRepository.LoadAndMapAsync<Aisling, AislingSchema>(aislingPath);
+        var trackersTask = EntityRepository.LoadAndMapAsync<AislingTrackers, AislingTrackersSchema>(trackersPath);
+
+        var equipmentTask = EntityRepository.LoadAndMapManyAsync<Item, ItemSchema>(equipmentPath)
+                                            .ToListAsync();
+
+        var legendTask = EntityRepository.LoadAndMapManyAsync<LegendMark, LegendMarkSchema>(legendPath)
+                                         .ToListAsync();
+
+        var aisling = await aislingTask;
+        var bank = new Bank();
+        var trackers = await trackersTask;
+
+        var effectsBar = new EffectsBar(aisling);
+        var equipment = new Equipment(await equipmentTask);
+        var inventory = new Inventory(ItemCloningService);
+        var skillBook = new SkillBook();
+        var spellBook = new SpellBook();
+        var legend = new Legend(await legendTask);
+
+        aisling.Initialize(
+            name,
+            bank,
+            equipment,
+            inventory,
+            skillBook,
+            spellBook,
+            legend,
+            effectsBar,
+            trackers);
+
+        return aisling;
+    }
+
     private Task InnerSaveAsync(string directory, Aisling aisling)
     {
         var aislingPath = Path.Combine(directory, "aisling.json");
@@ -190,7 +260,7 @@ public sealed class AislingStore(
         return Task.WhenAll(
             EntityRepository.SaveAndMapAsync<Aisling, AislingSchema>(aisling, aislingPath),
             EntityRepository.SaveAndMapAsync<Bank, BankSchema>(aisling.Bank, bankPath),
-            EntityRepository.SaveAndMapAsync<Trackers, TrackersSchema>(aisling.Trackers, trackersPath),
+            EntityRepository.SaveAndMapAsync<AislingTrackers, AislingTrackersSchema>(aisling.Trackers, trackersPath),
             EntityRepository.SaveAndMapManyAsync<LegendMark, LegendMarkSchema>(aisling.Legend, legendPath),
             EntityRepository.SaveAndMapManyAsync<Item, ItemSchema>(aisling.Inventory, inventoryPath),
             EntityRepository.SaveAndMapManyAsync<Skill, SkillSchema>(aisling.SkillBook, skillsPath),

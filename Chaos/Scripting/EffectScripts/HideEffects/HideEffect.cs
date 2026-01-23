@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.World.Abstractions;
 using Chaos.Scripting.EffectScripts.Abstractions;
@@ -7,6 +7,8 @@ namespace Chaos.Scripting.EffectScripts.HideEffects;
 
 public sealed class HideEffect : EffectBase
 {
+    private static readonly TimeSpan TemporaryCooldown = TimeSpan.FromMilliseconds(5000);
+
     /// <inheritdoc />
     protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(2);
 
@@ -15,8 +17,6 @@ public sealed class HideEffect : EffectBase
 
     /// <inheritdoc />
     public override string Name => "Hide";
-
-    private static readonly TimeSpan TemporaryCooldown = TimeSpan.FromMilliseconds(5000);
 
     /// <inheritdoc />
     public override void OnApplied()
@@ -34,6 +34,7 @@ public sealed class HideEffect : EffectBase
         {
             spell.BeginCooldown(AislingSubject, TemporaryCooldown);
         }
+
         AislingSubject?.Refresh(true);
     }
 

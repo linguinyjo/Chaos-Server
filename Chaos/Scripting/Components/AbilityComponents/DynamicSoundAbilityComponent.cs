@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.World;
 using Chaos.Scripting.Components.Abstractions;
@@ -14,7 +14,7 @@ public struct DynamicSoundAbilityComponent : IComponent
         var options = vars.GetOptions<IDynamicSoundComponentOptions>();
         var points = vars.GetPoints();
         var weaponType = context.SourceAisling?.Equipment[EquipmentSlot.Weapon]?.Template.Category;
-        
+
         switch (weaponType)
         {
             case "Secret":

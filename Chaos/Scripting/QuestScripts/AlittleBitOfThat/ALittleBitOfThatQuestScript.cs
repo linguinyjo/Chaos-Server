@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Menu;
 using Chaos.Models.World;
 using Chaos.Scripting.DialogScripts.Abstractions;
@@ -7,27 +7,27 @@ using Chaos.Services.Factories.Abstractions;
 
 namespace Chaos.Scripting.QuestScripts.AlittleBitOfThat;
 
-public class ALittleBitOfThatQuestScript:  DialogScriptBase
+public class ALittleBitOfThatQuestScript : DialogScriptBase
 {
-    private readonly IDialogFactory DialogFactory;
-    private readonly Dialog Dialog;
-
     private static readonly string[] RottenItems =
     [
         "rottenApple",
-        "rottenGrapes", 
+        "rottenGrapes",
         "rottenTomato",
         "rottenCherry",
         "mouldyBaguette"
     ];
-    
+
+    private readonly Dialog Dialog;
+    private readonly IDialogFactory DialogFactory;
+
     /// <inheritdoc />
     public ALittleBitOfThatQuestScript(Dialog subject, IDialogFactory dialogFactory)
         : base(subject)
     {
         DialogFactory = dialogFactory;
         Dialog = subject;
-    } 
+    }
 
     /// <inheritdoc />
     public override void OnDisplaying(Aisling source)
@@ -48,7 +48,8 @@ public class ALittleBitOfThatQuestScript:  DialogScriptBase
         if (itemsFound.Count == 0)
         {
             var newDialog = CreateDialog(
-                text: "Hmmmm, looks like you don't have any rotten items I'm interested in. Come back if you happen to find anything. The more rotten the better!",
+                text:
+                "Hmmmm, looks like you don't have any rotten items I'm interested in. Come back if you happen to find anything. The more rotten the better!",
                 nextKey: "Close"
             );
             newDialog.Display(source);
@@ -63,12 +64,13 @@ public class ALittleBitOfThatQuestScript:  DialogScriptBase
         source.TryGiveGold(totalGoldValue);
 
         var successDialog = CreateDialog(
-            text: $"Thanks! I've given you {totalGoldValue} gold for your rotten items. Please bring me more if you can.",
+            text:
+            $"Thanks! I've given you {totalGoldValue} gold for your rotten items. Please bring me more if you can.",
             nextKey: "Close"
         );
         successDialog.Display(source);
     }
-    
+
     private Dialog CreateDialog(string text, string nextKey)
     {
         return new Dialog(
@@ -80,8 +82,12 @@ public class ALittleBitOfThatQuestScript:  DialogScriptBase
             NextDialogKey = nextKey
         };
     }
-    
-    public override void OnDisplayed(Aisling source) {}
 
-    public override void OnNext(Aisling source, byte? optionIndex = null) {}
+    public override void OnDisplayed(Aisling source)
+    {
+    }
+
+    public override void OnNext(Aisling source, byte? optionIndex = null)
+    {
+    }
 }

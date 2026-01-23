@@ -1,5 +1,5 @@
 using Chaos.Collections;
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.Legend;
 using Chaos.Models.Menu;
@@ -16,15 +16,24 @@ namespace Chaos.Scripting.DialogScripts.ClassChangeScripts;
 
 public class FirstClassChangeScript : ConfigurableDialogScriptBase
 {
+    private const byte SOUND = 42;
     private readonly ISimpleCache SimpleCache;
     private readonly ISkillFactory SkillFactory;
 
-    
-    #region ScriptVars
-    protected byte Class { get; init; }
-    #endregion
+    /// <inheritdoc />
+    public FirstClassChangeScript(Dialog subject, ISimpleCache simpleCache, ISkillFactory skillFactory)
+        : base(subject)
+    {
+        SimpleCache = simpleCache;
+        SkillFactory = skillFactory;
+    }
 
-    private const byte SOUND = 42;
+
+    #region ScriptVars
+
+    protected byte Class { get; init; }
+
+    #endregion
 
     private Animation Animation { get; } = new()
     {
@@ -33,16 +42,9 @@ public class FirstClassChangeScript : ConfigurableDialogScriptBase
     };
 
     /// <inheritdoc />
-    public FirstClassChangeScript(Dialog subject, ISimpleCache simpleCache, ISkillFactory skillFactory)
-        : base(subject)
-    {
-        SimpleCache = simpleCache;
-        SkillFactory = skillFactory; 
-    } 
-
-    /// <inheritdoc />
     public override void OnDisplaying(Aisling source)
-    {}
+    {
+    }
 
     public override void OnDisplayed(Aisling source)
     {
@@ -67,7 +69,7 @@ public class FirstClassChangeScript : ConfigurableDialogScriptBase
             GameTime.Now);
         source.Legend.AddUnique(legendMark);
         source.Animate(Animation);
-        source.Client.SendSound(SOUND, false); 
+        source.Client.SendSound(SOUND, false);
     }
 
     private void AddClassSpecificAssail(Aisling source, string assail)

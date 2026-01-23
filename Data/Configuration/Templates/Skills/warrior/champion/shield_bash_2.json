@@ -10,7 +10,7 @@
             "str": 11,
             "wis": 3
         },
-        "prerequisiteSkills": ["shield_bash_1"],
+        "prerequisiteSkills": [],
         "prerequisiteSpells": []
     },
     "description": "A powerful strike in the direction your facing.\n\nGold required: 1000\nItems required: \nLocation: Mileth Combat Skill Master",
@@ -32,7 +32,7 @@
             "damageStat": "str",
             "range": 1,
             "shape": "front",
-            "excludeSourcePoint": true,
+            "exclusionRange": 0,
             "damageStatMultiplier": 6,
             "baseDamage": 100,
             "filter": "hostileOnly, aliveOnly, othersOnly",

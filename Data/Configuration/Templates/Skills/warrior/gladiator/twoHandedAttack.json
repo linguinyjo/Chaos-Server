@@ -1,0 +1,40 @@
+{
+    "isAssail": true,
+    "learningRequirements": {
+        "itemRequirements": [],
+        "requiredGold": 5000,
+        "requiredStats": {
+            "con": 10,
+            "dex": 3,
+            "int": 3,
+            "str": 14,
+            "wis": 3
+        },
+        "prerequisiteSkills": [],
+        "prerequisiteSpells": []
+    },
+    "description": "Requires a two handed weapon\n\nGold required: 5000\nItems required: \nLocation: Mileth Combat Skill Master",
+    "level": 71,
+    "levelsUp": true,
+    "name": "Two-Handed Attack",
+    "class": "gladiator",
+    "panelSprite": 17,
+    "scriptKeys": ["Assail"],
+    "scriptVars": {
+        "assail": {
+            "bodyAnimation": 129,
+            "sound": 1,
+            "damageStat": "str",
+            "range": 1,
+            "shape": "front",
+            "exclusionRange": 0,
+            "damageStatMultiplier": 0.25,
+            "baseDamage": 30,
+            "PAtkMultiplier": -80,
+            "filter": "hostileOnly, aliveOnly, othersOnly",
+            "levelUpRate": "slow",
+            "weaponCategory": "twoHanded"
+        }
+    },
+    "templateKey": "twoHandedAttack"
+}

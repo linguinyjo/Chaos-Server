@@ -1,0 +1,43 @@
+{
+  "learningRequirements": {
+    "itemRequirements": [],
+    "requiredGold": 5000,
+    "requiredStats": {
+      "con": 3,
+      "dex": 5,
+      "int": 18,
+      "str": 4,
+      "wis": 13
+    },
+    "prerequisiteSkills": [],
+    "prerequisiteSpells": []
+  },
+  "spellType": "NoTarget",
+  "castLines": 3,
+  "class": "Bard",
+  "description": "Increases movement speed of your group\nGold required: 5000\nItems required: \nLocation: Mileth Black Magic Master",
+  "level": 71,
+  "name": "song of wind",
+  "spellCategory": "Song",
+  "panelSprite": 11,
+  "levelsUp": true,
+  "scriptKeys": [
+    "applyEffect"
+  ],
+  "scriptVars": {
+    "applyEffect": {
+      "shape": "allAround",
+      "manaCost": 150,
+      "bodyAnimation": "PlayNotes",
+      "range": 8,
+      "sound": 36,
+      "effectKey": "spiritOfWolfBuff",
+      "animation": {
+        "targetAnimation": 124,
+        "animationSpeed": 100
+      },
+      "filter": "friendlyOnly, aliveOnly, AislingsOnly, GroupOnly"
+    }
+  },
+  "templateKey": "song_of_wind"
+}

@@ -1,4 +1,5 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.World.Abstractions;
@@ -14,27 +15,26 @@ using Chaos.Time.Abstractions;
 namespace Chaos.Scripting.EffectScripts.BuffEffects;
 
 public sealed class OranLuth1Effect : EffectBase,
-                                        NonOverwritableEffectComponent.INonOverwritableEffectComponentOptions
+    NonOverwritableEffectComponent.INonOverwritableEffectComponentOptions
 {
-    public List<string> ConflictingEffectNames { get; init; } = ["oran luth 1", "oran luth 2", "oran luth 3" ];
-
     /// <inheritdoc />
     protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(2);
-    
+
+    private static int AttackSpeedBuff => 10;
+    public List<string> ConflictingEffectNames { get; init; } = ["oran luth 1", "oran luth 2", "oran luth 3"];
+
     /// <inheritdoc />
     public override byte Icon => 148;
 
     /// <inheritdoc />
     public override string Name => "oran luth 1";
-   
-    private static int AttackSpeedBuff => 10;
 
     public override void OnTerminated()
     {
         Subject.StatSheet.SubtractBonus(new Attributes { AtkSpeedPct = AttackSpeedBuff });
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
-    
+
     /// <inheritdoc />
     public override void OnApplied()
     {

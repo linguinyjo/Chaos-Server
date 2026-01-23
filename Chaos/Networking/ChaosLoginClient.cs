@@ -1,6 +1,7 @@
+#region
 using System.Net.Sockets;
-using Chaos.Common.Definitions;
 using Chaos.Cryptography.Abstractions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Extensions.Networking;
 using Chaos.Networking.Abstractions;
 using Chaos.Networking.Entities.Server;
@@ -11,6 +12,7 @@ using Chaos.Packets.Abstractions;
 using Chaos.Services.Storage.Abstractions;
 using Chaos.TypeMapper.Abstractions;
 using Microsoft.Extensions.Options;
+#endregion
 
 namespace Chaos.Networking;
 
@@ -34,6 +36,8 @@ public sealed class ChaosLoginClient : LoginClientBase, IChaosLoginClient
             logger)
     {
         LogRawPackets = chaosOptions.Value.LogRawPackets;
+        LogSendPacketCode = chaosOptions.Value.LogSendPacketCode;
+        LogReceivePacketCode = chaosOptions.Value.LogReceivePacketCode;
         Server = server;
         Mapper = mapper;
     }
@@ -126,6 +130,14 @@ public sealed class ChaosLoginClient : LoginClientBase, IChaosLoginClient
                       Topics.Actions.Receive)
                   .WithProperty(this)
                   .LogTrace("[Rcv] {@Packet}", packet.ToString());
+        else if (LogReceivePacketCode)
+            Logger.WithTopics(
+                      Topics.Qualifiers.Raw,
+                      Topics.Entities.Client,
+                      Topics.Entities.Packet,
+                      Topics.Actions.Receive)
+                  .WithProperty(this)
+                  .LogTrace("Received packet with code {@OpCode} from {@ClientIp}", opCode, RemoteIp);
 
         return Server.HandlePacketAsync(this, in packet);
     }

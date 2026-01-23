@@ -1,8 +1,12 @@
+#region
+
 using System.Runtime.InteropServices;
 using Chaos.Collections;
 using Chaos.Collections.Abstractions;
 using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Common.Utilities;
+using Chaos.Extensions;
 using Chaos.Extensions.Common;
 using Chaos.Geometry.Abstractions;
 using Chaos.Geometry.Abstractions.Definitions;
@@ -19,26 +23,66 @@ using Chaos.Scripting.MonsterScripts.Abstractions;
 using Chaos.Time;
 using Chaos.Time.Abstractions;
 
+#endregion
+
 namespace Chaos.Models.World;
 
 public sealed class Monster : Creature, IScripted<IMonsterScript>, IDialogSourceEntity
 {
+    public Monster(
+        MonsterTemplate template,
+        MapInstance mapInstance,
+        IPoint point,
+        ILogger<Monster> logger,
+        IScriptProvider scriptProvider,
+        ICollection<string>? extraScriptKeys = null)
+        : base(
+            template.Name,
+            template.Sprite,
+            mapInstance,
+            point)
+    {
+        extraScriptKeys ??= [];
+
+        AggroRange = template.AggroRange;
+        Experience = template.ExpReward;
+        AbilityExperience = template.AbilityReward;
+        Gold = Random.Shared.Next(template.MinGoldDrop, template.MaxGoldDrop + 1);
+        Items = [];
+        Skills = [];
+        Spells = [];
+        Template = template;
+        Logger = logger;
+        StatSheet = ShallowCopy<StatSheet>.Create(template.StatSheet);
+        Items = [];
+        Type = template.Type;
+        Direction = (Direction)Random.Shared.Next(4);
+        AggroList = new AggroList();
+        Contribution = new ContributionList();
+        LootTable = new CompositeLootTable(template.LootTables);
+        WanderTimer = new RandomizedIntervalTimer(TimeSpan.FromMilliseconds(template.WanderIntervalMs), 10,
+            RandomizationType.Positive);
+        MoveTimer = new RandomizedIntervalTimer(TimeSpan.FromMilliseconds(template.MoveIntervalMs), 10,
+            RandomizationType.Positive);
+        SkillTimer = new RandomizedIntervalTimer(TimeSpan.FromMilliseconds(template.SkillIntervalMs), 50);
+        SpellTimer = new RandomizedIntervalTimer(TimeSpan.FromMilliseconds(template.SpellIntervalMs), 50);
+        ScriptKeys = new HashSet<string>(template.ScriptKeys, StringComparer.OrdinalIgnoreCase);
+        BlackList = new HashSet<IPoint>(PointEqualityComparer.Instance);
+        ScriptKeys.AddRange(extraScriptKeys);
+        Script = scriptProvider.CreateScript<IMonsterScript, Monster>(ScriptKeys, this);
+    }
+
+    public int AbilityExperience { get; set; }
     public int AggroRange { get; set; }
     public ICollection<IPoint> BlackList { get; set; }
     public int Experience { get; set; }
     public ILootTable LootTable { get; set; }
     public Creature? Target { get; set; }
-    public ConcurrentDictionary<uint, int> AggroList { get; }
-    public ConcurrentDictionary<uint, int> Contribution { get; }
+    public AggroList AggroList { get; }
+    public ContributionList Contribution { get; }
     public List<Item> Items { get; }
     public override ILogger<Monster> Logger { get; }
     public IIntervalTimer MoveTimer { get; }
-
-    /// <inheritdoc />
-    public override IMonsterScript Script { get; }
-
-    /// <inheritdoc />
-    public override ISet<string> ScriptKeys { get; }
 
     public List<Skill> Skills { get; }
     public IIntervalTimer SkillTimer { get; }
@@ -58,48 +102,14 @@ public sealed class Monster : Creature, IScripted<IMonsterScript>, IDialogSource
     /// <inheritdoc />
     EntityType IDialogSourceEntity.EntityType => EntityType.Creature;
 
-    public Monster(
-        MonsterTemplate template,
-        MapInstance mapInstance,
-        IPoint point,
-        ILogger<Monster> logger,
-        IScriptProvider scriptProvider,
-        ICollection<string>? extraScriptKeys = null)
-        : base(
-            template.Name,
-            template.Sprite,
-            mapInstance,
-            point)
-    {
-        extraScriptKeys ??= Array.Empty<string>();
-
-        AggroRange = template.AggroRange;
-        Experience = template.ExpReward;
-        Gold = Random.Shared.Next(template.MinGoldDrop, template.MaxGoldDrop + 1);
-        Items = new List<Item>();
-        Skills = new List<Skill>();
-        Spells = new List<Spell>();
-        Template = template;
-        Logger = logger;
-        StatSheet = ShallowCopy<StatSheet>.Create(template.StatSheet);
-        Items = new List<Item>();
-        Type = template.Type;
-        Direction = (Direction)Random.Shared.Next(4);
-        AggroList = new ConcurrentDictionary<uint, int>();
-        Contribution = new ConcurrentDictionary<uint, int>();
-        LootTable = new CompositeLootTable(template.LootTables);
-        WanderTimer = new RandomizedIntervalTimer(TimeSpan.FromMilliseconds(template.WanderIntervalMs), 10, RandomizationType.Positive);
-        MoveTimer = new RandomizedIntervalTimer(TimeSpan.FromMilliseconds(template.MoveIntervalMs), 10, RandomizationType.Positive);
-        SkillTimer = new RandomizedIntervalTimer(TimeSpan.FromMilliseconds(template.SkillIntervalMs), 50);
-        SpellTimer = new RandomizedIntervalTimer(TimeSpan.FromMilliseconds(template.SpellIntervalMs), 50);
-        ScriptKeys = new HashSet<string>(template.ScriptKeys, StringComparer.OrdinalIgnoreCase);
-        BlackList = new HashSet<IPoint>(PointEqualityComparer.Instance);
-        ScriptKeys.AddRange(extraScriptKeys);
-        Script = scriptProvider.CreateScript<IMonsterScript, Monster>(ScriptKeys, this);
-    }
-
     /// <inheritdoc />
     void IDialogSourceEntity.Activate(Aisling source) => Script.OnClicked(source);
+
+    /// <inheritdoc />
+    public override IMonsterScript Script { get; }
+
+    /// <inheritdoc />
+    public override ISet<string> ScriptKeys { get; }
 
     public void ResetAggro()
     {
@@ -115,7 +125,7 @@ public sealed class Monster : Creature, IScripted<IMonsterScript>, IDialogSource
         if (Target?.Equals(creature) ?? false)
             Target = null;
 
-        AggroList.Remove(creature.Id, out _);
+        AggroList.Clear(creature);
 
         if (ApproachTime.TryGetValue(creature, out _))
             ApproachTime[creature] = DateTime.UtcNow;
@@ -139,15 +149,14 @@ public sealed class Monster : Creature, IScripted<IMonsterScript>, IDialogSource
     }
 
     /// <inheritdoc />
-    public override void Wander(IPathOptions? pathOptions = null)
+    public override void Wander(IPathOptions? pathOptions = null, bool ignoreCollision = false)
     {
-        pathOptions ??= PathOptions.Default;
-        pathOptions.IgnoreWalls |= Type == CreatureType.WalkThrough;
+        pathOptions ??= PathOptions.Default.ForCreatureType(Type);
 
         pathOptions.BlockedPoints = pathOptions.BlockedPoints
-                                               .Concat(BlackList)
-                                               .ToHashSet();
+            .Concat(BlackList)
+            .ToHashSet(PointEqualityComparer.Instance);
 
-        base.Wander(pathOptions);
+        base.Wander(pathOptions, ignoreCollision);
     }
 }

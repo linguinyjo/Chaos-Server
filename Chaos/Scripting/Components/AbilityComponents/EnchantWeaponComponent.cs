@@ -1,10 +1,9 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Extensions;
 using Chaos.Models.Data;
 using Chaos.Models.Panel;
 using Chaos.Scripting.Components.Abstractions;
 using Chaos.Scripting.Components.Execution;
-using Chaos.Scripting.ItemScripts.Enchantments;
 using Chaos.Scripting.ItemScripts.Enchantments.WeaponScripts;
 
 namespace Chaos.Scripting.Components.AbilityComponents;
@@ -17,12 +16,14 @@ public struct EnchantWeaponComponent : IConditionalComponent
         var options = vars.GetOptions<IEnchantWeaponComponentOptions>();
         var item = context.SourceAisling?.Inventory[1];
         if (item == null) return false;
-        
+
         if (item.LevelCircle != options.LevelCircle || item.Template.EquipmentType != EquipmentType.Weapon)
         {
-            context.SourceAisling?.SendOrangeBarMessage($"This scroll can only enchant weapons of Circle {options.LevelCircle}");
+            context.SourceAisling?.SendOrangeBarMessage(
+                $"This scroll can only enchant weapons of Circle {options.LevelCircle}");
             return false;
         }
+
         var enchantLevel = GetEnchantLevelFromPrefix(item);
         var shouldEnchant = RunEnchantCalculation(item, enchantLevel);
         if (shouldEnchant)
@@ -30,14 +31,17 @@ public struct EnchantWeaponComponent : IConditionalComponent
             AddScript(item, enchantLevel);
             context.SourceAisling?.Inventory.Update(item.Slot);
             context.SourceAisling?.Client.SendSound(19, false);
-            context.SourceAisling?.SendOrangeBarMessage($"Successfully enchanted Your {item.Template.Name} to +{enchantLevel+1}");
+            context.SourceAisling?.SendOrangeBarMessage(
+                $"Successfully enchanted Your {item.Template.Name} to +{enchantLevel + 1}");
         }
         else
         {
             context.SourceAisling?.Inventory.Remove(item.Slot);
             context.SourceAisling?.Client.SendSound(10, false);
-            context.SourceAisling?.SendOrangeBarMessage($"Your {item.Template.Name} has smashed into a thousand pieces");
+            context.SourceAisling?.SendOrangeBarMessage(
+                $"Your {item.Template.Name} has shattered into a thousand pieces");
         }
+
         return true;
     }
 
@@ -45,52 +49,52 @@ public struct EnchantWeaponComponent : IConditionalComponent
     {
         switch (enchantLevel)
         {
-            case 0: 
+            case 0:
                 item.AddScript<EnchantWeapon1Script>();
                 break;
-            case 1: 
+            case 1:
                 item.AddScript<EnchantWeapon2Script>();
                 break;
-            case 2: 
+            case 2:
                 item.AddScript<EnchantWeapon3Script>();
                 break;
-            case 3: 
+            case 3:
                 item.AddScript<EnchantWeapon4Script>();
                 break;
-            case 4: 
+            case 4:
                 item.AddScript<EnchantWeapon5Script>();
                 break;
-            case 5: 
+            case 5:
                 item.AddScript<EnchantWeapon6Script>();
                 break;
-            case 6: 
+            case 6:
                 item.AddScript<EnchantWeapon7Script>();
                 break;
-            case 7: 
+            case 7:
                 item.AddScript<EnchantWeapon8Script>();
                 break;
-            case 8: 
+            case 8:
                 item.AddScript<EnchantWeapon9Script>();
                 break;
-            case 9: 
+            case 9:
                 item.AddScript<EnchantWeapon10Script>();
                 break;
-            case 10: 
+            case 10:
                 item.AddScript<EnchantWeapon11Script>();
                 break;
-            case 11: 
+            case 11:
                 item.AddScript<EnchantWeapon12Script>();
                 break;
-            case 12: 
+            case 12:
                 item.AddScript<EnchantWeapon13Script>();
                 break;
-            case 13: 
+            case 13:
                 item.AddScript<EnchantWeapon14Script>();
                 break;
-            case 14: 
+            case 14:
                 item.AddScript<EnchantWeapon15Script>();
                 break;
-            case 15: 
+            case 15:
                 item.AddScript<EnchantWeapon16Script>();
                 break;
         }
@@ -104,14 +108,14 @@ public struct EnchantWeaponComponent : IConditionalComponent
     /// Safe enchant up to 3, 66% chance to succeed after that
     private static bool RunEnchantCalculation(Item item, int enchantLevel)
     {
-        if(enchantLevel < 4) return true;
+        if (enchantLevel < 4) return true;
 
         var random = new Random();
         var randomNumber = random.Next(100);
         return randomNumber < 66;
     }
-        
-        
+
+
     public interface IEnchantWeaponComponentOptions
     {
         LevelCircle LevelCircle { get; init; }

@@ -1,12 +1,13 @@
-using Chaos.Common.Definitions;
+#region
 using Chaos.Common.Utilities;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
-using Chaos.Scripting.Abstractions;
 using Chaos.Scripting.Components.Abstractions;
 using Chaos.Scripting.Components.Execution;
 using Chaos.Scripting.FunctionalScripts.Abstractions;
+#endregion
 
 namespace Chaos.Scripting.Components.AbilityComponents;
 
@@ -17,6 +18,8 @@ public struct HealAbilityComponent : IComponent
     {
         var options = vars.GetOptions<IHealComponentOptions>();
         var targets = vars.GetTargets<Creature>();
+        var sourceScript = vars.GetSourceScript();
+
         var abilityMultiplier = CalculateAbilityHealMultiplier(context.SourceAisling, options.AbilityTemplateKey);
         foreach (var target in targets)
         {
@@ -36,7 +39,7 @@ public struct HealAbilityComponent : IComponent
             options.ApplyHealScript.ApplyHeal(
                 context.Source,
                 target,
-                options.SourceScript,
+                sourceScript,
                 heal);
         }
     }
@@ -94,7 +97,6 @@ public struct HealAbilityComponent : IComponent
         decimal? HealStatMultiplier { get; init; }
         decimal? MagicAttackMultiplier { get; init; }
         decimal? PctHpHeal { get; init; }
-        IScript SourceScript { get; init; }
         string? AbilityTemplateKey { get; init; }
     }
 }

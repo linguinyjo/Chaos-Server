@@ -1,10 +1,12 @@
-using Chaos.Common.Definitions;
+#region
+using Chaos.DarkAges.Definitions;
+using Chaos.Networking.Abstractions.Definitions;
+#endregion
 
 namespace Chaos.Networking.Entities.Server;
 
 /// <summary>
-///     Represents the serialization of a world list entry in the
-///     <see cref="Chaos.Packets.Abstractions.Definitions.ServerOpCode.WorldList" /> packet
+///     Represents the serialization of a world list entry in the <see cref="ServerOpCode.WorldList" /> packet
 /// </summary>
 public sealed record WorldListMemberInfo
 {
@@ -17,6 +19,11 @@ public sealed record WorldListMemberInfo
     ///     The color the name will show up as on the list
     /// </summary>
     public WorldListColor Color { get; set; }
+
+    /// <summary>
+    ///     Whether or not the character is in the same guild as the aisling requesting the list
+    /// </summary>
+    public bool IsGuilded { get; set; }
 
     /// <summary>
     ///     Whether or not the character is a master

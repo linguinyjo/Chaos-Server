@@ -1,4 +1,5 @@
-﻿using Chaos.Models.Data;
+﻿#region
+using Chaos.Models.Data;
 using Chaos.Models.Menu;
 using Chaos.Models.Panel;
 using Chaos.Models.World;
@@ -6,6 +7,7 @@ using Chaos.NLog.Logging.Definitions;
 using Chaos.NLog.Logging.Extensions;
 using Chaos.Scripting.DialogScripts.Abstractions;
 using Chaos.Utilities;
+#endregion
 
 namespace Chaos.Scripting.DialogScripts.BankScripts;
 

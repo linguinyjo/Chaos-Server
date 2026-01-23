@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Menu;
 using Chaos.Models.World;
 using Chaos.Scripting.DialogScripts.Abstractions;
@@ -9,10 +9,10 @@ using Chaos.Storage.Abstractions;
 
 namespace Chaos.Scripting.DialogScripts.LouresScripts;
 
-public class JeanScript: DialogScriptBase
+public class JeanScript : DialogScriptBase
 {
-    private readonly IDialogFactory DialogFactory;
     private readonly Dialog Dialog;
+    private readonly IDialogFactory DialogFactory;
     private readonly IItemFactory ItemFactory;
     private readonly ISimpleCache SimpleCache;
 
@@ -28,10 +28,12 @@ public class JeanScript: DialogScriptBase
 
     /// <inheritdoc />
     public override void OnDisplaying(Aisling source)
-    {}
+    {
+    }
 
     public override void OnDisplayed(Aisling source)
-    {}
+    {
+    }
 
     public override void OnNext(Aisling source, byte? optionIndex = null)
     {

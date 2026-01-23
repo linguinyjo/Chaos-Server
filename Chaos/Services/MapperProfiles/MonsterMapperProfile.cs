@@ -1,6 +1,6 @@
+#region
 using Chaos.Collections;
 using Chaos.Common.Abstractions;
-using Chaos.Extensions.Common;
 using Chaos.Geometry.Abstractions;
 using Chaos.Models.Data;
 using Chaos.Models.Templates;
@@ -10,6 +10,7 @@ using Chaos.Services.Factories.Abstractions;
 using Chaos.Storage.Abstractions;
 using Chaos.Time;
 using Chaos.TypeMapper.Abstractions;
+#endregion
 
 namespace Chaos.Services.MapperProfiles;
 
@@ -33,7 +34,9 @@ public sealed class MonsterMapperProfile(IMonsterFactory monsterFactory, ISimple
             MaxPerSpawn = obj.MaxPerSpawn,
             ExtraScriptKeys = new HashSet<string>(obj.ExtraScriptKeys, StringComparer.OrdinalIgnoreCase),
             SpawnArea = obj.SpawnArea!,
-            BlackList = obj.BlackList.ToListCast<IPoint>(),
+            BlackList = obj.BlackList
+                           .OfType<IPoint>()
+                           .ToList(),
             Direction = obj.Direction,
             SpawnTimer = obj.IntervalVariancePct.HasValue
                 ? new RandomizedIntervalTimer(TimeSpan.FromSeconds(obj.IntervalSecs), obj.IntervalVariancePct.Value, startAsElapsed: false)
@@ -51,6 +54,7 @@ public sealed class MonsterMapperProfile(IMonsterFactory monsterFactory, ISimple
 
         return new MonsterTemplate
         {
+            AbilityReward = obj.AbilityReward,
             AggroRange = obj.AggroRange,
             AssailIntervalMs = obj.AssailIntervalMs,
             SkillIntervalMs = obj.SkillIntervalMs,

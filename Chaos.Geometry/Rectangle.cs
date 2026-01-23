@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿#region
+using System.Collections;
 using System.Text.Json.Serialization;
 using Chaos.Geometry.Abstractions;
 using Chaos.Geometry.JsonConverters;
+#endregion
 
 namespace Chaos.Geometry;
 
@@ -141,4 +143,14 @@ public sealed class Rectangle : IRectangle, IEquatable<IRectangle>
             Left,
             Top,
             Width);
+
+    /// <summary>
+    ///     Implicitly converts a ref struct rectangle to a rectangle
+    /// </summary>
+    public static implicit operator Rectangle(ValueRectangle rect)
+        => new(
+            rect.Left,
+            rect.Top,
+            rect.Width,
+            rect.Height);
 }

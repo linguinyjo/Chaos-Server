@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.World.Abstractions;
@@ -9,8 +9,8 @@ using Chaos.Scripting.EffectScripts.Abstractions;
 namespace Chaos.Scripting.EffectScripts.BuffEffects;
 
 /// <summary>
-/// Gives the player a barrier which scales off the caster's wisdom stat.
-/// The maximum barrier is 45% and the minimum is 15% of the targets maximum hp.
+/// Gives the player a barrier which scales off the caster's wisdom and maximum mp.
+/// The barrier can not exceed the targets maximum hp.
 /// </summary>
 public sealed class SolasBuffEffect : EffectBase,
     NonOverwritableEffectComponent.INonOverwritableEffectComponentOptions,
@@ -21,22 +21,10 @@ public sealed class SolasBuffEffect : EffectBase,
     private Creature _source;
 
     /// <inheritdoc />
-    public bool AnimatePoints { get; init; }
+    protected override TimeSpan Duration { get; set; } = TimeSpan.FromSeconds(15);
 
     /// <inheritdoc />
-    public Animation? Animation { get; init; } 
-
-    /// <inheritdoc />
-    public List<string> ConflictingEffectNames { get; init; } =
-        [
-            "solas",
-        ];
-
-    /// <inheritdoc />
-    protected override TimeSpan Duration { get; set; } = TimeSpan.FromSeconds(60);
-
-    /// <inheritdoc />
-    public bool ExcludeSourcePoint { get; init; }
+    public int? ExclusionRange { get; init; }
 
     /// <inheritdoc />
     public TargetFilter Filter { get; init; }
@@ -54,7 +42,16 @@ public sealed class SolasBuffEffect : EffectBase,
     public bool SingleTarget { get; init; } = true;
 
     /// <inheritdoc />
-    public byte? Sound { get; init; }
+    public bool AnimatePoints { get; init; }
+
+    /// <inheritdoc />
+    public Animation? Animation { get; init; }
+
+    /// <inheritdoc />
+    public List<string> ConflictingEffectNames { get; init; } =
+    [
+        "solas",
+    ];
 
     /// <inheritdoc />
     public override byte Icon => 53;
@@ -67,11 +64,16 @@ public sealed class SolasBuffEffect : EffectBase,
         Subject.StatSheet.RemoveBarrier();
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
-    
+
     /// <inheritdoc />
     public override void OnApplied()
     {
-        var barrierAmount = CalculateBarrierAmount(_source.StatSheet.EffectiveWis, Subject.StatSheet.EffectiveMaximumHp);
+        var barrierAmount = CalculateBarrierAmount(
+            _source.StatSheet.EffectiveWis,
+            _source.StatSheet.EffectiveMaximumMp,
+            Subject.StatSheet.EffectiveMaximumHp
+        );
+
         Subject.StatSheet.AddBarrier(barrierAmount);
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
@@ -82,20 +84,33 @@ public sealed class SolasBuffEffect : EffectBase,
         _source = source;
         return base.ShouldApply(source, target);
     }
-    
-    private static int CalculateBarrierAmount(int wisdom, uint maxHp)
+
+    /// <inheritdoc />
+    public byte? Sound { get; init; }
+
+    private static int CalculateBarrierAmount(
+        int wisdom,
+        uint maxMana,
+        uint targetMaxHp)
     {
-        const float minScaling = 0.15f;  // 15% barrier at base Wisdom
-        const float maxScaling = 0.45f;  // 45% barrier at max Wisdom
-        const int maxWisdom = 200;       // Max Wisdom for full scaling
+        const int wisdomSoftCap = 100;
 
-        // Calculate scaling factor based on Wisdom progression
-        var scalingFactor = minScaling + ((maxScaling - minScaling) * (wisdom / (float)maxWisdom));
+        const float minWisdomMultiplier = 1.0f;
+        const float maxWisdomMultiplier = 2.2f;
 
-        // Ensure it remains within bounds
-        scalingFactor = Math.Clamp(scalingFactor, minScaling, maxScaling);
+        const float manaScaling = 0.50f; // 50% of max mana
+        const float hpCapPercent = 1.0f; // 100% of target HP
 
-        // Calculate and return the barrier amount
-        return (int)(maxHp * scalingFactor);
+        // Diminishing returns wisdom curve
+        var wisdomFactor = wisdom / (wisdom + (float)wisdomSoftCap);
+
+        var wisdomMultiplier =
+            minWisdomMultiplier +
+            (maxWisdomMultiplier - minWisdomMultiplier) * wisdomFactor;
+
+        var rawBarrier = maxMana * manaScaling * wisdomMultiplier;
+        var maxAllowedBarrier = targetMaxHp * hpCapPercent;
+
+        return (int)Math.Min(rawBarrier, maxAllowedBarrier);
     }
 }

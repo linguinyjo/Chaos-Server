@@ -1,10 +1,11 @@
+#region
+
 using Chaos.Common.Abstractions;
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.Panel;
 using Chaos.Models.World.Abstractions;
-using Chaos.Scripting.Abstractions;
 using Chaos.Scripting.Components.AbilityComponents;
 using Chaos.Scripting.Components.Execution;
 using Chaos.Scripting.FunctionalScripts.Abstractions;
@@ -13,20 +14,21 @@ using Chaos.Scripting.ReactorTileScripts;
 using Chaos.Scripting.SpellScripts.Abstractions;
 using Chaos.Services.Factories.Abstractions;
 
+#endregion
+
 namespace Chaos.Scripting.SpellScripts;
 
 public class CascadingDamageScript : ConfigurableSpellScriptBase,
-                                     GenericAbilityComponent<Creature>.IAbilityComponentOptions,
-                                     DamageAbilityComponent.IDamageComponentOptions,
-                                     CascadingAbilityComponent<CascadingDamageTileScript>.ICascadingComponentOptions,
-                                     AbilityLevellingAbilityComponent.IAbilityLevellingComponentOptions
+    GenericAbilityComponent<Creature>.IAbilityComponentOptions,
+    DamageAbilityComponent.IDamageComponentOptions,
+    CascadingAbilityComponent<CascadingDamageTileScript>.ICascadingComponentOptions,
+    AbilityLevellingAbilityComponent.IAbilityLevellingComponentOptions
 {
     /// <inheritdoc />
     public CascadingDamageScript(Spell subject, IReactorTileFactory reactorTileFactory)
         : base(subject)
     {
         ApplyDamageScript = ApplyAttackDamageScript.Create();
-        SourceScript = this;
         ReactorTileFactory = reactorTileFactory;
         AbilityTemplateKey = subject.Template.TemplateKey;
         CascadeScriptVars ??= Subject.Template.ScriptVars;
@@ -36,14 +38,18 @@ public class CascadingDamageScript : ConfigurableSpellScriptBase,
     /// <inheritdoc />
     public override void OnUse(SpellContext context)
         => new ComponentExecutor(context).WithOptions(this)
-                                         .ExecuteAndCheck<GenericAbilityComponent<Creature>>()
-                                         ?.Execute<AbilityLevellingAbilityComponent>()
-                                         .Execute<DamageAbilityComponent>()
-                                         .Execute<CascadingAbilityComponent<CascadingDamageTileScript>>();
+            .ExecuteAndCheck<GenericAbilityComponent<Creature>>()
+            ?.Execute<AbilityLevellingAbilityComponent>()
+            .Execute<DamageAbilityComponent>()
+            .Execute<CascadingAbilityComponent<CascadingDamageTileScript>>();
 
     #region ScriptVars
+
     /// <inheritdoc />
     public BodyAnimation BodyAnimation { get; init; }
+
+    /// <inheritdoc />
+    public bool? ScaleBodyAnimationSpeedByAttackSpeed { get; init; }
 
     /// <inheritdoc />
     public ushort? AnimationSpeed { get; init; }
@@ -55,13 +61,13 @@ public class CascadingDamageScript : ConfigurableSpellScriptBase,
     public bool SingleTarget { get; init; }
 
     /// <inheritdoc />
+    public int? ExclusionRange { get; init; }
+
+    /// <inheritdoc />
     public TargetFilter Filter { get; init; }
 
     /// <inheritdoc />
     public int Range { get; init; }
-
-    /// <inheritdoc />
-    public bool ExcludeSourcePoint { get; init; }
 
     /// <inheritdoc />
     public bool MustHaveTargets { get; init; }
@@ -85,16 +91,17 @@ public class CascadingDamageScript : ConfigurableSpellScriptBase,
     public decimal? PctHpDamage { get; init; }
 
     /// <inheritdoc />
-    public IScript SourceScript { get; init; }
-    /// <inheritdoc />
     public decimal? PAtkMultiplier { get; init; }
 
     /// <inheritdoc />
     public bool? UseMatk { get; init; }
+
     /// <inheritdoc />
     public int? FistBonus { get; init; }
+
     /// <inheritdoc />
     public AbilityLevellingRate Rate { get; init; }
+
     public bool? IsSpell { get; init; }
 
     /// <inheritdoc />
@@ -120,12 +127,15 @@ public class CascadingDamageScript : ConfigurableSpellScriptBase,
 
     /// <inheritdoc />
     public decimal PctManaCost { get; init; }
+
     /// <inheritdoc />
     public AbilityLevellingRate? LevelUpRate { get; init; }
+
     /// <inheritdoc />
     public bool ShouldNotBreakHide { get; init; }
+
     public bool CanResist { get; init; }
     public string? AbilityTemplateKey { get; init; }
-    #endregion
 
+    #endregion
 }

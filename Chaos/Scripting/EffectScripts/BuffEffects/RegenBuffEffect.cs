@@ -1,4 +1,5 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.World.Abstractions;
@@ -16,19 +17,12 @@ public sealed class RegenBuffEffect : EffectBase,
     SoundAbilityComponent.ISoundComponentOptions
 {
     /// <inheritdoc />
-    public bool AnimatePoints { get; init; }
-
-    /// <inheritdoc />
-    public Animation? Animation { get; init; } 
-
-    /// <inheritdoc />
-    public List<string> ConflictingEffectNames { get; init; } = ["Inner Fire", "Regeneration"];
-
-    /// <inheritdoc />
     protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(5);
 
+    private int RegenBuff => 5;
+
     /// <inheritdoc />
-    public bool ExcludeSourcePoint { get; init; }
+    public int? ExclusionRange { get; init; }
 
     /// <inheritdoc />
     public TargetFilter Filter { get; init; }
@@ -46,26 +40,33 @@ public sealed class RegenBuffEffect : EffectBase,
     public bool SingleTarget { get; init; } = true;
 
     /// <inheritdoc />
-    public byte? Sound { get; init; }
-    
+    public bool AnimatePoints { get; init; }
+
+    /// <inheritdoc />
+    public Animation? Animation { get; init; }
+
+    /// <inheritdoc />
+    public List<string> ConflictingEffectNames { get; init; } = ["Inner Fire", "Regeneration"];
+
     /// <inheritdoc />
     public override byte Icon => 126;
-    
+
     /// <inheritdoc />
     public override string Name => "Regeneration";
-    
-    private int RegenBuff => 5;
 
     public override void OnTerminated()
     {
         Subject.StatSheet.SubtractBonus(new Attributes { Regen = RegenBuff });
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
-    
+
     /// <inheritdoc />
     public override void OnApplied()
     {
         Subject.StatSheet.AddBonus(new Attributes { Regen = RegenBuff });
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
+
+    /// <inheritdoc />
+    public byte? Sound { get; init; }
 }

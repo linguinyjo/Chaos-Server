@@ -1,9 +1,11 @@
+#region
 using System.Collections.Frozen;
 using Chaos.Extensions.Common;
 using Chaos.NLog.Logging.Definitions;
 using Chaos.NLog.Logging.Extensions;
 using Chaos.Scripting.EffectScripts.Abstractions;
 using Chaos.Services.Factories.Abstractions;
+#endregion
 
 namespace Chaos.Services.Factories;
 

@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Common.Utilities;
 using Chaos.Models.World;
 using Chaos.Scripting.MonsterScripts.Abstractions;
@@ -20,11 +20,11 @@ public class SetRandomElementScript : MonsterScriptBase
     public override void OnSpawn()
     {
         Element[] allowedElements = [Element.Water, Element.Wind, Element.Earth, Element.Fire];
-        
+
         var offensiveElement = allowedElements.PickRandomWeightedSingle(1);
         var defensiveElement = allowedElements.PickRandomWeightedSingle(1);
 
         Monster.StatSheet.SetOffenseElement(offensiveElement);
         Monster.StatSheet.SetDefenseElement(defensiveElement);
-    } 
+    }
 }

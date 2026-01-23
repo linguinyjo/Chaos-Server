@@ -1,18 +1,13 @@
-using Chaos.Common.Definitions;
-using Chaos.Models.Data;
-using Chaos.Models.World.Abstractions;
-using Chaos.Scripting.Abstractions.Tests.Mocks;
-using Chaos.Scripting.Components.AbilityComponents;
-using Chaos.Scripting.SpellScripts;
+#region
+using Chaos.Testing.Infrastructure.Mocks;
 using FluentAssertions;
-using Moq;
-using Xunit;
+#endregion
 
 namespace Chaos.Scripting.Abstractions.Tests;
 
 public sealed class ConfigurableScriptTests
 {
-    [Fact]
+    [Test]
     public void Ctor_DoesNotSetPropertiesIfNoScriptVarsForKey()
     {
         // Arrange
@@ -34,7 +29,7 @@ public sealed class ConfigurableScriptTests
               .Be(0);
     }
 
-    [Fact]
+    [Test]
     public void Ctor_SetsPropertiesFromScriptVars()
     {
         // Arrange
@@ -56,7 +51,7 @@ public sealed class ConfigurableScriptTests
               .Be(42);
     }
 
-    [Fact]
+    [Test]
     public void Ctor_WithFactory_SetsPropertiesFromScriptVars()
     {
         // Arrange
@@ -78,7 +73,7 @@ public sealed class ConfigurableScriptTests
               .Be(42);
     }
 
-    [Fact]
+    [Test]
     public void Ctor_WithFactory_ThrowsIfFactoryReturnsNull()
     {
         // Arrange

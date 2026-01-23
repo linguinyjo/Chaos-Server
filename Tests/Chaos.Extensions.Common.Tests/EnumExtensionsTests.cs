@@ -1,85 +1,157 @@
-using Chaos.Common.Definitions;
-using Chaos.Testing.Infrastructure.Definitions;
+#region
 using FluentAssertions;
-using Xunit;
+#endregion
 
 namespace Chaos.Extensions.Common.Tests;
 
 public sealed class EnumExtensionsTests
 {
-    [Fact]
-    public void GetFlags_ShouldReturnIndividualFlags()
+    [Test]
+    public void GetEnumNames_Should_Prefix_Empty_For_Nullable_Enum()
     {
-        // Arrange
-        const SampleFlag1 COMBINED_FLAGS = SampleFlag1.Value1 | SampleFlag1.Value3;
-
         // Act
-        var flags = COMBINED_FLAGS.GetFlags()
-                                  .ToList();
+        var names = EnumExtensions.GetEnumNames<Color?>()
+                                  .ToArray();
 
         // Assert
-        flags.Should()
-             .Contain(
-                 new[]
-                 {
-                     SampleFlag1.Value1,
-                     SampleFlag1.Value3
-                 });
-
-        flags.Should()
-             .NotContain(
-                 new[]
-                 {
-                     SampleFlag1.Value2
-                 });
+        names.Should()
+             .Equal(
+                 string.Empty,
+                 "Red",
+                 "Green",
+                 "Blue");
     }
 
-    // ReSharper disable once ArrangeAttributes
-    [Theory]
-    [InlineData(EquipmentType.NotEquipment, EquipmentSlot.None)]
-    [InlineData(EquipmentType.Weapon, EquipmentSlot.Weapon)]
-    [InlineData(EquipmentType.Armor, EquipmentSlot.Armor)]
-    [InlineData(EquipmentType.OverArmor, EquipmentSlot.Overcoat)]
-    [InlineData(EquipmentType.Shield, EquipmentSlot.Shield)]
-    [InlineData(EquipmentType.Helmet, EquipmentSlot.Helmet)]
-    [InlineData(EquipmentType.OverHelmet, EquipmentSlot.OverHelm)]
-    [InlineData(EquipmentType.Earrings, EquipmentSlot.Earrings)]
-    [InlineData(EquipmentType.Necklace, EquipmentSlot.Necklace)]
-    [InlineData(EquipmentType.Ring, EquipmentSlot.LeftRing, EquipmentSlot.RightRing)]
-    [InlineData(EquipmentType.Gauntlet, EquipmentSlot.LeftGaunt, EquipmentSlot.RightGaunt)]
-    [InlineData(EquipmentType.Belt, EquipmentSlot.Belt)]
-    [InlineData(EquipmentType.Greaves, EquipmentSlot.Greaves)]
-    [InlineData(EquipmentType.Boots, EquipmentSlot.Boots)]
-    [InlineData(
-        EquipmentType.Accessory,
-        EquipmentSlot.Accessory1,
-        EquipmentSlot.Accessory2,
-        EquipmentSlot.Accessory3)]
-    public void ToEquipmentSlots_Should_Return_Correct_EquipmentSlots_For_EquipmentType(
-        EquipmentType equipmentType,
-        params EquipmentSlot[] expectedSlots)
+    // GetEnumNames<T>() tests
+
+    [Test]
+    public void GetEnumNames_Should_Return_All_Names_For_NonNullable_Enum()
     {
         // Act
-        var equipmentSlots = equipmentType.ToEquipmentSlots();
+        var names = EnumExtensions.GetEnumNames<Color>()
+                                  .ToArray();
 
         // Assert
-        equipmentSlots.Should()
-                      .BeEquivalentTo(expectedSlots);
+        names.Should()
+             .Equal("Red", "Green", "Blue");
     }
 
-    [Fact]
-    public void ToEquipmentSlots_Should_Throw_Exception_For_Undefined_EquipmentType()
+    [Test]
+    public void GetEnumNames_Should_Throw_For_NonEnum_Type()
+    {
+        // Act
+        var act = () => EnumExtensions.GetEnumNames<int>()
+                                      .ToArray();
+
+        // Assert
+        act.Should()
+           .Throw<InvalidOperationException>()
+           .WithMessage("Int32 is not an enum");
+    }
+
+    [Test]
+    public void GetEnumNames_Should_Throw_For_Nullable_NonEnum_Type()
+    {
+        // Act
+        var act = () => EnumExtensions.GetEnumNames<int?>()
+                                      .ToArray();
+
+        // Assert
+        act.Should()
+           .Throw<InvalidOperationException>()
+           .WithMessage("Int32 is not an enum");
+    }
+
+    [Test]
+    public void GetFlags_Should_Include_Composite_When_All_Bits_Are_Set()
     {
         // Arrange
-        const EquipmentType EQUIPMENT_TYPE = (EquipmentType)99;
+        var input = TestFlags.All; // A|B|C
 
         // Act
-        // ReSharper disable once IteratorMethodResultIsIgnored
-        var func = () => EQUIPMENT_TYPE.ToEquipmentSlots();
+        var result = input.GetFlags()
+                          .ToArray();
 
-        func.Enumerating()
-            .Should()
-            .ThrowExactly<ArgumentOutOfRangeException>()
-            .WithParameterName("type");
+        // Assert
+        // Expected to include None, all individual flags, and the composite All
+        result.Should()
+              .Equal(
+                  TestFlags.None,
+                  TestFlags.A,
+                  TestFlags.B,
+                  TestFlags.C,
+                  TestFlags.All);
+    }
+
+    // GetFlags<T>(this T input) tests
+
+    [Test]
+    public void GetFlags_Should_Return_None_And_Set_Flags_When_Input_Has_Multiple_Flags()
+    {
+        // Arrange
+        var input = TestFlags.A | TestFlags.C;
+
+        // Act
+        var result = input.GetFlags()
+                          .ToArray();
+
+        // Assert
+        // Enum.GetValues order: None, A, B, C, All
+        // HasFlag(None)=true; HasFlag(A)=true; HasFlag(B)=false; HasFlag(C)=true; HasFlag(All)=false
+        result.Should()
+              .Equal(TestFlags.None, TestFlags.A, TestFlags.C);
+    }
+
+    [Test]
+    public void GetFlags_Should_Return_None_When_Input_Is_None()
+    {
+        // Act
+        var result = TestFlags.None
+                              .GetFlags()
+                              .ToArray();
+
+        // Assert
+        result.Should()
+              .Equal(TestFlags.None);
+    }
+
+    [Test]
+    public void GetFlags_Should_Work_For_NonFlags_Enums_Including_Zero_Value()
+    {
+        // Arrange
+        var input = PlainEnum.Two;
+
+        // Act
+        var result = input.GetFlags()
+                          .ToArray();
+
+        // Assert
+        // For non-flags enums, HasFlag(0) is true, and HasFlag(value) is true only for the exact value.
+        result.Should()
+              .Equal(PlainEnum.Zero, PlainEnum.Two);
+    }
+
+    private enum Color
+    {
+        Red,
+        Green,
+        Blue
+    }
+
+    private enum PlainEnum
+    {
+        Zero = 0,
+        One = 1,
+        Two = 2
+    }
+
+    [Flags]
+    private enum TestFlags
+    {
+        None = 0,
+        A = 1,
+        B = 2,
+        C = 4,
+        All = A | B | C
     }
 }

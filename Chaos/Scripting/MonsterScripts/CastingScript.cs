@@ -1,5 +1,5 @@
-using Chaos.Common.Definitions;
 using Chaos.Common.Utilities;
+using Chaos.DarkAges.Definitions;
 using Chaos.Extensions;
 using Chaos.Extensions.Common;
 using Chaos.Models.Panel;
@@ -7,7 +7,6 @@ using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
 using Chaos.Scripting.MonsterScripts.Abstractions;
 using Chaos.Scripting.SpellScripts;
-using Namotion.Reflection;
 
 namespace Chaos.Scripting.MonsterScripts;
 
@@ -20,7 +19,7 @@ public class CastingScript : MonsterScriptBase
     public CastingScript(Monster subject)
         : base(subject)
     {
-         Monster = subject;
+        Monster = subject;
     }
 
     /// <inheritdoc />
@@ -32,13 +31,13 @@ public class CastingScript : MonsterScriptBase
             return;
 
         Spells.ShuffleInPlace();
-       
+
         var spell = Spells
-            .Where(spell => 
+            .Where(spell =>
                 Subject.CanUse(spell, Target, null, out _) && !EffectAlreadyOnTarget(spell, Target) &&
-                    IsNonElemental(spell.Template.Name) || 
-                    SpellMatchesElement(spell.Template.Name, Monster.StatSheet.OffenseElement)
-                ).PickRandomWeightedSingle(1);
+                IsNonElemental(spell.Template.Name) ||
+                SpellMatchesElement(spell.Template.Name, Monster.StatSheet.OffenseElement)
+            ).PickRandomWeightedSingle(1);
         if (spell is null || !Subject.TryUseSpell(spell, Target.Id)) return;
         Subject.WanderTimer.Reset();
         Subject.MoveTimer.Reset();
@@ -69,13 +68,13 @@ public class CastingScript : MonsterScriptBase
                 return false;
         }
     }
-    
+
     private static bool IsNonElemental(string spellName)
     {
         // Check if the spell name doesn't contain any elemental keyword
-        return !spellName.Contains("sal", StringComparison.OrdinalIgnoreCase) && 
-               !spellName.Contains("athar", StringComparison.OrdinalIgnoreCase) && 
-               !spellName.Contains("creag", StringComparison.OrdinalIgnoreCase) && 
+        return !spellName.Contains("sal", StringComparison.OrdinalIgnoreCase) &&
+               !spellName.Contains("athar", StringComparison.OrdinalIgnoreCase) &&
+               !spellName.Contains("creag", StringComparison.OrdinalIgnoreCase) &&
                !spellName.Contains("srad", StringComparison.OrdinalIgnoreCase);
     }
 }

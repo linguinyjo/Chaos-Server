@@ -1,9 +1,11 @@
+#region
 using Chaos.Extensions.Geometry;
 using Chaos.Geometry.Abstractions;
 using Chaos.Geometry.EqualityComparers;
 using Chaos.Models.Map;
 using Chaos.Models.Templates.Abstractions;
 using Chaos.Scripting.Abstractions;
+#endregion
 
 namespace Chaos.Models.Templates;
 
@@ -39,5 +41,5 @@ public sealed record MapTemplate : ITemplate, IScripted
 
     public bool IsWall(IPoint point) => !IsWithinMap(point) || Tiles[point.X, point.Y].IsWall;
 
-    public bool IsWithinMap(IPoint point) => Bounds.Contains(point);
+    public bool IsWithinMap(IPoint point) => Bounds.ContainsPoint(point);
 }

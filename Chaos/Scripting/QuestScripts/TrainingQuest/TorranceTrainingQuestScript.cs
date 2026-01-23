@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Menu;
 using Chaos.Models.World;
 using Chaos.Scripting.DialogScripts.Abstractions;
@@ -6,15 +6,11 @@ using Chaos.Services.Factories.Abstractions;
 
 namespace Chaos.Scripting.QuestScripts.TrainingQuest;
 
-public class TorranceTrainingQuestScript:  DialogScriptBase
+public class TorranceTrainingQuestScript : DialogScriptBase
 {
+    private readonly Dialog Dialog;
     private readonly IDialogFactory DialogFactory;
     private readonly IItemFactory ItemFactory;
-    private readonly Dialog Dialog;
-
-    #region ScriptVars
-    protected byte Class { get; init; }
-    #endregion
 
     /// <inheritdoc />
     public TorranceTrainingQuestScript(Dialog subject, IDialogFactory dialogFactory, IItemFactory itemFactory)
@@ -24,6 +20,12 @@ public class TorranceTrainingQuestScript:  DialogScriptBase
         ItemFactory = itemFactory;
         Dialog = subject;
     }
+
+    #region ScriptVars
+
+    protected byte Class { get; init; }
+
+    #endregion
 
     /// <inheritdoc />
     public override void OnDisplaying(Aisling source)
@@ -65,6 +67,7 @@ public class TorranceTrainingQuestScript:  DialogScriptBase
                     };
                     newDialog.Display(source);
                 }
+
                 break;
             }
         }
@@ -72,8 +75,9 @@ public class TorranceTrainingQuestScript:  DialogScriptBase
 
     public override void OnDisplayed(Aisling source)
     {
-       
     }
 
-    public override void OnNext(Aisling source, byte? optionIndex = null) {}
+    public override void OnNext(Aisling source, byte? optionIndex = null)
+    {
+    }
 }

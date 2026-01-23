@@ -1,9 +1,11 @@
+#region
 using System.Collections;
 using System.Collections.Concurrent;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Chaos.Common.Abstractions;
 using Chaos.Common.Converters;
+#endregion
 
 // ReSharper disable once CheckNamespace
 namespace Chaos.Collections.Common;
@@ -102,8 +104,39 @@ public sealed class DynamicVars : IEnumerable<KeyValuePair<string, JsonElement>>
         JsonSerializerOptions jsonOptions)
     {
         if (!lookup.TryGetValue(key, out var value))
-            return default;
+            return null;
 
         return value.Deserialize(type, jsonOptions);
+    }
+
+    /// <summary>
+    ///     Sets the value associated with the specified key.
+    /// </summary>
+    public void Set(string key, object value) => Vars[key] = JsonSerializer.SerializeToElement(value);
+
+    /// <summary>
+    ///     Converts the DynamicVars to a StaticVars object.
+    /// </summary>
+    /// <exception cref="ArgumentOutOfRangeException">
+    /// </exception>
+    public StaticVars ToStaticVars()
+    {
+        var dic = Vars.ToDictionary(
+            kvp => kvp.Key,
+            kvp =>
+            {
+                var element = kvp.Value;
+
+                return element.ValueKind switch
+                {
+                    JsonValueKind.String                      => element.GetString(),
+                    JsonValueKind.Number                      => element.GetDouble(),
+                    JsonValueKind.True or JsonValueKind.False => element.GetBoolean(),
+                    JsonValueKind.Null                        => (object)null!,
+                    _                                         => throw new ArgumentOutOfRangeException()
+                };
+            });
+
+        return new StaticVars(dic!);
     }
 }

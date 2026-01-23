@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Legend;
 using Chaos.Models.Menu;
 using Chaos.Models.World;
@@ -9,10 +9,10 @@ using Chaos.Time;
 
 namespace Chaos.Scripting.QuestScripts.DevlinsIngredients;
 
-public class DevlinsIngredientsQuestScript:  DialogScriptBase
+public class DevlinsIngredientsQuestScript : DialogScriptBase
 {
-    private readonly IDialogFactory DialogFactory;
     private readonly Dialog Dialog;
+    private readonly IDialogFactory DialogFactory;
 
     /// <inheritdoc />
     public DevlinsIngredientsQuestScript(Dialog subject, IDialogFactory dialogFactory)
@@ -20,7 +20,7 @@ public class DevlinsIngredientsQuestScript:  DialogScriptBase
     {
         DialogFactory = dialogFactory;
         Dialog = subject;
-    } 
+    }
 
     /// <inheritdoc />
     public override void OnDisplaying(Aisling source)
@@ -29,13 +29,16 @@ public class DevlinsIngredientsQuestScript:  DialogScriptBase
         if (questStatus is DevlinsIngredientsQuestStatus.FetchRawWax)
         {
             HandleFetchRawWax(source);
-        } else if (questStatus is DevlinsIngredientsQuestStatus.FetchRawHoney)
+        }
+        else if (questStatus is DevlinsIngredientsQuestStatus.FetchRawHoney)
         {
             HandleFetchCentipedeGland(source);
-        } else if (questStatus is DevlinsIngredientsQuestStatus.OneFinalTask)
+        }
+        else if (questStatus is DevlinsIngredientsQuestStatus.OneFinalTask)
         {
             HandleOneFinalTask(source);
-        } else if (questStatus is DevlinsIngredientsQuestStatus.ToShinewood)
+        }
+        else if (questStatus is DevlinsIngredientsQuestStatus.ToShinewood)
         {
             HandleToShinewood(source);
         }
@@ -48,7 +51,8 @@ public class DevlinsIngredientsQuestScript:  DialogScriptBase
         if (hasWax)
         {
             var newDialog = CreateDialog(
-                text: "Well done! Next thing I need is a {=sCentipede Gland{=a. You should be able to find one from the crypt in town. Hurry along now.",
+                text:
+                "Well done! Next thing I need is a {=sCentipede Gland{=a. You should be able to find one from the crypt in town. Hurry along now.",
                 nextKey: "Close"
             );
             newDialog.Display(source);
@@ -66,14 +70,15 @@ public class DevlinsIngredientsQuestScript:  DialogScriptBase
             newDialog.Display(source);
         }
     }
-    
+
     private void HandleFetchCentipedeGland(Aisling source)
     {
         var hasWax = source.Inventory.HasCountByTemplateKey("centipedeGland", 1);
         if (hasWax)
         {
             var newDialog = CreateDialog(
-                text: "Wonderful! You managed to find the {=sCentipede gland{=a. And one in such excellent condition too. Return to me in a moment, I have one final task for you.",
+                text:
+                "Wonderful! You managed to find the {=sCentipede gland{=a. And one in such excellent condition too. Return to me in a moment, I have one final task for you.",
                 nextKey: "Close"
             );
             newDialog.Display(source);
@@ -91,34 +96,36 @@ public class DevlinsIngredientsQuestScript:  DialogScriptBase
             newDialog.Display(source);
         }
     }
-    
+
     private void HandleOneFinalTask(Aisling source)
     {
         var newDialog = CreateDialog(
-            text: "The last item I need is going to be far more challenging to come by. There is a place called Shinewood Forest far to the south of here.",
+            text:
+            "The last item I need is going to be far more challenging to come by. There is a place called Shinewood Forest far to the south of here.",
             nextKey: "devlin_to_shinewood_a"
         );
         newDialog.Display(source);
     }
-    
+
     private void HandleToShinewood(Aisling source)
     {
         var hasWax = source.Inventory.HasCountByTemplateKey("beeWing", 1);
         if (hasWax)
         {
             var newDialog = CreateDialog(
-                text: "You did it! I must say I wasn't expecting to see you again Aisling. Here, take this gold for your trouble.",
+                text:
+                "You did it! I must say I wasn't expecting to see you again Aisling. Here, take this gold for your trouble.",
                 nextKey: "Close"
             );
             newDialog.Display(source);
             source.Inventory.RemoveQuantityByTemplateKey("beeWing", 1);
             DevlinsIngredientsQuestHelper.CompleteQuest(source);
-           
         }
         else
         {
             var newDialog = CreateDialog(
-                text: "I see you've returned, but without the wing. Don't be fearful now Aisling. Bring me a wing from one of the bee's in Shinewood forest.",
+                text:
+                "I see you've returned, but without the wing. Don't be fearful now Aisling. Bring me a wing from one of the bee's in Shinewood forest.",
                 nextKey: "Close"
             );
             newDialog.Display(source);
@@ -136,8 +143,12 @@ public class DevlinsIngredientsQuestScript:  DialogScriptBase
             NextDialogKey = nextKey
         };
     }
-    
-    public override void OnDisplayed(Aisling source) {}
 
-    public override void OnNext(Aisling source, byte? optionIndex = null) {}
+    public override void OnDisplayed(Aisling source)
+    {
+    }
+
+    public override void OnNext(Aisling source, byte? optionIndex = null)
+    {
+    }
 }

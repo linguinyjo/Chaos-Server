@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Data;
 using Chaos.Scripting.Components.EffectComponents;
 using Chaos.Scripting.EffectScripts.Abstractions;
@@ -9,13 +9,13 @@ public sealed class Slaodach2Effect : EffectBase
 {
     /// <inheritdoc />
     protected override TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(2);
-    
+
     /// <inheritdoc />
     public override byte Icon => 162;
 
     /// <inheritdoc />
     public override string Name => "slaodach 2";
-   
+
     private static int AttackSpeedDeBuff => -15;
 
     public override void OnTerminated()
@@ -23,7 +23,7 @@ public sealed class Slaodach2Effect : EffectBase
         Subject.StatSheet.SubtractBonus(new Attributes { AtkSpeedPct = AttackSpeedDeBuff });
         AislingSubject?.Client.SendAttributes(StatUpdateType.Full);
     }
-    
+
     /// <inheritdoc />
     public override void OnApplied()
     {

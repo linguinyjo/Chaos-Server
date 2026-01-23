@@ -2,13 +2,13 @@
   {
     "blackList": [],
     "extraScriptKeys": [],
-    "intervalSecs": 15,
+    "intervalSecs": 10,
     "intervalVariancePct": 0,
     "extraLootTableKeys": [
       
     ],
-    "maxAmount": 5,
-    "maxPerSpawn": 5,
-    "monsterTemplateKey": "testMonster"
+    "maxAmount": 1,
+    "maxPerSpawn": 1,
+    "monsterTemplateKey": "mummy6"
   }
 ]

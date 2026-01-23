@@ -1,5 +1,5 @@
 using System.Diagnostics;
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.Legend;
 using Chaos.Models.World;
@@ -7,12 +7,11 @@ using Chaos.Time;
 
 namespace Chaos.Scripting.QuestScripts.Terror;
 
-
 public static class TerrorQuestHelper
 {
-    private static string QuestBlockId => "terrorBlock";
     private const int QuestBlockTimer = 43200;
-    
+    private static string QuestBlockId => "terrorBlock";
+
     public static TerrorQuestStatus GetQuestStatus(Aisling player)
     {
         return player.Trackers.Enums.TryGetValue<TerrorQuestStatus>(out var status) ? status : TerrorQuestStatus.None;
@@ -27,9 +26,10 @@ public static class TerrorQuestHelper
     {
         return player.Trackers.TimedEvents.HasActiveEvent(QuestBlockId, out _);
     }
-    
-    public static void IncrementQuestStage(Aisling player)
+
+    public static void IncrementQuestStage(Aisling? player)
     {
+        if (player == null) return;
         var questStatus = GetQuestStatus(player);
         if (questStatus == TerrorQuestStatus.Completed) return;
         var nextStatus = questStatus + 1;
@@ -38,7 +38,7 @@ public static class TerrorQuestHelper
 
     public static void StartQuest(Aisling player, TerrorLevel terrorLevel)
     {
-        switch(terrorLevel)
+        switch (terrorLevel)
         {
             case TerrorLevel.None:
                 break;
@@ -64,7 +64,7 @@ public static class TerrorQuestHelper
             MarkColor.Blue,
             1,
             GameTime.Now);
-       
+
         switch (GetQuestStatus(player))
         {
             case TerrorQuestStatus.GardenSlain:
@@ -83,6 +83,7 @@ public static class TerrorQuestHelper
             case TerrorQuestStatus.Completed:
             default: return;
         }
+
         player.Trackers.Enums.Set(TerrorQuestStatus.None);
         player.Legend.AddOrAccumulate(legendMark);
         player.SendMinorQuestCompletedAnimation();

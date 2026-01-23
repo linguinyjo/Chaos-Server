@@ -31,7 +31,7 @@
                 "animationSpeed": 150
             },
             "shape": "front",
-            "excludeSourcePoint": true,
+            "exclusionRange": 0,
             "pctHpDamage": 30,
             "filter": "hostileOnly, aliveOnly, othersOnly",
             "levelUpRate": "fast"

@@ -1,3 +1,4 @@
+#region
 using Chaos.Common.Utilities;
 using Chaos.Extensions;
 using Chaos.Extensions.Common;
@@ -6,6 +7,7 @@ using Chaos.Models.World;
 using Chaos.Scripting.MerchantScripts.Abstractions;
 using Chaos.Utilities;
 using Humanizer;
+#endregion
 
 namespace Chaos.Scripting.MerchantScripts.BankScripts.Abstractions;
 
@@ -117,7 +119,7 @@ public abstract class VerbalBankerScriptBase : MerchantScriptBase
         var closestVerbalBanker = aisling.MapInstance
                                          .GetEntities<Merchant>()
                                          .Where(merchant => merchant.Script.Is<VerbalBankerScriptBase>())
-                                         .OrderBy(x => x.DistanceFrom(aisling))
+                                         .OrderBy(x => x.ManhattanDistanceFrom(aisling))
                                          .ThenBy(x => x.Creation)
                                          .First();
 

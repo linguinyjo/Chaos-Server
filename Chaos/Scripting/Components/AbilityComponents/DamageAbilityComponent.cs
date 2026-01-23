@@ -1,17 +1,21 @@
-using Chaos.Common.Definitions;
+#region
+
 using Chaos.Common.Utilities;
+using Chaos.DarkAges.Definitions;
 using Chaos.Extensions.Geometry;
 using Chaos.Geometry.Abstractions.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
-using Chaos.Scripting.Abstractions;
 using Chaos.Scripting.Components.Abstractions;
 using Chaos.Scripting.Components.Execution;
 using Chaos.Scripting.FunctionalScripts.Abstractions;
 using Chaos.Scripting.MonsterScripts;
 using Chaos.Scripting.MonsterScripts.Abstractions;
 using Microsoft.Extensions.Options;
+
+#endregion
+
 
 namespace Chaos.Scripting.Components.AbilityComponents;
 
@@ -22,41 +26,49 @@ public struct DamageAbilityComponent : IComponent
     {
         var options = vars.GetOptions<IDamageComponentOptions>();
         var targets = vars.GetTargets<Creature>();
+        var sourceScript = vars.GetSourceScript();
 
         var abilityDamageMultiplier = CalculateAbilityDamageMultiplier(
-            context.SourceAisling, 
-            options.AbilityTemplateKey, 
+            context.SourceAisling,
+            options.AbilityTemplateKey,
             options.IsSpell);
-        
+
         foreach (var target in targets)
         {
-            var damage = CalculateDamage(context.Source, target, options, abilityDamageMultiplier);
+            var baseDamage = CalculateDamage(context.Source, target, options, abilityDamageMultiplier);
 
-            if (damage <= 0) continue;
+            if (baseDamage <= 0) continue;
 
             var isAsleep = target.IsAsleep(out var sleepEffect);
-            if (isAsleep) damage *= 2;
-            
-            options.ApplyDamageScript.ApplyDamage(
+            if (isAsleep) baseDamage *= 2;
+
+            vars.SetBaseDamage(target, baseDamage);
+
+            if (baseDamage <= 0)
+                continue;
+
+            var finalDamage = options.ApplyDamageScript.ApplyDamage(
                 context.Source,
                 target,
-                options.SourceScript,
-                damage,
+                sourceScript,
+                baseDamage,
                 options.Element);
-            
+
+            vars.SetFinalDamage(target, finalDamage);
+
             // TODO this probably belongs in its own functional script but i am too lazy to write one for now
             ApplyDurabilityLoss(target);
             if (sleepEffect != null) target.Effects.Dispel(sleepEffect);
         }
     }
-    
+
     /// <summary>
     /// Calculates the total damage for an attack
     /// </summary>
     private static int CalculateDamage(
-        Creature source, 
-        Creature target, 
-        IDamageComponentOptions components, 
+        Creature source,
+        Creature target,
+        IDamageComponentOptions components,
         decimal abilityDamageMultiplier)
     {
         var finalDamage = components.BaseDamage ?? 0;
@@ -67,10 +79,10 @@ public struct DamageAbilityComponent : IComponent
         finalDamage = ApplyDamageModifier(source, finalDamage);
         finalDamage = ApplyDirectionalDamage(source, target, components, finalDamage);
         finalDamage = ApplyDamageReduction(target, finalDamage);
-        
+
         return finalDamage;
     }
-    
+
     /// <summary>
     /// Calculates base damage including percentage HP damage
     /// </summary>
@@ -80,9 +92,10 @@ public struct DamageAbilityComponent : IComponent
         if (components.PctHpDamage.HasValue)
         {
             currentDamage += MathEx.GetPercentOf<int>(
-                source.StatSheet.CurrentHp, 
+                source.StatSheet.CurrentHp,
                 (decimal)components.PctHpDamage);
         }
+
         return currentDamage;
     }
 
@@ -94,7 +107,7 @@ public struct DamageAbilityComponent : IComponent
         if (!components.DamageStat.HasValue) return currentDamage;
 
         var statValue = source.StatSheet.GetEffectiveStat(components.DamageStat.Value);
-        
+
         return components.DamageStatMultiplier.HasValue
             ? currentDamage + Convert.ToInt32(statValue * components.DamageStatMultiplier.Value)
             : currentDamage + statValue;
@@ -126,10 +139,9 @@ public struct DamageAbilityComponent : IComponent
         if (components.PAtkMultiplier.HasValue)
         {
             var multiplier = 1 + (components.PAtkMultiplier.Value / 100);
-            var weaponDamageBonus = Convert.ToInt32(source.StatSheet.EffectivePhysicalAttack * multiplier );
-           
+            var weaponDamageBonus = Convert.ToInt32(source.StatSheet.EffectivePhysicalAttack * multiplier);
+
             currentDamage += Convert.ToInt32(weaponDamageBonus * statMultiplier);
-            
         }
 
         // Apply magic attack if specified
@@ -139,11 +151,11 @@ public struct DamageAbilityComponent : IComponent
         }
 
         // Apply fist bonus for unarmed Aisling
-        if (source is Aisling aisling && 
-            components.FistBonus.HasValue && 
+        if (source is Aisling aisling &&
+            components.FistBonus.HasValue &&
             aisling.Equipment[EquipmentSlot.Weapon] == null)
         {
-            currentDamage += Convert.ToInt32( components.FistBonus.Value * statMultiplier);
+            currentDamage += Convert.ToInt32(components.FistBonus.Value * statMultiplier);
         }
 
         return currentDamage;
@@ -155,50 +167,56 @@ public struct DamageAbilityComponent : IComponent
     private static int ApplyDamageModifier(Creature source, int currentDamage)
     {
         if (source.StatSheet.DmgMod == 0) return currentDamage;
-        
+
         var dmgMultiplier = 1 + (source.StatSheet.DmgMod / 100.0);
         return Convert.ToInt32(currentDamage * dmgMultiplier);
     }
 
     // From behind == 1.5x and from the side == 1.25x
-    private static int ApplyDirectionalDamage(Creature source, Creature target, IDamageComponentOptions components, int finalDamage)
+    private static int ApplyDirectionalDamage(Creature source, Creature target, IDamageComponentOptions components,
+        int finalDamage)
     {
         if (components.IsSpell is true) return finalDamage;
         if (source.Direction == target.Direction)
         {
             return Convert.ToInt32(finalDamage * 1.5);
         }
+
         var (side1, side2) = target.Direction.GetSideDirections();
         if (source.Direction == side1 || source.Direction == side2)
         {
             return Convert.ToInt32(finalDamage * 1.25);
         }
+
         return finalDamage;
     }
-    
+
     private static int ApplyDamageReduction(Creature target, int finalDamage)
     {
         var dr = target.StatSheet.EffectiveDamageReduction;
         if (dr == 0) return finalDamage;
-        return (int)(finalDamage * (1 - dr / 100m)); 
+        return (int)(finalDamage * (1 - dr / 100m));
     }
-    
+
     private static decimal CalculateAbilityDamageMultiplier(Aisling? aisling, string? abilityTemplateKey, bool? isSpell)
     {
-        if (aisling == null || abilityTemplateKey == null) return 0;  
+        if (aisling == null || abilityTemplateKey == null) return 0;
         var level = GetAbilityLevel(aisling, abilityTemplateKey, isSpell);
         return (decimal)(1.0f + (level / 100f) * 0.2f);
     }
-    
+
     private static byte GetAbilityLevel(Aisling aisling, string abilityTemplateKey, bool? isSpell)
     {
-        if (isSpell == true) 
+        if (isSpell == true)
         {
-            return aisling.SpellBook.TryGetObjectByTemplateKey(abilityTemplateKey, out var spell) 
-                ? spell.Level : (byte)0;
+            return aisling.SpellBook.TryGetObjectByTemplateKey(abilityTemplateKey, out var spell)
+                ? spell.Level
+                : (byte)0;
         }
-        return aisling.SkillBook.TryGetObjectByTemplateKey(abilityTemplateKey, out var skill) 
-            ? skill.Level : (byte)0;
+
+        return aisling.SkillBook.TryGetObjectByTemplateKey(abilityTemplateKey, out var skill)
+            ? skill.Level
+            : (byte)0;
     }
 
 
@@ -216,6 +234,7 @@ public struct DamageAbilityComponent : IComponent
                 aisling.SendOrangeBarMessage($"Your {item.Template.Name} has been destroyed");
                 continue;
             }
+
             var currentPercentage = (item.CurrentDurability / (float)item.Template.MaxDurability) * 100;
 
             if (!(currentPercentage <= 10) || item.HasShownLowDurabilityWarning) continue;
@@ -223,7 +242,7 @@ public struct DamageAbilityComponent : IComponent
             aisling.SendOrangeBarMessage($"Warning: {item.Template.Name} has less than 10% durability remaining!");
         }
     }
-    
+
     public interface IDamageComponentOptions
     {
         IApplyDamageScript ApplyDamageScript { get; init; }
@@ -232,7 +251,6 @@ public struct DamageAbilityComponent : IComponent
         decimal? DamageStatMultiplier { get; init; }
         Element? Element { get; init; }
         decimal? PctHpDamage { get; init; }
-        IScript SourceScript { get; init; }
         decimal? PAtkMultiplier { get; init; }
         bool? UseMatk { get; init; }
         int? FistBonus { get; init; }

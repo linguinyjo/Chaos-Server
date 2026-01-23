@@ -1,13 +1,15 @@
+#region
 using Chaos.Collections.Common;
 using Chaos.Extensions;
 using Chaos.Messaging.Abstractions;
 using Chaos.Models.World;
 using Chaos.NLog.Logging.Definitions;
 using Chaos.NLog.Logging.Extensions;
+#endregion
 
 namespace Chaos.Messaging.Admin;
 
-[Command("reload", helpText: "<skills|spells|items|monsters|merchants|maps|dialogs|worldMaps|loottables>")]
+[Command("reload", helpText: "<skills|spells|items|monsters|merchants|map|maps|dialogs|worldMaps|loottables> <map-key>")]
 public sealed class ReloadCommand(IServiceProvider serviceProvider, ILogger<ReloadCommand> logger) : ICommand<Aisling>
 {
     private readonly ILogger<ReloadCommand> Logger = logger;
@@ -130,6 +132,27 @@ public sealed class ReloadCommand(IServiceProvider serviceProvider, ILogger<Relo
                     });
 
                 break;
+            case "map":
+                _ = Task.Run(
+                    async () =>
+                    {
+                        try
+                        {
+                            if (!args.TryGetNext<string>(out var mapInstanceId))
+                                mapInstanceId = aisling.MapInstance.InstanceId;
+
+                            await ServiceProvider.ReloadMapAsync(Logger, mapInstanceId);
+                            aisling.SendOrangeBarMessage("Map reloaded");
+                        } catch (Exception e)
+                        {
+                            aisling.SendOrangeBarMessage("Failed to reload map");
+
+                            Logger.WithTopics(Topics.Entities.MapInstance, Topics.Entities.MapTemplate, Topics.Actions.Reload)
+                                  .LogError(e, "Failed to reload map");
+                        }
+                    });
+
+                break;
             case "dialogs":
                 _ = Task.Run(
                     async () =>
@@ -191,7 +214,7 @@ public sealed class ReloadCommand(IServiceProvider serviceProvider, ILogger<Relo
                         try
                         {
                             await ServiceProvider.ReloadMetaDataAsync(Logger);
-                            aisling.SendOrangeBarMessage("Metadata reloaded");
+                            aisling.SendOrangeBarMessage("Metadata reloaded (MUST FULL RESTART CLIENT TO TAKE EFFECT)");
                         } catch (Exception e)
                         {
                             aisling.SendOrangeBarMessage("Failed to reload metadata");

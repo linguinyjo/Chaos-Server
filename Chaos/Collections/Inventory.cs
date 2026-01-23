@@ -1,12 +1,17 @@
+#region
 using Chaos.Collections.Abstractions;
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Extensions.Common;
 using Chaos.Models.Panel;
 using Chaos.Services.Factories.Abstractions;
 using Chaos.TypeMapper.Abstractions;
+#endregion
 
 namespace Chaos.Collections;
 
+/// <summary>
+///     Represents a panel of items
+/// </summary>
 public sealed class Inventory : PanelBase<Item>, IInventory
 {
     private readonly ICloningService<Item> ItemCloner;
@@ -25,19 +30,28 @@ public sealed class Inventory : PanelBase<Item>, IInventory
     }
     
     /// <summary>
-    ///     Used for character creation
+    ///     Constructor used by character creation. Services are not required here since the aisling is only created to be
+    ///     immediately saved
     /// </summary>
     public Inventory(IEnumerable<Item>? items = null)
         : base(PanelType.Inventory, 60, [0])
     {
         ItemCloner = null!;
-        items ??= Array.Empty<Item>();
+        items ??= [];
 
         foreach (var item in items)
             Objects[item.Slot] = item;
     }
 
-    /// <inheritdoc />
+    /// <summary>
+    ///     Initializes a new instance of the <see cref="Inventory" /> class.
+    /// </summary>
+    /// <param name="itemCloner">
+    ///     A service that can clone items
+    /// </param>
+    /// <param name="items">
+    ///     The items to populate the panel with
+    /// </param>
     public Inventory(ICloningService<Item> itemCloner, IEnumerable<Item>? items = null)
         : this(items)
         => ItemCloner = itemCloner;
@@ -45,7 +59,7 @@ public sealed class Inventory : PanelBase<Item>, IInventory
     /// <inheritdoc />
     public override bool Contains(string name)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         return Objects.Any(obj => obj is not null && obj.DisplayName.EqualsI(name));
     }
@@ -53,9 +67,10 @@ public sealed class Inventory : PanelBase<Item>, IInventory
     /// <inheritdoc />
     public override bool Contains(Item obj) => Contains(obj.DisplayName);
 
+    /// <inheritdoc />
     public int CountOf(string name)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         return this.Where(item => item.DisplayName.EqualsI(name))
                    .Sum(item => item.Count);
@@ -64,15 +79,16 @@ public sealed class Inventory : PanelBase<Item>, IInventory
     /// <inheritdoc />
     public int CountOfByTemplateKey(string templateKey)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         return this.Where(item => item.Template.TemplateKey.EqualsI(templateKey))
                    .Sum(item => item.Count);
     }
 
+    /// <inheritdoc />
     public bool HasCount(string name, int quantity)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         return CountOf(name) >= quantity;
     }
@@ -80,16 +96,17 @@ public sealed class Inventory : PanelBase<Item>, IInventory
     /// <inheritdoc />
     public bool HasCountByTemplateKey(string templateKey, int quantity)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         return CountOfByTemplateKey(templateKey) >= quantity;
     }
 
+    /// <inheritdoc />
     public override Item? this[string name]
     {
         get
         {
-            using var @lock = Sync.Enter();
+            using var @lock = Sync.EnterScope();
 
             return this.FirstOrDefault(i => i.DisplayName.EqualsI(name));
         }
@@ -98,7 +115,7 @@ public sealed class Inventory : PanelBase<Item>, IInventory
     /// <inheritdoc />
     public override bool Remove(string name)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         var obj = this.FirstOrDefault(obj => obj.DisplayName.EqualsI(name));
 
@@ -108,9 +125,10 @@ public sealed class Inventory : PanelBase<Item>, IInventory
         return Remove(obj.Slot);
     }
 
+    /// <inheritdoc />
     public bool RemoveQuantity(string name, int quantity, [MaybeNullWhen(false)] out List<Item> items)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         items = null;
 
@@ -120,7 +138,7 @@ public sealed class Inventory : PanelBase<Item>, IInventory
         var existingItems = this.Where(item => item.DisplayName.EqualsI(name))
                                 .ToList();
 
-        if (!existingItems.Any())
+        if (existingItems.Count == 0)
             return false;
 
         var sum = existingItems.Sum(item => item.Count);
@@ -153,9 +171,10 @@ public sealed class Inventory : PanelBase<Item>, IInventory
         return true;
     }
 
+    /// <inheritdoc />
     public bool RemoveQuantity(byte slot, int quantity, [MaybeNullWhen(false)] out List<Item> items)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         items = null;
 
@@ -200,9 +219,10 @@ public sealed class Inventory : PanelBase<Item>, IInventory
         return true;
     }
 
+    /// <inheritdoc />
     public bool RemoveQuantity(string name, int quantity)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         if (quantity <= 0)
             return false;
@@ -210,7 +230,7 @@ public sealed class Inventory : PanelBase<Item>, IInventory
         var existingItems = this.Where(item => item.DisplayName.EqualsI(name))
                                 .ToList();
 
-        if (!existingItems.Any())
+        if (existingItems.Count == 0)
             return false;
 
         var sum = existingItems.Sum(item => item.Count);
@@ -237,9 +257,10 @@ public sealed class Inventory : PanelBase<Item>, IInventory
         return true;
     }
 
+    /// <inheritdoc />
     public bool RemoveQuantity(byte slot, int quantity)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         if (quantity <= 0)
             return false;
@@ -279,7 +300,7 @@ public sealed class Inventory : PanelBase<Item>, IInventory
     /// <inheritdoc />
     public bool RemoveQuantityByTemplateKey(string templateKey, int quantity, [MaybeNullWhen(false)] out List<Item> items)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         items = null;
 
@@ -289,7 +310,7 @@ public sealed class Inventory : PanelBase<Item>, IInventory
         var existingItems = this.Where(item => item.Template.TemplateKey.EqualsI(templateKey))
                                 .ToList();
 
-        if (!existingItems.Any())
+        if (existingItems.Count == 0)
             return false;
 
         var sum = existingItems.Sum(item => item.Count);
@@ -325,7 +346,7 @@ public sealed class Inventory : PanelBase<Item>, IInventory
     /// <inheritdoc />
     public bool RemoveQuantityByTemplateKey(string templateKey, int quantity)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         if (quantity <= 0)
             return false;
@@ -333,7 +354,7 @@ public sealed class Inventory : PanelBase<Item>, IInventory
         var existingItems = this.Where(item => item.Template.TemplateKey.EqualsI(templateKey))
                                 .ToList();
 
-        if (!existingItems.Any())
+        if (existingItems.Count == 0)
             return false;
 
         var sum = existingItems.Sum(item => item.Count);
@@ -360,9 +381,10 @@ public sealed class Inventory : PanelBase<Item>, IInventory
         return true;
     }
 
+    /// <inheritdoc />
     public override bool TryAdd(byte slot, Item obj)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         var completed = false;
 
@@ -375,11 +397,13 @@ public sealed class Inventory : PanelBase<Item>, IInventory
         return base.TryAddToNextSlot(obj);
     }
 
+    /// <inheritdoc />
     public bool TryAddDirect(byte slot, Item obj) => base.TryAdd(slot, obj);
 
+    /// <inheritdoc />
     public override bool TryAddToNextSlot(Item obj)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         if (TryAddStackable(obj))
             return true;
@@ -390,7 +414,7 @@ public sealed class Inventory : PanelBase<Item>, IInventory
     /// <inheritdoc />
     public override bool TryGetObject(string name, [MaybeNullWhen(false)] out Item obj)
     {
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         obj = this.FirstOrDefault(obj => obj.DisplayName.EqualsI(name));
 
@@ -400,16 +424,16 @@ public sealed class Inventory : PanelBase<Item>, IInventory
     /// <inheritdoc />
     public override bool TryGetRemove(string name, [MaybeNullWhen(false)] out Item obj)
     {
-        obj = default;
+        obj = null;
 
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         obj = this.FirstOrDefault(obj => obj.DisplayName.EqualsI(name));
 
         if (obj == null)
             return false;
 
-        Objects[obj.Slot] = default;
+        Objects[obj.Slot] = null;
         BroadcastOnRemoved(obj.Slot, obj);
 
         return true;
@@ -430,7 +454,7 @@ public sealed class Inventory : PanelBase<Item>, IInventory
             || !item1.DisplayName.EqualsI(item2.DisplayName))
             return base.TrySwap(slot1, slot2);
 
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         var missingStacks = item2.Template.MaxStacks - item2.Count;
         var stacksToGive = Math.Min(missingStacks, item1.Count);
@@ -456,7 +480,7 @@ public sealed class Inventory : PanelBase<Item>, IInventory
         if (obj.Count == 0)
             obj.Count = 1;
 
-        using var @lock = Sync.Enter();
+        using var @lock = Sync.EnterScope();
 
         var items = Objects.Where(i => i != null)
                            .ToList();

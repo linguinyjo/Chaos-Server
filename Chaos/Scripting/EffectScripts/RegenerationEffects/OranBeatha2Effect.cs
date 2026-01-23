@@ -1,8 +1,7 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.World.Abstractions;
-using Chaos.Scripting.Abstractions;
 using Chaos.Scripting.Components.AbilityComponents;
 using Chaos.Scripting.Components.EffectComponents;
 using Chaos.Scripting.Components.Execution;
@@ -17,19 +16,18 @@ namespace Chaos.Scripting.EffectScripts.RegenerationEffects;
 ///  The healing power will be roughly half the equivalent level of ioc
 /// </summary>
 public sealed class OranBeatha2Effect : ContinuousAnimationEffectBase,
-                                        NonOverwritableEffectComponent.INonOverwritableEffectComponentOptions,
-                                        HealAbilityComponent.IHealComponentOptions,
-                                        GetTargetsAbilityComponent<Creature>.IGetTargetsComponentOptions
+    NonOverwritableEffectComponent.INonOverwritableEffectComponentOptions,
+    HealAbilityComponent.IHealComponentOptions,
+    GetTargetsAbilityComponent<Creature>.IGetTargetsComponentOptions
 {
+    private Creature _source;
+
     public OranBeatha2Effect(Creature source)
     {
         _source = source;
         SourceScript = this;
         AbilityTemplateKey = Name;
     }
-    
-    private Creature _source;
-    public List<string> ConflictingEffectNames { get; init; } = ["oran_beatha_1", "oran_beatha_2" ];
 
     /// <inheritdoc />
     protected override TimeSpan Duration { get; set; } = TimeSpan.FromSeconds(8);
@@ -47,11 +45,33 @@ public sealed class OranBeatha2Effect : ContinuousAnimationEffectBase,
     /// <inheritdoc />
     protected override IIntervalTimer Interval { get; } = new IntervalTimer(TimeSpan.FromSeconds(2));
 
+    public int? ExclusionRange { get; init; }
+    public TargetFilter Filter { get; init; } = TargetFilter.GroupOnly;
+    public bool MustHaveTargets { get; init; } = false;
+    public int Range { get; init; }
+    public AoeShape Shape { get; init; }
+    public bool SingleTarget { get; init; }
+
+    public IApplyHealScript ApplyHealScript { get; init; } = FunctionalScripts.ApplyHealing.ApplyHealScript.Create();
+    public int? BaseHeal { get; init; } = 150;
+    public Stat? HealStat { get; init; } = Stat.WIS;
+    public decimal? HealStatMultiplier { get; init; } = 5;
+    public decimal? MagicAttackMultiplier { get; init; } = 5;
+    public decimal? PctHpHeal { get; init; }
+    public string? AbilityTemplateKey { get; init; }
+    public List<string> ConflictingEffectNames { get; init; } = ["oran_beatha_1", "oran_beatha_2"];
+
     /// <inheritdoc />
     public override byte Icon => 146;
 
     /// <inheritdoc />
     public override string Name => "oran beatha 2";
+
+    public override bool ShouldApply(Creature source, Creature target)
+    {
+        _source = source;
+        return base.ShouldApply(source, target);
+    }
 
     /// <inheritdoc />
     protected override void OnIntervalElapsed()
@@ -61,25 +81,4 @@ public sealed class OranBeatha2Effect : ContinuousAnimationEffectBase,
             .ExecuteAndCheck<GetTargetsAbilityComponent<Creature>>()
             ?.Execute<HealAbilityComponent>();
     }
-    
-    public override bool ShouldApply(Creature source, Creature target)
-    {
-        _source = source; 
-        return base.ShouldApply(source, target);
-    }
-
-    public IApplyHealScript ApplyHealScript { get; init; } = FunctionalScripts.ApplyHealing.ApplyHealScript.Create();
-    public int? BaseHeal { get; init; } = 150;
-    public Stat? HealStat { get; init; } = Stat.WIS;
-    public decimal? HealStatMultiplier { get; init; } = 5;
-    public decimal? MagicAttackMultiplier { get; init; } = 5;
-    public decimal? PctHpHeal { get; init; }
-    public IScript SourceScript { get; init; } 
-    public string? AbilityTemplateKey { get; init; }
-    public bool ExcludeSourcePoint { get; init; }
-    public TargetFilter Filter { get; init; } = TargetFilter.GroupOnly;
-    public bool MustHaveTargets { get; init; } = false;
-    public int Range { get; init; }
-    public AoeShape Shape { get; init; }
-    public bool SingleTarget { get; init; }
 }

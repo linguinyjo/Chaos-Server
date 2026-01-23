@@ -1,23 +1,24 @@
+#region
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using Chaos.Collections;
 using Chaos.Common.Abstractions;
-using Chaos.Common.Definitions;
 using Chaos.Common.Identity;
 using Chaos.Cryptography;
+using Chaos.DarkAges.Definitions;
 using Chaos.Extensions.Common;
 using Chaos.Models.Legend;
 using Chaos.Models.Panel;
 using Chaos.Models.World;
 using Chaos.Networking.Abstractions;
+using Chaos.Networking.Abstractions.Definitions;
 using Chaos.Networking.Entities;
 using Chaos.Networking.Entities.Client;
 using Chaos.NLog.Logging.Definitions;
 using Chaos.NLog.Logging.Extensions;
 using Chaos.Packets;
 using Chaos.Packets.Abstractions;
-using Chaos.Packets.Abstractions.Definitions;
 using Chaos.Security.Abstractions;
 using Chaos.Services.Factories.Abstractions;
 using Chaos.Services.Servers.Options;
@@ -26,6 +27,7 @@ using Chaos.Storage.Abstractions;
 using Chaos.Time;
 using Chaos.Utilities;
 using Microsoft.Extensions.Options;
+#endregion
 
 namespace Chaos.Services.Servers;
 
@@ -141,6 +143,25 @@ public sealed class LoginServer : ServerBase<IChaosLoginClient>, ILoginServer<IC
         {
             if (CreateCharRequests.TryGetValue(localClient.Id, out var requestArgs))
             {
+                var hairStyleCap = localArgs.Gender == Gender.Male ? 18 : 17;
+
+                if (localArgs.Gender is not Gender.Male and not Gender.Female
+                    || (localArgs.HairColor > DisplayColor.Navy)
+                    || (localArgs.HairStyle > hairStyleCap))
+                {
+                    Logger.WithTopics(Topics.Entities.Aisling, Topics.Actions.Create, Topics.Qualifiers.Cheating)
+                          .WithProperty(localClient)
+                          .WithProperty(requestArgs)
+                          .WithProperty(localArgs)
+                          .LogWarning("{@ClientIp} tried to create a character with invalid values", localClient.RemoteIp);
+
+                    localClient.SendLoginMessage(LoginMessageType.ClearPswdMessage, "Unable to create character, bad request");
+
+                    CreateCharRequests.Remove(localClient.Id, out _);
+
+                    return;
+                }
+
                 var mapInstanceCache = CacheProvider.GetCache<MapInstance>();
                 var startingMap = mapInstanceCache.Get(Options.StartingMapInstanceId);
                 var inventory = new Inventory(ItemFactory);
@@ -175,6 +196,7 @@ public sealed class LoginServer : ServerBase<IChaosLoginClient>, ILoginServer<IC
                       .LogInformation("New character created with name {@Name}", aisling.Name);
 
                 localClient.SendLoginMessage(LoginMessageType.Confirm);
+                CreateCharRequests.Remove(localClient.Id, out _);
             } else
                 localClient.SendLoginMessage(LoginMessageType.ClearNameMessage, "Unable to create character, bad request.");
         }
@@ -225,13 +247,27 @@ public sealed class LoginServer : ServerBase<IChaosLoginClient>, ILoginServer<IC
 
         async ValueTask InnerOnLogin(IChaosLoginClient localClient, LoginArgs localArgs)
         {
+            var allowed = await AccessManager.ShouldAllowAsync(localArgs.ClientId1);
+
+            if (!allowed)
+            {
+                Logger.WithTopics(Topics.Entities.Client, Topics.Actions.Login, Topics.Actions.Validation)
+                      .WithProperty(localClient)
+                      .LogWarning("Client with id {@ClientId} tried to connect, but is id banned", localArgs.ClientId1);
+
+                localClient.SendLoginMessage(
+                    LoginMessageType.CharacterDoesntExist,
+                    "You are banned. If you feel this is a mistake, please contact a GM.");
+
+                return;
+            }
+
             var result = await AccessManager.ValidateCredentialsAsync(localClient.RemoteIp, localArgs.Name, localArgs.Password);
 
             if (!result.Success)
             {
                 Logger.WithTopics(Topics.Entities.Client, Topics.Actions.Login, Topics.Actions.Validation)
                       .WithProperty(localClient)
-                      .WithProperty(localArgs.Password)
                       .LogDebug("Failed to validate credentials for {@Name} for reason {@Reason}", localArgs.Name, result.FailureMessage);
 
                 localClient.SendLoginMessage(LoginMessageType.WrongPassword, result.FailureMessage);
@@ -249,7 +285,9 @@ public sealed class LoginServer : ServerBase<IChaosLoginClient>, ILoginServer<IC
                 ServerType.World,
                 Encoding.ASCII.GetString(localClient.Crypto.Key),
                 localClient.Crypto.Seed,
-                localArgs.Name);
+                localArgs.Name,
+                localArgs.ClientId1,
+                localArgs.ClientId2);
 
             Logger.WithTopics(
                       Topics.Servers.LoginServer,
@@ -341,17 +379,13 @@ public sealed class LoginServer : ServerBase<IChaosLoginClient>, ILoginServer<IC
         var opCode = packet.OpCode;
         var handler = ClientHandlers[opCode];
 
-        if (handler is not null)
-            Logger.WithTopics(Topics.Servers.LoginServer, Topics.Entities.Packet, Topics.Actions.Processing)
-                  .WithProperty(client)
-                  .LogTrace("Processing message with code {@OpCode} from {@ClientIp}", opCode, client.RemoteIp);
-        else if (opCode is (byte)ClientOpCode.ExitRequest or (byte)ClientOpCode.SelfProfileRequest)
+        if (opCode is (byte)ClientOpCode.ExitRequest or (byte)ClientOpCode.SelfProfileRequest)
         {
             //ignored
             //these occasionally happen in the LoginServer for some unknown reason
             //ExitRequest might be from a double click from exiting
             //RequestProfile I have no idea tho
-        } else
+        } else if (handler is null)
             Logger.WithTopics(
                       Topics.Servers.LoginServer,
                       Topics.Entities.Packet,
@@ -359,7 +393,7 @@ public sealed class LoginServer : ServerBase<IChaosLoginClient>, ILoginServer<IC
                       Topics.Qualifiers.Cheating)
                   .WithProperty(client)
                   .WithProperty(packet.ToString(), "HexData")
-                  .LogWarning("Unknown message with code {@OpCode} from {@ClientIp}", opCode, client.RemoteIp);
+                  .LogWarning("Received packet with unknown code {@OpCode} from {@ClientIp}", opCode, client.RemoteIp);
 
         return handler?.Invoke(client, in packet) ?? default;
     }

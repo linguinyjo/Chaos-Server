@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿#region
+using System.Reflection;
 using Chaos.Extensions.Common;
 using Chaos.NLog.Logging.Definitions;
 using NLog;
@@ -6,6 +7,7 @@ using Seq.Api;
 using Seq.Api.Model.Dashboarding;
 using Seq.Api.Model.Signals;
 using SeqConfigurator.Builders;
+#endregion
 
 using var seq = new SeqConnection("http://localhost:5341", "AdminGuestSeqToken");
 await seq.EnsureConnectedAsync(TimeSpan.FromSeconds(30));
@@ -114,6 +116,7 @@ await DashboardBuilder.Create(seq)
                       .WithCharts(
                           BuildMapCountChart,
                           BuildAislingCountChart,
+                          BuildUniqueIpAddressesChart,
                           BuildDeltasChart,
                           BuildAverageDeltasChart,
                           BuildUpperDeltasChart)
@@ -128,43 +131,46 @@ static void BuildDeltasChart(ChartBuilder chartBuilder)
     => chartBuilder.WithTitle("Average of Median and Upper deltas")
                    .WithSignalExpression("DeltaMonitor")
                    .WithDimensions(12, 2)
-                   .WithQuery(
-                       queryBuilder => queryBuilder.WithSelect(("UpperDelta", "mean(UpperPercentile)"), ("MedianDelta", "mean(Average)"))
-                                                   .WithDisplayStyle(MeasurementDisplayType.Line, false, true));
+                   .WithQuery(queryBuilder => queryBuilder
+                                              .WithSelect(("UpperDelta", "mean(UpperPercentile)"), ("MedianDelta", "mean(Average)"))
+                                              .WithDisplayStyle(MeasurementDisplayType.Line, false, true));
 
 static void BuildAverageDeltasChart(ChartBuilder chartBuilder)
     => chartBuilder.WithTitle("Average Deltas")
                    .WithSignalExpression("DeltaMonitor")
                    .WithDimensions(12, 2)
-                   .WithQuery(
-                       queryBuilder => queryBuilder.WithSelect(("AvgDelta", "mean(Average)"))
-                                                   .WithGroupBy("Name")
-                                                   .WithOrderBy("time desc")
-                                                   .WithDisplayStyle(MeasurementDisplayType.Line, false));
+                   .WithQuery(queryBuilder => queryBuilder.WithSelect(("AvgDelta", "mean(Average)"))
+                                                          .WithGroupBy("Name")
+                                                          .WithOrderBy("time desc")
+                                                          .WithDisplayStyle(MeasurementDisplayType.Line, false));
 
 static void BuildUpperDeltasChart(ChartBuilder chartBuilder)
     => chartBuilder.WithTitle("Upper Deltas")
                    .WithSignalExpression("DeltaMonitor")
                    .WithDimensions(12, 2)
-                   .WithQuery(
-                       queryBuilder => queryBuilder.WithSelect(("UpperDelta", "mean(UpperPercentile)"))
-                                                   .WithGroupBy("Name")
-                                                   .WithOrderBy("time desc")
-                                                   .WithDisplayStyle(MeasurementDisplayType.Line, false));
+                   .WithQuery(queryBuilder => queryBuilder.WithSelect(("UpperDelta", "mean(UpperPercentile)"))
+                                                          .WithGroupBy("Name")
+                                                          .WithOrderBy("time desc")
+                                                          .WithDisplayStyle(MeasurementDisplayType.Line, false));
 
 static void BuildAislingCountChart(ChartBuilder chartBuilder)
     => chartBuilder.WithTitle("AislingCount")
                    .WithSignalExpression("Aisling")
                    .WithDimensions(12, 2)
-                   .WithQuery(
-                       queryBuilder => queryBuilder.WithSelect(("AislingCount", "count(distinct(AislingName))"))
-                                                   .WithWhere("Has(AislingName)")
-                                                   .WithDisplayStyle(MeasurementDisplayType.Line, false, true));
+                   .WithQuery(queryBuilder => queryBuilder.WithSelect(("AislingCount", "count(distinct(AislingName))"))
+                                                          .WithWhere("Has(AislingName)")
+                                                          .WithDisplayStyle(MeasurementDisplayType.Line, false, true));
+
+static void BuildUniqueIpAddressesChart(ChartBuilder chartBuilder)
+    => chartBuilder.WithTitle("Unique Ip Addresses")
+                   .WithDimensions(12, 2)
+                   .WithQuery(queryBuilder => queryBuilder.WithSelect(("UniqueIpAddresses", "count(distinct(Aisling.IpAddress))"))
+                                                          .WithWhere("Has(Aisling)")
+                                                          .WithDisplayStyle(MeasurementDisplayType.Line, false, true));
 
 static void BuildMapCountChart(ChartBuilder chartBuilder)
     => chartBuilder.WithTitle("MapCount")
                    .WithSignalExpression("DeltaMonitor")
                    .WithDimensions(12, 2)
-                   .WithQuery(
-                       queryBuilder => queryBuilder.WithSelect(("MapCount", "count(distinct(Name))"))
-                                                   .WithDisplayStyle(MeasurementDisplayType.Line, false, true));
+                   .WithQuery(queryBuilder => queryBuilder.WithSelect(("MapCount", "count(distinct(Name))"))
+                                                          .WithDisplayStyle(MeasurementDisplayType.Line, false, true));

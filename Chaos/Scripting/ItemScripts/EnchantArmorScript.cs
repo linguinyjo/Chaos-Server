@@ -1,9 +1,6 @@
-using Chaos.Common.Definitions;
-using Chaos.Definitions;
-using Chaos.Models.Data;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Panel;
 using Chaos.Models.World;
-using Chaos.Scripting.Abstractions;
 using Chaos.Scripting.Components.AbilityComponents;
 using Chaos.Scripting.Components.Execution;
 using Chaos.Scripting.ItemScripts.Abstractions;
@@ -11,15 +8,13 @@ using Chaos.Scripting.ItemScripts.Abstractions;
 namespace Chaos.Scripting.ItemScripts;
 
 public class EnchantArmorScript : ConfigurableItemScriptBase,
-                                        ConsumableAbilityComponent.IConsumableComponentOptions,
-                                        EnchantArmorComponent.IEnchantArmorComponentOptions
+    ConsumableAbilityComponent.IConsumableComponentOptions,
+    EnchantArmorComponent.IEnchantArmorComponentOptions
 {
-    
     /// <inheritdoc />
     public EnchantArmorScript(Item subject)
         : base(subject)
     {
-        SourceScript = this;
         LevelCircle = subject.LevelCircle;
         ItemName = subject.DisplayName;
         Slot = subject.Slot;
@@ -35,8 +30,7 @@ public class EnchantArmorScript : ConfigurableItemScriptBase,
     }
 
     #region ScriptVars
-    public IScript SourceScript { get; init; }
-    /// <inheritdoc />
+
     public LevelCircle LevelCircle { get; init; }
     public string ItemName { get; init; }
     public byte Slot { get; init; }

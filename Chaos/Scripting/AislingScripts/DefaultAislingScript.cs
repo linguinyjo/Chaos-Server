@@ -1,8 +1,11 @@
+#region
+
 using Chaos.Collections;
 using Chaos.Collections.Abstractions;
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Extensions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Formulae;
 using Chaos.Geometry.Abstractions;
 using Chaos.Models.Data;
@@ -23,23 +26,21 @@ using Chaos.Storage.Abstractions;
 using Chaos.Time;
 using Chaos.Time.Abstractions;
 
+#endregion
+
 namespace Chaos.Scripting.AislingScripts;
 
 public class DefaultAislingScript : AislingScriptBase
 {
     private readonly IStore<BulletinBoard> BoardStore;
     private readonly IIntervalTimer ClearOrangeBarTimer;
+    private readonly IEffectFactory EffectFactory;
     private readonly IStore<MailBox> MailStore;
     private readonly IIntervalTimer SleepAnimationTimer;
-    private readonly IEffectFactory EffectFactory;
-
-    private SocialStatus PreAfkSocialStatus { get; set; }
-    protected virtual RelationshipBehavior RelationshipBehavior { get; }
-    protected virtual RestrictionBehavior RestrictionBehavior { get; }
-    protected virtual VisibilityBehavior VisibilityBehavior { get; }
 
     /// <inheritdoc />
-    public DefaultAislingScript(Aisling subject, IStore<MailBox> mailStore, IStore<BulletinBoard> boardStore, IEffectFactory effectFactory)
+    public DefaultAislingScript(Aisling subject, IStore<MailBox> mailStore, IStore<BulletinBoard> boardStore,
+        IEffectFactory effectFactory)
         : base(subject)
     {
         MailStore = mailStore;
@@ -48,12 +49,38 @@ public class DefaultAislingScript : AislingScriptBase
         VisibilityBehavior = new VisibilityBehavior();
         RelationshipBehavior = new RelationshipBehavior();
         SleepAnimationTimer = new IntervalTimer(TimeSpan.FromSeconds(5), false);
-        ClearOrangeBarTimer = new IntervalTimer(TimeSpan.FromSeconds(WorldOptions.Instance.ClearOrangeBarTimerSecs), false);
+        ClearOrangeBarTimer =
+            new IntervalTimer(TimeSpan.FromSeconds(WorldOptions.Instance.ClearOrangeBarTimerSecs), false);
         EffectFactory = effectFactory;
     }
 
+    private SocialStatus PreAfkSocialStatus { get; set; }
+    protected virtual RelationshipBehavior RelationshipBehavior { get; }
+    protected virtual RestrictionBehavior RestrictionBehavior { get; }
+    protected virtual VisibilityBehavior VisibilityBehavior { get; }
+
+    /// <inheritdoc />
+    public override bool CanDropItem(Item item) => RestrictionBehavior.CanDropItem(Subject, item);
+
+    /// <inheritdoc />
+    public override bool CanDropItemOn(Aisling source, Item item) =>
+        RestrictionBehavior.CanDropItemOn(source, item, Subject);
+
+    /// <inheritdoc />
+    public override bool CanDropMoney(int amount) => RestrictionBehavior.CanDropMoney(Subject, amount);
+
+    /// <inheritdoc />
+    public override bool CanDropMoneyOn(Aisling source, int amount) =>
+        RestrictionBehavior.CanDropMoneyOn(source, amount, Subject);
+
     /// <inheritdoc />
     public override bool CanMove() => RestrictionBehavior.CanMove(Subject);
+
+    /// <inheritdoc />
+    public override bool CanPickupItem(GroundItem groundItem) => RestrictionBehavior.CanPickupItem(Subject, groundItem);
+
+    /// <inheritdoc />
+    public override bool CanPickupMoney(Money money) => RestrictionBehavior.CanPickupMoney(Subject, money);
 
     /// <inheritdoc />
     public override bool CanSee(VisibleEntity entity) => VisibilityBehavior.CanSee(Subject, entity);
@@ -114,15 +141,14 @@ public class DefaultAislingScript : AislingScriptBase
 
     /// <inheritdoc />
     public override bool IsHostileTo(Creature creature) => RelationshipBehavior.IsHostileTo(Subject, creature);
-    
 
     public void OnUse()
         => new ComponentExecutor(null!, Subject).WithOptions(this)
             .ExecuteAndCheck<GenericAbilityComponent<Creature>>()
             ?.Execute<ApplyEffectAbilityComponent>();
-    
+
     /// <inheritdoc />
-    public override void OnDeath() 
+    public override void OnDeath()
     {
         var effect = EffectFactory.Create("skulled");
         Subject.Effects.Apply(Subject, effect);
@@ -147,7 +173,7 @@ public class DefaultAislingScript : AislingScriptBase
 
             var isAfk = !lastManualAction.HasValue
                         || (DateTime.UtcNow.Subtract(lastManualAction.Value)
-                                    .TotalMinutes
+                                .TotalMinutes
                             > WorldOptions.Instance.SleepAnimationTimerMins);
 
             if (isAfk)
@@ -161,7 +187,8 @@ public class DefaultAislingScript : AislingScriptBase
                     PreAfkSocialStatus = Subject.Options.SocialStatus;
                     Subject.Options.SocialStatus = SocialStatus.DayDreaming;
                 }
-            } else if (Subject.Options.SocialStatus == SocialStatus.DayDreaming)
+            }
+            else if (Subject.Options.SocialStatus == SocialStatus.DayDreaming)
                 Subject.Options.SocialStatus = PreAfkSocialStatus;
         }
 
@@ -175,9 +202,10 @@ public class DefaultAislingScript : AislingScriptBase
             //and the last message was sent after the last clear
             //and the time since the last message is greater than the clear timer
             var shouldClear = lastOrangeBarMessage.HasValue
-                              && (lastOrangeBarMessage > (Subject.Trackers.LastOrangeBarMessageClear ?? DateTime.MinValue))
+                              && (lastOrangeBarMessage >
+                                  (Subject.Trackers.LastOrangeBarMessageClear ?? DateTime.MinValue))
                               && (now.Subtract(lastOrangeBarMessage.Value)
-                                     .TotalSeconds
+                                      .TotalSeconds
                                   > WorldOptions.Instance.ClearOrangeBarTimerSecs);
 
             if (shouldClear)

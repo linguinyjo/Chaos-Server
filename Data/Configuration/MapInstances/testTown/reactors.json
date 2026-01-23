@@ -48,5 +48,10 @@
         },
         "shouldBlockPathfinding": true,
         "source": "(23, 26)"
+    },
+    {
+        "scriptKeys": ["leaderboard"],
+        "shouldBlockPathfindiner": true,
+        "source": "(23, 32)"
     }
 ]

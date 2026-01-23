@@ -6,5 +6,5 @@
   "scriptVars": {},
   "templateKey": "aoife_initial",
   "text": "Hello young one, what brings you to my temple?",
-  "type": "Menu"
+  "type": "DialogMenu"
 }

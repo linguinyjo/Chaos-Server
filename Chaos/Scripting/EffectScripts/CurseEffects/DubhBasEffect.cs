@@ -1,4 +1,5 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.World.Abstractions;
@@ -16,19 +17,10 @@ public class DubhBasEffect : EffectBase,
     SoundAbilityComponent.ISoundComponentOptions
 {
     /// <inheritdoc />
-    public bool AnimatePoints { get; init; }
-
-    /// <inheritdoc />
-    public Animation? Animation { get; init; }
-
-    /// <inheritdoc />
-    public List<string> ConflictingEffectNames { get; init; } = ["Dubh Bas"];
-
-    /// <inheritdoc />
     protected override TimeSpan Duration { get; set; } = TimeSpan.FromSeconds(6);
 
     /// <inheritdoc />
-    public bool ExcludeSourcePoint { get; init; }
+    public int? ExclusionRange { get; init; }
 
     /// <inheritdoc />
     public TargetFilter Filter { get; init; }
@@ -46,20 +38,26 @@ public class DubhBasEffect : EffectBase,
     public bool SingleTarget { get; init; }
 
     /// <inheritdoc />
-    public byte? Sound { get; init; }
+    public bool AnimatePoints { get; init; }
+
+    /// <inheritdoc />
+    public Animation? Animation { get; init; }
+
+    /// <inheritdoc />
+    public List<string> ConflictingEffectNames { get; init; } = ["Dubh Bas"];
 
     /// <inheritdoc />
     public override byte Icon => 177;
 
     /// <inheritdoc />
     public override string Name => "Dubh Bas";
-    
+
     public override void OnTerminated()
     {
         Subject.StatSheet.SetHp(1);
         AislingSubject?.Client.SendAttributes(StatUpdateType.Vitality);
     }
-    
+
     /// <inheritdoc />
     public override void OnApplied()
     {
@@ -69,6 +67,10 @@ public class DubhBasEffect : EffectBase,
     /// <inheritdoc />
     public override bool ShouldApply(Creature source, Creature target)
     {
-        return AislingSubject?.Equipment.ContainsByTemplateKey("silverFurTarp") != true && base.ShouldApply(source, target);
+        return AislingSubject?.Equipment.ContainsByTemplateKey("silverFurTarp") != true &&
+               base.ShouldApply(source, target);
     }
+
+    /// <inheritdoc />
+    public byte? Sound { get; init; }
 }

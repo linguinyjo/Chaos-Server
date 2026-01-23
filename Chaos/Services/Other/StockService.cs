@@ -1,9 +1,11 @@
+#region
 using Chaos.Common.Utilities;
 using Chaos.NLog.Logging.Definitions;
 using Chaos.NLog.Logging.Extensions;
 using Chaos.Services.Other.Abstractions;
 using Chaos.Time;
 using Chaos.Time.Abstractions;
+#endregion
 
 namespace Chaos.Services.Other;
 
@@ -95,7 +97,8 @@ public sealed class StockService(ILogger<StockService> logger) : BackgroundServi
         while (!stoppingToken.IsCancellationRequested)
             try
             {
-                await timer.WaitForNextTickAsync(stoppingToken);
+                await timer.WaitForNextTickAsync(stoppingToken)
+                           .ConfigureAwait(false);
 
                 var delta = DeltaTime.GetDelta;
 

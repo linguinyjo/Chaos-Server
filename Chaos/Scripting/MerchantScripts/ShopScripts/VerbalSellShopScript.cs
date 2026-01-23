@@ -1,3 +1,4 @@
+#region
 using Chaos.Definitions;
 using Chaos.Extensions.Common;
 using Chaos.Models.Abstractions;
@@ -8,6 +9,7 @@ using Chaos.NLog.Logging.Definitions;
 using Chaos.NLog.Logging.Extensions;
 using Chaos.Scripting.MerchantScripts.ShopScripts.Abstractions;
 using Chaos.Utilities;
+#endregion
 
 namespace Chaos.Scripting.MerchantScripts.ShopScripts;
 

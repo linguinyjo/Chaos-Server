@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Menu;
 using Chaos.Models.World;
 using Chaos.Scripting.DialogScripts.Abstractions;
@@ -9,17 +9,19 @@ using Chaos.Services.Factories.Abstractions;
 
 namespace Chaos.Scripting.DialogScripts.MilethScripts;
 
-public class DevlinScript:  DialogScriptBase
+public class DevlinScript : DialogScriptBase
 {
     private readonly IDialogFactory DialogFactory;
-    
-    #region ScriptVars
-    protected byte Class { get; init; }
-    #endregion
-    
+
     /// <inheritdoc />
     public DevlinScript(Dialog subject, IDialogFactory dialogFactory)
         : base(subject) => DialogFactory = dialogFactory;
+
+    #region ScriptVars
+
+    protected byte Class { get; init; }
+
+    #endregion
 
     /// <inheritdoc />
     public override void OnDisplaying(Aisling source)
@@ -30,8 +32,12 @@ public class DevlinScript:  DialogScriptBase
             Subject.AddOption("Devlin's ingredients", "devlins_ingredients_quest_a");
         }
     }
-    
-    public override void OnDisplayed(Aisling source) {}
 
-    public override void OnNext(Aisling source, byte? optionIndex = null) {}
+    public override void OnDisplayed(Aisling source)
+    {
+    }
+
+    public override void OnNext(Aisling source, byte? optionIndex = null)
+    {
+    }
 }

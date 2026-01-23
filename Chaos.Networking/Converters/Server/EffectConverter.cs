@@ -1,8 +1,10 @@
-using Chaos.Common.Definitions;
+#region
+using Chaos.DarkAges.Definitions;
 using Chaos.IO.Memory;
+using Chaos.Networking.Abstractions.Definitions;
 using Chaos.Networking.Entities.Server;
 using Chaos.Packets.Abstractions;
-using Chaos.Packets.Abstractions.Definitions;
+#endregion
 
 namespace Chaos.Networking.Converters.Server;
 
@@ -32,5 +34,6 @@ public sealed class EffectConverter : PacketConverterBase<EffectArgs>
     {
         writer.WriteUInt16(args.EffectIcon);
         writer.WriteByte((byte)args.EffectColor);
+        writer.WriteByte(0);
     }
 }

@@ -19,7 +19,7 @@
   "castLines": 4,
   "spellCategory": "Debuff",
   "name": "seun",
-  "panelSprite": 20,
+  "panelSprite": 88,
   "cooldownMs": 60000,
   "scriptKeys": [
     "applyEffect"

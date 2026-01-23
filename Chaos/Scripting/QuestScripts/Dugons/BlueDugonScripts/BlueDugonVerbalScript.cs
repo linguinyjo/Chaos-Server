@@ -1,5 +1,5 @@
 using System.Text.RegularExpressions;
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Menu;
 using Chaos.Models.World;
 using Chaos.Models.World.Abstractions;
@@ -12,19 +12,21 @@ namespace Chaos.Scripting.QuestScripts.Dugons.BlueDugonScripts;
 
 public class BlueDugonVerbalScript : VerbalShopScriptBase
 {
-    private readonly IDialogFactory DialogFactory;
-    private Merchant Merchant { get; set; }
-    private readonly IItemFactory ItemFactory;
     private readonly BlueDugonQuestHelper BlueDugonQuestHelper = new();
+    private readonly IDialogFactory DialogFactory;
+    private readonly IItemFactory ItemFactory;
 
     /// <inheritdoc />
-    public BlueDugonVerbalScript(Merchant subject, ILogger<VerbalSellShopScript> logger,  IDialogFactory dialogFactory, IItemFactory itemFactory)
+    public BlueDugonVerbalScript(Merchant subject, ILogger<VerbalSellShopScript> logger, IDialogFactory dialogFactory,
+        IItemFactory itemFactory)
         : base(subject, logger)
     {
         DialogFactory = dialogFactory;
         Merchant = subject;
         ItemFactory = itemFactory;
     }
+
+    private Merchant Merchant { get; set; }
 
     /// <inheritdoc />
     public override void OnPublicMessage(Creature source, string message)
@@ -57,7 +59,7 @@ public class BlueDugonVerbalScript : VerbalShopScriptBase
             );
         }
     }
-    
+
     private void DisplayDialog(Aisling aisling, string message, string nextDialogKey)
     {
         var dialog = new Dialog(

@@ -12,7 +12,6 @@
       "mustHaveTargets": true,
       "range": 0,
       "singleTarget": true,
-      "excludeSourcePoint": false,
       "shape": "none",
       "maxTriggers": 1,
       "baseDamage": 500,

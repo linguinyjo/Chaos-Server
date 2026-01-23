@@ -1,7 +1,8 @@
 using System.Text.Json.Serialization;
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Schemas.Data;
 using Chaos.Schemas.Templates.Abstractions;
+using SpellType = Chaos.DarkAges.Definitions.SpellType;
 
 namespace Chaos.Schemas.Templates;
 
@@ -49,7 +50,7 @@ public sealed record SpellTemplateSchema : PanelEntityTemplateSchema
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.Never)]
     public SpellType SpellType { get; set; }
-    
+
     /// <summary>
     ///     The category the spell belongs to
     /// </summary>

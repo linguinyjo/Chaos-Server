@@ -15,29 +15,15 @@ public class BeagSeunEffect : EffectBase,
     AnimationAbilityComponent.IAnimationComponentOptions,
     SoundAbilityComponent.ISoundComponentOptions
 {
+    private const int MaxLevel = 40;
+    private const int EnchanterEnmity = 1000;
     private Creature _source;
-
-    /// <inheritdoc />
-    public bool AnimatePoints { get; init; }
-
-    /// <inheritdoc />
-    public Animation? Animation { get; init; } = new()
-    {
-        TargetAnimation = 45,
-        AnimationSpeed = 100
-    };
-
-    /// <inheritdoc />
-    public List<string> ConflictingEffectNames { get; init; } =
-        [
-            "Beag Seun"
-        ];
 
     /// <inheritdoc />
     protected override TimeSpan Duration { get; set; } = TimeSpan.FromSeconds(30);
 
     /// <inheritdoc />
-    public bool ExcludeSourcePoint { get; init; }
+    public int? ExclusionRange { get; init; }
 
     /// <inheritdoc />
     public TargetFilter Filter { get; init; }
@@ -55,16 +41,26 @@ public class BeagSeunEffect : EffectBase,
     public bool SingleTarget { get; init; } = true;
 
     /// <inheritdoc />
-    public byte? Sound { get; init; } = 27;
+    public bool AnimatePoints { get; init; }
+
+    /// <inheritdoc />
+    public Animation? Animation { get; init; } = new()
+    {
+        TargetAnimation = 45,
+        AnimationSpeed = 100
+    };
+
+    /// <inheritdoc />
+    public List<string> ConflictingEffectNames { get; init; } =
+    [
+        "Beag Seun"
+    ];
 
     /// <inheritdoc />
     public override byte Icon => 20;
 
     /// <inheritdoc />
     public override string Name => "Beag Seun";
-
-    private const int MaxLevel = 40;
-    private const int EnchanterEnmity = 1000;
 
     public override void OnTerminated()
     {
@@ -74,13 +70,13 @@ public class BeagSeunEffect : EffectBase,
         // This clears the monster from all other monster's aggro tables because it is no longer considered hostile
         foreach (var target in monsterTargets)
         {
-            target.AggroList.TryRemove(monster.Id, out _);
+            target.AggroList.Clear(monster);
         }
+
         monster.ResetAggro();
-        monster.AggroList.AddOrUpdate(_source.Id, _ => 
-            EnchanterEnmity, (_, currentAggro) => currentAggro + EnchanterEnmity);
+        monster.AggroList.AddAggro(_source, EnchanterEnmity);
     }
-    
+
     /// <inheritdoc />
     public override void OnApplied()
     {
@@ -96,4 +92,7 @@ public class BeagSeunEffect : EffectBase,
         _source = source;
         return target.StatSheet.Level <= MaxLevel && base.ShouldApply(source, target);
     }
+
+    /// <inheritdoc />
+    public byte? Sound { get; init; } = 27;
 }

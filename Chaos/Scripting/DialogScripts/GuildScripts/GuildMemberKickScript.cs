@@ -1,3 +1,4 @@
+#region
 using System.Diagnostics;
 using Chaos.Collections;
 using Chaos.Common.Abstractions;
@@ -8,6 +9,7 @@ using Chaos.NLog.Logging.Definitions;
 using Chaos.NLog.Logging.Extensions;
 using Chaos.Scripting.DialogScripts.GuildScripts.Abstractions;
 using Chaos.Storage.Abstractions;
+#endregion
 
 namespace Chaos.Scripting.DialogScripts.GuildScripts;
 
@@ -63,7 +65,7 @@ public class GuildMemberKickScript : GuildScriptBase
             return;
         }
 
-        if (!IsOfficer(sourceRank))
+        if (!sourceRank.IsOfficerRank)
         {
             Subject.Reply(source, "You do not have permission to kick members", "generic_guild_members_initial");
 
@@ -79,14 +81,14 @@ public class GuildMemberKickScript : GuildScriptBase
 
         var targetCurrentRank = guild.RankOf(name);
 
-        if (!IsSuperiorRank(sourceRank, targetCurrentRank))
+        if (!sourceRank.IsSuperiorTo(targetCurrentRank))
         {
             Subject.Reply(source, $"You do not have permission to kick {name}", "generic_guild_members_initial");
 
             return;
         }
 
-        if (!guild.KickMember(name, source))
+        if (!guild.TryKickMember(name, source))
             throw new UnreachableException(
                 "The only failure reason is if the person being kicked is a leader. That should be checked for.");
 

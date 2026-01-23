@@ -1,0 +1,43 @@
+{
+  "assailIntervalMs": 1500,
+  "expReward": 6592,
+  "moveIntervalMs": 1500,
+  "aggroRange": 12,
+  "name": "Dhole Larva",
+  "lootTableKeys": [],
+  "scriptKeys": [
+    "default",
+    "SetRandomElement"
+  ],
+  "scriptVars": {},
+  "skillIntervalMs": 1500,
+  "skillTemplateKeys": [
+    "Assail"
+  ],
+  "spellIntervalMs": 15000,
+  "spellTemplateKeys": [
+    "sal",
+    "athar",
+    "creag",
+    "srad",
+    "cradh",
+    "puinsein"
+  ],
+  "sprite": 180,
+  "statSheet": {
+    "level": 45,
+    "ac": 15,
+    "maximumHp": 7100,
+    "maximumMp": 5000,
+    "physicalAttack": 100,
+    "magicAttack": 70,
+    "con": 20,
+    "dex": 20,
+    "int": 48,
+    "str": 50,
+    "wis": 48
+  },
+  "templateKey": "dholeLarva4",
+  "type": "Normal",
+  "wanderIntervalMs": 1500
+}

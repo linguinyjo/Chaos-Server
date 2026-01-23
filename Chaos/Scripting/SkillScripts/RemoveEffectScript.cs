@@ -1,4 +1,5 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Definitions;
 using Chaos.Models.Data;
 using Chaos.Models.Panel;
@@ -12,14 +13,10 @@ using Chaos.Services.Factories.Abstractions;
 namespace Chaos.Scripting.SkillScripts;
 
 public class RemoveEffectScript : ConfigurableSkillScriptBase,
-                            GenericAbilityComponent<Creature>.IAbilityComponentOptions,
-                            RemoveEffectAbilityComponent.IRemoveEffectComponentOptions,
-                            AbilityLevellingAbilityComponent.IAbilityLevellingComponentOptions
+    GenericAbilityComponent<Creature>.IAbilityComponentOptions,
+    RemoveEffectAbilityComponent.IRemoveEffectComponentOptions,
+    AbilityLevellingAbilityComponent.IAbilityLevellingComponentOptions
 {
-    
-    public string? AbilityTemplateKey { get; init; }
-    public bool? IsSpell { get; init; }
-    
     /// <inheritdoc />
     public RemoveEffectScript(Skill subject, IEffectFactory effectFactory)
         : base(subject)
@@ -27,6 +24,9 @@ public class RemoveEffectScript : ConfigurableSkillScriptBase,
         SourceScript = this;
         EffectFactory = effectFactory;
     }
+
+    public string? AbilityTemplateKey { get; init; }
+    public bool? IsSpell { get; init; }
 
     /// <inheritdoc />
     public override void OnUse(ActivationContext context)
@@ -36,8 +36,9 @@ public class RemoveEffectScript : ConfigurableSkillScriptBase,
             ?.Execute<AbilityLevellingAbilityComponent>()
             .Execute<RemoveEffectAbilityComponent>();
     }
-    
+
     #region ScriptVars
+
     /// <inheritdoc />
     public AoeShape Shape { get; init; }
 
@@ -51,7 +52,7 @@ public class RemoveEffectScript : ConfigurableSkillScriptBase,
     public int Range { get; init; }
 
     /// <inheritdoc />
-    public bool ExcludeSourcePoint { get; init; }
+    public int? ExclusionRange { get; init; }
 
     /// <inheritdoc />
     public bool MustHaveTargets { get; init; }
@@ -63,6 +64,9 @@ public class RemoveEffectScript : ConfigurableSkillScriptBase,
     public BodyAnimation BodyAnimation { get; init; }
 
     /// <inheritdoc />
+    public bool? ScaleBodyAnimationSpeedByAttackSpeed { get; init; }
+
+    /// <inheritdoc />
     public ushort? AnimationSpeed { get; init; }
 
     /// <inheritdoc />
@@ -70,7 +74,7 @@ public class RemoveEffectScript : ConfigurableSkillScriptBase,
 
     /// <inheritdoc />
     public bool AnimatePoints { get; init; }
-    
+
     public IScript SourceScript { get; init; }
 
     /// <inheritdoc />
@@ -81,11 +85,15 @@ public class RemoveEffectScript : ConfigurableSkillScriptBase,
 
     /// <inheritdoc />
     public bool ShouldNotBreakHide { get; init; }
+
     /// <inheritdoc />
     public AbilityLevellingRate? LevelUpRate { get; init; }
+
     /// <inheritdoc />
     public bool CanResist { get; init; }
+
     public IEffectFactory EffectFactory { get; init; }
     public string? EffectKey { get; init; }
+
     #endregion
 }

@@ -1,7 +1,9 @@
+#region
 using System.Text.Json.Serialization;
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Schemas.Data;
 using Chaos.Schemas.Templates.Abstractions;
+#endregion
 
 namespace Chaos.Schemas.Templates;
 
@@ -14,6 +16,12 @@ public sealed record ItemTemplateSchema : PanelEntityTemplateSchema
     ///     Whether or not the item is account bound. If the item is account bound, it cannot be traded or dropped
     /// </summary>
     public bool AccountBound { get; set; }
+
+    /// <summary>
+    ///     When this item is equipped, it will be considered an overcoat for display purposes. This allows items in the normal
+    ///     armor slot to use overcoat sprites and be dyeable. If an overcoat is equipped, that item will show instead.
+    /// </summary>
+    public bool ArmorUsesOvercoatSprites { get; set; }
 
     /// <summary>
     ///     The amount of gold it costs to buy this item from a merchant
@@ -93,11 +101,32 @@ public sealed record ItemTemplateSchema : PanelEntityTemplateSchema
     public bool NoTrade { get; set; }
 
     /// <summary>
+    ///     When this item is equipped, it will be considered an armor for display purposes. This allows items in the overcoat
+    ///     slot to use normal armor sprites. If both an armor and an overcoat are equipped, the overcoat will display.
+    /// </summary>
+    public bool OvercoatUsesArmorSprites { get; set; }
+
+    /// <summary>
+    ///     When this item is equipped, the boots sprite will be set to 0
+    /// </summary>
+    public bool OverridesBootsSprite { get; set; }
+
+    /// <summary>
+    ///     When this item is equipped, the head sprite will be set to 0
+    /// </summary>
+    public bool OverridesHeadSprite { get; set; }
+
+    /// <summary>
     ///     Default null
     ///     <br />
     ///     If specified, this armor will have pants, and they will be this color
     /// </summary>
     public DisplayColor? PantsColor { get; set; }
+
+    /// <summary>
+    ///     Whether or not the item can be banked
+    /// </summary>
+    public bool PreventBanking { get; set; }
 
     /// <summary>
     ///     The amount of gold given for selling this item to a merchant

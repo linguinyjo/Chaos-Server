@@ -1,4 +1,4 @@
-using Chaos.Common.Definitions;
+using Chaos.DarkAges.Definitions;
 using Chaos.Models.Menu;
 using Chaos.Models.World;
 using Chaos.Scripting.DialogScripts.Abstractions;
@@ -6,17 +6,18 @@ using Chaos.Services.Factories.Abstractions;
 
 namespace Chaos.Scripting.DialogScripts.PathTempleScripts;
 
-public class LoganScript :  DialogScriptBase
+public class LoganScript : DialogScriptBase
 {
-    private readonly IDialogFactory DialogFactory;
     private readonly Dialog Dialog;
-    
+    private readonly IDialogFactory DialogFactory;
+
     /// <inheritdoc />
     public LoganScript(Dialog subject, IDialogFactory dialogFactory)
-        : base(subject) {
+        : base(subject)
+    {
         DialogFactory = dialogFactory;
         Dialog = subject;
-    } 
+    }
 
     /// <inheritdoc />
     public override void OnDisplaying(Aisling source)
@@ -27,7 +28,7 @@ public class LoganScript :  DialogScriptBase
         {
             Subject.AddOption("I want to become a wizard", "logan_become_a_wizard");
         }
-        
+
         Subject.AddOption("Tell me about the path of the wizard", "logan_wizard_info");
 
         if (source.UserStatSheet.Level == 50 && isWizard)
@@ -36,7 +37,11 @@ public class LoganScript :  DialogScriptBase
         }
     }
 
-    public override void OnDisplayed(Aisling source) {}
+    public override void OnDisplayed(Aisling source)
+    {
+    }
 
-    public override void OnNext(Aisling source, byte? optionIndex = null) {}
+    public override void OnNext(Aisling source, byte? optionIndex = null)
+    {
+    }
 }
